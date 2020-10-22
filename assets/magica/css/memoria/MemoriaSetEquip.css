@@ -1,0 +1,344 @@
+#status, #menu {
+  display: none;
+}
+
+#popupArea .setNameChangePop #popupInfoDetailTitle {
+  margin-bottom: 40px;
+}
+#popupArea .setNameChangePop .popupTextArea {
+  height: 300px;
+}
+#popupArea .setNameChangePop .text {
+  font-size: 24px;
+}
+#popupArea .setNameChangePop .commonInput {
+  width: 500px;
+  height: 64px;
+  margin: 40px auto;
+  padding-right: 24px;
+  padding-left: 24px;
+  font-size: 24px;
+  line-height: 64px;
+}
+#popupArea .setNameChangePop #defaultNameBtn {
+  width: 115px;/*MN*/
+  position: absolute;
+  top: 169px;
+  left: 675px;
+}
+#popupArea .setNameChangePop .textCount {
+  position: absolute;
+  top: 220px;
+  left: 610px;
+  font-size: 18px;
+}
+#popupArea .setNameChangePop .commentNotis {
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+#popupArea .setEquipConf .text {
+  font-size: 24px;
+}
+#popupArea .setEquipConf .c_red {
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+#MemoriaSetEquip {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+#MemoriaSetEquip .memoriaWrap .memoria, #MemoriaSetEquip .memoriaWrap > div {
+  width: 88px;
+  height: 88px;
+  margin-right: 8px;
+  background: url("/magica/resource/image_web/common/memoria/bg_memoria_none.png") left top no-repeat;
+  background-size: 88px 88px;
+  position: relative;
+}
+#MemoriaSetEquip .memoriaWrap .memoria .memoriaImg, #MemoriaSetEquip .memoriaWrap > div .memoriaImg {
+  width: 88px;
+  height: 88px;
+}
+#MemoriaSetEquip .memoriaWrap .memoria .lv, #MemoriaSetEquip .memoriaWrap > div .lv {
+  position: absolute;
+  bottom: -2px;
+  left: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: left;
+  text-shadow: -1px -1px 2px #61554e, 1px -1px 2px #61554e, -1px 1px 2px #61554e, 1px 1px 2px #61554e, -1px -1px #61554e, 1px -1px #61554e, -1px 1px #61554e, 1px 1px #61554e, 0 0 4px #61554e, 0 0 4px #61554e, 0 0 4px #61554e;
+  z-index: 10;
+}
+#MemoriaSetEquip .memoriaWrap .memoria .eventEffect, #MemoriaSetEquip .memoriaWrap > div .eventEffect {
+  width: 48px;
+  height: 15px;
+  background: url("/magica/resource/image_web/page/formation/icon_event_bonus.png") left top no-repeat;
+  background-size: 48px 15px;
+  display: none;
+  position: absolute;
+  top: -8px;
+  left: -5px;
+  z-index: 40;
+}
+#MemoriaSetEquip .memoriaWrap .memoria.effective .eventEffect, #MemoriaSetEquip .memoriaWrap > div.effective .eventEffect {
+  display: block;
+}
+#MemoriaSetEquip.typeSet #equipDetailWrap #mainBtn {
+  background: url("/magica/resource/image_web/page/memoria/equip/btn_set_cancel.png") left top no-repeat;
+}
+#MemoriaSetEquip.typeSet #equipDetailWrap .nameWrap {
+  display: none;
+}
+#MemoriaSetEquip.typeSet #equipDetailWrap .setCaution {
+  display: block;
+}
+#MemoriaSetEquip.typeSet #setListWrap .setWrap .memoriaSetEquipBtn {
+  display: none;
+}
+#MemoriaSetEquip.typeSet #setListWrap .setWrap .memoriaSetBtn {
+  display: block;
+}
+#MemoriaSetEquip .equipMemoriaStatus {
+  width: 118px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+#MemoriaSetEquip .equipMemoriaStatus .dtElm, #MemoriaSetEquip .equipMemoriaStatus .ddElm {
+  height: 20px;
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 20px;
+}
+#MemoriaSetEquip .equipMemoriaStatus .dtElm:nth-child(5), #MemoriaSetEquip .equipMemoriaStatus .dtElm:nth-child(6), #MemoriaSetEquip .equipMemoriaStatus .ddElm:nth-child(5), #MemoriaSetEquip .equipMemoriaStatus .ddElm:nth-child(6) {
+  margin-bottom: 0px;
+}
+#MemoriaSetEquip .equipMemoriaStatus .dtElm {
+  width: 52px;
+  background: #b28750;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  -webkit-border-radius: 5px 0 0 5px;
+  border-radius: 5px 0 0 5px;
+}
+#MemoriaSetEquip .equipMemoriaStatus .ddElm {
+  min-width: 58px;
+  text-align: left;
+}
+#MemoriaSetEquip #equipDetailWrap {
+  width: 812px;
+  height: 148px;
+  background: url("/magica/resource/image_web/page/memoria/equip/bg_set.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  left: 106px;
+  overflow: hidden;
+}
+#MemoriaSetEquip #equipDetailWrap .setCaution {
+  padding-left: 16px;
+  background: -webkit-linear-gradient(left, #6c47bf 0%, #ce8ef7 50%, rgba(255, 176, 148, 0) 100%);
+  display: none;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 34px;
+  text-shadow: -1px -1px 1px #915bda, 1px -1px 1px #915bda, -1px 1px 1px #915bda, 1px 1px 1px #915bda, -1px -1px #915bda, 1px -1px #915bda, -1px 1px #915bda, 1px 1px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 3px #915bda, 1px -1px 3px #915bda, -1px 1px 3px #915bda, 1px 1px 3px #915bda;
+}
+#MemoriaSetEquip #equipDetailWrap .nameWrap {
+  width: 686px;
+  height: 44px;
+  padding: 2px 0 0 55px;
+  background: url("/magica/resource/image_web/page/memoria/equip/bg_chara_name.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#MemoriaSetEquip #equipDetailWrap .nameWrap.typeSet {
+  background: url("/magica/resource/image_web/page/memoria/equip/bg_set_name.png") left top no-repeat;
+}
+#MemoriaSetEquip #equipDetailWrap .nameWrap .attribute {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 4px;
+  left: 6px;
+}
+#MemoriaSetEquip #equipDetailWrap .nameWrap .attribute > div {
+  width: 36px;
+  height: 36px;
+}
+#MemoriaSetEquip #equipDetailWrap .nameWrap .name {
+  font-size: 20px;
+}
+#MemoriaSetEquip #equipDetailWrap .nameWrap .title {
+  margin-left: 4px;
+  font-size: 16px;
+}
+#MemoriaSetEquip #equipDetailWrap .memoriaWrap {
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  top: 47px;
+  left: 40px;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+#MemoriaSetEquip #equipDetailWrap .memoriaWrap > div.canSet {
+  background: url("/magica/resource/image_web/common/memoria/btn_memoria_equip.png") left top no-repeat;
+  background-size: 88px 88px;
+}
+#MemoriaSetEquip #equipDetailWrap .memoriaWrap > div.invalidChara:before, #MemoriaSetEquip #equipDetailWrap .memoriaWrap > div.invalidAtt:before, #MemoriaSetEquip #equipDetailWrap .memoriaWrap > div.invalidRev:before {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  z-index: 100;
+}
+#MemoriaSetEquip #equipDetailWrap .memoriaWrap > div.invalidChara:before {
+  background: url("/magica/resource/image_web/common/memoria/memoria_unable_chara.png") left top no-repeat;
+  background-size: 88px 88px;
+}
+#MemoriaSetEquip #equipDetailWrap .memoriaWrap > div.invalidAtt:before {
+  background: url("/magica/resource/image_web/common/memoria/memoria_unable_element.png") left top no-repeat;
+  background-size: 88px 88px;
+}
+#MemoriaSetEquip #equipDetailWrap .memoriaWrap > div.invalidRev:before {
+  background: url("/magica/resource/image_web/common/memoria/memoria_unable.png") left top no-repeat;
+  background-size: 88px 88px;
+}
+#MemoriaSetEquip #equipDetailWrap .equipMemoriaStatus {
+  position: absolute;
+  top: 57px;
+  left: 428px;
+}
+#MemoriaSetEquip #equipDetailWrap .allRemoveBtn {
+  width: 118px;
+  position: absolute;
+  top: 67px;
+  left: 557px;
+}
+#MemoriaSetEquip #equipDetailWrap #mainBtn {
+  width: 174px;
+  height: 64px;
+  background: url("/magica/resource/image_web/page/memoria/equip/btn_set_current.png") left top no-repeat;
+  position: absolute;
+  right: 46px;
+  bottom: 25px;
+}
+#MemoriaSetEquip #setListWrap {
+  width: 836px;
+  height: -webkit-calc(100% - 142px);
+  position: absolute;
+  top: 158px;
+  left: -webkit-calc(50% - 418px);
+}
+#MemoriaSetEquip #setListWrap h2 {
+  width: 810px;
+  height: 32px;
+  padding-left: 36px;
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_wrap_header_a.png");
+  background-size: auto auto;
+  overflow: hidden;
+  color: #a47122;
+  text-shadow: none;
+}
+#MemoriaSetEquip #setListWrap #scrollOuter {
+  width: 780px;
+  height: -webkit-calc(100% - 60px);
+  position: absolute;
+  top: 46px;
+  left: 36px;
+  overflow: hidden;
+}
+#MemoriaSetEquip #setListWrap #scrollOuter .scrollInner {
+  width: 764px;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 20px;
+}
+#MemoriaSetEquip #setListWrap .setWrap {
+  margin-bottom: 16px;
+  margin-left: 40px;
+  padding: 39px 0 7px 18px;
+}
+#MemoriaSetEquip #setListWrap .setWrap .nameWrap {
+  width: 662px;
+  height: 50px;
+  background: url("/magica/resource/image_web/page/memoria/equip/bg_set_header.png") left top no-repeat;
+  position: absolute;
+  top: -4px;
+  left: -42px;
+  z-index: 1000;
+}
+#MemoriaSetEquip #setListWrap .setWrap .nameWrap .name {
+  padding-left: 68px;
+  font-size: 20px;
+  line-height: 34px;
+}
+#MemoriaSetEquip #setListWrap .setWrap .nameWrap .setNum {
+  position: absolute;
+  top: 24px;
+  left: 12px;
+  font-size: 16px;
+}
+#MemoriaSetEquip #setListWrap .setWrap .nameWrap .nameChangeBtn {
+  width: 102px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/memoria/equip/btn_set_rename.png") left top no-repeat;
+  position: absolute;
+  top: 6px;
+  right: 112px;
+}
+#MemoriaSetEquip #setListWrap .setWrap .memoriaWrap {
+  display: -webkit-flex;
+  display: flex;
+}
+#MemoriaSetEquip #setListWrap .setWrap .memoriaWrap .memoria.cantEquipAtt:before {
+  background: url("/magica/resource/image_web/common/memoria/memoria_unable_element.png") left top no-repeat;
+}
+#MemoriaSetEquip #setListWrap .setWrap .memoriaWrap .memoria.cantEquipChara:before {
+  background: url("/magica/resource/image_web/common/memoria/memoria_unable_chara.png") left top no-repeat;
+}
+#MemoriaSetEquip #setListWrap .setWrap .memoriaWrap .memoria.cantEquip:before {
+  background: url("/magica/resource/image_web/common/memoria/memoria_unable.png") left top no-repeat;
+}
+#MemoriaSetEquip #setListWrap .setWrap .memoriaWrap .memoria.cantEquipAtt:before, #MemoriaSetEquip #setListWrap .setWrap .memoriaWrap .memoria.cantEquipChara:before, #MemoriaSetEquip #setListWrap .setWrap .memoriaWrap .memoria.cantEquip:before {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  z-index: 18;
+}
+#MemoriaSetEquip #setListWrap .setWrap .memoriaSetBtn, #MemoriaSetEquip #setListWrap .setWrap .memoriaSetEquipBtn {
+  min-width: 152px;
+  position: absolute;
+  right: 20px;
+  bottom: 19px;
+}
+#MemoriaSetEquip #setListWrap .setWrap .memoriaSetBtn {
+  display: none;
+}
+#MemoriaSetEquip #setListWrap .setWrap .equipMemoriaStatus {
+  position: absolute;
+  right: 194px;
+  bottom: 17px;
+}

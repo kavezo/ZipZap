@@ -1,0 +1,94 @@
+<div id="MissionList" class="mission1">
+
+	<!-- タブ -->
+	<div id="tabBtn" class="commonFrame2">
+		<div class="hiddenWrap" id="tabScroll">
+		<ul class="common_tab t_gold ml_tab">
+			<li class="btn TE se_tabs mission1 current" data-wrap="mission1" data-mission-name="Daily">
+				<span>Daily</span>
+				<div id="dailyBatch" class="batch"></div>
+			</li>
+			<li class="btn TE se_tabs mission2" data-wrap="mission2" data-mission-name="Total">
+				<span>Lifetime</span>
+				<div id="totalBatch" class="batch"></div>
+			</li>
+		</ul>
+	</div>
+	</div>
+
+	<!-- 一覧 -->
+	<div id="listWrap" class="commonFrame2">
+		<h2 id="listTitle">Daily</h2>
+
+		<!-- デイリー残り時間表示 -->
+		<span id="dailyTime" class="c_gold"><br>Remaining: <span id="dailyTimeNum" class="c_gold"></span></span>
+
+		<!-- イベントミッション残り時間表示 -->
+		<span id="eventTime" class="c_gold">Items Expire:<br><span id="eventTimeNum" class="c_gold"></span></span>
+
+		<!-- イベントミッションリスト -->
+		<div id="missionScrollWrap">
+			<div id="mission1" class="dailyList"></div>
+			<div id="mission2" class="totalList"></div>
+			<div id="doppelMission" class="doppelList"></div>
+		</div>
+	</div>
+
+	<!-- 一括受け取りボタン -->
+	<div class="mb_pink off se_decide" id="allReserve">Receive All</div>
+</div>
+
+<!-- ミッションリストパーツ -->
+<script type="text/template" id="missionParts">
+	<%='<% var rewardModel = model.challenge.rewardList[0]; %\>'%>
+	<%='<% var presentType = rewardModel.presentType; %\>'%>
+	<%='<% var itemId      = rewardModel.itemId; %\>'%>
+
+	<%='<% var dir; %\>'%>
+	<%='<% if(presentType !== "GIFT") { %\>'%>
+		<%='<% dir = (itemId && itemId.indexOf("EVENT_") > -1) ? "event" : "main"; %\>'%>
+	<%='<% } else { %\>'%>
+		<%='<% dir = "gift"; %\>'%>
+	<%='<% } %\>'%>
+
+	<%='<% var itemName; %\>'%>
+	<%='<% if(presentType === "RICHE") { %\>'%>
+		<%='<% itemName = "riche"; %\>'%>
+	<%='<% } else if(presentType === "GIFT") { %\>'%>
+		<%='<% itemName = "item_gift_" + rewardModel.gift.id; %\>'%>
+	<%='<% } else if(presentType === "PIECE" || presentType === "MAXPIECE"){ %\>'%>
+		<%='<% itemName = "memoria_" + rewardModel.piece.pieceId + "_s"; %\>'%>
+	<%='<% } else if(presentType !== "LIVE2D"){ %\>'%>
+		<%='<% itemName = itemId.toLowerCase(); %\>'%>
+	<%='<% } %\>'%>
+	<div class="missionItemWrap">
+		<%='<% if(presentType == "LIVE2D") { %\>'%>
+
+			<div class="charaIcon">
+				<div class="maskWrap">
+					<img data-nativeimgkey='mini_<%="<%= rewardModel.live2d.charaId %\>00"%>_d' data-src='resource/image_native/mini/image/mini_<%="<%= rewardModel.live2d.charaId %\>00"%>_d.png'>
+				</div>
+			</div>
+			<img src='/magica/resource/image_web/item/main/live2d.png' alt='' class="itemImage">
+		<%='<% } else if(presentType === "PIECE" || presentType === "MAXPIECE"){ %\>'%>
+			<img data-nativeimgkey="memoria_<%='<%=rewardModel.piece.pieceId%\>'%>_s" data-src="resource/image_native/memoria/memoria_<%='<%=rewardModel.piece.pieceId%\>'%>_s.png" class="itemImage">
+		<%='<% } else if(presentType === "GIFT") { %\>'%>
+			<img data-nativeimgkey='gift_<%='<%= rewardModel.gift.id %\>'%>' data-src='resource/image_native/gift/item_gift_<%='<%= rewardModel.gift.id %\>'%>.png'>
+			<div class="rewardQuantity ts_gold">x<%='<%= rewardModel.quantity %\>'%></div>
+		<%='<% } else { %\>'%>
+			<img src="/magica/resource/image_web/item/<%='<%= dir %\>'%>/<%='<%= itemName %\>'%>.png">
+			<div class="rewardQuantity ts_gold">x<%='<%= rewardModel.quantity %\>'%></div>
+		<%='<% } %\>'%>
+
+	</div>
+
+	<span class="missionTitleWrap"><%='<%= model.challenge.displayName %\>'%></span>
+
+	<span class="missionCompleteNum c_gold"><%='<%= model.clearedCount %\>'%>/<%='<%= model.challenge.count %\>'%></span>
+
+	<div class="missionGuageWrap">
+		<div class="missionGuageInner"><div class="missionGuage"></div></div>
+	</div>
+
+	<span class="btn b_white se_decide missionBtn TE"><span class="b_screen"></span></span>
+</script>

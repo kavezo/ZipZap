@@ -1,0 +1,360 @@
+.debug {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: .5;
+  z-index: 1000000000000000; }
+
+#title {
+  width: 133px;
+  height: 54px;
+  background: url("/magica/resource/image_web/common/global/title/item_list.png");
+  display: block !important; }
+
+#userItemList {
+  width: 1024px;
+  height: 576px; }
+#userItemList .searchQuestBtn {
+  width: 200px;
+  height: 64px;
+    background: url("/magica/resource/image_web/page/searchquest/btn_item_quest.png") left top no-repeat;
+  position: absolute;
+  bottom: 33px;
+    left: 43px; }
+#userItemList #tabBtn {
+  width: 222px;
+  height: auto;
+  padding: 28px 18px 8px;
+  position: absolute;
+  top: 70px;
+    left: 32px; }
+#userItemList #tabBtn .btn {
+  width: 186px;
+      margin-bottom: 14px; }
+#userItemList #tabBtn .btn.destiny_li {
+        font-size: 16px; }
+      #userItemList #tabBtn .btn.none {
+        display: none; }
+  #userItemList.gem #item, #userItemList.gem #cure, #userItemList.gem #sticker {
+    display: none !important; }
+#userItemList.gem #listWrap {
+    padding: 72px 5px 14px 7px; }
+  #userItemList.item #gem, #userItemList.item #cure, #userItemList.item .gemShortInfo, #userItemList.item #sticker {
+    display: none !important; }
+  #userItemList.sticker #item, #userItemList.sticker #gem, #userItemList.sticker #cure, #userItemList.sticker .gemShortInfo {
+    display: none !important; }
+  #userItemList.sticker #listWrap .stickerCount {
+    display: block; }
+#userItemList #listWrap {
+  width: 716px;
+  height: -webkit-calc(100% - 90px);
+  padding: 37px 5px 14px 7px;
+  position: absolute;
+  top: 70px;
+    left: 276px; }
+#userItemList #listWrap .gemShortInfo {
+      width: 704px;
+  height: 32px;
+  padding: 4px 0px 0px 32px;
+      background: url("/magica/resource/image_web/page/item/itemlist_geminfo.png") left top no-repeat;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 39px;
+  left: 5px;
+      font-size: 16px;
+      z-index: 5; }
+    #userItemList #listWrap .stickerCount {
+      width: 120px;
+      height: 22px;
+      display: none;
+      position: absolute;
+      top: 12px;
+      right: 38px;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: right; }
+      #userItemList #listWrap .stickerCount .countTitle {
+        margin-right: 0px;
+        padding: 0 6px;
+        background-color: #ff4f9e;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #ffffff;
+        border-radius: 5px 0px 0px 5px; }
+#userItemList #listWrap .hiddenWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+      overflow: hidden; }
+#userItemList #listWrap .hiddenWrap .scrollIndicator {
+        right: 8px; }
+  #userItemList #gem, #userItemList #item, #userItemList #sticker {
+  width: 693px;
+  height: auto;
+    min-height: 100%;
+  padding: 6px 0 0 23px;
+  padding-bottom: 20px;
+  display: none;
+  display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+    -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start; }
+    #userItemList #gem .noItems, #userItemList #item .noItems, #userItemList #sticker .noItems {
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  position: absolute;
+  top: -webkit-calc(50% - 8px);
+  left: 0;
+  font-size: 20px;
+      text-align: center; }
+#userItemList .wrap {
+  width: 208px;
+  height: 176px;
+  margin: 2px 12px 14px 2px;
+  position: relative;
+    -webkit-box-shadow: 0 0 0 2px #c6a882, 0 0 5px #eee9e0 inset, 0 0 6px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 0 2px #c6a882, 0 0 5px #eee9e0 inset, 0 0 6px rgba(0, 0, 0, 0.8); }
+    #userItemList .wrap.sticker {
+      height: 208px;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
+      #userItemList .wrap.sticker .itemImg {
+        top: 0 !important;
+        left: 0; }
+        #userItemList .wrap.sticker .itemImg img {
+          width: 208px;
+          height: 208px; }
+    #userItemList .wrap.gem .itemName {
+      top: 85px; }
+    #userItemList .wrap.gem .title {
+      top: 107px; }
+    #userItemList .wrap.gem.crystal:before {
+      width: 70px;
+      height: 90px;
+      background: url("/magica/resource/image_web/page/item/tag_cristal.png") left top no-repeat;
+      display: block;
+      position: absolute;
+      top: -16px;
+      right: -7px;
+      content: ""; }
+    #userItemList .wrap.gem .revisionWrap {
+      width: 100%;
+      height: 14px;
+      display: block;
+      position: absolute;
+      bottom: 38px;
+      left: 0;
+      line-height: 14px; }
+      #userItemList .wrap.gem .revisionWrap .revTitle {
+        margin-left: 30px;/*MN*/
+        font-size: 14px; }
+      #userItemList .wrap.gem .revisionWrap .revIcon {
+        width: 46px;
+        height: 14px;
+        display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 28px;/*MN*/
+        -webkit-flex-flow: wrap;
+        -ms-flex-flow: wrap;
+        flex-flow: wrap;
+        -webkit-justify-content: space-between;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start; }
+        #userItemList .wrap.gem .revisionWrap .revIcon li {
+          width: 14px;
+          height: 14px;
+          background: url("/magica/resource/image_web/common/chara/icon_lb_off.png") left top no-repeat;
+          background-size: 100% 100%; }
+          #userItemList .wrap.gem .revisionWrap .revIcon li.on {
+            background: url("/magica/resource/image_web/common/chara/icon_lb_on.png") left top no-repeat;
+            background-size: 100% 100%; }
+    #userItemList .wrap.sticker .itemImg {
+      top: 33px; }
+    #userItemList .wrap.sticker .itemName {
+      top: 121px; }
+#userItemList .wrap .itemImg {
+  position: absolute;
+  top: 13px;
+      left: 64px; }
+#userItemList .wrap .itemImg img {
+        width: 78px; }
+/*MN*/
+#userItemList .wrap .itemName {
+    width: 188px;
+    height: 42px;
+    display: block;
+    position: absolute;
+    line-height: 21px;
+    top: 93px;
+    left: 10px;
+    overflow: hidden;
+    text-align: center;
+ }
+#userItemList .wrap .title {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 122px;
+  left: 0px;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 12px;
+      text-align: center; }
+#userItemList .wrap .itemQuantity {
+  width: 174px;
+  position: absolute;
+  bottom: 8px;
+      left: 17px; }
+#userItemList .wrap .itemQuantity dt {
+        padding-left: 14px; }
+#userItemList .wrap .itemQuantity .itemQuantityNum {
+  width: 97px;
+  background-color: #ffffff;
+        text-align: right; }
+
+.saleCautionPop.popupContent .popupInner .popupTitle {
+  width: 742px;
+  margin: 12px auto 0; }
+
+.saleCautionPop.popupContent .popupInner .popupTextArea {
+  height: 278px;
+  padding-top: 30px;
+  display: block;
+  font-size: 22px;
+  line-height: 35px; }
+
+.saleCautionPop .caution {
+  margin-top: 10px;
+  margin-left: 46px;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: left; }
+
+.stickerPop .collectionFrame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-width: 64px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/page/collection/bg_frame.png") 68 stretch;
+  z-index: 1; }
+
+.stickerPop #collectionClose {
+  width: 90px;
+  height: 44px;
+  background: url("/magica/resource/image_web/page/collection/btn_doppel_back.png") left top no-repeat;
+  position: absolute;
+  top: 8px;
+  left: 6px;
+  z-index: 100; }
+
+.stickerPop .stickerFrame {
+  width: 426px;
+  height: 516px;
+  background: url("/magica/resource/image_web/page/collection/stickerDetail/sticker_frame.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 258px);
+  left: 52px; }
+  .stickerPop .stickerFrame img {
+    margin: 51px 6px; }
+
+.stickerPop .textFrame {
+  width: 479px;
+  height: 489px;
+  background: url("/magica/resource/image_web/page/collection/stickerDetail/main_text_frame.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 244px);
+  right: 49px; }
+  .stickerPop .textFrame .name {
+    position: absolute;
+    top: 110px;
+    left: 52px;
+    font-size: 32px; }
+  .stickerPop .textFrame .description {
+    width: 368px;
+    max-height: 144px;
+  position: absolute;
+    top: 164px;
+    left: 52px;
+    overflow: hidden;
+  font-size: 18px;
+    line-height: 48px; }
+  .stickerPop .textFrame .where {
+    width: 368px;
+  position: absolute;
+    top: 319px;
+    left: 54px;
+    font-size: 20px;
+    line-height: 27px; }
+    .stickerPop .textFrame .where .whereTitle {
+      font-size: 17px; }
+      .stickerPop .textFrame .where .whereTitle:before, .stickerPop .textFrame .where .whereTitle:after {
+        width: 19px;
+        height: 19px;
+        background: url("/magica/resource/image_web/page/collection/stickerDetail/text_headmark.png") left top no-repeat;
+        position: absolute;
+        top: 5px;
+        content: ""; }
+      .stickerPop .textFrame .where .whereTitle:before {
+        left: -20px; }
+      .stickerPop .textFrame .where .whereTitle:after {
+        left: 104px; }
+  .stickerPop .textFrame .live2D {
+    width: 300px;
+    height: 20px;
+  position: absolute;
+    top: 399px;
+    left: 54px;
+    font-size: 20px;
+    line-height: 20px; }
+    .stickerPop .textFrame .live2D .spaceStar {
+      width: 19px;
+      height: 19px;
+      margin: 0px 3px;
+      background: url("/magica/resource/image_web/page/collection/stickerDetail/text_headmark.png") left bottom no-repeat;
+  display: inline-block;
+  position: relative;
+      top: -3px;
+      vertical-align: middle; }
+  .stickerPop .textFrame .number {
+  position: absolute;
+    top: 423px;
+    left: 18px;
+    color: #edd196;
+    font-size: 38px;
+    text-shadow: -1px -1px 1px #ffedbf, 1px -1px 1px #ffedbf, -1px 1px 1px #ffedbf, 1px 1px 1px #ffedbf, -1px -1px #ffedbf, 1px -1px #ffedbf, -1px 1px #ffedbf, 1px 1px #ffedbf; }
+  .stickerPop .textFrame .cameraLink {
+    width: 88px;
+    height: 78px;
+    background: url("/magica/resource/image_web/page/collection/stickerDetail/btn_camera.png") left bottom no-repeat;
+  position: absolute;
+    right: 28px;
+    bottom: 28px; }

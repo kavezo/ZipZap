@@ -1,0 +1,32 @@
+<div class="popupInner">
+	<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+	<p id="popupInfoDetailTitle" class="popupTitle common_title">Set Materials</p>
+
+	<div class="popupTextArea">
+
+		<div class="popupGiftWrap">
+			<p class="numWrap c_white"><span class="hasNum <%= (model.canSet) ? 'ts_pink' : 'ts_gold' %>"><%= model.hasNum %></span><span class="sla ts_gold">/</span><span class="needNum ts_gold"><%= model.needNum %></span></p>
+			<img data-nativeimgkey='gift_a_<%= model.giftId %>' data-src='resource/image_native/gift/item_gift_a_<%= model.giftId %>.png' class="giftImg">
+		</div>
+		<p class='giftName'><%= model.name %></p>
+		<% if(model.canSet) { %>
+			<p class="popupBonusWrap"><span class="thStyle">Effect</span><%= model.bonusCodeDisp %>+<%= model.bonusNum %>%</p>
+		<% } else { %>
+			<p class='cantSetCaution c_red'>Insufficient Materials</p>
+		<% } %>
+	</div>
+	<table class="popupBtnArea" width="400" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+
+			<% if(model.canSet) { %>
+				<td><span class="cancelBtn se_cancel popupCloseBtn btn TE b_white"><span class="b_screen"></span>Cancel</td>
+				<td><span class="decideBtn btn se_decide TE b_pink"><span class="b_screen"></span>Set</td>
+			<% } else { %>
+				<td><span class="cancelBtn se_cancel popupCloseBtn btn TE b_white"><span class="b_screen"></span>Close</td>
+				<td><span class="questSearchBtn se_decide btn TE b_pink" data-giftid="<%= model.giftId %>">
+					<span class="b_screen"></span>Find
+				</td>
+			<% } %>
+		</tr>
+	</table>
+</div>

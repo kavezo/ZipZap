@@ -1,0 +1,310 @@
+<div id="ShopTop">
+	<div id="mainWrap" class="commonFrame1">
+		<h2 id="listTitle"></h2>
+
+		<!-- 所持通貨表示エリア -->
+		<div id="dispAmounts">
+			<div id="hasItems">
+				<img src="/magica/resource/image_web/common/icon/icon_money_f.png" class="costIcon">
+				<img src="/magica/resource/image_web/common/icon/icon_purchased.png" class="purchasedIcon">
+				<span class="pointFrame"></span>
+			</div>
+		</div>
+
+		<!-- 商品一覧表示エリア -->
+		<div id="lists"></div>
+	</div>
+
+	<!-- タブ表示エリア -->
+	<div id="btnWrap">
+		<ul class="btnScrollInner common_tab t_gold ml_tab">
+		</ul>
+	</div>
+
+	<!-- みたまさんエリア -->
+	<div id="touchWrap" data-touchwrap="ok"></div>
+</div>
+
+<!-- 一覧パーツ -->
+<script type="text/template" id="shopParts">
+	<div class="recommend"></div>
+
+	<!-- アイテム画像 -->
+	<div class="itemIcon">
+		<%='<% switch(model.shopItemType){case "CARD": %\>'%>
+			<%="<% att = 'att_' + model.card.attributeId.toLowerCase(); %\>"%>
+			<%="<% star = 'star_' + model.card.rank.toLowerCase(); %\>"%>
+			<%="<% frame = 'frame_' + model.card.rank.toLowerCase(); %\>"%>
+			<%="<% bg = 'bg_' + model.card.attributeId.toLowerCase(); %\>"%>
+			<span class="att" data-nativebgkey='<%="<%= att %\>"%>' data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+			<span class="star" data-nativebgkey='<%="<%= star %\>"%>' data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+			<span class="rank" data-nativebgkey='<%="<%= frame %\>"%>' data-src='resource/image_native/card/frame/<%="<%= frame %\>"%>.png'></span>
+			<img data-nativeimgkey='card_<%="<%= model.card.cardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= model.card.cardId %\>"%>_f.png'>
+			<span class="bg" data-nativebgkey='<%="<%= bg %\>"%>' data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+		<%='<%break;case "PIECE" :%\>'%>
+		<%='<%      case "MAXPIECE" :%\>'%>
+			<img data-nativeimgkey="memoria_<%='<%=model.piece.pieceId%\>'%>_s" data-src="resource/image_native/memoria/memoria_<%='<%=model.piece.pieceId%\>'%>_s.png" class="itemImage">
+		<%='<%break;case "ITEM" :%\>'%>
+			<%='<% var subPath = (model.item.itemCode.indexOf("EVENT_") > -1) ? "event/" : "main/"; %\>'%>
+			<img src="/magica/resource/image_web/item/<%='<%= subPath %\>'%><%='<%=model.item.itemCode.toLowerCase()%\>'%>.png" class="itemImage">
+		<%='<%break;case "GIFT" :%\>'%>
+			<img data-nativeimgkey='gift_<%='<%= model.gift.id %\>'%>' data-src='resource/image_native/gift/item_gift_<%='<%= model.gift.id %\>'%>.png' class="itemImage">
+		<%='<%break;case "SET" :%\>'%>
+			<img src="/magica/resource/image_web/item/set/<%='<%= model.genericId.toLowerCase() %\>'%>.png" class="itemImage">
+		<%='<%break;case "LIVE2D" :%\>'%>
+			<div class="charaIcon">
+				<div class="maskWrap">
+					<img data-nativeimgkey='mini_<%="<%= model.chara.id %\>00"%>_d' data-src='resource/image_native/mini/image/mini_<%="<%= model.chara.id %\>00"%>_d.png'>
+				</div>
+			</div>
+			<img src='/magica/resource/image_web/item/main/live2d.png' alt='' class="itemImage">
+		<%='<%break;case "FORMATION_SHEET" :%\>'%>
+		<%='<% var sheet = model.formationSheet; %\>'%>
+			<div class="shopFormation">
+				<div class="formationBase">
+					<div class="formationInner">
+						<%='<% for(var i=1;i<10;i++){ %\>'%>
+						<div class="formation<%='<%= i %\>'%> cols<%='<% if(sheet["place"+i]){ %\>'%> on<%='<% } %\>'%>"></div>
+						<%='<% } %\>'%>
+					</div>
+				</div>
+			</div>
+		<%='<%break;case "GEM" :%\>'%>
+			<img data-nativeimgkey="chara_<%='<%= model.genericId %\>'%>_h" data-src="resource/image_native/chara/chara_<%='<%= model.genericId %\>'%>_h.png" class="itemImage">
+		<%='<%break;}%\>'%>
+	</div>
+
+	<!-- アイテム名 -->
+	<div class="itemName"><%='<%= model.name %\>'%></div>
+
+	<!-- アイテム説明 -->
+	<div class="description"><%='<%= model.description %\>'%></div>
+
+	<!-- アイテム価格 -->
+	<div class="itemCost">
+		<%='<% if(purchasedFlg){ %\>'%>
+			<img src="/magica/resource/image_web/common/icon/icon_purchased.png" class="purchasedIcon">
+		<%='<% } %\>'%>
+		<img src="/magica/resource/image_web/common/icon/<%='<%= costImage %\>'%>" class="costIcon">
+		<span class="pointFrame"><%='<%=model.needNumber %\>'%></span>
+	</div>
+
+	<!-- 追加情報系 -->
+	<%='<% if(model.shopItemType !== "PIECE" && model.shopItemType !== "MAXPIECE"){ %\>'%>
+	<dl class="common_dl had_dl">
+		<dt>You Have</dt>
+		<dd class="itemHasNumber"></dd>
+	</dl>
+	<%='<% } %\>'%>
+	<dl class="common_dl limit_dl">
+		<dt>Expires</dt>
+		<dd class="itemLimit"><%='<% if(model.endAt){%\>'%><%='<%= model.endAt.substr(5,11) %\>'%><%='<% }else{ %\>'%>-<%='<% } %\>'%></dd>
+	</dl>
+	<dl class="common_dl amount_dl">
+		<dt>Stock</dt>
+		<dd class="itemAmountNumber"><%='<% if(model.limitedNumber){ %\>'%><%='<%=model.limitedNumber %\>'%>/<%='<%=model.limitedNumber %\>'%><%='<% }else{ %\>'%>-<%='<% } %\>'%></dd>
+	</dl>
+</script>
+
+<!-- 詳細ポップアップ -->
+<script type="text/template" id="shopPopupTempCard">
+	<div id="shopPopMain">
+		<div class="itemPopMiniWrap commonFrame4 <%='<%= model.needItemId %\>'%>">
+			<!-- アイテム画像 -->
+			<div class="popNameMiniWrap"><%='<%= model.name %\>'%></div>
+			<%='<% switch(model.shopItemType){case "CARD": %\>'%>
+				<div class="userCharaIcon <%='<%= model.card.rank %\>'%> <%='<%= model.card.attributeId %\>'%>">
+					<%="<% att = 'att_' + model.card.attributeId.toLowerCase(); %\>"%>
+					<%="<% star = 'star_' + model.card.rank.toLowerCase(); %\>"%>
+					<%="<% frame = 'frame_' + model.card.rank.toLowerCase(); %\>"%>
+					<%="<% bg = 'bg_' + model.card.attributeId.toLowerCase(); %\>"%>
+					<span class="att" data-nativebgkey='<%="<%= att %\>"%>' data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+					<span class="star" data-nativebgkey='<%="<%= star %\>"%>' data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+					<span class="rank" data-nativebgkey='<%="<%= frame %\>"%>' data-src='resource/image_native/card/frame/<%="<%= frame %\>"%>.png'></span>
+					<img data-nativeimgkey='card_<%="<%= model.card.cardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= model.card.cardId %\>"%>_f.png'>
+					<span class="bg" data-nativebgkey='<%="<%= bg %\>"%>' data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+				</div>
+			<%='<%break;case "PIECE" :%\>'%>
+			<%='<%      case "MAXPIECE" :%\>'%>
+				<div class="pieceIcon <%='<%= model.piece.rank %\>'%>">
+					<img data-nativeimgkey="memoria_<%='<%= model.piece.pieceId %\>'%>_s" data-src="resource/image_native/memoria/memoria_<%='<%= model.piece.pieceId %\>'%>_s.png">
+				</div>
+			<%='<%break;case "ITEM" :%\>'%>
+				<div class="itemIcon">
+					<%='<% var subPath = (model.item.itemCode.indexOf("EVENT_") > -1) ? "event/" : "main/"; %\>'%>
+					<img src="/magica/resource/image_web/item/<%='<%= subPath %\>'%><%='<%= model.item.itemCode.toLowerCase() %\>'%>.png">
+				</div>
+			<%='<%break;case "GIFT" :%\>'%>
+				<div class="giftIcon">
+					<img data-nativeimgkey='gift_<%='<%= model.gift.id %\>'%>' data-src='resource/image_native/gift/item_gift_<%='<%= model.gift.id %\>'%>.png'>
+				</div>
+			<%='<%break;case "LIVE2D" :%\>'%>
+				<div class="itemIcon">
+				<div class="charaIcon">
+					<div class="maskWrap">
+						<img data-nativeimgkey='mini_<%="<%= model.chara.id %\>00"%>_d' data-src='resource/image_native/mini/image/mini_<%="<%= model.chara.id %\>00"%>_d.png'>
+					</div>
+				</div>
+				<img src='/magica/resource/image_web/item/main/live2d.png' alt='' class="itemImage">
+				</div>
+			<%='<%break;case "SET" :%\>'%>
+				<div class="itemIcon">
+					<img src="/magica/resource/image_web/item/set/<%='<%= model.genericId.toLowerCase() %\>'%>.png">
+				</div>
+			<%='<%break;case "FORMATION_SHEET" :%\>'%>
+			<%='<% var sheet = model.formationSheet; %\>'%>
+				<div class="shopFormation">
+					<div class="formationBase">
+						<div class="formationInner">
+							<%='<% for(var i=1;i<10;i++){ %\>'%>
+							<div class="formation<%='<%= i %\>'%> cols<%='<% if(sheet["place"+i]){ %\>'%> on<%='<% } %\>'%>"></div>
+							<%='<% } %\>'%>
+						</div>
+					</div>
+				</div>
+			<%='<%break;case "GEM" :%\>'%>
+				<div class="itemIcon">
+					<img data-nativeimgkey="chara_<%='<%= model.genericId %\>'%>_h" data-src="resource/image_native/chara/chara_<%='<%= model.genericId %\>'%>_h.png">
+				</div>
+			<%='<%break;}%\>'%>
+
+			<!-- アイテム価格 -->
+			<div class="useCost">
+				<%='<% if(purchasedFlg){ %\>'%>
+					<img src="/magica/resource/image_web/common/icon/icon_purchased.png" class="purchasedIcon">
+				<%='<% } %\>'%>
+				<img src="/magica/resource/image_web/common/icon/<%='<%= costImage %\>'%>" class="costIcon">
+				<span class="pointFrame"><%='<%= model.needNumber %\>'%></span>
+			</div>
+
+			<!-- アイテム説明 -->
+			<div class="popDescription"><%='<%= model.description %\>'%></div>
+
+			<!-- 所持数 -->
+			<%='<% console.log(model) %\>'%>
+			<%='<% if((model.shopItemType !== "SET" || (model.shopItemType === "SET" && model.rewardCode.indexOf(",") === -1 && model.rewardCode.indexOf("RICHE") === -1　&& model.rewardCode.indexOf("CARD") != 0)) && model.shopItemType !== "PIECE" && model.shopItemType !== "MAXPIECE"){ %\>'%>
+			<div class="hasCount"><span class="hasLeft">Stock</span><span class="hasAmount"></span></div>
+			<%='<% } %\>'%>
+		</div>
+
+		<!-- 追加情報 -->
+		<div class="tradeInfo">
+			<dl class="common_dl limit_dl">
+				<dt>Expires</dt>
+				<dd class="itemLimit"><%='<% if(model.endAt){%\>'%><%='<%= model.endAt.substr(5,11) %\>'%><%='<% }else{ %\>'%>-<%='<% } %\>'%></dd>
+			</dl>
+			<dl class="common_dl amount_dl">
+				<dt>Stock</dt>
+				<dd class="itemAmountNumber"><%='<% if(model.limitedNumber){ %\>'%><%='<%=model.limitedNumber %\>'%>/<%='<%=model.limitedNumber %\>'%><%='<% }else{ %\>'%>-<%='<% } %\>'%></dd>
+			</dl>
+		</div>
+
+		<!-- 数量選択 -->
+		<div class="amountSelectWrap">
+			<span class="titles c_gold">Exchange: </span>
+			<div id="amountMinus" class="TE se_decide off"><span class='b_screen'></span></div>
+			<div id="amountPlus" class="TE se_decide<%='<% if(maxNumber < 2){%\>'%> off<%='<% }%\>'%>"><span class='b_screen'></span></div>
+			<div class="amountNums">
+				<span id="amountSelects">1</span>/<span id="amountMax"><%='<%= maxNumber %\>'%></span>
+			</div>
+			<div class="btn sb_gold_02 se_decide TE maxBtn<%='<% if(maxNumber < 2){%\>'%> off<%='<% }%\>'%>"><span class="b_screen"></span>MAX</div>
+		</div>
+
+		<!-- 価格と通貨所持数 -->
+		<div class="costWrap">
+			<div class="useCost">
+				<%='<% if(purchasedFlg){ %\>'%>
+					<img src="/magica/resource/image_web/common/icon/icon_purchased.png" class="purchasedIcon">
+				<%='<% } %\>'%>
+				<img src="/magica/resource/image_web/common/icon/<%='<%= costImage %\>'%>" class="costIcon">
+				<span class="pointFrame" id="totalCost"><%='<%= model.needNumber %\>'%></span>
+			</div>
+			<div class="costHasNum<%='<% if(setVal < model.needNumber){%\> lessNum<% } %\>'%>">
+				<%='<% if(purchasedFlg){ %\>'%>
+					<img src="/magica/resource/image_web/common/icon/icon_purchased.png" class="purchasedIcon">
+				<%='<% } %\>'%>
+				<img src="/magica/resource/image_web/common/icon/<%='<%= costImage %\>'%>" class="costIcon">
+				<span class="pointFrame"><%='<%= setVal %\>'%></span>
+			</div>
+		</div>
+
+		<div class="shopBtnWrap">
+			<span class="btn b_white popupCloseBtn se_cancel TE"><span class="b_screen"></span>Cancel</span>
+			<span class="btn shopPopBtn se_decide TE b_pink<%='<% if(maxNumber < 1){%\>'%> off<%='<% }%\>'%>" id="purchaseDecide"><span class="b_screen"></span>Buy</span>
+		</div>
+	</div>
+</script>
+
+<!-- 購入完了ポップアップ -->
+<script type="text/template" id="completePop">
+Purchased <%='<%= itemName %\>'%>.<br>
+
+<!-- アイテム画像 -->
+<%='<% switch(model.shopItemType){case "CARD": %\>'%>
+	<div class="userCharaIcon <%='<%= model.card.rank %\>'%> <%='<%= model.card.attributeId %\>'%>">
+		<%="<% att = 'att_' + model.card.attributeId.toLowerCase(); %\>"%>
+		<%="<% star = 'star_' + model.card.rank.toLowerCase(); %\>"%>
+		<%="<% frame = 'frame_' + model.card.rank.toLowerCase(); %\>"%>
+		<%="<% bg = 'bg_' + model.card.attributeId.toLowerCase(); %\>"%>
+		<span class="att" data-nativebgkey='<%="<%= att %\>"%>' data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+		<span class="star" data-nativebgkey='<%="<%= star %\>"%>' data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+		<span class="rank" data-nativebgkey='<%="<%= frame %\>"%>' data-src='resource/image_native/card/frame/<%="<%= frame %\>"%>.png'></span>
+		<img data-nativeimgkey='card_<%="<%= model.card.cardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= model.card.cardId %\>"%>_f.png'>
+		<span class="bg" data-nativebgkey='<%="<%= bg %\>"%>' data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+	</div>
+<%='<%break;case "PIECE" :%\>'%>
+<%='<%      case "MAXPIECE" :%\>'%>
+	<div class="pieceIcon <%='<%= model.piece.rank %\>'%>">
+		<img data-nativeimgkey="memoria_<%='<%= model.piece.pieceId %\>'%>_s" data-src="resource/image_native/memoria/memoria_<%='<%= model.piece.pieceId %\>'%>_s.png">
+	</div>
+<%='<%break;case "ITEM" :%\>'%>
+	<div class="itemIcon">
+		<%='<% var subPath = (model.item.itemCode.indexOf("EVENT_") > -1) ? "event/" : "main/"; %\>'%>
+		<img src="/magica/resource/image_web/item/<%='<%= subPath %\>'%><%='<%= model.item.itemCode.toLowerCase() %\>'%>.png">
+	</div>
+<%='<%break;case "GIFT" :%\>'%>
+	<div class="giftIcon">
+		<img data-nativeimgkey='gift_<%='<%= model.gift.id %\>'%>' data-src='resource/image_native/gift/item_gift_<%='<%= model.gift.id %\>'%>.png'>
+	</div>
+<%='<%break;case "SET" :%\>'%>
+	<div class="itemIcon">
+		<img src="/magica/resource/image_web/item/set/<%='<%= model.genericId.toLowerCase() %\>'%>.png">
+	</div>
+<%='<%break;case "LIVE2D" :%\>'%>
+	<div class="itemIcon">
+	<div class="charaIcon live2d">
+		<div class="maskWrap">
+			<img data-nativeimgkey='mini_<%="<%= model.chara.id %\>00"%>_d' data-src='resource/image_native/mini/image/mini_<%="<%= model.chara.id %\>00"%>_d.png'>
+		</div>
+	</div>
+	<img src='/magica/resource/image_web/item/main/live2d.png' alt='' class="itemImage">
+	</div>
+<%='<%break;case "FORMATION_SHEET" :%\>'%>
+<%='<% var sheet = model.formationSheet; %\>'%>
+	<div class="shopFormation">
+		<div class="formationBase">
+			<div class="formationInner">
+				<%='<% for(var i=1;i<10;i++){ %\>'%>
+				<div class="formation<%='<%= i %\>'%> cols<%='<% if(sheet["place"+i]){ %\>'%> on<%='<% } %\>'%>"></div>
+				<%='<% } %\>'%>
+			</div>
+		</div>
+	</div>
+<%='<%break;case "GEM" :%\>'%>
+	<div class="itemIcon">
+		<img data-nativeimgkey="chara_<%='<%= model.genericId %\>'%>_h" data-src="resource/image_native/chara/chara_<%='<%= model.genericId %\>'%>_h.png">
+	</div>
+<%='<%break;}%\>'%>
+
+<!-- アイテム所持数 -->
+<%='<% if(hasNum && (model.shopItemType !== "MAXPIECE" && model.shopItemType !== "PIECE")){%\>'%>
+<span class="pointFrame completeQuantity"><%='<%= hasNum %\>'%></span>
+<%='<% } %\>'%>
+
+<!-- 魔法少女以外は直接付与 -->
+<%='<% if(model.shopItemType === "CARD" || (model.shopItemType === "SET" && model.rewardCode.indexOf("CARD") == 0)){ %\>'%>
+<br><span class="completePurchase">※Please withdraw from your Present Box.</span>
+<%='<% } else { %\>'%>
+<br><span class="completePurchase">※Purchased Item(s) can be found in your Inventory.</span>
+<%='<% } %\>'%>
+</script>

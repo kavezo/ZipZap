@@ -1,0 +1,100 @@
+<div id='SearchQuest'>
+	<ul class="tabBtns common_tab t_pink">
+		<li class="TE se_tabs" data-type="gift01">Materials</li>
+		<li class="TE se_tabs" data-type="gift02">Orbs/Books</li>
+	</ul>
+
+	<div id='itemWrap' class='commonFrame1'>
+		<h2></h2>
+		<div id="itemScrollWrap">
+			<div class="itemScrollInner">
+				<div class='gift01'></div>
+				<div class='gift02'></div>
+			</div>
+		</div>
+	</div>
+
+	<div id="questWrap" class='commonFrame1'>
+		<!-- <div class='orderTypeBtn sb_gold_02 TE se_tabs'></div> -->
+		<div class='orderBtn TE se_tabs'></div>
+		<h2>Quests</h2>
+		<div id="questScrollWrap">
+			<div class='defaultText'>
+				<p class='ts_white'>Tap an Item to see which<br>Quests it can drop in.</p>
+				<p class='c_red'>Only completed Quests will be displayed.</p>
+			</div>
+			<div class='questNoneText hide'>
+				<p class='ts_white'>No Applicable Quests</p>
+			</div>
+			<ul class="questScrollInner">
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!--  -->
+<script type="text/template" id="GiftParts">
+	<span class='quantityIcon'></span>
+	<img data-nativeimgkey='gift_<%="<%= model.id %\>"%>' data-src='resource/image_native/gift/item_gift_<%="<%= model.id %\>"%>.png'>
+	<span class='giftName'><%="<%= model.name %\>"%></span>
+	<span class='quantity'><%="<%= model.quantity %\>"%></span>
+</script>
+
+<!--  -->
+<script type="text/template" id="">
+	<%="<%= model. %\>"%>
+	<%="<% console.log('') %\>"%>
+	<%="<% if() { %\>"%>
+	<%="<% } %\>"%>
+</script>
+
+<!-- クエストパーツ -->
+<script type="text/template" id="QuestListParts">
+	<%="<% if(model.searchViewObj.limitTurn) { %\>"%>
+		<div class='limitTurnIcon'></div>
+	<%="<% } %\>"%>
+	<%="<% if(model.searchViewObj.isHard) { %\>"%>
+		<div class='challengeIcon'></div>
+	<%="<% } %\>"%>
+
+	<p class='pointFrame difficulty'>
+		Difficulty&nbsp;
+		<span><%="<%= model.searchViewObj.difficulty %\>"%></span>
+	</p>
+	<p class='pointFrame ap'>
+		AP Cost
+		<span class=' <%="<%= (model.searchViewObj.halfAp) ? 'ts_pink' : '' %\>"%>'>
+			<%="<%= (model.searchViewObj.halfAp) ? model.searchViewObj.halfAp : model.searchViewObj.ap %\>"%>
+		</span>
+	</p>
+
+	<%="<% if(model.searchViewObj.chara && model.searchViewObj.chara.name){ %\>"%>
+		<div class='charaQuestTitle'>
+			<span class="charaName"><%="<%= model.searchViewObj.chara.name %\>"%></span>
+			<%="<% if(model.searchViewObj.chara.title){ %\>"%>
+				<span class="charaTitle">(<%="<%= model.searchViewObj.chara.title %\>"%>)</span>
+			<%="<% } %\>"%>
+		</div>
+	<%="<% } %\>"%>
+
+	<div class='title'>
+		<%="<% if(model.searchViewObj.chapterNoForView){ %\>"%>
+			<span class="chapterNo">Ch.<%="<%= model.searchViewObj.chapterNoForView %\>"%>:</span>
+		<%="<% } %\>"%>
+		<%="<% if(!model.searchViewObj.chara || (model.searchViewObj.chara && !model.searchViewObj.live2d)){console.log(model.searchViewObj) %\>"%>
+			Ep. <span class="sectionNo"><%="<%= model.searchViewObj.genericIndex %\>"%></span>
+		<%="<% } else { %\>"%>
+			<span class="sectionNo"><%="<%= model.searchViewObj.live2d.description %\>"%></span>
+		<%="<% } %\>"%>
+	</div>
+	<span class="questTitle c_white">BATTLE <%="<%= model.questBattle.sectionIndex %\>"%></span>
+
+	<span class="touchObj"></span>
+</script>
+
+
+
+
+
+
+

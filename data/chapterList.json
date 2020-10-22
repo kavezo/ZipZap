@@ -1,0 +1,156 @@
+[
+    {
+        "chapterId": 11,
+        "chapterNo": 1,
+        "chapterNoForView": "1",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 3,
+        "title": "Iroha: The Beginning"
+    },
+    {
+        "chapterId": 12,
+        "chapterNo": 2,
+        "chapterNoForView": "2",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 5,
+        "title": "The Rule of Ending Friendships"
+    },
+    {
+        "chapterId": 13,
+        "chapterNo": 3,
+        "chapterNoForView": "3",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 7,
+        "title": "Kamihama Rumor Files"
+    },
+    {
+        "chapterId": 14,
+        "chapterNo": 4,
+        "chapterNoForView": "4",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 7,
+        "title": "Guardians of the Uwasa"
+    },
+    {
+        "chapterId": 15,
+        "chapterNo": 5,
+        "chapterNoForView": "5",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 7,
+        "title": "Endless Solitude"
+    },
+    {
+        "chapterId": 16,
+        "chapterNo": 6,
+        "chapterNoForView": "6",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 7,
+        "title": "Memories That Reveal the Truth"
+    },
+    {
+        "chapterId": 17,
+        "chapterNo": 7,
+        "chapterNoForView": "7",
+        "chapterType": "SINGLERAID",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 18,
+        "title": "Awakening to Paradise",
+        "viewParameterMap": {
+            "MAP_HEIGHT": "1",
+            "MAP_WIDTH": "2",
+            "NORMALSECTIONID": "101718"
+        },
+        "viewParameters": "MAP_WIDTH=2;MAP_HEIGHT=1;NORMALSECTIONID=101718"
+    },
+    {
+        "chapterId": 18,
+        "chapterNo": 8,
+        "chapterNoForView": "8",
+        "chapterType": "BRANCH",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 64,
+        "title": "Kamihama, Painted in Fiction",
+        "viewParameterMap": {
+            "NORMALSECTIONID": "101881"
+        },
+        "viewParameters": "NORMALSECTIONID=101881"
+    },
+    {
+        "chapterId": 19,
+        "chapterNo": 9,
+        "chapterNoForView": "9",
+        "chapterType": "BRANCH",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 46,
+        "title": "Closing In on Fendt Hope",
+        "viewParameterMap": {
+            "NORMALSECTIONID": "101972"
+        },
+        "viewParameters": "NORMALSECTIONID=101972"
+    },
+    {
+        "chapterId": 20,
+        "chapterNo": 10,
+        "chapterNoForView": "10",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "MAIN",
+        "sectionCount": 5,
+        "title": "Dawn of a Shallow Dream"
+    },
+    {
+        "chapterId": 52,
+        "chapterNo": 2,
+        "chapterNoForView": "2",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "SUB",
+        "sectionCount": 2,
+        "title": "Odd One Out"
+    },
+    {
+        "chapterId": 53,
+        "chapterNo": 3,
+        "chapterNoForView": "3",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "SUB",
+        "sectionCount": 3,
+        "title": "It Looks Just Like Us"
+    },
+    {
+        "chapterId": 54,
+        "chapterNo": 4,
+        "chapterNoForView": "4",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "SUB",
+        "sectionCount": 3,
+        "title": "The City She Told Me About"
+    },
+    {
+        "chapterId": 55,
+        "chapterNo": 5,
+        "chapterNoForView": "5",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "SUB",
+        "sectionCount": 3,
+        "title": "A Fascinating Secret"
+    }
+]

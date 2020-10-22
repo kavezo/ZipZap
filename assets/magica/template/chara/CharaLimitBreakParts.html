@@ -1,0 +1,58 @@
+<div class="topWrap">
+	<img src="/magica/resource/image_web/page/chara/text_limitbreak.png" alt="">
+</div>
+
+<div class="imgWrap">
+	<img data-nativeimgkey="chara_<%= model.charaId %>_h"
+	     data-src="resource/image_native/chara/chara_<%= model.charaId %>_h.png">
+
+	<p class="numWrap c_white">
+		<span class="hasNum <%= (model.canSet) ? 'ts_pink' : 'ts_gold' %>"><%= model.hasNum %></span>
+		<span class="sla ts_gold">/</span>
+		<span class="needNum ts_gold"><%= model.needNum %></span>
+	</p>
+
+	<div class="revWrap <%= (model.canSet) ? 'canSet' : '' %>">
+		<p class='c_gold'>Magic Lvl.</p>
+		<ul class="flexBox revisionIcon">
+			<% var i = 0;%>
+			<% var RevisionMax = 3;%>
+
+			<% var onNum = model.revision;%>
+			<% var noneNum = RevisionMax - onNum;%>
+
+			<% while(i < onNum) {%>
+				<li class="on"></li>
+				<% i=(i+1)|0; %>
+			<% } %>
+
+			<% i = 0;%>
+			<% while(i < noneNum) {%>
+				<li class='off'></li>
+				<% i=(i+1)|0; %>
+			<% } %>
+		</ul>
+	</div>
+	<% if(model.revision !== 3) { %>
+		<div class='canRevWrap <%= (model.canSet) ? 'canSet' : '' %>'>
+			<p class='c_gold'>Memoria Slots<span class='icon'></span><span class='c_red'>+1</span></p>
+		</div>
+	<% } %>
+
+</div>
+
+<div class="bottomWrap">
+	<% if(model.revision == 3) { %>
+		<p class="equipCaution ts_white c_purple">Extra Destiny Gems can be converted into Magia Chips.</p>
+		<div id="convertGemBtn" class="cGem se_decide TE<%= (model.hasNum > 0) ? '' : ' off' %>">
+			<span></span>
+		</div>
+		<% if(model.canCrystal) { %>
+			<div class="crystalPop"></div>
+		<% } %>
+	<% } else { %>
+		<div id='mainBtn' class="lbBtn se_decide TE <%= (model.canSet) ? '' : 'off' %>">
+			<span class='ts_pink'>Unlock Magic</span>
+		</div>
+	<% } %>
+</div>

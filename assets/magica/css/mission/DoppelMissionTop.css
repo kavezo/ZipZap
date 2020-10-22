@@ -1,0 +1,247 @@
+/* DoppelMissionAnimation */
+.doppelMissionAnimationDom {
+  width: 100%;
+  height: 100%; }
+.doppelMissionAnimationDom.allAnimationFadeOut .animDoms {
+    -webkit-animation: .4s allAnimationFadeOut 0s linear 1 normal; }
+.doppelMissionAnimationDom .animDoms {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+    z-index: 3; }
+.doppelMissionAnimationDom .animDoms .animTitle {
+  width: 564px;
+  height: 82px;
+      background: url("/magica/resource/image_web/page/mission/doppelMission/common/anim_title.png");
+  position: absolute;
+  top: -webkit-calc(50% - 72px);
+  left: 230px;
+  -webkit-animation: .25s doppelMissionTitle ease-in-out .167s 1 normal;
+  z-index: 5;
+      -webkit-animation-fill-mode: both; }
+.doppelMissionAnimationDom .animDoms .animComplete {
+  width: 332px;
+  height: 60px;
+      background: url("/magica/resource/image_web/page/mission/doppelMission/common/anim_complete.png");
+  position: absolute;
+  top: -webkit-calc(50% + 32px);
+  left: 346px;
+  -webkit-animation: .25s doppelComplete ease-in-out .167s 1 normal;
+  z-index: 4;
+      -webkit-animation-fill-mode: both; }
+.doppelMissionAnimationDom .animDoms .animMarks {
+  opacity: 1;
+      z-index: 3; }
+.doppelMissionAnimationDom .animDoms .animMarks .animMark, .doppelMissionAnimationDom .animDoms .animMarks .animMarkBase {
+  width: 396px;
+  height: 396px;
+        background: url("/magica/resource/image_web/page/mission/doppelMission/common/anim_doppel_mark.png");
+  position: absolute;
+  top: -webkit-calc(50% - 198px);
+  left: 314px;
+        opacity: 0; }
+.doppelMissionAnimationDom .animDoms .animMarks .animMark {
+  -webkit-animation: .4s doppelMark .417s 1 normal;
+  -webkit-animation-timing-function: ease-in, ease-out;
+        opacity: 0;
+        z-index: 2; }
+.doppelMissionAnimationDom .animDoms .animMarks .animMarkBase {
+  -webkit-animation: .167s animMarkBase linear .0s 1 normal;
+  opacity: .2;
+  z-index: 1;
+        -webkit-animation-fill-mode: both; }
+.doppelMissionAnimationDom #missionClearBg {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/quest/animation/clear_mask.png") left center no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearMaskFadeIn linear .0s 1 normal;
+  opacity: 0;
+  z-index: 2;
+    -webkit-animation-fill-mode: both; }
+.doppelMissionAnimationDom #missionClearMaskBg {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearBgMaskFadeIn linear .0s 1 normal;
+  opacity: 0;
+  z-index: 1;
+    -webkit-animation-fill-mode: both; }
+
+@-webkit-keyframes doppelMissionTitle {
+  0% {
+    -webkit-transform: translateY(-40px) translateZ(0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0) translateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes doppelComplete {
+  0% {
+    -webkit-transform: translateY(40px) translateZ(0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0) translateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes doppelMark {
+  0% {
+    -webkit-transform: scaleX(1) scaleY(1);
+    opacity: .8; }
+  75% {
+    -webkit-transform: scaleX(1.4) scaleY(1.4);
+    opacity: .2; }
+  100% {
+    -webkit-transform: scaleX(1.8) scaleY(1.8);
+    opacity: .0; } }
+
+@-webkit-keyframes allAnimationFadeOut {
+  0% {
+    -webkit-transform: scaleY(1);
+    opacity: 1; }
+  60%, 100% {
+    -webkit-transform: scaleY(0);
+    opacity: 0; } }
+
+@-webkit-keyframes animMarkBase {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: .2; } }
+
+@-webkit-keyframes clearBgMaskFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: .6; } }
+
+.missionPop .popupTextArea {
+  height: 240px !important; }
+
+#DoppelMissionTop {
+  width: 1024px;
+  height: 100%;
+  overflow: hidden; }
+#DoppelMissionTop #scrollWrap {
+  width: 743px;
+  height: -webkit-calc(100% - 166px);
+  position: absolute;
+  top: 166px;
+  right: 15px;
+  overflow: hidden;
+    z-index: 1000; }
+#DoppelMissionTop #scrollWrap .scrollInner {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+      padding-bottom: 240px; }
+#DoppelMissionTop #scrollWrap .scrollInner .noMission {
+  width: 430px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+        top: 157px;
+  left: 152px;
+        color: #ffffff;
+        font-size: 22px;
+        line-height: 36px;
+        text-align: center;
+        -webkit-border-radius: 18px; }
+#DoppelMissionTop #scrollWrap .scrollInner .challenge {
+  width: 728px;
+  height: 114px;
+  margin-bottom: 6px;
+  background: url("/magica/resource/image_web/page/mission/doppelMission/common/bg_doppel_mission_list.png") left top no-repeat;
+        position: relative; }
+#DoppelMissionTop #scrollWrap .scrollInner .challenge .clearIcon {
+  width: 66px;
+  height: 68px;
+  background: url("/magica/resource/image_web/page/mission/mission_clear.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+          z-index: 10; }
+#DoppelMissionTop #scrollWrap .scrollInner .challenge .imgWrap {
+  position: absolute;
+  top: 16px;
+  left: 25px;
+          z-index: 5; }
+#DoppelMissionTop #scrollWrap .scrollInner .challenge .imgWrap img {
+  width: 82px;
+            height: 82px; }
+#DoppelMissionTop #scrollWrap .scrollInner .challenge .imgWrap .itemNum {
+  position: absolute;
+  right: -2px;
+  bottom: -10px;
+            font-size: 18px; }
+#DoppelMissionTop #scrollWrap .scrollInner .challenge .btn {
+  width: 170px;
+  min-width: 150px;
+  position: absolute;
+  top: 25px;
+          right: 20px; }
+#DoppelMissionTop #scrollWrap .scrollInner .challenge .textWrap {
+  width: 430px;
+  position: absolute;
+  top: 26px;
+          left: 120px; }
+#DoppelMissionTop #scrollWrap .scrollInner .challenge .textWrap p {
+  color: #904953;
+  font-size: 21px;
+            line-height: 32px; }
+#DoppelMissionTop .titleWrap {
+  width: 486px;
+  height: 162px;
+  position: absolute;
+  top: 12px;
+  left: 174px;
+    z-index: 10; }
+#DoppelMissionTop .gaugeWrap {
+  width: 364px;
+  height: 84px;
+    background: url("/magica/resource/image_web/page/mission/doppelMission/common/bg_progress_a.png") left top no-repeat;
+  position: absolute;
+  top: 76px;
+  right: 0;
+    z-index: 10; }
+#DoppelMissionTop .gaugeWrap .gaugeOuter {
+  width: 314px;
+  height: 16px;
+  position: absolute;
+  top: 46px;
+      right: 16px; }
+#DoppelMissionTop .gaugeWrap .gaugeOuter .gaugeInner {
+  height: 100%;
+  overflow: hidden;
+        -o-transition: width 300ms 0s ease-in;
+        transition: width 300ms 0s ease-in;
+        -webkit-transition: width 300ms 0s ease-in;
+        -webkit-transform: translate3d(0);
+        transform: translate3d(0); }
+#DoppelMissionTop .gaugeWrap .gaugeOuter .gaugeInner .bg {
+  width: 314px;
+  height: 100%;
+          background: url("/magica/resource/image_web/page/mission/doppelMission/common/progress_gauge_l.png") left top no-repeat, url("/magica/resource/image_web/page/mission/doppelMission/common/progress_gauge_r.png") right top no-repeat, url("/magica/resource/image_web/page/mission/doppelMission/common/progress_gauge_c.png") left top repeat-x; }
+#DoppelMissionTop .gaugeWrap .cntWrap {
+  position: absolute;
+  top: 22px;
+  right: 18px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1;
+      z-index: 10; }
+#DoppelMissionTop .charaImg {
+  width: 178px;
+  height: 178px;
+  position: absolute;
+  top: -60px;
+  left: 625px;
+    z-index: 1; }

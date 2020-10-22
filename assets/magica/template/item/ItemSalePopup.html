@@ -1,0 +1,72 @@
+<span class="messageWrapExchangeDestinyGems<% if(isCrystal){ %> isCrystal<% } %>">Select how many Destiny Gems you would<br>like to be converted into Magia Chips.</span>
+<div id="saleSelectWrap" class="commonFrame3">
+	<div class="gemImage">
+		<img data-nativeimgkey="chara_<%= model.charaId %>_h" data-src="resource/image_native/chara/chara_<%= model.charaId %>_h.png">
+</div>
+	<div id="itemNumSelectWrap">
+		<div class="se_decide TE minusBtn grayScale"><span class="b_screen"></span></div>
+		<div class="selectNumberWrap">
+			<span class="selectNum">1</span>/<span class="maxNum"><%=model.quantity %></span>
+		</div>
+		<div class="se_decide TE plusBtn"><span class="b_screen"></span></div>
+	</div>
+	<div class="btn sb_gold_02 se_decide TE maxBtn"><span class="b_screen"></span>MAX</div>
+</div>
+<div class="arrowMark"></div>
+<% if(!isCrystal){ %>
+<div class="itemPopMiniWrap commonFrame4">
+	<div class="itemImg">
+		<img src="/magica/resource/image_web/item/main/prism.png">
+	</div>
+	<div class="popNameMiniWrap">Magia Chip</div>
+<div class="afterPoint"><span class="pointFrame" id="totalNum"><%= model.saleFactor %></span></div>
+	<div class="hasCount c_gold">(Stock&nbsp;<%= hasPrism %>)</div>
+</div>
+<% }else{ %>
+	<div class="itemPopMiniWrap commonFrame4 isCrystal">
+		<div class="itemImg">
+			<img src="/magica/resource/image_web/item/main/prism.png">
+		</div>
+		<div class="popNameMiniWrap"><%= prism.name %></div>
+		<div class="afterPoint"><span class="pointFrame" id="totalNum"><%= model.saleFactor %></span></div>
+		<div class="hasCount c_gold">(Stock&nbsp;<%= hasPrism %>)</div>
+
+		<div class="partition"></div>
+		<div class="itemImg crystal">
+			<img src="/magica/resource/image_web/item/main/destiny_crystal.png">
+		</div>
+		<div class="popNameMiniWrap crystal"><%= crystal.name %></div>
+		<div class="afterPoint crystal"><span class="pointFrame" id="crystalTotalNum">1</span></div>
+		<div class="hasCount c_gold crystal">(Stock&nbsp;<%= hasCrystal %>)</div>
+	</div>
+<% } %>
+<div class="btn se_cancel b_white popupCloseBtn saleCancel TE"><span class="b_screen"></span>Cancel</div>
+<div class="btn se_decide b_pink TE" id="saleDecide"><span class="b_screen"></span>Exchange</div>
+
+<script type="text/template" id="saleComplete">
+	<%='<%= selectNum %\>'%>
+	<%='<% var displayNames = model.dispName; %\>'%>
+	<%='<% if(model.dispTitle){ %\>'%>
+		<%='<% displayNames += (" " + model.dispTitle); %\>'%>
+	<%='<% } %\>'%>
+	<%='<%= displayNames %\>'%><br>Destiny Gem(s) have been successfully exchanged.<br>
+	<div class="prismWrap commonFrame4">
+		<div class="itemImg">
+			<img src="/magica/resource/image_web/item/main/prism.png">
+		</div>
+		<div class="popNameMiniWrap"><%='<%= prism.name %\>'%></div>
+		<div class="popDescription"><%='<%= prism.description %\>'%></div>
+		<div class="hasCount"><span class="hasLeft">Exchange</span><span class="hasQuantity"><%='<%= afterNum %\>'%></span></div>
+	</div>
+	<%='<% if(isCrystal){ %\>'%>
+		<div class="crystalWrap commonFrame4">
+			<div class="itemImg">
+				<img src="/magica/resource/image_web/item/main/destiny_crystal.png">
+			</div>
+			<div class="popNameMiniWrap"><%='<%= crystal.name %\>'%></div>
+			<div class="popDescription"><%='<%= crystal.description %\>'%></div>
+			<div class="hasCount"><span class="hasLeft">Stock</span><span class="hasQuantity"><%='<%= afterCrystal %\>'%></span></div>
+		</div>
+	<%='<% } %\>'%>
+	<span class="afterText">※Item(s) can be found in your inventory.</span>
+</script>

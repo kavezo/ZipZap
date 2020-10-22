@@ -1,0 +1,90 @@
+<div id="SectionClearAnimation">
+	<% console.log(this) %>
+
+	<div id="whiteOut"></div>
+	<div id="sectionClear_b"></div>
+	<div id="sectionClear_b2"></div>
+	<div id="sectionClear_s"></div>
+	<div id="sectionClear_base"></div>
+	<div id="sectionClear_light"></div>
+	<div id="itemPetal1"></div>
+	<div id="itemPetal2" class="sectionAnimation"></div>
+	<div id="sectionChestLight"></div>
+	<div id="sectionChestOpen" class="sectionAnimation">
+		<img src="/magica/resource/image_web/common/treasure/<%= chestColor.toLowerCase() %>_open.png">
+	</div>
+	<div id="sectionChest">
+		<img src="/magica/resource/image_web/common/treasure/<%= chestColor.toLowerCase() %>_close.png">
+	</div>
+	<div id="sectionChest2">
+		<img src="/magica/resource/image_web/common/treasure/<%= chestColor.toLowerCase() %>_close.png">
+	</div>
+
+	<!-- アイテム画像 -->
+	<div id="sectionItemIcon">
+		<% if(rewardType == 'live2d' || rewardType == 'doppel') { %>
+			<div class="imgWrap">
+				<div class="charaIcon">
+					<div class="maskWrap">
+						<% if(rewardType == 'live2d') { %>
+							<img data-nativeimgkey='mini_<%= itemId.itemCode + "00" %>_d' data-src='resource/image_native/mini/image/mini_<%= itemId.itemCode + "00" %>_d.png'>
+						<% } else if(rewardType == 'doppel') { %>
+							<img data-nativeimgkey='mini_<%= itemId.itemCode %>_d' data-src='resource/image_native/mini/image/mini_<%= itemId.itemCode %>_d.png'>
+						<% } %>
+					</div>
+				</div>
+				<% if(rewardType == 'live2d') { %>
+					<img src='/magica/resource/image_web/item/main/live2d.png' alt=''>
+				<% } else if(rewardType == 'doppel') { %>
+					<img src='/magica/resource/image_web/item/main/doppel.png' alt=''>
+				<% } %>
+			</div>
+		<% } else if(rewardType == 'memoria') { %>
+			<img data-nativeimgkey='<%= itemId.itemCode %>' data-src='resource/image_native/memoria/<%= itemId.itemCode %>.png' alt=''>
+		<% } else if(rewardType == 'gift') { %>
+			<p class='quantity ts_gold'>×<%= quantity %></p>
+			<img data-nativeimgkey='<%= itemId.itemCode %>' data-src='resource/image_native/gift/<%= itemId.itemCode %>.png' alt=''>
+		<% } else if(rewardType == 'gem') { %>
+			<p class='quantity ts_gold'>×<%= quantity %></p>
+			<div class="imgWrap">
+				<img src='/magica/resource/image_web/item/frame/item_frame03.png' alt=''>
+				<img data-nativeimgkey='<%= itemId.itemCode %>' data-src='resource/image_native/chara/<%= itemId.itemCode %>.png' alt=''>
+			</div>
+		<% } else { %>
+			<p class='quantity ts_gold'>×<%= quantity %></p>
+			<img src="/magica/resource/image_web/item/<%= rewardType %>/<%= itemId.itemCode.toLowerCase() %>.png">
+		<% } %>
+	</div>
+
+	<% if(rewardType == 'live2d') { %>
+		<div id='sectionItemDetail'>
+			You got <%= displayName %>.<br>
+			<span class='c_red'>You can change your Magical Girl into this outfit.</span>
+		</div>
+	<% } else if(rewardType == 'doppel') { %>
+		<div id='sectionItemDetail'>
+			Doppel unleashed<br>
+			<span class='c_red'>During a Quest, you can activate a Doppel by using 200 MP.</span>
+		</div>
+	<% } else if(rewardType == 'memoria') { %>
+		<div id='sectionItemDetail'>
+			You got "<%= displayName %>".<br>
+			<span class='c_red'>This Memoria can be found in your Inventory.</span>
+		</div>
+	<% } else if(rewardType == 'gem') { %>
+		<div id='sectionItemDetail'>
+			You got <%= displayName %>'s Destiny Gem(s).<br>
+			<span class='c_red'>The Destiny Gem(s) can be found in your Inventory.</span>
+		</div>
+	<% } else { %>
+		<div id='sectionItemDetail'>
+			You got <%= displayName %>(s).<br>
+			<span class='c_red'>Items can be found in your Inventory.</span>
+		</div>
+	<% } %>
+
+	<div id="itemLight"></div>
+	<div id="magicCircle" class="sectionAnimation"></div>
+	<div id="clearMask"></div>
+	<div id="clearBgMask"></div>
+</div>

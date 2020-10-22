@@ -1,0 +1,23 @@
+<div id="FormationTop">
+<% if(cardId) { %>
+	<div id="charaImgWrap">
+		<img data-nativeimgkey="card_<%= cardId %>_l" data-src="resource/image_native/card/image/card_<%= cardId %>_l.png">
+	</div>
+<% }%>
+<%
+	var arenaLimit = false;
+	if(gameUser){
+		if(gameUser.closeFunctions && gameUser.closeFunctions.indexOf("ARENA") > -1) arenaLimit = true;
+	}
+%>
+	<div class="btnWrap">
+		<div class="formationBtn TE se_decide questBtn linkBtn" data-href="#/DeckFormation">Quest Teams</div>
+		<div class="formationBtn TE se_decide supportBtn linkBtn" data-href="#/DeckFormation/support">Support Team</div>
+		<% if(!arenaLimit){ %>
+		<div class="formationBtn TE se_decide arenaBtn linkBtn" data-href="#/DeckFormation/arena">Mirrors Team</div>
+		<% }else{ %>
+		<div class="formationBtn arenaBtn limited grayScale">Mirrors Team</div>
+		<% } %>
+
+	</div>
+</div>

@@ -1,0 +1,175 @@
+#EnemyCollection {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hide;
+}
+#EnemyCollection .show {
+  -webkit-animation: common_fade_in .2s ease 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+#EnemyCollection .hide {
+  -webkit-animation: common_fade_out .2s ease 0s 1 alternate;
+  pointer-events: none;
+  -webkit-animation-fill-mode: forwards;
+}
+#EnemyCollection .noDisp {
+  display: none;
+}
+#EnemyCollection h1 {
+  width: 300px;
+  height: 52px;
+  background: url("/magica/resource/image_web/page/collection/witch_header.png") left top no-repeat;
+  position: absolute;
+  top: -2px;
+  left: -webkit-calc(50% - 150px);
+  z-index: 10;
+}
+#EnemyCollection #enemyBackBtn {
+  width: 90px;
+  height: 44px;
+  background: url("/magica/resource/image_web/page/collection/btn_doppel_back.png") left top no-repeat;
+  position: absolute;
+  top: 8px;
+  left: 6px;
+  z-index: 100;
+}
+#EnemyCollection #enemyListWrap {
+  height: 100%;
+}
+#EnemyCollection #enemyList {
+  width: -webkit-calc(100% - 90px);
+  height: -webkit-calc(100% - 100px);
+  position: relative;
+  top: 70px;
+  left: 45px;
+  overflow: hidden;
+}
+#EnemyCollection #enemyList .enemyListInner {
+  width: 810px;
+  height: auto;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 20px 0 30px;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  /* Safari */
+  align-content: flex-start;
+}
+#EnemyCollection #enemyList .enemyListInner .enemy {
+  width: 180px;
+  height: 180px;
+  margin: 0 30px 30px 0;
+  position: relative;
+}
+#EnemyCollection #enemyList .enemyListInner .enemy.witch {
+  background: url("/magica/resource/image_web/page/collection/witch_frame.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+#EnemyCollection #enemyList .enemyListInner .enemy.satellite {
+  background: url("/magica/resource/image_web/page/collection/satellite_frame.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+#EnemyCollection #enemyList .enemyListInner .enemy.rumor {
+  background: url("/magica/resource/image_web/page/collection/rumor_frame.png") left top no-repeat;
+  background-size: 100% 100%;
+}
+#EnemyCollection #enemyList .enemyListInner .enemy .idText {
+  position: relative;
+  top: -12px;
+  left: 2px;
+  font-size: 28px;
+  line-height: 1;
+  text-shadow: -1px -1px 1px #ffefc8, 1px -1px 1px #ffefc8, -1px 1px 1px #ffefc8, 1px 1px 1px #ffefc8, -1px -1px #ffefc8, 1px -1px #ffefc8, -1px 1px #ffefc8, 1px 1px #ffefc8, -1px -1px 2px #ffefc8, 1px -1px 2px #ffefc8, -1px 1px 2px #ffefc8, 1px 1px 2px #ffefc8, -1px -1px 2px #ffefc8, 1px -1px 2px #ffefc8, -1px 1px 2px #ffefc8, 1px 1px 2px #ffefc8, -1px -1px 3px #ffefc8, 1px -1px 3px #ffefc8, -1px 1px 3px #ffefc8, 1px 1px 3px #ffefc8;
+}
+#EnemyCollection #enemyList .enemyListInner .enemy .mask {
+  width: 154px;
+  height: 154px;
+  position: absolute;
+  top: -webkit-calc(50% - 77px);
+  left: -webkit-calc(50% - 77px);
+  overflow: hidden;
+  -webkit-border-radius: 100%;
+}
+#EnemyCollection #enemyList .enemyListInner .enemy .mask img {
+  width: 100%;
+  height: 100%;
+}
+#EnemyCollection #enemyList .enemyListInner .enemy.none {
+  background: url("/magica/resource/image_web/page/collection/enemy_none.png") left top no-repeat;
+}
+#EnemyCollection #enemyList .enemyListInner .enemy:nth-child(4n) {
+  margin: 0 0 10px 0;
+}
+#EnemyCollection #enemyDetailWrap {
+  width: 1024px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#EnemyCollection #enemyDetailWrap .idText {
+  position: relative;
+  top: 66px;
+  left: 48px;
+  color: #edd196;
+  font-size: 42px;
+  line-height: 1;
+  text-shadow: -1px -1px 1px #ffefc8, 1px -1px 1px #ffefc8, -1px 1px 1px #ffefc8, 1px 1px 1px #ffefc8, -1px -1px #ffefc8, 1px -1px #ffefc8, -1px 1px #ffefc8, 1px 1px #ffefc8, -1px -1px 2px #ffefc8, 1px -1px 2px #ffefc8, -1px 1px 2px #ffefc8, 1px 1px 2px #ffefc8, -1px -1px 2px #ffefc8, 1px -1px 2px #ffefc8, -1px 1px 2px #ffefc8, 1px 1px 2px #ffefc8, -1px -1px 3px #ffefc8, 1px -1px 3px #ffefc8, -1px 1px 3px #ffefc8, 1px 1px 3px #ffefc8;
+}
+#EnemyCollection #enemyDetailWrap .enemyImg {
+  position: absolute;
+  top: -webkit-calc(50% - 258px);
+  left: 32px;
+}
+#EnemyCollection #enemyDetailWrap .enemyDetail {
+  width: 505px;
+  padding: 0 10px;
+  background: url("/magica/resource/image_web/page/collection/detail_line.png") left bottom repeat;
+  position: absolute;
+  right: 40px;
+  bottom: 67px;
+  color: #261f14;
+  font-size: 13px;
+  line-height: 27px;/*MN*/
+  background-size: auto 27px;/*MN*/
+  background-position-y: 27px;/*MN*/
+}
+#EnemyCollection #enemyDetailWrap .enemyDesigner {
+  position: absolute;
+  right: 42px;
+  bottom: 44px;
+  color: #261f14;
+  font-size: 12px;
+}
+#EnemyCollection #enemyDetailWrap .enemyNameImg {
+  margin: 0 0 13px;/*MN*/
+}
+#EnemyCollection #enemyDetailWrap .nameWrap {
+  position: absolute;
+  top: 30px;/*MN*/
+  right: 40px;
+  font-size: 15px;
+  text-align: right;
+}
+#EnemyCollection #enemyDetailWrap .nameWrap,
+#EnemyCollection #enemyDetailWrap .nameWrap span,
+#EnemyCollection #enemyDetailWrap .nameWrap p {
+  color: #261f14;
+}
+#EnemyCollection #enemyDetailWrap .nameWrap p {
+  padding-right: 12px;
+}
+#EnemyCollection .frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-width: 64px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/page/collection/bg_frame.png") 68 stretch;
+  z-index: 1;
+}

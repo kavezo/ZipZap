@@ -1,0 +1,13 @@
+#presentTabBtnWrap {
+  width: 222px;
+  height: auto;
+  padding: 30px 16px 20px;
+  position: absolute;
+  top: 70px;
+  left: 32px;
+  z-index: 1001; }
+  #presentTabBtnWrap li {
+    /*width: 186px;MN*/
+    margin-bottom: 14px; }
+    #presentTabBtnWrap li.current {
+      pointer-events: none; }

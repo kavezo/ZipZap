@@ -1,0 +1,96 @@
+<div id="ArenaSimulate">
+	<div id="friendLinkBtn" class="linkBtn TE se_decide" data-href="#/FollowTop"></div>
+	<!-- ユーザー情報 -->
+	<div id="userInfoWrap">
+		<!-- ユーザー名 -->
+		<div class="rankNameWrap">
+			<p class="userRank">Rank<%= model.gameUser.level %></p>
+			<p class="userName arenaColor"><%= model.user.loginName %></p>
+		</div>
+
+		<!-- アリーナデッキリーダー画像 -->
+		<div class="userLeader">
+			<%
+				var arenaDeck = _.findWhere(model.userDeckList,{"deckType":21});
+				var leaderCard = _.findWhere(model.userCardList,{"id":(arenaDeck.questEpisodeUserCardId)});
+			%>
+			<img data-nativeimgkey='card_<%= leaderCard.displayCardId %>_l' data-src='resource/image_native/card/image/card_<%= leaderCard.displayCardId %>_l.png'>
+		</div>
+
+		<!-- アリーナデッキ -->
+		<div class="userArenaDeck">
+			<% for(var i=1;i<6;i++){
+				if(arenaDeck["userCardId"+i] && arenaDeck["userCardId"+i] !== arenaDeck.questEpisodeUserCardId){
+					var deckCard = _.findWhere(model.userCardList,{"id":arenaDeck["userCardId"+i]});
+					if(deckCard){ %>
+			<div class="deckIcons">
+				<img data-nativeimgkey='card_<%= deckCard.displayCardId %>_f' data-src='resource/image_native/card/image/card_<%= deckCard.displayCardId %>_f.png'>
+				<div class="deckFrame"></div>
+				<div class="deckBase"></div>
+			</div>
+				<%	}else{ %>
+			<div class="deckIcons">
+				<div class="deckFrame"></div>
+				<div class="deckBase"></div>
+			</div>
+			<%		}
+				}else if(arenaDeck["userCardId"+i] !== arenaDeck.questEpisodeUserCardId){ %>
+			<div class="deckIcons">
+				<div class="deckFrame"></div>
+				<div class="deckBase"></div>
+			</div>
+			<% }
+			}
+			%>
+		</div>
+
+		<!-- チーム力とミラーズポイント -->
+		<div class="userPointInfo">
+			<div class="teamPower arenaColor"><%= model.userArenaBattleMatch.userRatingPoint %></div>
+		</div>
+
+		<div class="vsMark"></div>
+
+		<!-- フッター -->
+		<div id="userInfoBottom">
+			<div class="formationBtn linkBtn se_decide TE" data-href="#/DeckFormation/arena"><span class="b_screen"></span></div>
+		</div>
+	</div>
+
+	<!-- 対戦相手表示 -->
+	<div class="enemySelect">
+		<div id="listSortBtn" class="se_tabs sb_gold_02 TE">
+			<span class="b_screen"></span>
+			Rank
+		</div>
+		<div id="listAscBtn" class="desc TE se_decide"></div>		
+	</div>
+	<div id="matchingWrap">
+		<ul id="matchingList" class="scrollInner"></ul>
+	</div>
+
+	<!-- BPゲージ -->
+	<div id="bpGuageFreeRank" class="bpGuageWrap"></div>
+
+	<!-- グラデーション背景 -->
+	<div class="arenaGradationBg"></div>
+</div>
+
+
+<!-- 対戦相手パーツ -->
+<script type="text/template" id="arenaParts">
+	<p class="enemyRank">Rank<%='<%= model.userRank%\>'%></p>
+	<p class="matchingUserName arenaColor"><%='<%= model.userName %\>'%></p>
+	<p class="arenaRateing arenaColor"><%='<%= model.userRatingPoint %\>'%></p>
+	<div class="enemyInfoBg"></div>
+	<div class="matchingLeader">
+		<img data-nativeimgkey='card_<%="<%= model.leaderUserCard.displayCardId %\>"%>_s' data-src='resource/image_native/card/image/card_<%="<%= model.leaderUserCard.displayCardId %\>"%>_s.png'>
+	</div>
+	<div class="iconWrap">
+		<span class="followIcon"></span>
+		<span class="followerIcon"></span>
+	</div>
+	<%='<% if(!isRanking && model.userArenaBattle.definiteClassRank){ %\>'%>
+		<div class="rankingEmblem rank<%='<%= model.userArenaBattle.definiteClassRank %\>'%>"></div>
+	<%='<% } %\>'%>
+</script>

@@ -1,0 +1,22 @@
+<div id="MemoriaCollection">
+	<div id="memoriaListHeader">
+		<ul id="memoriaListInfo" class="memoriaInfo">
+			<li class="cardCount_2"><span id="info_memoriaCount"></span>/<span id="info_memoriaCapacity"></span></li>
+		</ul>
+	</div>
+	<div id="memoriaWrap" class="commonFrame1">
+		<div id="memoriaScrollWrap" class="memoriaScrollWrap">
+			<div id="memoriaWrapInner" class="memoriaWrapInner"></div>
+		</div>
+	</div>
+</div>
+
+<script type="text/template" id="MemoriaListParts">
+	<div class="cardInner">
+	<%="<% if(model.openFlag) { %\>"%>
+		<img data-nativeimgkey='memoria_<%="<%= model.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%= model.pieceId %\>"%>_s.png' alt=''>
+	<%="<% } else { %\>"%>
+		<span class="notOpen"></span>
+	<%="<% } %\>"%>
+	</div>
+</script>

@@ -1,0 +1,42 @@
+<div id="ArenaHistory">
+	<div id="arenaHistoryWrap">
+		<div class="historyTitle"></div>
+		<div id="historyScroll">
+			<div class="listScrollInner">
+				<% if(history.length > 0){
+					_.each(history,function(_model,index){
+						if(_model.arenaBattleStatus !== "CREATED"){
+							var detail = _model.opponentUserArenaBattleInfo;
+							%>
+				<div class="historyList<% if(_model.arenaBattleType === "RANKING"){ %> ranking<% } %>">
+					<div class="userCharaIcon <%= detail.leaderUserCard.card.rank %> <%= detail.leaderUserCard.card.attributeId %>">
+						<% att = "att_" + detail.leaderUserCard.card.attributeId.toLowerCase() %>
+						<% star = "star_" + detail.leaderUserCard.card.rank.toLowerCase() %>
+						<% frame = "frame_" + detail.leaderUserCard.card.rank.toLowerCase() %>
+						<% bg = "bg_" + detail.leaderUserCard.card.attributeId.toLowerCase() %>
+						<span class="att" data-nativebgkey="<%= att %>" data-src="resource/image_native/card/frame/<%= att %>.png"></span>
+						<span class="star" data-nativebgkey="<%= star %>" data-src="resource/image_native/card/frame/<%= star %>.png"></span>
+						<span class="rank" data-nativebgkey="<%= frame %>" data-src="resource/image_native/card/frame/<%= frame %>.png"></span>
+						<img data-nativeimgkey="card_<%= detail.leaderUserCard.cardId %>_f" data-src='resource/image_native/card/image/card_<%= detail.leaderUserCard.cardId %>_f.png'>
+						<span class="lv"><span><%= detail.leaderUserCard.level %></span></span>
+						<span class="bg" data-nativebgkey="<%= bg %>" data-src="resource/image_native/card/frame/<%= bg %>.png"></span>
+					</div>
+					<div class="infoWrap">
+						<span class="userLevel">Rank<%= detail.userRank %></span>
+						<span class="userName"><%= detail.userName %></span><br>
+					</div>
+					<div class="battleType"></div>
+					<div class="resultMark<% if(_model.arenaBattleStatus !== "WIN"){%> lose<% } %>"></div>
+					<div class="rightWrap">
+						<div class="battleTime arenaColor"><%= _model.createdAt.substr(5,11) %></div>
+						<div class="pointWrap arenaColor">＋ <%= _model.point %>&nbsp;Pts</div>
+					</div>
+				</div>
+				<% 	}});
+				   }else{ %>
+					<p class="noneHistory">No Battle History</p>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>

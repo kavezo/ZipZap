@@ -1,0 +1,7 @@
+	<div class="profileChange">
+		<textarea id="commentInput" class="commonFrame3" maxlength="50" readonly="readonly"><%= model.comment %></textarea><br>
+		<span class="commentNotis c_red">Emojis cannot be used.</span>
+		<div class="textCount"><span id="textCount"><%= model.comment.length %></span>/50</div><br>
+		<div class="btn TE se_cancel b_white popupCloseBtn commentCancel"><span class="b_screen"></span>Cancel</div>
+		<div class="btn TE se_decide b_pink" id="commentDecide"><span class="b_screen"></span>OK</div>
+	</div>

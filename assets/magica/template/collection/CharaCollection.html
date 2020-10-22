@@ -1,0 +1,75 @@
+<div id="CharaCollection">
+	<div id="collectionDetailWrap"></div>
+
+	<div id="collectionListWrap">
+		<div id="tabArea">
+			<ul class="tabBtns">
+				<li class="TE se_tabs current" data-att="ALL"><img src="/magica/resource/image_web/common/chara/att_all.png"></li><!--
+				--><li class="TE se_tabs" data-att="fire"><img src="/magica/resource/image_web/common/chara/att_fire.png"></li><!--
+				--><li class="TE se_tabs" data-att="water"><img src="/magica/resource/image_web/common/chara/att_water.png"></li><!--
+				--><li class="TE se_tabs" data-att="timber"><img src="/magica/resource/image_web/common/chara/att_timber.png"></li><!--
+				--><li class="TE se_tabs" data-att="light"><img src="/magica/resource/image_web/common/chara/att_light.png"></li><!--
+				--><li class="TE se_tabs" data-att="dark"><img src="/magica/resource/image_web/common/chara/att_dark.png"></li><!--
+				--><li class="TE se_tabs" data-att="void"><img src="/magica/resource/image_web/common/chara/att_void.png"></li>
+			</ul>
+		</div>
+		<div id="charaWrap" class="all commonFrame2">
+			<h2>Magical Girls</h2>
+			<div class="hiddenWrap">
+				<div id="charaHiddenWrap">
+					<div id="charaWrapInner" class="charaWrapInner"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- キャラテンプレート -->
+<script type="text/template" id="CharaTemp">
+	<div class="nameWrap">
+		<span class='att <%="<%= model.chara.attributeId %\>"%>'></span>
+		<p class="name">
+			<%="<%= model.chara.name %\>"%>
+			<span class="title"><%="<%= model.chara.title %\>"%></span>
+		</p>
+
+		<p class="kana"><%="<%= model.chara.kana %\>"%></p>
+	</div>
+	<div class="charaIconWrap">
+		<%="<% _.forEach(model.cardList,function(txt){ %\>"%>
+			<%="<% if(!txt.nodata) { %\>"%>
+				<div class='userCharaIcon <%="<%= model.chara.attributeId %\>"%> <%="<%= txt.card.rank %\>"%>'>
+					<%="<% if(txt.openFlag) { %\>"%>
+
+						<%="<% att = 'att_' + txt.card.attributeId.toLowerCase() %\>"%>
+						<%="<% star = 'star_' + txt.card.rank.toLowerCase() %\>"%>
+						<%="<% frame = 'frame_' + txt.card.rank.toLowerCase() %\>"%>
+						<%="<% bg = 'bg_' + txt.card.attributeId.toLowerCase() %\>"%>
+
+						<span class="att"
+						 data-nativebgkey='<%="<%= att %\>"%>'
+						 data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+
+						<span class="star"
+						 data-nativebgkey='<%="<%= star %\>"%>'
+						 data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+
+						<span class="rank"
+						 data-nativebgkey='<%="<%= frame  %\>"%>'
+						 data-src='resource/image_native/card/frame/<%="<%= frame  %\>"%>.png'></span>
+
+						<img data-nativeimgkey='card_<%="<%= txt.cardId  %\>"%>_f'
+						 data-src='resource/image_native/card/image/card_<%="<%= txt.cardId  %\>"%>_f.png'>
+
+						<span class="bg"
+						 data-nativebgkey='<%="<%= bg  %\>"%>'
+						 data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+
+					<%="<% } else { %\>"%>
+						<span class="closed"></span>
+					<%="<% } %\>"%>
+				</div>
+			<%="<% } %\>"%>
+		<%="<% }) %\>"%>
+	</div>
+</script>

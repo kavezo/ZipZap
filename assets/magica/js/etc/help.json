@@ -1,0 +1,638 @@
+{
+    "help": [
+    {
+        "title": "World of<br />Magia Record",
+        "type": "01",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Plot Summary",
+            "text": "A white hospital room...<br />A girl I don't recognize is smiling at me.<br /><br />Something feels familiar... I love her.<br /> <br />Iroha Tamaki has a series of these same dreams every night.<br /> <br />She regains her missing memories when she meets a small Kyubey that appears only in Kamihama.<br /> <br />With the small Kyubey at her side, she joins the other Kamihama Magical Girls.<br />  <br />Not long after, the Magical Girls from Mitakihara also arrive in Kamihama..."
+        },
+        {
+            "id": "02",
+            "title": "Magical Girls",
+            "text": "Magical Girls are girls who have been chosen to fight Witches.<br /><br />In exchange for granting any wish they desire, <br />they become duty-bound to battle Witches."
+        },
+        {
+            "id": "03",
+            "title": "Witches",
+            "text": "Witches are evil creatures that bring calamity. These beings, together with their Familiars, hide in their respective Labyrinths."
+        },
+        {
+            "id": "04",
+            "title": "Grief Seeds",
+            "text": "Grief Seeds cleanse impurities from a Magical Girl's Soul Gem.<br /><br />Grief Seeds are obtained by defeating Witches."
+        },
+        {
+            "id": "05",
+            "title": "Soul Gems",
+            "text": "The source of a Magical Girl’s magic. <br /><br />It becomes tainted when they use their magic, but it can be purified using a Grief Seed."
+        },
+        {
+            "id": "06",
+            "title": "Kyubey",
+            "text": "A magical messenger who grants a single wish to every Magical Girl.\r<br />\r<br />A girl becomes a Magical Girl by making a contract with a Kyubey."
+        },
+        {
+            "id": "07",
+            "title": "Mitakihara City",
+            "text": "A city where some Magical Girls, including Madoka Kaname and Mami Tomoe, live."
+        },
+        {
+            "id": "08",
+            "title": "Kamihama City",
+            "text": "The city where the story takes place. <br />Kamihama City consists of nine wards.<br /> ・Shinsei Ward<br /> ・Mizuna Ward<br /> ・Sankyo Ward<br /> ・Chuo Ward<br /> ・Sakae Ward<br /> ・Kosho Ward<br /> ・Daito Ward<br /> ・Minaminagi Ward<br /> ・Hokuyo Ward"
+        }]
+    },
+    {
+        "title": "Tutorial",
+        "type": "14",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Tutorial [Fate Weave]",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_011.png' alt=''></div><div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_012_a.png' alt=''></div>"
+        },
+        {
+            "id": "02",
+            "title": "Tutorial [Magical Girls]",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_021_a.png' alt=''></div>"
+        },
+        {
+            "id": "03",
+            "title": "Tutorial [Development]",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_031.png' alt=''></div><div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_041.png' alt=''></div><div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_051_a.png' alt=''></div><div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_052_a.png' alt=''></div>"
+        },
+        {
+            "id": "04",
+            "title": "Tutorial [Memoria]",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_061.png' alt=''></div>"
+        },
+        {
+            "id": "05",
+            "title": "Tutorial [Mirrors]",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_071_b.png' alt=''></div>"
+        },
+        {
+            "id": "06",
+            "title": "Tutorial [Editing Supports]",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_081_b.png' alt=''></div>"
+        },
+        {
+            "id": "07",
+            "title": "Tutorial [Editing Teams]",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_091_a.png' alt=''></div><div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_092_a.png' alt=''></div><div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_093.png' alt=''></div><div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_094.png' alt=''></div>"
+        },
+        {
+            "id": "08",
+            "title": "Tutorial [Another Stories]",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_101.png' alt=''></div>"
+        },
+        {
+            "id": "09",
+            "title": "Tutorial [Magical Girl Stories]",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_131.png' alt=''></div>"
+        }]
+    },
+    {
+        "title": "Statuses",
+        "type": "02",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Player Rank",
+            "text": "■Player Rank increases when a Player earns a certain amount of Player EXP from completing Story Quests.<br />・When your Player Rank increases, your AP cap goes up as well. <br />・The cap on the number of friends you can follow also goes up when you reach certain Player Ranks.<br />・When your Player Rank increases, your AP and BP is fully restored."
+        },
+        {
+            "id": "02",
+            "title": "Player EXP",
+            "text": "■Player EXP are points gained by completing Quests. <br />・When you accumulate a certain amount of Player EXP, your Player Rank increases."
+        },
+        {
+            "id": "03",
+            "title": "Curse Chips (CC)",
+            "text": "■Curse Chips (CC) are the currency Magical Girls use.<br /> ・Enhancing Magic and Memoria will cost Curse Chips.<br /> ・You can get Curse Chips through Quest Rewards, or by selling Memoria."
+        },
+        {
+            "id": "04",
+            "title": "AP",
+            "text": "■AP are points that are required to participate in various Quests.<br /> ・The Required amount of AP differs depending on the Quest.<br /> ・You recover 1 AP every 5 minutes.<br /> ・AP can be restored by using AP Potions or Magia Stones.<br /> ・You can exceed your AP cap by using AP Potions or Magia Stones, but you will not continue to recover AP every 5 minutes past the cap."
+        },
+        {
+            "id": "05",
+            "title": "BP",
+            "text": "■BP are points that are required to participate in Mirrors Battles.<br /> ・You will recover 1 BP every 60 minutes.<br /> ・BP can be restored by using BP Potions."
+        },
+        {
+            "id": "06",
+            "title": "Magia Stones",
+            "text": "■Magia Stones are an item you can get in the Shop, as a Present, by completing specific Quests, by defeating specific Enemies, or by clearing specific Quest Missions.<br />They can be used in the Shop, for Fate Weaves, for recovering AP, or for Continuing a Quest when your entire team falls in battle.<br />There are two types of Magia Stones: paid stones and free stones. When you use Magia Stones, free stones are used first."
+        }]
+    },
+    {
+        "title": "Magical Girls",
+        "type": "03",
+        "cols": [
+        {
+            "id": "02",
+            "title": "HP",
+            "text": "■A Magical Girl's Health Stat.<br /><br />When a Magical Girl takes damage in a quest or Mirrors Battle and her HP reaches 0, she falls unconscious and can no longer fight."
+        },
+        {
+            "id": "03",
+            "title": "ATK",
+            "text": "■A Magical Girl’s Attack Power.<br />The higher a Magical Girl's ATK the more damage she inflicts on enemies."
+        },
+        {
+            "id": "04",
+            "title": "DEF",
+            "text": "■A Magical Girl’s Defense Power.<br />The higher a Magical Girl's DEF, the less damage she takes from enemy attacks."
+        },
+        {
+            "id": "05",
+            "title": "Rarity",
+            "text": "■The Rarity indicator for Magical Girls. <br />There are five levels of Rarity indicated by the number of stars.<br />Magical Girls with higher rarity have higher level caps.<br />Some Magical Girls’ Rarity can be raised through Awakening."
+        },
+        {
+            "id": "06",
+            "title": "Types",
+            "text": "■Each Magical Girl falls into one of six types: Attack, Defense, Magia, Heal, Support, and Balance.<br />Each Type has unique characteristics reflected in their stats and Magia."
+        },
+        {
+            "id": "07",
+            "title": "Elements",
+            "text": "■Each Magical Girl has one of five Element types: Flame, Aqua, Forest, Light, and Dark.<br />Each Element has a conflicting relationship with another Element that gives it an advantage or disadvantage to that element."
+        },
+        {
+            "id": "08",
+            "title": "Level",
+            "text": "■Magical Girls have levels.<br />A Magical Girls’ Level can be raised by acquiring Magical Girl EXP through completing Quests or using Enhance Magic.<br />A Magical Girl's Stats (HP, ATK, DEF) increase when she levels up."
+        },
+        {
+            "id": "09",
+            "title": "Connect Skills",
+            "text": "■Connect Skills are special skills that Magical Girls can use during battle.<br />You can activate a Connect Skill when a Magical Girl has the maximum number of Connect Gems on her Disk (3 Gems). <br />※Magical Girls collect Connect Gems when their Disks are used.  <br /><br />You can support oher Magical Girls by activating Connect Skills, which have various effects including Status increases and HP recovery.<br /> <br />Each Magical Girl has a unique Connect Skill that cannot be changed. <br />※A Magical Girl cannot acquire a different Connect Skill."
+        },
+        {
+            "id": "10",
+            "title": "Magia",
+            "text": "■Magia is a Magical Girl's ultimate attack. <br />You can execute Magia by using 100 MP from the Magia Gauge.<br />You can make these Magia attacks even more powerful by using Enhance Magia and leveling up a Magical Girl's Magia Level."
+        },
+        {
+            "id": "11",
+            "title": "Doppels",
+            "text": "■Doppels are lethal Witch attacks that only certain Magical Girls can use.<br />You can acquire Doppels by completing a Magical Girl's Doppel Quests.<br />Doppels can be executed by using 200 MP from the Magia Gauge."
+        },
+        {
+            "id": "12",
+            "title": "Episode Level",
+            "text": "■Each Magical Girl has her own Episode Level. <br />You can increase a Magical Girl's Episode Level by completing Quests and accumulating Episode Pts.<br />When a Magical Girl's Episode Level increases, her Magia Level cap increases and a Magical Girl Story is unlocked.<br /> <br /> ・Level 2: Magia Level cap raised to 2 + Magical Girl Story 2 unlocked<br /> ・Level 3: Magia Level cap raised to 3 + Magical Girl Story 3 unlocked<br /> ・Level 4: Magia Level cap raised to 4<br /> ・Level 5: Magia Level cap raised to 5 + Doppel Quest unlocked (Limited to certain characters)"
+        },
+        {
+            "id": "13",
+            "title": "Favorites",
+            "text": "■You can change the Magical Girl shown on your Home screen by selecting her in the favorite menu."
+        },
+        {
+            "id": "14",
+            "title": "Magical Girl Archive",
+            "text": "■In the Magical Girl Archive, you can view all the Magical Girls you have obtained.<br /> Tap a Magical Girl to check her details and listen to her dialogue clips."
+        },
+        {
+            "id": "15",
+            "title": "Doppel Archive",
+            "text": "■In the Doppel Archive, you can view all the Magical Girl Doppels you have obtained.<br />Tap a Doppel to check its details."
+        },
+        {
+            "id": "16",
+            "title": "Witch/Uwasa Archive",
+            "text": "■In the Witch/Uwasa Archive, you can view all the Witches, Familiars, and Uwasa you have encountered.<br />Tap the respective icon to check its details.<br />You can unlock more of the Archive by completing certain Quests."
+        }]
+    },
+    {
+        "title": "Magical Girl Development",
+        "type": "04",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Enhance Magic",
+            "text": "■You can power up Magical Girls by using Enhance Gems to perform Enhance Magic.<br />When you use Enhance Magic, the Magical Girl you are enhancing obtains Magical Girl EXP, and when she reaches 100% EXP for any given level, she levels up and her stats increase.<br /> <br />Enhance Magic requires a certain number of Curse Chips (CC) and Enhancement Gems.<br />When you use an Enhancement Gem that is of the same Element as the Magical Girl to be enhanced, you get a bonus to the amount of Magical Girl EXP she obtains."
+        },
+        {
+            "id": "02",
+            "title": "Awakening Item Sets",
+            "text": "■By Awakening a Magical Girl, her stats can be improved. You Awaken a Magical Girl by using specific Awakening Materials.<br />■All of the specified Materials must be set before you can perform an Awakening.<br /> ※The number of available Awakenings varies depending on the Magical Girl."
+        },
+        {
+            "id": "03",
+            "title": "Awakening",
+            "text": "■You can Awaken a Magical Girl when all the specified Materials are set for her.<br /> Awakening a Magical Girl increases her rarity.<br /> A Magical Girl must have reached her max level through Enhance Magic in order to be Awakened.<br />  ※When an Awakening is performed, the Magical Girl's Level is reset to 1.<br />  ※The number of available Awakenings varies depending on the Magical Girl."
+        },
+        {
+            "id": "04",
+            "title": "Enhance Magia",
+            "text": "■By using Books and performing Enhance Magia, you can raise a Magical Girl's Magia Level.<br />A Magical Girl's Magia level cap is increased by raising her Episode Level.<br />By maxing out a Magical Girl's Magia Level, you can increase the Max value of her Magia Gauge from 100 to 200."
+        },
+        {
+            "id": "05",
+            "title": "Unlock Doppel",
+            "text": "■Level a ★5 Magical Girl to max and complete her Doppel Quest to unlock her Doppel."
+        },
+        {
+            "id": "06",
+            "title": "Unlock Magic",
+            "text": "■You can Unlock Magic by using specific Destiny Gems for each Magical Girl.<br />Unlocking Magic increases the number of Memoria Slots the Magical Girl has.<br />You can perform Unlock Magic up to 3 times per Magical Girl."
+        },
+        {
+            "id": "07",
+            "title": "Enhancement Items",
+            "text": "■The following are the Enhancement Items in the world of Magia Record.<br /> ・Enhancement Gems: Used in Enhance Magic to increase a Magical Girl's level.<br /> ・Destiny Gems: Used in Unlock Magic to increase the number of Memoria slots a Magical Girl has.<br /> ・Awakening Materials: Used in Awakenings to raise a Magical Girl's stats and Rarity.<br /> ・Books: Used in Enhance Magia to increase a Magical Girl's Magia Level."
+        }]
+    },
+    {
+        "title": "Memoria",
+        "type": "05",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Memoria",
+            "text": "■Memoria are Magical Girls' memories that have been crystallized.<br />By equipping a Memoria to a Magical Girl, you can not only strengthen her stats, you can also give her special Skills and Abilities."
+        },
+        {
+            "id": "02",
+            "title": "Memoria Type",
+            "text": "■There are two types of Memoria: Skill Memoria and Ability Memoria.<br />A Magical Girl can be equipped with up to four Memoria, but she’s limited to two Memoria for each type.<br /><br />・Skill Type<br />Memoria that contain special effects that can be activated by the player at any time during a Quest.<br /><br />・Ability Type<br />Memoria that contain special effects that activate on their own when equipped.<br /><br />※Perform Unlock Magic to increase a Magical Girl's Memoria Slots."
+        },
+        {
+            "id": "03",
+            "title": "Equip Memoria",
+            "text": "■You can equip a Memoria to a Magical Girl by tapping [MENU] > [Magical Girls] > [Equip Memoria] or by tapping a Memoria on the Edit Team screen before a Quest.<br />You need a Memoria Slot to equip a Memoria. <br />You can increase Memoria Slots by unlocking Magic.<br />※Up to 2 Memoria for each of Skill and Ability types can be equipped.<br />※You cannot equip 3 or more Memoria of the same type.<br />※You cannot equip 2 or more of the same Memoria to a Magical Girl.<br />※Some Memoria can only be equipped to certain Magical Girls."
+        },
+        {
+            "id": "04",
+            "title": "Memoria Set",
+            "text": "<div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_111.png' alt=''></div><div class='helpPopupImg'><img class='imageZoom' src='/magica/resource/image_web/page/tutorial/popup/navi_121.png' alt=''></div>"
+        },
+        {
+            "id": "05",
+            "title": "Enhance Memoria",
+            "text": "■You can combine two Memoria to give a Memoria EXP and raise its level.<br />Enhancing Memoria requires a certain number of Curse Chips (CC).<br />You cannot combine two of the same Memoria in Enhance Memoria."
+        },
+        {
+            "id": "06",
+            "title": "Memoria Ascension",
+            "text": "■Combining two of the same Memoria raises its level cap.<br />You can perform a Memoria Ascension up to four times on any single Memoria. Each time you do so, the Memoria's level cap increases. <br />Some Memoria get their Skills and Abilities enhanced on the fourth ascension."
+        },
+        {
+            "id": "07",
+            "title": "Sell",
+            "text": "■You can sell unneeded Memoria to get Curse Chips (CC). <br />Keep in mind that once you sell your Memoria, there is no way to recover it."
+        },
+        {
+            "id": "08",
+            "title": "Memoria Stock",
+            "text": "■You can stock up to 300 Memoria. <br />When you exceed the Memoria Stock limit, you cannot draw a Fate Weave.<br />There is no way to increase the Stock limit, so you will need to sell or Enhance Memoria to clear up space in your Memoria Stock."
+        },
+        {
+            "id": "09",
+            "title": "Memoria Archive",
+            "text": "■In the Memoria Archive, you can view all the Memoria you have obtained.<br />Tap a Memoria to check its details."
+        },
+        {
+            "id": "10",
+            "title": "Memoria Vault",
+            "text": "■If you want to keep extra Memoria rather than sell them, you can store them in the Memoria Vault.\r<br />Memoria being stored cannot be Enhanced, Ascended, or sold."
+        }]
+    },
+    {
+        "title": "Story",
+        "type": "06",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Main Story",
+            "text": "■The Main Story of Magia Record is about Iroha Tamaki and her fellow Magic Girls.<br />Completing Main Story Quests will unlock Challenge Quests.<br />Challenge Quests are more difficult than normal Quests."
+        },
+        {
+            "id": "02",
+            "title": "Another Story",
+            "text": "■Stories from the viewpoint of Madoka Kaname and the other Magical Girls from Mitakihara.<br />You can unlock Substories by completing Chapter 2 of the Main Story."
+        },
+        {
+            "id": "03",
+            "title": "Magical Girl Story",
+            "text": "■Quests in which you can enjoy the stories of Magical Girls who appear in Magia Record.<br />Magical Girl Stories are unlocked by fulfilling the following conditions:<br /><br />・Owning the Magical Girl.<br />・Completing the Main Story up to a specific Quest.<br />・Raising the Episode Level of the Magical Girl."
+        },
+        {
+            "id": "04",
+            "title": "Event Quests",
+            "text": "■There are Weekday Quests and Limited Time Only Events."
+        }]
+    },
+    {
+        "title": "Quests",
+        "type": "07",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Quests",
+            "text": "■Each Quest requires a certain amount of AP to play. <br />Starting a Quest consumes the required amount of AP whether or not you clear it.<br /><br />In battles, Magical Girls, who the Player controls, attack the enemy first.<br />A turn ends when the enemy's attacks end."
+        },
+        {
+            "id": "02",
+            "title": "Battle (Disk)",
+            "text": "■During battles, you can issue up to three commands per turn by selecting three out of the five Disks that are displayed at the beginning of each turn.  <br />Each Disk has an image of a Magical Girl on it, and when you tap a Disk, the corresponding Magical Girl will attack.<br />There are three types of Disks: Accele, Blast, and Charge.<br /><br />・Accele <br />Accele attacks grant a bonus to the Magical Girl's MP.<br /><br />・Blast<br />Blast attacks damage enemies in a vertical or horizontal row.<br /><br />・Charge<br />When the attack that follows is an Accele attack, the amount of MP obtained from the Accele attack increases.<br />When the attack that follows is a Blast attack, it will inflict more damage.<br />Every time a charge is used its effect increases."
+        },
+        {
+            "id": "03",
+            "title": "Combo",
+            "text": "■Combos occur when certain combinations of disks are selected in a turn.<br /><br />・Accele Combo<br />Activated by using 3 Accele Disks.<br />All Magical Girls get an MP bonus that makes the Magia Gauge fill faster.<br /><br />・Blast Combo<br />Activated by using 3 Blast Disks.<br />Your area attack inflicts more damage.<br />Blast Combos occur regardless of whether or not the attacks are all vertical or horizontal.<br /><br />・Charge Combo<br />Activated by using 3 Charge Disks. <br />Increases the number of Charges built up by two.<br /><br />・Puella Combo<br />Activated by using 3 of the same Magical Girl's Disks.<br />The damage inflicted by the Magical Girl increases significantly.<br /><br />※When a Puella Combo is activated concurrently with an Accele/Blast/Charge Combo, both their effects happen."
+        },
+        {
+            "id": "04",
+            "title": "HP Gauge",
+            "text": "■HP Gauges are displayed above each character.<br />When a Magical Girl’s HP reaches zero, she is taken out of the battle."
+        },
+        {
+            "id": "05",
+            "title": "Magia Gauge",
+            "text": "■The Magia Gauge indicates whether a Magical Girl's Magia can be used.<br />The Magia Gauge fills up with MP when a Magical Girl attacks or takes damage.<br />When their Magia Gauge has 100 MP or more, Magical Girls can use Magia.<br />When their Magia Gauge has 200 MP, Magical Girls can use Doppel."
+        },
+        {
+            "id": "06",
+            "title": "Connect",
+            "text": "■Connect Skills are abilities that are unique to each Magical Girl.<br />To activate a Connect Skill, follow the steps below:<br /><br />1. Fill the Connect Gauge to its Max (3 gems). The Connect Gauge fills when you use Disks.  <br />2. Drag and drop a Disk of a Magical Girl with a Max Connect Gauge to another Magical Girl.<br />3. When the Magical Girl who received the Disk makes an attack, the Connect Skill of the Magical Girl on the Disk will activate."
+        },
+        {
+            "id": "07",
+            "title": "Skills",
+            "text": "■When a Magical Girl is equipped with a Skill Type Memoria, she can use the Skill during battles.<br />Once a Skill is used, a certain number of turns must pass before it can be used again."
+        },
+        {
+            "id": "08",
+            "title": "Magia",
+            "text": "■Magia are Magical Girls' ultimate attacks. <br />Magia can be activated when the Magia Gauge has 100 MP or more."
+        },
+        {
+            "id": "09",
+            "title": "Doppels",
+            "text": "■Doppels use the power of a Witch and are the most powerful attacks available to Magical Girls.<br />Once a Magical Girl has had her Doppel unlocked, she can activate it when the Magia Gauge has 200 MP."
+        },
+        {
+            "id": "10",
+            "title": "Status Effects",
+            "text": "■There are several different kinds of Negative Status Effects in the world of Magia Record.<br />When a Magical Girl has a Negative Status Effect, she cannot use Evasion Skills or Abilities.<br /><br />Each Debuff has an adverse effect.<br /><br />・Poison<br />The Magical Girl takes damage for a certain number of turns.<br />・Burn<br />The Magical Girl takes damage for a certain number of turns, and damage from the Element she is weak to increases.<br />・Curse<br />The Magical Girl takes damage for a certain number of turns, and damage from the Element she is weak to increases.<br />Her HP cannot be restored while she is cursed.<br /><br />・Charm<br />The Magical Girl cannot act for a certain number of turns.<br />・Stun<br />The Magical Girl cannot act for a certain number of turns, and damage from the Element she is weak to increases.<br />・Bind<br />The Magical Girl cannot act for a certain number of turns, and damage from the Element she is weak to increases.<br />Her HP cannot be restored while she is bound.<br /><br />・Fog<br />The Magical Girl’s hit rate decreases.<br />・Blind<br />The Magical Girl’s hit rate decreases, and damage from the Element she is weak to increases.<br />・Dazzle<br />The Magical Girl’s hit rate decreases, and damage from the Element she is weak to increases.<br />Her HP cannot be restored while she is dazzled.<br /><br />・Skill Seal<br />The Magical Girl cannot use Memoria Skills.<br />・Magia Seal<br />The Magical Girl cannot use Magia or Doppel."
+        },
+        {
+            "id": "11",
+            "title": "Evade/Critical Hit",
+            "text": "■For Evade and Critical Hit: When Magia, Doppel, Connect, and Memoria Skills with the same effect are used together, only the effect with the highest level is applied."
+        },
+        {
+            "id": "12",
+            "title": "Continue",
+            "text": "■If all the Magical Girls on your Team are defeated during battle, you can continue by using Magia Stones. <br />Magical Girls will have their HP fully restored, and you will not lose the items you obtained earlier in the battle."
+        },
+        {
+            "id": "13",
+            "title": "Quest Missions",
+            "text": "■By fulfilling certain conditions for each quest, you can complete missions and receive items.<br />You can check the current available Missions from the menu during a Quest battle or on the Quest Select screen."
+        },
+        {
+            "id": "14",
+            "title": "Auto Battle",
+            "text": "■Once you complete a Quest, you can select Auto Battle for that Quest.\r<br />Tap the [Auto] button on the top-right corner of the Quest screen to activate Auto Battle.\r<br />\r<br />Go to [Auto Settings] from the in-battle Menu to select whether Magia, Connects, and Skills are used during Auto Battle.\r<br />\r<br />※Auto Battle can be used for every Quest in the Main Story when playing for the first time until Chapter 9.\r<br />However, it cannot be used when playing for the first time in the following Quests which have special battles:\r<br />・Chapter 3 - Episode 7 - BATTLE 4\r<br />・Chapter 6 - Episode 4 - BATTLE 2\r<br />・Chapter 6 - Episode 4 - BATTLE 4"
+        }]
+    },
+    {
+        "title": "Teams",
+        "type": "08",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Teams",
+            "text": "■Choose the Magical Girls you want to use for Quests.<br /><br />There are three different types of teams.<br /><br />・Quest Teams<br />You can choose up to four Magical Girls for your Quest Teams.<br />You can create up to nine Quest teams to choose from before setting out for a Quest.<br />Quest battles are fought with the four Magical Girls from your chosen Quest Team and one Support Magical Girl.<br /><br />・Support Team<br />You can set Magical Girls to be used by other users as Support.<br />You can set one Magical Girl per Element.<br /><br />・Mirrors Team<br />You can select up to five Magical Girls for your Mirrors Team."
+        },
+        {
+            "id": "02",
+            "title": "Edit Teams",
+            "text": "■Tap [Team] > [Quest Team] or [Mirrors Team] to switch out your Magical Girls.<br />Tap a slot on the Team screen to choose the Magical Girl to put in that slot. <br />To remove a Team member, simply tap the Team member you want to remove and tap [Remove].<br />You can select up to four Magical Girls for a Quest Team, and five for a Mirrors Team."
+        },
+        {
+            "id": "03",
+            "title": "Magical Formations",
+            "text": "■When you edit a Team you will also edit the team's Magical Formation.<br />There are different types of Magical Formations, and depending on their positions in a given Formation, Magical Girls’ stats increase/decrease.<br />You can get new Magical Formations as Event Rewards and from the Shop."
+        },
+        {
+            "id": "04",
+            "title": "Leader",
+            "text": "■You can choose a Leader for each team of your teams.<br />The Leader receives an Episode Pt bonus and her disks are more likely to appear in Quest battles."
+        },
+        {
+            "id": "05",
+            "title": "Support",
+            "text": "■You can choose one Magical Girl per Element for your Support Team.<br />Magical Girls in your Support Team participate in other players' Quests as a Support Magical Girl.<br />You get 30 Support Pts when you select an NPC or a Support from a mutual Follower, and 10 pts when you select a Support from players who are not mutual Followers.  "
+        },
+        {
+            "id": "06",
+            "title": "Memoria",
+            "text": "■Memoria can be equipped to a Magical Girl on one of your Teams.<br />A single Memoria can be equipped to multiple Teams.<br />For example, even if you only have 1 Memoria, that same Memoria can be equipped to 1 Magical Girl on each of your Teams."
+        },
+        {
+            "id": "07",
+            "title": "Auto Team",
+            "text": "■Use Auto Team to create a Team, and its Memoria, instantly.\r<br />You can choose what kind of Team you'd like to have created for you.\r<br />Ability Memoria will be chosen before Skill Memoria. \r<br />※Memoria with higher stats will also be chosen first."
+        },
+        {
+            "id": "08",
+            "title": "Import Team",
+            "text": "■You can now import Magical Girls, Memoria, and Formations from another Team into the Team you are currently editing.\r<br />※The Team will not be saved until you hit the confirm button.\r<br />※The Team name will not be imported."
+        }]
+    },
+    {
+        "title": "Friends",
+        "type": "09",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Friends",
+            "text": "■You can register another player as a Friend by following them.<br />Magical Girls from Support Teams of players you follow can use Magia/Doppels in Quest battles.<br />When other players follow you, they are indicated as your Followers.<br />When a Follower uses your Magical Girl as Support, you will get Support Pts.<br />Support Pts are received when you get your Login Bonus.<br />You get 30 Support Pts when your Support is selected by a mutual Follower; and 10 pts when they are selected by other Players. <br />※You cannot receive more than 3,000 Support Pts in a day.<br />The number of players you can Follow increases with your Player Rank."
+        }]
+    },
+    {
+        "title": "Mirrors",
+        "type": "10",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Mirrors",
+            "text": "■In Mirrors, you can fight mirror images of other Players in the Mirror Witch's Chamber.<br />Each time you go through one of the multilayered Mirror Levels, you receive valuable items and the Mirrors Story progresses.<br />・You consume 1 BP per Mirrors Battle.<br />・It takes 60 minutes to recover 1 BP.<br />・BP can also be restored by using BP Potions."
+        },
+        {
+            "id": "02",
+            "title": "Change Opponent",
+            "text": "■In Mirrors, you can battle against one Player of your choice from a random set of 3 Players.<br />The same set of Players is retained for 15 minutes, then a new set of players gets chosen at random for you to select from.<br />To get a new random set of players to choose from you can tap [Change Opponent], but doing so will consume 1 BP."
+        },
+        {
+            "id": "03",
+            "title": "Mirror Layer",
+            "text": "■When you win a battle in Mirrors, you are awarded Mirrors Pts. <br />You receive various rewards for advancing to higher Mirror Levels."
+        },
+        {
+            "id": "04",
+            "title": "Endless Mirrors",
+            "text": "■All players can participate in Endless Mirrors battles.<br />You earn Mirrors Pts by winning Mirrors battles. Once you earn a certain amount of Mirrors Pts, you go up a Mirror Level.<br />・Once you have gone up a level in Endless Mirrors, you cannot go back down a level."
+        },
+        {
+            "id": "05",
+            "title": "Mirrors Pts",
+            "text": "■You earn Mirrors Pts by winning Endless Mirrors battles. <br /><br />There are also the following types of bonuses:<br />・Win Streak Bonus<br />Up to 10 bonus Mirrors Pts are awarded depending on the number of consecutive wins.<br />The Consecutive Win Bonus is reset after the 7th consecutive win.<br /><br />・Turn Bonus<br />You can earn more bonus points by winning in less turns.<br /><br />・Opponent Bonus<br />When you beat an opponent who has the words \"Higher Range\" displayed next to their name, you will be awarded with a larger bonus."
+        },
+        {
+            "id": "07",
+            "title": "Mirrors Coins",
+            "text": "■Mirrors Coins are Rewards you get by participating in Mirrors battles.<br />You can exchange Mirrors Coins for Items in the Shop."
+        },
+        {
+            "id": "08",
+            "title": "Defense Bonus",
+            "text": "■You earn Mirrors Coins based on how many times your team wins defensive battles the previous day.<br />You receive your Defense Bonus upon visiting the Mirrors Top Page."
+        },
+        {
+            "id": "09",
+            "title": "Mirrors Friend Battles",
+            "text": "■You can only battle Friends that follow you back.\r<br />※Although these battles will not consume any BP you must have at least 1 BP to hold a Friend Battle.\r<br />※Mirrors Coins and Mirrors Points cannot be obtained from Friend Battles."
+        }]
+    },
+    {
+        "title": "Fate Weave",
+        "type": "11",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Premium Fate Weave",
+            "text": "■By using Magia Stones or Fate Weave Tickets you can do a Premium Fate Weave and receive Memoria and/or Magical Girls of at least ★2 and up. "
+        },
+        {
+            "id": "02",
+            "title": "Featured Fate Weave",
+            "text": "■A Featured Fate Weave has a higher chance of getting specific Magical Girls and Memoria."
+        },
+        {
+            "id": "03",
+            "title": "Support Point Fate Weave",
+            "text": "■You can get Memoria and Gems for Enhance Magic using Support Pts.<br />A Support Point Fate Weave costs 200 Support Pts, and you get one free shot at a 10x Fate Weave each day."
+        },
+        {
+            "id": "04",
+            "title": "Guaranteed ★4 Magical Girl Counter",
+            "text": "■※99 Fate Weave draws in a row without a ★4 Magical Girl guarantees a ★4 Magical Girl on the 100th draw.<br />・The ★4 Magical Girl will be one of the ★4s listed on the Fate Weave's Contents page.<br />※Featured Fate Weave rates will be the same for this guaranteed ★4 Magical Girl.<br />・If you draw a ★4 Magical Girl before the counter reaches 100 it will be reset to 0.<br />・1x Fate Weave will add 1 to the counter. 10x Fate Weave will add 10 to the counter.<br />・Using Fate Weave Tickets will also add to the counter.<br />・Each Fate Weave has its own counter.<br />※Fate Weaves that are available at the same time all have their own counters.<br />・Featured and Limited Time Fate Weave counters will not carry over to the next Featured or Limited Time Fate Weave counters.<br />・Since the Premium Fate Weave does not have any time limitations, its counter will not reset unless a ★4 Magical Girl is drawn. <br />・The Support Point Fate Weave does not have a counter."
+        },
+        {
+            "id": "05",
+            "title": "Destiny Gem",
+            "text": "■When you get a Magical Girl that you already have from a Fate Weave, you get her Destiny Gem instead.<br />You can perform Unlock Magic on her by using a set number of her Destiny Gems."
+        },
+        {
+            "id": "06",
+            "title": "Magia Chip",
+            "text": "■You can convert Destiny Gems into Magia Chips.<br />If you have enough Magia Chips, you can exchange them for items in the Shop."
+        },
+        {
+            "id": "07",
+            "title": "Destiny Crystals",
+            "text": "■You can get Magia Chips AND a Destiny Crystal if you trade a Destiny Gem of a natural ★4 Magical Girl that's had her magic fully unlocked.\r<br />※Only natural ★4 Magical Girls found in Premium Fate Weaves will be available in the Shop.\r<br />※Limited Time Only Magical Girls can only be exchanged in the Shop while their corresponding Fate Weave is available."
+        }]
+    },
+    {
+        "title": "Missions",
+        "type": "12",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Missions",
+            "text": "■Missions are completed by performing specific actions while playing.<br />When you complete a Mission, you get items such as Magia Stones or Potions. "
+        },
+        {
+            "id": "02",
+            "title": "Daily Missions",
+            "text": "■Daily Missions are reset everyday.<br />Daily Missions are reset at 12:00 AM PST/PDT.<br />※Unclaimed Mission Rewards expire when Daily Missions reset."
+        },
+        {
+            "id": "03",
+            "title": "Lifetime Missions",
+            "text": "■Lifetime  Missions, which give rewards for hitting certain benchmarks such as a certain number of Quests played, can only be achieved once throughout your playthrough of Magia Record."
+        }]
+    },
+    {
+        "title": "Shop/Items",
+        "type": "13",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Shop",
+            "text": "■Some useful Items are available in the Shop.<br />You can exchange Magia Stones, Mirrors Coins, or Magia Chips for Shop Items."
+        },
+        {
+            "id": "02",
+            "title": "30 Day Magia Pass",
+            "text": "■When you purchase a 30 Day Magia Pass, you receive 32 paid Magia Stones and 5 free Magia Stones daily for 30 days including the day of purchase.<br /><br />On the day of purchase, you receive 37 Magia Stones (32 paid Magia Stones and 5 free Magia Stones).<br />For the remaining 29 days, you get 5 free Magia Stones daily, together with your Login Bonus.<br /><br />Notice<br />・A 30 Day Magia Pass can be purchased from the Magia Stone Purchase screen.<br /><br />・Even during a 30 Day Magia Pass Period, you cannot receive the daily free 5 Magia Stones without logging in to the game. <br />※You cannot receive the daily 5 free Magia Stones from a day that you did not login for on the following day or later either.<br /><br />・Once a 30 Day Magia Pass expires, you can purchase another Pass on the following day or later."
+        }]
+    },
+    {
+        "title": "Other",
+        "type": "15",
+        "cols": [
+        {
+            "id": "01",
+            "title": "Presents",
+            "text": "■Some items, such as the following, will be sent to your Present Box:<br />・Presents from the Developers for advanced registration and participation in Limited Time Only Events.<br />・Magical Girls you receive from Quests or Missions.<br /><br />※Please note that items will be lost if they are not withdrawn by their expiration date."
+        },
+        {
+            "id": "02",
+            "title": "Recent History",
+            "text": "■You can view a list of the Items you recently received from Quests, Missions, and Fate Weaves."
+        },
+        {
+            "id": "03",
+            "title": "Changing Home Background ",
+            "text": "■If you get a Background Item, you can change your Home screen Background.<br />Tap the icon in the upper-left corner of the Home screen > Tap the [Change Home Background] button on the Profile screen.<br />Select the desired background on the Change Home Background screen.<br /><br />You can get Background Items as Event Rewards or from the Shop."
+        },
+        {
+            "id": "04",
+            "title": "Magical Girl Photo Session",
+            "text": "■From the Home screen you can activate your camera, and take pictures with your Magical Girls.<br />From the Home screen, tap the [MENU] button. With the side menus being hidden, tap the camera button to go to the Camera Settings screen.<br /><br />■Camera Settings<br />The following functions can be performed on the Camera Settings screen.<br /><br /><img src='/magica/resource/image_web/event/aprilfool2018/common/btn_position.png'> Tap to change the Magical Girl's position. (You have 5 positions to choose from)<br /><br /><img src='/magica/resource/image_web/event/aprilfool2018/common/btn_chara.png'> Tap to change the Magical Girl.<br /><br /><img src='/magica/resource/image_web/page/mypage/btn_live2d_02.png'> Tap to change the Magical Girl's Outfit.<br />※You can only select Magical Girls that you have.<br /><br />When you are finished setting up your photo, tap the [Start Photo Session] button to activate the Camera. <br />※<span class='c_red'>Every time you use this feature, the game will need access to your Camera.</span><br />If you haven’t granted access to the game, please do so by going to your device’s settings menu.<br /><br />■Camera Screen<br />Here you can take pictures with your Magical Girl.<br />There are two ways of taking pictures.<br /><br /><img src='/magica/resource/image_web/event/aprilfool2018/common/btn_capture.png'>Photos will be saved once one is taken.<br />※Photos will sometimes not properly save when the app is closed while taking/saving a photo.<br />A confirmation message will display when your photo has successfully been saved.<br /><br /><img src='/magica/resource/image_web/event/aprilfool2018/common/btn_timer.png'>Tap the screen to start a 5 second timer.<br /><br />In addition to changing the Magical Girl/her position/her outfit,<br />you can use two fingers to zoom the camera.<br />Use this feature to take some really great pictures!<br />※<span class='c_red'>To save photos, the game will need access to your photo storage.</span><br />If you haven’t give access to the game, please do so by going to your device’s settings menu.<br /><br />■Please Note<br />・After taking a photo, it may take some time for your photo to save. <br />Please wait for the photo confirmation message to display.<br />・On devices using Android 4.0-4.4.4, game screen will not rotate. <br />Hold your device with the home button to the right, to take a photo right-side up.<br />・Xperia devices will also need to be held with the home button to the right, to take a photo right-side up.<br />・Devices using iOS 9.0-9.3.5 does not support this feature and will need to be updated.<br />・Players using devices with iOS 10 or higher, or Android 6 or higher, will need to grant access to their camera to use this feature.<br />・Some phones, even ones that have been confirmed to work, may run into some problems when using this feature.<br /><br />"
+        },
+        {
+            "id": "05",
+            "title": "Transferring Data",
+            "text": "To change the device attached to your account, follow the steps below:<br /><br />■How to Transfer Data<br />Steps to be performed on your OLD device:<br />Tap the Gear Icon > [Options] > [Transfer].<br />・Tap [Set Password] and then enter your desired password into the boxes.<br />・Write down the Transfer ID and the Password and close the window.<br /><br />Steps to be performed on your NEW device:<br />Start Magia Record on your new device and tap [Transfer Data] on the Title screen.<br />・Enter the Transfer ID and the Password and tap [Transfer] to start transferring your data.<br /><br />※You cannot share the same data on multiple devices."
+        },
+        {
+            "id": "06",
+            "title": "Terms of Service Violations",
+            "text": "To make sure that all Users can safely enjoy our Service, the Administration Team takes measures against cheating and other acts of violation.<br />If player is found to have committed any of the following Banned Behaviors, penalties, including account suspension, may be imposed.<br /><br />■Banned Behaviors<br />・Violation of the Terms of Service.<br />・Data alteration and direct access to specific app functions.<br />・Unauthorized access that inflicts damages on this service or other Players.<br />・Excessive access that generates a high load of traffic for the servers."
+        },
+        {
+            "id": "07",
+            "title": "Data Management",
+            "text": "To change the data download options for Voice and Video Data, tap the Gear Icon > [Options] > [Manage Data]."
+        },
+        {
+            "id": "08",
+            "title": "Fonts",
+            "text": "This software uses the following font:\r<br />Koruri (TrueType Font)"
+        },
+        {
+            "id": "09",
+            "title": "Licenses",
+            "text": "This following software may be included in this product: SmartBeat SDK. This software contains the following license and notice below:<br /><br />----<br /><br />Copyright (c) 2006, Google Inc.<br />All rights reserved.<br /><br />Redistribution and use in source and binary forms, with or without<br />modification, are permitted provided that the following conditions are<br />met:<br /><br />* Redistributions of source code must retain the above copyright<br />notice, this list of conditions and the following disclaimer.<br />* Redistributions in binary form must reproduce the above<br />copyright notice, this list of conditions and the following disclaimer<br />in the documentation and/or other materials provided with the distribution.<br />* Neither the name of Google Inc. nor the names of its<br />contributors may be used to endorse or promote products derived from<br />this software without specific prior written permission.<br /><br />THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS<br />\"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT<br />LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR<br />A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT<br />OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,<br />SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT<br />LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,<br />DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY<br />THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT<br />(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE<br />OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.<br /><br />This following software may be included in this product: SmartBeat SDK. This software contains the following license and notice below:<br /><br />----<br /><br />Copyright (C) 2007-2014 Stig Brautaset. All rights reserved.<br /><br />Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:<br /><br />Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br />Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.<br />Neither the name of the author nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.<br />THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED<br /> WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.<br /><br />-----<br /><br />Except as noted below, PLCrashReporter is provided under the<br />following license:<br /><br />Copyright (c) 2008 - 2013 Plausible Labs Cooperative, Inc.<br />All rights reserved.<br /><br />Permission is hereby granted, free of charge, to any person<br />obtaining a copy of this software and associated documentation<br />files (the \"Software\"), to deal in the Software without<br />restriction, including without limitation the rights to use,<br />copy, modify, merge, publish, distribute, sublicense, and/or sell<br />copies of the Software, and to permit persons to whom the<br />Software is furnished to do so, subject to the following<br />conditions:<br /><br />The above copyright notice and this permission notice shall be<br />included in all copies or substantial portions of the Software.<br /><br />THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND,<br />EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES<br />OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND<br />NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT<br />HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,<br />WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING<br />FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR<br />OTHER DEALINGS IN THE SOFTWARE.<br /><br />Additional contributions have been made under the same license terms<br />as above, with copyright held by their respective authors:<br /><br />Damian Morris <damian@moso.com.au><br />Copyright (c) 2010 MOSO Corporation, Pty Ltd.<br />All rights reserved.<br /><br />HockeyApp/Bitstadium<br />Copyright (c) 2012 HockeyApp, Bit Stadium GmbH.<br />All rights reserved.<br /><br />The protobuf-c library, as well as the PLCrashLogWriterEncoding.c<br />file are licensed as follows:<br /><br />Copyright 2008, Dave Benson.<br /><br />Licensed under the Apache License, Version 2.0 (the \"License\");<br />you may not use this file except in compliance with<br />the License. You may obtain a copy of the License<br />at http://www.apache.org/licenses/LICENSE-2.0 Unless<br />required by applicable law or agreed to in writing,<br />software distributed under the License is distributed on<br />an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY<br />KIND, either express or implied. See the License for the<br />specific language governing permissions and limitations<br />under the License.<br /><br /><br />This application uses SPARK GEAR technology licensed by Spark Co., Ltd.<br /><br />This application uses Live2D technology licensed by Live2D Co., Ltd.<br /><br />This application uses CRIWARE™ technology licensed by CRI Middleware Co., Ltd.<br />"
+        },
+        {
+            "id": "10",
+            "title": "Free Licenses",
+            "text": "r/>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.<br /><br />THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br /> <br />--------------------------------------------------------------------------------<br />===== [ CocosDenshion Sound Engine ] =====<br />CocosDenshion Sound Engine<br />Copyright (c) 2010 Steve Oldmeadow<br /><br />Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:<br /><br />The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.<br /><br />THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br /> <br />--------------------------------------------------------------------------------<br />===== [ CCControlExtension ] =====<br />Copyright 2012 Yannick Loriot.<br />http://yannickloriot.com<br />Copyright (c) 2012 cocos2d-x.org<br />http://www.cocos2d-x.org<br />Copyright 2012 Stewart Hamilton-Arrandale.<br />http://creativewax.co.uk<br />Modified by Yannick Loriot.<br />Copyright 2011,2012 Yannick Loriot. All rights reserved.<br />http://yannickloriot.com<br /><br />Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:<br /><br />The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.<br /><br />THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.<br /> <br />--------------------------------------------------------------------------------<br />Copyright 2012-2015, Syoyo Fujita.<br /><br />Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:<br /><br />1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.<br /><br />2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.<br /><br />THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.<br /><br /> --------------------------------------------------------------------------------<br />Copyright 2009 Google Inc.<br /><br />Licensed under the Apache License, Version 2.0 (the \"License\");<br />you may not use this file except in comp"
+        }]
+    }]
+}

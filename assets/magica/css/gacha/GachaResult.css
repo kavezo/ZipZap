@@ -1,0 +1,249 @@
+#globalBackBtn {
+  display: none; }
+
+#GachaResult {
+  height: 100%;
+  padding-top: 88px; }
+#GachaResult #gachaGroupCountWrap {
+  width: 282px;
+  height: 44px;
+  background: url("/magica/resource/image_web/page/gacha/bg_gacha_fixed.png") left top no-repeat;
+  position: absolute;
+    bottom: 31px;
+  left: -12px;
+    z-index: 100; }
+#GachaResult #gachaGroupCountWrap p {
+  padding-top: 10px;
+  padding-right: 15px;
+  font-size: 22px;
+  line-height: 34px;
+      text-align: right; }
+#GachaResult #headWrapper {
+  position: absolute;
+    z-index: 1000; }
+#GachaResult #hasMemoriaNum {
+  width: 258px;
+  height: 28px;
+  background: url("/magica/resource/image_web/page/gacha/total_memoria_base.png");
+  position: fixed;
+  right: 0px;
+    bottom: 17px; }
+#GachaResult #hasMagicGirlNum {
+  width: 258px;
+  height: 28px;
+  background: url("/magica/resource/image_web/page/gacha/total_chara_base.png");
+  position: fixed;
+  right: 0px;
+    bottom: 50px; }
+#GachaResult #hasMemoriaNum .title, #GachaResult #hasMagicGirlNum .title {
+  position: absolute;
+  top: 0px;
+    left: 20px;
+  color: #ffffff;
+    line-height: 28px;
+    font-size: 18px; }
+#GachaResult #hasMemoriaNum .nums, #GachaResult #hasMagicGirlNum .nums {
+  position: absolute;
+  top: 0px;
+    right: 13px;
+    line-height: 28px;
+  color: #ffffff;
+    font-size: 18px; }
+#GachaResult .listWrap {
+  width: 100%;
+  height: 576px;
+  padding-bottom: 20px;
+  position: absolute;
+  top: -webkit-calc(50% - 218px);
+  left: 0;
+    z-index: 2; }
+#GachaResult .listWrap #cardWrap {
+  width: 716px;
+  height: 410px;
+  margin: 0 auto;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+      -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+      justify-content: space-around; }
+#GachaResult .listWrap #cardWrap .cardChild {
+  width: 120px;
+  height: 182px;
+  margin-bottom: 30px;
+        position: relative; }
+#GachaResult .listWrap #cardWrap .cardChild .extraItemWrap {
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  right: -10px;
+          bottom: 1px; }
+#GachaResult .listWrap #cardWrap .cardChild .extraItemWrap img {
+  width: 56px;
+            height: 56px; }
+#GachaResult .listWrap #cardWrap .cardChild .extraItemWrap .num {
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+            font-size: 16px; }
+#GachaResult .listWrap #cardWrap .cardChild .resultImage:not(.item) {
+  width: 120px;
+          height: 182px; }
+#GachaResult .listWrap #cardWrap .cardChild .resultImage.item {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -webkit-calc(50% - 40px);
+          left: -webkit-calc(50% - 40px); }
+#GachaResult .listWrap #cardWrap .cardChild .typeWrap {
+  width: 128px;
+  height: 26px;
+  position: absolute;
+  top: 169px;
+  left: -4px;
+          z-index: 105; }
+#GachaResult .listWrap #cardWrap .cardChild .typeWrap.PIECE {
+            background: url("/magica/resource/image_web/page/gacha/tag_memoria_s.png"); }
+#GachaResult .listWrap #cardWrap .cardChild .typeWrap.CARD {
+            background: url("/magica/resource/image_web/page/gacha/tag_chara_s.png"); }
+#GachaResult .listWrap #cardWrap .cardChild .typeWrap.ITEM {
+            background: url("/magica/resource/image_web/page/gacha/tag_jem_s.png"); }
+#GachaResult .listWrap #cardWrap .cardChild .itemWrap {
+  width: 75px;
+  height: 82px;
+  display: none;
+  position: absolute;
+  right: -22px;
+  bottom: 0;
+          z-index: 106; }
+#GachaResult .listWrap #cardWrap .cardChild .itemWrap img {
+  width: 75px;
+  height: 82px;
+            -webkit-animation: brightAnim 3s linear 0s infinite normal; }
+#GachaResult .listWrap #cardWrap .cardChild .itemWrap.on {
+            display: block; }
+#GachaResult .listWrap #cardWrap .cardChild .itemFrame {
+  width: 120px;
+  height: 182px;
+  background-size: 120px 182px;
+  position: absolute;
+  top: 0;
+          left: 0; }
+#GachaResult .listWrap #cardWrap .cardChild .newMark.on {
+  width: 57.6px;
+  height: 20.8px;
+  background-image: url("/magica/resource/image_web/page/gacha/gacha_new.png");
+  background-size: contain;
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: -15px;
+  -webkit-animation: brightAnim 4s linear 0s infinite normal;
+          z-index: 102; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild {
+  width: 237px;
+  height: 360px;
+        margin-top: 25px; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .extraItemWrap {
+  right: -28px;
+          bottom: 14px; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .newMark.on {
+  width: 72px;
+  height: 26px;
+  background-image: url("/magica/resource/image_web/page/gacha/gacha_new.png");
+  display: block;
+  position: absolute;
+  top: -13px;
+  right: -15px;
+          z-index: 102; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .itemWrap {
+  width: 75px;
+  height: 82px;
+  display: none;
+  position: absolute;
+  right: -22px;
+  bottom: -12px;
+          z-index: 106; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .itemWrap img {
+  width: 75px;
+  height: 82px;
+            -webkit-animation: brightAnim 3s linear 0s infinite normal; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .itemWrap.on {
+            display: block; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .itemFrame {
+  width: 237px;
+  height: 360px;
+  background-size: 237px 360px;
+  position: absolute;
+  top: 0;
+          left: 0; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .resultImage:not(.item) {
+  width: 237px;
+          height: 360px; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .resultImage.item {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -webkit-calc(50% - 75px);
+          left: -webkit-calc(50% - 75px); }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .typeWrap {
+  width: 244px;
+  height: 38px;
+  position: absolute;
+  top: 330px;
+          left: -3.5px; }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .typeWrap.PIECE {
+            background: url("/magica/resource/image_web/page/gacha/tag_memoria.png"); }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .typeWrap.CARD {
+            background: url("/magica/resource/image_web/page/gacha/tag_chara.png"); }
+#GachaResult .listWrap #cardWrap.cardOne .cardChild .typeWrap.ITEM {
+            background: url("/magica/resource/image_web/page/gacha/tag_jem.png"); }
+#GachaResult .listWrap #cardWrap .itemChild {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+        border: 1px solid #cc0000; }
+    #GachaResult .listWrap #onceMore {
+      margin-right: 36px; }
+#GachaResult .listWrap .btnWrap {
+  width: 500px;
+      margin: 16px auto 0;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+      -ms-flex-flow: wrap;
+  flex-flow: wrap;
+      -webkit-justify-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+#GachaResult .listWrap #itemWrap {
+  width: 860px;
+  margin: 5px auto;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+      -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+      justify-content: space-around; }
+#GachaResult .listWrap #itemWrap .itemChild {
+  width: 180px;
+  height: 180px;
+  margin-bottom: 15px;
+        border: 1px solid #cc0000; }
+
+@-webkit-keyframes brightAnim {
+  0%, 40%, 60%, 100% {
+    -webkit-filter: brightness(100%); }
+  50% {
+    -webkit-filter: brightness(300%); } }

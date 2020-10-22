@@ -1,0 +1,182 @@
+#CharaCollection {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hidden; }
+#CharaCollection .hide {
+    display: none; }
+#CharaCollection #tabArea {
+  width: 496px;
+  height: 58px;
+  padding: 0 0 0 24px;
+  background: url("/magica/resource/image_web/page/collection/bg_element_header.png") bottom left no-repeat;
+  position: absolute;
+  top: 64px;
+  left: 0px;
+    pointer-events: auto; }
+#CharaCollection #tabArea .tabBtns li {
+  margin: 0 14px 0 0;
+  display: inline-block;
+      position: relative; }
+#CharaCollection #tabArea .tabBtns li img {
+  width: 50px;
+        height: 50px; }
+#CharaCollection #tabArea .tabBtns li.current:before {
+  width: 66px;
+  height: 66px;
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  content: "";
+  border: 6px solid #ff3b81;
+  border-radius: 33px;
+        z-index: 2; }
+#CharaCollection #tabArea .tabBtns li.current:after {
+  width: 56px;
+  height: 56px;
+  display: block;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  content: "";
+  border: 3px solid #fff;
+  border-radius: 28px;
+        z-index: 1; }
+#CharaCollection #charaWrap {
+  width: 816px;
+  height: -webkit-calc(100% - 118px);
+  padding: 15px 27px;
+  position: absolute;
+  top: 133px;
+  left: 104px;
+    pointer-events: auto; }
+#CharaCollection #charaWrap h2 {
+  width: 807px;
+  padding: 0 20px;
+  background: url("/magica/resource/image_web/common/frame/frame_title.png") left top no-repeat;
+  background-size: 100% 32px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 32px;
+  border-radius: 16px 16px 0 0;
+  text-shadow: -1px -1px 2px #ff4f92, 1px -1px 2px #ff4f92, -1px 1px 2px #ff4f92, 1px 1px 2px #ff4f92, -1px -1px 2px #ff4f92, 1px -1px 2px #ff4f92, -1px 1px 2px #ff4f92, 1px 1px 2px #ff4f92;
+      z-index: 1; }
+#CharaCollection #charaWrap #charaHiddenWrap {
+  width: 768px;
+  height: -webkit-calc(100% - 12px);
+  margin-top: 15px;
+      overflow: hidden; }
+#CharaCollection #charaWrap #charaWrapInner {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding: 16px 0px 15px 11px;
+      overflow: inherit; }
+#CharaCollection #charaWrap .chara {
+  width: 740px;
+  height: 84px;
+  margin: 0 0 10px;
+  padding: 54px 0 0 25px;
+  display: none;
+      position: relative; }
+#CharaCollection #charaWrap .chara:before {
+  width: 236px;
+  height: 8px;
+  background: url("/magica/resource/image_web/page/collection/line_chara_collection_2.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: 43px;
+  left: 48px;
+        content: ""; }
+#CharaCollection #charaWrap .chara:after {
+  width: 26px;
+  height: 14px;
+  background: url("/magica/resource/image_web/page/collection/arrow_chara_collection.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: -webkit-calc(50% - 7px);
+  right: 8px;
+        content: ""; }
+#CharaCollection #charaWrap .chara .nameWrap .att {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: 18px;
+        left: 11px; }
+#CharaCollection #charaWrap .chara .nameWrap .att.FIRE {
+  background: url("/magica/resource/image_web/common/chara/att_fire_f.png") left top no-repeat;
+          background-size: 44px 44px; }
+#CharaCollection #charaWrap .chara .nameWrap .att.WATER {
+  background: url("/magica/resource/image_web/common/chara/att_water_f.png") left top no-repeat;
+          background-size: 44px 44px; }
+#CharaCollection #charaWrap .chara .nameWrap .att.TIMBER {
+  background: url("/magica/resource/image_web/common/chara/att_timber_f.png") left top no-repeat;
+          background-size: 44px 44px; }
+#CharaCollection #charaWrap .chara .nameWrap .att.LIGHT {
+  background: url("/magica/resource/image_web/common/chara/att_light_f.png") left top no-repeat;
+          background-size: 44px 44px; }
+#CharaCollection #charaWrap .chara .nameWrap .att.DARK {
+  background: url("/magica/resource/image_web/common/chara/att_dark_f.png") left top no-repeat;
+          background-size: 44px 44px; }
+#CharaCollection #charaWrap .chara .nameWrap .att.VOID {
+  background: url("/magica/resource/image_web/common/chara/att_void_f.png") left top no-repeat;
+          background-size: 44px 44px; }
+#CharaCollection #charaWrap .chara .nameWrap .name {
+  position: absolute;
+  top: 15px;
+  left: 64px;
+        font-size: 18px; }
+#CharaCollection #charaWrap .chara .nameWrap .title {
+  min-width: 100px;
+  position: absolute;
+  top: 6px;
+  right: -106px;
+        font-size: 12px; }
+#CharaCollection #charaWrap .chara .nameWrap .kana {
+  position: absolute;
+  top: 53px;
+  left: 64px;
+        font-size: 14px;
+        display:none;/*MN*/ }
+#CharaCollection #charaWrap .chara .charaIconWrap {
+  position: absolute;
+  top: 6px;
+        left: 303px; }
+#CharaCollection #charaWrap .chara .userCharaIcon {
+  width: 68px;
+  height: 68px;
+  margin: 0 5px 0 0;
+  display: inline-block;
+  position: relative;
+        text-align: left; }
+#CharaCollection #charaWrap .chara .userCharaIcon img {
+          width: 64px; }
+#CharaCollection #charaWrap .chara .userCharaIcon .rank, #CharaCollection #charaWrap .chara .userCharaIcon .star, #CharaCollection #charaWrap .chara .userCharaIcon .att, #CharaCollection #charaWrap .chara .userCharaIcon .bg {
+  width: 68px;
+  height: 68px;
+          background-size: 68px 68px; }
+#CharaCollection #charaWrap .chara .userCharaIcon .closed {
+  width: 68px;
+  height: 68px;
+  background: url("/magica/resource/image_web/common/chara/icon_chara_off.png") left top no-repeat;
+  background-size: 68px 68px;
+  display: block;
+          position: relative; }
+#CharaCollection #charaWrap.all .chara {
+      display: block; }
+#CharaCollection #charaWrap.fire .chara.FIRE {
+      display: block; }
+#CharaCollection #charaWrap.water .chara.WATER {
+      display: block; }
+#CharaCollection #charaWrap.timber .chara.TIMBER {
+      display: block; }
+#CharaCollection #charaWrap.light .chara.LIGHT {
+      display: block; }
+#CharaCollection #charaWrap.dark .chara.DARK {
+      display: block; }
+#CharaCollection #charaWrap.void .chara.VOID {
+      display: block; }

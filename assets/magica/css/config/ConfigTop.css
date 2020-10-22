@@ -1,0 +1,690 @@
+#ConfigTop {
+  width: 1024px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
+#ConfigTop #menuPanel {
+  width: 222px;
+  height: auto;
+  padding: 28px 18px 15px;
+  position: absolute;
+  top: 70px;
+    left: 85px; }
+#ConfigTop #menuPanel .btn {
+  width: 186px;
+      margin-bottom: 13px; }
+#ConfigTop #menuPanel .btn .noPassIcon {
+  display: block;
+  width: 66px;
+  height: 22px;
+  background-image: url("/magica/resource/image_web/page/config/config_password_noset.png");
+  position: absolute;
+  top: -6px;
+        left: 0px; }
+#ConfigTop #menuPanel .btn .noPassIcon.off {
+          display: none; }
+#ConfigTop #configWrap {
+  width: 610px;
+  height: -webkit-calc(100% - 98px);
+  padding: 10px 5px;
+  position: absolute;
+  top: 70px;
+    left: 326px; }
+#ConfigTop #configWrap #systemWrap,
+#ConfigTop #configWrap #userWrap,
+#ConfigTop #configWrap #pushWrap,
+#ConfigTop #configWrap #dataWrap,
+#ConfigTop #configWrap #transferWrap {
+  width: 100%;
+  height: -webkit-calc(100% - 47px);
+  overflow: hidden;
+  padding: 0px 10px;
+  position: relative;
+      top: 37px; }
+#ConfigTop #configWrap #systemWrap .scrollIndicator,
+#ConfigTop #configWrap #userWrap .scrollIndicator,
+#ConfigTop #configWrap #pushWrap .scrollIndicator,
+#ConfigTop #configWrap #dataWrap .scrollIndicator,
+#ConfigTop #configWrap #transferWrap .scrollIndicator {
+        right: 8px; }
+#ConfigTop #configWrap #systemWrap h3,
+#ConfigTop #configWrap #userWrap h3,
+#ConfigTop #configWrap #pushWrap h3,
+#ConfigTop #configWrap #dataWrap h3,
+#ConfigTop #configWrap #transferWrap h3 {
+  color: #ff4f9e;
+  position: relative;
+  line-height: 20px;
+  padding: 0px 0 0 30px;
+  font-size: 18px;
+        margin-bottom: 5px; }
+#ConfigTop #configWrap #systemWrap h3:before,
+#ConfigTop #configWrap #userWrap h3:before,
+#ConfigTop #configWrap #pushWrap h3:before,
+#ConfigTop #configWrap #dataWrap h3:before,
+#ConfigTop #configWrap #transferWrap h3:before {
+  background: url(/magica/resource/image_web/common/frame/title_icon.png) left top no-repeat;
+  width: 14px;
+  height: 14px;
+  content: "";
+  position: absolute;
+  top: 4px;
+          left: 10px; }
+#ConfigTop #configWrap #systemWrap .pushMiniWrap,
+#ConfigTop #configWrap #userWrap .pushMiniWrap,
+#ConfigTop #configWrap #pushWrap .pushMiniWrap,
+#ConfigTop #configWrap #dataWrap .pushMiniWrap,
+#ConfigTop #configWrap #transferWrap .pushMiniWrap {
+        margin: 16px 0 9px 15px; }
+#ConfigTop #configWrap #systemWrap .pushMiniWrap .pushToggle,
+#ConfigTop #configWrap #userWrap .pushMiniWrap .pushToggle,
+#ConfigTop #configWrap #pushWrap .pushMiniWrap .pushToggle,
+#ConfigTop #configWrap #dataWrap .pushMiniWrap .pushToggle,
+#ConfigTop #configWrap #transferWrap .pushMiniWrap .pushToggle {
+  width: 255px;
+  border: 2px solid #b28750;
+  border-radius: 5px;
+  margin: 0px 5px;
+  padding: 11px 15px;
+  font-size: 20px;
+  position: relative;
+          display: inline-block; }
+#ConfigTop #configWrap #systemWrap .pushMiniWrap .pushToggle #pushEvent, #ConfigTop #configWrap #systemWrap .pushMiniWrap .pushToggle #pushAP,
+#ConfigTop #configWrap #userWrap .pushMiniWrap .pushToggle #pushEvent,
+#ConfigTop #configWrap #userWrap .pushMiniWrap .pushToggle #pushAP,
+#ConfigTop #configWrap #pushWrap .pushMiniWrap .pushToggle #pushEvent,
+#ConfigTop #configWrap #pushWrap .pushMiniWrap .pushToggle #pushAP,
+#ConfigTop #configWrap #dataWrap .pushMiniWrap .pushToggle #pushEvent,
+#ConfigTop #configWrap #dataWrap .pushMiniWrap .pushToggle #pushAP,
+#ConfigTop #configWrap #transferWrap .pushMiniWrap .pushToggle #pushEvent,
+#ConfigTop #configWrap #transferWrap .pushMiniWrap .pushToggle #pushAP {
+  display: block;
+  position: absolute;
+  top: 11px;
+            right: 15px; }
+#ConfigTop #configWrap #systemWrap .colWrap,
+#ConfigTop #configWrap #userWrap .colWrap,
+#ConfigTop #configWrap #pushWrap .colWrap,
+#ConfigTop #configWrap #dataWrap .colWrap,
+#ConfigTop #configWrap #transferWrap .colWrap {
+  width: 570px;
+  height: auto;
+  margin-bottom: 10px;
+  padding: 0 15px 0;
+        position: relative; }
+#ConfigTop #configWrap #systemWrap .colWrap .colLeft, #ConfigTop #configWrap #systemWrap .colWrap .colRight,
+#ConfigTop #configWrap #userWrap .colWrap .colLeft,
+#ConfigTop #configWrap #userWrap .colWrap .colRight,
+#ConfigTop #configWrap #pushWrap .colWrap .colLeft,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight,
+#ConfigTop #configWrap #dataWrap .colWrap .colLeft,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight,
+#ConfigTop #configWrap #transferWrap .colWrap .colLeft,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight {
+          padding: 11px 10px !important; }
+#ConfigTop #configWrap #systemWrap .colWrap .colLeft,
+#ConfigTop #configWrap #userWrap .colWrap .colLeft,
+#ConfigTop #configWrap #pushWrap .colWrap .colLeft,
+#ConfigTop #configWrap #dataWrap .colWrap .colLeft,
+#ConfigTop #configWrap #transferWrap .colWrap .colLeft {
+  margin-left: 10px;
+  width: 120px;
+          position: relative; }
+#ConfigTop #configWrap #systemWrap .colWrap .colLeft.playerName,
+#ConfigTop #configWrap #userWrap .colWrap .colLeft.playerName,
+#ConfigTop #configWrap #pushWrap .colWrap .colLeft.playerName,
+#ConfigTop #configWrap #dataWrap .colWrap .colLeft.playerName,
+#ConfigTop #configWrap #transferWrap .colWrap .colLeft.playerName {
+            font-size: 15px; }
+#ConfigTop #configWrap #systemWrap .colWrap.soundDl .colRight, #ConfigTop #configWrap #systemWrap .colWrap.soundDl .colLeft,
+#ConfigTop #configWrap #userWrap .colWrap.soundDl .colRight,
+#ConfigTop #configWrap #userWrap .colWrap.soundDl .colLeft,
+#ConfigTop #configWrap #pushWrap .colWrap.soundDl .colRight,
+#ConfigTop #configWrap #pushWrap .colWrap.soundDl .colLeft,
+#ConfigTop #configWrap #dataWrap .colWrap.soundDl .colRight,
+#ConfigTop #configWrap #dataWrap .colWrap.soundDl .colLeft,
+#ConfigTop #configWrap #transferWrap .colWrap.soundDl .colRight,
+#ConfigTop #configWrap #transferWrap .colWrap.soundDl .colLeft {
+          padding: 20px 10px !important; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight,
+#ConfigTop #configWrap #userWrap .colWrap .colRight,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight {
+  min-width: 250px;
+          position: relative; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight .slider,
+#ConfigTop #configWrap #userWrap .colWrap .colRight .slider,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight .slider,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight .slider,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight .slider {
+  width: 336px;
+            margin: 0 0 0 30px; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight.soundCol,
+#ConfigTop #configWrap #userWrap .colWrap .colRight.soundCol,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight.soundCol,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight.soundCol,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight.soundCol {
+            width: 450px; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight.soundCol:before,
+#ConfigTop #configWrap #userWrap .colWrap .colRight.soundCol:before,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight.soundCol:before,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight.soundCol:before,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight.soundCol:before {
+  width: 26px;
+  height: 24px;
+  background-image: url("/magica/resource/image_web/page/config/icon_sound_off.png");
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+              content: ''; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight.soundCol:after,
+#ConfigTop #configWrap #userWrap .colWrap .colRight.soundCol:after,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight.soundCol:after,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight.soundCol:after,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight.soundCol:after {
+  width: 29px;
+  height: 24px;
+  background-image: url("/magica/resource/image_web/page/config/icon_sound_on.png");
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+              content: ''; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight span.black,
+#ConfigTop #configWrap #userWrap .colWrap .colRight span.black,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight span.black,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight span.black,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight span.black {
+  color: #333;
+            text-shadow: none; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight.btnFlex,
+#ConfigTop #configWrap #userWrap .colWrap .colRight.btnFlex,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight.btnFlex,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight.btnFlex,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight.btnFlex {
+            min-width: 70%; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight.btnFlex .btnWrap,
+#ConfigTop #configWrap #userWrap .colWrap .colRight.btnFlex .btnWrap,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight.btnFlex .btnWrap,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight.btnFlex .btnWrap,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight.btnFlex .btnWrap {
+  width: 100%;
+  display: -webkit-flex-grow;
+              display: -webkit-box;
+              display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+              -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: space-around;
+              -ms-flex-pack: distribute;
+              justify-content: space-around; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight.btnFlex .btnWrap .btn,
+#ConfigTop #configWrap #userWrap .colWrap .colRight.btnFlex .btnWrap .btn,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight.btnFlex .btnWrap .btn,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight.btnFlex .btnWrap .btn,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight.btnFlex .btnWrap .btn {
+                width: 190px; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight .btn,
+#ConfigTop #configWrap #userWrap .colWrap .colRight .btn,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight .btn,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight .btn,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight .btn {
+            display: inline-block; }
+#ConfigTop #configWrap #systemWrap .colWrap .colRight .btn.rightPosition,
+#ConfigTop #configWrap #userWrap .colWrap .colRight .btn.rightPosition,
+#ConfigTop #configWrap #pushWrap .colWrap .colRight .btn.rightPosition,
+#ConfigTop #configWrap #dataWrap .colWrap .colRight .btn.rightPosition,
+#ConfigTop #configWrap #transferWrap .colWrap .colRight .btn.rightPosition {
+  width: 111px;
+  position: absolute;
+  top: 4px;
+              right: -140px; }
+#ConfigTop #configWrap #systemWrap .colWrap .colLow,
+#ConfigTop #configWrap #userWrap .colWrap .colLow,
+#ConfigTop #configWrap #pushWrap .colWrap .colLow,
+#ConfigTop #configWrap #dataWrap .colWrap .colLow,
+#ConfigTop #configWrap #transferWrap .colWrap .colLow {
+  margin: 0 0 10px 0;
+          display: inline-block; }
+#ConfigTop #configWrap #transferWrap {
+      height: -webkit-calc(100% - 37px); }
+#ConfigTop #configWrap #dataWrap .configScroll {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 20px;
+      position: relative; }
+#ConfigTop #configWrap #dataWrap .btn {
+      width: 216px;/*MN*/
+  margin-top: 15px;
+  margin-bottom: 0px;
+      display: inline-block; }
+#ConfigTop #configWrap #dataWrap .dataFrames {
+  width: 550px;
+  margin: 12px auto 21px;
+  padding: 15px 5px;
+      text-align: center; }
+#ConfigTop #configWrap #dataWrap .nowDataSet {
+  width: 558px;
+  margin: 8px auto 17px;
+      position: relative; }
+      #ConfigTop #configWrap #dataWrap .nowDataSet .fullVoiceDl, #ConfigTop #configWrap #dataWrap .nowDataSet .movieAdd {
+  width: 327px;
+  height: 55px;
+  margin: 3px 0 8px 114px;
+  -webkit-filter: none;
+        filter: none; }
+        #ConfigTop #configWrap #dataWrap .nowDataSet .fullVoiceDl.off, #ConfigTop #configWrap #dataWrap .nowDataSet .movieAdd.off {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%); }
+        #ConfigTop #configWrap #dataWrap .nowDataSet .fullVoiceDl span.fullVoiceTx, #ConfigTop #configWrap #dataWrap .nowDataSet .movieAdd span.fullVoiceTx {
+  color: #fff;
+  font-size: 18px;
+  top: -12px;
+  height: 55px;
+          line-height: 55px; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap {
+  width: 100%;
+  height: 40px;
+  padding: 0px 20px;
+  margin: 10px 0px 10px;
+        line-height: 40px; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap span, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap span, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap span, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap span, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap span {
+  display: inline-block;
+          position: relative; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap .checkBox, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap .checkBox, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap .checkBox, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap .checkBox, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap .checkBox {
+  width: 40px;
+  height: 40px;
+  background-image: url("/magica/resource/image_web/common/icon/icon_checkbox.png");
+          position: relative; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap .voiceCheck, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap .voiceCheck, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap .voiceCheck, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap .voiceCheck, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap .voiceCheck {
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+  background-image: url("/magica/resource/image_web/page/config/icon_sound_data_on.png");
+          top: -4px; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap .movieCheck, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap .movieCheck, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap .movieCheck, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap .movieCheck, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap .movieCheck {
+  width: 32px;
+  height: 32px;
+  margin-left: 5px;
+  background-image: url("/magica/resource/image_web/page/config/icon_movie_data_on.png");
+          top: -4px; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap .dataTexts, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap .dataTexts, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap .dataTexts, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap .dataTexts, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap .dataTexts {
+  font-size: 20px;
+  top: -13px;
+          margin-left: 3px; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap.on .checkBox:before, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap.on .checkBox:before, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap.on .checkBox:before, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap.on .checkBox:before, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap.on .checkBox:before {
+  width: 27px;
+  height: 21px;
+  content: "";
+  background-image: url("/magica/resource/image_web/common/icon/icon_checkbox_check.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 9px;
+          left: 6px; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap .pointFrame, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap .pointFrame, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap .pointFrame, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap .pointFrame, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap .pointFrame {
+  width: 165px;
+  height: 34px;
+  line-height: 34px;
+  font-size: 20px;
+  top: -11px;
+          margin-left: 14px; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap .pointFrame:before, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataWrap .pointFrame:after, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap .pointFrame:before, #ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap .pointFrame:after, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap .pointFrame:before, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataWrap .pointFrame:after, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap .pointFrame:before, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataLowWrap .pointFrame:after, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap .pointFrame:before, #ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap .pointFrame:after {
+  height: 34px;
+            background-size: 100% 100%; }
+#ConfigTop #configWrap #dataWrap .nowDataSet #voiceDataOffWrap .voiceCheck {
+  margin-left: 5px;
+        background-image: url("/magica/resource/image_web/page/config/icon_sound_data_off.png"); }
+#ConfigTop #configWrap #dataWrap .nowDataSet #movieDataOffWrap .movieCheck {
+  margin-left: 5px;
+        background-image: url("/magica/resource/image_web/page/config/icon_movie_data_off.png"); }
+#ConfigTop #configWrap #pushWrap .pushDailyWrap {
+  width: 538px;
+  margin-left: 20px;
+  position: relative;
+  display: -webkit-flex-grow;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+      -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
+#ConfigTop #configWrap #pushWrap .pushDailyWrap .pushDailyQuest {
+  width: 50%;
+  margin-bottom: 10px;
+        position: relative; }
+#ConfigTop #configWrap #pushWrap .pushDailyWrap .pushDailyQuest .weekName {
+          width: 116px;/*MN*/
+		  padding: 0px 13px;/*MN*/
+		  text-align: center;/*MN*/
+          background: -webkit-linear-gradient(45deg, transparent 8px, #e1d2bb 8px), -webkit-linear-gradient(135deg, transparent 8px, #e1d2bb 8px), -webkit-linear-gradient(225deg, transparent 8px, #e1d2bb 8px), -webkit-linear-gradient(315deg, transparent 8px, #e1d2bb 8px);
+          background: -o-linear-gradient(45deg, transparent 8px, #e1d2bb 8px), -o-linear-gradient(135deg, transparent 8px, #e1d2bb 8px), -o-linear-gradient(225deg, transparent 8px, #e1d2bb 8px), -o-linear-gradient(315deg, transparent 8px, #e1d2bb 8px);
+  background: linear-gradient(45deg, transparent 8px, #e1d2bb 8px), linear-gradient(315deg, transparent 8px, #e1d2bb 8px), linear-gradient(225deg, transparent 8px, #e1d2bb 8px), linear-gradient(135deg, transparent 8px, #e1d2bb 8px);
+  background-repeat: no-repeat;
+  background-position: bottom left, bottom right, top right, top left;
+  background-size: 51% 51%;
+          margin-bottom: 5px; }
+#ConfigTop #configWrap #pushWrap .pushDailyWrap .pushDailyQuest .triangleArrow {
+  background: -webkit-linear-gradient(top, #e5b271 0%, #b28750 100%);
+  width: 64px;
+  height: 36px;
+  position: absolute;
+  top: 29px;
+  right: 14px;
+  z-index: 2px;
+  border: 2px solid #b28750;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  pointer-events: none;
+  padding-left: 16px;
+          padding-top: 8px; }
+#ConfigTop #configWrap #pushWrap .pushDailyWrap .pushDailyQuest .triangleArrow .arrow {
+  width: 25px;
+  height: 18px;
+  display: block;
+  position: relative;
+            pointer-events: none; }
+#ConfigTop #configWrap #transferWrap p {
+      margin-left: 15px; }
+#ConfigTop #configWrap #transferWrap .firstText {
+  margin: 5px 9px;
+      font-size: 18px; }
+#ConfigTop #configWrap #transferWrap #transferIdCopy {
+  position: absolute;
+      top: 71px;
+      right: 64px; }
+#ConfigTop #configWrap #transferWrap .transferNotice {
+  margin: 9px 12px 10px 8px;
+  background-color: #e1d2bb;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+      word-wrap: break-word; }
+#ConfigTop #configWrap #transferWrap .colWrap {
+      padding: 0px; }
+#ConfigTop #configWrap #transferWrap .colWrap .colLeft {
+        width: 140px !important;
+  font-size: 14px;
+        line-height: 24px; }
+#ConfigTop #configWrap #transferWrap .relationWrap {
+  margin: 5px 0 15px 0;
+  display: block;
+      text-align: center; }
+#ConfigTop #configWrap #transferWrap .relationWrap .btn {
+        display: inline-block;
+        width:200px;/*MN*/
+ }
+#ConfigTop #configWrap.user #systemWrap,
+#ConfigTop #configWrap.user #pushWrap,
+#ConfigTop #configWrap.user #dataWrap,
+#ConfigTop #configWrap.user #transferWrap {
+      display: none; }
+#ConfigTop #configWrap.system #userWrap,
+#ConfigTop #configWrap.system #pushWrap,
+#ConfigTop #configWrap.system #dataWrap,
+#ConfigTop #configWrap.system #transferWrap {
+      display: none; }
+#ConfigTop #configWrap.push #systemWrap,
+#ConfigTop #configWrap.push #userWrap,
+#ConfigTop #configWrap.push #dataWrap,
+#ConfigTop #configWrap.push #transferWrap {
+      display: none; }
+#ConfigTop #configWrap.datas #systemWrap,
+#ConfigTop #configWrap.datas #userWrap,
+#ConfigTop #configWrap.datas #pushWrap,
+#ConfigTop #configWrap.datas #transferWrap {
+      display: none; }
+#ConfigTop #configWrap.transfer #systemWrap,
+#ConfigTop #configWrap.transfer #userWrap,
+#ConfigTop #configWrap.transfer #pushWrap,
+#ConfigTop #configWrap.transfer #dataWrap {
+      display: none; }
+#ConfigTop input[type=range] {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+    -webkit-appearance: none; }
+#ConfigTop input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 15px;
+  background-color: #dcd7ce;
+    border-radius: 10px; }
+#ConfigTop input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 38px;
+  height: 38px;
+  margin-top: -8px;
+  background-image: url("/magica/resource/image_web/page/config/icon_slider_tab.png");
+  border-radius: 39px;
+    border-width: 0px !important; }
+#ConfigTop input[type=range]::-webkit-slider-thumb:hover, #ConfigTop input[type=range]::-webkit-slider-thumb:active {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+      background-color: transparent; }
+#ConfigTop select {
+  -webkit-appearance: none;
+  border: 2px solid #b28750;
+  border-radius: 5px;
+  width: 255px;
+  height: 36px;
+  position: relative;
+  text-align: center;
+  padding-left: 20px;
+    background-color: #fff; }
+#ConfigTop .slideLeft {
+  width: 10px;
+  height: 5px;
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-right: 20px solid #fff;
+  border-bottom: 10px solid transparent;
+    border-left: 20px solid transparent; }
+#ConfigTop .slideRight {
+  width: 10px;
+  height: 5px;
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 10px solid transparent;
+    border-left: 20px solid #fff; }
+
+.transferError .popupTextArea {
+  height: 356px !important; }
+
+.transferPop .popupTextArea {
+  height: 356px !important; }
+
+.transferPop #transferPopup {
+  width: 510px;
+  height: auto;
+  position: relative;
+  font-size: 20px;
+  text-align: left; }
+.transferPop #transferPopup .leftCol {
+    width: 176px;
+    margin-left: 52px;
+  padding: 5px 5px;
+  display: inline-block;
+  text-align: right;
+    text-shadow: none; }
+.transferPop #transferPopup .rightCol {
+  width: 200px;
+  padding: 5px 5px;
+  display: inline-block;
+    text-align: left; }
+.transferPop #transferPopup .rightCol input {
+  width: 200px;
+  height: auto;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #c6a882;
+  border-radius: 5px;
+      -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+      text-shadow: none; }
+.transferPop #transferPopup #transferSubmit {
+  position: absolute;
+  right: 52px;
+    bottom: 10px; }
+.transferPop #transferPopup .transferCanncel {
+  position: absolute;
+  bottom: 10px;
+    left: 52px; }
+.transferPop #transferPopup .transferAlert {
+  margin: 20px auto 10px;
+  text-align: center;
+    text-shadow: none; }
+.transferPop #transferPopup .transferNotice {
+  width: 506px;/*MN*/
+  margin: 0px auto 0;/*MN*/
+  padding: 15px 28px;/*MN*/
+  background-color: #e1d2bb;
+  text-align: left;
+    border-radius: 5px; }
+
+#transferPassword,
+#checkPassWord {
+  width: 250px;
+  padding: 5px 10px;
+  background-color: #fff;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 2px solid #c6a882;
+  color: #333;
+  text-shadow: none; }
+
+#changeName {
+  width: 300px;
+  height: auto;
+  padding: 5px 10px;
+  background-color: #fff;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 2px solid #c6a882;
+  color: #333;
+  text-shadow: none; }
+
+#transferForm th {
+  padding-right: 5px;
+  padding-bottom: 10px;
+  text-align: right; }
+
+#transferForm td {
+  padding-bottom: 10px;
+  text-align: left; }
+
+#dataPopup {
+  position: relative; }
+#dataPopup #dataPopText {
+  padding: 5px 0px;
+  font-size: 18px;
+  text-align: center;
+    height: 82px; }
+#dataPopup .popBtnWrap {
+    margin-top: 10px; }
+#dataPopup .popBtnWrap .dataDecide {
+      margin-left: 55px; }
+#dataPopup #voiceDataWrapBefore, #dataPopup #voiceDataWrapAfter, #dataPopup #movieDataWrapBefore, #dataPopup #movieDataWrapAfter {
+  width: 100%;
+  height: 40px;
+  padding: 0px 40px 0px 100px;/*MN*/
+  margin: 0px 0px 0px;
+    line-height: 40px;
+    text-align:left;/*MN*/
+    }
+#dataPopup #voiceDataWrapBefore span, #dataPopup #voiceDataWrapAfter span, #dataPopup #movieDataWrapBefore span, #dataPopup #movieDataWrapAfter span {
+  display: inline-block;
+      position: relative; }
+#dataPopup #voiceDataWrapBefore .changeText, #dataPopup #voiceDataWrapAfter .changeText, #dataPopup #movieDataWrapBefore .changeText, #dataPopup #movieDataWrapAfter .changeText {
+      width: 296;/*MN*/
+  text-align: left;
+  height: 40px;
+  margin-right: 10px;
+  line-height: 40px;
+  position: relative;
+      font-size: 20px;/*MN*/
+      top: -12px; }
+#dataPopup #voiceDataWrapBefore .checkBox, #dataPopup #voiceDataWrapAfter .checkBox, #dataPopup #movieDataWrapBefore .checkBox, #dataPopup #movieDataWrapAfter .checkBox {
+  width: 40px;
+  height: 40px;
+  background-image: url("/magica/resource/image_web/common/icon/icon_checkbox.png");
+  position: relative;
+      margin-left: 2px; }
+#dataPopup #voiceDataWrapBefore .voiceCheck, #dataPopup #voiceDataWrapAfter .voiceCheck, #dataPopup #movieDataWrapBefore .voiceCheck, #dataPopup #movieDataWrapAfter .voiceCheck {
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  background-image: url("/magica/resource/image_web/page/config/icon_sound_data_off.png");
+      top: -4px; }
+#dataPopup #voiceDataWrapBefore .movieCheck, #dataPopup #voiceDataWrapAfter .movieCheck, #dataPopup #movieDataWrapBefore .movieCheck, #dataPopup #movieDataWrapAfter .movieCheck {
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  background-image: url("/magica/resource/image_web/page/config/icon_movie_data_off.png");
+      top: -4px; }
+#dataPopup #voiceDataWrapBefore .movieCheck.on, #dataPopup #voiceDataWrapAfter .movieCheck.on, #dataPopup #movieDataWrapBefore .movieCheck.on, #dataPopup #movieDataWrapAfter .movieCheck.on {
+        background-image: url("/magica/resource/image_web/page/config/icon_movie_data_on.png"); }
+#dataPopup #voiceDataWrapBefore.on .voiceCheck, #dataPopup #voiceDataWrapAfter.on .voiceCheck, #dataPopup #movieDataWrapBefore.on .voiceCheck, #dataPopup #movieDataWrapAfter.on .voiceCheck {
+      background-image: url("/magica/resource/image_web/page/config/icon_sound_data_on.png"); }
+#dataPopup #voiceDataWrapBefore .pointFrame, #dataPopup #voiceDataWrapAfter .pointFrame, #dataPopup #movieDataWrapBefore .pointFrame, #dataPopup #movieDataWrapAfter .pointFrame {
+  width: 108px;
+  height: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  top: -14px;
+      margin-left: 14px; }
+#dataPopup #voiceDataWrapBefore .pointFrame:before, #dataPopup #voiceDataWrapBefore .pointFrame:after, #dataPopup #voiceDataWrapAfter .pointFrame:before, #dataPopup #voiceDataWrapAfter .pointFrame:after, #dataPopup #movieDataWrapBefore .pointFrame:before, #dataPopup #movieDataWrapBefore .pointFrame:after, #dataPopup #movieDataWrapAfter .pointFrame:before, #dataPopup #movieDataWrapAfter .pointFrame:after {
+  height: 24px;
+        background-size: 100% 100%; }
+#dataPopup #voiceDataWrapBefore, #dataPopup #movieDataWrapBefore {
+    margin-top: 25px; }
+
+.allDlPop .popupTextArea {
+  font-size: 22px !important; }
+.allDlPop .popupTextArea .settings {
+    width: 535px;/*MN*/
+  height: 102px;
+  border-radius: 5px;
+  border: 1px solid #b28750;
+  margin: 15px auto 25px;
+  text-align: left;
+  padding: 4px 27px 0;
+  line-height: 39px;
+    font-size: 20px; }
+.allDlPop .popupTextArea .settings .pointFrame {
+  width: 108px;
+  height: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  top: 0px;
+      position: relative; }
+.allDlPop .popupTextArea .settings .pointFrame:before, .allDlPop .popupTextArea .settings .pointFrame:after {
+  height: 24px;
+        background-size: 100% 100%; }
+.allDlPop .popupTextArea .settings .voiceIcon, .allDlPop .popupTextArea .settings .movieIcon {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+  margin-left: 10px;
+  width: 32px;
+      height: 32px; }
+.allDlPop .popupTextArea .settings .voiceIcon {
+      background-image: url("/magica/resource/image_web/page/config/icon_sound_data_off.png"); }
+.allDlPop .popupTextArea .settings .voiceIcon.on {
+        background-image: url("/magica/resource/image_web/page/config/icon_sound_data_on.png"); }
+.allDlPop .popupTextArea .settings .movieIcon {
+      background-image: url("/magica/resource/image_web/page/config/icon_movie_data_off.png"); }
+.allDlPop .popupTextArea .settings .movieIcon.on {
+        background-image: url("/magica/resource/image_web/page/config/icon_movie_data_on.png"); }
+.allDlPop .popupTextArea .c_red {
+    font-size: 22px; }

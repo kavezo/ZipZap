@@ -1,0 +1,44 @@
+<div id="MyPage" class="MyPage">
+
+	<div id="debugTextArea"></div>
+
+	<div id="favoriteChara" class="se_decide">
+		<div class="tapArea"></div>
+		<div class="charaIcon">
+			<img data-nativeimgkey="card_<%= leaderCardId %>_f" data-src="resource/image_native/card/image/card_<%= leaderCardId %>_f.png">
+		</div>
+	</div>
+
+	<div id="etcMenu">
+		<span id="present" class="TE linkBtn se_decide" data-href="#/PresentList" >
+		</span>
+		<% if(presentCount && presentCount > 0){ %>
+			<span id="presentBadge"><%= presentCount %></span>
+		<% } %>
+		<span id="announce" class="TE se_decide"></span>
+		<span id="config" class="TE se_decide"></span>
+	</div>
+
+	<div id="live2dMenu">
+		<span id='cameraLinkBtn' class='TE linkBtn se_decide' data-href="#/CameraTop"></span>
+		<span id='uiHideBtn' class='TE se_decide'></span>
+		<span id='portraitBtn' class='TE se_decide'></span>
+		<span id="live2dBtn" class='off TE se_decide'></span>
+	</div>
+
+	<div id="wearWrap" class="commonFrame2 off">
+		<div id="listTitle" class="ts_pink">Outfits</div>
+		<div id="mypageWearScrollOuter" class="hiddenWrap">
+			<div class="scrollInner"></div>
+		</div>
+		<div id="wearDecide" class="btn b_pink TE se_decide wearToggle">
+			<span class="b_screen"></span>
+			OK
+		</div>
+		<div class="bg"></div>
+	</div>
+
+	<div class="live2dArea"></div>
+
+	<div id="mypageBanner"></div>
+</div>

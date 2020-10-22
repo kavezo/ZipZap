@@ -1,0 +1,326 @@
+#SearchQuest {
+  width: 1024px;
+  height: 100%;
+  position: relative; }
+  #SearchQuest .tabBtns {
+    width: 356px;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 61px;
+    left: 32px;
+    -webkit-justify-content: space-between;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    #SearchQuest .tabBtns li {
+      min-width: 174px;
+      height: 50px;
+      background-size: -webkit-calc(100% - 44px) 100%;
+      font-size: 18px;
+      line-height: 50px; }
+      #SearchQuest .tabBtns li:before, #SearchQuest .tabBtns li:after {
+        width: 24px; }
+  #SearchQuest .commonFrame1:after {
+    -webkit-filter: none; }
+  #SearchQuest #questWrap #questScrollWrap .quest {
+    width: 354px;
+    height: 82px;
+    margin: 0 0 18px;
+    position: relative; }
+    #SearchQuest #questWrap #questScrollWrap .quest.halfAp:before {
+      content: "";
+      width: 106px;
+      height: 22px;
+      position: absolute;
+      bottom: -3px;
+      left: 124px;
+      background: url("/magica/resource/image_web/campaign/half_ap/common/icon_ap_half.png");
+      background-size: 106px 22px; }
+    #SearchQuest #questWrap #questScrollWrap .quest .pointFrame {
+      width: 110px;/*MN*/
+      display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 15px;
+      line-height: 24px;
+      -webkit-justify-content: space-between;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      #SearchQuest #questWrap #questScrollWrap .quest .pointFrame.difficulty {
+        position: absolute;
+        top: 15px;
+        right: 39px; }
+      #SearchQuest #questWrap #questScrollWrap .quest .pointFrame.ap {
+        position: absolute;
+        right: 39px;
+        bottom: 15px; }
+      #SearchQuest #questWrap #questScrollWrap .quest .pointFrame span {
+        z-index: 100; }
+    #SearchQuest #questWrap #questScrollWrap .quest:after {
+      width: 104px;
+      height: 38px;
+      position: absolute;
+      top: -14px;
+      left: 15px;
+      content: ""; }
+    #SearchQuest #questWrap #questScrollWrap .quest .title {
+      position: absolute;
+      top: 16px;
+      left: 54px;
+      font-size: 0; }
+      #SearchQuest #questWrap #questScrollWrap .quest .title span {
+        display: inline-block;
+        color: #ffffff;
+        font-size: 14px; }
+    #SearchQuest #questWrap #questScrollWrap .quest .limitTurnIcon {
+      width: 70px;
+      height: 24px;
+      background: url("/magica/resource/image_web/page/quest/icon_limited_turn.png") left top no-repeat;
+      background-size: 70px auto;
+      position: absolute;
+      top: -7px;
+      right: 32px; }
+    #SearchQuest #questWrap #questScrollWrap .quest .challengeIcon {
+      width: 80px;
+      height: 22px;
+      background: url("/magica/resource/image_web/page/quest/main/icon_challenge.png") left top no-repeat;
+      background-size: 80px auto;
+      position: absolute;
+      top: -6px;
+      left: 114px;
+      z-index: 100; }
+    #SearchQuest #questWrap #questScrollWrap .quest .charaQuestTitle {
+      position: absolute;
+      top: -5px;
+      right: 25px;
+      font-size: 0; }
+      #SearchQuest #questWrap #questScrollWrap .quest .charaQuestTitle span {
+        color: #ffffff;
+        font-size: 14px; }
+    #SearchQuest #questWrap #questScrollWrap .quest .questTitle {
+      position: absolute;
+      top: 36px;
+      left: 56px;
+      font-size: 20px;
+      line-height: 1; }
+    #SearchQuest #questWrap #questScrollWrap .quest .touchObj {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 354px;
+      height: 82px;
+      z-index: 105; }
+    #SearchQuest #questWrap #questScrollWrap .quest.main {
+      background: url("/magica/resource/image_web/page/searchquest/bg_quest_main.png") left top no-repeat; }
+      #SearchQuest #questWrap #questScrollWrap .quest.main .chapterNo, #SearchQuest #questWrap #questScrollWrap .quest.main .sectionNo, #SearchQuest #questWrap #questScrollWrap .quest.main .questTitle {
+        text-shadow: -1px -1px 1px #915bda, 1px -1px 1px #915bda, -1px 1px 1px #915bda, 1px 1px 1px #915bda, -1px -1px #915bda, 1px -1px #915bda, -1px 1px #915bda, 1px 1px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 3px #915bda, 1px -1px 3px #915bda, -1px 1px 3px #915bda, 1px 1px 3px #915bda; }
+      #SearchQuest #questWrap #questScrollWrap .quest.main:after {
+        background: url("/magica/resource/image_web/page/searchquest/icon_main.png") left top no-repeat; }
+    #SearchQuest #questWrap #questScrollWrap .quest.mainHard {
+      background: url("/magica/resource/image_web/page/searchquest/bg_quest_challenge.png") left top no-repeat; }
+      #SearchQuest #questWrap #questScrollWrap .quest.mainHard .chapterNo, #SearchQuest #questWrap #questScrollWrap .quest.mainHard .sectionNo, #SearchQuest #questWrap #questScrollWrap .quest.mainHard .questTitle {
+        text-shadow: -1px -1px 1px #bb1d97, 1px -1px 1px #bb1d97, -1px 1px 1px #bb1d97, 1px 1px 1px #bb1d97, -1px -1px #bb1d97, 1px -1px #bb1d97, -1px 1px #bb1d97, 1px 1px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 3px #bb1d97, 1px -1px 3px #bb1d97, -1px 1px 3px #bb1d97, 1px 1px 3px #bb1d97; }
+      #SearchQuest #questWrap #questScrollWrap .quest.mainHard:after {
+        background: url("/magica/resource/image_web/page/searchquest/icon_challenge.png") left top no-repeat; }
+    #SearchQuest #questWrap #questScrollWrap .quest.side {
+      background: url("/magica/resource/image_web/page/searchquest/bg_quest_sub.png") left top no-repeat; }
+      #SearchQuest #questWrap #questScrollWrap .quest.side .chapterNo, #SearchQuest #questWrap #questScrollWrap .quest.side .sectionNo, #SearchQuest #questWrap #questScrollWrap .quest.side .questTitle {
+        text-shadow: -1px -1px 1px #0b9885, 1px -1px 1px #0b9885, -1px 1px 1px #0b9885, 1px 1px 1px #0b9885, -1px -1px #0b9885, 1px -1px #0b9885, -1px 1px #0b9885, 1px 1px #0b9885, -1px -1px 2px #0b9885, 1px -1px 2px #0b9885, -1px 1px 2px #0b9885, 1px 1px 2px #0b9885, -1px -1px 2px #0b9885, 1px -1px 2px #0b9885, -1px 1px 2px #0b9885, 1px 1px 2px #0b9885, -1px -1px 3px #0b9885, 1px -1px 3px #0b9885, -1px 1px 3px #0b9885, 1px 1px 3px #0b9885; }
+      #SearchQuest #questWrap #questScrollWrap .quest.side:after {
+        background: url("/magica/resource/image_web/page/searchquest/icon_sub.png") left top no-repeat; }
+    #SearchQuest #questWrap #questScrollWrap .quest.chara {
+      background: url("/magica/resource/image_web/page/searchquest/bg_quest_chara.png") left top no-repeat; }
+      #SearchQuest #questWrap #questScrollWrap .quest.chara .chapterNo, #SearchQuest #questWrap #questScrollWrap .quest.chara .sectionNo, #SearchQuest #questWrap #questScrollWrap .quest.chara .questTitle, #SearchQuest #questWrap #questScrollWrap .quest.chara .charaName, #SearchQuest #questWrap #questScrollWrap .quest.chara .charaTitle {
+        text-shadow: -1px -1px 1px #ff5e7c, 1px -1px 1px #ff5e7c, -1px 1px 1px #ff5e7c, 1px 1px 1px #ff5e7c, -1px -1px #ff5e7c, 1px -1px #ff5e7c, -1px 1px #ff5e7c, 1px 1px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 3px #ff5e7c, 1px -1px 3px #ff5e7c, -1px 1px 3px #ff5e7c, 1px 1px 3px #ff5e7c; }
+      #SearchQuest #questWrap #questScrollWrap .quest.chara:after {
+        background: url("/magica/resource/image_web/page/searchquest/icon_chara.png") left top no-repeat; }
+    #SearchQuest #questWrap #questScrollWrap .quest.costume {
+      background: url("/magica/resource/image_web/page/searchquest/bg_quest_costume.png") left top no-repeat; }
+      #SearchQuest #questWrap #questScrollWrap .quest.costume .chapterNo, #SearchQuest #questWrap #questScrollWrap .quest.costume .sectionNo, #SearchQuest #questWrap #questScrollWrap .quest.costume .questTitle, #SearchQuest #questWrap #questScrollWrap .quest.costume .charaName, #SearchQuest #questWrap #questScrollWrap .quest.costume .charaTitle {
+        text-shadow: -1px -1px 1px #f57e4f, 1px -1px 1px #f57e4f, -1px 1px 1px #f57e4f, 1px 1px 1px #f57e4f, -1px -1px #f57e4f, 1px -1px #f57e4f, -1px 1px #f57e4f, 1px 1px #f57e4f, -1px -1px 2px #f57e4f, 1px -1px 2px #f57e4f, -1px 1px 2px #f57e4f, 1px 1px 2px #f57e4f, -1px -1px 2px #f57e4f, 1px -1px 2px #f57e4f, -1px 1px 2px #f57e4f, 1px 1px 2px #f57e4f, -1px -1px 3px #f57e4f, 1px -1px 3px #f57e4f, -1px 1px 3px #f57e4f, 1px 1px 3px #f57e4f; }
+      #SearchQuest #questWrap #questScrollWrap .quest.costume .sectionNo {
+        font-size: 13px;
+        line-height: 21px; }
+      #SearchQuest #questWrap #questScrollWrap .quest.costume:after {
+        background: url("/magica/resource/image_web/page/searchquest/icon_costume.png") left top no-repeat; }
+  #SearchQuest #questWrap {
+    width: 399px;
+    height: -webkit-calc(100% - 53px);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.3)), to(rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    right: -15px;
+    bottom: -15px; }
+    #SearchQuest #questWrap .orderTypeBtn {
+      width: 108px;
+      position: absolute;
+      top: -1px;
+      right: 107px;
+      z-index: 1000; }
+    #SearchQuest #questWrap .orderBtn {
+      width: 142px;
+      height: 24px;
+      position: absolute;
+      top: 9px;
+      right: 21px;
+      z-index: 1000; }
+      #SearchQuest #questWrap .orderBtn.asc {
+        background: url("/magica/resource/image_web/page/searchquest/btn_ap_ascending.png") left top no-repeat; }
+      #SearchQuest #questWrap .orderBtn.desc {
+        background: url("/magica/resource/image_web/page/searchquest/btn_ap_descending.png") left top no-repeat; }
+    #SearchQuest #questWrap #questScrollWrap {
+      width: 369px;
+      height: -webkit-calc(100% - 52px);
+      position: absolute;
+      top: 37px;
+      left: 9px;
+      overflow: hidden; }
+      #SearchQuest #questWrap #questScrollWrap .defaultText, #SearchQuest #questWrap #questScrollWrap .questNoneText {
+        width: 100%;
+        position: absolute;
+        top: 185px;
+        left: 0;
+        font-size: 18px;
+        text-align: center; }
+        #SearchQuest #questWrap #questScrollWrap .defaultText .c_red, #SearchQuest #questWrap #questScrollWrap .questNoneText .c_red {
+          width: 322px;
+          height: 32px;
+          margin: 10px auto;
+          background: #ffffff;
+          font-size: 16px;
+          line-height: 32px;
+          -webkit-border-radius: 16px; }
+        #SearchQuest #questWrap #questScrollWrap .defaultText.hide, #SearchQuest #questWrap #questScrollWrap .questNoneText.hide {
+          display: none; }
+      #SearchQuest #questWrap #questScrollWrap .questNoneText {
+        top: 230px; }
+      #SearchQuest #questWrap #questScrollWrap .questScrollInner {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        padding: 24px 0 20px;
+        display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-justify-content: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -webkit-flex-direction: column; }
+  #SearchQuest #itemWrap {
+    width: 596px;
+    height: -webkit-calc(100% - 142px);
+    position: absolute;
+    top: 122px;
+    left: 32px; }
+    #SearchQuest #itemWrap #itemScrollWrap {
+      width: 556px;
+      height: -webkit-calc(100% - 50px);
+      padding-left: 9px;
+      position: absolute;
+      top: 37px;
+      left: 21px;
+      overflow: hidden; }
+      #SearchQuest #itemWrap #itemScrollWrap .itemScrollInner .gift01, #SearchQuest #itemWrap #itemScrollWrap .itemScrollInner .gift02 {
+        width: 556px;
+        height: auto;
+        min-height: 100%;
+        padding: 16px 0 20px;
+        display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+        #SearchQuest #itemWrap #itemScrollWrap .itemScrollInner .gift01.hide, #SearchQuest #itemWrap #itemScrollWrap .itemScrollInner .gift02.hide {
+          display: none; }
+      #SearchQuest #itemWrap #itemScrollWrap .gift {
+        width: 96px;
+        height: 124px;
+        margin: 0 14px 19px 0;
+        position: relative; }
+        #SearchQuest #itemWrap #itemScrollWrap .gift:nth-child(5n) .giftName,
+        #SearchQuest #itemWrap #itemScrollWrap .gift:nth-child(5n - 1) .giftName {
+          left: inherit;
+          right: -9px; }
+          #SearchQuest #itemWrap #itemScrollWrap .gift:nth-child(5n) .giftName:before,
+          #SearchQuest #itemWrap #itemScrollWrap .gift:nth-child(5n - 1) .giftName:before {
+            left: inherit;
+            right: 48px; }
+        #SearchQuest #itemWrap #itemScrollWrap .gift img {
+          width: 96px;
+          height: 96px;
+          position: relative;
+          z-index: 10; }
+        #SearchQuest #itemWrap #itemScrollWrap .gift.select .giftName {
+          display: block; }
+        #SearchQuest #itemWrap #itemScrollWrap .gift .giftName {
+          width: 232px;
+          height: 24px;
+          background: #806f5b;
+          display: none;
+          position: absolute;
+          top: -16px;
+          left: -9px;
+          color: #ffffff;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: center;
+          -webkit-border-radius: 3px;
+          z-index: 10000; }
+          #SearchQuest #itemWrap #itemScrollWrap .gift .giftName:before {
+            display: block;
+            content: '';
+            width: 18px;
+            height: 12px;
+            background: url("/magica/resource/image_web/page/formation/item_balloon_hige.png") left -5px no-repeat;
+            position: absolute;
+            bottom: -12px;
+            left: 48px; }
+        #SearchQuest #itemWrap #itemScrollWrap .gift .quantity {
+          width: 100%;
+          height: 36px;
+          padding: 12px 5px 0;
+          background: #b28750;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          color: #ffffff;
+          text-align: right;
+          -webkit-border-radius: 0 0 5px 5px;
+          z-index: 1; }
+        #SearchQuest #itemWrap #itemScrollWrap .gift .quantityIcon {
+          width: 44px;
+          height: 22px;
+          background: url("/magica/resource/image_web/page/searchquest/text_possess.png") left top no-repeat;
+          display: block;
+          position: absolute;
+          bottom: 19px;
+          left: 0;
+          z-index: 1000; }
+        #SearchQuest #itemWrap #itemScrollWrap .gift.select:before {
+          width: 106px;
+          height: 106px;
+          background: url("/magica/resource/image_web/page/searchquest/frame_item.png") left top no-repeat;
+          background-size: 100% 100%;
+          position: absolute;
+          top: -5px;
+          left: -5px;
+          content: "";
+          z-index: 100; }

@@ -1,0 +1,179 @@
+<div id="UserMemoriaList">
+	<!-- ヘッダー部 -->
+	<div id="memoriaListHeader">
+		<!-- ソート関連パネル -->
+		<ul id="sortPanel">
+			<li id="eventFilterBtn" class="sb_gold_02 se_tabs TE"><span class="b_screen"></span>Event Filter<span class="switchIcon"></span></li>
+			<li id="sortPopupMemoria" class='se_tabs sb_gold_02 TE'><span class='b_screen'></span>Filter<span id="filterTypes"></span></li>
+			<li id="sortBtn" class='se_tabs sb_gold_02 TE'><span class='b_screen'></span>Order</li>
+		</ul>
+
+		<!-- 昇降順ボタン -->
+		<ul id="ascPanelMemoria">
+			<li id="ascMemoria" class="TE se_tabs" data-ascId="asc"></li>
+			<li id="descMemoria" class="TE se_tabs" data-ascId="desc"></li>
+		</ul>
+	</div>
+
+	<!-- 売却用パーツ -->
+	<div id="sellUtil">
+		<div id="sellResetBtn" class="btn TE se_cancel b_white"><span class='b_screen'></span>Deselect All</div>
+        <div id="selectCommon" class="btn TE se_decide b_white"><span class='b_screen'></span><span>Select all ★1s</span></div>
+
+		<div id="sellConfirm" class="btn TE se_decide b_pink off"><span class='b_screen'></span>Sell</div>
+	</div>
+
+	<!-- メモリア一覧表示領域 -->
+	<div id="memoriaWrap" class="commonFrame2">
+		<h2 id="memoriaInfoWrap"></h2>
+		<div class="memoriaScrollWrap" id="scrollSet">
+			<div id="memoriaWrapInner" class="scrollInner"></div>
+		</div>
+	</div>
+
+	<!-- メモリアサイズ変更ボタン -->
+	<div id="sizeChange" class="se_tabs TE" data-size="smaller"><span class="b_screen"></span></div>
+</div>
+
+<!-- メモリア表示パーツ -->
+<script type="text/template" id="MemoriaListParts">
+	<div class="cardInner">
+		<!-- 選択不可などの表示 -->
+		<div class="overWrap"></div>
+
+		<!-- ソート時表示パラメータ関連 -->
+		<span class="dispPrm"></span>
+		<span class="lv"><span class="lvNum">Lvl.<%="<%=model.level%\></span>/<%=model.maxLevel%\>"%></span>
+		<span class="limitBreak lbCount<%='<%=model.lbCount%\>'%>">
+			<span class="lb1"></span>
+			<span class="lb2"></span>
+			<span class="lb3"></span>
+			<span class="lb4"></span>
+		</span>
+
+		<!-- ロックアイコン -->
+		<span class="lock"></span>
+
+		<!-- イベントアイコン -->
+		<div class="eventEffect"></div>
+
+		<!-- 装備中表示 -->
+		<%="<% if(model.formationEquipFlag || model.equipFlag){ %\>"%>
+			<span class="equip"></span>
+		<%="<% } %\>"%>
+
+		<!-- 画像 -->
+		<img data-nativeimgkey='memoria_<%="<%= model.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%= model.pieceId %\>"%>_s.png' alt=''>
+
+		<!-- ソート並び替え用 -->
+		<div class="paramWrap"
+		data-level="<%='<%=model.level%\>'%>"
+		data-piece-id="<%='<%=model.pieceId%\>'%>"
+		data-hp="<%='<%=model.hp%\>'%>"
+		data-atk="<%='<%=model.attack%\>'%>"
+		data-def="<%='<%=model.defense%\>'%>"
+		data-rank="<%='<%=model.piece.rank%\>'%>"
+		data-created="<%='<%=model.createdAt%\>'%>"
+		data-lb="<%='<%=model.lbCount%\>'%>"></div>
+	</div>
+</script>
+
+<!-- 他の魔法少女から装備付け替え時ポップアップ -->
+<script type="text/template" id="formationEquipPop">
+	<p style="font-size:20px;line-height:36px;">
+		Equipped to <%='<%= cardName %\>'%>, on this Team.<br><br>
+		Remove <%='<%= cardName %\>'%>'s Equipement , and<br>
+		equip to <%='<%= targetName %\>'%>?
+	</p>
+</script>
+
+<script type="text/template" id="formationEquipCautionPop">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle common_title">Equipped Memoria</p>
+
+		<div class="popupTextArea">
+			You cannot sell equipped Memoria.<br>
+			This Memoria will be unequipped from all Teams.
+
+			<dl class='common_dl'>
+				<dt>Equipped</dt>
+				<dd>
+					<%='<% if(model.equipDeck.indexOf("quest") !== -1) { %\>'%>
+						<span class="c_purple">Quest Teams</span>
+					<%='<% } %\>'%>
+					<%='<% if(model.equipDeck.indexOf("support") !== -1) { %\>'%>
+						<span class="c_purple">Support Team</span>
+					<%='<% } %\>'%>
+					<%='<% if(model.equipDeck.indexOf("arena") !== -1) { %\>'%>
+						<span class="c_purple">Mirrors Team</span>
+					<%='<% } %\>'%>
+					<%='<% if(model.equipDeck.indexOf("pieceSet") !== -1) { %\>'%>
+						<span class="c_purple">Memoria Set</span>
+					<%='<% } %\>'%>
+				</dd>
+			</dl>
+		</div>
+		<table class="popupBtnArea" width="400" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><span class="cancelBtn se_cancel popupCloseBtn btn b_white TE"><span class='b_screen'></span>Cancel</span></td>
+				<td><span class="decideBtn se_cancel btn b_pink TE"><span class='b_screen'></span>OK</span></td>
+			</tr>
+		</table>
+	</div>
+</script>
+
+<script type="text/template" id="formationEquipCautionPop2">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle common_title">Equipped Memoria</p>
+
+		<div class="popupTextArea">
+			All equipment will be removed.
+			Are you sure?
+		</div>
+		<table class="popupBtnArea" width="400" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><span class="decideBtn se_cancel btn b_pink TE"><span class='b_screen'></span>Remove</span></td>
+				<td><span class="cancelBtn se_cancel popupCloseBtn btn b_white TE"><span class='b_screen'></span>Cancel</span></td>
+			</tr>
+		</table>
+	</div>
+</script>
+
+<script type="text/template" id="formationEquipPop2">
+	<p style="font-size:20px;line-height:36px;">
+		Equipped to <%='<%= targetName %\>'%>, on this Team.<br>
+		Are you sure you want to unequip the Memoria and equip it to the selected Memoria Slot?
+	</p>
+</script>
+
+<!-- 売却確認ポップアップ -->
+<script type="text/template" id="salePopTemp">
+	Sell <%='<%= sellNum %\>'%> Memoria for <%='<%= sellPrice %\>'%> CC?<br><!-- MN -->
+	 <br>
+	<%='<% if(rarityAlert){ %\>'%><span class="c_red">Includes a ★ 3 or Higher Memoria.</span><%='<% } %\>'%>
+</script>
+
+<!-- 情報表示パーツ -->
+<script type="text/template" id="saleGlow">
+	<!-- CC関連表示 -->
+	<div id="richeWrap" class="commonFrame3">
+		<div class="totalRiche">
+			<p class="pointFrame">CC Gained</p>
+			<p id="info_sellCount">0</p>
+		</div>
+		<div class="hasRiche">
+			<p class="countTitle pointFrame">CC</p>
+			<p id="info_totalGold"><%= gameUser.riche %></p>
+		</div>
+	</div>
+
+	<!-- 所持数関連表示 -->
+	<ul id="memoriaListInfo" class="memoriaInfo">
+		<li class="hasMemoriaNum">
+			<span id="info_memoriaCount"></span>/<span id="info_memoriaCapacity"><%= gameUser.cardCapacity %></span>
+		</li>
+		<li class="memoriaSelectNum"><span id="info_selectCount">0</span></li>
+	</ul>
+</script>

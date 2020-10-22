@@ -1,0 +1,39 @@
+<div id="RankingHistory">
+	<div id="arenaHistoryWrap">
+		<div class="historyTitle"></div>
+		<div id="historyScroll">
+			<div class="listScrollInner">
+				<% if(history.length > 0){
+					_.each(history,function(_model,index){
+							%>
+				<div class="historyList">
+					<div class="rightWrap">
+						<div class="eventTitle"><%= _model.event.name %></div>
+						<span class="pointTitle">Ranking Pts.</span>
+						<div class="pointWrap arenaColor"><%= _model.rankingArenaPoint %>Pt</div>
+						<span class="battleTimeTitle">Period</span>
+
+						<%
+						//開催期間
+							var startAt = _model.event.startAt.split(" ")[0].split("/");
+							var endAt   = _model.event.endAt.split(" ")[0].split("/");
+						%>
+
+						<div class="battleTime arenaColor">
+							<%= startAt[0] %>.<%= Number(startAt[1]) %>.<%= Number(startAt[2]) %>&nbsp;〜&nbsp;<%= endAt[0] %>.<%= Number(endAt[1]) %>.<%= Number(endAt[2]) %>
+						</div>
+						<% if(_model.definiteClassRank){ %>
+							<div class="rankingEmblem rank<%= _model.definiteClassRank %>"></div>
+						<% }else{ %>
+							<div class="rankingEmblem"></div>
+						<% } %>
+					</div>
+				</div>
+					<% 	});
+				   }else{ %>
+					<p class="noneHistory">No Ranking Results</p>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>

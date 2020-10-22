@@ -1,0 +1,11 @@
+<% var nowBp = _.findWhere(model,{statusId:"BTP"}); %>
+<% var maxBp = _.findWhere(model,{statusId:"MAX_BTP"}); %>
+<ul class="bpPointWrap">
+	<% for(var i=0;i<5;i++){ %>
+	<li<% if(nowBp.point>i){ %> class="on"<% } %>></li>
+	<% } %>
+</ul>
+<div class="bpRemainTime c_white<% if(nowBp.point > 4){ %> off<% } %>">1 BP Recovers In:&nbsp;<span id="cureRemain" class="c_white"></span></div>
+<span class="bpPlusBtn se_decide TE">
+	<span class="b_screen"></span>
+</span>

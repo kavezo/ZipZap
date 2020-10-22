@@ -1,0 +1,105 @@
+<div id="SubQuest">
+	<div id="questContent">
+	</div>
+
+	<div id="content">
+		<div id="questListWrap">
+			<ul id="questList">
+			</ul>
+		</div>
+		<div id="debugArea"></div>
+
+		<div id="questLinkBtnWrap">
+			<ul class="btns">
+				<li class="main linkBtn se_decide" data-href="#/MainQuest"><span></span><div class='bg'></div></li>
+				<li class="side current"><span></span><div class='bg'></div></li>
+				<li class="chara linkBtn se_decide" data-href="#/CharaQuest"><span></span><div class='bg'></div></li>
+				<li class="event linkBtn se_decide" data-href="#/EventQuest"><span></span><div class='bg'></div></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- チャプターリストテンプレート -->
+<script type="text/template" id="ChapterParts">
+	<div class="chapterTitleWrap">
+		<span class="chapterNo">Ch <span><%="<%= model.chapter.chapterNoForView %\>"%></span></span>
+		<span class="chapterTitle"><%="<%= model.chapter.title %\>"%></span>
+		<span class="prm_chapterId"><%="<%= model.chapterId %\>"%></span>
+		<span class="toggleBtn"></span>
+	</div>
+	<ul class="sectionList"></ul>
+</script>
+
+<!-- セクションパーツ -->
+<script type="text/template" id="SectionParts">
+	<span class='sectionState <%="<%= model.sectionState %\>"%>'></span>
+	<span class="treasure">
+		<div class="title"></div>
+		<%="<% if(model.cleared) { %\>"%>
+			<%="<% var itemCode = model.section.clearRewardCode.toLowerCase(); %\>"%>
+			<%="<% if(itemCode.indexOf('live2d') !== -1 || itemCode.indexOf('doppel') !== -1) { %\>"%>
+				<!-- todo:charaid -->
+				<%="<% if(itemCode.indexOf('live2d') !== -1) { %\>"%>
+					<%="<% var miniId = itemCode.split('_')[1] + '00'; %\>"%>
+				<%="<% } %\>"%>
+
+				<%="<% if(itemCode.indexOf('doppel') !== -1) { %\>"%>
+					<%="<% var miniId = itemCode.split('_')[1]; %\>"%>
+				<%="<% } %\>"%>
+
+				<div class="imgWrap">
+					<div class="charaIcon">
+						<div class="maskWrap">
+							<img data-nativeimgkey='mini_<%="<%= miniId %\>"%>_d' data-src='resource/image_native/mini/image/mini_<%="<%= miniId %\>"%>_d.png'>
+						</div>
+					</div>
+					<%="<% if(itemCode.indexOf('live2d') !== -1) { %\>"%>
+						<img src='/magica/resource/image_web/item/main/live2d.png' alt=''>
+					<%="<% } %\>"%>
+
+					<%="<% if(itemCode.indexOf('doppel') !== -1) { %\>"%>
+						<img src='/magica/resource/image_web/item/main/doppel.png' alt=''>
+					<%="<% } %\>"%>
+				</div>
+			<%="<% } else if(itemCode.indexOf('piece') !== -1) { %\>"%>
+				<%="<% itemCode = 'memoria_' + itemCode.split('_')[1] + '_s' %\>"%>
+				<img data-nativeimgkey='<%="<%= itemCode %\>"%>' data-src='resource/image_native/memoria/<%="<%= itemCode %\>"%>.png' alt=''>
+			<%="<% } else if(itemCode.indexOf('gem') !== -1) { %\>"%>
+				<%="<% itemCode = itemCode.split('_')[1] %\>"%>
+				<div class="imgWrap">
+					<img src='/magica/resource/image_web/item/frame/item_frame03.png'>
+					<img data-nativeimgkey='chara_<%="<%= itemCode %\>"%>_h' data-src='resource/image_native/chara/chara_<%="<%= itemCode %\>"%>_h.png'>
+				</div>
+			<%="<% } else { %\>"%>
+				<%="<% itemCode = itemCode.split('_')[1] + '_' + itemCode.split('_')[2] %\>"%>
+				<img src='/magica/resource/image_web/item/main/<%="<%= itemCode %\>"%>.png' alt=''>
+			<%="<% } %\>"%>
+		<%="<% } else { %\>"%>
+			<img src='/magica/resource/image_web/common/treasure/<%="<%= model.chestColor.toLowerCase() %\>"%>.png' alt=''>
+		<%="<% } %\>"%>
+	</span>
+
+	<span class="sectionNo">Ch.<%="<%= model.chapterNoForView %\>"%>: Ep.<%="<%= model.section.genericIndex %\>"%></span>
+	<span class="sectionTitle"><%="<%= model.section.title %\>"%></span>
+
+	<span class="questTip">
+		<%="<% var i = 0; %\>"%>
+		<%="<% while(i < model.section.questBattleCount) { %\>"%>
+			<%="<% if(model.section.questBattleList[i]) { %\>"%>
+				<span class='<%="<%= model.section.questBattleList[i].questState %\>"%>'></span>
+			<%="<% } else { %\>"%>
+				<span class='new'></span>
+			<%="<% } %\>"%>
+
+		<%="<% 	i=(i+1)|0; %\>"%>
+		<%="<% } %\>"%>
+	</span>
+
+		<%="<% console.log(model) %\>"%>
+
+	<span class="prm_chapterId"><%="<%= model.chapterId %\>"%></span>
+	<span class="prm_areaMapId"><%="<%= model.section.areaMapId %\>"%></span>
+</script>
+
+

@@ -1,0 +1,482 @@
+#schedulePop .scheduleWrap {
+  width: 828px;
+  margin: 43px auto 0; }
+#schedulePop .scheduleWrap .header {
+  width: 828px;
+  height: 50px;
+  margin-bottom: 6px;
+  -webkit-justify-content: flex-end;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; }
+#schedulePop .scheduleWrap .header > div {
+  width: 100px;
+  height: 50px;
+  margin-left: 6px;
+  background: #f66a99;
+  color: #ffffff;
+      font-size: 16px;/*MN*/
+  line-height: 50px;
+      -webkit-border-radius: 8px 8px 0 0; }
+#schedulePop .scheduleWrap .contents .wrap > div:first-child {
+    margin-bottom: 6px; }
+#schedulePop .scheduleWrap .contents .wrap .title {
+  width: 192px;
+  height: 154px;
+  background: #b28750;
+  position: relative;
+  color: #ffffff;
+  font-size: 24px;
+    line-height: 24px;/*MN*/
+    padding-top: 50px;/*MN*/
+    -webkit-border-radius: 10px 0 0 10px; }
+#schedulePop .scheduleWrap .contents .wrap .title p {
+  width: 152px;
+  height: 28px;
+  background: #ffffff;
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  color: #b28750;
+  font-size: 16px;
+  line-height: 28px;
+      -webkit-border-radius: 14px; }
+#schedulePop .scheduleWrap .contents .wrap .attWrap {
+  width: 100px;
+  height: 154px;
+  margin-left: 6px;
+  background: #ebe1d5;
+  display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+#schedulePop .scheduleWrap .contents .wrap .attWrap .CC {
+  background: url("/magica/resource/image_web/page/quest/week/att_cc_f.png") left top no-repeat;
+  background-size: 100% 100%;
+      display: block; }
+#schedulePop .scheduleWrap .contents .wrap .attWrap span {
+  width: 52px;
+      height: 52px; }
+#schedulePop .scheduleWrap .contents .wrap .attWrap span:not(:last-child) {
+        margin-bottom: 10px; }
+#schedulePop .scheduleWrap .contents .wrap .attWrap.weekend {
+  height: 314px;
+      margin-bottom: 0; }
+#schedulePop .scheduleWrap .contents .wrap .attWrap.weekend span {
+  width: 44px;
+        height: 44px; }
+#schedulePop .scheduleWrap .contents .wrap .attWrap.weekend span:not(:last-child) {
+          margin-bottom: 4px; }
+
+#EventQuest {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hide; }
+#EventQuest .weeklySchedulePopBtn {
+  width: 116px;
+  height: 48px;
+  background: url("/magica/resource/image_web/page/quest/week/btn_schedule.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  bottom: 102px;
+    left: 16px; }
+#EventQuest #eventShopWrap {
+  position: absolute;
+  bottom: 170px;
+    left: 11px; }
+#EventQuest #eventShopWrap .itemNumWrap {
+  width: 104px;
+  height: 112px;
+  margin: 0 0 0 11px;
+  background: url("/magica/resource/image_web/page/quest/week/event_item_bg.png") left top no-repeat;
+      position: relative; }
+#EventQuest #eventShopWrap .itemNumWrap .shopItemImg {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 11px;
+        left: 20px; }
+#EventQuest #eventShopWrap .itemNumWrap .numWrap {
+  width: 100%;
+  position: absolute;
+  bottom: 7px;
+  left: 0;
+  color: #60d4ff;
+  font-size: 18px;
+        text-align: center; }
+#EventQuest #eventShopWrap .shopLinkBtn {
+  width: 116px;
+  height: 40px;
+  margin: 5px 0 0 5px;
+  background: url("/magica/resource/image_web/page/quest/week/btn_shop.png") left top no-repeat;
+      position: relative; }
+#EventQuest .params {
+    display: none; }
+#EventQuest .missionBtnWrap {
+  width: 316px;
+  height: 58px;
+  background: url("/magica/resource/image_web/page/quest/week/bg_mission.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+    right: 0; }
+#EventQuest .missionBtnWrap .missionBtn {
+  width: 122px;
+  position: absolute;
+  top: 10px;
+  right: 115px;
+      z-index: 100; }
+#EventQuest .weekTitle {
+  width: 262px;
+  height: 50px;
+  position: absolute;
+  top: 72px;
+    left: 0; }
+#EventQuest #questLinkListWrap {
+  width: 632px;
+  height: -webkit-calc(100% - 118px);
+  padding: 0;
+  background: -webkit-linear-gradient(top left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.7) 100%);
+    background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(20%, rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.7)));
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.7) 100%);
+    background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 20%, rgba(0, 0, 0, 0.7) 100%);
+  position: fixed;
+  top: 58px;
+  right: 0;
+    overflow: hidden; }
+#EventQuest #questLinkListWrap.first .firstView {
+      display: block !important; }
+#EventQuest #questLinkListWrap.second .secondView {
+      display: block !important; }
+#EventQuest #questLinkListWrap .scrollInner {
+  height: auto !important;
+  min-height: 100%;
+      padding: 4px 0 200px 0; }
+#EventQuest #questLinkListWrap .questTitle {
+      position: relative; }
+#EventQuest #questLinkListWrap .questTitle .attributeList {
+  height: 100%;
+  position: absolute;
+  top: 0;
+        right: 55px;/*MN*/
+  -webkit-justify-content: flex-end;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+#EventQuest #questLinkListWrap .questTitle .attributeList li {
+  width: 34px;
+  height: 34px;
+  margin: 0 0 0 6px;
+  position: relative;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+          -webkit-filter: drop-shadow(0 0 3px #fff8cb); }
+#EventQuest #questLinkListWrap .questTitle .attributeList li .off:before {
+  width: 34px;
+  height: 34px;
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+            -webkit-border-radius: 17px; }
+#EventQuest #questLinkListWrap .questTitle .attributeList li .CC {
+  background: url("/magica/resource/image_web/page/quest/week/att_cc.png") left top no-repeat;
+            background-size: 100% 100%; }
+#EventQuest #questLinkListWrap .questTitle .bg {
+  width: 100%;
+  height: 114px;
+  margin: 0 0 0;
+        padding-left: 129px;/*MN*/
+  background: url("/magica/resource/image_web/page/quest/week/bg_chapter_compose.png") right center no-repeat;
+  display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+#EventQuest #questLinkListWrap .questTitle .header {
+  width: 102px;
+  height: 86px;
+  background: url("/magica/resource/image_web/page/quest/week/week_header.png") left center no-repeat;
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  line-height: 86px;
+        text-align: center; }
+#EventQuest #questLinkListWrap .questTitle .header .text {
+          font-size: 13px; }
+#EventQuest #questLinkListWrap .questTitle .header .text .week1, #EventQuest #questLinkListWrap .questTitle .header .text .event {
+            color: #ffffff; }
+#EventQuest #questLinkListWrap .questTitle .header .text .week2 {
+  width: 102px;
+  display: inline-block;
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  color: #ef7b97;
+  font-size: 14px;
+            line-height: 1em; }
+#EventQuest #questLinkListWrap .questTitle .title {
+          display: flex;/*MN*/
+  		  color: #ffffff;
+          font-size: 16px;/*MN*/
+		  justify-content: left;/*MN*/
+		  align-items: center;/*MN*/
+		  padding: 0px 0 0 0;/*MN*/
+		  width: 210px;/*MN*/
+		  line-height: 19px;/*MN*/
+
+        text-shadow: -1px -1px 1px #0e91ce,
+ 1px -1px 1px #0e91ce,
+ -1px 1px 1px #0e91ce,
+ 1px 1px 1px #0e91ce,
+ -1px -1px #0e91ce,
+ 1px -1px #0e91ce,
+ -1px 1px #0e91ce,
+ 1px 1px #0e91ce,
+ -1px -1px 2px #0e91ce,
+ 1px -1px 2px #0e91ce,
+ -1px 1px 2px #0e91ce,
+ 1px 1px 2px #0e91ce,
+ -1px -1px 2px #0e91ce,
+ 1px -1px 2px #0e91ce,
+ -1px 1px 2px #0e91ce,
+ 1px 1px 2px #0e91ce,
+ -1px -1px 3px #0e91ce,
+ 1px -1px 3px #0e91ce,
+ -1px 1px 3px #0e91ce,
+ 1px 1px 3px #0e91ce; }
+#EventQuest #questLinkListWrap .questTitle .toggleBtn {
+  width: 44px;
+  height: 114px;
+  background: url("/magica/resource/image_web/page/quest/btn_list_open.png") left center no-repeat;
+  background-size: 44px 44px;
+  display: block;
+  position: absolute;
+  top: 0;
+        right: 4px;/*MN*/
+  pointer-events: none;
+        z-index: 15; }
+#EventQuest #questLinkListWrap .questLinkList {
+  width: 100%;
+      height: 100%; }
+#EventQuest #questLinkListWrap .questLinkList .quest:nth-child(1) {
+        margin-top: 14px; }
+#EventQuest #questLinkListWrap .questLinkList .questWrap, #EventQuest #questLinkListWrap .questLinkList #composeQuestWrap, #EventQuest #questLinkListWrap .questLinkList #materialQuestWrap {
+        display: none; }
+#EventQuest #questLinkListWrap .questLinkList.open .questWrap, #EventQuest #questLinkListWrap .questLinkList.open #composeQuestWrap, #EventQuest #questLinkListWrap .questLinkList.open #materialQuestWrap {
+        display: block; }
+#EventQuest #questLinkListWrap .questLinkList.open .toggleBtn {
+  background: url("/magica/resource/image_web/page/quest/btn_list_close.png") left center no-repeat;
+        background-size: 44px 44px; }
+#EventQuest #questLinkListWrap .questLinkList .FREE_AT_NOT_CLEAR .firstView:before {
+  width: 126px;
+  height: 26px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/icon_ap_zero.png") left top no-repeat;
+  position: absolute;
+  top: -9px;
+  left: 136px;
+        content: ""; }
+#EventQuest #questLinkListWrap .questLinkList .HALF_AP .firstView:before {
+  width: 126px;
+  height: 26px;
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 136px;
+        background: url("/magica/resource/image_web/campaign/half_ap/common/icon_ap_half.png") left top no-repeat; }
+#EventQuest #questLinkListWrap .questLinkList .firstView, #EventQuest #questLinkListWrap .questLinkList .secondView {
+        display: none; }
+#EventQuest #questLinkListWrap .questLinkList .secondView {
+        padding: 15px 0 0 45px; }
+#EventQuest #questLinkListWrap .questLinkList .secondView li {
+  padding-left: 25px;
+  position: relative;
+  color: #ffffff;
+  font-size: 13px;
+          line-height: 20px; }
+#EventQuest #questLinkListWrap .questLinkList .secondView li:before {
+  width: 20px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_s_off.png") left top no-repeat;
+  background-size: 20px 20px;
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0;
+            content: ""; }
+#EventQuest #questLinkListWrap .questLinkList .secondView li.cleared:before {
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_s_on.png") left top no-repeat;
+            background-size: 20px 20px; }
+#EventQuest #questLinkListWrap .questLinkList .quest {
+  width: 434px;
+  height: 88px;
+  margin: 0 0 38px 94px;
+  background: url("/magica/resource/image_web/page/quest/week/bg_quest_battle_compose.png") left top no-repeat;
+        position: relative; }
+#EventQuest #questLinkListWrap .questLinkList .quest .pointFrame {
+  width: 120px;
+          font-size: 14px;/*MN*/
+          line-height: 24px; }
+#EventQuest #questLinkListWrap .questLinkList .quest .pointFrame.apFrame, #EventQuest #questLinkListWrap .questLinkList .quest .pointFrame.difficultyFrame {
+  position: absolute;
+            bottom: -12px; }
+#EventQuest #questLinkListWrap .questLinkList .quest .pointFrame.apFrame {
+            right: 40px; }
+#EventQuest #questLinkListWrap .questLinkList .quest .pointFrame.difficultyFrame {
+            right: 156px; }
+#EventQuest #questLinkListWrap .questLinkList .quest .pointFrame span {
+  width: 30px;
+  display: inline-block;
+            text-align: right; }
+#EventQuest #questLinkListWrap .questLinkList .quest .questState {
+  position: absolute;
+  top: -8px;
+          left: 26px; }
+#EventQuest #questLinkListWrap .questLinkList .quest .questTitle {
+
+    padding: 27px 0 0 52px;/*MN*/
+    justify-content: left;/*MN*/
+    align-items: center;/*MN*/
+    display: flex;/*MN*/
+    width: 275px;/*MN*/
+    height: 61px;/*MN*/
+    font-size: 17px;/*MN*/
+    line-height: 18px;/*MN*/
+
+
+          text-shadow: -1px -1px 1px #0e91ce,
+ 1px -1px 1px #0e91ce,
+ -1px 1px 1px #0e91ce,
+ 1px 1px 1px #0e91ce,
+ -1px -1px #0e91ce,
+ 1px -1px #0e91ce,
+ -1px 1px #0e91ce,
+ 1px 1px #0e91ce,
+ -1px -1px 2px #0e91ce,
+ 1px -1px 2px #0e91ce,
+ -1px 1px 2px #0e91ce,
+ 1px 1px 2px #0e91ce,
+ -1px -1px 2px #0e91ce,
+ 1px -1px 2px #0e91ce,
+ -1px 1px 2px #0e91ce,
+ 1px 1px 2px #0e91ce,
+ -1px -1px 3px #0e91ce,
+ 1px -1px 3px #0e91ce,
+ -1px 1px 3px #0e91ce,
+ 1px 1px 3px #0e91ce; }
+#EventQuest #questLinkListWrap .questLinkList .quest .mission {
+  display: -webkit-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 55px;
+          bottom: 25px; }
+#EventQuest #questLinkListWrap .questLinkList .quest .mission li {
+  width: 38px;
+  height: 38px;
+  margin: 0 0 0 -5px;
+            background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_l_off.png") left top no-repeat; }
+#EventQuest #questLinkListWrap .questLinkList .quest .mission li.cleared {
+              background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_l_on.png") left top no-repeat; }
+#EventQuest #questLinkListWrap .questLinkList .quest .treasure {
+  width: 96px;
+  height: 96px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/bg_reward.png") left top no-repeat;
+  display: -webkit-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: -48px;
+  bottom: -6px;
+  -webkit-justify-content: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center; }
+#EventQuest #questLinkListWrap .questLinkList .quest .treasure .title {
+  width: 116px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission.png") left top no-repeat;
+  position: absolute;
+  top: -4px;
+            left: -10px; }
+#EventQuest #questLinkListWrap .questLinkList .quest .treasure .title.clear {
+              background: url("/magica/resource/image_web/page/quest/questBattle/complete.png") left top no-repeat; }
+#EventQuest #questLinkListWrap .questLinkList .quest .treasure .itemImg {
+  width: 47px;
+            height: 47px; }
+#EventQuest #questLinkListWrap .questLinkList .quest .treasure .treasureImg {
+  width: 60px;
+            height: 60px; }
+        #EventQuest #questLinkListWrap .questLinkList .quest .touchObj {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 392px;
+          height: 88px;
+          z-index: 105; }
+#EventQuest #questLinkListWrap .questLinkList.eventS .charaImg {
+  position: absolute;
+  top: 25px;
+  right: 0;
+        z-index: 10; }
+#EventQuest #questLinkListWrap .questLinkList.eventS .title {
+  position: absolute;
+  top: 38px;
+  left: 146px;
+  font-size: 22px;
+  line-height: 1;
+        z-index: 100; }
+#EventQuest #questLinkListWrap .questLinkList.eventS .subTitle {
+  position: absolute;
+  top: 62px;
+  left: 146px;
+  color: #60d4ff;
+  font-size: 16px;
+        z-index: 100; }
+#EventQuest #questLinkListWrap .questLinkList.eventS .endAt {
+  height: 24px;
+  padding: 0 15px;
+  position: absolute;
+  top: 11px;
+  left: 106px;
+  font-size: 15px;
+  line-height: 24px;
+        z-index: 100; }
+#EventQuest #questLinkListWrap .questLinkList.eventS .header {
+        background: url("/magica/resource/image_web/page/quest/event/training_header.png") left center no-repeat; }
+#EventQuest #questLinkListWrap .questLinkList.eventS .bg {
+        background: url("/magica/resource/image_web/page/quest/event/bg_chapter_training.png") right center no-repeat; }
+#EventQuest #questLinkListWrap .questLinkList.eventS .quest {
+        background: url("/magica/resource/image_web/page/quest/event/bg_quest_battle_training.png") left top no-repeat; }
+#EventQuest #questLinkListWrap .questLinkList #materialTitle .bg {
+        background: url("/magica/resource/image_web/page/quest/week/bg_chapter_customize.png") right center no-repeat; }
+#EventQuest #questLinkListWrap .questLinkList #materialQuestWrap .quest {
+        background: url("/magica/resource/image_web/page/quest/week/bg_quest_battle_customize.png") left top no-repeat; }

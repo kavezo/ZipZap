@@ -1,0 +1,210 @@
+#popupArea .popCaution {
+  font-size: 16px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 9px;
+}
+#popupArea .gachaResultWrap {
+  width: 716px;
+  height: 410px;
+  margin: 20px auto 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+#popupArea .gachaResultWrap .partsWrap {
+  width: 120px;
+  height: 182px;
+  margin-bottom: 33px;
+  position: relative;
+}
+#popupArea .gachaResultWrap .partsWrap .resultImage {
+  width: 120px;
+  height: 182px;
+}
+#popupArea .gachaResultWrap .partsWrap .resultImage.item {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -webkit-calc(50% - 40px);
+  left: -webkit-calc(50% - 40px);
+}
+#popupArea .gachaResultWrap .partsWrap .itemFrame {
+  width: 120px;
+  height: 182px;
+  background-size: 120px 182px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#popupArea .gachaResultWrap .partsWrap .typeWrap {
+  width: 128px;
+  height: 26px;
+  position: absolute;
+  top: 169px;
+  left: -4px;
+  z-index: 105;
+}
+#popupArea .gachaResultWrap .partsWrap .typeWrap.PIECE {
+  background: url("/magica/resource/image_web/page/gacha/tag_memoria_s.png");
+}
+#popupArea .gachaResultWrap .partsWrap .typeWrap.CARD {
+  background: url("/magica/resource/image_web/page/gacha/tag_chara_s.png");
+}
+#popupArea .gachaResultWrap .partsWrap .typeWrap.ITEM {
+  background: url("/magica/resource/image_web/page/gacha/tag_jem_s.png");
+}
+#popupArea .gachaResultWrap.single {
+  height: 385px;
+  margin: 40px auto 0;
+}
+#popupArea .gachaResultWrap.single .partsWrap {
+  width: 230px;
+  height: 361px;
+}
+#popupArea .gachaResultWrap.single .partsWrap .itemFrame {
+  width: 230px;
+  height: 348px;
+  background-size: 230px 348px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#popupArea .gachaResultWrap.single .partsWrap .resultImage:not(.item) {
+  width: 230px;
+  height: 348px;
+}
+#popupArea .gachaResultWrap.single .partsWrap .resultImage.item {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: -webkit-calc(50% - 75px);
+  left: -webkit-calc(50% - 75px);
+}
+#popupArea .gachaResultWrap.single .partsWrap .typeWrap {
+  width: 244px;
+  height: 38px;
+  position: absolute;
+  top: inherit;
+  bottom: -6px;
+  left: -webkit-calc(50% - 122px);
+}
+#popupArea .gachaResultWrap.single .partsWrap .typeWrap.PIECE {
+  background: url("/magica/resource/image_web/page/gacha/tag_memoria.png");
+}
+#popupArea .gachaResultWrap.single .partsWrap .typeWrap.CARD {
+  background: url("/magica/resource/image_web/page/gacha/tag_chara.png");
+}
+#popupArea .gachaResultWrap.single .partsWrap .typeWrap.ITEM {
+  background: url("/magica/resource/image_web/page/gacha/tag_jem.png");
+}
+
+#GachaHistory {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+#GachaHistory #historyBaseWrap {
+  width: 912px;
+  height: -webkit-calc(100% - 90px);
+  position: absolute;
+  top: 70px;
+  left: -webkit-calc(50% - 456px);
+}
+#GachaHistory .gachaBoxLinkBtn {
+  width: 160px;
+  position: absolute;
+  top: 25px;
+  right: 22px;
+}
+#GachaHistory #gachaWrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#GachaHistory #gachaWrap .gachaCnt {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+#GachaHistory #gachaWrap .gachaCnt span {
+  margin-left: 5px;
+}
+#GachaHistory #gachaWrap .gachaCnt, #GachaHistory #gachaWrap .gachaCnt span {
+  display: inline-block;
+}
+#GachaHistory #gachaWrap .gachaCaution {
+  position: absolute;
+  top: 10px;
+  left: 582px;
+}
+#GachaHistory #gachaWrap #gachaScrollWrap {
+  width: 854px;
+  height: -webkit-calc(100% - 96px);
+  position: absolute;
+  top: 36px;
+  left: -webkit-calc(50% - 427px);
+  overflow: hidden;
+}
+#GachaHistory #gachaWrap #gachaScrollWrap #gachaInner {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding: 4px 2px 26px;
+  position: relative;
+}
+#GachaHistory #gachaWrap #gachaScrollWrap #gachaInner .gachaNoItem {
+  width: 450px;
+  height: 30px;
+  position: absolute;
+  top: -webkit-calc(50% - 15px);
+  left: -webkit-calc(50% - 225px);
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+#GachaHistory .gacha {
+  min-height: 108px;
+  margin: 0 0 12px 0;
+  padding: 10px 5px;
+  position: relative;
+}
+#GachaHistory .gacha .gachaBanner {
+  width: 224px;
+  height: 112px;
+  display: block;
+  position: absolute;
+  top: -4px;
+  right: 188px;
+}
+#GachaHistory .gacha .gachaName {
+  width: 480px;
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 18px;
+  overflow: hidden;
+  font-size: 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#GachaHistory .gacha .gachaDate {
+  position: absolute;
+  top: 56px;
+  left: 22px;
+  font-size: 18px;
+}
+#GachaHistory .gacha .gachaResultBtn {
+  width: 160px;
+  min-width: 160px;
+  position: absolute;
+  top: -webkit-calc(50% - 32px);
+  right: 18px;
+  font-size: 18px;
+}

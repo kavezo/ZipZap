@@ -1,0 +1,135 @@
+<% if(model.card) { %>
+	<span id="detailBtn" class="TE"><span class="b_screen"></span></span>
+	<span id="attribute"><span class='type_f <%= model.card.attributeId %>'></span></span>
+
+	<span id="rare" class='<%= model.card.rank %>'>
+		<% var i = 0; %>
+		<% var maxRare = model.maxRare || Number(model.card.rank.split('RANK_')[1]); %>
+		<% while(i < maxRare) { %>
+			<span></span>
+		<% 	i=(i+1)|0; %>
+		<% } %>
+	</span>
+
+	<div id="name">
+		<p class="c_purple"><%= model.card.cardName %></p>
+		<% if(model.chara.title) { %>
+		<p class='title c_purple'>
+			<%= model.chara.title %>
+		</p>
+		<% } %>
+	</div>
+
+	<p id="lv">
+		<span>Lvl.</span>
+		<span class="before">
+			<span id="currentLv" class="c_purple"><%= model.level %></span>
+			<span class="sla">/</span>
+			<span id="currentMaxLv" class="small"><%= model.maxLevel %></span>
+		</span>
+		<span class="arrow hide"></span>
+		<span class="after hide">
+			<span id="afterLv" class="c_red"></span>
+			<span class="sla">/</span>
+			<span id="afterMaxLv" class="small"><%= model.maxLevel %></span>
+		</span>
+		<span class='lvMaxFlag'></span>
+	</p>
+
+	<div class="expGaugeWrap">
+		<div class="expGaugeInner" style='width:<%= model.expRatio %>%'></div>
+		<div class="expGaugeInner2" style='width:0%;'></div>
+
+		<div class="bg"></div>
+	</div>
+
+	<div class="status">
+		<ul class="statusList">
+			<li><span class="thStyle">HP</span><span class="tdStyle"><%= model.hp %></span></li>
+			<li><span class="thStyle">ATK</span><span class="tdStyle"><%= model.attack %></span></li>
+			<li><span class="thStyle">DEF</span><span class="tdStyle"><%= model.defense %></span></li>
+		</ul>
+	</div>
+
+	<div class="revisionWrap flexBox">
+		<p class="c_gold title" >Magic Lvl.</p><p class="num"><%= model.revision %></p>
+		<ul class="flexBox revisionIcon">
+			<% var i = 0;%>
+			<% var RevisionMax = 3;%>
+
+			<% var onNum = model.revision;%>
+			<% var noneNum = RevisionMax - onNum;%>
+
+			<% while(i < onNum) {%>
+				<li class="on"/>
+				<% i=(i+1)|0; %>
+			<% } %>
+
+			<% i = 0;%>
+			<% while(i < noneNum) {%>
+				<li class=""/>
+				<% i=(i+1)|0; %>
+			<% } %>
+		</ul>
+	</div>
+
+	<div class="equipWrap flexBox">
+		<p class="c_gold title">Memoria Slots</p>
+
+		<div class="flexBox before ">
+			<% i = 0; %>
+			<% while(i < (model.revision + 1)) { %>
+				<span class="icon"></span>
+			<% 	i=(i+1)|0; %>
+			<% } %>
+
+		</div>
+		<div class="flexBox after ">
+			<span class="icon on"></span>
+		</div>
+	</div>
+
+	<div class="magiaLvWrap flexBox">
+		<p class="c_gold title">Magia Lvl. </p><p class="num"><%= model.magiaLevel %></p>
+		<ul class="flexBox magiaLvIcon">
+			<% i = 0;%>
+			<% var MagiaLevelMax = 5;%>
+
+			<% onNum = model.magiaLevel;%>
+			<% var offNum = model.episodeLevel - model.magiaLevel;%>
+			<% noneNum = MagiaLevelMax - (onNum + offNum);%>
+
+			<% while(i < onNum) {%>
+				<li class="on"/>
+				<% i=(i+1)|0; %>
+			<% } %>
+
+			<% i = 0;%>
+			<% while(i < offNum) {%>
+				<li class="off"/>
+				<% i=(i+1)|0; %>
+			<% } %>
+
+			<% i = 0;%>
+			<% while(i < noneNum) {%>
+				<li class="none"/>
+				<% i=(i+1)|0; %>
+			<% } %>
+		</ul>
+	</div>
+<% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

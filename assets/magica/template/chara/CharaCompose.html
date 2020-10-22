@@ -1,0 +1,73 @@
+<div id="CharaCompose">
+	<div class="bonusResultWrap">
+		<p class="text"></p>
+		<div class="bg"></div>
+	</div>
+
+	<div id="itemWrap" class="commonFrame3">
+		<div id="topWrap"></div>
+
+		<div id="itemViewWrap">
+			<div class="itemWrapInner">
+			</div>
+		</div>
+		<div class="bottomWrap">
+			<div id="previewWrap">
+			</div>
+
+			<div id="resetBtn" class="sb_gold_02 se_cancel TE"><span class="b_screen"></span>Deselect All</div>
+			<div id="mainBtn" class="TE se_decide off">
+				<span class="b_screen"></span>
+				Enhance
+			</div>
+		</div>
+	</div>
+
+	<div id="btnArea" class="compose offLink">
+		<ul>
+			<li class="TE compose current linkBtn se_decide" data-href="#/CharaListTop"><span></span></li>
+			<li class="TE composeMagia linkBtn se_decide" data-href="#/CharaListComposeMagia"><span></span></li>
+			<li class="TE customize linkBtn se_decide" data-href="#/CharaListCustomize"><span></span></li>
+			<li class="TE equip linkBtn se_decide" data-href="#/CharaListEquip"><span></span></li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/template" id="useItemConfirm">
+	<div id="useItemScrollOuter">
+		<div class="useItemScrollInner">
+			<%="<% _.each(useItemObj,function(value,key){ %\>"%>
+				<div class='useItem'>
+					<p class="selectNum"><%="<%= value %\>"%></p>
+					<img src='/magica/resource/image_web/item/main/<%="<%= key.toLowerCase() %\>"%>.png' alt=''>
+				</div>
+			<%="<% }) %\>"%>
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="useItemControllerTemp">
+	<div id='useItemControllerWrap'>
+		<input id='useItemSlider' class="slider" type="range" value="0">
+
+		<div data-type='plus'  class='plusBtn TE se_decide'></div>
+		<div data-type='minus' class='minusBtn off TE se_decide'></div>
+		<div data-type='max'   class='maxBtn TE se_decide'></div>
+	</div>
+</script>
+
+<script type="text/template" id="PreviewPartsTemp">
+	<%="<% if(model.itemId) { %\>"%>
+		<img src='/magica/resource/image_web/item/main/<%="<%= model.itemId.toLowerCase() %\>"%>.png' alt=''>
+	<%="<% } %\>"%>
+</script>
+
+<script type="text/template" id="ItemTemp">
+	<p class="title"></p>
+</script>
+
+<script type="text/template" id="ItemPartsTemp">
+	<p class="selectNum">0</p>
+	<img src='/magica/resource/image_web/item/main/<%="<%= model.itemId.toLowerCase() %\>"%>.png' alt=''>
+	<p class="hasNum">× <span><%="<%= model.quantity %\>"%></span></p>
+</script>

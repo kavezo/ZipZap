@@ -1,0 +1,563 @@
+#status, #menu {
+  display: none; }
+
+.helpBtn {
+  display: none; }
+
+.touch {
+  -webkit-transform: scale(0.95) translateZ(0) !important; }
+
+#changeBg {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1; }
+#changeBg.show {
+  -webkit-animation: common_fade_in .3s ease 0s 1 alternate;
+    -webkit-animation-fill-mode: forwards; }
+
+.equipMemoriaStatus {
+  width: 118px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+.equipMemoriaStatus .dtElm, .equipMemoriaStatus .ddElm {
+  height: 20px;
+  margin-bottom: 4px;
+  font-size: 18px;
+    line-height: 20px; }
+.equipMemoriaStatus .dtElm:nth-child(5), .equipMemoriaStatus .dtElm:nth-child(6), .equipMemoriaStatus .ddElm:nth-child(5), .equipMemoriaStatus .ddElm:nth-child(6) {
+      margin-bottom: 0px; }
+.equipMemoriaStatus .dtElm {
+  width: 52px;
+  background: #b28750;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  -webkit-border-radius: 5px 0 0 5px;
+    border-radius: 5px 0 0 5px; }
+.equipMemoriaStatus .ddElm {
+  min-width: 58px;
+    text-align: left; }
+
+#MemoriaEquip {
+  width: 1024px;
+  height: 100%;
+  position: relative; }
+#MemoriaEquip #equipDetailWrap {
+  width: 812px;
+  height: 148px;
+  background: url("/magica/resource/image_web/page/memoria/equip/bg_set.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  left: 106px;
+    z-index: 100; }
+#MemoriaEquip #equipDetailWrap .nameWrap {
+  width: 686px;
+  height: 44px;
+  padding: 2px 0 0 55px;
+  background: url("/magica/resource/image_web/page/memoria/equip/bg_chara_name.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+      left: 0; }
+#MemoriaEquip #equipDetailWrap .nameWrap.typeSet {
+        background: url("/magica/resource/image_web/page/memoria/equip/bg_set_name.png") left top no-repeat; }
+#MemoriaEquip #equipDetailWrap .nameWrap .setNum {
+  position: absolute;
+  top: 18px;
+        left: 8px; }
+#MemoriaEquip #equipDetailWrap .nameWrap .attribute {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 4px;
+        left: 6px; }
+#MemoriaEquip #equipDetailWrap .nameWrap .attribute > div {
+  width: 36px;
+          height: 36px; }
+#MemoriaEquip #equipDetailWrap .nameWrap .name {
+        font-size: 20px; }
+#MemoriaEquip #equipDetailWrap .nameWrap .title {
+  margin-left: 4px;
+        font-size: 16px; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap {
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 47px;
+  left: 40px;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div {
+  width: 88px;
+  height: 88px;
+  margin-right: 8px;
+  background: red;
+  background: url("/magica/resource/image_web/common/memoria/bg_memoria_none.png") left top no-repeat;
+  background-size: 88px 88px;
+  position: relative;
+  -webkit-transform: translateZ(0);
+        transform: translateZ(0); }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div.canSet {
+  background: url("/magica/resource/image_web/common/memoria/btn_memoria_equip.png") left top no-repeat;
+          background-size: 88px 88px; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div .lv {
+  position: absolute;
+  bottom: -2px;
+  left: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: left;
+  text-shadow: -1px -1px 2px #61554e, 1px -1px 2px #61554e, -1px 1px 2px #61554e, 1px 1px 2px #61554e, -1px -1px #61554e, 1px -1px #61554e, -1px 1px #61554e, 1px 1px #61554e, 0 0 4px #61554e, 0 0 4px #61554e, 0 0 4px #61554e;
+          z-index: 10; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div.invalidChara:before, #MemoriaEquip #equipDetailWrap .memoriaWrap > div.invalidAtt:before, #MemoriaEquip #equipDetailWrap .memoriaWrap > div.invalidRev:before {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+          z-index: 100; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div.invalidChara:before {
+  background: url("/magica/resource/image_web/common/memoria/memoria_unable_chara.png") left top no-repeat;
+          background-size: 88px 88px; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div.invalidAtt:before {
+  background: url("/magica/resource/image_web/common/memoria/memoria_unable_element.png") left top no-repeat;
+          background-size: 88px 88px; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div.invalidRev:before {
+  background: url("/magica/resource/image_web/common/memoria/memoria_unable.png") left top no-repeat;
+          background-size: 88px 88px; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div .eventEffect {
+  width: 48px;
+  height: 15px;
+  background: url("/magica/resource/image_web/page/formation/icon_event_bonus.png") left top no-repeat;
+  background-size: 48px 15px;
+  display: none;
+  position: absolute;
+  top: -8px;
+  left: -5px;
+          z-index: 40; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div.effective .eventEffect {
+          display: block; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div .memoriaImg {
+  width: 88px;
+          height: 88px; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div .overWrap {
+  width: 96px;
+  height: 96px;
+  display: none;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  border: 4px solid #ff3b81;
+          border-radius: 16px 10px 10px 10px; }
+#MemoriaEquip #equipDetailWrap .memoriaWrap > div.selected .overWrap {
+          display: block; }
+#MemoriaEquip #equipDetailWrap .equipMemoriaStatus {
+  position: absolute;
+  top: 57px;
+      left: 428px; }
+#MemoriaEquip #equipDetailWrap .allRemoveBtn {
+  width: 118px;
+  position: absolute;
+  top: 67px;
+      left: 557px; }
+#MemoriaEquip #equipDetailWrap #mainBtn {
+  width: 112px;
+  height: 118px;
+  background: url("/magica/resource/image_web/page/memoria/equip/btn_ok.png") left top no-repeat;
+  position: absolute;
+  right: 14px;
+      bottom: 15px; }
+#MemoriaEquip #equipDetailWrap #mainBtn.off {
+  background: url("/magica/resource/image_web/page/memoria/equip/btn_ok_gray.png") left top no-repeat;
+        pointer-events: none; }
+#MemoriaEquip #sizeChange {
+  position: absolute;
+  bottom: 26px;
+    left: 10px; }
+#MemoriaEquip #sortFilterPanel {
+  width: 662px;
+  height: 44px;
+  background: url("/magica/resource/image_web/page/memoria/equip/memoria_headerpanel.png") left top no-repeat;
+  position: absolute;
+  top: 157px;
+  left: 52px;
+    z-index: 100; }
+#MemoriaEquip #sortFilterPanel .hasMemoriaNum {
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 11px;
+  left: 32px;
+  font-size: 18px;
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start; }
+#MemoriaEquip #sortFilterPanel .hasMemoriaNum p {
+  color: #ffffff;
+        line-height: 22px; }
+#MemoriaEquip #sortFilterPanel .hasMemoriaNum .title {
+  width: 66px;
+  height: 22px;
+  margin-right: 8px;
+  background: #ffffff;
+  color: #a47122;
+  font-size: 16px;
+  text-align: center;
+  -webkit-border-radius: 5px 0 0 5px;
+        border-radius: 5px 0 0 5px; }
+#MemoriaEquip #sortFilterPanel #sortPanel {
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 110px;
+      bottom: 5px; }
+#MemoriaEquip #sortFilterPanel #sortPanel li {
+        margin-left: 10px; }
+#MemoriaEquip #sortFilterPanel #sortPanel #eventFilterBtn {
+  width: 122px;
+        display: none; }
+#MemoriaEquip #sortFilterPanel #sortPanel #eventFilterBtn.onDisp {
+          display: block; }
+#MemoriaEquip #sortFilterPanel #sortPanel #eventFilterBtn .switchIcon {
+  width: 34px;
+  height: 18px;
+  background: url("/magica/resource/image_web/common/filter/icon_filter_off.png") left top no-repeat;
+  background-size: 34px 18px;
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: 0;
+          z-index: 1000; }
+#MemoriaEquip #sortFilterPanel #sortPanel #eventFilterBtn.on .switchIcon {
+  background: url("/magica/resource/image_web/common/filter/icon_filter_on.png") left top no-repeat;
+          background-size: 34px 18px; }
+#MemoriaEquip #sortFilterPanel #sortPanel #sortPopupMemoria {
+        width: 94px; }
+#MemoriaEquip #sortFilterPanel #sortPanel #sortPopupMemoria #filterTypes {
+  width: 34px;
+  height: 18px;
+  margin-left: 8px;
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  font-size: 14px;
+  line-height: 14px;
+          z-index: 20; }
+#MemoriaEquip #sortFilterPanel #sortPanel #sortPopupMemoria.filterOn #filterTypes {
+  background: url("/magica/resource/image_web/common/filter/icon_filter_on.png") left top no-repeat;
+          background-size: 100% 100%; }
+#MemoriaEquip #sortFilterPanel #sortPanel #sortPopupMemoria.filterOff #filterTypes {
+  background: url("/magica/resource/image_web/common/filter/icon_filter_off.png") left top no-repeat;
+          background-size: 34px 18px; }
+#MemoriaEquip #sortFilterPanel #sortPanel #sortBtn {
+        width: 98px; }
+#MemoriaEquip #sortFilterPanel #ascPanelMemoria {
+  width: 80px;
+  height: 24px;
+  position: absolute;
+  right: 22px;
+      bottom: 10px; }
+#MemoriaEquip #sortFilterPanel #ascPanelMemoria li {
+  width: 80px;
+        height: 24px; }
+#MemoriaEquip #sortFilterPanel #ascPanelMemoria li.none {
+          display: none; }
+#MemoriaEquip #sortFilterPanel #ascPanelMemoria #ascMemoria {
+        background: url("/magica/resource/image_web/page/memoria/equip/btn_memoria_ascending.png"); }
+#MemoriaEquip #sortFilterPanel #ascPanelMemoria #descMemoria {
+        background: url("/magica/resource/image_web/page/memoria/equip/btn_memoria_descending.png"); }
+#MemoriaEquip #memoriaListWrap {
+  width: 618px;
+  height: -webkit-calc(100% - 192px);
+  position: absolute;
+  top: 182px;
+  left: 74px;
+    z-index: 10; }
+#MemoriaEquip #memoriaListWrap.onlyEvent .userMemoriaIcon {
+      display: none; }
+#MemoriaEquip #memoriaListWrap.onlyEvent .userMemoriaIcon.effective, #MemoriaEquip #memoriaListWrap.onlyEvent .userMemoriaIcon.selected {
+        display: block; }
+#MemoriaEquip #memoriaListWrap.cantTap .memoriaSetCaution {
+      display: block; }
+#MemoriaEquip #memoriaListWrap.cantTap .userMemoriaIcon .overWrap {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/common/memoria/memoria_disable.png") left top no-repeat;
+  background-size: contain;
+  display: block;
+  position: relative;
+      z-index: 11; }
+#MemoriaEquip #memoriaListWrap .memoriaSetCaution {
+  width: 618px;
+  height: 40px;
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 15%, rgba(0, 0, 0, 0.7) 85%, rgba(0, 0, 0, 0) 100%);
+  display: block;
+  display: none;
+  position: absolute;
+  top: -webkit-calc(50% - 15px);
+  left: 0;
+  color: #ffffff;
+  line-height: 40px;
+  text-align: center;
+  pointer-events: none;
+      z-index: 100000; }
+#MemoriaEquip #memoriaListWrap.level .lv, #MemoriaEquip #memoriaListWrap.rank .lv {
+      display: block; }
+#MemoriaEquip #memoriaListWrap.atk .dispPrm, #MemoriaEquip #memoriaListWrap.def .dispPrm, #MemoriaEquip #memoriaListWrap.hp .dispPrm, #MemoriaEquip #memoriaListWrap.get .dispPrm {
+      display: block; }
+#MemoriaEquip #memoriaListWrap.lb .limitBreak {
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+#MemoriaEquip #memoriaListWrap #scrollOuter {
+      width: 576px;
+  height: -webkit-calc(100% - 36px);
+  position: relative;
+  position: absolute;
+  top: 22px;
+  left: 28px;
+  overflow: hidden;
+      z-index: 10000; }
+#MemoriaEquip #memoriaListWrap #scrollOuter .scrollInner {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding: 4px 0 10px 0;
+  display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-flow: wrap;
+        -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start; }
+#MemoriaEquip #memoriaListWrap #scrollOuter .scrollInner .userMemoriaIcon {
+  margin: 10px 12px 12px 4px;
+          position: relative; }
+#MemoriaEquip #memoriaListWrap #scrollOuter .scrollInner .userMemoriaIcon.equiped.ownEquip {
+            -webkit-order: -5001 !important;
+            -webkit-box-ordinal-group: -5000 !important;
+            -ms-flex-order: -5001 !important;
+            order: -5001 !important; }
+#MemoriaEquip #memoriaListWrap #scrollOuter .scrollInner .userMemoriaIcon.equiped {
+  display: block !important;
+            -webkit-order: -5000 !important;
+            -webkit-box-ordinal-group: -4999 !important;
+            -ms-flex-order: -5000 !important;
+            order: -5000 !important; }
+#MemoriaEquip #memoriaListWrap.smaller #scrollOuter .scrollInner .userMemoriaIcon {
+      margin: 8px 8px 10px 5px; }
+#MemoriaEquip #memoriaListWrap.smallest #scrollOuter {
+  width: 580px;
+      left: 22px; }
+#MemoriaEquip #memoriaListWrap.smallest #scrollOuter .scrollInner {
+        width: 570px; }
+#MemoriaEquip #memoriaListWrap.smallest #scrollOuter .scrollInner .userMemoriaIcon {
+          margin: 6px 4px 4px 3px; }
+#MemoriaEquip #equipInfo {
+  width: 323px;
+  height: 384px;
+  position: absolute;
+  top: 182px;
+  right: -15px;
+    z-index: 100; }
+#MemoriaEquip #equipInfo #memoriaEquipBtn {
+  min-width: 170px;
+  position: absolute;
+  bottom: 14px;
+      left: 70px; }
+#MemoriaEquip #equipInfo .equipIcon {
+  width: 69px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/memoria/memoria_equiped.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: -12px;
+  right: 76px;
+      z-index: 99; }
+#MemoriaEquip #equipInfo .charaIcon {
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  top: -26px;
+      right: 23px; }
+#MemoriaEquip #equipInfo .charaIcon:before {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+        z-index: 100; }
+#MemoriaEquip #equipInfo .charaIcon:after {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+        z-index: 80; }
+#MemoriaEquip #equipInfo .charaIcon .maskWrap {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  overflow: hidden;
+  border-radius: 26px;
+        z-index: 90; }
+#MemoriaEquip #equipInfo .charaIcon .maskWrap img {
+  width: 80px;
+  height: auto;
+  position: absolute;
+  top: -12px;
+          left: -webkit-calc(50% - 40px); }
+#MemoriaEquip #equipInfo .name {
+  width: 324px;
+  height: 34px;
+  padding-left: 24px;
+  background: url("/magica/resource/image_web/page/memoria/equip/memoria_equip_title.png") left top no-repeat;
+  position: absolute;
+  top: 30px;
+  right: 15px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 34px;
+  text-shadow: 2px 0 2px #ff5e7c, -2px 0 2px #ff5e7c, 0 2px 2px #ff5e7c, 0 -2px 2px #ff5e7c, 2px 2px 2px #ff5e7c, -2px 2px 2px #ff5e7c, 2px -2px 2px #ff5e7c, -2px -2px 2px #ff5e7c;
+      z-index: 100; }
+#MemoriaEquip #equipInfo .memoriaImg {
+  width: 94px;
+  height: 94px;
+  background: url("/magica/resource/image_web/common/memoria/bg_memoria_none.png") left top no-repeat;
+  background-size: 94px 94px;
+  position: absolute;
+  top: 76px;
+      left: 28px; }
+#MemoriaEquip #equipInfo .memoriaImg img {
+  width: 100%;
+        height: 100%; }
+#MemoriaEquip #equipInfo .memoriaImg .lv {
+  position: absolute;
+  bottom: -2px;
+  left: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: left;
+  text-shadow: -1px -1px 2px #61554e, 1px -1px 2px #61554e, -1px 1px 2px #61554e, 1px 1px 2px #61554e, -1px -1px #61554e, 1px -1px #61554e, -1px 1px #61554e, 1px 1px #61554e, 0 0 4px #61554e, 0 0 4px #61554e, 0 0 4px #61554e;
+        z-index: 10; }
+#MemoriaEquip #equipInfo .equipMemoriaStatus {
+  position: absolute;
+  top: 76px;
+      left: 132px; }
+#MemoriaEquip #equipInfo .equipMemoriaStatus .ddElm {
+        font-size: 16px; }
+#MemoriaEquip #equipInfo .memoriaAdditional {
+  font-size: 14px;
+  position: absolute;
+  top: 76px;
+      left: 242px; }
+#MemoriaEquip #equipInfo .memoriaAdditional div {
+  height: 20px;
+  margin-bottom: 4px;
+        line-height: 20px; }
+#MemoriaEquip #equipInfo .memoriaAdditional div:nth-child(3) {
+          margin-bottom: 0px; }
+#MemoriaEquip #equipInfo .memoriaAdditional .plusColor {
+        color: #079346; }
+#MemoriaEquip #equipInfo .memoriaAdditional .minusColor {
+        color: #ff403b; }
+#MemoriaEquip #equipInfo .lb {
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 150px;
+      left: 132px; }
+#MemoriaEquip #equipInfo .lb span {
+  width: 20px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/memoria/memoria_limitbrake_frame.png") left top no-repeat;
+        display: block; }
+#MemoriaEquip #equipInfo .lb span.on {
+          background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat; }
+#MemoriaEquip #equipInfo .intervalTurn {
+  position: absolute;
+  top: 175px;
+      width: 240px;/*MN*/
+      text-align: right;/*MN*/
+      font-size: 14px; }
+#MemoriaEquip #equipInfo .skillTitle {
+  width: 300px;
+  height: 54px;
+  background: url("/magica/resource/image_web/page/memoria/equip/memoria_skill_base.png") left top no-repeat;
+  position: absolute;
+  bottom: 158px;
+      left: 6px; }
+#MemoriaEquip #equipInfo .skillTitle p {
+  margin: 23px 0 0 20px;
+  font-size: 16px;
+        line-height: 28px; }
+#MemoriaEquip #equipInfo .skillTitle img {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 3px;
+        right: 3px; }
+#MemoriaEquip #equipInfo .skillDescription {
+  width: 258px;
+  position: absolute;
+  top: 227px;
+  left: 26px;
+      line-height: 18px; }

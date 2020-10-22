@@ -1,0 +1,161 @@
+<div id='MemoriaEquip'>
+
+	<div id='changeBg'></div>
+
+	<div id='sizeChange' class='TE se_tabs'></div>
+
+	<div id="sortFilterPanel">
+		<div class='hasMemoriaNum'>
+			<p class='title'>Stock</p>
+			<p id='memoriaHasNum'>-</p>
+			<p>/</p>
+			<p id='memoriaCapNum'><%= gameUser.cardCapacity%></p>
+		</div>
+
+		<ul id="sortPanel">
+			<li id="eventFilterBtn" class="sb_gold_02 se_tabs TE">
+				<span class="b_screen"></span>Event Filter<span class="switchIcon"></span></li>
+			<li id="sortPopupMemoria" class="se_tabs sb_gold_02 TE">
+				<span class="b_screen"></span>Filter<span id="filterTypes"></span></li>
+			<li id="sortBtn" class="se_tabs sb_gold_02 TE">
+				<span class="b_screen"></span>By Rarity</li>
+		</ul>
+
+		<ul id="ascPanelMemoria">
+			<li id="ascMemoria" class="TE se_tabs none" data-ascid="asc"></li>
+			<li id="descMemoria" class="TE se_tabs" data-ascid="desc"></li>
+		</ul>
+	</div>
+
+	<div id='memoriaListWrap' class='commonFrame2 cantTap'>
+		<p class='memoriaSetCaution'>Select a Slot to equip Memoria.</p>
+
+		<div id="scrollOuter">
+			<div id='scrollInner' class="scrollInner"></div>
+		</div>
+	</div>
+</div>
+
+<!-- メモリア装備詳細 -->
+<script type='text/template' id='EquipDetail'>
+	<%="<% var classTxt = ''; %\>"%>
+	<%="<% if(model.pieceSetFlag) { %\>"%>
+		<%="<% classTxt = 'typeSet'; %\>"%>
+	<%="<% } %\>"%>
+	<div class='nameWrap <%="<%= classTxt %\>"%>'>
+		<%="<% if(model.pieceSetFlag) { %\>"%>
+			<div class='setNum ts_pink'>#<%="<%= model.setNumDisp %\>"%></div>
+		<%="<% } else { %\>"%>
+			<div class='attribute'><div class='<%="<%= model.charaAtt %\>"%> type_f'></div></div>
+		<%="<% } %\>"%>
+
+		<p class='name ts_pink'>
+			<%="<%= model.charaName %\>"%>
+			<span class='title ts_pink'><%="<%= model.charaTitle %\>"%></span>
+		</p>
+	</div>
+
+	<div class="memoriaWrap">
+		<%="<% var addHp  = 0; %\>"%>
+		<%="<% var addAtk = 0; %\>"%>
+		<%="<% var addDef = 0; %\>"%>
+
+		<%="<% var canEquipNum = 1 + model.revision; %\>"%>
+		<%="<% var i = 0; %\>"%>
+		<%="<% while(i < 4) { %\>"%>
+			<%="<% if(model.pieceArr[i]) { %\>"%>
+				<%="<% addHp  += model.pieceArr[i].hp; %\>"%>
+				<%="<% addAtk += model.pieceArr[i].attack; %\>"%>
+				<%="<% addDef += model.pieceArr[i].defense; %\>"%>
+			<%="<% } %\>"%>
+
+			<%="<% if(model.pieceArr[i]) { %\>"%>
+				<%="<% var pieceId = model.pieceArr[i].pieceId; %\>"%>
+				<%="<% var level   = model.pieceArr[i].level; %\>"%>
+				<%="<% var maxLevel = model.pieceArr[i].maxLevel; %\>"%>
+				<div class='memoria se_decide equip  <%="<%= (model.pieceArr[i].eventEffect) ? 'effective' : '' %\>"%>
+					<%="<%= model.pieceArr[i].invalidFlag %\>"%>' data-framenum='<%="<%= i %\>"%>'>
+					<span class='eventEffect'></span>
+					<span class="lv">Lvl. <%="<%= level %\>"%>/<%="<%= maxLevel %\>"%></span>
+
+					<div class='overWrap'></div>
+					<img class='memoriaImg'
+					 data-nativeimgkey='memoria_<%="<%= pieceId %\>"%>_s'
+					 data-src='resource/image_native/memoria/memoria_<%="<%= pieceId %\>"%>_s.png' alt=''>
+				</div>
+			<%="<% } else { %\>"%>
+				<%="<% if(canEquipNum > 0) { %\>"%>
+					<div class='memoria se_decide canSet' data-framenum='<%="<%= i %\>"%>'>
+						<div class='overWrap'></div>
+					</div>
+				<%="<% } else { %\>"%>
+					<div class='memoria' data-framenum='<%="<%= i %\>"%>'></div>
+				<%="<% } %\>"%>
+			<%="<% } %\>"%>
+
+			<%="<% canEquipNum-- %\>"%>
+			<%="<% i=(i+1)|0; %\>"%>
+		<%="<% } %\>"%>
+	</div>
+
+	<div class='equipMemoriaStatus'>
+		<div class='dtElm'>HP</div>
+		<div class='hp ddElm'>+<%="<%= addHp %\>"%></div>
+		<div class='dtElm'>ATK</div>
+		<div class='atk ddElm'>+<%="<%= addAtk %\>"%></div>
+		<div class='dtElm'>DEF</div>
+		<div class='def ddElm'>+<%="<%= addDef %\>"%></div>
+	</div>
+
+	<div id='allRemoveBtn' class='allRemoveBtn TE se_cancel mb_white'>Remove All</div>
+
+	<div id='mainBtn' class='TE se_decide off'></div>
+</script>
+
+<!-- メモリア表示パーツ -->
+<script type="text/template" id="MemoriaListParts">
+	<div class="cardInner">
+		<!-- 選択不可などの表示 -->
+		<div class="overWrap"></div>
+
+		<!-- ソート時表示パラメータ関連 -->
+		<span class="dispPrm"></span>
+		<span class="lv"><span class="lvNum">Lvl. <%="<%= model.level %\>"%></span>/<%="<%= model.maxLevel %\>"%></span>
+		<span class="limitBreak lbCount<%='<%=model.lbCount%\>'%>">
+			<span class="lb1"></span><span class="lb2"></span><span class="lb3"></span><span class="lb4"></span>
+		</span>
+
+		<!-- ロックアイコン -->
+		<span class="lock"></span>
+
+		<!-- イベントアイコン -->
+		<div class="eventEffect"></div>
+
+		<!-- 装備中表示 -->
+		<span class="equip"></span>
+
+		<!-- セット中表示 -->
+		<span class="alreadySet"></span>
+
+		<!-- 画像 -->
+		<img data-nativeimgkey='memoria_<%="<%= model.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%= model.pieceId %\>"%>_s.png' alt=''>
+
+		<!-- ソート並び替え用 -->
+		<div class="paramWrap"
+		data-level="<%='<%=model.level%\>'%>"
+		data-piece-id="<%='<%=model.pieceId%\>'%>"
+		data-hp="<%='<%=model.hp%\>'%>"
+		data-atk="<%='<%=model.attack%\>'%>"
+		data-def="<%='<%=model.defense%\>'%>"
+		data-rank="<%='<%=model.piece.rank%\>'%>"
+		data-created="<%='<%=model.createdAt%\>'%>"
+		data-lb="<%='<%=model.lbCount%\>'%>"></div>
+	</div>
+</script>
+
+<!-- 他の魔法少女から装備付け替え時ポップアップ -->
+<script type="text/template" id="formationEquipPop"><p style="font-size:20px;line-height:36px;">This Memoria is equipped to a <br>
+different Magical Girl on this team.<br>
+Remove from <span class='c_pink'><%='<%= cardName %\>'%></span>,<br>
+and equip to <span class="c_pink"><%='<%= targetName %\>'%></span>?</p>
+</script>

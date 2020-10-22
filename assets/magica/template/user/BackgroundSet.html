@@ -1,0 +1,18 @@
+<div id='BackgroundSet'>
+	<div id="backgroundList" class='commonFrame2'>
+		<h2 id='listTitle' class='ts_pink'>Home Background</h2>
+
+		<div id="scrollOuter" class='hiddenWrap'>
+			<div class="scrollInner">
+				<div id='defaultBg' class="commonFrame4 bgItem TE se_tabs">Blue Skies (Default)</div>
+
+				<% _.forEach(backgroundList,function(bgItem){ console.log(bgItem) %>
+					<div class="<%= (bgItem.item.parameter) ? 'bgmIcon' : '' %> commonFrame4 bgItem TE se_tabs" data-bgid="<%= bgItem.itemId %>" data-bgimage="<%= bgItem.item.backgroundImage %>" data-bgm="<%= (bgItem.item.parameter) ? bgItem.item.parameter : 'bgm01_anime07' %>"><%= bgItem.item.shortDescription %></div>
+				<% }) %>
+			</div>
+		</div>
+
+		<div id='mainBtn' class='btn b_pink TE se_decide'><span class='b_screen'></span>Set</div>
+		<div class='bg'></div>
+	</div>
+</div>

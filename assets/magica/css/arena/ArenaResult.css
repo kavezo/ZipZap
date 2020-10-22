@@ -1,0 +1,1158 @@
+/* ArenaResult ---------------------------------------------------------------------------------*/
+#ArenaResult {
+  width: 1024px;
+  height: 100% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden; }
+#ArenaResult .nodisp {
+    display: none; }
+#ArenaResult .arenaColor {
+    color: #1e2c42; }
+#ArenaResult #touchScreen {
+  width: 1024px;
+  height: 100% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+    z-index: 9; }
+  #ArenaResult.SIMULATE #resultTitle {
+    background: url("/magica/resource/image_web/page/arena/result/trial_result_header.png") left top no-repeat; }
+  #ArenaResult.SIMULATE #mainWrap #flowWrap #resultMark {
+    top: 225px; }
+  #ArenaResult.SIMULATE #mainWrap #flowWrap #pointsWrap #subInfo {
+    width: 642px;/*MN*/
+    top: 468px;
+    left: 191px; }/*MN*/
+    #ArenaResult.SIMULATE #mainWrap #flowWrap #pointsWrap #subInfo .simulateInfo {
+      width: 100%;
+      height: 33px;
+      line-height: 33px;
+      font-size: 18px;
+      background-color: rgba(255, 255, 255, 0.7); }
+  #ArenaResult.SIMULATE #mainWrap #flowWrap .resultPointTitle, #ArenaResult.SIMULATE #mainWrap #flowWrap .resultPointNums {
+    font-size: 18px; }
+    #ArenaResult.SIMULATE #mainWrap #flowWrap .resultPointTitle.simulate, #ArenaResult.SIMULATE #mainWrap #flowWrap .resultPointNums.simulate {
+      width: 392px;
+      left: 316px; }
+    #ArenaResult.SIMULATE #mainWrap #flowWrap .resultPointTitle li, #ArenaResult.SIMULATE #mainWrap #flowWrap .resultPointNums li {
+      width: 194px; }
+  #ArenaResult.SIMULATE #mainWrap #flowWrap .resultPointTitle.simulate {
+    top: 378px; }
+  #ArenaResult.SIMULATE #mainWrap #flowWrap .resultPointNums.simulate {
+    top: 412px; }
+#ArenaResult #rankupFlash {
+  width: 1050px;
+  height: 1050px;
+    background: url("/magica/resource/image_web/page/arena/result/result_mirror2.png") left top no-repeat;
+  position: fixed;
+  top: -webkit-calc(50% - 530px);
+  left: -13px;
+  pointer-events: none;
+  opacity: 0;
+    z-index: 10; }
+#ArenaResult #rankupFlash.flashing {
+  -webkit-animation: rankupFlash .5s ease 0s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #resultTitle {
+  width: 318px;
+  height: 46px;
+    background: url("/magica/resource/image_web/page/arena/result/infinite_result_header.png") left top no-repeat;
+  position: fixed;
+  top: 0;
+  left: 353px;
+  -webkit-animation: simpleFadeIn 0.333s linear 1.5s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+    z-index: 10; }
+#ArenaResult #resultTitle.ranking {
+      background: url("/magica/resource/image_web/page/arena/result/ranking_result_header.png") left top no-repeat; }
+#ArenaResult #resultTitle.endAnim {
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #resultTitle.skipAnim {
+  -webkit-animation: none;
+      opacity: 1; }
+#ArenaResult #enemyBtn {
+  width: 212px;
+  height: 182px;
+    background: url("/magica/resource/image_web/page/arena/result/result_enemy_bg.png") left top no-repeat;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  -webkit-animation: simpleFadeIn 0.333s ease 4.167s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+    z-index: 10; }
+#ArenaResult #enemyBtn.skipAnim {
+  -webkit-animation: none;
+  pointer-events: auto;
+      opacity: 1; }
+#ArenaResult #enemyBtn.canTap {
+      pointer-events: auto; }
+#ArenaResult #enemyBtn.fadeOut {
+  -webkit-animation: simpleFadeOut 0.05s linear .18s 1 normal;
+  -webkit-animation-fill-mode: both;
+      pointer-events: none; }
+#ArenaResult #enemyBtn #enemyClip {
+  width: 212px;
+  height: 182px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  -webkit-clip-path: polygon(0px 108px, 88px 0px, 212px 30px, 212px 182px, 27px 182px);
+      -webkit-transform: translateZ(0); }
+#ArenaResult #enemyBtn .enemyTitle {
+  width: 138px;
+  height: 28px;
+      background: url("/magica/resource/image_web/page/arena/result/result_enemy_header.png") left top no-repeat;
+  position: absolute;
+      top: 16px;
+  right: 0px;
+      z-index: 5; }
+#ArenaResult #enemyBtn .enemyImage {
+  margin-left: 40px;
+      -webkit-mask: url("/magica/resource/image_web/page/arena/result/result_enemy_mask.png") left top no-repeat; }
+#ArenaResult #enemyBtn .enemyNameRank {
+  width: 188px;
+  height: 48px;
+      background: url("/magica/resource/image_web/page/arena/result/infinite_enemy_base.png") left top no-repeat;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+      z-index: 5; }
+#ArenaResult #enemyBtn .enemyNameRank .enemyRank {
+  position: absolute;
+  top: -12px;
+  right: 6px;
+  color: #ffffff;
+  font-size: 22px;
+        text-shadow: 2px 0px 2px #005ec2,
+ -2px 0px 2px #005ec2,
+ 0px 2px 2px #005ec2,
+ 0px -2px 2px #005ec2,
+ 2px 2px 2px #005ec2,
+ -2px 2px 2px #005ec2,
+ 2px -2px 2px #005ec2,
+ -2px -2px 2px #005ec2; }
+#ArenaResult #enemyBtn .enemyNameRank .enemyName {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  font-size: 20px;
+        text-align: right; }
+#ArenaResult #enemyBtn.ranking .enemyNameRank {
+      background: url("/magica/resource/image_web/page/arena/result/ranking_enemy_base.png") left top no-repeat; }
+#ArenaResult #enemyBtn.ranking .enemyNameRank .enemyRank {
+        text-shadow: 2px 0px 2px #6845ab,
+ -2px 0px 2px #6845ab,
+ 0px 2px 2px #6845ab,
+ 0px -2px 2px #6845ab,
+ 2px 2px 2px #6845ab,
+ -2px 2px 2px #6845ab,
+ 2px -2px 2px #6845ab,
+ -2px -2px 2px #6845ab; }
+#ArenaResult #mainWrap {
+  width: 1024px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+    z-index: 5; }
+#ArenaResult #mainWrap.fadeOut {
+  -webkit-animation: simpleFadeOut 0.05s linear .18s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #mainWrap.endAnim {
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #mainWrap.skipAnim {
+      opacity: 1; }
+#ArenaResult #mainWrap.skipAnim #rankMark, #ArenaResult #mainWrap.skipAnim #pointsWrap, #ArenaResult #mainWrap.skipAnim #requireWrap {
+  -webkit-animation: none;
+        opacity: 1; }
+#ArenaResult #mainWrap.skipAnim #flowWrap .touch_screen {
+        -webkit-animation: tocuhScreen 1.333s ease 0s infinite normal; }
+#ArenaResult #mainWrap.skipAnim #resultMark .resultString.W, #ArenaResult #mainWrap.skipAnim #resultMark .resultString.I, #ArenaResult #mainWrap.skipAnim #resultMark .resultString.N {
+  -webkit-animation: none;
+        opacity: 0; }
+#ArenaResult #mainWrap.skipAnim #resultMark .resultDeco {
+  -webkit-animation: none;
+        opacity: 0; }
+#ArenaResult #mainWrap.skipAnim #resultMark .resultDeco.winLeft, #ArenaResult #mainWrap.skipAnim #resultMark .resultDeco.winRight {
+  -webkit-animation: none;
+          opacity: 0; }
+#ArenaResult #mainWrap.skipAnim #resultMark .winCircle0, #ArenaResult #mainWrap.skipAnim #resultMark .winCircle1, #ArenaResult #mainWrap.skipAnim #resultMark .winCircle2, #ArenaResult #mainWrap.skipAnim #resultMark .winCircle3, #ArenaResult #mainWrap.skipAnim #resultMark .winCircle4, #ArenaResult #mainWrap.skipAnim #resultMark .resultWinAdd {
+  -webkit-animation: none;
+        opacity: 0; }
+#ArenaResult #mainWrap.skipAnim #resultMark .resultWin {
+  -webkit-animation: none;
+        opacity: 1; }
+#ArenaResult #mainWrap.skipAnim #resultMark.lose {
+  -webkit-animation: none;
+        opacity: 1; }
+#ArenaResult #mainWrap #flowWrap {
+  width: 1024px;
+  height: 576px;
+  position: absolute;
+  top: -webkit-calc(50% - 288px);
+      left: 0; }
+#ArenaResult #mainWrap #rankMark {
+  width: 74px;
+      height: 90px;
+  padding-top: 28px;
+      background: url("/magica/resource/image_web/page/arena/result/infinite_floor_bg_s.png") left top no-repeat;
+  position: absolute;
+  top: 90px;
+  left: 476px;
+  text-align: center;
+  -webkit-animation: simpleFadeIn 0.333s linear 2s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  letter-spacing: -8px;
+      opacity: 0; }
+#ArenaResult #mainWrap #rankMark.ranking {
+        background: url("/magica/resource/image_web/page/arena/result/ranking_rank_bg_s.png") top center no-repeat; }
+#ArenaResult #mainWrap #resultMark {
+  width: 362px;
+  height: 86px;
+  position: absolute;
+  top: 180px;
+      left: 331px; }
+#ArenaResult #mainWrap #resultMark.ranking {
+        top: 108px; }
+#ArenaResult #mainWrap #resultMark .resultString {
+  width: 107px;
+  height: 96px;
+  position: absolute;
+  top: -5px;
+        opacity: 0; }
+#ArenaResult #mainWrap #resultMark .resultString.W {
+          background: url("/magica/resource/image_web/page/arena/result/text_win_00.png") left top no-repeat;
+          left: 79px;
+  -webkit-animation: resultStrW .25s ease 2.666s 1 normal;
+          -webkit-animation-fill-mode: forwards; }
+#ArenaResult #mainWrap #resultMark .resultString.I {
+          background: url("/magica/resource/image_web/page/arena/result/text_win_01.png") left top no-repeat;
+          left: 134px;
+  -webkit-animation: resultStrI .25s ease 2.666s 1 normal;
+          -webkit-animation-fill-mode: forwards; }
+#ArenaResult #mainWrap #resultMark .resultString.N {
+          background: url("/magica/resource/image_web/page/arena/result/text_win_02.png") left top no-repeat;
+          left: 185px;
+  -webkit-animation: resultStrN .25s ease 2.666s 1 normal;
+          -webkit-animation-fill-mode: forwards; }
+#ArenaResult #mainWrap #resultMark .resultDeco {
+  width: 98px;
+  height: 79px;
+  position: absolute;
+  top: 3.5px;
+        opacity: 0; }
+#ArenaResult #mainWrap #resultMark .resultDeco.winLeft {
+          background: url("/magica/resource/image_web/page/arena/result/text_win_deco_00.png") left top no-repeat;
+          left: 1px;
+  -webkit-animation: resultDecoLeft .25s ease 2.666s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #mainWrap #resultMark .resultDeco.winRight {
+          background: url("/magica/resource/image_web/page/arena/result/text_win_deco_01.png") left top no-repeat;
+  right: 3px;
+  -webkit-animation: resultDecoRight .25s ease 2.666s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #mainWrap #resultMark .winCircle0, #ArenaResult #mainWrap #resultMark .winCircle1, #ArenaResult #mainWrap #resultMark .winCircle2, #ArenaResult #mainWrap #resultMark .winCircle3 {
+  width: 754px;
+  height: 705px;
+  position: absolute;
+  top: -309.5px;
+  left: -196px;
+        opacity: 0; }
+#ArenaResult #mainWrap #resultMark .winCircle0 {
+        background: url("/magica/resource/image_web/page/arena/result/circle_00.png") left top no-repeat;
+  -webkit-animation: circleFirst .750s linear 3.000s 1 normal;
+        -webkit-animation-fill-mode: backwards; }
+#ArenaResult #mainWrap #resultMark .winCircle1 {
+        background: url("/magica/resource/image_web/page/arena/result/circle_01.png") left top no-repeat;
+  -webkit-animation: circleSecond .750s linear 2.833s 1 normal;
+        -webkit-animation-fill-mode: backwards; }
+#ArenaResult #mainWrap #resultMark .winCircle2 {
+        background: url("/magica/resource/image_web/page/arena/result/circle_02.png") left top no-repeat;
+  -webkit-animation: circleThird .750s linear 3.000s 1 normal;
+        -webkit-animation-fill-mode: backwards; }
+#ArenaResult #mainWrap #resultMark .winCircle3 {
+        background: url("/magica/resource/image_web/page/arena/result/circle_03.png") left top no-repeat;
+  -webkit-animation: circleForth .750s linear 3.000s 1 normal;
+        -webkit-animation-fill-mode: backwards; }
+#ArenaResult #mainWrap #resultMark .winCircle4 {
+  width: 440px;
+  height: 462px;
+        background: url("/magica/resource/image_web/page/arena/result/circle_04.png") left top no-repeat;
+  position: absolute;
+  top: -188px;
+  left: -39px;
+  -webkit-animation: circleSecond .750s linear 2.833s 1 normal;
+  -webkit-animation-fill-mode: backwards;
+        opacity: 0; }
+#ArenaResult #mainWrap #resultMark .resultWin {
+  width: 362px;
+  height: 86px;
+        background: url("/magica/resource/image_web/page/arena/result/result_win.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: resultWinMark .417s linear 3.083s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+  opacity: 0;
+        z-index: 1; }
+#ArenaResult #mainWrap #resultMark .resultWinAdd {
+  width: 357px;
+  height: 96px;
+        background: url("/magica/resource/image_web/page/arena/result/text_win_add.png") left top no-repeat;
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  -webkit-animation: resultWinAdd .333s linear 2.917s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+        z-index: 2; }
+#ArenaResult #mainWrap #resultMark.lose {
+  background: url("/magica/resource/image_web/page/arena/result/result_lose.png") top center no-repeat;
+  -webkit-animation: simpleFadeIn .25s ease 2.666s 1 normal;
+        -webkit-animation-fill-mode: both; }
+#ArenaResult #mainWrap #pointsWrap {
+  -webkit-animation: simpleFadeIn 0.333s ease 4.167s 1 normal;
+  opacity: 0;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #mainWrap #subInfo {
+  width: 580px;
+  height: 40px;
+  position: absolute;
+  top: 266px;
+  left: 222px;
+      text-align: center; }
+#ArenaResult #mainWrap #subInfo .consective {
+  width: 150px;
+  height: 32px;
+  padding-right: 110px;
+  background: url("/magica/resource/image_web/page/arena/result/result_streak_base.png") center top no-repeat;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 22px;
+  text-align: right;
+        text-shadow: 3px 0px 3px #ff3d57,
+ -3px 0px 3px #ff3d57,
+ 0px 3px 3px #ff3d57,
+ 0px -3px 3px #ff3d57,
+ 3px 3px 3px #ff3d57,
+ -3px 3px 3px #ff3d57,
+ 3px -3px 3px #ff3d57,
+ -3px -3px 3px #ff3d57; }
+#ArenaResult #mainWrap #subInfo .maxRank {
+  width: 580px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+        font-size: 16px;/*MN*/
+        line-height: 40px; }
+#ArenaResult #mainWrap #subInfo .rankingLimit {
+  width: 304px;
+  height: 28px;
+  margin-top: 6px;
+  margin-left: 138px;
+        background: url("/magica/resource/image_web/page/arena/result/result_period_bg.png") left top no-repeat;
+  color: #ffffff;
+        text-align: center; }
+#ArenaResult #mainWrap #arenaPoints {
+  width: 428px;
+  height: 90px;
+  position: absolute;
+  top: 317px;
+      left: 298px; }
+#ArenaResult #mainWrap #arenaPoints .getPoint {
+  width: 428px;
+  height: 42px;
+  padding-left: 200px;
+        background: url("/magica/resource/image_web/page/arena/result/infinite_pt_bg.png") left top no-repeat;
+  font-size: 26px;
+        line-height: 42px; }
+#ArenaResult #mainWrap #arenaPoints .totalPoint {
+  width: 428px;
+  height: 42px;
+  margin-top: 6px;
+  padding-left: 200px;
+        background: url("/magica/resource/image_web/page/arena/result/infinite_sum_bg.png") left top no-repeat;
+  font-size: 26px;
+        line-height: 42px; }
+#ArenaResult #mainWrap #arenaPoints.freerank {
+        left: 212px; }
+#ArenaResult #mainWrap #arenaPoints.ranking {
+        top: 236px; }
+#ArenaResult #mainWrap #arenaPoints.ranking .getPoint {
+          background: url("/magica/resource/image_web/page/arena/result/ranking_pt_bg.png") left top no-repeat; }
+#ArenaResult #mainWrap #arenaPoints.ranking .totalPoint {
+  margin-top: 6px;
+          background: url("/magica/resource/image_web/page/arena/result/ranking_sum_bg.png") left top no-repeat; }
+#ArenaResult #mainWrap #arenaPoints .resultPointMax {
+  width: 48px;
+  height: 20px;
+        background: url("/magica/resource/image_web/page/arena/infinite_pt_max.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  right: 6px;
+  bottom: 21px;
+  pointer-events: none;
+        z-index: 10; }
+#ArenaResult #mainWrap #requireWrap {
+  width: 204px;
+  height: 90px;
+  padding: 12px 0px 0px 34px;
+      background: url("/magica/resource/image_web/page/arena/result/next_floor_bg.png") left top no-repeat;
+  position: absolute;
+  top: 317px;
+  left: 650px;
+  -webkit-animation: pointGuage 0.333s ease 4.166s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #mainWrap #requireWrap p {
+        color: #ffffff; }
+#ArenaResult #mainWrap #requireWrap .requireFirst {
+        margin-bottom: 2px; }
+#ArenaResult #mainWrap #requireWrap .requireSecond {
+  width: 157px;
+  margin: 1px 20px 0 0;
+        text-align: right; }
+#ArenaResult #mainWrap #requireWrap .requireSecond #leftCount {
+          color: #ffffff; }
+#ArenaResult #mainWrap #requireWrap .requireGuage {
+  width: 157px;
+  height: 18px;
+  padding: 4px 9px;
+  background: url("/magica/resource/image_web/page/arena/mirrors_gauge_base_l.png"), url("/magica/resource/image_web/page/arena/mirrors_gauge_base_m.png"), url("/magica/resource/image_web/page/arena/mirrors_gauge_base_r.png");
+  background-repeat: no-repeat;
+  background-position: 0px 0px, 11px 0px,145px 0px;
+  background-size: 12px 18px,135px 18px,12px 18px;
+        position: relative; }
+#ArenaResult #mainWrap #requireWrap .requireGuage .requireGuageInner {
+  max-width: 100%;
+  height: 10px;
+  background: url("/magica/resource/image_web/page/arena/mirrors_gauge_l.png") left top no-repeat, url("/magica/resource/image_web/page/arena/mirrors_gauge_r.png") right top no-repeat, url("/magica/resource/image_web/page/arena/mirrors_gauge_m.png") left top repeat-x;
+          display: block; }
+#ArenaResult #mainWrap .resultPointTitle, #ArenaResult #mainWrap .resultPointNums {
+  width: 572px;
+  height: 30px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  left: 226px;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+#ArenaResult #mainWrap .resultPointTitle li, #ArenaResult #mainWrap .resultPointNums li {
+  width: 140px;
+  height: 30px;
+  position: relative;
+  color: #ffffff;
+  line-height: 30px;
+        text-align: center; }
+#ArenaResult #mainWrap .resultPointTitle {
+      top: 415px; }
+#ArenaResult #mainWrap .resultPointTitle li {
+        background: url("/magica/resource/image_web/page/arena/result/square_ftame_b.png") repeat-x; }
+#ArenaResult #mainWrap .resultPointTitle li.break:before {
+  content: "";
+  width: 78px;
+  height: 24px;
+          background: url("/magica/resource/image_web/event/arenaranking/common/result/icon_break.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: -20px;
+          left: -1px; }
+#ArenaResult #mainWrap .resultPointTitle.ranking {
+        top: 350px; }
+#ArenaResult #mainWrap .resultPointTitle.ranking li {
+          background: url("/magica/resource/image_web/page/arena/result/square_ftame_p.png") repeat-x; }
+#ArenaResult #mainWrap .resultPointNums {
+      top: 448px; }
+#ArenaResult #mainWrap .resultPointNums.ranking {
+        top: 383px; }
+#ArenaResult #mainWrap .resultPointNums li {
+        background: url("/magica/resource/image_web/page/arena/result/square_ftame_n.png") repeat-x; }
+#ArenaResult #mainWrap .getCoinWrap {
+  width: 358px;
+  height: 28px;
+  background: url("/magica/resource/image_web/page/arena/result/reward_bg.png");
+  position: absolute;
+  top: 490px;
+  left: 333px;
+  font-size: 20px;
+  line-height: 28px;
+      text-align: center; }
+#ArenaResult #mainWrap .getCoinWrap img {
+  margin-top: -6px;
+        margin-right: 10px; }
+      #ArenaResult #mainWrap .getCoinWrap .coinNum.bonus {
+        text-shadow: 2px 0px 2px #f66a99,
+ -2px 0px 2px #f66a99,
+ 0px 2px 2px #f66a99,
+ 0px -2px 2px #f66a99,
+ 2px 2px 2px #f66a99,
+ -2px 2px 2px #f66a99,
+ 2px -2px 2px #f66a99,
+ -2px -2px 2px #f66a99;
+        color: #fff; }
+#ArenaResult #mainWrap .getRankingReward {
+  width: 250px;
+  height: 105px;
+  position: absolute;
+  top: 432px;
+  left: 387px;
+      text-align: center; }
+#ArenaResult #mainWrap .getRankingReward .itemWrap {
+  width: 105px;
+  height: 105px;
+  display: inline-block;
+  position: relative;
+        margin: 0px 5px; }
+#ArenaResult #mainWrap .getRankingReward .itemWrap img {
+          width: 88px; }
+#ArenaResult #mainWrap .getRankingReward .itemWrap .itemNum {
+  position: absolute;
+  bottom: 5px;
+  right: 6px;
+  display: block;
+          font-size: 24px; }
+#ArenaResult #mainWrap .touch_screen {
+  width: 242px;
+  height: 32px;
+      background: url("/magica/resource/image_web/page/arena/result/touch_screen.png") left top no-repeat;
+  position: absolute;
+  bottom: 14px;
+  left: 391px;
+  -webkit-animation: tocuhScreen 1.333s ease 5.333s infinite normal;
+      opacity: 0; }
+#ArenaResult #mainWrap .touch_screen.off {
+        display: none; }
+#ArenaResult #rankupWrap {
+  width: 1024px;
+  height: 576px;
+  position: fixed;
+  top: -webkit-calc(50% - 288px);
+  left: 0;
+  overflow: hidden;
+    z-index: 5; }
+#ArenaResult #rankupWrap.endAnim {
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror {
+  width: 598px;
+  height: 86px;
+  position: absolute;
+  top: 100px;
+      left: 213px; }
+#ArenaResult #rankupWrap .nextMirror .rankDeco {
+  width: 98px;
+  height: 79px;
+        background: url("/magica/resource/image_web/page/arena/result/text_win_deco_00.png") left top no-repeat;
+  position: absolute;
+  top: 3.5px;
+  left: 0;
+  -webkit-animation: rankDeco 0.166s ease 0.417s 1 normal;
+  -webkit-animation-fill-mode: both;
+        opacity: 0; }
+#ArenaResult #rankupWrap .nextMirror .rankDeco2 {
+  width: 98px;
+  height: 79px;
+        background: url("/magica/resource/image_web/page/arena/result/text_win_deco_01.png") left top no-repeat;
+  position: absolute;
+  top: 3.5px;
+  right: 0;
+  -webkit-animation: rankDecoRevers 0.166s ease 0.417s 1 normal;
+  -webkit-animation-fill-mode: both;
+        opacity: 0; }
+#ArenaResult #rankupWrap .nextMirror .rankString {
+  width: 93px;
+  height: 89px;
+  position: absolute;
+  top: -1.5px;
+        opacity: 0; }
+#ArenaResult #rankupWrap .nextMirror .rankString.N {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_00.png") left top no-repeat;
+  left: 72px;
+  -webkit-animation: rankStringN 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror .rankString.E {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_01.png") left top no-repeat;
+  left: 117px;
+  -webkit-animation: rankStringE 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror .rankString.X {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_02.png") left top no-repeat;
+  left: 155px;
+  -webkit-animation: rankStringX 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror .rankString.T {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_03.png") left top no-repeat;
+  left: 191px;
+  -webkit-animation: rankStringT 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror .rankString.M {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_04.png") left top no-repeat;
+  left: 261px;
+  -webkit-animation: rankStringM 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror .rankString.I {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_05.png") left top no-repeat;
+  left: 302px;
+  -webkit-animation: rankStringI 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror .rankString.R1 {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_06.png") left top no-repeat;
+  left: 331px;
+  -webkit-animation: rankStringR 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror .rankString.R2 {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_06.png") left top no-repeat;
+  left: 362px;
+  -webkit-animation: rankStringRR 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror .rankString.O {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_07.png") left top no-repeat;
+  left: 398px;
+  -webkit-animation: rankStringO 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirror .rankString.R3 {
+          background: url("/magica/resource/image_web/page/arena/result/text_next_mirror_06.png") left top no-repeat;
+  left: 434px;
+  -webkit-animation: rankStringRRR 0.166s ease 0.417s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirrorBefore, #ArenaResult #rankupWrap .nextMirrorAfter {
+  width: 74px;
+      height: 90px;
+  padding-top: 28px;
+      background: url("/magica/resource/image_web/page/arena/result/infinite_floor_bg_s.png") left top no-repeat;
+  position: absolute;
+  top: 195px;
+  text-align: center;
+  letter-spacing: -8px;
+      opacity: 0; }
+#ArenaResult #rankupWrap .nextMirrorBefore {
+  left: 320px;
+  -webkit-animation: simpleFadeIn .25s ease 1.333s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirrorAfter {
+  right: 320px;
+  -webkit-animation: nextMirrorAfterFadeIn 1.25s ease 2.25s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #rankupWrap .nextMirrorArrow {
+  width: 42px;
+  height: 52px;
+      background: url("/magica/resource/image_web/page/arena/result/rankup_arrow.png") left top no-repeat;
+  position: absolute;
+  top: 207px;
+  left: 486px;
+  -webkit-animation: floorArrow .167s ease 1.75s 1 normal;
+  -webkit-animation-fill-mode: both;
+      opacity: 0; }
+#ArenaResult #rankupWrap .rankupReward {
+  width: 596px;
+  height: 70px;
+  padding-left: 204px;
+      background: url("/magica/resource/image_web/page/arena/result/rankup_reward_bg.png") left top no-repeat;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 314px;
+  left: 214px;
+  -webkit-animation: rankUpSlideIn .333s ease 3.083s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+  justify-content: flex-start;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+  align-items: center;
+      -webkit-align-items: center; }
+#ArenaResult #rankupWrap .rankupReward .rewardItem {
+        position: relative; }
+#ArenaResult #rankupWrap .rankupReward .rewardItem.money, #ArenaResult #rankupWrap .rankupReward .rewardItem.presented_money {
+          padding-left: 26px; }
+#ArenaResult #rankupWrap .rankupReward .rewardItem.money:before, #ArenaResult #rankupWrap .rankupReward .rewardItem.presented_money:before {
+  width: 20px;
+  height: 20px;
+            background: url("/magica/resource/image_web/common/icon/icon_money.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 0;
+            content: ""; }
+#ArenaResult #rankupWrap .nextStoryWrap {
+  width: 628px;
+  height: 116px;
+  padding-top: 36px;
+      background: url("/magica/resource/image_web/page/arena/result/story_open_bg.png") left top no-repeat;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 400px;
+  left: 198px;
+  -webkit-animation: rankUpSlideIn .333s ease 3.5s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+  justify-content: flex-start;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+  align-items: center;
+      -webkit-align-items: center; }
+#ArenaResult #rankupWrap .nextStoryWrap .storyTitle {
+  width: 100%;
+  font-size: 24px;
+        text-align: center; }
+#ArenaResult #rankupWrap .nextStoryWrap .condition {
+  width: 100%;
+  margin-top: 0px;
+  padding: 0 20px;
+  color: #005ec2;
+        text-align: center; }
+#ArenaResult #rankupWrap .touch_screen {
+  width: 242px;
+  height: 32px;
+      background: url("/magica/resource/image_web/page/arena/result/touch_screen.png") left top no-repeat;
+  position: absolute;
+  bottom: 14px;
+  left: 391px;
+  -webkit-animation: tocuhScreen 1.333s ease 3.833s infinite normal;
+      opacity: 0; }
+#ArenaResult #resultMirror {
+  width: 996px;
+  height: 986px;
+  position: fixed;
+    top: -webkit-calc(50% - 493px);
+  left: 14px;
+  overflow: hidden;
+    z-index: 1; }
+#ArenaResult #resultMirror.endAnim {
+  -webkit-animation: simpleEndAnimation 0.266s linear 0s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#ArenaResult #resultMirror .mirrorReflec {
+  width: 1050px;
+  height: 1050px;
+  position: fixed;
+  top: -webkit-calc(50% - 530px);
+  left: -13px;
+      z-index: 5; }
+#ArenaResult #resultMirror .mirrorReflec .reflecMirror {
+  width: 822px;
+  height: 822px;
+  position: absolute;
+  top: 114px;
+  left: 114px;
+  overflow: hidden;
+  border-radius: 411px;
+  -webkit-mask: url("/magica/resource/image_web/page/arena/result/reflection_mask.png") no-repeat;
+        -webkit-mask-position: -101px 50%; }
+#ArenaResult #resultMirror .mirrorReflec .reflecMirror img {
+  position: absolute;
+  top: -500px;
+  left: -100px;
+          -webkit-animation: reflectionMask 5s ease 6.6666s infinite normal; }
+#ArenaResult #resultMirror .mirrorWrap {
+  width: 996px;
+  height: 986px;
+  background: url("/magica/resource/image_web/page/arena/result/result_mirror.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: mirrorFadeIn 0.333s linear 0s 1 normal;
+  -webkit-animation-fill-mode: both;
+  opacity: 0;
+      z-index: 3; }
+#ArenaResult #resultMirror .mirrorMemberWrap {
+  width: 818px;
+  height: 818px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 79px;
+  left: 89px;
+  overflow: hidden;
+  border-radius: 409px;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+#ArenaResult #resultMirror .mirrorMemberWrap .leader {
+  width: 264px;
+  height: 822px;
+  margin: 0px;
+  position: relative;
+  overflow: hidden;
+  -webkit-animation: cardFadeIn 0.2s ease 0.5s 1 normal;
+  -webkit-animation-fill-mode: both;
+        -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), color-stop(35%, rgba(0, 0, 0, 0.8)), color-stop(55%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); }
+#ArenaResult #resultMirror .mirrorMemberWrap .leader img {
+  position: absolute;
+  top: 65px;
+          left: -124px; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_left, #ArenaResult #resultMirror .mirrorMemberWrap .members_right {
+  width: 132px;
+  height: 822px;
+  position: relative;
+  overflow: hidden;
+        opacity: 0; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_left img, #ArenaResult #resultMirror .mirrorMemberWrap .members_right img {
+  position: absolute;
+          left: -187px; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_left1, #ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_right1, #ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_left1, #ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_right1 {
+          -webkit-mask: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.8)), color-stop(40%, rgba(0, 0, 0, 0.8)), color-stop(60%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_left1 img, #ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_right1 img, #ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_left1 img, #ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_right1 img {
+            top: 120px; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_left2, #ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_right2, #ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_left2, #ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_right2 {
+          -webkit-mask: -webkit-gradient(linear, right top, right bottom, from(rgba(0, 0, 0, 0.8)), color-stop(45%, rgba(0, 0, 0, 0.8)), color-stop(65%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_left2 img, #ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_right2 img, #ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_left2 img, #ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_right2 img {
+            top: 185px; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_left {
+        margin-right: 6px; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_left1 {
+  -webkit-animation: cardFadeInUp 0.2s ease 0.583s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_left.mirror_left2 {
+  -webkit-animation: cardFadeIn 0.2s ease 0.750s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_right {
+        margin-left: 6px; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_right1 {
+  -webkit-animation: cardFadeInUp 0.2s ease 0.666s 1 normal;
+          -webkit-animation-fill-mode: both; }
+#ArenaResult #resultMirror .mirrorMemberWrap .members_right.mirror_right2 {
+  -webkit-animation: cardFadeIn 0.2s ease 0.833s 1 normal;
+          -webkit-animation-fill-mode: both; }
+
+@-webkit-keyframes simpleFadeIn {
+  0% {
+    display: block;
+    opacity: 0; }
+  100% {
+    display: block;
+    opacity: 1; } }
+
+@-webkit-keyframes nextMirrorAfterFadeIn {
+  0% {
+    display: block;
+    opacity: 0; }
+  20%, 100% {
+    display: block;
+    opacity: 1; } }
+
+@-webkit-keyframes simpleFadeOut {
+  0% {
+    display: block;
+    opacity: 1; }
+  100% {
+    display: none;
+    opacity: 0; } }
+
+@-webkit-keyframes simpleEndAnimation {
+  0% {
+    -webkit-transform: scaleX(1); }
+  100% {
+    -webkit-transform: scaleX(0); } }
+
+@-webkit-keyframes mirrorFadeIn {
+  0% {
+    -webkit-transform: scaleX(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scaleX(1);
+    opacity: 1; } }
+
+@-webkit-keyframes cardFadeIn {
+  0% {
+    -webkit-transform: translateY(-100px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes cardFadeInUp {
+  0% {
+    -webkit-transform: translateY(100px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateY(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes resultStrW {
+  0% {
+    -webkit-transform: translateX(53px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes resultStrI {
+  0% {
+    -webkit-transform: translateX(-10px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes resultStrN {
+  0% {
+    -webkit-transform: translateX(-60px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes resultDecoLeft {
+  0% {
+    -webkit-transform: translateX(129px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes resultDecoRight {
+  0% {
+    -webkit-transform: translateX(-129px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes resultWinMark {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1.5);
+    opacity: 0; } }
+
+@-webkit-keyframes resultWinAdd {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 0; }
+  25% {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+  50% {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1.5);
+    opacity: 0; } }
+
+@-webkit-keyframes circleFirst {
+  0% {
+    -webkit-transform: scale(0) rotate(0deg);
+    opacity: 1; }
+  44% {
+    -webkit-transform: scale(0.6) rotate(10deg);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.6) rotate(15deg);
+    opacity: 0; } }
+
+@-webkit-keyframes circleSecond {
+  0% {
+    -webkit-transform: scale(0) rotate(25deg);
+    opacity: 1; }
+  44% {
+    -webkit-transform: scale(1) rotate(65deg);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1) rotate(75deg);
+    opacity: 0; } }
+
+@-webkit-keyframes circleThird {
+  0% {
+    -webkit-transform: scale(0) rotate(0deg);
+    opacity: 1; }
+  44% {
+    -webkit-transform: scale(1) rotate(30deg);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1) rotate(40deg);
+    opacity: 0; } }
+
+@-webkit-keyframes circleForth {
+  0% {
+    -webkit-transform: scale(0) rotate(0deg);
+    opacity: 1; }
+  44% {
+    -webkit-transform: scale(0.5) rotate(30deg);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0.5) rotate(45deg);
+    opacity: 0; } }
+
+@-webkit-keyframes pointGuage {
+  0% {
+    -webkit-transform: translateX(20px); }
+  100% {
+    -webkit-transform: translateX(0px); } }
+
+@-webkit-keyframes tocuhScreen {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes reflectionMask {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(-35deg); }
+  20% {
+    -webkit-transform: translate(0, 1800px) rotate(-35deg); }
+  100% {
+    -webkit-transform: translate(0, 1800px) rotate(-35deg); } }
+
+@-webkit-keyframes rankupFlash {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 0; }
+  33%, 50% {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1.2);
+    opacity: 0; } }
+
+@-webkit-keyframes rankStringN {
+  0% {
+    -webkit-transform: translateX(180px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankStringE {
+  0% {
+    -webkit-transform: translateX(136px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankStringX {
+  0% {
+    -webkit-transform: translateX(97px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankStringT {
+  0% {
+    -webkit-transform: translateX(62px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankStringM {
+  0% {
+    -webkit-transform: translateX(-8px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankStringI {
+  0% {
+    -webkit-transform: translateX(-49px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankStringR {
+  0% {
+    -webkit-transform: translateX(-77px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankStringRR {
+  0% {
+    -webkit-transform: translateX(-109px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankStringO {
+  0% {
+    -webkit-transform: translateX(-145px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankStringRRR {
+  0% {
+    -webkit-transform: translateX(-181px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankDeco {
+  0% {
+    -webkit-transform: translateX(248px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankDecoRevers {
+  0% {
+    -webkit-transform: translateX(-248px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes floorArrow {
+  0% {
+    -webkit-transform: translateX(-30px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }
+
+@-webkit-keyframes rankUpSlideIn {
+  0% {
+    -webkit-transform: translateX(-100px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }

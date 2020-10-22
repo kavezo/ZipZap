@@ -1,0 +1,202 @@
+#PresentList {
+  width: 1024px;
+  height: 100%; }
+#PresentList #presentBaseWrap {
+    width: 712px;
+    height: -webkit-calc(100% - 134px);
+    padding: 59px 7px 5px 18px;
+  position: absolute;
+  top: 70px;
+    left: 276px; }
+    #PresentList #presentBaseWrap h2 {
+      width: 703px;
+      height: 50px;
+      padding: 5px 0 0 15px;
+      background: url("/magica/resource/image_web/page/mission/mission_header2.png");
+      background-size: 100% 50px;
+      position: absolute;
+      top: 4px;
+      left: 5px;
+      color: #ffffff;
+      text-shadow: -1px -1px 2px #ff4f92, 1px -1px 2px #ff4f92, -1px 1px 2px #ff4f92, 1px 1px 2px #ff4f92, -1px -1px 2px #ff4f92, 1px -1px 2px #ff4f92, -1px 1px 2px #ff4f92, 1px 1px 2px #ff4f92;
+      z-index: 6; }
+    #PresentList #presentBaseWrap .presentCnt {
+      position: absolute;
+      top: 18px;
+      right: 160px;
+      z-index: 100; }
+      #PresentList #presentBaseWrap .presentCnt span {
+        margin-left: 10px; }
+    #PresentList #presentBaseWrap .receiveBtn {
+      width: 130px;
+      height: 40px;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      line-height: 15px;
+      z-index: 100; }
+#PresentList #presentWrap {
+  width: 695px;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+    z-index: 5; }
+#PresentList #presentWrap #presentScrollWrap {
+  width: -webkit-calc(100% - 20px);
+  height: -webkit-calc(100% - 96px);
+  padding-right: 20px;
+  position: absolute;
+  top: 36px;
+  left: 18px;
+      overflow: hidden; }
+#PresentList #presentWrap #presentScrollWrap #presentInner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+        padding-top: 24px;
+        padding-bottom: 20px; }
+#PresentList #presentWrap #presentScrollWrap #presentInner .presentNoItem {
+  font-size: 20px;
+  width: 450px;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  top: -webkit-calc(50% - 15px);
+  left: -webkit-calc(50% - 225px);
+          text-align: center; }
+#PresentList .present {
+    min-height: 114px;
+  margin: 0 0 12px 4px;
+  padding: 10px 5px;
+    position: relative; }
+#PresentList .present .imgWrap {
+  width: 85px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+      -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: flex-end;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+#PresentList .present .imgWrap .imgMiniWrap {
+  height: 85px;
+        position: relative; }
+#PresentList .present .imgWrap .imgMiniWrap .miniImg {
+          width: 85px; }
+#PresentList .present .imgWrap .imgMiniWrap .quantity {
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+  color: #fff;
+          text-shadow: 1px 0px 2px #504432,
+ -1px 0px 2px #504432,
+ 0px 1px 2px #504432,
+ 0px -1px 2px #504432,
+ 1px 1px 2px #504432,
+ -1px 1px 2px #504432,
+ 1px -1px 2px #504432,
+ -1px -1px 2px #504432; }
+#PresentList .present .imgWrap .charaIcon {
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  bottom: 5px;
+        right: -12px; }
+#PresentList .present .imgWrap .charaIcon:before {
+  width: 58px;
+  height: 52px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+          z-index: 100; }
+#PresentList .present .imgWrap .charaIcon:after {
+  width: 58px;
+  height: 52px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+          z-index: 80; }
+#PresentList .present .imgWrap .charaIcon .maskWrap {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  z-index: 90;
+  overflow: hidden;
+          border-radius: 26px; }
+#PresentList .present .imgWrap .charaIcon .maskWrap img {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+            left: -webkit-calc(50% - 30px); }
+#PresentList .present .presentName {
+  width: 480px;
+  white-space: nowrap;
+  overflow: hidden;
+      -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 20px;
+  position: absolute;
+  top: 12px;
+      left: 110px; }
+#PresentList .present .presentDate {
+  position: absolute;
+      top: 74px;
+  left: 110px;
+      text-shadow: 0 0; }
+#PresentList .present .presentCommentWrap {
+  width: 490px;
+      padding: 36px 0 0 104px; }
+#PresentList .present .presentComment {
+  width: 380px;
+  overflow: hidden;
+  white-space: nowrap;
+      -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+      margin: 0 0 2px; }
+#PresentList .present .receiveLimit {
+  padding: 2px 10px;
+  margin-left: 120px;
+  background: #f86688;
+  text-shadow: 0 0;
+  color: #FFF;
+  -webkit-border-radius: 5px;
+      display: inline-block; }
+#PresentList .present.select {
+      background: rgba(120, 110, 20, 0.7); }
+#PresentList .present .btn {
+  font-size: 16px;
+  min-width: 140px;
+  width: 140px;
+  position: absolute;
+  right: 10px;
+      bottom: 10px; }
+
+#successPopup .popupTextArea {
+  height: 240px !important; }

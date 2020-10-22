@@ -1,0 +1,107 @@
+<div id="PopupQuestDetailParts">
+
+	<% var mission1 = (model.missionStatus1 === 'CLEARED') ? 'cleared' : null %>
+	<% var mission2 = (model.missionStatus2 === 'CLEARED') ? 'cleared' : null %>
+	<% var mission3 = (model.missionStatus3 === 'CLEARED') ? 'cleared' : null %>
+
+	<div class="popQuestDetailContent">
+		<div class="questDetailTitle c_white">Mission</div>
+
+		<ul class="missionList">
+			<li class='<%= mission1 %>'><%= model.questBattle.missionMaster1.description %></li>
+			<li class='<%= mission2 %>'><%= model.questBattle.missionMaster2.description %></li>
+			<li class='<%= mission3 %>'><%= model.questBattle.missionMaster3.description %></li>
+		</ul>
+	</div>
+
+	<div class="popQuestDetailContent">
+		<div class="questDetailTitle c_white">Rewards</div>
+		<div class="common_line lc_beige"></div>
+		<div id="dropListWrap">
+			<ul class="dropList flexBox">
+			<% if(model.firstClearReward && model.firstClearReward.length > 0) { %>
+				<% _.each(model.firstClearReward,function(code,index) { %>
+					<% if(code.indexOf('gift') !== -1) { %>
+						<li class='firstReward'>
+							<div class='bgWrap'>
+								<!-- <div class="bg"></div> -->
+								<div class="icon"></div>
+								<img data-nativeimgkey='<%= code %>' data-src='resource/image_native/gift/<%= code %>.png' class="giftImg">
+								<span class="quantityIcon"></span>
+								<span class='name'><%= model.firstClearRewardName[index] %></span>
+								<span class='quantity'><%= model.firstClearRewardQuantity[index] %></span>
+							</div>
+						</li>
+					<% } else if(code.indexOf('event') !== -1) { %>
+						<li class='firstReward'>
+							<div class='bgWrap'>
+								<!-- <div class="bg"></div> -->
+								<div class="icon"></div>
+								<img src='/magica/resource/image_web/item/event/<%= code %>.png' alt="">
+								<span class="quantityIcon"></span>
+								<span class='name'><%= model.firstClearRewardName[index] %></span>
+								<span class='quantity'><%= model.firstClearRewardQuantity[index] %></span>
+							</div>
+						</li>
+					<% } else { %>
+						<li class='firstReward'>
+							<div class='bgWrap'>
+								<!-- <div class="bg"></div> -->
+								<div class="icon"></div>
+								<img src='/magica/resource/image_web/item/main/<%= code %>.png' alt="">
+								<span class="quantityIcon"></span>
+								<span class='name'><%= model.firstClearRewardName[index] %></span>
+								<span class='quantity'><%= model.firstClearRewardQuantity[index] %></span>
+							</div>
+						</li>
+					<% } %>
+				<% }); %>
+			<% } %>
+
+			<% if(model.addDropItem) { %>
+				<% var code = model.addDropItem %>
+				<% if(code.indexOf('event') !== -1) { %>
+					<li>
+						<img src='/magica/resource/image_web/item/event/<%= code %>.png' alt="">
+						<span class="quantityIcon"></span>
+						<span class='name'><%= model.addDropItemName %></span>
+						<span class='quantity'><%= model.addDropItemQuantity %></span>
+					</li>
+				<% } else { %>
+					<li>
+						<img src='/magica/resource/image_web/item/main/<%= code %>.png' alt="">
+						<span class="quantityIcon"></span>
+						<span class='name'><%= model.addDropItemName %></span>
+						<span class='quantity'><%= model.addDropItemQuantity %></span>
+					</li>
+				<% } %>
+			<% } %>
+
+			<% _.each(model.rewardCodeArr,function(code,index) { %>
+				<% if(code.indexOf('gift') !== -1) { %>
+					<li>
+						<img data-nativeimgkey='<%= code %>' data-src='resource/image_native/gift/<%= code %>.png' class="giftImg">
+						<span class="quantityIcon"></span>
+						<span class='name'><%= model.rewardNameArr[index] %></span>
+						<span class='quantity'><%= model.rewardQuantityArr[index] %></span>
+					</li>
+					<% } else if(code.indexOf('event') !== -1) { %>
+					<li>
+						<img src='/magica/resource/image_web/item/event/<%= code %>.png' alt="">
+						<span class="quantityIcon"></span>
+						<span class='name'><%= model.rewardNameArr[index] %></span>
+						<span class='quantity'><%= model.rewardQuantityArr[index] %></span>
+					</li>
+					<% } else { %>
+					<li>
+						<img src='/magica/resource/image_web/item/main/<%= code %>.png' alt="">
+						<span class="quantityIcon"></span>
+						<span class='name'><%= model.rewardNameArr[index] %></span>
+						<span class='quantity'><%= model.rewardQuantityArr[index] %></span>
+					</li>
+				<% } %>
+			<% }) %>
+			</ul>
+		</div>
+	</div>
+</div>

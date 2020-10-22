@@ -1,0 +1,317 @@
+[
+    {
+        "imagePath": "/part2/magirepo_02_001.png",
+        "number": 1,
+        "part": 1
+    },
+    {
+        "imagePath": "/part2/magirepo_02_002.png",
+        "number": 2,
+        "part": 1
+    },
+    {
+        "imagePath": "/part2/magirepo_02_003.png",
+        "number": 3,
+        "part": 1
+    },
+    {
+        "imagePath": "/part2/magirepo_02_004.png",
+        "number": 4,
+        "part": 1,
+        "startAt": "2019/10/29 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_005.png",
+        "number": 5,
+        "part": 1,
+        "startAt": "2019/11/05 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_006.png",
+        "number": 6,
+        "part": 1,
+        "startAt": "2019/11/05 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_007.png",
+        "number": 7,
+        "part": 1,
+        "startAt": "2019/11/05 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_008.png",
+        "number": 8,
+        "part": 1,
+        "startAt": "2019/11/05 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_009.png",
+        "number": 9,
+        "part": 1,
+        "startAt": "2019/11/05 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_010.png",
+        "number": 10,
+        "part": 1,
+        "startAt": "2019/11/05 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_011.png",
+        "number": 11,
+        "part": 1,
+        "startAt": "2019/11/19 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_012.png",
+        "number": 12,
+        "part": 1,
+        "startAt": "2019/11/25 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_013.png",
+        "number": 13,
+        "part": 1,
+        "startAt": "2019/12/04 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_014.png",
+        "number": 14,
+        "part": 1,
+        "startAt": "2019/12/10 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_015.png",
+        "number": 15,
+        "part": 1,
+        "startAt": "2019/12/24 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_016.png",
+        "number": 16,
+        "part": 1,
+        "startAt": "2019/12/24 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_017.png",
+        "number": 17,
+        "part": 1,
+        "startAt": "2020/01/08 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_018.png",
+        "number": 18,
+        "part": 1,
+        "startAt": "2020/01/08 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_019.png",
+        "number": 19,
+        "part": 1,
+        "startAt": "2020/01/14 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_020.png",
+        "number": 20,
+        "part": 1,
+        "startAt": "2020/01/21 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_021.png",
+        "number": 21,
+        "part": 1,
+        "startAt": "2020/01/24 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_022.png",
+        "number": 22,
+        "part": 1,
+        "startAt": "2020/02/10 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_023.png",
+        "number": 23,
+        "part": 1,
+        "startAt": "2020/02/10 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_024.png",
+        "number": 24,
+        "part": 1,
+        "startAt": "2020/02/10 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_025.png",
+        "number": 25,
+        "part": 1,
+        "startAt": "2020/02/18 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_026.png",
+        "number": 26,
+        "part": 1,
+        "startAt": "2020/03/02 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_027.png",
+        "number": 27,
+        "part": 1,
+        "startAt": "2020/03/02 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_028.png",
+        "number": 28,
+        "part": 1,
+        "startAt": "2020/03/09 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_029.png",
+        "number": 29,
+        "part": 1,
+        "startAt": "2020/03/19 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_030.png",
+        "number": 30,
+        "part": 1,
+        "startAt": "2020/03/27 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_031.png",
+        "number": 31,
+        "part": 1,
+        "startAt": "2020/04/03 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_032.png",
+        "number": 32,
+        "part": 1,
+        "startAt": "2020/04/13 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_033.png",
+        "number": 33,
+        "part": 1,
+        "startAt": "2020/04/13 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_034.png",
+        "number": 34,
+        "part": 1,
+        "startAt": "2020/04/22 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_035.png",
+        "number": 35,
+        "part": 1,
+        "startAt": "2020/05/01 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_036.png",
+        "number": 36,
+        "part": 1,
+        "startAt": "2020/05/11 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_037.png",
+        "number": 37,
+        "part": 1,
+        "startAt": "2020/05/11 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_038.png",
+        "number": 38,
+        "part": 1,
+        "startAt": "2020/05/22 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_039.png",
+        "number": 39,
+        "part": 1,
+        "startAt": "2020/06/02 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_040.png",
+        "number": 40,
+        "part": 1,
+        "startAt": "2020/06/02 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_041.png",
+        "number": 41,
+        "part": 1,
+        "startAt": "2020/06/15 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_042.png",
+        "number": 42,
+        "part": 1,
+        "startAt": "2020/06/15 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_043.png",
+        "number": 43,
+        "part": 1,
+        "startAt": "2020/06/22 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_044.png",
+        "number": 44,
+        "part": 1,
+        "startAt": "2020/06/29 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_045.png",
+        "number": 45,
+        "part": 1,
+        "startAt": "2020/07/07 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_046.png",
+        "number": 46,
+        "part": 1,
+        "startAt": "2020/07/15 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_047.png",
+        "number": 47,
+        "part": 1,
+        "startAt": "2020/07/22 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_048.png",
+        "number": 48,
+        "part": 1,
+        "startAt": "2020/08/03 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_049.png",
+        "number": 49,
+        "part": 1,
+        "startAt": "2020/08/03 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_050.png",
+        "number": 50,
+        "part": 1,
+        "startAt": "2020/08/12 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_051.png",
+        "number": 51,
+        "part": 1,
+        "startAt": "2020/08/21 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_052.png",
+        "number": 52,
+        "part": 1,
+        "startAt": "2020/08/31 00:10:00"
+    },
+    {
+        "imagePath": "/part2/magirepo_02_053.png",
+        "number": 53,
+        "part": 1,
+        "startAt": "2020/08/31 00:10:00"
+    }
+]

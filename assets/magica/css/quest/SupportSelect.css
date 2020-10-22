@@ -1,0 +1,896 @@
+#SuppotSelect {
+  width: 1024px;
+  height: 100%;
+  padding-top: 100px;
+  position: relative;
+  overflow: hide; }
+#SuppotSelect #questDetail {
+  width: 300px;
+  height: 516px;
+  padding: 10px 0 0;
+  padding: 74px 0 0;
+  background: url("/magica/resource/image_web/page/formation/bg_quest_detail.png") left top no-repeat;
+  position: absolute;
+  top: 47px;
+  left: 13px;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+    -webkit-filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3)); }
+#SuppotSelect #questDetail .challengeModeIcon {
+  width: 122px;
+  height: 34px;
+  background: url("/magica/resource/image_web/page/quest/main/icon_challenge.png") right top no-repeat;
+  position: absolute;
+  top: 24px;
+  left: -webkit-calc(50% - 61px);
+      z-index: 100; }
+#SuppotSelect #questDetail .chapterTitle {
+  width: 100%;
+  position: absolute;
+  top: 71px;
+  left: 0;
+  font-size: 20px;
+      line-height: 1.2; }
+#SuppotSelect #questDetail .chapterTitle.event {
+  top: 74px;
+        font-size: 16px; }
+#SuppotSelect #questDetail .sectionTitle {
+  width: 100%;
+  position: absolute;
+  top: 99px;
+      left: 0; }
+/*MN*/
+#SuppotSelect #questDetail .questTitle {
+  width: 280px;
+  height: 52px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 160px;
+  left: 10px;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 1.3;
+  text-align: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+  justify-content: center;
+      -webkit-flex-direction: column; }
+      #SuppotSelect #questDetail .questTitle p {
+        letter-spacing: -0.03em; }
+#SuppotSelect #questDetail .questTitle .questSubTitle {
+        font-size: 18px; }
+#SuppotSelect #questDetail .questClassTitle {
+  width: 300px;
+  position: absolute;
+  top: 212px;
+  left: 0;
+      font-size: 16px; }
+#SuppotSelect #questDetail .questClassTitle .line {
+  width: 276px;
+  height: 2px;
+  margin: 0 auto;
+  background: -webkit-linear-gradient(left, rgba(209, 186, 155, 0) 0%, rgba(209, 186, 155, 0.5) 10%, #d1ba9b 50%, rgba(209, 186, 155, 0.5) 90%, rgba(209, 186, 155, 0) 100%);
+        display: block; }
+#SuppotSelect #questDetail .pointWrap {
+  width: 267px;
+  height: 24px;
+  position: absolute;
+  top: 246px;
+      left: -webkit-calc(50% - 133px); }
+#SuppotSelect #questDetail .pointWrap .pointInner {
+  width: 146px;
+  height: 24px;
+  margin: 0 auto;
+  background: url("/magica/resource/image_web/page/formation/bg_detail.png") left top no-repeat;
+  position: relative;
+  font-size: 14px;
+  line-height: 24px;
+        text-align: left; }
+#SuppotSelect #questDetail .pointWrap .pointInner .title {
+  position: absolute;
+  top: 0;
+          left: 32px; }
+#SuppotSelect #questDetail .pointWrap .pointInner .point {
+  position: absolute;
+  top: 0;
+          right: 30px; }
+#SuppotSelect #questDetail .pointWrap .pointInner.difficulty {
+  padding-right: 15px;
+          padding-left: 30px; }
+#SuppotSelect #questDetail .pointWrap .pointInner.ap {
+  padding-right: 25px;
+          padding-left: 20px; }
+#SuppotSelect #questDetail .pointWrap .pointInner p {
+          color: #ffffff; }
+#SuppotSelect #questDetail .pointWrap .pointInner:not(:last-child) {
+          margin: 0 auto 5px; }
+#SuppotSelect #questDetail .pointWrap .pointInner .useItem {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -3px;
+          left: 16px; }
+#SuppotSelect #questDetail .pointWrap .pointInner .useItemTitle {
+  position: absolute;
+  top: 0;
+          left: 46px; }
+#SuppotSelect #questDetail #dropItemBtn {
+  min-width: 170px;
+  position: absolute;
+  bottom: 25px;
+  left: -webkit-calc(50% - 85px);
+      font-size: 18px; }
+#SuppotSelect #questDetail .enemyDetail {
+  width: 256px;
+  height: 108px;
+  background: url("/magica/resource/image_web/page/formation/bg_quest_detail_enemy_02_a.png") left top no-repeat;
+  position: relative;
+  position: absolute;
+  bottom: 99px;
+      left: -webkit-calc(50% - 128px); }
+#SuppotSelect #questDetail .enemyDetail .arrow {
+  position: absolute;
+  top: 36px;
+  left: 84px;
+        z-index: 100; }
+#SuppotSelect #questDetail .enemyDetail .att {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+        -webkit-filter: grayscale(100%); }
+#SuppotSelect #questDetail .enemyDetail .att:before {
+  width: 28px;
+  height: 28px;
+  display: block;
+  position: absolute;
+  content: "";
+          z-index: 10; }
+#SuppotSelect #questDetail .enemyDetail .att.fire {
+  top: 16px;
+          left: 180px; }
+#SuppotSelect #questDetail .enemyDetail .att.fire:before {
+  background: url("/magica/resource/image_web/common/chara/att_fire.png") left top no-repeat;
+            background-size: 28px 28px; }
+#SuppotSelect #questDetail .enemyDetail .att.water {
+  top: 64px;
+          left: 154px; }
+#SuppotSelect #questDetail .enemyDetail .att.water:before {
+  background: url("/magica/resource/image_web/common/chara/att_water.png") left top no-repeat;
+            background-size: 28px 28px; }
+#SuppotSelect #questDetail .enemyDetail .att.timber {
+  top: 64px;
+          left: 206px; }
+#SuppotSelect #questDetail .enemyDetail .att.timber:before {
+  background: url("/magica/resource/image_web/common/chara/att_timber.png") left top no-repeat;
+            background-size: 28px 28px; }
+#SuppotSelect #questDetail .enemyDetail .att.dark {
+  top: 64px;
+          left: 98px; }
+#SuppotSelect #questDetail .enemyDetail .att.dark:before {
+  background: url("/magica/resource/image_web/common/chara/att_dark.png") left top no-repeat;
+            background-size: 28px 28px; }
+#SuppotSelect #questDetail .enemyDetail .att.light {
+  top: 16px;
+          left: 98px; }
+#SuppotSelect #questDetail .enemyDetail .att.light:before {
+  background: url("/magica/resource/image_web/common/chara/att_light.png") left top no-repeat;
+            background-size: 28px 28px; }
+#SuppotSelect #questDetail .enemyDetail .att.void {
+  top: 40px;
+          left: 41px; }
+#SuppotSelect #questDetail .enemyDetail .att.void:before {
+  background: url("/magica/resource/image_web/common/chara/att_void.png") left top no-repeat;
+            background-size: 28px 28px; }
+#SuppotSelect #questDetail .enemyDetail .att.on {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+          -webkit-filter: grayscale(0%); }
+#SuppotSelect #questDetail .enemyDetail .att.on:after {
+  width: 50px;
+  height: 50px;
+  background: url("/magica/resource/image_web/page/formation/enemy_element_highlight.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  content: "";
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+            z-index: 1; }
+#SuppotSelect #questDetail .questDetail {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+      left: 0; }
+#SuppotSelect #questDetail .questDetail.show {
+  -webkit-animation: common_fade_in .3s ease .3s 1 alternate;
+  pointer-events: auto;
+  opacity: 0;
+        -webkit-animation-fill-mode: forwards; }
+#SuppotSelect #questDetail .questDetail.hide {
+  -webkit-animation: common_fade_out .3s ease 0s 1 alternate;
+  pointer-events: none;
+  opacity: 1;
+        -webkit-animation-fill-mode: forwards; }
+#SuppotSelect #questDetail .dropDetail {
+  width: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+      opacity: 0; }
+#SuppotSelect #questDetail .dropDetail.show {
+  -webkit-animation: common_fade_in .3s ease .3s 1 alternate;
+  pointer-events: auto;
+  opacity: 0;
+        -webkit-animation-fill-mode: forwards; }
+#SuppotSelect #questDetail .dropDetail.hide {
+  -webkit-animation: common_fade_out .3s ease 0s 1 alternate;
+  pointer-events: none;
+  opacity: 1;
+        -webkit-animation-fill-mode: forwards; }
+#SuppotSelect #questDetail .dropDetail .common_line {
+  width: 260px;
+  position: absolute;
+  top: 169px;
+        left: 20px; }
+#SuppotSelect #questDetail .dropDetail .dropTitle {
+  width: 100%;
+  position: absolute;
+  top: 155px;
+  left: 0;
+  font-size: 18px;
+        text-align: center; }
+#SuppotSelect #questDetail .dropDetail #dropDetailClose {
+  min-width: 102px;
+  position: absolute;
+  bottom: 18px;
+        left: -webkit-calc(50% - 51px); }
+#SuppotSelect #questDetail .dropDetail #dropListWrap {
+  width: 100%;
+  height: 278px;
+  position: absolute;
+  top: 180px;
+  left: 0;
+        overflow: hidden; }
+#SuppotSelect #questDetail .dropDetail #dropListWrap .scrollIndicator {
+          right: 10px; }
+#SuppotSelect #questDetail .dropDetail .dropList {
+  width: 244px;
+  height: auto;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 12px 0 0;
+  -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start; }
+#SuppotSelect #questDetail .dropDetail .dropList li {
+  width: 76px;
+  height: 76px;
+          position: relative; }
+#SuppotSelect #questDetail .dropDetail .dropList li:not(:nth-child(3n)) {
+  margin-right: 8px;
+            margin-bottom: 8px; }
+#SuppotSelect #questDetail .dropDetail .dropList li .quantity {
+  width: 76px;
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  font-size: 14px;
+  text-align: right;
+  pointer-events: none;
+            z-index: 1000; }
+#SuppotSelect #questDetail .dropDetail .dropList li .quantity span {
+  position: absolute;
+  right: 0;
+  bottom: -17px;
+              font-size: 14px; }
+#SuppotSelect #questDetail .dropDetail .dropList li .quantity, #SuppotSelect #questDetail .dropDetail .dropList li .quantity span {
+  color: #ffffff;
+              text-shadow: -1px -1px 1px #504432,
+ 1px -1px 1px #504432,
+ -1px 1px 1px #504432,
+ 1px 1px 1px #504432,
+ -1px -1px #504432,
+ 1px -1px #504432,
+ -1px 1px #504432,
+ 1px 1px #504432,
+ -1px -1px 1px #504432,
+ 1px -1px 1px #504432,
+ -1px 1px 1px #504432,
+ 1px 1px 1px #504432,
+ -1px -1px #504432,
+ 1px -1px #504432,
+ -1px 1px #504432,
+ 1px 1px #504432; }
+#SuppotSelect #questDetail .dropDetail .dropList li .name {
+  width: 234px;
+  background: #806f5b;
+  display: block;
+  position: relative;
+  top: -88px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.8;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-border-radius: 4px;
+            z-index: 1000; }
+#SuppotSelect #questDetail .dropDetail .dropList li .name:before {
+  width: 18px;
+  height: 16px;
+  background: url("/magica/resource/image_web/page/formation/item_balloon_hige.png") left top no-repeat;
+  display: block;
+  position: absolute;
+              content: ""; }
+#SuppotSelect #questDetail .dropDetail .dropList li .show .name, #SuppotSelect #questDetail .dropDetail .dropList li.show .name {
+  -webkit-animation: hoge 4s ease-in-out 0s 1 alternate;
+            -webkit-animation-fill-mode: forwards; }
+#SuppotSelect #questDetail .dropDetail .dropList li .name {
+            left: -10px; }
+#SuppotSelect #questDetail .dropDetail .dropList li .name:before {
+  bottom: -12px;
+              left: 39px; }
+#SuppotSelect #questDetail .dropDetail .dropList li:nth-child(3n - 1) .name {
+            left: -webkit-calc(50% - 117px); }
+#SuppotSelect #questDetail .dropDetail .dropList li:nth-child(3n - 1) .name:before {
+  bottom: -12px;
+              left: -webkit-calc(50% - 9px); }
+#SuppotSelect #questDetail .dropDetail .dropList li:nth-child(3n) .name {
+            left: -148px; }
+#SuppotSelect #questDetail .dropDetail .dropList li:nth-child(3n) .name:before {
+  bottom: -12px;
+              left: 177px; }
+#SuppotSelect #questDetail .dropDetail .dropList li.firstReward {
+            position: relative; }
+#SuppotSelect #questDetail .dropDetail .dropList li.firstReward .bgWrap {
+  width: 100%;
+  height: 100%;
+              position: relative; }
+#SuppotSelect #questDetail .dropDetail .dropList li.firstReward .bgWrap img {
+  position: relative;
+                z-index: 10; }
+#SuppotSelect #questDetail .dropDetail .dropList li.firstReward .bgWrap .bg {
+  width: 84px;
+  height: 84px;
+  background: url("/magica/resource/image_web/page/formation/bg_first_reward.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+                z-index: 1; }
+#SuppotSelect #questDetail .dropDetail .dropList li.firstReward .bgWrap .icon {
+  width: 90px;
+  height: 24px;
+  background: url("/magica/resource/image_web/page/formation/first_reward.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: -12px;
+  left: -7px;
+                z-index: 100; }
+#SuppotSelect #questDetail .dropDetail .dropList li img {
+  width: 76px;
+            height: 76px; }
+#SuppotSelect #questDetail .dropDetail .dropList li.off {
+            background: url("/magica/resource/image_web/page/formation/reward_null.png") left top no-repeat; }
+#SuppotSelect #tabArea {
+  width: 712px;
+  height: 80px;
+  background: url("/magica/resource/image_web/page/formation/bg_support_sort.png") left top no-repeat;
+  position: absolute;
+  top: 44px;
+    right: 0; }
+#SuppotSelect #tabArea #sortBtnWrap {
+  width: 320px;
+  height: 34px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+#SuppotSelect #tabArea #sortBtnWrap > span {
+        display: block; }
+#SuppotSelect #tabArea #sortBtnWrap #eventFilterBtn {
+  width: 114px;
+  min-width: 110px;
+  margin-right: 8px;
+        font-size: 13px; }
+#SuppotSelect #tabArea #sortBtnWrap #eventFilterBtn .switchIcon {
+  width: 34px;
+  height: 18px;
+  background: url("/magica/resource/image_web/common/filter/icon_filter_off.png") left top no-repeat;
+  background-size: 34px 18px;
+  display: block;
+  position: absolute;
+  top: -7px;
+  right: 0;
+          z-index: 1000; }
+#SuppotSelect #tabArea #sortBtnWrap #eventFilterBtn.on .switchIcon {
+  background: url("/magica/resource/image_web/common/filter/icon_filter_on.png") left top no-repeat;
+          background-size: 34px 18px; }
+#SuppotSelect #tabArea #sortBtnWrap #eventFilterBtn.on {
+          color: #ff4f9e !important; }
+#SuppotSelect #tabArea #sortBtnWrap #friendSortBtn {
+  width: 110px;
+        margin-right: 8px; }
+#SuppotSelect #tabArea #sortBtnWrap #friendAscBtn {
+  width: 80px;
+        height: 24px; }
+#SuppotSelect #tabArea #sortBtnWrap #friendAscBtn.desc {
+          background: url("/magica/resource/image_web/common/filter/btn_memoria_descending.png") left top no-repeat; }
+#SuppotSelect #tabArea #sortBtnWrap #friendAscBtn.asc {
+          background: url("/magica/resource/image_web/common/filter/btn_memoria_ascending.png") left top no-repeat; }
+#SuppotSelect #tabArea p {
+  position: absolute;
+  top: 12px;
+  right: 48px;
+  color: #ffffff;
+  font-size: 16px;
+      line-height: 1; }
+#SuppotSelect #tabArea .tabBtn {
+  width: 50px;
+  height: 50px;
+      position: absolute; }
+#SuppotSelect #tabArea .tabBtn.current:after {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  content: "";
+  content: 0;
+  border: 5px solid #ff3b81;
+  -webkit-border-radius: 32px;
+        -webkit-box-shadow: 0 0 0 4px #ffffff inset;
+        box-shadow: 0 0 0 4px #ffffff inset; }
+#SuppotSelect #tabArea .all {
+  background: url("/magica/resource/image_web/common/chara/att_all.png") left top no-repeat;
+  background-size: contain;
+  top: 22px;
+      right: 646px; }
+#SuppotSelect #tabArea .fire {
+  background: url("/magica/resource/image_web/common/chara/att_fire.png") left top no-repeat;
+  background-size: contain;
+  top: 22px;
+      right: 584px; }
+#SuppotSelect #tabArea .water {
+  background: url("/magica/resource/image_web/common/chara/att_water.png") left top no-repeat;
+  background-size: contain;
+  top: 22px;
+      right: 522px; }
+#SuppotSelect #tabArea .timber {
+  background: url("/magica/resource/image_web/common/chara/att_timber.png") left top no-repeat;
+  background-size: contain;
+  top: 22px;
+      right: 460px; }
+#SuppotSelect #tabArea .dark {
+  background: url("/magica/resource/image_web/common/chara/att_dark.png") left top no-repeat;
+  background-size: contain;
+  top: 22px;
+      right: 336px; }
+#SuppotSelect #tabArea .light {
+  background: url("/magica/resource/image_web/common/chara/att_light.png") left top no-repeat;
+  background-size: contain;
+  top: 22px;
+      right: 398px; }
+#SuppotSelect #friendWrap {
+  width: 684px;
+  height: -webkit-calc(100% - 124px);
+  padding: 0 0 0;
+  position: fixed;
+  top: 124px;
+  right: 0;
+    overflow: hidden; }
+#SuppotSelect #friendWrap:not(.eventFilter) .npcChara.wrap {
+  background: url("/magica/resource/image_web/page/formation/list_npc_base.png") left top no-repeat;
+      display: block !important; }
+#SuppotSelect #friendWrap:not(.eventFilter) .npcChara.wrap .playerName {
+        text-shadow: -1px -1px 1px #ff5e7c,
+ 1px -1px 1px #ff5e7c,
+ -1px 1px 1px #ff5e7c,
+ 1px 1px 1px #ff5e7c,
+ -1px -1px #ff5e7c,
+ 1px -1px #ff5e7c,
+ -1px 1px #ff5e7c,
+ 1px 1px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 3px #ff5e7c,
+ 1px -1px 3px #ff5e7c,
+ -1px 1px 3px #ff5e7c,
+ 1px 1px 3px #ff5e7c; }
+#SuppotSelect #friendWrap.all:not(.eventFilter) .ALL.wrap, #SuppotSelect #friendWrap.fire:not(.eventFilter) .FIRE.wrap, #SuppotSelect #friendWrap.water:not(.eventFilter) .WATER.wrap, #SuppotSelect #friendWrap.timber:not(.eventFilter) .TIMBER.wrap, #SuppotSelect #friendWrap.light:not(.eventFilter) .LIGHT.wrap, #SuppotSelect #friendWrap.dark:not(.eventFilter) .DARK.wrap, #SuppotSelect #friendWrap.all.eventFilter .ALL.wrap.bonusIcon, #SuppotSelect #friendWrap.fire.eventFilter .FIRE.wrap.bonusIcon, #SuppotSelect #friendWrap.water.eventFilter .WATER.wrap.bonusIcon, #SuppotSelect #friendWrap.timber.eventFilter .TIMBER.wrap.bonusIcon, #SuppotSelect #friendWrap.light.eventFilter .LIGHT.wrap.bonusIcon, #SuppotSelect #friendWrap.dark.eventFilter .DARK.wrap.bonusIcon {
+      display: block; }
+#SuppotSelect #friendWrap .friendWrapInner {
+  width: 685px;
+  height: auto;
+  min-height: 100%;
+  padding-top: 20px;
+  padding-right: 17px;
+  padding-bottom: 320px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+  justify-content: flex-start;
+      -webkit-flex-direction: column; }
+#SuppotSelect #friendWrap .friendWrapInner .wrap:not(.tapBlock):not(.npcChara) {
+  -webkit-order: -1;
+        -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+        order: -1; }
+#SuppotSelect #friendWrap .friendWrapInner .npcChara {
+  -webkit-order: -2;
+        -webkit-box-ordinal-group: -1;
+        -ms-flex-order: -2;
+        order: -2; }
+#SuppotSelect #friendWrap .friendWrapInner .supportCation {
+  width: 334px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.7);
+  display: none;
+  position: absolute;
+  top: 210px;
+  left: -webkit-calc(50% - 167px);
+  font-size: 20px;
+  line-height: 32px;
+  text-align: center;
+        -webkit-border-radius: 16px; }
+#SuppotSelect #friendWrap .friendWrapInner .supportCation.on {
+          display: block; }
+#SuppotSelect #friendWrap .wrap {
+  width: 668px;
+  height: 124px;
+  margin: 0 0 6px;
+  background: url("/magica/resource/image_web/page/formation/list_base.png") left top no-repeat;
+  display: none;
+      position: relative; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: -8px;
+  bottom: 0px;
+        display: block; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem.rankB1 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_1.png");
+          background-size: 100% 100%; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem.rankB2 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_2.png");
+          background-size: 100% 100%; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem.rankB3 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_3.png");
+          background-size: 100% 100%; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem.rankA1 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_1.png");
+          background-size: 100% 100%; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem.rankA2 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_2.png");
+          background-size: 100% 100%; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem.rankA3 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_3.png");
+          background-size: 100% 100%; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem.rankS1 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_1.png");
+          background-size: 100% 100%; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem.rankS2 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_2.png");
+          background-size: 100% 100%; }
+#SuppotSelect #friendWrap .wrap .rankingEmblem.rankS3 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_3.png");
+          background-size: 100% 100%; }
+#SuppotSelect #friendWrap .wrap .prm_level, #SuppotSelect #friendWrap .wrap .prm_atk, #SuppotSelect #friendWrap .wrap .prm_def, #SuppotSelect #friendWrap .wrap .prm_hp, #SuppotSelect #friendWrap .wrap .prm_userRank, #SuppotSelect #friendWrap .wrap .prm_follow, #SuppotSelect #friendWrap .wrap .prm_follower {
+        display: none; }
+#SuppotSelect #friendWrap .wrap .tapArea {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+        z-index: 99999; }
+#SuppotSelect #friendWrap .wrap .userCharaIcon {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 19px;
+        left: 22px; }
+#SuppotSelect #friendWrap .wrap .userCharaIcon .att, #SuppotSelect #friendWrap .wrap .userCharaIcon .rank, #SuppotSelect #friendWrap .wrap .userCharaIcon .bg, #SuppotSelect #friendWrap .wrap .userCharaIcon .star {
+  width: 90px;
+  height: 90px;
+  background-size: 90px 90px;
+  position: absolute;
+  right: 0;
+          bottom: 0; }
+#SuppotSelect #friendWrap .wrap .userCharaIcon img {
+  width: 86px;
+  height: 86px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 45px;
+          z-index: 5; }
+#SuppotSelect #friendWrap .wrap .level, #SuppotSelect #friendWrap .wrap .playerName {
+  position: absolute;
+  color: #ffffff;
+        text-shadow: -1px -1px 1px #615188,
+ 1px -1px 1px #615188,
+ -1px 1px 1px #615188,
+ 1px 1px 1px #615188,
+ -1px -1px #615188,
+ 1px -1px #615188,
+ -1px 1px #615188,
+ 1px 1px #615188,
+ -1px -1px 2px #615188,
+ 1px -1px 2px #615188,
+ -1px 1px 2px #615188,
+ 1px 1px 2px #615188,
+ -1px -1px 2px #615188,
+ 1px -1px 2px #615188,
+ -1px 1px 2px #615188,
+ 1px 1px 2px #615188,
+ -1px -1px 3px #615188,
+ 1px -1px 3px #615188,
+ -1px 1px 3px #615188,
+ 1px 1px 3px #615188; }
+#SuppotSelect #friendWrap .wrap .level {
+  top: 18px;
+  left: 122px;
+        font-size: 18px; }
+#SuppotSelect #friendWrap .wrap .playerName {
+  top: 12px;
+  left: 215px;
+        font-size: 24px; }
+#SuppotSelect #friendWrap .wrap .charaName, #SuppotSelect #friendWrap .wrap .charaTitle, #SuppotSelect #friendWrap .wrap .lastLogin, #SuppotSelect #friendWrap .wrap .follow, #SuppotSelect #friendWrap .wrap .follower {
+        position: absolute; }
+#SuppotSelect #friendWrap .wrap .charaName {
+  top: 52px;
+  left: 123px;
+        font-size: 18px; }
+#SuppotSelect #friendWrap .wrap .charaTitle {
+  width: 108px;
+  height: 20px;
+  padding-left: 11px;
+  background: -webkit-linear-gradient(left, #e8dbc8 0%, #e8dbc8 75%, rgba(232, 219, 200, 0) 100%);
+  top: 75px;
+  left: 112px;
+  font-size: 14px;
+        line-height: 20px; }
+#SuppotSelect #friendWrap .wrap .lastLogin {
+  top: 100px;
+  left: 123px;
+  font-size: 14px;
+  line-height: 1.2;
+        text-align: right; }
+#SuppotSelect #friendWrap .wrap .bonusIcon {
+  width: 78px;
+  height: 24px;
+  margin: 4px 0 0 0;
+  background: url("/magica/resource/image_web/page/formation/icon_event_bonus.png") left top no-repeat;
+        background-size: 78px 24px; }
+      #SuppotSelect #friendWrap .wrap .resentUse, #SuppotSelect #friendWrap .wrap .follow, #SuppotSelect #friendWrap .wrap .follower {
+        width: 29px;
+        height: 29px;
+        margin-left: 3px;
+        position: relative; }
+      #SuppotSelect #friendWrap .wrap .resentUse {
+        background: url("/magica/resource/image_web/page/quest/support/icon_select_whiteframe.png") left top no-repeat; }
+#SuppotSelect #friendWrap .wrap .follow {
+        background: url("/magica/resource/image_web/page/quest/support/icon_follow_whiteframe.png") left top no-repeat; }
+#SuppotSelect #friendWrap .wrap .follower {
+        background: url("/magica/resource/image_web/page/quest/support/icon_follower_whiteframe.png") left top no-repeat; }
+#SuppotSelect #friendWrap .wrap .getYell {
+  position: absolute;
+  top: 12px;
+        right: 22px; }
+#SuppotSelect #friendWrap .wrap .yell {
+        width: 68px;
+  height: 30px;
+  margin-top: 1px;
+        margin-left: 4px;
+        padding: 0 0 0 30px;
+        background: url("/magica/resource/image_web/page/quest/support/bg_yell.png") left top no-repeat;
+  background-size: auto 30px;
+  position: relative;
+  font-size: 18px;
+        line-height: 30px; }
+        #SuppotSelect #friendWrap .wrap .yell .pt {
+          font-size: 16px; }
+#SuppotSelect #friendWrap .wrap .yell:before {
+  width: 32px;
+  height: 27px;
+  background: url("/magica/resource/image_web/common/icon/icon_friendpoint.png") left top no-repeat;
+  position: absolute;
+  top: 1px;
+  left: -1px;
+          content: ""; }
+#SuppotSelect #friendWrap .wrap .magia, #SuppotSelect #friendWrap .wrap .connect, #SuppotSelect #friendWrap .wrap .skill, #SuppotSelect #friendWrap .wrap .ability {
+  color: #5c5c5c;
+  font-size: 10px;
+  line-height: 50px;
+  text-align: center;
+        text-shadow: 0 0; }
+#SuppotSelect #friendWrap .wrap .skill, #SuppotSelect #friendWrap .wrap .ability {
+  width: 52px;
+  height: 52px;
+        margin-right: 5px; }
+#SuppotSelect #friendWrap .wrap .magia {
+        margin-right: 13px; }
+#SuppotSelect #friendWrap .wrap .magia.doppel:before {
+  width: 70px;
+  height: 70px;
+  background: url("/magica/resource/image_web/page/formation/doppel_frame.png") left top no-repeat;
+  background-size: 70px 70px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  content: "";
+          z-index: 10000; }
+#SuppotSelect #friendWrap .wrap .magia:not(.doppel):before {
+  width: 64px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/formation/text_magia_s.png") left top no-repeat;
+  position: absolute;
+  bottom: -10px;
+  left: -webkit-calc(50% - 32px);
+  content: "";
+          z-index: 10000; }
+#SuppotSelect #friendWrap .wrap .connect:before {
+  width: 64px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/formation/text_connect_s.png") left top no-repeat;
+  position: absolute;
+  bottom: -10px;
+  left: -webkit-calc(50% - 32px);
+  content: "";
+        z-index: 10000; }
+#SuppotSelect #friendWrap .wrap .magia, #SuppotSelect #friendWrap .wrap .connect {
+  width: 50px;
+  height: 50px;
+  position: relative;
+        border-radius: 25px; }
+#SuppotSelect #friendWrap .wrap .magia img, #SuppotSelect #friendWrap .wrap .connect img {
+  width: 100%;
+  height: 100%;
+          display: block; }
+#SuppotSelect #friendWrap .wrap .magia.off:after, #SuppotSelect #friendWrap .wrap .connect.off:after {
+  width: 56px;
+  height: 56px;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  content: "";
+  -webkit-border-radius: 28px;
+  border-radius: 28px;
+          z-index: 10; }
+#SuppotSelect #friendWrap .wrap .magia.off img, #SuppotSelect #friendWrap .wrap .connect.off img {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+          -webkit-filter: grayscale(100%); }
+#SuppotSelect #friendWrap .wrap .magia.off:before, #SuppotSelect #friendWrap .wrap .connect.off:before {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+          -webkit-filter: grayscale(100%) brightness(50%); }
+#SuppotSelect #friendWrap .wrap .magiaWrap {
+  position: absolute;
+  bottom: 14px;
+  left: 306px;
+        z-index: 100000; }
+#SuppotSelect #friendWrap .wrap .skillBox {
+  position: absolute;
+  bottom: 14px;
+  left: 431px;
+        z-index: 100000; }
+#SuppotSelect #friendWrap .wrap .skillBox > div {
+  width: 52px;
+  height: 52px;
+  margin-right: 5px;
+          position: relative; }
+#SuppotSelect #friendWrap .wrap .skillBox > div img {
+  width: 100%;
+            height: 100%; }
+#SuppotSelect #friendWrap .wrap .skillBox > div .lbMax {
+  width: 52px;
+  height: 19px;
+  background: url("/magica/resource/image_web/page/formation/icon_limit_max.png") left top no-repeat;
+  position: absolute;
+  bottom: -10px;
+            left: 0; }
+#SuppotSelect #friendWrap .wrap.tapBlock:before {
+  width: 668px;
+  height: 124px;
+  background: url("/magica/resource/image_web/page/formation/list_base_black.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+        z-index: 100000; }
+
+@-webkit-keyframes enemy_effect {
+  0% {
+    -webkit-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1.2) translateZ(0);
+    transform: scale(1.2) translateZ(0);
+    opacity: 0; } }
+
+@-webkit-keyframes hoge {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; }
+  2% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; }
+  95% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; } }

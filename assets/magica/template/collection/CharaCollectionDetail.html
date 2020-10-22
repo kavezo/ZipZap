@@ -1,0 +1,522 @@
+<span class="collectionBack">
+	<span class="se_cancel"></span>
+</span>
+<span class="fullScreenEnd fullScreenBack">
+	<span class="se_cancel"></span>
+</span>
+<span class="fullScreenEnd drawerBtn se_cancel">
+	<span class="soundIcon"></span>
+	<span class="drawerIcon"></span>
+</span>
+
+<div id="detailCardName">
+	<span id="att" class='<%= model.chara.attributeId.toLowerCase() %>'></span>
+	<p class="charaName ts_pink">
+		<%= model.currentCard.card.cardName %>
+		<% if(model.currentCard.chara.title) { %>
+		<span class='title ts_pink'><%= model.currentCard.chara.title %></span>
+		<% } %>
+	</p>
+	<!--<p class="charaKana"><%= model.chara.kana %></p> MN -->
+</div>
+
+<div id="detailCardImage">
+	<% var displayCardRank = model.currentCard.card.rank %>
+	<% var cardFrame = "frame_" + model.chara.attributeId.toLowerCase() + "_" + displayCardRank.toLowerCase(); %>
+	<% var displayCardId = model.currentCard.cardId %>
+
+	<div data-nativebgkey="<%= cardFrame %>" data-src="resource/image_native/card/frame/<%= cardFrame %>.png" class="cardFrame <%= displayCardRank %> <%= model.chara.attributeId %>"></div>
+	<img class="cardImg se_tabs" data-nativeimgkey="card_<%= displayCardId %>_c" data-src="resource/image_native/card/image/card_<%= displayCardId %>_c.png" alt="">
+
+	<div class="zoomImg se_tabs">
+		<img data-nativeimgkey="card_<%= displayCardId %>_c" data-src="resource/image_native/card/image/card_<%= displayCardId %>_c.png" alt="">
+	</div>
+	<span class="moviePlayBtn se_tabs TE"></span>
+	<span class="voicePlayBtn se_tabs TE"></span>
+</div>
+
+<ul id="detailTab" class="common_tab t_gold">
+	<li data-type="status" class="TE se_tabs current"><span>About</span></li>
+	<li data-type="skill" class='TE se_tabs'><span>Skills</span></li>
+	<li data-type="voice" class='TE se_tabs'><span>Voices</span></li>
+	<li data-type="illust" class='TE se_tabs'><span>Settings</span></li>
+</ul>
+
+<div id="cardDetailWrap" class="status">
+
+	<div id="hiddenWrap" class="hiddenWrap">
+		<div class="scrollInner">
+
+			<!-- ステータス -->
+			<div id="charaStatus">
+				<div class="status">
+
+					<!-- ちびキャラ -->
+					<div id="cardDetailMiniChara">
+						<img data-nativeimgkey="mini_<%= model.currentCard.card.miniCharaNo %>_s" data-src='resource/image_native/mini/image/mini_<%= model.currentCard.card.miniCharaNo %>_s.png' alt="">
+						<span class="bg">
+							<div id="rare" class='<%= model.currentCard.card.rank %>'>
+								<% var i = 0; %>
+								<% var maxRare = model.maxRare || Number(model.currentCard.card.rank.split('RANK_')[1]); %>
+								<% while(i < maxRare) { %>
+									<span></span>
+								<% 	i=(i+1)|0; %>
+								<% } %>
+							</div>
+						</span>
+					</div>
+
+					<div class="statusWrap">
+
+
+						<!-- レベル経験値 -->
+						<div class="level">
+							<div class="flexBox">
+								<span class="thStyle">Lvl.</span>
+								<p id="detailLv" class="tdStyle">
+									<span class="currentLv c_red"><%= model.currentCard.maxLevel %></span>
+									<span class="sla">/</span>
+									<span class="maxLv"><%= model.currentCard.maxLevel %></span>
+								</p>
+							</div>
+
+							<div class="gauge">
+								<div class="levelMax"></div>
+								<div class="expGaugeWrap">
+									<div class="expGaugeInner" style='width:100%'></div>
+									<div class="bg"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="type flexBox">
+							<span class="thStyle">Type</span><span class="tdStyle"><%= model.currentCard.charaType %></span>
+						</div>
+
+						<div class="revision">
+							<div class="flexBox">
+								<span class="thStyle">Magic Lvl.</span><span class="c_red tdStyle"><%= model.currentCard.revision %></span>
+							</div>
+							<ul class="flexBox revisionIcon">
+								<% var i = 0;%>
+								<% var RevisionMax = 3;%>
+
+								<% var onNum = model.currentCard.revision;%>
+								<% var noneNum = RevisionMax - onNum;%>
+
+								<% while(i < onNum) {%>
+									<li class="on"/>
+									<% i=(i+1)|0; %>
+								<% } %>
+
+								<% i = 0;%>
+								<% while(i < noneNum) {%>
+									<li class=""/>
+									<% i=(i+1)|0; %>
+								<% } %>
+							</ul>
+						</div>
+
+						<div class="magiaLv">
+							<div class="flexBox">
+								<span class="thStyle">Magia Lvl. </span> <span class="tdStyle c_red"><%= model.currentCard.magiaLevel %></span>
+							</div>
+							<ul class="flexBox magiaLvIcon">
+								<% i = 0;%>
+								<% var MagiaLevelMax = 5;%>
+
+								<% onNum = model.currentCard.magiaLevel;%>
+								<% var offNum = model.currentCard.episodeLevel - model.magiaLevel;%>
+								<% noneNum = MagiaLevelMax - (onNum + offNum);%>
+
+								<% while(i < onNum) {%>
+									<li class="on"/>
+									<% i=(i+1)|0; %>
+								<% } %>
+
+								<% i = 0;%>
+								<% while(i < offNum) {%>
+									<li class="off"/>
+									<% i=(i+1)|0; %>
+								<% } %>
+
+								<% i = 0;%>
+								<% while(i < noneNum) {%>
+									<li class="none"/>
+									<% i=(i+1)|0; %>
+								<% } %>
+							</ul>
+						</div>
+
+						<div class="epLv">
+							<div class="flexBox">
+								<span class="thStyle">Episode Lvl.</span>
+								<span class="c_red tdStyle"><%= model.currentCard.episodeLevel %>
+									<% if(model.currentCard.episodeLevel < 5){ %>
+										<div class="epExpRequire c_gold">In:&nbsp;<%= model.currentCard.epExpRequire %></div>
+									<% }else{ %>
+										<div class="epLevelMax"></div>
+									<% } %>
+									<div class="gauge">
+										<div class="expGaugeWrap">
+											<div class="expGaugeInner3" style='width:<%= model.currentCard.epExpRatio %>%'></div>
+											<div class="bg"></div>
+										</div>
+									</div>
+								</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div id="popupCharaStatus">
+					<div class="flexBox statusTitle">
+						 <p class="tdStyle c_gold">MAX</p>
+						 <p class="tdStyle"></p>
+						 <p class="tdStyle"></p>
+					</div>
+
+					<div class="flexBox">
+						<p class="thStyle">HP</p>
+						<p class="tdStyle c_red"><%= model.maxStatus.hp %></p>
+						 <p class="tdStyle"></p>
+						 <p class="tdStyle"></p>
+					</div>
+
+					<div class="flexBox">
+						<p class="thStyle">ATK</p>
+						<p class="tdStyle c_red"><%= model.maxStatus.attack %></p>
+						 <p class="tdStyle"></p>
+						 <p class="tdStyle"></p>
+					</div>
+
+					<div class="flexBox">
+						<p class="thStyle">DEF</p>
+						<p class="tdStyle c_red"><%= model.maxStatus.defense %></p>
+						 <p class="tdStyle"></p>
+						 <p class="tdStyle"></p>
+					</div>
+				</div>
+
+				<div class="profileWrap">
+					<div class="thStyle">Profile</div>
+					<div class="detail commonFrame3">
+						<%= model.chara.description %>
+					</div>
+				</div>
+
+				<div class="flexBox">
+					<div class="exProfile1 flexBox">
+						<span class="thStyle">School</span>
+						<span class="tdStyle"><%= model.chara.school %></span>
+					</div>
+				</div>
+
+				<div class="exProfile2">
+					<% var rankNum = String(displayCardId).split('')[4] %>
+					<div class="flexBox">
+						<span class="thStyle small">Character Design</span>
+						<span class="tdStyle"><%= model.chara.designer %></span>
+					</div>
+					<div class="flexBox">
+						<span class="thStyle illustTitle">★<%= rankNum %> Illustrator</span>
+						<span class="illustrator tdStyle"><%= model.currentCard.card.illustrator %></span>
+					</div>
+					<div class="flexBox">
+						<span class="thStyle">CV</span>
+						<span class="tdStyle"><%= model.chara.voiceActor %></span>
+					</div>
+				</div>
+			</div>
+
+			<div id="charaSkill">
+				<div class="commonFrame3 command">
+					<p class="common_title_frame">Disks</p>
+					<ul class="commandList">
+						<li class='<%= (model.currentCard.card.commandType1) ? model.currentCard.card.commandType1 : "" %>'></li>
+						<li class='<%= (model.currentCard.card.commandType2) ? model.currentCard.card.commandType2 : "" %>'></li>
+						<li class='<%= (model.currentCard.card.commandType3) ? model.currentCard.card.commandType3 : "" %>'></li>
+						<li class='<%= (model.currentCard.card.commandType4) ? model.currentCard.card.commandType4 : "" %>'></li>
+						<li class='<%= (model.currentCard.card.commandType5) ? model.currentCard.card.commandType5 : "" %>'></li>
+					</ul>
+				</div>
+
+				<% if(model.currentCard.card.pieceSkillList && model.currentCard.card.pieceSkillList.length > 0) { %>
+					<% var _exSkill = model.currentCard.card.pieceSkillList; %>
+
+					<% if(model.currentCard.card.maxPieceSkillList.length > 0 && model.currentCard.revision === 3) { %>
+						<% _exSkill = model.currentCard.card.maxPieceSkillList; %>
+					<% } %>
+					<div class="commonFrame3 connect">
+						<p class="common_title_frame">EX Skill</p>
+						<% _.each(_exSkill,function(m) { %>
+							<div class="flexBox">
+								<p class="img">
+									<img data-nativeimgkey='icon_skill_<%= m.groupId %>' data-src='resource/image_native/art/icon_skill_<%= m.groupId %>.png'>
+								</p>
+								<div class="detailWrap">
+									<p class="name c_purple"><%= m.name %></p>
+									<div class="common_line lc_beige"></div>
+									<p class="detail"><%= m.shortDescription %></p>
+								</div>
+							</div>
+						<% }) %>
+					</div>
+				<% } %>
+
+				<% if(model.currentCard.card.cardSkill) { %>
+				<div class="commonFrame3 connect">
+					<p class="common_title_frame">Connect</p>
+
+					<div class="flexBox">
+						<p class="img">
+							<img data-nativeimgkey='icon_skill_<%= model.currentCard.card.cardSkill.groupId %>' data-src='resource/image_native/art/icon_skill_<%= model.currentCard.card.cardSkill.groupId %>.png'>
+						</p>
+						<div class="detailWrap">
+							<p class="name c_purple"><%= model.currentCard.card.cardSkill.name %></p>
+							<div class="common_line lc_beige"></div>
+							<p class="detail"><%= model.currentCard.card.cardSkill.shortDescription %></p>
+						</div>
+					</div>
+				</div>
+				<% } %>
+				<% if(model.currentCard.card.cardMagia) { %>
+				<div class="commonFrame3 magia">
+					<p class="common_title_frame">Magia</p>
+
+					<div class="border"></div>
+					<p class="common_title_frame">Magia</p>
+					<div class="flexBox magiaLevel">
+						Magia Lvl.<span class="c_red"><%= model.currentCard.magiaLevel %></span>
+						<ul class="flexBox magiaLvIcon">
+							<% i = 0;%>
+							<% var MagiaLevelMax = 5;%>
+
+							<% onNum = model.currentCard.magiaLevel;%>
+							<% var offNum = model.currentCard.episodeLevel - model.currentCard.magiaLevel;%>
+							<% noneNum = MagiaLevelMax - (onNum + offNum);%>
+
+							<% while(i < onNum) {%>
+								<li class="on"/>
+								<% i=(i+1)|0; %>
+							<% } %>
+
+							<% i = 0;%>
+							<% while(i < offNum) {%>
+								<li class="off"/>
+								<% i=(i+1)|0; %>
+							<% } %>
+
+							<% i = 0;%>
+							<% while(i < noneNum) {%>
+								<li class="none"/>
+								<% i=(i+1)|0; %>
+							<% } %>
+						</ul>
+					</div>
+
+					<div class="magiaDetail">
+						<div class="flexBox">
+							<p class="img">
+								<img data-nativeimgkey='icon_skill_<%= model.currentCard.card.cardMagia.groupId %>' data-src='resource/image_native/art/icon_skill_<%= model.currentCard.card.cardMagia.groupId %>.png'>
+							</p>
+							<div class="detailWrap">
+								<p class="name c_purple"><%= model.currentCard.card.cardMagia.name %></p>
+								<div class="common_line lc_beige"></div>
+								<p class="detail"><%= model.currentCard.card.cardMagia.shortDescription %></p>
+							</div>
+						</div>
+					</div>
+
+					<% if(model.currentCard.card.doppelCharaNo) { %>
+						<% console.log(model); %>
+						<div class="doppel doppelDetail">
+							<div class="flexBox">
+								<% if(model.currentCard.doppelOpenFlag && model.currentCard.card.doppelMagiaId) { %>
+									<p class="img doppel">
+										<img data-nativeimgkey='mini_<%= model.currentCard.card.doppelCharaNo %>_dd' data-src='resource/image_native/mini/image/mini_<%= model.currentCard.card.doppelCharaNo %>_dd.png'>
+										<span class="bg"></span>
+									</p>
+									<div class="detailWrap">
+										<p class="name c_purple"><%= model.currentCard.card.doppelCardMagia.name %></p>
+										<div class="common_line lc_beige"></div>
+										<p class="detail"><%= model.currentCard.card.doppelCardMagia.shortDescription %></p>
+									</div>
+								<% } else { %>
+									<p class="img">
+										<img src='/magica/resource/image_web/common/chara/icon_doppel_null.png'>
+									</p>
+									<div class="detailWrap">
+										<p class="name c_purple">Locked</p>
+										<div class="common_line lc_beige"></div>
+										<p class="detail">Unleash through Doppel Quests</p>
+									</div>
+								<% } %>
+							</div>
+						</div>
+					<% } %>
+
+				</div>
+				<% } %>
+			</div>
+
+			<div id="charaVoice">
+				<div class="voiceDisplaySwitch">
+					<span class="c_pink">◆&nbsp;Playback Settings&nbsp;◆</span><span class="voiceCheck"></span><span class="gemIcon"></span>&nbsp;&nbsp;Full Screen
+				</div>
+				<div class="commonFrame3 chara">
+					<p class="common_title_frame">Magical Girl</p>
+					<div class="commonFrame4 voiceBtn" data-voice="01">Self Introduction 1</div>
+					<div class="commonFrame4 voiceBtn" data-voice="02">Self Introduction 2</div>
+				</div>
+
+				<div class="commonFrame3 compose">
+					<p class="common_title_frame">Development</p>
+					<div class="commonFrame4 voiceBtn" data-voice="13">Enhance</div>
+					<div class="commonFrame4 voiceBtn" data-voice="14">Enhance (Max Lvl.)</div>
+					<div class="commonFrame4 voiceBtn off" data-voice="15">Episode Lvl. UP</div>
+					<div class="commonFrame4 voiceBtn off" data-voice="16">Unlock Magic 1</div>
+					<div class="commonFrame4 voiceBtn off" data-voice="17">Unlock Magic 2</div>
+					<div class="commonFrame4 voiceBtn off" data-voice="18">Unlock Magic 3</div>
+					<div class="commonFrame4 voiceBtn off" data-voice="19">Magia Lvl. UP</div>
+					<div class="commonFrame4 voiceBtn off" data-voice="20">Magical Girl Awaken 1</div>
+					<div class="commonFrame4 voiceBtn off" data-voice="21">Magical Girl Awaken 2</div>
+					<div class="commonFrame4 voiceBtn off" data-voice="22">Magical Girl Awaken 3</div>
+					<div class="commonFrame4 voiceBtn off" data-voice="23">Magical Girl Awaken 4</div>
+				</div>
+
+				<div class="commonFrame3 home">
+					<p class="common_title_frame">Home</p>
+					<div class="commonFrame4 voiceBtn" data-voice="24">Login 1 (First Login)</div>
+					<div class="commonFrame4 voiceBtn" data-voice="25">Login 2 (Morning)</div>
+					<div class="commonFrame4 voiceBtn" data-voice="26">Login 3 (Midday)</div>
+					<div class="commonFrame4 voiceBtn" data-voice="27">Login 4 (Night)</div>
+					<div class="commonFrame4 voiceBtn" data-voice="28">Login 5 (Late-Night)</div>
+					<div class="commonFrame4 voiceBtn" data-voice="29">Login 6 (Other)</div>
+					<div class="commonFrame4 voiceBtn" data-voice="30">Login 7 (Max AP)</div>
+					<div class="commonFrame4 voiceBtn" data-voice="31">Login 8 (Max BP)</div>
+
+					<div class="commonFrame4 voiceBtn" data-voice="33">Magical Girl Tap 1</div>
+					<div class="commonFrame4 voiceBtn" data-voice="34">Magical Girl Tap 2</div>
+					<div class="commonFrame4 voiceBtn" data-voice="35">Magical Girl Tap 3</div>
+					<div class="commonFrame4 voiceBtn" data-voice="36">Magical Girl Tap 4</div>
+
+					<div class="commonFrame4 voiceBtn
+					<% if(model.currentCard.episodeLevel < 2){ %>off<% } %>" data-voice="37">Magical Girl Tap 5</div>
+					<div class="commonFrame4 voiceBtn
+					<% if(model.currentCard.episodeLevel < 3){ %>off<% } %>" data-voice="38">Magical Girl Tap 6</div>
+					<div class="commonFrame4 voiceBtn
+					<% if(model.currentCard.episodeLevel < 4){ %>off<% } %>" data-voice="39">Magical Girl Tap 7</div>
+					<div class="commonFrame4 voiceBtn
+					<% if(model.currentCard.episodeLevel < 5){ %>off<% } %>" data-voice="40">Magical Girl Tap 8</div>
+				</div>
+
+				<div class="commonFrame3 quest">
+					<p class="common_title_frame">Quests</p>
+					<div class="commonFrame4 voiceBtn" data-voice="42">Start Quest</div>
+					<div class="commonFrame4 voiceBtn" data-voice="43">Quest Victory 1</div>
+					<div class="commonFrame4 voiceBtn
+					<% if(Number(model.currentCard.card.rank.split('_')[1]) < 4){ %>off<% } %>" data-voice="44">Quest Victory 2</div>
+					<div class="commonFrame4 voiceBtn
+					<% if(Number(model.currentCard.card.rank.split('_')[1]) < 5){ %>off<% } %>" data-voice="45">Quest Victory 3</div>
+					<div class="commonFrame4 voiceBtn
+					<% if(Number(model.currentCard.card.rank.split('_')[1]) < 6){ %>off<% } %>" data-voice="46">Quest Victory 4</div>
+				</div>
+			</div>
+
+			<div id="charaIllust">
+				<div class="commonFrame3 discSetting">
+					<p class="common_title_frame">Disks</p>
+					<% var dom = '<img data-nativeimgkey="mini_' + model.currentCard.card.magiaCharaNo + '_d" data-src="resource/image_native/mini/image/mini_' + model.currentCard.card.magiaCharaNo + '_d.png">'; %>
+
+					<div class="discPreview flexBox">
+						<div class='discWrap <%= model.currentCard.card.commandType1 %>'>
+							<div class="discText"></div>
+							<%= dom %>
+						</div>
+						<div class='discWrap <%= model.currentCard.card.commandType2 %>'>
+							<div class="discText"></div>
+							<%= dom %>
+						</div>
+						<div class='discWrap <%= model.currentCard.card.commandType3 %>'>
+							<div class="discText"></div>
+							<%= dom %>
+						</div>
+						<div class='discWrap <%= model.currentCard.card.commandType4 %>'>
+							<div class="discText"></div>
+							<%= dom %>
+						</div>
+						<div class='discWrap <%= model.currentCard.card.commandType5 %>'>
+							<div class="discText"></div>
+							<%= dom %>
+						</div>
+					</div>
+
+					<div class="common_line lc_beige"></div>
+
+					<div class="flexBox miniCharaBtn">
+						<p data-commandtype="chara" class="mb_pink se_decide selected">SD</p>
+						<% _.forEach(model.cardList,function(txt,index){ %>
+							<% if(!txt.openFlag) { %>
+								<p class="mb_pink off">★<%= txt.rankNum %></p>
+							<% } else { %>
+								<% var btnClass =　(txt.currentCommandFlag) ? 'selected' : '' %>
+								<p data-commandtype="card" data-cardarrindex="<%= index %>" class="mb_pink se_decide <%= btnClass %>">★<%= txt.rankNum %></p>
+							<% } %>
+						<% }) %>
+					</div>
+
+				</div>
+
+				<div class="commonFrame3">
+					<p class="common_title_frame">Icon</p>
+
+					<div class="flexBox">
+						<% _.forEach(model.cardList,function(txt,index){ %>
+							<% if(!txt.openFlag) { %>
+								<div class="cardIllustWrap off">
+									<div class="offIcon"></div>
+									<p class="mb_pink off">★<%= txt.rankNum %></p>
+								</div>
+							<% } else { %>
+							<div class="cardIllustWrap">
+								<div class="userCharaIcon <%= txt.rank %> <%= txt.attributeId %>">
+									<% att = "att_" + txt.card.attributeId.toLowerCase() %>
+									<% star = "star_" + txt.card.rank.toLowerCase() %>
+									<% frame = "frame_" + txt.card.rank.toLowerCase() %>
+									<% bg = "bg_" + txt.card.attributeId.toLowerCase() %>
+									<span class="att" data-nativebgkey="<%= att %>" data-src="resource/image_native/card/frame/<%= att %>.png"></span>
+									<span class="star" data-nativebgkey="<%= star %>" data-src="resource/image_native/card/frame/<%= star %>.png"></span>
+									<span class="rank" data-nativebgkey="<%= frame %>" data-src="resource/image_native/card/frame/<%= frame %>.png"></span>
+									<img data-nativeimgkey="card_<%= txt.cardId %>_f" data-src='resource/image_native/card/image/card_<%= txt.cardId %>_f.png'>
+									<span class="bg" data-nativebgkey="<%= bg %>" data-src="resource/image_native/card/frame/<%= bg %>.png"></span>
+								</div>
+
+								<% btnClass =　(model.currentCard.cardId == txt.cardId) ? 'selected' : '' %>
+								<p data-cardarrindex="<%= index %>" class="mb_pink se_decide <%= btnClass %>">★<%= txt.rankNum %></p>
+							</div>
+							<% } %>
+						<% }) %>
+					</div>
+
+				</div>
+				<div class="commonFrame3">
+					<p class="common_title_frame">Home Page Outfit</p>
+
+					<div class="live2dBtns">
+						<% _.forEach(model.currentCard.live2dList,function(txt,index){ %>
+							<% classTxt = (index == 0) ? "current" : ""; %>
+							<div class="live2dChangeBtn se_decide commonFrame4 c_gold <%= classTxt %>" data-live2did="<%= txt.live2dId %>">
+								<%= txt.description %>
+							</div>
+						<% }) %>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>

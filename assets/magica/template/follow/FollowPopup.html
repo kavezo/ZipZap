@@ -1,0 +1,104 @@
+<div id="myProfile">
+
+	<% if(window.isDebug) { %>
+		<div id='debugArenaBtn' class='sb_gold_02 TE'><span class='b_screen'></span>Fight</div>
+	<% } %>
+
+	<div class="popupDetailWrap">
+		<div id="followImageWrap">
+
+			<img data-nativeimgkey="card_<%= profile.leaderUserCard.displayCardId %>_l" data-src="resource/image_native/card/image/card_<%= profile.leaderUserCard.displayCardId %>_l.png" class="charaImage">
+			<div class="messageWrap">
+				<div class="messageInner"></div>
+			</div>
+		</div>
+		<div id="followerParamDetail">
+			<div class="detailMainWrap">
+				<div class="detailWrap1 commonFrame3">
+					<h2>Profile</h2>
+					<span class="userName"><%= model.userName %></span><br>
+					<span class="userLevel"><%= model.userRank %></span>
+					<span class="userFollow"><%= profile.followCount %></span>
+					<span class="userFollower"><%= profile.followerCount %></span>
+					<div class="lastRoginWrap">
+						<dl class="rowWrap common_dl">
+							<dt class="colName">Last Login</dt>
+							<dd class="colValue"><%= model.loginTimeLag %></dd>
+						</dl>
+					</div>
+					<div id="followIcons">
+						<span class="followIcon<% if(!profile.follow){ %> grayScale<% } %>"></span>
+						<span class="followerIcon<% if(!profile.follower){ %> grayScale<% } %>"></span>
+						<!-- <span class="blockIcon<% if(!profile.blocked){ %> grayScale<% } %>"></span> -->
+					</div>
+
+					<div class="detailUtilPanel">
+						<ul id="utilBtns">
+							<li class="sb_gold_01 follow se_decide followerBtn TE<% if(profile.follow){ %> noneDisp<% } %>"><span class="b_screen"></span>Follow</li>
+							<li class="sb_gold_01 disFollow se_decide followerBtn TE<% if(!profile.follow){ %> noneDisp<% } %>">Unfollow</li>
+						</ul>
+					</div>
+					<div class="detailWrap1Bg"></div>
+				</div>
+				<div class="detailWrap2 commonFrame3">
+					<h2>Mirrors</h2>
+					<div class="arenaInfo1">
+						<span class="arenaSubTitle">◆&nbsp;Endless Mirrors</span>
+						<div class="markWrap freeRank"><% if(profile.userArenaBattle){ %><%= profile.userArenaBattle.currentFreeRankClass.className %><% }else{ %>Layer 1<% } %></span></div>
+						<dl class="rowWrap common_dl">
+							<dt class="colName">Mirrors Pts</dt>
+							<dd class="colValue"><span class="freeNum"><% if(profile.userArenaBattle && profile.gameUser.freeRankArenaPoint){ %><%= profile.gameUser.freeRankArenaPoint %><% }else{ %>0<% } %></span></dd>
+						</dl>
+						<dl class="rowWrap common_dl">
+							<dt class="colName">Wins</dt>
+							<dd class="colValue"><span class="freeNum"><% if(profile.gameUser.numberOfFreeRankTotalWins){ %><%= profile.gameUser.numberOfFreeRankTotalWins %><% }else{ %>0<% } %></span></dd>
+						</dl>
+					</div>
+					<div class="arenaInfo2">
+						<span class="arenaSubTitle">◆&nbsp;Mirrors Ranking</span>
+						<% if(rankingRunning){ %>
+							<div class="markWrap ranking onGoing"></div>
+						<% } else if(profile.userArenaBattle && profile.userArenaBattle.definiteClassRank){ %>
+							<div class="markWrap ranking rank<%= profile.userArenaBattle.definiteClassRank %>"></div>
+						<% } else { %>
+							<div class="markWrap ranking"></div>
+						<% } %>
+					</div>
+				</div>
+			</div>
+			<div class="helperWrap commonFrame3">
+				<h2>Support</h2>
+				<ul class="helperList">
+					<%
+						var attObj = {
+							1:"ALL",
+							2:"FIRE",
+							3:"WATER",
+							4:"TIMBER",
+							5:"LIGHT",
+							6:"DARK"
+						};
+					%>
+					<% _.each(support,function(supportCard,index){ %>
+					<li class="userCharaIcon <%= supportCard.card.rank %> <%= attObj[supportCard.attNum] %>">
+						<% att = 'att_' + supportCard.card.attributeId.toLowerCase(); %>
+						<% star = 'star_' + supportCard.card.rank.toLowerCase(); %>
+						<% frame = 'frame_' + supportCard.card.rank.toLowerCase(); %>
+						<% bg = 'bg_' + supportCard.card.attributeId.toLowerCase(); %>
+						<span class="att" data-nativebgkey='<%= att %>' data-src='resource/image_native/card/frame/<%= att %>.png'></span>
+						<span class="star" data-nativebgkey='<%= star %>' data-src='resource/image_native/card/frame/<%= star %>.png'></span>
+						<span class="rank" data-nativebgkey='<%= frame %>' data-src='resource/image_native/card/frame/<%= frame %>.png'></span>
+						<img data-nativeimgkey='card_<%= supportCard.displayCardId %>_f' data-src='resource/image_native/card/image/card_<%= supportCard.displayCardId %>_f.png'>
+						<span class="lv"><span><%= supportCard.level %></span></span>
+						<span class="bg" data-nativebgkey='<%= bg %>' data-src='resource/image_native/card/frame/<%= bg %>.png'></span>
+					</li>
+					<% }); %>
+				</ul>
+				<div class="helpBtnWrap">
+					<span class="sb_gold_01 linkBtn se_tabs TE" data-href="#/ProfileFormationSupport"><span class="b_screen"></span>Details</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="porfBgWrap"></div>

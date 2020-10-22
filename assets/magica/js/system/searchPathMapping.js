@@ -1,0 +1,1 @@
+define(["backboneCommon"],function(b){var a={},c=location.href.indexOf("file:///"),d={friend:"/friend_search/_search"},e=-1!=c?"/magica/json":"/search",f=-1!=c?".json":"";b.searchLinkList=[];a.pathSet=function(){for(var a in d)b.searchLinkList[a]=e+d[a]+f};return a});

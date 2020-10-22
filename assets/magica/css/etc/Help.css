@@ -1,0 +1,144 @@
+@charset "UTF-8";
+#HelpTop {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#HelpTop #menuWrap {
+  width: 222px;
+  height: -webkit-calc(100% - 90px);
+  padding: 15px 5px 15px 18px;
+  position: fixed;
+  top: 70px;
+  left: 32px;
+}
+#HelpTop #menuScroll {
+  position: relative;
+}
+#HelpTop #menuScroll #menuPanel {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding: 15px 0 13px 0px;
+}
+
+/*MN*/
+#HelpTop #menuScroll #menuPanel li {
+  width: 186px;
+  margin-bottom: 5px;
+  line-height: 20px;
+}
+/*MN*/
+#HelpTop #menuScroll #menuPanel li span {
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit- transform: translateY(-50%);
+}
+
+
+#HelpTop #menuScroll #menuPanel li {
+  width: 186px;
+  margin-bottom: 5px;
+}
+#HelpTop #menuScroll .scrollIndicator {
+  width: 5px;
+  right: 6px;
+}
+#HelpTop #menuScroll .scrollIndicator .scrollIndicatorInner {
+  width: 5px;
+}
+#HelpTop #helpWrap {
+  width: 716px;
+  height: -webkit-calc(100% - 90px);
+  padding: 40px 8px 0 34px;
+  position: fixed;
+  top: 70px;
+  left: 273px;
+}
+#HelpTop #helpWrap #mainWrap {
+  width: 100%;
+  height: -webkit-calc(100% - 16px);
+}
+#HelpTop #helpWrap #mainWrap #scrollWrap {
+  position: relative;
+}
+#HelpTop #helpWrap #mainWrap .scrollIndicator {
+  right: 5px;
+}
+#HelpTop #helpWrap .helpSubWrap {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-top: 24px;
+  padding-bottom: 20px;
+  display: block;
+}
+#HelpTop #helpWrap .helpSubWrap.contactWrap #faqLinkBtn {
+  width: 320px;
+  margin: 20px 0 50px 159px;
+  display: block !important;
+}
+#HelpTop #helpWrap .helpSubWrap.contactWrap .yourUserId {
+  width: 640px;
+  text-align: center;
+}
+#HelpTop #helpWrap .helpSubWrap.contactWrap #idCopyBtn {
+  width: 306px;
+  margin: 20px 0 0 166px;
+}
+#HelpTop #helpWrap .helpSubWrap.none {
+  display: none;
+}
+#HelpTop #helpWrap .helpSubWrap .colWrap {
+  width: 100%;
+  height: auto;
+}
+#HelpTop #helpWrap .helpSubWrap .colWrap .colLow {
+  width: 640px;
+  height: 62px;
+  margin: 0 0 20px 5px;
+  padding-left: 80px;
+  display: inline-block;
+  font-size: 20px;
+  line-height: 58px;
+  z-index: 10;
+}
+#HelpTop #helpWrap .helpSubWrap .colWrap .colLow:before {
+  width: 38px;
+  height: 38px;
+  background-color: #ffb8d1;
+  position: absolute;
+  top: -webkit-calc(50% - 19px);
+  left: 20px;
+  color: #fff;
+  line-height: 38px;
+  text-align: center;
+  content: '?';
+  border-radius: 19px;
+}
+#HelpTop #helpWrap .helpSubWrap .colWrap .panArrow {
+  width: 40px;
+  height: 40px;
+  background-image: url("/magica/resource/image_web/page/collection/pan_down.png");
+  background-size: 100% 100%;
+  position: absolute;
+  right: 10px;
+  bottom: -webkit-calc(50% - 20px);
+}
+#HelpTop #helpWrap .helpSubWrap .colWrap .panArrow.on {
+  background-image: url("/magica/resource/image_web/page/collection/pan_up.png");
+  background-size: 100% 100%;
+}
+#HelpTop #helpWrap .helpSubWrap .colWrap .colText {
+  width: 98%;
+  padding: 00px 20px 50px 15px;
+  display: none;
+  z-index: 1;
+}
+#HelpTop #helpWrap .helpSubWrap .colWrap .colText.open {
+  display: block;
+}
+#HelpTop #helpWrap .helpSubWrap .colWrap .colText .helpPopupImg img {
+  width: 100%;
+}

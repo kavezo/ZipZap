@@ -1,0 +1,1199 @@
+.popupContent.questDetail .popupInner {
+  width: 864px;
+  height: 456px;
+  top: -webkit-calc(50% - 456px/2);
+  left: -webkit-calc((100% - 864px)/2); }
+  .popupContent.questDetail .popupInner .popupTitle {
+    width: 746px; }
+
+.popupContent.questDetail .popQuestDetailContent {
+  position: relative; }
+
+.popupContent.questDetail .questDetailTitle {
+  position: absolute;
+  left: 44px;
+  top: 31px;
+  width: 134px;
+  height: 28px;
+  font-size: 18px;
+  text-align: center;
+  background: #b28750;
+  border-radius: 14px;
+  padding-top: 2px;
+  text-shadow: none; }
+
+.popupContent.questDetail .common_line {
+  width: 758px;
+  margin: 5px auto; }
+
+.popupContent.questDetail .missionList {
+  padding: 29px 40px 5px 190px; }
+  .popupContent.questDetail .missionList li {
+    padding-left: 70px;
+    text-align: left;
+    position: relative;
+    border-radius: 26px;
+    border: 2px solid #eddbb8;
+    margin-bottom: 5px;
+    font-size: 20px;
+    line-height: 44px; }
+    .popupContent.questDetail .missionList li:before {
+      width: 36px;
+      height: 36px;
+      margin: 0 0 0 -5px;
+      background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_l_off.png") left top no-repeat;
+      background-size: 36px;
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 24px;
+      content: ""; }
+    .popupContent.questDetail .missionList li.cleared:before {
+      background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_l_on.png") left top no-repeat;
+      background-size: 36px; }
+
+.popupContent.questDetail #dropListWrap {
+  width: 100%;
+  height: 180px;
+  left: 0;
+  overflow: hidden; }
+  .popupContent.questDetail #dropListWrap .scrollIndicator {
+    right: 10px; }
+
+.popupContent.questDetail .dropList {
+  width: 620px;
+  height: auto;
+  min-height: 100%;
+  margin: 0 0 0 190px;
+  padding: 12px 0 0;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start; }
+  .popupContent.questDetail .dropList li {
+    width: 88px;
+    height: 116px;
+    margin: 0 4px 8px;
+    position: relative; }
+    .popupContent.questDetail .dropList li .quantityIcon {
+      width: 44px;
+      height: 22px;
+      background: url(/magica/resource/image_web/page/searchquest/text_possess.png) left top no-repeat;
+      display: block;
+      position: absolute;
+      bottom: 22px;
+      left: 0;
+      z-index: 1000; }
+    .popupContent.questDetail .dropList li .quantity {
+      width: 88px;
+      height: 36px;
+      font-size: 16px;
+      background: #806f5b;
+      padding: 12px 5px 0 0;
+      background: #b28750;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      color: #ffffff;
+      text-align: right;
+      -webkit-border-radius: 0 0 5px 5px;
+      z-index: 1;
+      text-shadow: none; }
+    .popupContent.questDetail .dropList li .name {
+      width: 234px;
+      background: #806f5b;
+      display: block;
+      position: absolute;
+      top: -12px;
+      left: -9px;
+      color: #ffffff;
+      font-size: 14px;
+      line-height: 1.8;
+      pointer-events: none;
+      text-shadow: none;
+      opacity: 0;
+      -webkit-border-radius: 4px;
+      z-index: 1000; }
+      .popupContent.questDetail .dropList li .name:before {
+        width: 18px;
+        height: 16px;
+        background: url("/magica/resource/image_web/page/formation/item_balloon_hige.png") left top no-repeat;
+        display: block;
+        position: absolute;
+        content: ""; }
+    .popupContent.questDetail .dropList li .show .name, .popupContent.questDetail .dropList li.show .name {
+      -webkit-animation: hoge 4s ease-in-out 0s 1 alternate;
+      -webkit-animation-fill-mode: forwards; }
+    .popupContent.questDetail .dropList li .name {
+      left: -10px; }
+      .popupContent.questDetail .dropList li .name:before {
+        bottom: -12px;
+        left: 48px; }
+    .popupContent.questDetail .dropList li:nth-child(6n - 1) .name {
+      left: -webkit-calc(50% - 117px); }
+      .popupContent.questDetail .dropList li:nth-child(6n - 1) .name:before {
+        bottom: -12px;
+        left: -webkit-calc(50% - 9px); }
+    .popupContent.questDetail .dropList li:nth-child(6n) .name {
+      left: -148px; }
+      .popupContent.questDetail .dropList li:nth-child(6n) .name:before {
+        bottom: -12px;
+        left: 177px; }
+    .popupContent.questDetail .dropList li.firstReward {
+      position: relative; }
+      .popupContent.questDetail .dropList li.firstReward .bgWrap {
+        width: 100%;
+        height: 100%;
+        position: relative; }
+        .popupContent.questDetail .dropList li.firstReward .bgWrap img {
+          position: relative;
+          z-index: 10; }
+        .popupContent.questDetail .dropList li.firstReward .bgWrap .bg {
+          width: 84px;
+          height: 84px;
+          background: url("/magica/resource/image_web/page/formation/bg_first_reward.png") left top no-repeat;
+          display: block;
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          z-index: 1; }
+        .popupContent.questDetail .dropList li.firstReward .bgWrap .icon {
+          width: 90px;
+          height: 24px;
+          background: url("/magica/resource/image_web/page/formation/first_reward.png") left top no-repeat;
+          display: block;
+          position: absolute;
+          top: -12px;
+          left: -7px;
+          z-index: 100; }
+    .popupContent.questDetail .dropList li img {
+      width: 88px;
+      height: 88px;
+      position: relative;
+      z-index: 10; }
+    .popupContent.questDetail .dropList li.off {
+      background: url("/magica/resource/image_web/page/formation/reward_null.png") left top no-repeat; }
+
+@-webkit-keyframes hoge {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; }
+  2% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; }
+  95% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; } }
+
+.param {
+  display: none; }
+
+#questLinkBtnWrap {
+  width: 100%;
+  height: 58px;
+  padding-left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1001; }
+#questLinkBtnWrap:before {
+  width: 100%;
+  height: 16px;
+  background: url("/magica/resource/image_web/page/quest/footer_rainbow.png") left top no-repeat;
+  position: absolute;
+  top: -16px;
+  left: 0;
+    content: ""; }
+#questLinkBtnWrap:after {
+  width: 718px;
+  height: 6px;
+  background: url("/magica/resource/image_web/page/quest/footer_line.png") left top no-repeat;
+  position: absolute;
+  top: -3px;
+  left: -718px;
+  content: "";
+  -webkit-animation: footerLine 4s linear 2s infinite normal;
+    pointer-events: none; }
+#questLinkBtnWrap .btns {
+  display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+#questLinkBtnWrap .btns.type_s li {
+  width: 180px;
+  height: 50px;
+      position: relative; }
+#questLinkBtnWrap .btns.type_s li.main .bg {
+        background: url("/magica/resource/image_web/page/quest/tab_main_quest_s.png") left top no-repeat; }
+#questLinkBtnWrap .btns.type_s li.side .bg {
+        background: url("/magica/resource/image_web/page/quest/tab_side_quest_s.png") left top no-repeat; }
+#questLinkBtnWrap .btns.type_s li.side.limited {
+        pointer-events: none; }
+#questLinkBtnWrap .btns.type_s li.side.limited .bg {
+          background: url("/magica/resource/image_web/page/quest/tab_side_quest_gray_s.png") left top no-repeat; }
+#questLinkBtnWrap .btns.type_s li.chara .bg {
+        background: url("/magica/resource/image_web/page/quest/tab_chara_quest_s.png") left top no-repeat; }
+#questLinkBtnWrap .btns.type_s li.event .bg {
+        background: url("/magica/resource/image_web/page/quest/tab_event_quest_s.png") left top no-repeat; }
+#questLinkBtnWrap .btns li {
+  width: 222px;
+  height: 50px;
+      position: relative; }
+#questLinkBtnWrap .btns li span {
+  min-width: 26px;
+  height: 26px;
+  padding: 0 4px;
+  background: -webkit-linear-gradient(top, #e140a6 0%, #d12f74 100%);
+  display: none;
+  position: absolute;
+  top: -13px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  -webkit-border-radius: 13px;
+        z-index: 100; }
+#questLinkBtnWrap .btns li.batch span {
+        display: block; }
+#questLinkBtnWrap .btns li.main.batch span, #questLinkBtnWrap .btns li.side.batch span {
+  padding: 0;
+  background: url("/magica/resource/image_web/page/quest/badge.png");
+  border: none;
+        -webkit-border-radius: 0; }
+#questLinkBtnWrap .btns li:not(:last-child) {
+        margin: 0 10px 0 0; }
+#questLinkBtnWrap .btns li .bg {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: brightness(50%);
+        filter: brightness(50%); }
+#questLinkBtnWrap .btns li.main .bg {
+        background: url("/magica/resource/image_web/page/quest/tab_main_quest.png") left top no-repeat; }
+#questLinkBtnWrap .btns li.side .bg {
+        background: url("/magica/resource/image_web/page/quest/tab_side_quest.png") left top no-repeat; }
+#questLinkBtnWrap .btns li.side.limited {
+        pointer-events: none; }
+#questLinkBtnWrap .btns li.side.limited .bg {
+  background: url("/magica/resource/image_web/page/quest/tab_side_quest_gray.png") left top no-repeat;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: brightness(100%);
+          filter: brightness(100%); }
+#questLinkBtnWrap .btns li.side.limited span {
+          display: none; }
+#questLinkBtnWrap .btns li.chara .bg {
+        background: url("/magica/resource/image_web/page/quest/tab_chara_quest.png") left top no-repeat; }
+#questLinkBtnWrap .btns li.event .bg {
+        background: url("/magica/resource/image_web/page/quest/tab_event_quest.png") left top no-repeat; }
+#questLinkBtnWrap .btns li.current .bg {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: initial;
+        filter: initial; }
+#questLinkBtnWrap .btns li.off {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+        -webkit-filter: brightness(50%) grayscale(100%); }
+      #questLinkBtnWrap .btns li.pointUp:before {
+        width: 180px;
+        height: 60px;
+        background: url("/magica/resource/image_web/page/quest/point_up_balloon.png");
+        display: block;
+        position: absolute;
+        top: -47px;
+        right: 0px;
+        content: "";
+        pointer-events: none;
+        z-index: 110; }
+
+.questState {
+  display: block; }
+.questState.new {
+  width: 84px;
+  height: 21px;
+    background: url("/magica/resource/image_web/page/quest/quest_state_new.png") left top no-repeat; }
+.questState.clear {
+    width: 81px;/*MN*/
+  height: 18px;
+    background: url("/magica/resource/image_web/page/quest/quest_state_clear.png") left top no-repeat; }
+.questState.comp {
+    width: 105px;/*MN*/
+  height: 18px;
+    background: url("/magica/resource/image_web/page/quest/quest_state_comp.png") left top no-repeat; }
+
+.sectionState {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 145px; }
+.sectionState.new {
+  width: 84px;
+  height: 21px;
+    background: url("/magica/resource/image_web/page/quest/quest_state_new.png") left top no-repeat; }
+.sectionState.clear {
+    width: 83px;
+  height: 18px;
+    background: url("/magica/resource/image_web/page/quest/quest_state_clear.png") left top no-repeat; }
+.sectionState.comp {
+    width: 100px;/*MN*/
+  height: 18px;
+    background: url("/magica/resource/image_web/page/quest/quest_state_comp.png") left top no-repeat; }
+
+#SectionClearAnimation {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9999; }
+#SectionClearAnimation div {
+    opacity: 0; }
+#SectionClearAnimation #whiteOut {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+    z-index: 20; }
+#SectionClearAnimation #sectionClear_b {
+  width: 344px;
+  height: 52px;
+  background: url("/magica/resource/image_web/page/quest/animation/section_clear_b.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 151px);
+  left: 340px;
+    z-index: 6; }
+#SectionClearAnimation #sectionClear_b2 {
+  width: 344px;
+  height: 52px;
+  background: url("/magica/resource/image_web/page/quest/animation/section_clear_b.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 151px);
+  left: 340px;
+    z-index: 5; }
+#SectionClearAnimation #sectionClear_s {
+  width: 330px;
+  height: 10px;
+  background: url("/magica/resource/image_web/page/quest/animation/section_clear_s.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 86px);
+  left: 347px;
+    z-index: 5; }
+#SectionClearAnimation #sectionClear_base {
+  width: 433px;
+  height: 174px;
+  background: url("/magica/resource/image_web/page/quest/animation/section_clear_base.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 199px);
+  left: 295.5px;
+    z-index: 4; }
+#SectionClearAnimation #sectionClear_light {
+  width: 512px;
+  height: 512px;
+  background: url("/magica/resource/image_web/page/quest/animation/clear_light.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 368px);
+  left: 256px;
+    z-index: 3; }
+#SectionClearAnimation #sectionChestLight {
+  width: 512px;
+  height: 512px;
+  background: url("/magica/resource/image_web/page/quest/animation/section_clear_light.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 256px);
+  left: 256px;
+    z-index: 9; }
+#SectionClearAnimation #sectionChestOpen {
+  width: 130px;
+  height: 122px;
+  position: fixed;
+  top: -webkit-calc(50% - 53px);
+  left: 447px;
+    z-index: 8; }
+#SectionClearAnimation #sectionChestOpen img {
+      width: 130px; }
+#SectionClearAnimation #sectionChest {
+  width: 130px;
+  height: 122px;
+  position: fixed;
+  top: -webkit-calc(50% - 53px);
+  left: 447px;
+    z-index: 6; }
+#SectionClearAnimation #sectionChest img {
+      width: 130px; }
+#SectionClearAnimation #sectionChest2 {
+  width: 130px;
+  height: 122px;
+  position: fixed;
+  top: -webkit-calc(50% - 53px);
+  left: 447px;
+    z-index: 7; }
+#SectionClearAnimation #sectionChest2 img {
+      width: 130px; }
+#SectionClearAnimation #itemPetal1 {
+  width: 314px;
+  height: 139px;
+  background: url("/magica/resource/image_web/page/quest/animation/section_clear_petal.png");
+  position: fixed;
+  top: -webkit-calc(50% - 69px);
+  left: 355px;
+    z-index: 8; }
+#SectionClearAnimation #itemPetal2 {
+  width: 314px;
+  height: 139px;
+  background: url("/magica/resource/image_web/page/quest/animation/section_clear_petal.png");
+  position: fixed;
+  top: -webkit-calc(50% - 69px);
+  left: 355px;
+    z-index: 9; }
+#SectionClearAnimation #sectionItemIcon {
+  width: 114px;
+  height: 114px;
+  padding: 7px;
+  background: url("/magica/resource/image_web/page/quest/animation/square_light.png");
+  position: fixed;
+  top: -webkit-calc(50% - 57px);
+  left: 450px;
+    z-index: 5; }
+#SectionClearAnimation #sectionItemIcon img {
+  width: 100px;
+  height: 100px;
+      z-index: 100; }
+#SectionClearAnimation #sectionItemIcon .quantity {
+  position: absolute;
+  right: 2px;
+  bottom: 0;
+  font-size: 20px;
+      z-index: 101; }
+#SectionClearAnimation #sectionItemIcon .imgWrap {
+  width: 100px;
+  height: 100px;
+      position: relative; }
+#SectionClearAnimation #sectionItemIcon .imgWrap, #SectionClearAnimation #sectionItemIcon .imgWrap * {
+        opacity: 1; }
+#SectionClearAnimation #sectionItemIcon .imgWrap img {
+  position: absolute;
+  top: 0;
+        left: 0; }
+#SectionClearAnimation #sectionItemIcon .imgWrap .charaIcon {
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  right: -7px;
+        bottom: -7px; }
+#SectionClearAnimation #sectionItemIcon .imgWrap .charaIcon:before {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+          z-index: 111; }
+#SectionClearAnimation #sectionItemIcon .imgWrap .charaIcon:after {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+          z-index: 109; }
+#SectionClearAnimation #sectionItemIcon .imgWrap .charaIcon .maskWrap {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  overflow: hidden;
+  border-radius: 26px;
+          z-index: 110; }
+#SectionClearAnimation #sectionItemIcon .imgWrap .charaIcon .maskWrap img {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+            left: -webkit-calc(50% - 30px); }
+#SectionClearAnimation #sectionItemDetail {
+  width: 680px;
+  height: 90px;
+  padding: 20px 0 0;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: 32px;
+  left: -webkit-calc(50% - 340px);
+  color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+  -webkit-border-radius: 8px;
+    z-index: 10; }
+#SectionClearAnimation #sectionItemDetail span {
+  color: #ff988d;
+      font-size: 16px; }
+#SectionClearAnimation #itemLight {
+  width: 414px;
+  height: 417px;
+  background: url("/magica/resource/image_web/page/quest/animation/light.png");
+  position: fixed;
+  top: -webkit-calc(50% - 204px);
+  left: 305px;
+    z-index: 4; }
+#SectionClearAnimation #magicCircle {
+  width: 420px;
+  height: 421px;
+  background: url("/magica/resource/image_web/page/quest/animation/magic_team.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 210px);
+  left: 302px;
+  -webkit-animation: .667s magicCircleRotate linear .667s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+    z-index: 3; }
+#SectionClearAnimation #clearMask {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/quest/animation/clear_mask.png") left center no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearMaskFadeIn ease-in-out .5s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+    z-index: 2; }
+#SectionClearAnimation #clearBgMask {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearBgMaskFadeIn ease-in-out .5s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+    z-index: 1; }
+#SectionClearAnimation.step1 #sectionClear_b {
+  -webkit-animation: .416s sectionClearFirst ease-in-out .333s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step1 #sectionClear_b2 {
+  -webkit-animation: .167s simpleFadeIn ease-in-out .333s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step1 #sectionClear_s {
+  -webkit-animation: .25s simpleFadeIn ease-in-out .5s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step1 #sectionClear_light {
+    -webkit-animation: .417s sectionClearLight ease-in-out .417s 1 normal,
+ .417s sectionClearLightSecond linear .417s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step1 #sectionChest {
+    -webkit-animation: 2s sectionChestFirstOpacity ease-in-out .83s 1 normal,
+ 2s sectionChestFirstTrans linear .83s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step1 #sectionChest2 {
+  -webkit-animation: .87s sectionChestSecond ease-in-out 2.08s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step1 #sectionChestOpen {
+  -webkit-animation: .58s chestOpen ease-in-out 2.75s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step1 #sectionChestLight {
+    -webkit-animation: .47s sectionChestLightOpacity ease-in-out 3s 1 normal,
+ .47s sectionChestLightTrans linear 3s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step1 #whiteOut {
+  -webkit-animation: .5s whiteOuts ease-in-out 3.2s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step2 #sectionItemIcon {
+    -webkit-animation: 2.03s sectionItemTrans linear .13s 1 normal,
+ .167s simpleFadeIn ease-in-out .13s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step2 #sectionItemDetail {
+  -webkit-animation: .167s simpleFadeIn ease-in-out .13s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step2 #itemPetal1 {
+    -webkit-animation: .73s petalFirst linear .13s 1 normal,
+ .73s petalFadeInOut ease-in-out .13s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step2 #itemPetal2 {
+    -webkit-animation: .73s petalSecond linear .13s 1 normal,
+ .73s petalFadeInOut ease-in-out .13s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.step2 #itemLight {
+    -webkit-animation: .167s simpleFadeIn ease-in-out .13s 1 normal,
+ 2.03s itemLightScale linear .13s 1 normal,
+ 33.33s itemLightRotate linear .13s infinite normal;
+    -webkit-animation-fill-mode: forwards; }
+  #SectionClearAnimation.finish #whiteOut {
+    -webkit-animation: none;
+    opacity: 0; }
+  #SectionClearAnimation.finish #sectionClear_b {
+    -webkit-animation: none;
+    opacity: 0; }
+  #SectionClearAnimation.finish #sectionClear_b2 {
+    -webkit-animation: none;
+    opacity: 1; }
+  #SectionClearAnimation.finish #sectionClear_s {
+    -webkit-animation: none;
+    opacity: 1; }
+  #SectionClearAnimation.finish #sectionClear_base {
+    -webkit-animation: none;
+    opacity: 0; }
+  #SectionClearAnimation.finish #sectionClear_light {
+    -webkit-animation: none;
+    opacity: 0; }
+  #SectionClearAnimation.finish #sectionChestLight {
+    -webkit-animation: none;
+    opacity: 0; }
+  #SectionClearAnimation.finish #sectionChestOpen {
+    -webkit-animation: none;
+    opacity: 0; }
+  #SectionClearAnimation.finish #sectionChest {
+    -webkit-animation: none;
+    opacity: 0; }
+  #SectionClearAnimation.finish #sectionChest2 {
+    -webkit-animation: none;
+    opacity: 0; }
+  #SectionClearAnimation.finish #itemPetal1 {
+    -webkit-animation: none;
+    -webkit-transform: rotate(240deg) scale(1.7); }
+  #SectionClearAnimation.finish #itemPetal2 {
+    -webkit-animation: none;
+    -webkit-transform: rotate(360deg) scale(1.4); }
+  #SectionClearAnimation.finish #sectionItemIcon {
+    -webkit-animation: none;
+    opacity: 1; }
+  #SectionClearAnimation.finish #sectionItemDetail {
+    -webkit-animation: none;
+    opacity: 1; }
+  #SectionClearAnimation.finish #itemLight {
+    -webkit-animation: 33.33s itemLightRotate linear .13s infinite normal;
+    -webkit-animation-fill-mode: forwards;
+    opacity: 1; }
+  #SectionClearAnimation.finish #magicCircle {
+    -webkit-animation: none;
+    opacity: 1; }
+  #SectionClearAnimation.finish #clearMask {
+    -webkit-animation: none;
+    opacity: 1; }
+  #SectionClearAnimation.finish #clearBgMask {
+    -webkit-animation: none;
+    opacity: .6; }
+#SectionClearAnimation.lastStep #magicCircle {
+  -webkit-animation: .167s finishCircle linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.lastStep #itemLight, #SectionClearAnimation.lastStep #sectionItemIcon {
+  -webkit-animation: .167s finishItem linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.lastStep #sectionClear_b2, #SectionClearAnimation.lastStep #sectionClear_s, #SectionClearAnimation.lastStep #sectionClear_base, #SectionClearAnimation.lastStep #clearMask {
+  -webkit-animation: .167s finishCommon linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#SectionClearAnimation.lastStep #clearBgMask {
+  -webkit-animation: .167s simpleFadeOut linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+
+#StoryClearAnimation {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; }
+#StoryClearAnimation div {
+    opacity: 0; }
+#StoryClearAnimation #storyCircle2 {
+  width: 513px;
+  height: 515px;
+  background: url("/magica/resource/image_web/page/quest/animation/story_clear_magic_team_light.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 257px);
+  left: 255.5px;
+    z-index: 4; }
+#StoryClearAnimation #storyNumber1, #StoryClearAnimation #storyNumber2, #StoryClearAnimation #storyTitle1, #StoryClearAnimation #storyTitle2 {
+  color: #ffffff;
+  text-shadow: 2px 0 3px rgba(255, 66, 128, 0.8), -2px 0 3px rgba(255, 66, 128, 0.8), 0 2px 3px rgba(255, 66, 128, 0.8), 0 -2px 3px rgba(255, 66, 128, 0.8), 2px 2px 3px rgba(255, 66, 128, 0.8), -2px 2px 3px rgba(255, 66, 128, 0.8), 2px -2px 3px rgba(255, 66, 128, 0.8), -2px -2px 3px rgba(255, 66, 128, 0.8);
+  -webkit-text-stroke-color: rgba(255, 179, 97, 0.8);
+    -webkit-text-stroke-width: 1px; }
+#StoryClearAnimation #storyNumber1, #StoryClearAnimation #storyNumber2 {
+  width: 100%;
+  height: 32px;
+  position: fixed;
+  top: -webkit-calc(50% - 127px);
+  left: 0;
+  font-size: 32px;
+  text-align: center;
+    z-index: 6; }
+#StoryClearAnimation #storyNumber2 {
+    top: -webkit-calc(50% - 92px); }
+#StoryClearAnimation #storyTitle1, #StoryClearAnimation #storyTitle2 {
+  width: 100%;
+  height: 38px;
+  position: fixed;
+  top: -webkit-calc(50% - 28px);
+  left: 0;
+  font-size: 38px;
+  text-align: center;
+    z-index: 6; }
+#StoryClearAnimation #storyClear1, #StoryClearAnimation #storyClear2 {
+  width: 132px;
+  height: 32px;
+  background: url("/magica/resource/image_web/page/quest/animation/story_clear.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 69px);
+  left: 446px;
+    z-index: 6; }
+#StoryClearAnimation #storyClearMiniBg {
+  width: 217px;
+  height: 174px;
+  background: url("/magica/resource/image_web/page/quest/animation/story_clear_base.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 140px);
+  left: 403.5px;
+    z-index: 5; }
+#StoryClearAnimation #storyClearSmall {
+  width: 252px;
+  height: 10px;
+  background: url("/magica/resource/image_web/page/quest/animation/story_clear_s.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% + 48px);
+  left: 386px;
+    z-index: 5; }
+#StoryClearAnimation #storySmall {
+  width: 252px;
+  height: 10px;
+  background: url("/magica/resource/image_web/page/quest/animation/story_s.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% + 48px);
+  left: 386px;
+    z-index: 5; }
+#StoryClearAnimation #storyPetal1, #StoryClearAnimation #storyPetal2, #StoryClearAnimation #storyPetal3 {
+  width: 291px;
+  height: 187px;
+  background: url("/magica/resource/image_web/page/quest/animation/story_clear_petal.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 93.5px);
+  left: 366.5px;
+    z-index: 4; }
+#StoryClearAnimation #storyClearBg {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/quest/animation/clear_mask.png") left center no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearMaskFadeIn ease-in-out .5s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+    z-index: 2; }
+#StoryClearAnimation #storyClearMaskBg {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-animation: .167s clearBgMaskFadeIn ease-in-out .5s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+    z-index: 1; }
+#StoryClearAnimation #storyCircle1 {
+  width: 513px;
+  height: 515px;
+  background: url("/magica/resource/image_web/page/quest/animation/story_clear_magic_team.png") center center;
+  position: fixed;
+  top: -webkit-calc(50% - 257px);
+  left: 255.5px;
+  -webkit-animation: .667s magicCircleRotate linear .667s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+    z-index: 3; }
+#StoryClearAnimation.step1 #storyNumber1 {
+  -webkit-animation: .2s simpleFadeIn .333s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step1 #storyTitle1 {
+    -webkit-animation: .333s simpleFadeIn .7s 1 normal,
+ .333s titleScale .7s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step2 #storyClear1 {
+  -webkit-animation: .416s sectionClearFirst ease-in-out 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step2 #storyClear2 {
+  -webkit-animation: .167s simpleFadeIn ease-in-out 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step2 #storyClearMiniBg {
+  -webkit-animation: .167s storyMiniBg ease-in-out 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step2 #storyClearSmall {
+  -webkit-animation: .25s storyMiniBg ease-in-out 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step3 #storyCircle2 {
+    -webkit-animation: .833s storyLightCircelOpacity ease-in-out .217s 1 normal,
+ .833s storyLightCircelRotate linear .217s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step3 #storyPetal1 {
+    -webkit-animation: .433s storyPetalFadeInOut ease-in-out .717s 1 normal,
+ .433s storyPetalTransFirst linear .717s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step3 #storyPetal2 {
+    -webkit-animation: .433s storyPetalFadeInOut ease-in-out .717s 1 normal,
+ .433s storyPetalTransSecond linear .717s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step3 #storyPetal3 {
+    -webkit-animation: .433s storyPetalFadeInOut ease-in-out .717s 1 normal,
+ .433s storyPetalTransThird linear .717s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step4 #storyNumber1, #StoryClearAnimation.step4 #storyTitle1, #StoryClearAnimation.step4 #storyClear2, #StoryClearAnimation.step4 #storyClearMiniBg {
+  -webkit-animation: .167s simpleFadeOut ease-in-out .4s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+    opacity: 1; }
+#StoryClearAnimation.step4 #storyClearSmall {
+  -webkit-animation: .167s storyClearFadeOut linear .4s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+    opacity: 1; }
+#StoryClearAnimation.step4 #storyCircle1 {
+  -webkit-animation: .383s storyCircleSecond linear .316s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+    opacity: 1; }
+#StoryClearAnimation.step5 #storyNumber2 {
+    -webkit-animation: .25s simpleFadeIn ease-in-out .45s 1 normal,
+ .25s storyNumberTitleScale linear .45s normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step5 #storyTitle2 {
+    -webkit-animation: .5s simpleFadeIn .95s 1 normal,
+ .5s titleScale .95s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.step5 #storySmall {
+  -webkit-animation: .25s storyMiniBg ease-in-out .95s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.lastStep #storyCircle1 {
+  -webkit-animation: .167s finishCircle linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.lastStep #storyClearBg {
+  -webkit-animation: .167s finishCommon linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.lastStep #storySmall, #StoryClearAnimation.lastStep #storyTitle2, #StoryClearAnimation.lastStep #storyNumber2, #StoryClearAnimation.lastStep #storyClearMaskBg {
+  -webkit-animation: .167s simpleFadeOut linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.lastStepAnother #storyCircle1 {
+  -webkit-animation: .167s finishCircle linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.lastStepAnother #storyClearBg {
+  -webkit-animation: .167s finishCommon linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+#StoryClearAnimation.lastStepAnother #storyTitle1, #StoryClearAnimation.lastStepAnother #storyNumber1, #StoryClearAnimation.lastStepAnother #storyClearMaskBg, #StoryClearAnimation.lastStepAnother #storyClearMiniBg, #StoryClearAnimation.lastStepAnother #storyClearSmall {
+  -webkit-animation: .167s simpleFadeOut linear 0s 1 normal;
+    -webkit-animation-fill-mode: forwards; }
+
+@-webkit-keyframes storyNumberTitleScale {
+  0% {
+    -webkit-transform: scale(1.5); }
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-webkit-keyframes storyCircleSecond {
+  0% {
+    opacity: 1; }
+  43% {
+    -webkit-transform: scaleX(1); }
+  65% {
+    -webkit-transform: scaleX(0); }
+  100% {
+    -webkit-transform: scaleX(1);
+    opacity: 1; } }
+
+@-webkit-keyframes storyPetalFadeInOut {
+  0%, 100% {
+    opacity: 0; }
+  38% {
+    opacity: 1; } }
+
+@-webkit-keyframes storyPetalTransFirst {
+  0% {
+    -webkit-transform: scale(0) rotate(0deg); }
+  100% {
+    -webkit-transform: scale(3) rotate(220deg); } }
+
+@-webkit-keyframes storyPetalTransSecond {
+  0% {
+    -webkit-transform: scale(0) rotate(90deg); }
+  100% {
+    -webkit-transform: scale(3) rotate(360deg); } }
+
+@-webkit-keyframes storyPetalTransThird {
+  0% {
+    -webkit-transform: scale(0) rotate(120deg); }
+  100% {
+    -webkit-transform: scale(3) rotate(280deg); } }
+
+@-webkit-keyframes titleScale {
+  0% {
+    -webkit-transform: scale(1.1); }
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-webkit-keyframes storyMiniBg {
+  0% {
+    -webkit-transform: scaleX(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scaleX(1);
+    opacity: 1; } }
+
+@-webkit-keyframes storyLightCircelOpacity {
+  0%, 100% {
+    opacity: 0; }
+  60% {
+    opacity: .7; } }
+
+@-webkit-keyframes storyLightCircelRotate {
+  0% {
+    -webkit-transform: scale(1); }
+  60% {
+    -webkit-transform: scale(1); }
+  100% {
+    -webkit-transform: scale(2); } }
+
+@-webkit-keyframes storyClearFadeOut {
+  0% {
+    -webkit-transform: scaleX(1); }
+  99% {
+    -webkit-transform: scaleX(0);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scaleX(0);
+    opacity: 0; } }
+
+@-webkit-keyframes simpleFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes simpleFadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes clearMaskFadeIn {
+  0% {
+    -webkit-transform: scaleY(0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scaleY(1);
+    opacity: 1; } }
+
+@-webkit-keyframes clearBgMaskFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: .6; } }
+
+@-webkit-keyframes magicCircleRotate {
+  0% {
+    -webkit-transform: scaleX(0);
+    opacity: 1; }
+  25% {
+    -webkit-transform: scaleX(1); }
+  60% {
+    -webkit-transform: scaleX(0); }
+  100% {
+    -webkit-transform: scaleX(1);
+    opacity: 1; } }
+
+@-webkit-keyframes sectionClearFirst {
+  0% {
+    -webkit-transform: scale(2);
+    opacity: 0; }
+  40% {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scaleX(1.5);
+    opacity: 0; } }
+
+@-webkit-keyframes sectionClearLight {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0; }
+  57% {
+    opacity: .6; }
+  100% {
+    -webkit-transform: scale(1.2);
+    opacity: 0; } }
+
+@-webkit-keyframes sectionClearLightSecond {
+  0% {
+    -webkit-transform: rotate(-30deg); }
+  100% {
+    -webkit-transform: rotate(0deg); } }
+
+@-webkit-keyframes sectionChestFirstOpacity {
+  0%, 100% {
+    opacity: 0; }
+  17%, 92% {
+    opacity: 1; } }
+
+@-webkit-keyframes sectionChestFirstTrans {
+  0% {
+    -webkit-transform: translateY(-230px) rotate(47deg); }
+  17% {
+    -webkit-transform: translateY(-19px) rotate(47deg); }
+  21% {
+    -webkit-transform: translateY(-41px) rotate(22deg); }
+  25% {
+    -webkit-transform: translateY(-7px) rotate(-20deg); }
+  29% {
+    -webkit-transform: translateY(-21px) rotate(-5deg); }
+  33% {
+    -webkit-transform: translateY(0px); } }
+
+@-webkit-keyframes sectionChestSecond {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+    -webkit-filter: brightness(100%); }
+  77% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(1.5);
+    opacity: 0;
+    -webkit-filter: brightness(150%); } }
+
+@-webkit-keyframes chestOpen {
+  0%, 100% {
+    opacity: 0; }
+  34%, 86% {
+    opacity: 1; } }
+
+@-webkit-keyframes whiteOuts {
+  0%, 100% {
+    opacity: 0; }
+  33%, 53% {
+    opacity: 1; } }
+
+@-webkit-keyframes sectionChestLightOpacity {
+  0% {
+    opacity: 1; }
+  79% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes sectionChestLightTrans {
+  0% {
+    -webkit-transform: scale(0); }
+  100% {
+    -webkit-transform: scale(2.5); } }
+
+@-webkit-keyframes sectionItemTrans {
+  0% {
+    -webkit-transform: scale(1.5); }
+  8% {
+    -webkit-transform: scale(0.9); }
+  13% {
+    -webkit-transform: scale(1); }
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-webkit-keyframes petalFadeInOut {
+  0%, 100% {
+    opacity: 0;
+    -webkit-filter: brightness(100%); }
+  11% {
+    opacity: 1;
+    -webkit-filter: brightness(400%); } }
+
+@-webkit-keyframes petalFirst {
+  0% {
+    -webkit-transform: rotate(0deg) scale(0); }
+  25% {
+    -webkit-transform: rotate(60deg) scale(0.425); }
+  50% {
+    -webkit-transform: rotate(120deg) scale(0.85); }
+  75% {
+    -webkit-transform: rotate(180deg) scale(1.275); }
+  100% {
+    -webkit-transform: rotate(240deg) scale(1.7); } }
+
+@-webkit-keyframes petalSecond {
+  0% {
+    -webkit-transform: rotate(90deg) scale(0); }
+  25% {
+    -webkit-transform: rotate(180deg) scale(0.35); }
+  50% {
+    -webkit-transform: rotate(240deg) scale(0.7); }
+  75% {
+    -webkit-transform: rotate(300deg) scale(1.15); }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1.4); } }
+
+@-webkit-keyframes itemLightScale {
+  0% {
+    -webkit-transform: scale(1.5); }
+  63% {
+    -webkit-transform: scale(0.9); }
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-webkit-keyframes itemLightRotate {
+  0% {
+    -webkit-transform: rotate(0); }
+  25% {
+    -webkit-transform: rotate(90deg); }
+  50% {
+    -webkit-transform: rotate(180deg); }
+  75% {
+    -webkit-transform: rotate(270deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@-webkit-keyframes finishCircle {
+  0% {
+    -webkit-transform: scaleX(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scaleX(0);
+    opacity: 1; } }
+
+@-webkit-keyframes finishCommon {
+  0% {
+    -webkit-transform: scaleY(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scaleY(0);
+    opacity: 0; } }
+
+@-webkit-keyframes finishItem {
+  0% {
+    -webkit-transform: scale(1);
+    opacity: 1; }
+  100% {
+    -webkit-transform: scale(0);
+    opacity: 0; } }
+
+@-webkit-keyframes footerLine {
+  0% {
+    -webkit-transform: translateX(0) translateZ(0); }
+  50% {
+    -webkit-transform: translateX(1742px) translateZ(0); }
+  100% {
+    -webkit-transform: translateX(1742px) translateZ(0); } }

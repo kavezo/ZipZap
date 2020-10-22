@@ -1,0 +1,941 @@
+@charset "UTF-8";
+#ShopTop {
+  width: 1024px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
+#ShopTop #touchWrap {
+  width: 314px;
+  height: -webkit-calc(100% - 70px);
+  position: absolute;
+  top: 70px;
+  left: 0;
+  opacity: 0;
+    z-index: 0; }
+#ShopTop #hasItems {
+  width: 194px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  text-align: right;
+    z-index: 3; }
+#ShopTop #hasItems:before {
+  width: 112px;/*MN*/
+  height: 24px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  line-height: 24px;
+      content: "Your Stash:";
+      z-index: 5; }
+#ShopTop #hasItems .pointFrame {
+  width: 192px;
+  position: absolute;
+  top: 0;
+  left: 0;
+      text-align: right; }
+#ShopTop #hasItems .purchasedIcon {
+  width: 34px;
+  height: 20px;
+  position: absolute;
+  top: -4px;
+  left: -35px;
+  z-index: 11;
+      display: none; }
+#ShopTop #hasItems .purchasedIcon.on {
+        display: block; }
+#ShopTop #hasItems .costIcon {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: -4px;
+  left: -6px;
+      z-index: 10; }
+#ShopTop #mainWrap {
+  width: 704px;
+  height: -webkit-calc(100% - 154px);
+  position: absolute;
+  top: 59px;
+  right: 6px;
+    z-index: 2; }
+#ShopTop #mainWrap #lists {
+  width: 670px;
+  height: -webkit-calc(100% - 55px);
+  position: absolute;
+  top: 40px;
+  left: 20px;
+      overflow: hidden; }
+#ShopTop #mainWrap .listWrap {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-top: 6px;
+  padding-bottom: 10px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+      align-content: flex-start; }
+#ShopTop #mainWrap .listWrap.noDisp {
+        display: none; }
+#ShopTop #mainWrap .listWrap .noItem {
+  width: 100%;
+  margin-top: 150px;
+        text-align: center; }
+#ShopTop #mainWrap .listWrap .shopItemWrap {
+  width: 654px;
+  height: 100px;
+  margin-bottom: 8px;
+  margin-left: 4px;
+  padding: 10px 10px 10px 10px;
+        position: relative; }
+#ShopTop #mainWrap .listWrap .shopItemWrap:not(.off) {
+  -webkit-order: -1;
+          -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+          order: -1; }
+#ShopTop #mainWrap .listWrap .shopItemWrap.off {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+          pointer-events: none; }
+        #ShopTop #mainWrap .listWrap .shopItemWrap.none {
+          display: none !important; }
+        #ShopTop #mainWrap .listWrap .shopItemWrap.thisHad .recommend {
+          display: block;
+          background: url("/magica/resource/image_web/page/shop/icon_purchased.png") left top no-repeat; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .recommend {
+  width: 57px;
+  height: 60px;
+          background: url("/magica/resource/image_web/page/shop/icon_recommend.png") left top no-repeat;
+  display: none;
+  position: absolute;
+  top: -5px;
+  left: -5px;
+          z-index: 500; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .recommend.on {
+            display: block; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon {
+  width: 78px;
+  height: 78px;
+  position: absolute;
+  top: 10px;
+          left: 15px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .charaIcon {
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  right: -8px;
+            bottom: -8px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .charaIcon img {
+              max-width: 100%; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .charaIcon:before {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+              z-index: 100; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .charaIcon:after {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+              z-index: 80; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .charaIcon .maskWrap {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  overflow: hidden;
+  border-radius: 26px;
+              z-index: 90; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .charaIcon .maskWrap img {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+                left: -webkit-calc(50% - 30px); }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/item/main/item_bg.png");
+  background-size: 100% 100%;
+  position: absolute;
+  top: 0;
+            left: 0; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase {
+  width: 50px;
+  height: 50px;
+  margin: 14px;
+  padding: 5px;
+  background-color: #4d4462;
+  position: relative;
+              border-radius: 5px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner {
+  width: 40px;
+  height: 40px;
+  background-color: #736080;
+  position: relative;
+                border-radius: 5px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols {
+  width: 10px;
+  height: 10px;
+  background-color: #736080;
+                  position: absolute; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.on {
+                    background-color: #f4e0ca; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation1, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation4, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation7 {
+                    top: 27px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation2, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation5, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation8 {
+                    top: 15px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation3, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation6, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation9 {
+                    top: 3px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation1, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation2, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation3 {
+                    left: 3px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation4, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation5, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation6 {
+                    left: 15px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation7, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation8, #ShopTop #mainWrap .listWrap .shopItemWrap .itemIcon .shopFormation .formationBase .formationInner .cols.formation9 {
+                    left: 27px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemName {
+  width: 385px;/*MN*/
+  max-width: 385px;/*MN*/
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 105px;
+  overflow: hidden;
+  font-size: 18px;
+  text-align: left;
+          white-space: nowrap; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .description {
+  width: 535px;/*MN*/
+  height: 21px;
+  position: absolute;
+  top: 39px;
+  left: 105px;
+  overflow: hidden;
+          font-size: 14px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemCost {
+  width: 155px;
+  height: 24px;
+  padding-right: 15px;
+  position: absolute;
+  top: 7px;
+  right: 2px;
+          text-align: right; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemCost .pointFrame {
+  width: 140px;
+  margin-left: 6px;
+            text-align: right; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemCost .purchasedIcon {
+  width: 34px;
+  height: 20px;
+  position: absolute;
+  top: -3px;
+  left: -32px;
+            z-index: 11; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemCost .costIcon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -3px;
+  left: -2px;
+            z-index: 10; }
+        #ShopTop #mainWrap .listWrap .shopItemWrap .had_dl, #ShopTop #mainWrap .listWrap .shopItemWrap .limit_dl, #ShopTop #mainWrap .listWrap .shopItemWrap .amount_dl {
+  height: 25px;
+  position: absolute;
+          bottom: 7px; }
+          #ShopTop #mainWrap .listWrap .shopItemWrap .had_dl dt, #ShopTop #mainWrap .listWrap .shopItemWrap .had_dl dd, #ShopTop #mainWrap .listWrap .shopItemWrap .limit_dl dt, #ShopTop #mainWrap .listWrap .shopItemWrap .limit_dl dd, #ShopTop #mainWrap .listWrap .shopItemWrap .amount_dl dt, #ShopTop #mainWrap .listWrap .shopItemWrap .amount_dl dd {
+  font-size: 16px;
+            line-height: 22px; }
+          #ShopTop #mainWrap .listWrap .shopItemWrap .had_dl dt, #ShopTop #mainWrap .listWrap .shopItemWrap .limit_dl dt, #ShopTop #mainWrap .listWrap .shopItemWrap .amount_dl dt {
+  width: 83px;
+  padding: 0 3px;
+  background-color: #f86688;
+            border-color: #f86688; }
+          #ShopTop #mainWrap .listWrap .shopItemWrap .had_dl dd, #ShopTop #mainWrap .listWrap .shopItemWrap .limit_dl dd, #ShopTop #mainWrap .listWrap .shopItemWrap .amount_dl dd {
+            background-color: #ffffff; }
+        #ShopTop #mainWrap .listWrap .shopItemWrap .had_dl {
+          right: 396px; }
+          #ShopTop #mainWrap .listWrap .shopItemWrap .had_dl.none {
+            display: none; }
+          #ShopTop #mainWrap .listWrap .shopItemWrap .had_dl dd {
+            width: 74px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .limit_dl {
+          right: 182px; }
+          #ShopTop #mainWrap .listWrap .shopItemWrap .limit_dl dd {
+            width: 130px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .amount_dl {
+          right: 3px; }
+          #ShopTop #mainWrap .listWrap .shopItemWrap .amount_dl dd {
+            width: 95px; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemAmount {
+  width: 170px;
+  position: absolute;
+  bottom: 5px;
+  color: #333333;
+  font-size: 13px;
+  text-align: center;
+          text-shadow: none; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemAmount .itemAmountNumber {
+  width: 182px;
+  display: inline-block;
+  color: #333333;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: -.05em;
+            text-shadow: none; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .itemImage {
+  width: 78px;
+  position: absolute;
+  top: 0;
+          left: 0; }
+#ShopTop #mainWrap .listWrap .shopItemWrap .userCharaIcon {
+  width: 78px;
+          height: 78px; }
+#ShopTop #btnWrap {
+  width: 748px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+    z-index: 1; }
+#ShopTop #btnWrap ul.btnScrollInner {
+  margin-top: 15px;
+      white-space: nowrap; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn {
+        width: 266px;/*MN*/
+  margin-right: 2px;
+  display: inline-block;
+  position: relative;
+        white-space: normal; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn span {
+          width: 172px;/*MN*/
+          margin-left: 59px;
+  padding: 0px;
+  line-height: 22px;
+          pointer-events: none; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn span .recommendMark {
+  width: 72px;
+  height: 28px;
+  background: url("/magica/resource/image_web/page/shop/icon_recommend_tab.png");
+  display: none;
+  position: absolute;
+  top: -9px;
+            right: -34px;
+            pointer-events: none; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn img.tabItemIcon {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 24px;
+  left: 21px;
+  pointer-events: none;
+          -webkit-filter: none; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn img.tabPurchasedIcon {
+  width: 34px;
+  height: 20px;
+  position: absolute;
+  top: 16px;
+  left: 4px;
+  z-index: 5;
+  pointer-events: none;
+          -webkit-filter: none; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn.recommend .recommendMark {
+          display: block; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn.specialBtn {
+  min-width: 176px;
+  height: 74px;
+  padding: 0 10px;
+  background: url("/magica/resource/image_web/common/btn/tab_green_off_b_c.png") center top no-repeat;
+  background-size: -webkit-calc(100% - 82px) 100%;
+  position: relative;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 74px;
+  text-align: center;
+          text-shadow: -1px -1px 2px #0aa994, 1px -1px 2px #0aa994, -1px 1px 2px #0aa994, 1px 1px 2px #0aa994, -1px -1px 2px #0aa994, 1px -1px 2px #0aa994, -1px 1px 2px #0aa994, 1px 1px 2px #0aa994; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn.specialBtn:before, #ShopTop #btnWrap ul.btnScrollInner li.shopBtn.specialBtn:after {
+  width: 42px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+            content: ""; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn.specialBtn:before {
+  background: url("/magica/resource/image_web/common/btn/tab_green_off_b_l.png") left top no-repeat;
+            background-size: 100% 100%; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn.specialBtn:after {
+  background: url("/magica/resource/image_web/common/btn/tab_green_off_b_r.png") left top no-repeat;
+            background-size: 100% 100%; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn.specialBtn.current {
+  background: url("/magica/resource/image_web/common/btn/tab_green_on_b_c.png") center top no-repeat;
+  background-size: -webkit-calc(100% - 82px) 100%;
+  color: #0aa994;
+            text-shadow: 0 0; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn.specialBtn.current:before {
+  background: url("/magica/resource/image_web/common/btn/tab_green_on_b_l.png") left top no-repeat;
+              background-size: 100% 100%; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn.specialBtn.current:after {
+  background: url("/magica/resource/image_web/common/btn/tab_green_on_b_r.png") left top no-repeat;
+              background-size: 100% 100%; }
+#ShopTop #btnWrap ul.btnScrollInner li.shopBtn.specialBtn.current span {
+              color: #0aa994; }
+
+#popupArea .popupShop .popupTitle {
+  width: 394px !important;
+  margin-top: 8px; }
+
+#popupArea .popupShop .popupInner {
+  width: 550px !important;
+  height: 500px;
+  top: -webkit-calc(50% - 250px);
+  left: 237px; }
+#popupArea .popupShop .popupInner .popupTextArea {
+    height: 336px !important; }
+
+#popupArea .popupShop .costWrap {
+  position: absolute;
+  top: 246px;
+  left: 128px;
+  font-size: 18px; }
+#popupArea .popupShop .costWrap .useCost {
+  width: 194px;
+  height: 24px;
+  margin-bottom: 11px;
+  position: relative;
+  color: #ffffff;
+    /*text-align: right; */ /*MN*/}
+#popupArea .popupShop .costWrap .useCost .pointFrame {
+  width: 208px;
+  margin-left: 6px;
+  padding-right: 15px;
+  line-height: 24px;
+      text-align: right; }
+#popupArea .popupShop .costWrap .useCost:before {
+      width: 104px;
+  height: 76px;/*MN*/
+  position: absolute;
+  top: 0px;
+  left: 4px;/*MN*/
+  font-size: 16px;
+  line-height: 24px;
+      content: "Price:";/*MN*/
+      z-index: 2; }
+#popupArea .popupShop .costWrap .useCost .purchasedIcon {
+  width: 34px;
+  height: 20px;
+  position: absolute;
+  top: -3px;
+  left: -24px;
+      z-index: 11; }
+#popupArea .popupShop .costWrap .useCost .costIcon {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: -4px;
+  left: 0px;
+      z-index: 10; }
+#popupArea .popupShop .costWrap .costHasNum {
+  width: 214px;
+  height: 24px;
+  position: relative;
+    text-align: right; }
+#popupArea .popupShop .costWrap .costHasNum .pointFrame {
+  width: 208px;
+  margin-left: 6px;
+  padding-right: 15px;
+  line-height: 24px;
+      text-align: right; }
+#popupArea .popupShop .costWrap .costHasNum:before {
+      width: 80px;/*MN*/
+  height: 24px;
+  position: absolute;
+  top: 0px;
+  left: -1px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+      content: "Stock:";/*MN*/
+      z-index: 2; }
+#popupArea .popupShop .costWrap .costHasNum .purchasedIcon {
+  width: 34px;
+  height: 20px;
+  position: absolute;
+  top: -3px;
+  left: -24px;
+      z-index: 11; }
+#popupArea .popupShop .costWrap .costHasNum .costIcon {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: -4px;
+  left: 0px;
+      z-index: 10; }
+#popupArea .popupShop .costWrap .costHasNum.lessNum .pointFrame {
+      color: #aa0000; }
+
+#popupArea .popupShop #shopPopMain {
+  width: 472px;
+  height: 400px;
+  position: absolute;
+  top: 67px;
+  left: 19px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap {
+  width: 468px;
+  height: 106px;
+  position: absolute;
+  top: 0;
+    left: 0; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .useCost {
+  width: 148px;
+  height: 24px;
+  margin-bottom: 10px;
+  position: absolute;
+  right: 8px;
+  bottom: -2px;
+  color: #ffffff;
+  font-size: 14px;
+      text-align: right; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .useCost .pointFrame {
+  width: 140px;
+  padding-right: 15px;
+  line-height: 24px;
+        text-align: right; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .useCost:before {
+        width: 80px;/*MN*/
+  height: 24px;
+  position: absolute;
+  top: 0;
+        left: -6px;/*MN*/
+  font-size: 16px;
+  line-height: 24px;
+        content: "Price:";/*MN*/
+        z-index: 2; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .useCost .purchasedIcon {
+  width: 34px;
+  height: 20px;
+  position: absolute;
+  top: -3px;
+  left: -33px;
+        z-index: 11; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .useCost .costIcon {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: -4px;
+  left: -6px;
+        z-index: 10; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .pieceIcon, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .giftIcon, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .itemIcon {
+  position: absolute;
+  top: 11px;
+      left: 10px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .pieceIcon img, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .giftIcon img, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .itemIcon img {
+        width: 80px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .itemIcon .charaIcon {
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  right: -8px;
+      bottom: -8px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .itemIcon .charaIcon img {
+        max-width: 100%; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .itemIcon .charaIcon:before {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+        z-index: 100; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .itemIcon .charaIcon:after {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+        z-index: 80; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .itemIcon .charaIcon .maskWrap {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  overflow: hidden;
+  border-radius: 26px;
+        z-index: 90; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .itemIcon .charaIcon .maskWrap img {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+          left: -webkit-calc(50% - 30px); }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation {
+  width: 78px;
+  height: 78px;
+  background: url("/magica/resource/image_web/item/main/item_bg.png");
+  background-size: 100% 100%;
+  position: absolute;
+  top: 12px;
+      left: 11px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase {
+  width: 50px;
+  height: 50px;
+  margin: 14px;
+  padding: 5px;
+  background-color: #4d4462;
+  position: relative;
+        border-radius: 5px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner {
+  width: 40px;
+  height: 40px;
+  background-color: #736080;
+  position: relative;
+          border-radius: 5px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols {
+  width: 10px;
+  height: 10px;
+  background-color: #736080;
+            position: absolute; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.on {
+              background-color: #f4e0ca; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation1, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation4, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation7 {
+              top: 27px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation2, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation5, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation8 {
+              top: 15px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation3, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation6, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation9 {
+              top: 3px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation1, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation2, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation3 {
+              left: 3px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation4, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation5, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation6 {
+              left: 15px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation7, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation8, #popupArea .popupShop #shopPopMain .itemPopMiniWrap .shopFormation .formationBase .formationInner .cols.formation9 {
+              left: 27px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .userCharaIcon {
+  position: absolute;
+  top: 13px;
+      left: 10px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .popNameMiniWrap {
+  width: 360px;
+  position: absolute;
+  top: 6px;
+  right: 0;
+  font-size: 20px;
+      text-align: left; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .popDescription {
+  width: 355px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  top: 32px;
+  right: 5px;
+  font-size: 16px;
+  line-height: 18px;
+      text-align: left; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .hasCount {
+  height: 24px;
+  position: absolute;
+  bottom: 8px;
+  left: 104px;
+  font-size: 16px;
+      line-height: 24px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .hasCount .hasLeft {
+  width: 96px;
+  height: 24px;
+  background-color: #b28750;
+  display: inline-block;
+  color: #ffffff;
+        border-radius: 5px 0 0 5px; }
+#popupArea .popupShop #shopPopMain .itemPopMiniWrap .hasCount .hasAmount {
+  height: 24px;
+  margin-left: 10px;
+        display: inline-block; }
+#popupArea .popupShop #shopPopMain .amountSelectWrap {
+  width: 100%;
+  height: 72px;
+  background: #ffffff;
+  position: absolute;
+  top: 158px;
+  left: 0;
+  border: 1px solid #eddbb8;
+    border-radius: 5px; }
+#popupArea .popupShop #shopPopMain .amountSelectWrap .titles {
+  display: inline-block;
+  position: absolute;
+  top: 26px;
+      left: 22px;/*MN*/
+      font-size: 16px; }
+#popupArea .popupShop #shopPopMain .amountSelectWrap .amountNums {
+  width: 100%;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  font-size: 20px;
+  text-align: center;
+      z-index: 3; }
+#popupArea .popupShop #shopPopMain .amountSelectWrap .amountNums span {
+        font-size: 18px; }
+#popupArea .popupShop #shopPopMain .amountSelectWrap #amountMinus {
+  width: 42px;
+  height: 42px;
+  background: url("/magica/resource/image_web/page/shop/btn_minus.png");
+  position: absolute;
+  top: 14px;
+  left: 120px;
+  z-index: 5;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0); }
+#popupArea .popupShop #shopPopMain .amountSelectWrap #amountMinus.off {
+  pointer-events: none;
+        -webkit-filter: grayscale(100%); }
+#popupArea .popupShop #shopPopMain .amountSelectWrap #amountPlus {
+  width: 42px;
+  height: 42px;
+  background: url("/magica/resource/image_web/page/shop/btn_plus.png");
+  position: absolute;
+  top: 14px;
+  right: 120px;
+  z-index: 5;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0); }
+#popupArea .popupShop #shopPopMain .amountSelectWrap #amountPlus.off {
+  pointer-events: none;
+        -webkit-filter: grayscale(100%); }
+#popupArea .popupShop #shopPopMain .amountSelectWrap .maxBtn {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  z-index: 6;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0); }
+#popupArea .popupShop #shopPopMain .amountSelectWrap .maxBtn.off {
+  pointer-events: none;
+        -webkit-filter: grayscale(100%); }
+#popupArea .popupShop #shopPopMain .tradeInfo {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 126px;
+  left: 0;
+    text-align: left; }
+#popupArea .popupShop #shopPopMain .tradeInfo .limit_dl dt, #popupArea .popupShop #shopPopMain .tradeInfo .amount_dl dt {
+      width: 95px;/*MN*/
+  background-color: #f86688;
+      border-color: #f86688; }
+#popupArea .popupShop #shopPopMain .tradeInfo .limit_dl dt, #popupArea .popupShop #shopPopMain .tradeInfo .limit_dl dd, #popupArea .popupShop #shopPopMain .tradeInfo .amount_dl dt, #popupArea .popupShop #shopPopMain .tradeInfo .amount_dl dd {
+  height: 24px;
+  font-size: 14px;
+      line-height: 22px; }
+#popupArea .popupShop #shopPopMain .tradeInfo .limit_dl dd, #popupArea .popupShop #shopPopMain .tradeInfo .amount_dl dd {
+      background-color: #ffffff; }
+#popupArea .popupShop #shopPopMain .tradeInfo .limit_dl {
+  position: absolute;
+  bottom: 0;
+      left: 0; }
+#popupArea .popupShop #shopPopMain .tradeInfo .limit_dl dd {
+        width: 164px; }
+#popupArea .popupShop #shopPopMain .tradeInfo .amount_dl {
+  position: absolute;
+  right: 0;
+      bottom: 0; }
+#popupArea .popupShop #shopPopMain .tradeInfo .amount_dl dd {
+        width: 112px; }
+#popupArea .popupShop #shopPopMain .unitDetailText {
+  width: 486px;
+  height: 72px;
+  padding: 10px 15px;
+  position: absolute;
+  top: 110px;
+  left: 0;
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 28px;
+    text-align: left; }
+#popupArea .popupShop #shopPopMain .shopBtnWrap {
+  width: 100%;
+  position: absolute;
+  top: 321px;
+    text-align: center; }
+#popupArea .popupShop #shopPopMain .shopBtnWrap .btn {
+  margin: 0 13px;
+      display: inline-block; }
+#popupArea .popupShop #shopPopMain .shopBtnWrap .btn.cantTap {
+        pointer-events: none; }
+#popupArea .popupShop #shopPopMain .shopBtnWrap .cantBuyNotice {
+  position: absolute;
+  bottom: 86px;
+  left: 154px;
+  color: #fa684b;
+      font-size: 14px; }
+
+#popupArea .completePop .popupTitle {
+  width: 427px !important;
+  margin-top: 6px; }
+
+#popupArea .completePop .popupInner {
+  width: 550px !important;
+  height: 500px;
+  top: -webkit-calc(50% - 250px);
+  left: 237px; }
+#popupArea .completePop .popupInner .popupTextArea {
+  width: 510px;
+  height: 309px !important;
+  margin-top: 28px;
+  display: block;
+  font-size: 26px !important;
+    line-height: 36px; }
+
+#popupArea .completePop .pieceIcon, #popupArea .completePop .giftIcon, #popupArea .completePop .itemIcon {
+  margin: 26px 0 3px;
+  position: relative; }
+#popupArea .completePop .pieceIcon img, #popupArea .completePop .giftIcon img, #popupArea .completePop .itemIcon img {
+    width: 100px; }
+
+#popupArea .completePop .itemIcon .charaIcon {
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  right: -8px;
+  bottom: -8px; }
+#popupArea .completePop .itemIcon .charaIcon.live2d {
+    right: 176px; }
+#popupArea .completePop .itemIcon .charaIcon img {
+    max-width: 100%; }
+#popupArea .completePop .itemIcon .charaIcon:before {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+    z-index: 100; }
+#popupArea .completePop .itemIcon .charaIcon:after {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+    z-index: 80; }
+#popupArea .completePop .itemIcon .charaIcon .maskWrap {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  overflow: hidden;
+  border-radius: 26px;
+    z-index: 90; }
+#popupArea .completePop .itemIcon .charaIcon .maskWrap img {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+      left: -webkit-calc(50% - 30px); }
+
+#popupArea .completePop .shopFormation {
+  width: 78px;
+  height: 78px;
+  margin: 26px auto 24px;
+  background: url("/magica/resource/image_web/item/main/item_bg.png");
+  background-size: 100% 100%;
+  position: relative; }
+#popupArea .completePop .shopFormation .formationBase {
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  background-color: #4d4462;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+    border-radius: 5px; }
+#popupArea .completePop .shopFormation .formationBase .formationInner {
+  width: 40px;
+  height: 40px;
+  background-color: #736080;
+  position: relative;
+      border-radius: 5px; }
+#popupArea .completePop .shopFormation .formationBase .formationInner .cols {
+  width: 10px;
+  height: 10px;
+  background-color: #736080;
+        position: absolute; }
+#popupArea .completePop .shopFormation .formationBase .formationInner .cols.on {
+          background-color: #f4e0ca; }
+#popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation1, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation4, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation7 {
+          top: 27px; }
+#popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation2, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation5, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation8 {
+          top: 15px; }
+#popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation3, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation6, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation9 {
+          top: 3px; }
+#popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation1, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation2, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation3 {
+          left: 3px; }
+#popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation4, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation5, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation6 {
+          left: 15px; }
+#popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation7, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation8, #popupArea .completePop .shopFormation .formationBase .formationInner .cols.formation9 {
+          left: 27px; }
+
+#popupArea .completePop .userCharaIcon {
+  margin: 30px auto 30px; }
+
+#popupArea .completePop .completeQuantity {
+  width: 164px;
+  height: 28px;
+  margin-left: 8px;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: right; }
+#popupArea .completePop .completeQuantity:before {
+  width: 72px;
+  background-size: contain;
+  position: absolute;
+  font-size: 18px;
+  line-height: 27px;
+    content: "Stock"; }/*MN*/
+#popupArea .completePop .completeQuantity:before, #popupArea .completePop .completeQuantity:after {
+    height: 28px !important; }
+#popupArea .completePop .completeQuantity:after {
+    background-size: 12px 28px; }
+
+#popupArea .completePop .completePurchase {
+  margin-top: 16px;
+  display: inline-block;
+  font-size: 20px; }

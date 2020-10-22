@@ -1,0 +1,23 @@
+<div class='arrow right hide se_tabs'></div>
+<div class='arrow left hide se_tabs'></div>
+
+<% if(model.type == "event" && model.eventId && model.eventType && model.eventDetail) { %>
+	<div id='eventDetailBtn' class='mb_white TE se_decide' data-eventid="<%= model.eventId %>"><div class="b_screen"></div>Details</div>
+
+<% } %>
+
+<div class="imgWrap clearfix">
+<% _.each(model.imgArr,function(img) { %>
+	<% if(model.type == "tutorial") { %>
+		<div class='elm'><img src='/magica/resource/image_web/page/tutorial/popup/<%= img %>.png' alt=''></div>
+	<% } else if(model.type == "event" && model.eventId && model.eventType) { %>
+		<div class='elm'><img src='/magica/resource/image_web/event/<%= model.eventType %>/<%= model.eventId %>/<%= img %>.png' alt=''></div>
+	<% } %>
+<% }); %>
+</div>
+
+<div class="indicatorWrap hide">
+<% _.each(model.imgArr,function() { %>
+	<span class='indiIcon'></span>
+<% }); %>
+</div>

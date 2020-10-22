@@ -1,0 +1,274 @@
+<div id="MemoriaComposeTop" class="<%= composeMode %>">
+	<!-- 強化トップ -->
+	<div id="mainWrap">
+		<!-- 強化ベース -->
+		<div id="targetCard" class="se_decide"></div>
+
+		<!-- 強化ステータス -->
+		<div id="statusWrap" class="commonFrame1">
+			<h2 class="statusTitle"><% if(composeMode === "composeMode"){ %>Enhance Memoria<% }else{ %>Ascend Memoria<% } %></h2>
+			<div id="beforeStatus">
+			</div>
+			<div id="statusArrow"></div>
+			<div id="afterStatus">
+			</div>
+		</div>
+
+		<!-- 選択済み素材一覧 -->
+		<div id="useItemWrap" class="commonFrame1">
+			<div class="useItemText c_gold">Tap, then select Memoria.</div>
+			<ul id="useItem" class="se_decide">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li class="lb_br"></li>
+				<li></li>
+				<li class="no_lb"></li>
+				<li class="no_lb"></li>
+				<li class="no_lb"></li>
+				<li class="no_lb"></li>
+				<li class="no_lb"></li>
+			</ul>
+		</div>
+
+		<!-- OKボタン -->
+		<span id="runBtn" class="se_decide"></span>
+	</div>
+	<!-- 強化トップここまで -->
+
+	<!-- 素材選択画面 -->
+	<div id="cardListWrap">
+		<!-- ヘッダー部 -->
+		<div id="memoriaListHeader">
+			<!-- 所持数 -->
+			<ul id="memoriaListInfo" class="memoriaInfo">
+				<li class="cardCount_2"><span id="info_memoriaCount">80</span>/<span id="info_memoriaCapacity"><%= gameUser.cardCapacity %></span></li>
+				<li class="cardCount_3"><span id="info_selectCount">0</span></li>
+			</ul>
+
+			<!-- 各種ファンクション -->
+			<span id="useMaterialResetBtn" class="btn TE b_white"><span class='b_screen'></span>Deselect</span>
+			<span id="selectCommonBtn" class="btn TE b_white"><span class='b_screen'></span>Select all ★1/2s</span>
+			<ul id="sortPanel">
+				<li id="sortPopupMemoria" class='se_decide sb_gold_02 TE'><span class='b_screen'></span>Filter<span id="filterTypes"></span></li>
+				<li id="sortBtn" class='se_decide sb_gold_02 TE'><span class='b_screen'></span>Order</li>
+			</ul>
+			<ul id="ascPanelMemoria">
+				<li id="ascMemoria" class="se_decide se_tabs TE" data-ascId="desc"></li>
+				<li id="descMemoria" class="se_decide se_tabs TE" data-ascId="asc" class="none"></li>
+			</ul>
+		</div>
+
+		<!-- 一覧部分 -->
+		<div id="cardWrapFrame" class="commonFrame2">
+			<div class="memoriaScrollWrap" id="scrollMain">
+				<div id="cardWrap" class="scrollInner"></div>
+			</div>
+		</div>
+
+		<!-- サイズ変更ボタン -->
+		<div id="sizeChange" class="se_tabs TE" data-size="smaller"><span class="b_screen"></span></div>
+
+		<!-- 情報表示部分 -->
+		<div id="needRiche" class="rightColumn">
+			<span class="countTitle pointFrame">CC Needed</span>
+			<span id="info_needRiche" class="riche columnNum">0</span>
+		</div>
+		<div id="hasRiche" class="rightColumn">
+			<span class="countTitle pointFrame">CC</span>
+			<span id="info_hasRiche" class="riche columnNum"><%= gameUser.riche %></span>
+		</div>
+		<div id="materialCostBgWrap" class="commonFrame3"></div>
+		<div id="getExp" class="rightColumn commonFrame3">
+			<span class="getExpTitle pointFrame">EXP Earned</span>
+			<span id="info_getExp" class="riche columnNum">0</span>
+		</div>
+
+		<!-- 情報表示部分：限界突破時 -->
+		<div id="getLimitBreak" class="rightColumn commonFrame3">
+			<div class="lvUpIcon"></div>
+			<span class="getExpTitle pointFrame">Ascensions</span>
+			<ul id="miniLbWrap">
+				<li class="statuslb1"></li>
+				<li class="statuslb2"></li>
+				<li class="statuslb3"></li>
+				<li class="statuslb4"></li>
+			</ul>
+			<div id="limitBreakLvWrap" class="c_gold">Lvl. <span id="limitAfterLv" class="c_purple"></span>/<span id="limitAfterMaxLv" class="c_purple"></span></div>
+		</div>
+
+		<!-- 情報表示部分：強化時 -->
+		<div id="needExp" class="rightColumn c_gold">
+			<div class="lvUpIcon"></div>
+			NEXT <span id="info_needExp" class="riche columnNum">0</span>
+		</div>
+
+		<!-- OKボタン -->
+		<span id="materialDecideBtn" class="btn TE se_decide b_pink" data-wrap-id="cardListWrap"><span class='b_screen'></span>Set</span>
+	</div>
+	<!-- 素材選択画面ここまで -->
+</div>
+
+<!-- 強化対象選択カードリストtemplate -->
+<script type="text/template" id="CardListParts">
+	<div class="cardInner">
+		<div class="overWrap"></div>
+		<span class="dispPrm"></span>
+		<span class="lv"><span class="lvNum">Lvl.<%="<%=model.level%\></span>/<%=model.maxLevel%\>"%></span>
+		<span class="limitBreak lbCount<%='<%=model.lbCount%\>'%>">
+			<span class="lb1"></span>
+			<span class="lb2"></span>
+			<span class="lb3"></span>
+			<span class="lb4"></span>
+		</span>
+		<span class="lock"></span>
+		<div class="eventEffect"></div>
+		<span class="equip"></span>
+		<img data-nativeimgkey='memoria_<%="<%= model.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%= model.pieceId %\>"%>_s.png' alt=''>
+		<div class="paramWrap" data-level="<%='<%=model.level%\>'%>" data-piece-id="<%='<%=model.pieceId%\>'%>" data-hp="<%='<%=model.hp%\>'%>" data-atk="<%='<%=model.attack%\>'%>" data-def="<%='<%=model.defense%\>'%>" data-rank="<%='<%=model.piece.rank%\>'%>" data-created="<%='<%=model.createdAt%\>'%>" data-lb="<%='<%=model.lbCount%\>'%>"></div>
+	</div>
+
+</script>
+
+
+<!-- ステータスtemplate -->
+<script type="text/template" id="StatusParts">
+	<p class="lvWrap"><%="<span class='lv'\><%= model.level %\></span\>/<span class='maxLv'\><%= model.maxLevel %\>"%></span></p>
+	<p class="expWrap"><%="<span class='exp'\></span\>"%></p>
+	<ul class="lbCount_3<%="<% if(model.lbCount < 4){ %\> thisLb<%= model.lbCount %\><% }else if(model.lbCount > 3){ %\> thisLb4 <% } %\>"%>">
+		<li class="statuslb1"></li>
+		<li class="statuslb2"></li>
+		<li class="statuslb3"></li>
+		<li class="statuslb4"></li>
+	</ul>
+	<p class="nextLvWrap"><span class="c_gold">NEXT</span>&nbsp;<%="<span class='nextExp'\></span\>"%></p>
+	<p class="HP"><span class="statusTitle">HP</span><span class="statusHP">12345</span></p>
+	<p class="ATK"><span class="statusTitle">ATK</span><span class="statusATK">12345</span></p>
+	<p class="DEF"><span class="statusTitle">DEF</span><span class="statusDEF">12345</span></p>
+	<div class="statusLvupIcon"></div>
+</script>
+
+
+<!-- 強化確認template -->
+<script type="text/template" id="ComposeDesidePopup">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle">Enhance Memoria</p>
+
+		<div class="popupTextArea">
+			Are you sure you want to Enhance Memoria?<br>
+			<%='<% if(rarityAlert){ %\>'%><span class="c_red">Includes a ★ 3 or Higher Memoria.</span><%='<% } %\>'%>
+			<ul id="memoriaPopCardArray">
+				<%='<% for(var i=0;i<10;i++){ %\>'%>
+				<%='<% var set = (dispArr[i]) ? true : false; %\>'%>
+				<li><%='<% if(set){ %\>'%><img data-nativeimgkey='memoria_<%="<%= dispArr[i].pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%= dispArr[i].pieceId %\>"%>_s.png' alt=''><%='<% } %\>'%></li>
+				<%='<% } %\>'%>
+			</ul>
+		</div>
+
+		<table class="popupBtnArea" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><span class="cancelBtn se_cancel popupCloseBtn btn TE b_white"><span class='b_screen'></span>Cancel</span></td>
+				<td><span id="composeRunDecideBtn" class="decideBtn se_kettei02 popupCloseBtn btn TE b_pink"><span class='b_screen'></span>Enhance</span></td>
+			</tr>
+		</table>
+	</div>
+</script>
+
+<!-- 強化確認template -->
+<script type="text/template" id="LimitbreakDesidePopup">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel TE popupCloseBtn"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle">Ascend Memoria</p>
+
+		<div class="popupTextArea">
+			Are you sure you want to Ascend Memoria?<br>
+			<ul id="memoriaPopCardArray">
+				<%='<% for(var i=0;i<4;i++){ %\>'%>
+				<%='<% var set = (dispArr[i]) ? true : false; %\>'%>
+				<li><%='<% if(set){ %\>'%><img data-nativeimgkey='memoria_<%="<%= dispArr[i].pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%= dispArr[i].pieceId %\>"%>_s.png' alt=''><%='<% } %\>'%></li>
+				<%='<% } %\>'%>
+			</ul>
+		</div>
+
+		<table class="popupBtnArea" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><span class="cancelBtn se_cancel popupCloseBtn btn TE b_white"><span class='b_screen'></span>Cancel</span></td>
+				<td><span id="composeRunDecideBtn" class="decideBtn se_decide popupCloseBtn btn TE b_pink"><span class='b_screen'></span>Ascend</span></td>
+			</tr>
+		</table>
+	</div>
+</script>
+
+<!-- 装備中警告template -->
+<script type="text/template" id="formationEquipCautionPop">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle common_title">Equipped Memoria</p>
+
+		<div class="popupTextArea">
+			Equipped Memoria cannot be used as Materials.<br>
+			Do you wish to proceed?
+
+			<dl class='common_dl'>
+				<dt>Equipped</dt>
+				<dd>
+					<%='<% if(model.equipDeck.indexOf("quest") !== -1) { %\>'%>
+						<span class="c_purple">Quest Teams</span>
+					<%='<% } %\>'%>
+					<%='<% if(model.equipDeck.indexOf("support") !== -1) { %\>'%>
+						<span class="c_purple">Support Team</span>
+					<%='<% } %\>'%>
+					<%='<% if(model.equipDeck.indexOf("arena") !== -1) { %\>'%>
+						<span class="c_purple">Mirrors Team</span>
+					<%='<% } %\>'%>
+					<%='<% if(model.equipDeck.indexOf("pieceSet") !== -1) { %\>'%>
+						<span class="c_purple">Memoria Set</span>
+					<%='<% } %\>'%>
+					<%='<% if(model.equipDeck.indexOf("event") !== -1) { %\>'%>
+						<span class="c_purple">Event Set</span>
+					<%='<% } %\>'%>
+				</dd>
+			</dl>
+		</div>
+		<table class="popupBtnArea" width="400" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><span class="cancelBtn se_cancel popupCloseBtn btn b_white TE"><span class='b_screen'></span>Cancel</span></td>
+				<td><span class="decideBtn se_cancel btn b_pink TE"><span class='b_screen'></span>OK</span></td>
+			</tr>
+		</table>
+	</div>
+</script>
+
+<!-- 装備中警告template -->
+<script type="text/template" id="formationEquipCautionPop2">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle common_title">Equipped Memoria</p>
+
+		<div class="popupTextArea">
+			This Memoria will be unequipped from all Teams.<br>
+			Are you sure?
+		</div>
+		<table class="popupBtnArea" width="400" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><span class="decideBtn se_cancel btn b_pink TE"><span class='b_screen'></span>Remove</span></td>
+				<td><span class="cancelBtn se_cancel popupCloseBtn btn b_white TE"><span class='b_screen'></span>Cancel</span></td>
+			</tr>
+		</table>
+	</div>
+</script>
+
+<!-- 確認時表示template -->
+<script type="text/template" id="glowTemplate">
+	<div id="costRiche">
+		<span class="countTitle pointFrame">CC Needed</span>
+		<span class="riche">0</span>
+	</div>
+	<div id="hasRicheTop">
+		<span class="countTitle pointFrame">CC</span>
+		<span id="info_hasRicheTop"><%='<%= gameUser.riche %\>'%></span>
+	</div>
+	<div id="costBgWrap" class="commonFrame3"></div>
+</script>
+

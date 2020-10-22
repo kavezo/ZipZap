@@ -1,0 +1,279 @@
+<% console.log(model) %>
+<div class="resultChara">
+	<img data-nativeimgkey="card_<%= model.after.displayCardId %>_l" data-src='resource/image_native/card/image/card_<%= model.after.displayCardId %>_l.png' alt="">
+</div>
+<div class="resultMessageWrap">
+</div>
+<div class="resultInner <%= model.type %>">
+	<div class="inner">
+		<div class="upTextImage <%= model.type %>"></div>
+		<p class="cardName">
+			<%= model.before.card.cardName %>
+			<% if(model.before.chara.title) { %>
+				(<%= model.before.chara.title %>)
+			<% } %>
+		</p>
+		<div class="rank statusWrap flexBox">
+			<div class='beforeRare rare <%= model.before.card.rank %>'>
+				<% var i = 0; %>
+				<% var maxRare = model.before.maxRare || Number(model.before.card.rank.split('RANK_')[1]); %>
+				<% while(i < maxRare) { %>
+					<span></span>
+				<% 	i=(i+1)|0; %>
+				<% } %>
+			</div>
+			<p class="arrow"></p>
+			<div class='afterRare rare <%= model.after.card.rank %>'>
+				<% i = 0; %>
+				<% while(i < maxRare) { %>
+					<span></span>
+				<% 	i=(i+1)|0; %>
+				<% } %>
+			</div>
+		</div>
+
+		<div class="level statusWrap flexBox">
+			<p class="title">Lvl.</p>
+			<p class="before"><%= model.before.level %>/<%= model.before.maxLevel %></p>
+			<p class="arrow"></p>
+			<p class="after"><span class="afterCurrentLv"><%= model.after.level %></span>/<span class="afterMaxLv"><%= model.after.maxLevel %></span></p>
+		</div>
+
+		<div class="revision statusWrap flexBox">
+			<p class="title">Magic Lvl.</p>
+			<p class="before"><%= model.before.revision %></p>
+			<p class="arrow"></p>
+			<p class="after c_red"><%= model.after.revision %></p>
+
+			<ul class="flexBox revisionIcon">
+				<% var i = 0;%>
+				<% var RevisionMax = 3;%>
+
+				<% var onNum = model.after.revision;%>
+				<% var noneNum = RevisionMax - onNum;%>
+
+				<% while(i < onNum) {%>
+					<li class="on"/>
+					<% i=(i+1)|0; %>
+				<% } %>
+
+				<% i = 0;%>
+				<% while(i < noneNum) {%>
+					<li class=""/>
+					<% i=(i+1)|0; %>
+				<% } %>
+			</ul>
+		</div>
+
+		<div class="magiaLv statusWrap flexBox">
+			<p class="title">Magia Lvl.</p>
+			<p class="before"><%= model.before.magiaLevel %></p>
+			<p class="arrow"></p>
+			<p class="after c_red"><%= model.after.magiaLevel %></p>
+
+			<ul class="flexBox magiaLvIcon">
+				<% i = 0;%>
+				<% var MagiaLevelMax = 5;%>
+
+				<% onNum = model.after.magiaLevel;%>
+				<% var offNum = model.after.episodeLevel - model.after.magiaLevel;%>
+				<% noneNum = MagiaLevelMax - (onNum + offNum);%>
+
+				<% while(i < onNum) {%>
+					<li class="on"/>
+					<% i=(i+1)|0; %>
+				<% } %>
+
+				<% i = 0;%>
+				<% while(i < offNum) {%>
+					<li class="off"/>
+					<% i=(i+1)|0; %>
+				<% } %>
+
+				<% i = 0;%>
+				<% while(i < noneNum) {%>
+					<li class="none"/>
+					<% i=(i+1)|0; %>
+				<% } %>
+			</ul>
+		</div>
+
+		<div class="epLv statusWrap flexBox">
+			<p class="title">Episode Lvl.</p>
+			<p class="before"><%= model.before.episodeLevel %></p>
+			<p class="arrow"></p>
+			<p class="after c_red"><%= model.after.episodeLevel %></p>
+		</div>
+
+		<div class="HP statusWrap flexBox">
+			<p class="title">HP</p>
+			<p class="before"><%= model.before.hp %></p>
+			<p class="arrow"></p>
+			<p class="after c_red"><%= model.after.hp %></p>
+		</div>
+		<div class="ATK statusWrap flexBox">
+			<p class="title">ATK</p>
+			<p class="before"><%= model.before.attack %></p>
+			<p class="arrow"></p>
+			<p class="after c_red"><%= model.after.attack %></p>
+		</div>
+		<div class="DEF statusWrap flexBox">
+			<p class="title">DEF</p>
+			<p class="before"><%= model.before.defense %></p>
+			<p class="arrow"></p>
+			<p class="after c_red"><%= model.after.defense %></p>
+		</div>
+
+		<div class="equip statusWrap flexBox">
+			<p class="title">Memoria Slots</p>
+			<div class="flexBox before ">
+				<% i = 0; %>
+				<% while(i < (model.before.revision + 1)) { %>
+					<span class="icon"></span>
+				<% 	i=(i+1)|0; %>
+				<% } %>
+
+			</div>
+			<div class="flexBox after ">
+				<span class="icon on"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script id="MessageTemplate" type="text/template">
+	<%="<% console.log(model); %\>"%>
+	<%="<% var magiaLevel = Number(model.after.episodeLevel); %\>"%>
+	<%="<% var skillName  = model.after.card.cardSkill.name; %\>"%>
+	<%="<% var magiaName  = model.after.card.cardMagia.name; %\>"%>
+	<%="<% var skillDesc  = model.after.card.cardSkill.shortDescription; %\>"%>
+	<%="<% var magiaDesc  = model.after.card.cardMagia.shortDescription; %\>"%>
+	<%="<% var skillId    = model.after.card.cardSkill.groupId; %\>"%>
+	<%="<% var magiaId    = model.after.card.cardMagia.groupId; %\>"%>
+
+	<%="<% if(model.type == 'episode') { %\>"%>
+		<%="<% if(model.after.episodeLevel == 4 || model.after.episodeLevel == 5) { %\>"%>
+			<div class="rowBox episodeItem">
+				<div class="titleBox c_white">Gained Magia Stones</div>
+				<div class="composeRewards">
+					<img src="/magica/resource/image_web/item/main/money.png">
+					<span class="rewardNums ts_gold">×5</span>
+				</div>
+				<div class="textBox"></div>
+			</div>
+		<%="<% } %\>"%>
+		<%="<% if(model.after.episodeLevel == 2 || model.after.episodeLevel == 3) { %\>"%>
+			<%="<% var count = (model.after.episodeLevel == 2) ? 1 : 2 %\>"%>
+
+			<%="<% if(model.questArr[count].closeFlag) { %\>"%>
+				<div class="rowBox close">
+					<div class="titleBox c_white">Magical Girl Story</div>
+					<div class="textBox c_white">
+						<span>
+							Chapter <%="<%= model.questArr[count].section.genericIndex %\>"%>「<%="<%= model.questArr[count].section.title %\>"%>」
+						</span>
+
+						<%="<% _.each(model.questArr[count].openConditionList,function(condition,index) { %\>"%>
+							<span><%="<%= condition %\>"%></span>
+						<%="<% }) %\>"%>
+					</div>
+				</div>
+			<%="<% } else { %\>"%>
+				<div class="rowBox episodeStory">
+					<div class="titleBox c_white">Unlock Magical Girl Story</div>
+					<div class="textBox c_white">Ep <%="<%= model.questArr[count].section.genericIndex %\>"%><br>「<%="<%= model.questArr[count].section.title %\>"%>」</div>
+				</div>
+			<%="<% } %\>"%>
+		<%="<% } %\>"%>
+
+		<div class="rowBox episodeMagia">
+			<div class="titleBox c_white">Magia Lvl. <%="<%= magiaLevel %\>"%>&nbsp;Unlocked</div>
+			<div class="textBox c_white">Magia Lvl. can now be raised to <%="<%= magiaLevel %\>"%></div>
+		</div>
+	<%="<% } %\>"%>
+
+	<%="<% if(model.type == 'magiaLevel') { %\>"%>
+		<%="<% if(model.after.magiaLevel == 5 && model.questArr && model.questArr[3]) { %\>"%>
+			<%="<% if(model.questArr[3].closeFlag) { %\>"%>
+				<div class="rowBox close">
+					<div class="titleBox c_white">Doppel Quest</div>
+					<div class="textBox c_white">
+						<span>
+							Doppel Quest「<%="<%= model.questArr[3].section.title %\>"%>」
+						</span>
+
+						<%="<% _.each(model.questArr[3].openConditionList,function(condition,index) { %\>"%>
+							<span><%="<%= condition %\>"%></span>
+						<%="<% }) %\>"%>
+					</div>
+				</div>
+			<%="<% } else { %\>"%>
+				<div class="rowBox doppel">
+					<div class="titleBox c_white">Unlock Doppel Quest</div>
+					<div class="textBox c_white">Doppel Quest<br>「<%="<%= model.questArr[3].section.title %\>"%>」</div>
+				</div>
+			<%="<% } %\>"%>
+		<%="<% } %\>"%>
+		<div class="rowBox magia">
+			<div class="artIcon"><img data-nativeimgkey='icon_skill_<%="<%= magiaId %\>"%>' data-src='resource/image_native/art/icon_skill_<%="<%= magiaId %\>"%>.png'></div>
+			<div class="titleBox c_white"><%="<%= magiaName %\>"%></div>
+			<div class="textBox c_white"><%="<%= magiaDesc %\>"%></div>
+		</div>
+	<%="<% } %\>"%>
+
+	<%="<% if(model.type === 'evolve') { %\>"%>
+		<%="<% var connectClassTxt = (model.before.card.skillId !== model.after.card.skillId) ? 'skillCompose' : ''; %\>"%>
+		<%="<% var magiaClassTxt = (model.before.card.magiaId !== model.after.card.magiaId) ? 'skillCompose' : ''; %\>"%>
+
+		<div class="rowBox connect <%='<%= connectClassTxt %\>'%>">
+			<div class="artIcon"><img data-nativeimgkey='icon_skill_<%="<%= skillId %\>"%>' data-src='resource/image_native/art/icon_skill_<%="<%= skillId %\>"%>.png'></div>
+			<div class="titleBox c_white"><%="<%= skillName %\>"%></div>
+			<div class="textBox c_white"><%="<%= skillDesc %\>"%></div>
+		</div>
+
+		<div class="rowBox magia <%='<%= magiaClassTxt %\>'%>">
+			<div class="artIcon"><img data-nativeimgkey='icon_skill_<%="<%= magiaId %\>"%>' data-src='resource/image_native/art/icon_skill_<%="<%= magiaId %\>"%>.png'></div>
+			<div class="titleBox c_white"><%="<%= magiaName %\>"%></div>
+			<div class="textBox c_white"><%="<%= magiaDesc %\>"%></div>
+		</div>
+	<%="<% } %\>"%>
+
+	<%="<% if(model.type === 'limitBreak') { %\>"%>
+		<%="<% if(model.after.revision === 3 && model.after.card.pieceSkillId1 && model.after.card.maxPieceSkillId1) { %\>"%>
+			<%="<% var exSkillId = model.after.card.maxPieceSkillList[0].groupId; %\>"%>
+			<%="<% var exSkillName = model.after.card.maxPieceSkillList[0].name; %\>"%>
+			<%="<% var exSkillDiscription = model.after.card.maxPieceSkillList[0].shortDescription; %\>"%>
+			<%="<% var classTxt = (model.after.card.pieceSkillId1 !== model.after.card.maxPieceSkillId1) ? 'skillCompose' : ''; %\>"%>
+
+			<div class="rowBox exSkill <%="<%= classTxt %\>"%>">
+				<div class="artIcon"><img data-nativeimgkey='icon_skill_<%="<%= exSkillId %\>"%>' data-src='resource/image_native/art/icon_skill_<%="<%= exSkillId %\>"%>.png'></div>
+				<div class="titleBox c_white"><%="<%= exSkillName %\>"%></div>
+				<div class="textBox c_white"><%="<%= exSkillDiscription %\>"%></div>
+			</div>
+		<%="<% } %\>"%>
+	<%="<% } %\>"%>
+
+	<%="<% if(model.type === 'doppelStory') { %\>"%>
+		<%="<% if(model.questArr && model.questArr[3]) { %\>"%>
+			<%="<% if(model.questArr[3].closeFlag) { %\>"%>
+				<div class="rowBox close">
+					<div class="titleBox c_white">Doppel Quest</div>
+					<div class="textBox c_white">
+						<span>
+							Doppel Quest「<%="<%= model.questArr[3].section.title %\>"%>」
+						</span>
+
+						<%="<% _.each(model.questArr[3].openConditionList,function(condition,index) { %\>"%>
+							<span><%="<%= condition %\>"%></span>
+						<%="<% }) %\>"%>
+					</div>
+				</div>
+			<%="<% } else { %\>"%>
+				<div class="rowBox doppel">
+					<div class="titleBox c_white">Unlock Doppel Quest</div>
+					<div class="textBox c_white">Doppel Quest<br>「<%="<%= model.questArr[3].section.title %\>"%>」</div>
+				</div>
+			<%="<% } %\>"%>
+		<%="<% } %\>"%>
+	<%="<% } %\>"%>
+</script>

@@ -1,0 +1,22 @@
+<%
+	var btnHref = [
+		"PresentList",
+		"PresentHistory"
+	];
+	var btnText = [
+		"Present Box",
+		"History"
+	];
+%>
+<div id="presentTabBtnWrap" class="commonFrame2">
+	<ul class="common_tab t_gold ml_tab">
+		<% _.forEach(btnHref,function(txt, index){
+			var classText = "TE linkBtn se_decide";
+			if (pageLocation == txt) {
+				classText += " current";
+			}
+		%>
+		<li class="<%= classText %>" data-href="#/<%= txt %>"><span><%= btnText[index] %></span></li>
+		<% }) %>
+	</ul>
+</div>

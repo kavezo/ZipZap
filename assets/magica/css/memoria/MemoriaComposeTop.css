@@ -1,0 +1,849 @@
+@charset "UTF-8";
+#MemoriaComposeTop {
+	width: 1024px;
+	height: 100%;
+  position: relative; }
+  #MemoriaComposeTop #mainWrap {
+    width: 100%;
+    height: -webkit-calc(100% - 68px);
+    position: absolute;
+    top: 68px;
+    left: 0; }
+    #MemoriaComposeTop #mainWrap .closeBtn {
+      position: absolute;
+      top: 14px;
+      left: 27px; }
+    #MemoriaComposeTop #mainWrap #runBtn {
+      width: 104px;
+      height: 108px;
+      background: url("/magica/resource/image_web/page/memoria/memoria_compose_run.png") left top no-repeat;
+      position: absolute;
+      right: 45px;
+      bottom: 20px;
+      border-radius: 100%; }
+    #MemoriaComposeTop #mainWrap #targetCard {
+      width: 371px;
+      height: 97%;
+      display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: absolute;
+      top: -6px;
+      right: 635px;
+      -webkit-flex-flow: wrap;
+      -ms-flex-flow: wrap;
+      flex-flow: wrap;
+      -webkit-justify-content: flex-end;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      #MemoriaComposeTop #mainWrap #targetCard .targetMemoria {
+        max-width: 371px;
+        height: 100%;
+        max-height: 564px; }
+    #MemoriaComposeTop #mainWrap #statusWrap {
+      width: 546px;
+      height: 250px;
+	position: absolute;
+      top: -webkit-calc(50% - 260px);
+      right: 72px;
+      text-align: left; }
+      #MemoriaComposeTop #mainWrap #statusWrap #statusArrow {
+        width: 67px;
+        height: 84px;
+        background: url("/magica/resource/image_web/page/memoria/memoria_compose_arrow.png") left top no-repeat;
+	display: block;
+        position: absolute;
+        top: 98px;
+        left: 240px; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus {
+        width: 223px;
+        height: 240px;
+        position: absolute;
+        top: 32px;
+        left: 30px; }
+      #MemoriaComposeTop #mainWrap #statusWrap #afterStatus {
+        width: 223px;
+        height: 240px;
+        position: absolute;
+        top: 32px;
+        right: 0px; }
+        #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .statusLvupIcon {
+          width: 51px;
+          height: 54px;
+          background: url("/magica/resource/image_web/page/memoria/memoria_lvup.png") left top no-repeat;
+	display: none;
+          position: absolute;
+          top: -20px;
+          right: 20px; }
+          #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .statusLvupIcon.show {
+            display: block; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lv {
+        color: #5b3072 !important; }
+      #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lv {
+        color: #5b3072; }
+        #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lv.c_red {
+          color: #ff403b !important; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lvWrap, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lvWrap {
+        padding-left: 27px;
+        position: absolute;
+        top: 16px;
+        left: 8px; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lvWrap:before, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lvWrap:before {
+          position: absolute;
+          bottom: 4px;
+	left: 0px;
+          content: "Lvl."; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lvWrap .lv, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lvWrap .lv {
+          font-size: 30px; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .expWrap, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .expWrap {
+        width: 192px;
+        height: 18px;
+        padding: 4px 9px;
+        background: url("/magica/resource/image_web/page/memoria/memoria_compose_guage_wrap.png") left top no-repeat;
+        display: block;
+        position: absolute;
+        top: 62px;
+        left: -2px; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .expWrap .exp, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .expWrap .exp {
+          max-width: 174px;
+          height: 10px;
+          background: url("/magica/resource/image_web/page/memoria/memoria_compose_guage.png") left top no-repeat;
+          display: block; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3 {
+        width: 96px;
+        height: 20px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: absolute;
+        top: 107px;
+        left: 9px;
+        -ms-flex-flow: wrap;
+        flex-flow: wrap; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3 li, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3 li {
+          width: 20px;
+          height: 20px;
+          margin-right: 4px;
+          background: url("/magica/resource/image_web/page/memoria/memoria_limitbrake_frame.png") left top no-repeat; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb1 .statuslb1, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb1 .statuslb1 {
+          background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb2 .statuslb1, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb2 .statuslb2, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb2 .statuslb1, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb2 .statuslb2 {
+          background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb3 .statuslb1, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb3 .statuslb2, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb3 .statuslb3, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb3 .statuslb1, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb3 .statuslb2, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb3 .statuslb3 {
+          background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb4 .statuslb1, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb4 .statuslb2, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb4 .statuslb3, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .lbCount_3.thisLb4 .statuslb4, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb4 .statuslb1, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb4 .statuslb2, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb4 .statuslb3, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .lbCount_3.thisLb4 .statuslb4 {
+          background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .nextLvWrap, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .nextLvWrap {
+        width: 108px;
+	position: absolute;
+        top: 82px;
+        left: 10px;
+        font-size: 14px; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .HP, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .ATK, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .DEF, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .HP, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .ATK, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .DEF {
+        width: 106px;
+        height: 18px;
+	position: absolute;
+        color: #666666; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .HP .statusTitle, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .ATK .statusTitle, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .DEF .statusTitle, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .HP .statusTitle, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .ATK .statusTitle, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .DEF .statusTitle {
+          width: 60px;
+          background-color: #b28750;
+          display: block;
+	position: absolute;
+          top: 0px;
+          left: 0px;
+          color: #ffffff;
+          font-size: 14px;
+	text-align: center;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          text-shadow: none; }
+        #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .HP .statusHP, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .HP .statusATK, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .HP .statusDEF, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .ATK .statusHP, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .ATK .statusATK, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .ATK .statusDEF, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .DEF .statusHP, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .DEF .statusATK, #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .DEF .statusDEF, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .HP .statusHP, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .HP .statusATK, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .HP .statusDEF, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .ATK .statusHP, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .ATK .statusATK, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .ATK .statusDEF, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .DEF .statusHP, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .DEF .statusATK, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .DEF .statusDEF {
+	position: absolute;
+          top: 0px;
+          left: 68px;
+	font-size: 14px;
+          text-shadow: none; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .HP, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .HP {
+        top: 137px;
+        left: 4px; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .ATK, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .ATK {
+        top: 159px;
+        left: 4px; }
+      #MemoriaComposeTop #mainWrap #statusWrap #beforeStatus .DEF, #MemoriaComposeTop #mainWrap #statusWrap #afterStatus .DEF {
+        top: 181px;
+        left: 4px; }
+    #MemoriaComposeTop #mainWrap #useItemWrap {
+      width: 427px;
+      height: 234px;
+      position: absolute;
+      top: 50%;
+      right: 192px; }
+      #MemoriaComposeTop #mainWrap #useItemWrap .useItemText {
+        width: 416px;
+        height: 28px;
+        background: url("/magica/resource/image_web/page/memoria/memoria_compose_frame.png") left top no-repeat;
+        position: absolute;
+        top: 20px;
+        left: 3px;
+        line-height: 28px;
+        text-align: center;
+        letter-spacing: 2px; }
+      #MemoriaComposeTop #mainWrap #useItemWrap #useItem {
+        width: 403px;
+        height: 170px;
+        background: url("/magica/resource/image_web/page/memoria/memoria_compose_cols.png") left top no-repeat;
+        position: absolute;
+        top: 59px;
+        left: 18px; }
+        #MemoriaComposeTop #mainWrap #useItemWrap #useItem li {
+          width: 71px;
+          height: 71px;
+          margin: 0 7.5px 15px 0;
+          float: left;
+          position: relative; }
+          #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .materialIcon {
+            width: 71px; }
+          #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap {
+            width: 64px;
+            height: 16px;
+            position: absolute;
+            bottom: -5px;
+            left: 4px; }
+            #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap span {
+              width: 16px;
+              height: 16px;
+              background: url("/magica/resource/image_web/page/memoria/memoria_limitbrake_frame.png") left top no-repeat;
+              background-size: 16px 16px;
+              display: inline-block; }
+            #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount1 .lb1 {
+              background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat;
+              background-size: 16px 16px; }
+            #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount2 .lb1, #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount2 .lb2 {
+              background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat;
+              background-size: 16px 16px; }
+            #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount3 .lb1, #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount3 .lb2, #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount3 .lb3 {
+              background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat;
+              background-size: 16px 16px; }
+            #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount4 .lb1, #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount4 .lb2, #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount4 .lb3, #MemoriaComposeTop #mainWrap #useItemWrap #useItem li .iconLbWrap.iconLbCount4 .lb4 {
+              background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat;
+              background-size: 16px 16px; }
+  #MemoriaComposeTop #cardListWrap {
+    width: 1024px;
+	height: 100%;
+    display: none;
+    position: relative; }
+    #MemoriaComposeTop #cardListWrap #cardWrapFrame {
+      width: 758px;
+      height: -webkit-calc(100% - 124px);
+      position: absolute;
+      top: 112px;
+      left: 64px;
+      z-index: 3; }
+      #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain {
+        width: 716px;
+        height: -webkit-calc(100% - 28px);
+        position: absolute;
+        top: 14px;
+        left: 24px;
+        overflow: hidden; }
+        #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner {
+	width: 100%;
+	height: auto;
+	min-height: 100%;
+          padding: 4px 0 10px 0;
+	display: -webkit-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+	display: flex;
+          position: relative;
+	-webkit-flex-flow: wrap;
+          -ms-flex-flow: wrap;
+	flex-flow: wrap;
+	-webkit-justify-content: flex-start;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+	justify-content: flex-start;
+	-webkit-align-content: flex-start;
+          -ms-flex-line-pack: start;
+          align-content: flex-start; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner .overWrap {
+            width: 100%;
+            height: 100%; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner .materialSelect .overWrap {
+            width: -webkit-calc(100% + 8px);
+            height: -webkit-calc(100% + 8px); }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner.level .lv, #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner.rank .lv {
+            display: block; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner.atk .dispPrm, #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner.def .dispPrm, #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner.hp .dispPrm, #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner.get .dispPrm {
+            display: block; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner.lb .limitBreak {
+            display: -webkit-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner.reachMaxLevel .overWrap {
+            background: url("/magica/resource/image_web/common/memoria/memoria_disable.png") left top no-repeat;
+            background-size: contain;
+            position: relative;
+            z-index: 18; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame #scrollMain .scrollInner.reachMaxLevel .materialSelect .overWrap {
+            background-color: transparent; }
+      #MemoriaComposeTop #cardListWrap #cardWrapFrame.smaller #scrollMain {
+        width: 668px;
+        left: 56px; }
+        #MemoriaComposeTop #cardListWrap #cardWrapFrame.smaller #scrollMain #cardWrap .userMemoriaIcon {
+          margin: 8px 4px 10px 4px; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame.smaller #scrollMain #cardWrap .userMemoriaIcon .overWrap:before {
+            font-size: 16px;
+            line-height: 100px; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame.smaller #scrollMain #cardWrap .userMemoriaIcon.materialSelect .overWrap {
+            border-radius: 18px 12px 12px 12px; }
+      #MemoriaComposeTop #cardListWrap #cardWrapFrame.smallest #scrollMain {
+        width: 692px;
+        left: 43px; }
+        #MemoriaComposeTop #cardListWrap #cardWrapFrame.smallest #scrollMain #cardWrap .userMemoriaIcon {
+          margin: 6px 4px 4px 4px; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame.smallest #scrollMain #cardWrap .userMemoriaIcon .overWrap:before {
+            font-size: 14px;
+            line-height: 88px; }
+          #MemoriaComposeTop #cardListWrap #cardWrapFrame.smallest #scrollMain #cardWrap .userMemoriaIcon.materialSelect .overWrap {
+            border-radius: 16px 10px 10px 10px; }
+    #MemoriaComposeTop #cardListWrap.material .userMemoriaIcon.protected .overWrap {
+      background: url("/magica/resource/image_web/common/memoria/memoria_disable.png") left top no-repeat;
+      background-size: contain;
+      position: relative;
+      z-index: 18; }
+    #MemoriaComposeTop #cardListWrap .userMemoriaIcon {
+      margin: 10px 8px 12px 8px;
+      position: relative; }
+      #MemoriaComposeTop #cardListWrap .userMemoriaIcon .overWrap:before {
+        line-height: 126px; }
+      #MemoriaComposeTop #cardListWrap .userMemoriaIcon.materialSelect, #MemoriaComposeTop #cardListWrap .userMemoriaIcon.select {
+        display: block !important; }
+      #MemoriaComposeTop #cardListWrap .userMemoriaIcon.materialSelect .overWrap {
+	position: absolute;
+        top: -4px;
+        left: -4px;
+        border: 4px solid #ff3b81;
+        border-radius: 24px 12px 12px 12px;
+        z-index: 18; }
+      #MemoriaComposeTop #cardListWrap .userMemoriaIcon.equiped .overWrap {
+        background: url("/magica/resource/image_web/common/memoria/memoria_disable.png") left top no-repeat;
+        background-size: contain;
+        position: relative;
+        z-index: 18; }
+      #MemoriaComposeTop #cardListWrap .userMemoriaIcon.select {
+        -webkit-order: -9999 !important;
+        -webkit-box-ordinal-group: -9998 !important;
+        -ms-flex-order: -9999 !important;
+        order: -9999 !important; }
+        #MemoriaComposeTop #cardListWrap .userMemoriaIcon.select .overWrap {
+          background: url("/magica/resource/image_web/common/memoria/memoria_disable.png") left top no-repeat;
+          background-size: contain;
+	position: relative;
+          z-index: 18; }
+          #MemoriaComposeTop #cardListWrap .userMemoriaIcon.select .overWrap:before {
+            width: -webkit-calc(100%);
+            height: -webkit-calc(100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #ffffff;
+	font-size: 18px;
+	text-align: center;
+            content: "Base";
+            text-shadow: -2px -2px 2px #724a33,
+ 2px -2px 2px #724a33,
+ -2px 2px 2px #724a33,
+ 2px 2px 2px #724a33,
+ -2px -2px #724a33,
+ 2px -2px #724a33,
+ -2px 2px #724a33,
+ 2px 2px #724a33; }
+    #MemoriaComposeTop #cardListWrap #sizeChange {
+      width: 70px;
+      height: 66px;
+      background: url("/magica/resource/image_web/page/memoria/btn_memoria_l.png") left top no-repeat;
+      position: fixed;
+      bottom: 26px;
+      left: 0px; }
+      #MemoriaComposeTop #cardListWrap #sizeChange.smaller {
+        background: url("/magica/resource/image_web/page/memoria/btn_memoria_m.png") left top no-repeat; }
+      #MemoriaComposeTop #cardListWrap #sizeChange.smallest {
+        background: url("/magica/resource/image_web/page/memoria/btn_memoria_s.png") left top no-repeat; }
+    #MemoriaComposeTop #cardListWrap #materialDecideBtn {
+      min-width: 160px;
+	position: absolute;
+      right: 22px;
+      bottom: 20px; }
+    #MemoriaComposeTop #cardListWrap #memoriaListHeader {
+      width: 802px;
+      height: 44px;
+      background: url("/magica/resource/image_web/page/memoria/memoria_headerpanel.png") left top no-repeat;
+	position: absolute;
+      top: 61px;
+      left: 43px;
+      z-index: 1; }
+#MemoriaComposeTop #cardListWrap #useMaterialResetBtn {
+	width: 168px;
+	min-width: 168px;
+	position: absolute;
+	top: 53px;
+      right: -160px; }
+    #MemoriaComposeTop #cardListWrap #selectCommonBtn {
+      width: 168px;
+      min-width: 168px;
+      position: absolute;
+      top: 126px;
+	right: -160px;
+      font-size: 16px;
+      line-height: 20px;
+      padding-top: 11px; }
+#MemoriaComposeTop #cardListWrap #sortPanel {
+	position: absolute;
+	top: 5px;
+      right: 115px; }
+      #MemoriaComposeTop #cardListWrap #sortPanel #sortBtn {
+        width: 110px; }
+      #MemoriaComposeTop #cardListWrap #sortPanel #sortPopupMemoria #filterTypes {
+	width: 34px;
+	height: 18px;
+	margin-left: 8px;
+	display: block;
+	position: absolute;
+	top: -10px;
+	right: 0px;
+	font-size: 14px;
+	line-height: 14px;
+        z-index: 20; }
+      #MemoriaComposeTop #cardListWrap #sortPanel #sortPopupMemoria.on #filterTypes {
+        background: url("/magica/resource/image_web/common/filter/icon_filter_on.png") left top no-repeat;
+        background-size: 100% 100%; }
+      #MemoriaComposeTop #cardListWrap #sortPanel #sortPopupMemoria.off #filterTypes {
+        background: url("/magica/resource/image_web/common/filter/icon_filter_off.png") left top no-repeat;
+        background-size: 34px 18px; }
+#MemoriaComposeTop #cardListWrap .rightColumn {
+	width: 197px;
+	height: 46px;
+	padding: 3px 10px;
+	display: block;
+	display: block;
+	position: absolute;
+      position: absolute; }
+#MemoriaComposeTop #cardListWrap .rightColumn#needRiche {
+	right: 17px;
+        bottom: 147px; }
+#MemoriaComposeTop #cardListWrap .rightColumn#hasRiche {
+	right: 17px;
+        bottom: 95px;
+        z-index: 1; }
+#MemoriaComposeTop #cardListWrap .rightColumn#getExp {
+	width: 164px;
+        height: 91px;
+        top: 269px;
+        right: 19px; }
+#MemoriaComposeTop #cardListWrap .rightColumn#getExp .getExpTitle {
+	position: absolute;
+	top: -15px;
+          left: -11px; }
+#MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak {
+	width: 164px;
+	height: 100px;
+	display: none;
+	top: 218px;
+        right: 19px; }
+        #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak .getExpTitle {
+	position: absolute;
+	top: -15px;
+          left: -11px; }
+#MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak .lvUpIcon {
+	width: 51px;
+	height: 54px;
+          background: url("/magica/resource/image_web/page/memoria/memoria_lvup.png") left top no-repeat;
+	display: none;
+	position: absolute;
+	top: -27px;
+          right: -20px; }
+          #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak .lvUpIcon.show {
+            display: block; }
+        #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap {
+          width: 96px;
+	height: 20px;
+          display: -webkit-box;
+          display: -ms-flexbox;
+	display: flex;
+	position: absolute;
+	top: 25px;
+	left: 36px;
+          -ms-flex-flow: wrap;
+          flex-flow: wrap; }
+          #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap li {
+	width: 20px;
+	height: 20px;
+	margin-right: 4px;
+            background: url("/magica/resource/image_web/page/memoria/memoria_limitbrake_frame.png") left top no-repeat; }
+          #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb1 .statuslb1 {
+            background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat; }
+          #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb2 .statuslb1, #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb2 .statuslb2 {
+            background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat; }
+          #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb3 .statuslb1, #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb3 .statuslb2, #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb3 .statuslb3 {
+            background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat; }
+          #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb4 .statuslb1, #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb4 .statuslb2, #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb4 .statuslb3, #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #miniLbWrap.thisLb4 .statuslb4 {
+            background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_on.png") left top no-repeat; }
+        #MemoriaComposeTop #cardListWrap .rightColumn#getLimitBreak #limitBreakLvWrap {
+	width: 153px;
+	height: 31px;
+	padding: 5px 10px;
+	background-color: #ebe1d4;
+          background: none;
+	position: absolute;
+	right: 3px;
+	bottom: 3px;
+	line-height: 20px;
+	text-align: right;
+	border-radius: 5px;
+          z-index: 1; }
+#MemoriaComposeTop #cardListWrap .rightColumn#needExp {
+	width: 153px;
+	height: 31px;
+	padding: 5px 10px;
+	background-color: #ebe1d4;
+        background: none;
+        top: 328px;
+	right: 27px;
+	line-height: 20px;
+	border-radius: 5px;
+        z-index: 1; }
+#MemoriaComposeTop #cardListWrap .rightColumn#needExp .lvUpIcon {
+          width: 40px;
+          height: 42px;
+          background: url("/magica/resource/image_web/page/memoria/memoria_lvup.png") left top no-repeat;
+          background-size: contain;
+	display: none;
+	position: absolute;
+          top: -76px;
+          right: -10px; }
+#MemoriaComposeTop #cardListWrap .rightColumn#needExp .lvUpIcon.show {
+            display: block; }
+      #MemoriaComposeTop #cardListWrap .rightColumn#needRiche, #MemoriaComposeTop #cardListWrap .rightColumn#hasRiche {
+        z-index: 5; }
+        #MemoriaComposeTop #cardListWrap .rightColumn#needRiche .countTitle, #MemoriaComposeTop #cardListWrap .rightColumn#hasRiche .countTitle {
+	width: 131px;
+          padding: 0 22px;
+	display: block;
+	position: absolute;
+	top: -12px;
+	left: 22px;
+	text-align: center;
+          text-shadow: none; }
+#MemoriaComposeTop #cardListWrap .rightColumn #info_needExp {
+	width: 116px;
+	bottom: 6px;
+        text-align: right; }
+#MemoriaComposeTop #cardListWrap .rightColumn #info_getExp {
+	width: 140px;
+	position: absolute;
+	right: 11px;
+        bottom: 38px;
+	color: #5f2194;
+	font-size: 20px;
+        text-align: right; }
+#MemoriaComposeTop #cardListWrap .rightColumn .yellow {
+	color: #faf88b;
+        font-size: 14px; }
+#MemoriaComposeTop #cardListWrap .rightColumn .perple {
+	color: #dda7ff;
+        font-size: 14px; }
+#MemoriaComposeTop #cardListWrap .rightColumn .columnNum {
+	width: 220px;
+	position: absolute;
+	right: 16px;
+	bottom: 8px;
+        text-align: right; }
+#MemoriaComposeTop #cardListWrap #ascPanelMemoria {
+	width: 80px;
+	height: 24px;
+	position: absolute;
+	top: 10px;
+      right: 28px; }
+#MemoriaComposeTop #cardListWrap #ascPanelMemoria .touch {
+        -webkit-filter: brightness(120%); }
+#MemoriaComposeTop #cardListWrap #ascPanelMemoria li {
+	width: 100%;
+        height: 100%; }
+#MemoriaComposeTop #cardListWrap #ascPanelMemoria li.none {
+          display: none; }
+#MemoriaComposeTop #cardListWrap #ascPanelMemoria li#ascMemoria {
+          background: url("/magica/resource/image_web/common/filter/btn_memoria_descending.png") left top no-repeat; }
+#MemoriaComposeTop #cardListWrap #ascPanelMemoria li#descMemoria {
+          background: url("/magica/resource/image_web/common/filter/btn_memoria_ascending.png") left top no-repeat; }
+#MemoriaComposeTop #cardListWrap ul#memoriaListInfo {
+      margin: 10px 0 0 7px; }
+      #MemoriaComposeTop #cardListWrap ul#memoriaListInfo .cardCount_2, #MemoriaComposeTop #cardListWrap ul#memoriaListInfo .cardCount_3 {
+	padding-right: 10px;
+	display: inline-block;
+	color: #ffffff;
+	text-align: right;
+        text-shadow: none; }
+        #MemoriaComposeTop #cardListWrap ul#memoriaListInfo .cardCount_2 span, #MemoriaComposeTop #cardListWrap ul#memoriaListInfo .cardCount_3 span {
+	color: #ffffff;
+	font-size: 18px;
+          text-shadow: none; }
+#MemoriaComposeTop #cardListWrap ul#memoriaListInfo .cardCount_2 {
+	width: 189px;
+	height: 24px;
+	margin-left: 15px;
+	position: relative;
+        line-height: 24px; }
+        #MemoriaComposeTop #cardListWrap ul#memoriaListInfo .cardCount_2:before {
+	height: 24px;
+	padding: 0px 10px;
+	background-color: #ffffff;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 10px;
+	color: #ff5491;
+	line-height: 24px;
+          content: "Stock";
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+          text-shadow: none; }
+#MemoriaComposeTop #cardListWrap ul#memoriaListInfo .cardCount_3 {
+	width: 159px;
+	height: 24px;
+	position: relative;
+        line-height: 24px; }
+        #MemoriaComposeTop #cardListWrap ul#memoriaListInfo .cardCount_3:before {
+	height: 24px;
+	padding: 0px 10px;
+	background-color: #ffffff;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 10px;
+	color: #ff5491;
+	line-height: 24px;
+          content: "Selected";
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+          text-shadow: none; }
+#MemoriaComposeTop #cardListWrap #materialCostBgWrap {
+	width: 162px;
+      height: 94px;
+	display: block;
+	position: absolute;
+	right: 20px;
+      bottom: 96px; }
+
+#MemoriaComposeTop.limitbreakMode #selectCommonBtn {
+  display: none; }
+
+#MemoriaComposeTop.limitbreakMode #runBtn {
+  background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_run.png") left top no-repeat !important; }
+
+#MemoriaComposeTop.limitbreakMode #useItem {
+	width: 324px !important;
+  background: url("/magica/resource/image_web/page/memoria/memoria_limitbreak_cols.png") left top no-repeat !important;
+	top: 100px !important;
+  left: 56px !important; }
+#MemoriaComposeTop.limitbreakMode #useItem li {
+    margin: 0 10px 0px 0 !important; }
+#MemoriaComposeTop.limitbreakMode #useItem li.no_lb {
+      display: none; }
+
+#MemoriaComposeTop.limitbreakMode #getExp, #MemoriaComposeTop.limitbreakMode #needExp {
+  display: none; }
+
+#MemoriaComposeTop.limitbreakMode #getLimitBreak {
+  display: block !important; }
+
+#MemoriaComposeTop.limitbreakMode #sortPopupMemoria {
+  display: none !important; }
+
+.memoriaConfirmPop .popupInner {
+	width: 490px !important;
+	height: 360px !important;
+	top: calc(50% - 180px) !important;
+  left: calc(50% - 245px) !important; }
+
+.memoriaConfirmPop .popupTitle {
+  width: 370px !important; }
+
+.memoriaConfirmPop .popupTextArea {
+	height: 210px !important;
+  font-size: 20px !important; }
+
+.memoriaConfirmPop #memoriaPopCardArray {
+	margin-top: 30px;
+	display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+	flex-flow: wrap;
+	-webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+	justify-content: center;
+	-webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center; }
+.memoriaConfirmPop #memoriaPopCardArray li {
+	width: 38px;
+	height: 38px;
+	margin: 0px 2px;
+    background: url("/magica/resource/image_web/page/memoria/memoria_empty.png") left top no-repeat;
+    display: block; }
+.memoriaConfirmPop #memoriaPopCardArray li img {
+	width: 38px;
+      height: 38px; }
+
+#memoriaComposePopupCurtain {
+	width: 1024px;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+  z-index: 30000; }
+#memoriaComposePopupCurtain.on {
+    display: block; }
+
+#baseContainer.fadein #memoriaComposeGlowArea {
+	display: block;
+	-webkit-animation: readyFadeIn .2s ease-in;
+  -webkit-animation-fill-mode: forwards; }
+
+#baseContainer.fadeout #memoriaComposeGlowArea {
+	display: none;
+  display: none !important; }
+
+#memoriaComposeGlowArea {
+	width: 100%;
+	height: -webkit-calc(100% - 68px);
+	position: absolute;
+	top: 68px;
+	left: 0;
+	pointer-events: none;
+  opacity: 0; }
+#memoriaComposeGlowArea.on {
+	display: block;
+    z-index: 30001; }
+#memoriaComposeGlowArea.off {
+    display: none !important; }
+#memoriaComposeGlowArea.fadeIn {
+	-webkit-animation: common_fade_in .2s ease-in .3s;
+    -webkit-animation-fill-mode: forwards; }
+#memoriaComposeGlowArea #costRiche {
+	width: 197px;
+	height: 50px;
+	padding: 3px 10px;
+	display: block;
+	position: absolute;
+	right: 12px;
+	bottom: 192px;
+    z-index: 2; }
+#memoriaComposeGlowArea #costRiche .countTitle {
+      width: 130px;/*MN*/
+	padding: 0 22px;
+	display: block;
+	position: absolute;
+	top: -12px;
+	left: 22px;
+	text-align: center;
+      text-shadow: none; }
+#memoriaComposeGlowArea #costRiche .riche {
+	width: 140px;
+	position: absolute;
+	right: 16px;
+	bottom: 8px;
+	color: #444444;
+	text-align: right;
+      text-shadow: none; }
+#memoriaComposeGlowArea #costRiche .riche:before {
+	width: 21px;
+	height: 20px;
+        background: url("/magica/resource/image_web/common/icon/icon_cursechip.png") left top no-repeat;
+	background-size: contain;
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 5px;
+        content: ""; }
+#memoriaComposeGlowArea #hasRicheTop {
+	width: 197px;
+	height: 50px;
+	padding: 3px 10px;
+	display: block;
+	position: absolute;
+	right: 12px;
+	bottom: 135px;
+    z-index: 2; }
+#memoriaComposeGlowArea #hasRicheTop .countTitle {
+      width: 130px;/*MN*/
+	padding: 0 22px;
+	display: block;
+	position: absolute;
+	top: -12px;
+	left: 22px;
+	text-align: center;
+      text-shadow: none; }
+#memoriaComposeGlowArea #hasRicheTop #info_hasRicheTop {
+	width: 140px;
+	position: absolute;
+	right: 16px;
+	bottom: 8px;
+	color: #444444;
+	text-align: right;
+      text-shadow: none; }
+#memoriaComposeGlowArea #hasRicheTop #info_hasRicheTop:before {
+	width: 21px;
+	height: 20px;
+        background: url("/magica/resource/image_web/common/icon/icon_cursechip.png") left top no-repeat;
+	background-size: contain;
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 5px;
+        content: ""; }
+#memoriaComposeGlowArea #costBgWrap {
+	width: 160px;
+	height: 101px;
+	display: block;
+	position: absolute;
+	right: 15px;
+    bottom: 137px; }
+
+.composeCautionPop .popupInner .popupTextArea {
+  font-size: 20px; }
+  .composeCautionPop .popupInner .popupTextArea .common_dl {
+    height: 36px;
+    margin-top: 40px;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .composeCautionPop .popupInner .popupTextArea .common_dl dt {
+      width: 120px;
+      font-size: 16px;
+      line-height: 34px; }
+    .composeCautionPop .popupInner .popupTextArea .common_dl dd {
+      width: 416px;
+      font-size: 0;
+      line-height: 34px;
+      text-align: left; }
+      .composeCautionPop .popupInner .popupTextArea .common_dl dd span {
+        font-size: 16px; }
+        .composeCautionPop .popupInner .popupTextArea .common_dl dd span:nth-child(2):before, .composeCautionPop .popupInner .popupTextArea .common_dl dd span:nth-child(3):before {
+          margin-right: 5px;
+          display: inline-block;
+          content: ","; }

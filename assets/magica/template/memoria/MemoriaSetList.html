@@ -1,0 +1,81 @@
+<div id='MemoriaSetList'>
+
+	<div id='setListWrap' class="commonFrame1">
+		<h2>Choose a Memoria Set to Edit</h2>
+		<div id='scrollOuter'>
+			<div id='scrollInner' class='scrollInner'>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script type='text/template' id='memoriaSetListTemp'>
+	<div class='nameWrap'>
+		<div class='setNum ts_gold'>#<%="<%= model.setNumDisp %\>"%></div>
+		<div class='name ts_gold'><%="<%= model.name %\>"%></div>
+		<div class='nameChangeBtn TE se_decide'></div>
+	</div>
+
+	<div class='memoriaWrap'>
+		<%="<% var i = 0; %\>"%>
+		<%="<% while(i < 4) { %\>"%>
+			<%="<% if(model.pieceArr[i]) { %\>"%>
+				<%="<% var pieceId = model.pieceArr[i].pieceId; %\>"%>
+				<%="<% var level   = model.pieceArr[i].level; %\>"%>
+				<%="<% var maxLevel = model.pieceArr[i].maxLevel; %\>"%>
+				<div class='memoria equip <%="<%= (model.pieceArr[i].eventEffect) ? 'effective' : '' %\>"%>' data-framenum='<%="<%= i %\>"%>'>
+					<span class='eventEffect'></span>
+					<span class="lv">Lvl. <%="<%= level %\>"%>/<%="<%= maxLevel %\>"%></span>
+					<img class='memoriaImg'
+					 data-nativeimgkey='memoria_<%="<%= pieceId %\>"%>_s'
+					 data-src='resource/image_native/memoria/memoria_<%="<%= pieceId %\>"%>_s.png' alt=''>
+				</div>
+			<%="<% } else { %\>"%>
+				<div class='memoria' data-framenum='<%="<%= i %\>"%>'></div>
+			<%="<% } %\>"%>
+
+			<%="<% i=(i+1)|0; %\>"%>
+		<%="<% } %\>"%>
+	</div>
+
+	<div class='equipMemoriaStatus'>
+		<div class='dtElm'>HP</div>
+		<div class='hp ddElm'>
+			<%="<%= (model.hp > 0) ? '+' + model.hp : (model.pieceArr.length) ? '+0' : '' %\>"%>
+		</div>
+		<div class='dtElm'>ATK</div>
+		<div class='atk ddElm'>
+			<%="<%= (model.attack > 0) ? '+' + model.attack : (model.pieceArr.length) ? '+0' : '' %\>"%>
+		</div>
+		<div class='dtElm'>DEF</div>
+		<div class='def ddElm'>
+			<%="<%= (model.defense > 0) ? '+' + model.defense : (model.pieceArr.length) ? '+0' : '' %\>"%>
+		</div>
+	</div>
+
+	<div class='memoriaSetBtn btn TE se_decide b_pink'>Edit Set</div>
+</script>
+
+
+<script type="text/template" id="SetNameChangeTemp">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle">Memoria Set Name</p>
+
+		<div class="popupTextArea">
+			<p class='text'>Enter a Memoria Set Name</p>
+
+			<div class="inputWrap">
+				<input id="commentInput" class='commonInput' readonly="readonly" value='<%="<%= model.name %\>"%>' maxlength="50" />
+
+				<div id='defaultNameBtn' class='sb_gold_02 TE se_tabs'>Default Name</div>
+				<p class="commentNotis c_red">Emojis cannot be used.</p>
+				<div></div>
+				<div class="textCount c_gold"><span id="textCount" class="c_gold"><%="<%= model.name.length %\>"%></span>/15</div>
+				<div class="btn b_pink se_decide TE" id="commentDecide"><span class="b_screen"></span>OK</div>
+			</div>
+		</div>
+	</div>
+</script>

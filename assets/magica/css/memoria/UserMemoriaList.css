@@ -1,0 +1,709 @@
+@charset "UTF-8";
+.pieceArchivePop .popupTextArea {
+  font-size: 20px !important; }
+
+#memoriaListInfo .hasMemoriaNum.toHand:before {
+  content: "Vault Space" !important; }
+
+#UserMemoriaList #memoriaWrap.onlyEvent .memoriaScrollWrap .userMemoriaIcon.overEffective {
+  display: block; }
+
+#UserMemoriaList.archive.toHand #memoriaWrap .userMemoriaIcon.selected .overWrap {
+  border: 4px solid #8f37ff; }
+
+#UserMemoriaList.archive #sizeChange {
+  width: 70px; }
+
+#UserMemoriaList.archive #memoriaListHeader {
+  width: 802px !important;
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_headerpanel.png") !important;
+  left: 42px !important; }
+  #UserMemoriaList.archive #memoriaListHeader #memoriaListInfo .memoriaSelectNum {
+    display: inline-block; }
+
+#UserMemoriaList.archive #archiveUtil {
+  display: block; }
+
+#UserMemoriaList.archive #memoriaWrap {
+  width: 758px;
+  left: 64px; }
+  #UserMemoriaList.archive #memoriaWrap h2 {
+    display: block; }
+  #UserMemoriaList.archive #memoriaWrap .memoriaScrollWrap {
+    width: 716px;
+    height: -webkit-calc(100% - 58px) !important;
+    margin-top: 30px !important;
+    left: 24px; }
+  #UserMemoriaList.archive #memoriaWrap.reachLimit .userMemoriaIcon .overWrap {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    border-radius: 16px 8px 8px 8px;
+    z-index: 18; }
+  #UserMemoriaList.archive #memoriaWrap.reachLimit .userMemoriaIcon.selected .overWrap {
+    background-color: inherit; }
+  #UserMemoriaList.archive #memoriaWrap .userMemoriaIcon .cardInner, #UserMemoriaList.archive #memoriaWrap .userMemoriaIcon .overWrap {
+    width: 100%;
+    height: 100%; }
+  #UserMemoriaList.archive #memoriaWrap .userMemoriaIcon.selected .overWrap {
+    width: -webkit-calc(100% + 8px);
+    height: -webkit-calc(100% + 8px);
+    position: absolute;
+    top: -4px;
+    left: -4px; }
+  #UserMemoriaList.archive #memoriaWrap.smaller .memoriaScrollWrap {
+    width: 668px;
+    left: 56px; }
+    #UserMemoriaList.archive #memoriaWrap.smaller .memoriaScrollWrap .userMemoriaIcon .overWrap {
+      border-radius: 16px 8px 8px 8px; }
+    #UserMemoriaList.archive #memoriaWrap.smaller .memoriaScrollWrap .userMemoriaIcon .overWrap:before {
+      font-size: 16px !important;
+      line-height: 100px !important; }
+  #UserMemoriaList.archive #memoriaWrap.smallest .memoriaScrollWrap {
+    width: 692px;
+    left: 43px; }
+    #UserMemoriaList.archive #memoriaWrap.smallest .memoriaScrollWrap .userMemoriaIcon .overWrap {
+      border-radius: 12px 4px 4px 4px; }
+    #UserMemoriaList.archive #memoriaWrap.smallest .memoriaScrollWrap .userMemoriaIcon .overWrap:before {
+      font-size: 14px !important;
+      line-height: 88px !important; }
+
+#UserMemoriaList.archive #archiveUtil {
+  width: 168px;
+  height: -webkit-calc(100% - 124px);
+  display: block;
+  position: absolute;
+  top: 112px;
+  right: 17px; }
+  #UserMemoriaList.archive #archiveUtil .btn {
+    width: 168px;
+    min-width: 168px; }
+  #UserMemoriaList.archive #archiveUtil #archiveBtn {
+    position: absolute;
+    right: 2px;
+    bottom: 16px; }
+    #UserMemoriaList.archive #archiveUtil #archiveBtn.off {
+      pointer-events: none; }
+  #UserMemoriaList.archive #archiveUtil #memoriaCountWrap {
+    width: 160px;
+    height: 60px;
+    position: absolute;
+    bottom: 95px; }
+    #UserMemoriaList.archive #archiveUtil #memoriaCountWrap #safeTitle {
+      width: 141px;
+      position: absolute;
+      top: -15px;
+      left: -12px; }
+    #UserMemoriaList.archive #archiveUtil #memoriaCountWrap #countWrap {
+      width: 100%;
+      position: absolute;
+      right: 10px;
+      bottom: 9px;
+      font-size: 20px;
+      text-align: right; }
+      #UserMemoriaList.archive #archiveUtil #memoriaCountWrap #countWrap span {
+        font-size: 20px; }
+  #UserMemoriaList.archive #archiveUtil #toArchive {
+    width: 173px;
+    height: 93px;
+    background: url("/magica/resource/image_web/page/memoria/memoria_storage_btn_on_01.png") center center no-repeat;
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    border: 4px solid #ff3b81;
+    border-radius: 18px; }
+    #UserMemoriaList.archive #archiveUtil #toArchive.gray {
+      border: none;
+      -webkit-filter: brightness(80%); }
+  #UserMemoriaList.archive #archiveUtil #toHand {
+    width: 173px;
+    height: 93px;
+    background: url("/magica/resource/image_web/page/memoria/memoria_storage_btn_on_02.png") center center no-repeat;
+    position: absolute;
+    top: 176px;
+    right: 0px;
+    border: 4px solid #8f37ff;
+    border-radius: 18px; }
+    #UserMemoriaList.archive #archiveUtil #toHand.gray {
+      border: none;
+      -webkit-filter: brightness(80%); }
+  #UserMemoriaList.archive #archiveUtil .modeToggle {
+    pointer-events: none; }
+    #UserMemoriaList.archive #archiveUtil .modeToggle.gray {
+      pointer-events: auto; }
+  #UserMemoriaList.archive #archiveUtil #selectResetBtn {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 18px; }
+  #UserMemoriaList.archive #archiveUtil .btn {
+    width: 168px;
+    min-width: 168px; }
+
+.sellCautionPop .popupInner .popupBtnArea {
+  margin-top: 76px; }
+
+.sellCautionPop .popupInner .popupTextArea {
+  height: 120px !important;
+  font-size: 20px; }
+.sellCautionPop .popupInner .popupTextArea .common_dl {
+    position: absolute;
+    top: 128px;
+    left: -webkit-calc(50% - 268px);
+    height: auto;
+    margin-top: 40px; }
+    .sellCautionPop .popupInner .popupTextArea .common_dl dt, .sellCautionPop .popupInner .popupTextArea .common_dl dd {
+      padding-top: 7px;
+      padding-bottom: 7px;
+      display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      line-height: 20px;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+.sellCautionPop .popupInner .popupTextArea .common_dl dt {
+  width: 120px;
+      font-size: 16px; }
+.sellCautionPop .popupInner .popupTextArea .common_dl dd {
+  width: 416px;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: left; }
+.sellCautionPop .popupInner .popupTextArea .common_dl dd span {
+        font-size: 15px; }
+        .sellCautionPop .popupInner .popupTextArea .common_dl dd span:not(:nth-child(1)):before {
+  margin-right: 5px;
+  display: inline-block;
+          content: ","; }
+
+#UserMemoriaList {
+  width: 1024px;
+  height: 100%;
+  position: relative; }
+#UserMemoriaList #memoriaListHeader {
+  width: 942px;
+  height: 44px;
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_headerpanel_l.png");
+  position: absolute;
+  top: 60px;
+  left: -webkit-calc(50% - 471px) !important;
+    z-index: 1; }
+#UserMemoriaList #memoriaListHeader #sortPanel {
+  position: absolute;
+  top: 5px;
+      right: 115px; }
+      #UserMemoriaList #memoriaListHeader #sortPanel.off {
+        display: none; }
+#UserMemoriaList #memoriaListHeader #sortPanel #eventFilterBtn {
+        display: none; }
+#UserMemoriaList #memoriaListHeader #sortPanel #eventFilterBtn.onDisp {
+          display: inline-block; }
+#UserMemoriaList #memoriaListHeader #sortPanel #eventFilterBtn .switchIcon {
+  width: 34px;
+  height: 18px;
+  background: url("/magica/resource/image_web/common/filter/icon_filter_off.png") left top no-repeat;
+  background-size: 34px 18px;
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: 0;
+          z-index: 1000; }
+#UserMemoriaList #memoriaListHeader #sortPanel #eventFilterBtn.on .switchIcon {
+  background: url("/magica/resource/image_web/common/filter/icon_filter_on.png") left top no-repeat;
+          background-size: 34px 18px; }
+#UserMemoriaList #memoriaListHeader #sortPanel #sortPopupMemoria #filterTypes {
+  width: 34px;
+  height: 18px;
+  margin-left: 8px;
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  font-size: 14px;
+  line-height: 14px;
+        z-index: 20; }
+#UserMemoriaList #memoriaListHeader #sortPanel #sortPopupMemoria.on #filterTypes {
+  background: url("/magica/resource/image_web/common/filter/icon_filter_on.png") left top no-repeat;
+        background-size: 100% 100%; }
+#UserMemoriaList #memoriaListHeader #sortPanel #sortPopupMemoria.off #filterTypes {
+  background: url("/magica/resource/image_web/common/filter/icon_filter_off.png") left top no-repeat;
+        background-size: 34px 18px; }
+#UserMemoriaList #memoriaListHeader #sortPanel #sortBtn {
+        width: 110px; }
+#UserMemoriaList #memoriaListHeader #ascPanelMemoria {
+  width: 80px;
+  height: 24px;
+  position: absolute;
+  top: 10px;
+      right: 28px; }
+#UserMemoriaList #memoriaListHeader #ascPanelMemoria .touch {
+        -webkit-filter: brightness(120%); }
+#UserMemoriaList #memoriaListHeader #ascPanelMemoria li {
+  width: 100%;
+        height: 100%; }
+#UserMemoriaList #memoriaListHeader #ascPanelMemoria li.none {
+          display: none; }
+#UserMemoriaList #memoriaListHeader #ascPanelMemoria li#ascMemoria {
+          background: url("/magica/resource/image_web/common/filter/btn_memoria_ascending.png") left top no-repeat; }
+#UserMemoriaList #memoriaListHeader #ascPanelMemoria li#descMemoria {
+          background: url("/magica/resource/image_web/common/filter/btn_memoria_descending.png") left top no-repeat; }
+#UserMemoriaList #memoriaWrap {
+  width: 908px;
+  height: -webkit-calc(100% - 124px) !important;
+  position: absolute;
+  top: 112px;
+  left: -webkit-calc(50% - 454px);
+    z-index: 3; }
+#UserMemoriaList #memoriaWrap.onlyEvent .memoriaScrollWrap .userMemoriaIcon {
+      display: none; }
+#UserMemoriaList #memoriaWrap.onlyEvent .memoriaScrollWrap .userMemoriaIcon.effective, #UserMemoriaList #memoriaWrap.onlyEvent .memoriaScrollWrap .userMemoriaIcon.selected {
+        display: block; }
+#UserMemoriaList #memoriaWrap h2 {
+  width: 720px;
+  height: 32px;
+  padding: 0 20px;
+  padding-left: 36px;
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_wrap_header_a.png");
+  background-size: auto auto;
+  background-size: 720px 32px;
+      display: none;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  overflow: hidden;
+  color: #a47122;
+  font-size: 18px;
+  line-height: 32px;
+  border-radius: 10px 0 0 0;
+  text-shadow: none;
+      z-index: 1; }
+#UserMemoriaList #memoriaWrap .memoriaScrollWrap {
+  width: 864px;
+  height: -webkit-calc(100% - 28px);
+  position: absolute;
+  top: 14px;
+  left: 28px;
+      overflow: hidden; }
+#UserMemoriaList #memoriaWrap .memoriaScrollWrap #memoriaWrapInner {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding: 4px 0 10px 0;
+  display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-flow: wrap;
+        -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+        -ms-flex-line-pack: start;
+        align-content: flex-start; }
+#UserMemoriaList #memoriaWrap .memoriaScrollWrap #memoriaWrapInner.level .lv, #UserMemoriaList #memoriaWrap .memoriaScrollWrap #memoriaWrapInner.rank .lv {
+          display: block; }
+#UserMemoriaList #memoriaWrap .memoriaScrollWrap #memoriaWrapInner.atk .dispPrm, #UserMemoriaList #memoriaWrap .memoriaScrollWrap #memoriaWrapInner.def .dispPrm, #UserMemoriaList #memoriaWrap .memoriaScrollWrap #memoriaWrapInner.hp .dispPrm, #UserMemoriaList #memoriaWrap .memoriaScrollWrap #memoriaWrapInner.get .dispPrm {
+          display: block; }
+#UserMemoriaList #memoriaWrap .memoriaScrollWrap #memoriaWrapInner.lb .limitBreak {
+  display: -webkit-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex; }
+#UserMemoriaList #memoriaWrap .memoriaScrollWrap #memoriaWrapInner .userMemoriaIcon {
+  margin: 10px 8px 12px 8px;
+          position: relative; }
+#UserMemoriaList #memoriaWrap.smaller .memoriaScrollWrap {
+  width: 874px;
+      left: 20px; }
+#UserMemoriaList #memoriaWrap.smaller .memoriaScrollWrap #memoriaWrapInner .userMemoriaIcon {
+        margin: 8px 4px 10px 4px; }
+#UserMemoriaList #memoriaWrap.smallest .memoriaScrollWrap {
+  width: 874px;
+      left: 20px; }
+#UserMemoriaList #memoriaWrap.smallest .memoriaScrollWrap #memoriaWrapInner .userMemoriaIcon {
+        margin: 6px 4px 4px 4px; }
+#UserMemoriaList #sizeChange {
+  width: 60px;
+  height: 66px;
+  background: url("/magica/resource/image_web/page/memoria/btn_memoria_l.png") left top no-repeat;
+  position: fixed;
+  bottom: 26px;
+    left: 0px; }
+#UserMemoriaList #sizeChange.smaller {
+      background: url("/magica/resource/image_web/page/memoria/btn_memoria_m.png") left top no-repeat; }
+#UserMemoriaList #sizeChange.smallest {
+      background: url("/magica/resource/image_web/page/memoria/btn_memoria_s.png") left top no-repeat; }
+#UserMemoriaList #sellUtil {
+  width: 168px;
+  height: -webkit-calc(100% - 124px);
+  display: none;
+  position: absolute;
+  top: 112px;
+    right: 17px; }
+#UserMemoriaList #sellUtil #sellBtn {
+  position: absolute;
+  top: 0;
+      right: 0; }
+#UserMemoriaList #sellUtil .btn {
+  width: 168px;
+      min-width: 168px; }
+#UserMemoriaList #sellUtil #sellConfirm {
+  position: absolute;
+  right: 0;
+      bottom: 16px; }
+#UserMemoriaList #sellUtil #sellResetBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+      font-size: 17px; } /*MN*/
+#UserMemoriaList #sellUtil #selectCommon {
+  position: absolute;
+  top: 78px;
+  right: 0;
+      font-size: 14px; }
+#UserMemoriaList #sellUtil #richeWrap {
+  width: 164px;
+  height: 104px;
+  display: block;
+  position: absolute;
+  right: 0;
+      bottom: 102px; }
+#UserMemoriaList #sellUtil #richeWrap .pointFrame {
+  width: 122px;
+  display: block;
+        text-align: center; }
+#UserMemoriaList #sellUtil #richeWrap .totalRiche .pointFrame {
+  position: absolute;
+  top: -15px;
+        left: -12px; }
+#UserMemoriaList #sellUtil #richeWrap .hasRiche .pointFrame {
+  position: absolute;
+  top: 43px;
+        left: -12px; }
+#UserMemoriaList #sellUtil #richeWrap #info_sellCount {
+  width: 100%;
+  padding: 0 10px;
+  position: absolute;
+  top: 14px;
+  left: 0;
+        text-align: right; }
+#UserMemoriaList #sellUtil #richeWrap #info_totalGold {
+  width: 100%;
+  padding: 0 10px;
+  position: absolute;
+  top: 72px;
+  left: 0;
+        text-align: right; }
+#UserMemoriaList.sell #sizeChange {
+    width: 70px; }
+  #UserMemoriaList.sell #memoriaListHeader {
+    width: 802px !important;
+    background-image: url("/magica/resource/image_web/page/memoria/memoria_headerpanel.png") !important;
+    left: 42px !important; }
+    #UserMemoriaList.sell #memoriaListHeader #memoriaListInfo .memoriaSelectNum {
+      display: inline-block; }
+  #UserMemoriaList.sell #sellUtil {
+    display: block; }
+  #UserMemoriaList.sell #memoriaWrap {
+    width: 758px;
+    left: 64px; }
+#UserMemoriaList.sell #memoriaWrap h2 {
+      display: block; }
+#UserMemoriaList.sell #memoriaWrap .memoriaScrollWrap {
+  width: 716px;
+  height: -webkit-calc(100% - 58px) !important;
+  margin-top: 30px !important;
+      left: 24px; }
+    #UserMemoriaList.sell #memoriaWrap .userMemoriaIcon .cardInner, #UserMemoriaList.sell #memoriaWrap .userMemoriaIcon .overWrap {
+      width: 100%;
+      height: 100%; }
+    #UserMemoriaList.sell #memoriaWrap .userMemoriaIcon.equiped .overWrap, #UserMemoriaList.sell #memoriaWrap .userMemoriaIcon.protected .overWrap {
+      background-color: rgba(0, 0, 0, 0.5);
+      position: relative;
+      border-radius: 16px 8px 8px 8px;
+      z-index: 18; }
+    #UserMemoriaList.sell #memoriaWrap .userMemoriaIcon.selected .overWrap {
+      width: -webkit-calc(100% + 8px);
+      height: -webkit-calc(100% + 8px);
+      position: absolute;
+      top: -4px;
+      left: -4px; }
+#UserMemoriaList.sell #memoriaWrap.smaller .memoriaScrollWrap {
+  width: 668px;
+      left: 56px; }
+      #UserMemoriaList.sell #memoriaWrap.smaller .memoriaScrollWrap .userMemoriaIcon .overWrap {
+        border-radius: 16px 8px 8px 8px; }
+#UserMemoriaList.sell #memoriaWrap.smaller .memoriaScrollWrap .userMemoriaIcon .overWrap:before {
+  font-size: 16px !important;
+        line-height: 100px !important; }
+#UserMemoriaList.sell #memoriaWrap.smallest .memoriaScrollWrap {
+  width: 692px;
+      left: 43px; }
+      #UserMemoriaList.sell #memoriaWrap.smallest .memoriaScrollWrap .userMemoriaIcon .overWrap {
+        border-radius: 12px 4px 4px 4px; }
+#UserMemoriaList.sell #memoriaWrap.smallest .memoriaScrollWrap .userMemoriaIcon .overWrap:before {
+  font-size: 14px !important;
+        line-height: 88px !important; }
+  #UserMemoriaList.compose #memoriaWrap h2, #UserMemoriaList.limitbreak #memoriaWrap h2 {
+    display: block; }
+  #UserMemoriaList.compose #memoriaWrap .memoriaScrollWrap, #UserMemoriaList.limitbreak #memoriaWrap .memoriaScrollWrap {
+    height: -webkit-calc(100% - 58px) !important;
+    margin-top: 30px !important;
+    left: 24px; }
+    #UserMemoriaList.compose #memoriaWrap .memoriaScrollWrap .userMemoriaIcon .overWrap:before, #UserMemoriaList.limitbreak #memoriaWrap .memoriaScrollWrap .userMemoriaIcon .overWrap:before {
+      font-size: 18px;
+      line-height: 126px; }
+  #UserMemoriaList.compose #memoriaWrap.smaller .memoriaScrollWrap .userMemoriaIcon .overWrap, #UserMemoriaList.limitbreak #memoriaWrap.smaller .memoriaScrollWrap .userMemoriaIcon .overWrap {
+    border-radius: 16px 8px 8px 8px; }
+  #UserMemoriaList.compose #memoriaWrap.smaller .memoriaScrollWrap .userMemoriaIcon .overWrap:before, #UserMemoriaList.limitbreak #memoriaWrap.smaller .memoriaScrollWrap .userMemoriaIcon .overWrap:before {
+    font-size: 16px;
+    line-height: 100px; }
+  #UserMemoriaList.compose #memoriaWrap.smallest .memoriaScrollWrap .userMemoriaIcon .overWrap, #UserMemoriaList.limitbreak #memoriaWrap.smallest .memoriaScrollWrap .userMemoriaIcon .overWrap {
+    border-radius: 12px 4px 4px 4px; }
+  #UserMemoriaList.compose #memoriaWrap.smallest .memoriaScrollWrap .userMemoriaIcon .overWrap:before, #UserMemoriaList.limitbreak #memoriaWrap.smallest .memoriaScrollWrap .userMemoriaIcon .overWrap:before {
+    font-size: 14px;
+    line-height: 88px; }
+  #UserMemoriaList.compose .userMemoriaIcon.lvMax .overWrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 18px 8px 8px 8px;
+  text-shadow: none;
+    z-index: 18; }
+    #UserMemoriaList.compose .userMemoriaIcon.lvMax .overWrap:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  text-align: center;
+      content: "Lvl. MAX";
+      text-shadow: -2px -2px 2px #724a33, 2px -2px 2px #724a33, -2px 2px 2px #724a33, 2px 2px 2px #724a33, -2px -2px #724a33, 2px -2px #724a33, -2px 2px #724a33, 2px 2px #724a33; }
+  #UserMemoriaList.limitbreak .userMemoriaIcon .overWrap {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 16px 8px 8px 8px;
+    z-index: 18; }
+  #UserMemoriaList.limitbreak .userMemoriaIcon.canLB .overWrap {
+    display: none; }
+#UserMemoriaList.limitbreak .userMemoriaIcon.lbMax .overWrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 16px 8px 8px 8px;
+    z-index: 18; }
+#UserMemoriaList.limitbreak .userMemoriaIcon.lbMax .overWrap:before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  text-align: center;
+      content: "Ascended";
+      text-shadow: -2px -2px 2px #724a33, 2px -2px 2px #724a33, -2px 2px 2px #724a33, 2px 2px 2px #724a33, -2px -2px #724a33, 2px -2px #724a33, -2px 2px #724a33, 2px 2px #724a33; }
+
+#memoriaSaleCurtain {
+  width: 1024px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30000; }
+#memoriaSaleCurtain.on {
+    display: block; }
+
+#baseContainer.fadein #memoriaSaleGlowWrap {
+  display: block;
+  -webkit-animation: readyFadeIn .2s ease-in;
+  -webkit-animation-fill-mode: forwards; }
+
+#baseContainer.fadeout #memoriaSaleGlowWrap {
+  display: none;
+  display: none !important; }
+
+#memoriaSaleGlowWrap {
+  width: 1024px;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1001; }
+#memoriaSaleGlowWrap.hide {
+    display: none !important; }
+#memoriaSaleGlowWrap.fadeIn {
+  display: block;
+  -webkit-animation: common_fade_in .2s ease-in .3s;
+    -webkit-animation-fill-mode: forwards; }
+#memoriaSaleGlowWrap #memoriaSaleCurtain {
+  width: 1024px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+    z-index: 30000; }
+#memoriaSaleGlowWrap #memoriaSaleCurtain.on {
+      display: block; }
+#memoriaSaleGlowWrap.on {
+  opacity: 1;
+    z-index: 30001; }
+#memoriaSaleGlowWrap.on #memoriaListInfo {
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_headerpanel.png") !important;
+      background-size: 802px 44px; }
+#memoriaSaleGlowWrap.sale #richeWrap {
+    display: block; }
+#memoriaSaleGlowWrap.sale #memoriaListInfo .memoriaSelectNum {
+    display: inline-block; }
+#memoriaSaleGlowWrap #memoriaListInfo {
+  width: 802px;
+  height: 44px;
+  padding: 10px 0 0 7px;
+  position: absolute;
+  top: 60px;
+    left: -webkit-calc(50% - 471px) !important; }
+#memoriaSaleGlowWrap #memoriaListInfo .hasMemoriaNum, #memoriaSaleGlowWrap #memoriaListInfo .memoriaSelectNum {
+  padding-right: 10px;
+  display: inline-block;
+  color: #ffffff;
+      text-align: right; }
+#memoriaSaleGlowWrap #memoriaListInfo .hasMemoriaNum span, #memoriaSaleGlowWrap #memoriaListInfo .memoriaSelectNum span {
+  color: #ffffff;
+        font-size: 18px; }
+#memoriaSaleGlowWrap #memoriaListInfo .hasMemoriaNum {
+  width: 189px;
+  height: 24px;
+  margin-left: 15px;
+  position: relative;
+      line-height: 24px; }
+#memoriaSaleGlowWrap #memoriaListInfo .hasMemoriaNum:before {
+  height: 24px;
+  padding: 0 10px;
+  background-color: #ffffff;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #ff5491;
+  line-height: 24px;
+        content: "Stock";
+        -webkit-border-radius: 5px 0 0 5px; }
+#memoriaSaleGlowWrap #memoriaListInfo .memoriaSelectNum {
+  width: 135px;
+  height: 24px;
+  display: none;
+  position: relative;
+      line-height: 24px; }
+#memoriaSaleGlowWrap #memoriaListInfo .memoriaSelectNum:before {
+  height: 24px;
+  padding: 0 10px;
+  background-color: #ffffff;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #ff5491;
+  line-height: 24px;
+        content: "Selected";
+        -webkit-border-radius: 5px 0 0 5px; }
+#memoriaSaleGlowWrap #richeWrap {
+  width: 164px;
+  height: 104px;
+  display: none;
+  position: absolute;
+  right: 17px;
+    bottom: 124px; }
+#memoriaSaleGlowWrap #richeWrap .pointFrame {
+  width: 122px;
+  display: block;
+      text-align: center; }
+#memoriaSaleGlowWrap #richeWrap .totalRiche .pointFrame {
+  position: absolute;
+  top: -15px;
+      left: -12px; }
+#memoriaSaleGlowWrap #richeWrap .hasRiche .pointFrame {
+  position: absolute;
+  top: 43px;
+      left: -12px; }
+#memoriaSaleGlowWrap #richeWrap #info_sellCount {
+  width: 100%;
+  padding: 0 10px;
+  position: absolute;
+  top: 14px;
+  left: 0;
+      text-align: right; }
+#memoriaSaleGlowWrap #richeWrap #info_totalGold {
+  width: 100%;
+  padding: 0 10px;
+  position: absolute;
+  top: 72px;
+  left: 0;
+      text-align: right; }
+
+.memoriaConfirmPop .popupInner {
+  width: 490px !important;
+  height: 360px !important;
+  top: calc(50% - 166px) !important;
+  left: calc(50% - 245px) !important; }
+
+.memoriaConfirmPop .popupTitle {
+  width: 370px !important; }
+
+.memoriaConfirmPop .popupTextArea {
+  height: 210px !important;
+  font-size: 20px !important; }
+
+.memoriaConfirmPop #memoriaPopCardArray {
+  margin-top: 30px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center; }
+.memoriaConfirmPop #memoriaPopCardArray li {
+  width: 38px;
+  height: 38px;
+  margin: 0 2px;
+  background: url("/magica/resource/image_web/page/memoria/memoria_empty.png");
+    display: block; }
+.memoriaConfirmPop #memoriaPopCardArray li img {
+  width: 38px;
+      height: 38px; }

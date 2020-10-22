@@ -1,0 +1,398 @@
+<div id="GachaProbability" class="probability">
+	<!-- タブ -->
+	<div id="btnWrap">
+		<ul id="menuPanel" class="common_tab t_pink">
+			<li class="btn se_tabs TE probability current" data-gacha-type="probability"><span> Rate</span></li>
+			<li class="btn se_tabs TE magicGirl" data-gacha-type="magicGirl"><span>Magical Girls</span></li>
+			<li class="btn se_tabs TE memoria" data-gacha-type="memoria"><span>Memoria</span></li>
+		</ul>
+	</div>
+
+	<!-- スクロール部 -->
+	<div id="scrollInner">
+		<div class="scrollInnerWrap">
+
+			<!-- 排出率一覧 -->
+			<div class="probabilityWrap commonFrame3">
+				<h2>Fate Weave Rates</h2>
+				<table>
+					<tr class="probabilityTitles">
+						<td colspan="2" class="blankCol"></td>
+						<% var probLen = nowList.probabilityBase.length; %>
+						<%
+							_.each(nowList.probabilityBase,function(model,index){
+								// 最大文字長は6。オーバーした時用
+								var addStyle = "";
+								if(model.displayName.length > 7){
+									<!-- addStyle = ' style="font-size:'+ ((130 / model.displayName.length) | 0) + 'px;"';-->
+								}
+						%>
+							<th<% if(addStyle){ %><%= addStyle %><% } %>><%= model.displayName %></th>
+						<% }) %>
+					</tr>
+					<tr>
+						<th class="probabilityType" rowspan="3">Magical Girls</th>
+						<td class="starCol card"><span></span><span></span><span></span><span></span></td>
+						<% for(var i=0;i<probLen;i++){ %>
+							<td>
+								<% if(!nowList.probMap.CARD_4 || !nowList.probMap.CARD_4[i]){ %>
+									-
+								<% }else{ %>
+									<%= nowList.probMap.CARD_4[i] %>
+								<% } %>
+							</td>
+						<% } %>
+					</tr>
+					<tr>
+						<td class="starCol card"><span></span><span></span><span></span></td>
+						<% for(var i=0;i<probLen;i++){ %>
+							<td>
+								<% if(!nowList.probMap.CARD_3 || !nowList.probMap.CARD_3[i]){ %>
+									-
+								<% }else{ %>
+									<%= nowList.probMap.CARD_3[i] %>
+								<% } %>
+							</td>
+						<% } %>
+					</tr>
+					<tr>
+						<td class="starCol card"><span></span><span></span></td>
+						<% for(var i=0;i<probLen;i++){ %>
+							<td>
+								<% if(!nowList.probMap.CARD_2 || !nowList.probMap.CARD_2[i]){ %>
+									-
+								<% }else{ %>
+									<%= nowList.probMap.CARD_2[i] %>
+								<% } %>
+							</td>
+						<% } %>
+					</tr>
+					<tr>
+						<th class="probabilityType" rowspan="3">Memoria</th>
+						<td class="starCol memoria"><span></span><span></span><span></span><span></span></td>
+						<% for(var i=0;i<probLen;i++){ %>
+							<td>
+								<% if(!nowList.probMap.PIECE_4 || !nowList.probMap.PIECE_4[i]){ %>
+									-
+								<% }else{ %>
+									<%= nowList.probMap.PIECE_4[i] %>
+								<% } %>
+							</td>
+						<% } %>
+					</tr>
+					<tr>
+						<td class="starCol memoria"><span></span><span></span><span></span></td>
+						<% for(var i=0;i<probLen;i++){ %>
+							<td>
+								<% if(!nowList.probMap.PIECE_3 || !nowList.probMap.PIECE_3[i]){ %>
+									-
+								<% }else{ %>
+									<%= nowList.probMap.PIECE_3[i] %>
+								<% } %>
+							</td>
+						<% } %>
+					</tr>
+					<tr>
+						<td class="starCol memoria"><span></span><span></span></td>
+						<% for(var i=0;i<probLen;i++){ %>
+							<td>
+								<% if(!nowList.probMap.PIECE_2 || !nowList.probMap.PIECE_2[i]){ %>
+									-
+								<% }else{ %>
+									<%= nowList.probMap.PIECE_2[i] %>
+								<% } %>
+							</td>
+						<% } %>
+					</tr>
+				</table>
+
+				<p class="tenTimeText"><%= probText %></p>
+			</div>
+
+			<!-- ピックアップ表示(キャラ) -->
+			<% if(nowList.pickUpCard && nowList.pickUpCard.length > 0){ %>
+			<div class="pickUpWrap commonFrame3 CARD">
+				<h2>Featured Magical Girl(s)</h2>
+				<table>
+					<tr class="probabilityTitles">
+						<td colspan="2" class="blankCol"></td>
+						<%
+							_.each(nowList.probabilityBase,function(model,index){
+								// 最大文字長は6。オーバーした時用
+								var addStyle = "";
+								if(model.displayName.length > 7){
+									<!--addStyle = ' style="font-size:'+ ((110 / model.displayName.length) | 0) + 'px;"';-->
+								}
+						%>
+							<th><div<% if(addStyle){ %><%= addStyle %><% } %>><%= model.displayName %></div></th>
+						<% }) %>
+					</tr>
+					<%
+						_.each(nowList.pickUpCard,function(models,index){
+							var pickUpCard     = models.card;
+							var pickUpCardRare = pickUpCard.rarity.substr(-1);
+							var addClass       = models.addClass;
+					%>
+					<tr class="<%= pickUpCard.type %><%= addClass %>">
+						<th class="firstCol" rowspan="2">
+							<div class="userCharaIcon <%= pickUpCard.rarity %> <%= pickUpCard.attributeId %>">
+								<% att = "att_" + pickUpCard.attributeId.toLowerCase() %>
+								<% star = "star_" + pickUpCard.rarity.toLowerCase() %>
+								<% frame = "frame_" + pickUpCard.rarity.toLowerCase() %>
+								<% bg = "bg_" + pickUpCard.attributeId.toLowerCase() %>
+								<span class="att" data-nativebgkey="<%= att %>" data-src="resource/image_native/card/frame/<%= att %>.png"></span>
+								<span class="star" data-nativebgkey="<%= star %>" data-src="resource/image_native/card/frame/<%= star %>.png"></span>
+								<span class="rank" data-nativebgkey="<%= frame %>" data-src="resource/image_native/card/frame/<%= frame %>.png"></span>
+								<img data-nativeimgkey="card_<%= pickUpCard.cardId %>_f" data-src='resource/image_native/card/image/card_<%= pickUpCard.cardId %>_f.png'>
+								<span class="bg" data-nativebgkey="<%= bg %>" data-src="resource/image_native/card/frame/<%= bg %>.png"></span>
+							</div>
+						</th>
+						<td class="starWrap">
+							<% var maxStar = (pickUpCard.maxRarity !== undefined) ? pickUpCard.maxRarity.substr(-1) : pickUpCardRare; %>
+							<% for(var i=0;i<maxStar;i++){ %><span<% if(i<pickUpCardRare){%> class="on"<%}%>></span><% } %>
+						</td>
+						<% for(var i=0;i<probLen;i++){ %>
+							<td rowspan="2" class="proNum<% if(i===(probLen-1)){ %> lastCol<% } %>">
+								<% if(!pickUpCard.probability[i]){ %>
+									-
+								<% }else{ %>
+									<%= pickUpCard.probability[i] %>%
+								<% } %>
+							</td>
+						<% } %>
+					</tr>
+					<tr class="<%= pickUpCard.type %><%= addClass %>">
+						<td class="c_purple dischargeNameWrap">
+							<%= pickUpCard.displayName %>
+							<% if(pickUpCard.subDisplayName) { %>
+								<br><span class='c_purple title'> <%= pickUpCard.subDisplayName %></span>
+							<% } %>
+						</td>
+					</tr>
+					<% }); %>
+				</table>
+			</div>
+			<% } %>
+
+			<!-- ピックアップ表示(メモリア) -->
+			<% if(nowList.pickUpMemoria && nowList.pickUpMemoria.length > 0){ %>
+			<div class="pickUpWrap commonFrame3 PIECE">
+				<h2>Featured Memoria</h2>
+				<table>
+					<tr class="probabilityTitles">
+						<td colspan="2" class="blankCol"></td>
+						<%
+							_.each(nowList.probabilityBase,function(model,index){
+								// 最大文字長は6。オーバーした時用
+								var addStyle = "";
+								if(model.displayName.length > 7){
+									<!--addStyle = ' style="font-size:'+ ((110 / model.displayName.length) | 0) + 'px;"'; -->
+								}
+						%>
+							<th><div<% if(addStyle){ %><%= addStyle %><% } %>><%= model.displayName %></div></th>
+						<% }) %>
+					</tr>
+				<%
+					_.each(nowList.pickUpMemoria,function(models,index){
+						var pickUpMemoria = models.memoria;
+						var pickUpMemoriaRare = pickUpMemoria.rarity.substr(-1) | 0;
+						var addClass = models.addClass;
+				%>
+					<tr class="<%= pickUpMemoria.type %><%= addClass %>">
+						<th class="pieceIcon firstCol" rowspan="2">
+							<img data-nativeimgkey="memoria_<%= pickUpMemoria.pieceId %>_s" data-src="resource/image_native/memoria/memoria_<%= pickUpMemoria.pieceId %>_s.png">
+						</th>
+						<td class="starWrap">
+							<% for(var p=0;p<pickUpMemoriaRare;p++){ %><span<% if(p<pickUpMemoriaRare){%> class="memoriaStar on"<%}%>></span><% } %>
+						</td>
+						<% for(var n=0;n<probLen;n++){ %>
+							<td rowspan="2" class="proNum<% if(n===(probLen-1)){ %> lastCol<% } %>">
+								<% if(!pickUpMemoria.probability[n]){ %>
+									-
+								<% }else{ %>
+									<%= pickUpMemoria.probability[n] %>%
+								<% } %>
+							</td>
+						<% } %>
+					</tr>
+					<tr class="<%= pickUpMemoria.type %><%= addClass %>">
+						<td class="c_purple dischargeNameWrap">
+							<%= pickUpMemoria.displayName %>
+							<% if(pickUpMemoria.subDisplayName) { %>
+								<br><span class='c_purple title'> <%= pickUpMemoria.subDisplayName %></span>
+							<% } %>
+						</td>
+					</tr>
+				<% }); %>
+				</table>
+			</div>
+			<% } %>
+
+			<!-- 排出一覧 -->
+			<div class="dischargeListWrap commonFrame3">
+				<h2>Details</h2>
+
+				<!-- キャラの一覧作成 -->
+				<% for(var i = 5; i > 0; i--){ %>
+					<!-- 該当レアリティがある場合 -->
+					<% if(nowList.gachaDrawList.card["RANK_"+i]){ %>
+
+						<!-- 一覧の作成(カード) -->
+						<table>
+							<tr class="probabilityTitles CARD">
+								<td class="blankCol">
+									<div class="rareWrap CARD">
+										<% for(var s = 0; s < i; s++){ %><span class="star on"></span><% } %>
+									</div>
+								</td>
+								<td class="blankCol"></td>
+								<%
+									_.each(nowList.probabilityBase,function(model,index){
+										// 最大文字長は6。オーバーした時用
+										var addStyle = "";
+										if(model.displayName.length > 7){
+											<!-- addStyle = ' style="font-size:'+ ((110 / model.displayName.length) | 0) + 'px;"'; -->
+										}
+								%>
+									<th><div<% if(addStyle){ %><%= addStyle %><% } %>><%= model.displayName %></div></th>
+								<% }) %>
+							</tr>
+						<% _.each(nowList.gachaDrawList.card["RANK_"+i],function(list,index){ %>
+							<%
+								// genericValue判断用
+								var genericKey   = [
+									"LIMITED"  // 期間限定
+								];
+								var genericClass = {
+									"LIMITED":"limited"  // 期間限定
+								};
+								var addClass = "";
+								if(list.genericValue){
+									var genericValue = list.genericValue.split(",");
+									genericValue = genericValue.concat()
+									_.each(genericKey,function(target,index){
+										if(genericValue.indexOf(target) > -1 && genericClass[target]){
+											addClass += " "+genericClass[target]
+										}
+									});
+								}
+							%>
+							<tr class="CARD <%= addClass %>">
+								<th class="firstCol" rowspan="2">
+									<div class="userCharaIcon <%= list.rarity %> <%= list.attributeId %>">
+										<% att = "att_" + list.attributeId.toLowerCase() %>
+										<% star = "star_" + list.rarity.toLowerCase() %>
+										<% frame = "frame_" + list.rarity.toLowerCase() %>
+										<% bg = "bg_" + list.attributeId.toLowerCase() %>
+										<span class="att" data-nativebgkey="<%= att %>" data-src="resource/image_native/card/frame/<%= att %>.png"></span>
+										<span class="star" data-nativebgkey="<%= star %>" data-src="resource/image_native/card/frame/<%= star %>.png"></span>
+										<span class="rank" data-nativebgkey="<%= frame %>" data-src="resource/image_native/card/frame/<%= frame %>.png"></span>
+										<img data-nativeimgkey="card_<%= list.cardId %>_f" data-src='resource/image_native/card/image/card_<%= list.cardId %>_f.png'>
+										<span class="bg" data-nativebgkey="<%= bg %>" data-src="resource/image_native/card/frame/<%= bg %>.png"></span>
+									</div>
+								</th>
+								<td class="starWrap">
+									<% var maxStar = (list.maxRarity !== undefined) ? list.maxRarity.substr(-1) : i; %>
+									<% for(var s=0;s<maxStar;s++){ %><span<% if(s<i){%> class="on"<%}%>></span><% } %>
+								</td>
+								<% for(var n=0;n<probLen;n++){ %>
+									<td rowspan="2" class="proNum<% if(n===(probLen-1)){ %> lastCol<% } %>">
+										<% if(!list.probability[n]){ %>
+											-
+										<% }else{ %>
+											<%= list.probability[n] %>%
+										<% } %>
+									</td>
+								<% } %>
+							</tr>
+							<tr class="CARD <%= addClass %>">
+								<td class="c_purple dischargeNameWrap">
+									<%= list.displayName %>
+									<% if(list.subDisplayName) { %>
+										<br><span class='c_purple title'> <%= list.subDisplayName %></span>
+									<% } %>
+								</td>
+							</tr>
+						<% }); %>
+						</table>
+
+					<% } %>
+
+					<!-- メモリアの表示 -->
+					<% if(nowList.gachaDrawList.piece["RANK_"+i]){ %>
+
+
+						<!-- 一覧の作成(メモリア) -->
+						<table>
+							<tr class="probabilityTitles PIECE">
+								<td class="blankCol">
+									<div class="rareWrap PIECE">
+										<% for(var s = 0; s < i; s++){ %><span class="star on"></span><% } %>
+									</div>
+								</td>
+								<td class="blankCol"></td>
+								<%
+									_.each(nowList.probabilityBase,function(model,index){
+										// 最大文字長は6。オーバーした時用
+										var addStyle = "";
+										if(model.displayName.length > 7){
+											<!-- addStyle = ' style="font-size:'+ ((110 / model.displayName.length) | 0) + 'px;"';-->
+										}
+								%>
+									<th><div<% if(addStyle){ %><%= addStyle %><% } %>><%= model.displayName %></div></th>
+								<% }) %>
+							</tr>
+						<% _.each(nowList.gachaDrawList.piece["RANK_"+i],function(list,index){ %>
+							<%
+								// genericValue判断用
+								var genericKey   = [
+									"LIMITED"  // 期間限定
+								];
+								var genericClass = {
+									"LIMITED":"limited"  // 期間限定
+								};
+								var addClass = "";
+								if(list.genericValue){
+									var genericValue = list.genericValue.split(",");
+									genericValue = genericValue.concat()
+									_.each(genericKey,function(target,index){
+										if(genericValue.indexOf(target) > -1 && genericClass[target]){
+											addClass += " "+genericClass[target]
+										}
+									});
+								}
+							%>
+							<tr class="PIECE<%= addClass %>">
+								<th class="pieceIcon firstCol" rowspan="2">
+									<img data-nativeimgkey="memoria_<%= list.pieceId %>_s" data-src="resource/image_native/memoria/memoria_<%= list.pieceId %>_s.png">
+								</th>
+								<td class="starWrap">
+									<% for(var p=0;p<i;p++){ %><span<% if(p<i){%> class="memoriaStar on"<%}%>></span><% } %>
+								</td>
+								<% for(var n=0;n<probLen;n++){ %>
+									<td rowspan="2" class="proNum<% if(n===(probLen-1)){ %> lastCol<% } %>">
+										<% if(!list.probability[n]){ %>
+											-
+										<% }else{ %>
+											<%= list.probability[n] %>%
+										<% } %>
+									</td>
+								<% } %>
+							</tr>
+							<tr class="PIECE<%= addClass %>">
+								<td class="c_purple dischargeNameWrap">
+									<%= list.displayName %>
+									<% if(list.subDisplayName) { %>
+										<br><span class='c_purple title'> <%= list.subDisplayName %></span>
+									<% } %>
+								</td>
+							</tr>
+						<% }); %>
+						</table>
+					<% } %>
+
+				<% } %>
+			</div>
+		</div>
+	</div>
+</div>

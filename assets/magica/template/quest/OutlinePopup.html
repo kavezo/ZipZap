@@ -1,0 +1,20 @@
+<% var cardId = null; %>
+<div class="popupInner">
+
+	<div id="outline">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+
+		<div class="outlineWrap commonFrame3">
+			<p class="popupTitle common_title"><%= model.title %></p>
+			<p class="outline"><%= model.outline %></p>
+		</div>
+		<% if(model.defaultCardId) { %>
+			<% cardId = model.defaultCardId; %>
+		<% } %>
+		<% if(cardId) { %>
+			<div class="charaImg">
+				<img data-nativeimgkey="card_<%= cardId %>_l" data-src="resource/image_native/card/image/card_<%= cardId %>_l.png" alt="">
+			</div>
+		<% } %>
+	</div>
+</div>

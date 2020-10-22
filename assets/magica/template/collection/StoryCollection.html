@@ -1,0 +1,157 @@
+<div id="StoryCollection">
+	<div id="tabBtn" class="commonFrame2">
+		<div class="hiddenWrap" id="storyTabScroll">
+		<ul class="common_tab t_gold">
+			<li class="TE btn se_tabs current" data-wrap="main"><span>Main Story</span></li>
+			<li class="TE btn se_tabs" data-wrap="sub"><span>Another Story</span></li>
+			<li class="TE btn se_tabs" data-wrap="chara"><span>Magical Girl Stories</span></li>
+			<li class="TE btn se_tabs" data-wrap="arena"><span>Mirrors Story</span></li>
+			<li class="TE btn se_tabs event none" data-wrap="event"><span>Event Story</span></li>
+			<li class="TE btn se_tabs special none" data-wrap="special"><span>Special</span></li>
+			<li class="TE btn se_tabs ep1ending none"><span>Ending Movie</span></li>
+			<li class="TE btn se_tabs magirepo linkBtn" data-href="#/MagiRepo"></li>
+		</ul>
+	</div>
+	</div>
+	<div id="listWrap" class="commonFrame1 main">
+		<h2 id="listTitle">Main Story</h2>
+		<div id="main">
+			<div id="mainHiddenWrap" class="hiddenWrap">
+				<div class="scrollInner">
+					<div class="wrap">
+						<div class="chapterTitleWrap commonFrame4 se_tabs" data-chapter="00">
+							<h3 class="chapterNumber">Prologue</h3>
+							<div class="panArrow chapterIdPan00"></div>
+						</div>
+						<div class="sectionListWrap chapterId00">
+							<div class="sectionWrap commonFrame3 CLEARED">
+								<span class="sectionTitle">Again, Another Witch</span>
+								<h2 class="sectionNumber">Prologue</h2>
+								<p class="sb_gold_01 se_decide TE storyStart prologueStart"><span class="b_screen"></span><span class="buttonUpper c_gold"></span>Playback</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sub"><div id="subHiddenWrap" class="hiddenWrap"><div class="scrollInner"></div></div></div>
+		<div id="chara"><div id="charaHiddenWrap" class="hiddenWrap"><div class="scrollInner"></div></div></div>
+		<div id="arena"><div id="arenaHiddenWrap" class="hiddenWrap"><div class="scrollInner"></div></div></div>
+		<div id="event"><div id="eventHiddenWrap" class="hiddenWrap"><div class="scrollInner"></div></div></div>
+		<div id="special"><div id="specialHiddenWrap" class="hiddenWrap"><div class="scrollInner"></div></div></div>
+	</div>
+</div>
+
+<!-- ストーリー -->
+<script type="text/template" id="ChapterTemp">
+		<div class='chapterTitleWrap commonFrame4 se_tabs' data-chapter='<%="<%= model.chapterId %\>"%>'>
+		<%="<% if (model.chapterNoForView) { %\>"%>
+			<h3 class="chapterNumber">Ch.<%="<%= model.chapterNoForView %\>"%></h3>
+		<%="<% } else if(model.cardId) { %\>"%>
+			<div class="faceImg">
+				<img data-nativeimgkey='card_<%="<%= model.displayCardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= model.displayCardId %\>"%>_f.png' alt="">
+			</div>
+		<%="<% } %\>"%>
+			<div class="chapterTitle"><%="<%= model.title %\>"%></div>
+			<div class='panArrow chapterIdPan<%="<%= model.chapterId %\>"%>'></div>
+		</div>
+		<div class='sectionListWrap chapterId<%="<%= model.chapterId %\>"%>'>
+		</div>
+</script>
+
+<script type="text/template" id="SectionTemp">
+		<span class="sectionTitle"><%="<%= model.title %\>"%></span>
+	<%="<% if(model.chapterNoForView) { %\>"%>
+		<h2 class="sectionNumber">Ch.<%="<%= model.chapterNoForView %\>"%>: Ep.<%="<%= model.sectionNo %\>"%></h2>
+		<p class="sb_gold_01 se_decide TE outline small"><span class="b_screen"></span>The Story<br>So Far</p>
+	<%="<% } else if(model.sectionNo) { %\>"%>
+		<h2 class="sectionNumber"><%="<%= model.sectionNo %\>"%></h2>
+	<%="<% } %\>"%>
+	<p class="sb_gold_01 se_decide TE storyStart"><span class="b_screen"></span><span class="buttonUpper c_gold"></span>Playback</p>
+	<p class="sb_gold_01 se_decide TE nextQuest"><span class="b_screen"></span><span class="buttonUpper c_gold">NEXT</span><br>Quest</p>
+	<p class="sb_gold_01 TE lockQuest"><span class="b_screen"></span><span class="buttonUpper c_gold">UNLOCK</span><br>Quest</p>
+</script>
+
+<script type="text/template" id="OpenConditionPopupTemp">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle common_title">Requirements to Unlock Story</p>
+
+		<div class="popupTextArea">
+			<%="<% _.forEach(model.conditionList,function(txt,index){ %\>"%>
+				<dl class="openConditionDl">
+					<dt><%="<%= index+1 %\>"%></dt>
+					<dd><%="<%= txt %\>"%></dd>
+				</dl>
+			<%="<% }) %\>"%>
+		</div>
+		<!-- <table class="popupBtnArea" width="400" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><span class="cancelBtn se_cancel popupCloseBtn btn b_pink TE"><span class='b_screen'></span>OK</span></td>
+			</tr>
+		</table> -->
+	</div>
+</script>
+
+<script type="text/template" id="EventStoryTempCommon">
+	<div class='chapterTitleWrap commonFrame4 se_tabs' data-chapter='Event<%="<%= model.eventId %\>"%>'>
+		<div class="chapterTitle">
+			<%="<% var eventDirArr = {}; %\>"%>
+			<%="<% eventDirArr.ARENAMISSION = 'arenaMission'%\>"%>
+			<%="<% var eventDir = (!eventDirArr[model.eventType]) ? model.eventType.toLowerCase() : eventDirArr[model.eventType]; %\>"%>
+			<img src="/magica/resource/image_web/event/<%='<%= eventDir %\>'%>/<%='<%= model.eventId %\>'%>/story_collection_title.png" class="titleWrapper">
+		</div>
+		<div class='panArrow chapterIdPanEvent<%="<%= model.eventId %\>"%>'></div>
+	</div>
+	<div class='sectionListWrap chapterIdEvent<%="<%= model.eventId %\>"%>'>
+		<div class="eventMultiStory">
+			<%="<% _.forEach(model.storyList,function(txt,index){ %\>"%>
+			<span class="mb_white TE se_decide eventStoryStart" data-ids="<%='<%= txt.storyIds %\>'%>"><span class="b_screen"></span><%="<%= txt.storyTitle %\>"%></span>
+			<%="<% }) %\>"%>
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="EventStoryTempBranch">
+	<div class='chapterTitleWrap commonFrame4 se_tabs' data-chapter='Event<%="<%= model.eventId %\>"%>'>
+		<div class="chapterTitle">
+			<img src="/magica/resource/image_web/event/<%='<%= model.eventType.toLowerCase() %\>'%>/<%='<%= model.eventId %\>'%>/story_collection_title.png" class="titleWrapper">
+		</div>
+		<div class='panArrow chapterIdPanEvent<%="<%= model.eventId %\>"%>'></div>
+	</div>
+	<div class='sectionListWrap chapterIdEvent<%="<%= model.eventId %\>"%>'>
+			<%="<% _.forEach(model.storyList,function(txt,index){ %\>"%>
+			<div class="commonFrame3 storyWrap">
+				<%="<% if(txt.charaId !== 9900){ %\>"%>
+				<div class="branchStoryChara">
+					<p class="charaTxt"><%="<%= txt.pointTitle %\>"%></p>
+					<img src="/magica/resource/image_web/event/<%='<%= model.eventType.toLowerCase() %\>'%>/<%='<%= model.eventId %\>'%>/quest_header_<%='<%= txt.charaId %\>'%>.png">
+				</div>
+				<span class="branchStoryTitle"><%="<%= txt.storyTitle %\>"%></span>
+				<%="<% } else { %\>"%>
+					<div class="branchStoryChara">
+						<p class="charaTxt"><%="<%= txt.pointTitle %\>"%></p>
+						<img src="/magica/resource/image_web/event/branch/common/quest_header_9900.png">
+					</div>
+				<%="<% } %\>"%>
+				<p class="sb_gold_01 TE se_decide eventStoryStart" data-ids="<%='<%= txt.storyIds %\>'%>"><span class="b_screen"></span>Replay</p>
+			</div>
+			<%="<% }) %\>"%>
+	</div>
+</script>
+
+<script type="text/template" id="SpecialStoryTemp">
+	<div class='chapterTitleWrap commonFrame4 se_tabs' data-chapter='Special<%="<%= model.campaignId %\>"%>'>
+		<div class="chapterTitle">
+			<img src="/magica/resource/image_web/campaign/story/<%='<%= model.campaignId %\>'%>/story_collection_title.png" class="titleWrapper">
+		</div>
+		<div class='panArrow chapterIdPanSpecial<%="<%= model.campaignId %\>"%>'></div>
+	</div>
+	<div class='sectionListWrap chapterIdSpecial<%="<%= model.campaignId %\>"%>'>
+		<div class="eventMultiStory">
+			<%="<% _.forEach(model.storyList,function(txt,index){ %\>"%>
+			<span class="mb_white TE se_decide eventStoryStart" data-ids="<%='<%= txt.storyIds %\>'%>"><span class="b_screen"></span><%="<%= txt.storyTitle %\>"%></span>
+			<%="<% }) %\>"%>
+		</div>
+	</div>
+</script>

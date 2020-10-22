@@ -1,0 +1,23 @@
+<div class="effectWrap">
+	<div class="effect01"></div>
+	<div class="effect02"></div>
+</div>
+
+<% if(model.giftId) { %>
+	<% if(!model.isSet) { %>
+		<p class="numWrap c_white"><span class="hasNum <%= (model.canSet) ? 'ts_pink' : 'ts_gold' %>"><%= model.hasNum %></span><span class="sla ts_gold">/</span><span class="needNum ts_gold"><%= model.needNum %></span></p>
+	<% } %>
+
+	<% if(img['gift_a_' + model.giftId]) { %>
+		<% var _img = ''; %>
+		<% if(!window.isBrowser) _img += 'data:image/png;base64,' %>
+		<% _img += img['gift_a_' + model.giftId] %>
+
+		<img src='<%= _img %>' alt=''>
+	<% } else { %>
+	<img data-nativeimgkey='gift_a_<%= model.giftId %>' data-src='resource/image_native/gift/item_gift_a_<%= model.giftId %>.png'>
+	<% } %>
+
+	<p class="bonusWrap"><%= model.bonusCodeDisp %>+<%= model.bonusNum %>%</p>
+<% } %>
+<div class="bg"></div>

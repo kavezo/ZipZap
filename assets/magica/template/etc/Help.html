@@ -1,0 +1,34 @@
+<div id="HelpTop">
+	<div id="menuWrap" class="commonFrame2">
+		<div class="hiddenWrap" id="menuScroll">
+			<ul id="menuPanel" class="scrollInner common_tab t_pink">
+				<% _.each(model, function(section,index){  %>
+					<li class="TE btn se_tabs" data-type="<%= section.type %>"><span><%= section.title %></span></li>
+				<% }); %>
+				<li class="TE btn se_tabs" data-type="contact"><span>Contact Us</span></li>
+			</ul>
+		</div>
+	</div>
+	<div id="helpWrap" class="commonFrame1">
+		<h2 id="titleWrap">Help</h2>
+		<div id="mainWrap">
+			<div id="scrollWrap" class="hiddenWrap">
+				<% _.each(model, function(section,index){  %>
+				<div class="helpSubWrap <%= section.type %>Wrap<% if(model[0].type !== section.type){ %> none<% } %>">
+					<% _.each(section.cols, function(col,index){ %>
+					<div class="colWrap">
+						<div class="colLow se_tabs commonFrame4"><%= col.title %><div class="panArrow"></div></div>
+						<div class="colText"><%= col.text %></div>
+					</div>
+					<% }); %>
+				</div>
+				<% }); %>
+				<div class="helpSubWrap contactWrap none">
+					<div id="faqLinkBtn" class="btn b_white TE"><span class="b_screen"></span>FAQ/Contact</div>
+					<p class="yourUserId">Your Player ID is &nbsp;<span class="c_red"><%= gameUser.inviteCode %></span>&nbsp;.</p>
+					<div id="idCopyBtn" class="btn b_white TE"><span class="b_screen"></span>Copy Player ID</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

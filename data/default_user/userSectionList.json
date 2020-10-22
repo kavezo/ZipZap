@@ -1,0 +1,575 @@
+[
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 101103,
+        "section": {
+            "sectionId": 101103,
+            "questType": "MAIN",
+            "genericId": 11,
+            "genericIndex": 3,
+            "areaMapId": 11013,
+            "imagePath": "21163",
+            "areaDetailName": "Shinsei Ward - Ruins",
+            "title": "The Girl in My Dream",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "That Kyubey is definitely really, really important to me!",
+            "outline": "Momoko Togame helped Iroha and introduced her to the Coordinator, Mitama Yakumo. After Mitama enhanced Iroha's magic, she asked her what wish she made to become a Magical Girl, and Iroha realized she had forgotten. Sensing that it must have something to do with the girl in her dreams, she set out to find the small Kyubey again. However, Yachiyo Nanami blocked her path and challenged her to a competition to see who can defeat the Witch of the Labyrinth the small Kyubey was in first.",
+            "ap": 5,
+            "difficulty": 5,
+            "clearRewardCode": "LIVE2D_1001_02",
+            "clearReward": {
+                "presentType": "LIVE2D",
+                "quantity": 1,
+                "genericCode": "02",
+                "genericId": 1001,
+                "displayName": "Iroha Tamaki's [School Uniform]"
+            },
+            "openEnemy": "115,116,117,118,119,120,121,122,123",
+            "openEnemyList": [
+                {
+                    "enemyId": 115,
+                    "enemyNo": 7201,
+                    "type": 2,
+                    "name": "Symbol Witch Minion I",
+                    "title": "Role: Reproducer",
+                    "description": "These Familiars of the Symbol Witch are called Haunting Chairs. They grow and transform by absorbing vital energy from humans. Compared to other Familiars they can change shape with a small amount of vital energy. Their primary goal is reproduction. Once they have grown enough, they can produce other Familiars, despite not being Witches. They grow, thoroughly enjoying the convenience and completeness of their forms.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 116,
+                    "enemyNo": 7202,
+                    "type": 2,
+                    "name": "Symbol Witch Minion II",
+                    "title": "Role: Reproducer",
+                    "description": "These Familiars of the Symbol Witch are called Haunting Chairs. They grow and transform by absorbing vital energy from humans. Compared to other Familiars they can change shape with a small amount of vital energy. Their primary goal is reproduction. Once they have grown enough, they can produce other Familiars, despite not being Witches. They grow, thoroughly enjoying the convenience and completeness of their forms.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 117,
+                    "enemyNo": 7203,
+                    "type": 2,
+                    "name": "Symbol Witch Minion III",
+                    "title": "Role: Reproducer",
+                    "description": "These Familiars of the Symbol Witch are called Haunting Chairs. They grow and transform by absorbing vital energy from humans. Compared to other Familiars they can change shape with a small amount of vital energy. Their primary goal is reproduction. Once they have grown enough, they can produce other Familiars, despite not being Witches. They grow, thoroughly enjoying the convenience and completeness of their forms.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 118,
+                    "enemyNo": 7204,
+                    "type": 2,
+                    "name": "Symbol Witch Minion IV",
+                    "title": "Role: Reproducer",
+                    "description": "These Familiars of the Symbol Witch are called Haunting Chairs. They grow and transform by absorbing vital energy from humans. Compared to other Familiars they can change shape with a small amount of vital energy. Their primary goal is reproduction. Once they have grown enough, they can produce other Familiars, despite not being Witches. They grow, thoroughly enjoying the convenience and completeness of their forms.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 119,
+                    "enemyNo": 7211,
+                    "type": 2,
+                    "name": "Mirror Witch Minion I",
+                    "title": "Role: Bellgirl",
+                    "description": "One of the house keepers at the Manor of Mirrors. Like its brethren, it loves to entertain guests. When it finds a guest, it rings a bell, and then gives them a big welcoming hug. Its body is made of canvas that can copy the vital information of the guest it embraces. This stolen information is used to make a copy of the guest.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 120,
+                    "enemyNo": 7212,
+                    "type": 2,
+                    "name": "Mirror Witch Minion II",
+                    "title": "Role: Guard",
+                    "description": "A security device in the Manor of Mirrors. In Mirrors, however, everyone is welcome, suspicious or not. It has had its telescopic lens enhanced so that it can film guests in the distance more clearly. Thanks to this enhancement, it can now project a greeting kiss to guests from afar.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 121,
+                    "enemyNo": 7213,
+                    "type": 2,
+                    "name": "Mirror Witch Minion III",
+                    "title": "Role: Copier",
+                    "description": "One of the Manor of Mirrors' house keepers. It can create a jelly man inside its body to entertain guests. It can also make high-quality copies of guests, but that takes far more time than just crafting a jelly man.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 122,
+                    "enemyNo": 7102,
+                    "type": 2,
+                    "name": "Mirror Witch Minion IV",
+                    "title": "Role: Solicitor",
+                    "description": "A Familiar that waits outside the Manor of Mirrors handing out invitations. When it spots a Magical Girl, it throws a lethal invitation letter at her. That said, it genuinely wants to invite people to the Manor. Some suspect it just believes it is easier to carry the body than actually get a living Magical Girl to go inside.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 123,
+                    "enemyNo": 7101,
+                    "type": 2,
+                    "name": "????? Witch Minion",
+                    "description": "These swallow-like Familiars are everywhere in Kamihama. They seem to be collecting magic as offerings to their Witch. They target Magical Girls and steal not only their magic but also their memories, visions, and even emotions. They have also been known to target other Witches. Hunting in a group, they utilize their anchor-shaped legs to capture them. They are uninterested in normal humans without magic, because they don't make good offerings.",
+                    "designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ],
+            "openFunctions": "FRIEND,CHANGE_NAME"
+        },
+        "canPlay": true,
+        "cleared": true,
+        "clearedAt": "2020/09/14 20:54:41",
+        "createdAt": "2020/09/14 20:43:11"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 400051,
+        "section": {
+            "sectionId": 400051,
+            "questType": "COMPOSE",
+            "dayOfTheWeekQuestType": "FRIDAY",
+            "title": "Labyrinth of Enhancement",
+            "openEnemyList": []
+        },
+        "canPlay": true,
+        "cleared": false,
+        "createdAt": "2020/10/16 22:06:12",
+        "endAt": "2020/10/17 00:00:00"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 101102,
+        "section": {
+            "sectionId": 101102,
+            "questType": "MAIN",
+            "genericId": 11,
+            "genericIndex": 2,
+            "areaMapId": 11013,
+            "imagePath": "21143",
+            "areaDetailName": "Shinsei Ward - Park",
+            "title": "Kamihama Magical Girls",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Why did I get beaten so badly by those Familiars?",
+            "outline": "Iroha ended up saving a lone Magical Girl in the midst of her search for whatever is causing her strange dreams. When the girl heard about the small Kyubey that Iroha was looking for, she told her that she'd seen it inside the very Witch's Labyrinth where Iroha had saved her. Iroha searched the Labyrinth and found the small Kyubey, but was immediately attacked by Familiars. Overwhelmed by their brutal attacks, she lost consciousness.",
+            "ap": 5,
+            "difficulty": 3,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openEnemy": "105,106",
+            "openEnemyList": [
+                {
+                    "enemyId": 105,
+                    "enemyNo": 6001,
+                    "type": 1,
+                    "name": "Bunny Eared Witch",
+                    "title": "Nature: Princess",
+                    "description": "This Witch collects cute things from inside her Labyrinth. She regards herself as the personification of cuteness, and loves to be praised for her appearance and accessories. For this reason, her attacks can be avoided by complimenting her on her looks. However, if she senses even the slightest negativity, she will lose her temper and throw a tantrum, so one needs to be extra careful when flattering her. Because of her fickle nature, even if she looks like she is in a good mood, one should not let their guard down, as she is known to bite and impale things with spears.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 106,
+                    "enemyNo": 7001,
+                    "type": 2,
+                    "name": "Bunny Eared Witch Minion",
+                    "title": "Role: Decorator",
+                    "description": "In order to keep their Witch happy, these Familiars are always looking for cute things to decorate her with. When they do find something nice, they bring it to her. When a Familiar fails to satisfy her, she slices it open, so their lives are always on the line. One must not panic when one runs into this Familiar. If one simply throws something pretty at it, like wrapping paper, it will take it and run back to its Witch.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ]
+        },
+        "canPlay": true,
+        "cleared": true,
+        "clearedAt": "2020/09/14 20:43:11",
+        "createdAt": "2020/09/14 19:59:58"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 101101,
+        "section": {
+            "sectionId": 101101,
+            "questType": "MAIN",
+            "genericId": 11,
+            "genericIndex": 1,
+            "areaMapId": 11012,
+            "imagePath": "21061",
+            "areaDetailName": "Shinsei Chuo Station",
+            "title": "The Small Kyubey",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Could that Kyubey be the cause of my dreams about that girl?",
+            "outline": "Iroha Tamaki has been plagued with dreams of a strange girl since she came to Kamihama City. Each time she meets this girl in her dreams, she feels something in her chest, like she's just on the verge of remembering something... She visits Kamihama City frequently now, in the hopes of finding the source of these mysterious dreams.",
+            "ap": 5,
+            "difficulty": 1,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openEnemy": "101,102,103,104",
+            "openEnemyList": [
+                {
+                    "enemyId": 101,
+                    "enemyNo": 6400,
+                    "type": 1,
+                    "name": "Chairperson Witch",
+                    "title": "Nature: Bystander",
+                    "description": "This Witch spins spider-like threads to create its own special school inside its Labyrinth. Before turning into a Witch, she was a serious student that didn't stand out, so she continues to repeat those dreary school days together with her Familiars. Even now, if she hears the school bell announcing the end of the day, she may head home, wherever that may be. When humans wander into her Labyrinth, they fall endlessly and eventually melt into the sky, feeding her. She does not attack anyone directly unless they are a scary intruder who disturbs her daily routine.",
+                    "designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 102,
+                    "enemyNo": 7400,
+                    "type": 2,
+                    "name": "Chairperson Witch Minion",
+                    "title": "Role: Classmate",
+                    "description": "Although they glide gracefully on ice skates, these familiars are just mindless puppets on wires being manipulated by their Witch. When the Witch was still a girl, she always hung her head in shame, so it is enough for her if her classmates have legs. Since they don't need school uniform shirts, their unneeded tops hang on clotheslines throughout the Labyrinth. Since as a girl the Witch was always looking out the window in class, the classrooms in her Labyrinth are minimalistic to an extreme, but judging from the indoor shoes that her Familiars wear, it is indeed indoors.",
+                    "designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 103,
+                    "enemyNo": 6103,
+                    "type": 1,
+                    "name": "Sandbox Witch",
+                    "title": "Nature: Immersion",
+                    "description": "This Witch has strong preferences and never compromises. She is trying to build an acceptable sandcastle, but she can never satisfy herself. She has destroyed and rebuilt her castles so many times she doesn't even remember what she wanted to create in the first place. When she does manage to make a nice castle, she feels much better for a while, but ends up destroying it again. She looks like a young lady but acts like a little child. If she is interrupted when she is playing with her sand, she cries and goes on a rampage.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                },
+                {
+                    "enemyId": 104,
+                    "enemyNo": 7103,
+                    "type": 2,
+                    "name": "Sandbox Witch Minion",
+                    "title": "Role: Toy Train",
+                    "description": "These Familiars are always playing amongst themselves. A quirk of theirs is that as they roll around, all of the things on the ground stick to their bodies. As they do this their Witch collects the debris without them noticing. When their Witch is coming up with a plan for her next castle, they come to her aid. But soon they realize that it is impossible to satisfy her, no matter how hard they try, so they get bored and stray away.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ]
+        },
+        "canPlay": true,
+        "cleared": true,
+        "clearedAt": "2020/09/14 19:59:58",
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 400052,
+        "section": {
+            "sectionId": 400052,
+            "questType": "MATERIAL",
+            "dayOfTheWeekQuestType": "FRIDAY",
+            "title": "Labyrinth of Awakening",
+            "openEnemyList": []
+        },
+        "canPlay": true,
+        "cleared": false,
+        "createdAt": "2020/10/16 22:06:12",
+        "endAt": "2020/10/17 00:00:00"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 310011,
+        "section": {
+            "sectionId": 310011,
+            "questType": "CHARA",
+            "genericId": 1001,
+            "genericIndex": 1,
+            "imagePath": "11061",
+            "title": "Nostalgic Cuisine",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Grief Seeds... I don't really have that many of them... I wonder how much stronger I can really get?",
+            "ap": 8,
+            "difficulty": 10,
+            "clearRewardCode": "GEM_1001_5",
+            "clearReward": {
+                "presentType": "GEM",
+                "quantity": 5,
+                "genericId": 1001,
+                "displayName": "Iroha Tamaki"
+            },
+            "openEnemyList": []
+        },
+        "canPlay": true,
+        "cleared": false,
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 310014,
+        "section": {
+            "sectionId": 310014,
+            "questType": "CHARA",
+            "genericId": 1001,
+            "genericIndex": 4,
+            "imagePath": "21251",
+            "title": "Iroha's Doppel",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "…",
+            "ap": 20,
+            "difficulty": 80,
+            "clearRewardCode": "DOPPEL_100100",
+            "clearReward": {
+                "presentType": "DOPPEL",
+                "quantity": 1,
+                "genericId": 100100,
+                "displayName": "Doppel of Silence"
+            },
+            "openConditionMagiaLevel": 5,
+            "openConditionRank": "RANK_5",
+            "openEnemyList": [],
+            "openDate": "2020/06/15 00:10:00"
+        },
+        "canPlay": false,
+        "cleared": false,
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 310012,
+        "section": {
+            "sectionId": 310012,
+            "questType": "CHARA",
+            "genericId": 1001,
+            "genericIndex": 2,
+            "imagePath": "21202",
+            "title": "Thinking of Her",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Isn't it about time Felicia came back?",
+            "ap": 12,
+            "difficulty": 30,
+            "clearRewardCode": "LIVE2D_1001_01",
+            "clearReward": {
+                "presentType": "LIVE2D",
+                "quantity": 1,
+                "genericCode": "01",
+                "genericId": 1001,
+                "displayName": "Iroha Tamaki's [Kamihama University Affiliated School Uniform]"
+            },
+            "openConditionSectionId": 101407,
+            "openConditionSection": {
+                "sectionId": 101407,
+                "questType": "MAIN",
+                "genericId": 14,
+                "genericIndex": 7,
+                "secret": "njNzO",
+                "areaMapId": 13013,
+                "imagePath": "13043",
+                "areaDetailName": "Sankyo Ward - Streets",
+                "title": "Iroha's New Life...",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "Thank goodness it all ended up＠okay. Now I just need to find＠somewhere to stay...",
+                "outline": "Iroha's team was plagued with bad luck. They kept fighting and discovered the source: an Uwasa, Rhyton. Falling rocks made it hard to fight, but Felicia somehow reached the Uwasa. As time ticked away, Felicia flung the Uwasa up, giving an opening for Iroha's arrow. Though they managed to defeat it, their relief was short-lived. A girl appeared. Yachiyo couldn't believe it: It was her best friend, Mifuyu Azusa. Part of the Wings of the Magius, she left with the Amane sisters.",
+                "ap": 9,
+                "difficulty": 40,
+                "clearRewardCode": "GEM_1001_5",
+                "clearReward": {
+                    "presentType": "GEM",
+                    "quantity": 5,
+                    "genericId": 1001,
+                    "displayName": "Iroha Tamaki"
+                },
+                "openEnemy": "124,125",
+                "openEnemyList": [
+                    {
+                        "enemyId": 124,
+                        "enemyNo": 6004,
+                        "type": 3,
+                        "name": "Uwasa of the Misery Rhyton",
+                        "description": "Have you heard? Has anyone told you? The Rumor of the Misery Rhyton. Students from Sankyoin Academy are known for excelling in sports and studies. The secret lies in a large cup hidden underground! You can pour in any kind of misery, like accidents, stress, or even stomachaches! But beware, the cup is already full! The students in Sankyo Ward are saying the misery has started to overflow, so the cup decided to give back all that misery! What a disaster!",
+                        "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+                        "openDate": "2019/07/16 00:00:00"
+                    },
+                    {
+                        "enemyId": 125,
+                        "enemyNo": 7004,
+                        "type": 3,
+                        "name": "Uwasa of the Misery Owl",
+                        "description": "Have you heard? Has anyone told you? The Rumor of the Misery Owl. When you're tired and thirsty, a water station appears right in front of you! But beware! It's an illusion created by the Misery Owl that wants to make everyone absolutely miserable! But the students in Sankyo Ward are saying it also offers follow-up alerts! The Misery Owl is happy to let you know how much time you have left until calamity strikes! What a convenient service!",
+                        "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+                        "openDate": "2019/07/16 00:00:00"
+                    }
+                ],
+                "openDate": "2019/07/23 03:00:00"
+            },
+            "openConditionChapter": {
+                "chapterId": 14,
+                "partNo": 1,
+                "chapterNo": 4,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "4",
+                "title": "Guardians of the Uwasa",
+                "sectionCount": 7
+            },
+            "openConditionCharaBondsPt": 2,
+            "openEnemyList": []
+        },
+        "canPlay": false,
+        "cleared": false,
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 310013,
+        "section": {
+            "sectionId": 310013,
+            "questType": "CHARA",
+            "genericId": 1001,
+            "genericIndex": 3,
+            "imagePath": "21202",
+            "title": "Welcome Home",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Phew… Thank goodness! Dinner should be done by the time you two get back.",
+            "ap": 16,
+            "difficulty": 50,
+            "clearRewardCode": "PIECE_1073_1",
+            "clearReward": {
+                "presentType": "PIECE",
+                "quantity": 1,
+                "genericId": 1073,
+                "piece": {
+                    "pieceId": 1073,
+                    "pieceName": "Detailed Recipe",
+                    "rank": "RANK_3"
+                },
+                "displayName": "Detailed Recipe"
+            },
+            "openConditionSectionId": 101505,
+            "openConditionSection": {
+                "sectionId": 101505,
+                "questType": "MAIN",
+                "genericId": 15,
+                "genericIndex": 5,
+                "secret": "9ZkQS",
+                "areaMapId": 14013,
+                "imagePath": "14051",
+                "areaDetailName": "In Front of the Radio Tower",
+                "title": "Lurking in the Labyrinth",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "Don't worry, Sana!＠I'm coming for you!",
+                "outline": "Iroha learned the Radio Wave Girl's name, Sana Futaba, from Tsuruno's group. After discussing it with Yachiyo, she sent a reply to the strange text messages. The sender was an Uwasa named Ai, who was confining Sana. Ai told Iroha she wanted her to save Sana, and after some research, Iroha found a website about her. Ai was the Uwasa from the \"Rumor of the Anonymous A.I.\". Ai sent Iroha some memories of Sana, so they believed her and decided to go into \"Endless Solitude\"...",
+                "ap": 8,
+                "difficulty": 36,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemy": "128,129",
+                "openEnemyList": [
+                    {
+                        "enemyId": 128,
+                        "enemyNo": 6005,
+                        "type": 3,
+                        "name": "Uwasa of the Anonymous AI",
+                        "description": "Have you heard? Has anyone told you? The Rumor of the Anonymous AI. Ding! It's a suspicious message from an unknown sender! That's a trap set by the Anonymous AI that wants to lure you in! It learned this malicious behavior in the digital world and now it's all alone. People in Chuo Ward are saying it won't let go of its prisoner! What a stand-alone!",
+                        "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+                        "openDate": "2019/08/06 00:00:00"
+                    },
+                    {
+                        "enemyId": 129,
+                        "enemyNo": 7005,
+                        "type": 3,
+                        "name": "Uwasa of the Anonymous Message",
+                        "description": "Have you heard? Has anyone told you? The Rumor of the Anonymous E-Mail! It sends 1 message, then 100, and 1,000! It's the postman that carries these messages for the Anonymous AI. It attaches a paper airplane to its back with a message written on it and gets blown away. Then, ding! Everyone receives an anonymous message! The people in Chuo Ward are saying sometimes it even shows its face on your screen. Who IS that?!",
+                        "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+                        "openDate": "2019/08/06 00:00:00"
+                    }
+                ],
+                "openDate": "2019/08/20 03:10:00"
+            },
+            "openConditionChapter": {
+                "chapterId": 15,
+                "partNo": 1,
+                "chapterNo": 5,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "5",
+                "title": "Endless Solitude",
+                "sectionCount": 7
+            },
+            "openConditionCharaBondsPt": 3,
+            "openEnemyList": []
+        },
+        "canPlay": false,
+        "cleared": false,
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 101201,
+        "section": {
+            "sectionId": 101201,
+            "questType": "MAIN",
+            "genericId": 12,
+            "genericIndex": 1,
+            "areaMapId": 11011,
+            "imagePath": "21012",
+            "areaDetailName": "Satomi Medical Center",
+            "title": "Two Best Friends",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Those two girls who were always with Ui must remember her...",
+            "outline": "Iroha came to Kamihama City to investigate the mysterious girl in her dreams. When she held the small Kyubey that she believed was the source of her strange dreams, she felt a rush of memories about the girl flood her mind. \"She's Ui Tamaki... My little sister.\" But many mysteries still remain: how could she forget her own little sister? Why have all hints of Ui's existence vanished from their home? Iroha continues her search for Ui in Kamihama City.",
+            "ap": 6,
+            "difficulty": 6,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openEnemy": "108",
+            "openEnemyList": [
+                {
+                    "enemyId": 108,
+                    "enemyNo": 7104,
+                    "type": 2,
+                    "name": "Sheep Witch Minion",
+                    "title": "Role: Shepherd",
+                    "description": "These Familiars stroll leisurely about their Labyrinth. They regard themselves as shepherds of their most precious possession: their Witch. Normally they simply watch over her, but when they see a stray human in their Labyrinth, they signal each other using the horns that hang around their necks. Once they have gathered, their hunt begins. Since there are so many of them taking care of the meek Sheep Witch, they do not have much to do other than hunt humans. They have too much time on their hands, so they spend a lot of their days talking about the quality of this year's cheese.",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ]
+        },
+        "canPlay": true,
+        "cleared": false,
+        "createdAt": "2020/09/14 20:54:41"
+    }
+]

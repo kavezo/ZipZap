@@ -1,0 +1,2051 @@
+@charset "UTF-8";
+#charaListWrap.dungeonInMap.open {
+  display: none; }
+
+#DeckFormation.dungeonWrap .deckViewWrap .formationHead, #DeckFormation.dungeonInMapWrap .deckViewWrap .formationHead {
+  width: 950px;
+  left: -webkit-calc(50% - 475px); }
+  #DeckFormation.dungeonWrap .deckViewWrap .formationHead .head, #DeckFormation.dungeonInMapWrap .deckViewWrap .formationHead .head {
+    width: 134px;
+    background: url("/magica/resource/image_web/page/formation/dungeon/bg_deck_formation.png") left bottom no-repeat; }
+    #DeckFormation.dungeonWrap .deckViewWrap .formationHead .head.sub, #DeckFormation.dungeonInMapWrap .deckViewWrap .formationHead .head.sub {
+      background: url("/magica/resource/image_web/page/formation/dungeon/bg_deck_formation_sub.png") left bottom no-repeat; }
+      #DeckFormation.dungeonWrap .deckViewWrap .formationHead .head.sub:before, #DeckFormation.dungeonInMapWrap .deckViewWrap .formationHead .head.sub:before {
+        width: 98px;
+        height: 20px;
+        background: url("/magica/resource/image_web/page/formation/dungeon/deck_sub.png") left bottom no-repeat;
+        position: absolute;
+        top: 43px;
+        left: -webkit-calc(50% - 49px);
+        content: ""; }
+
+#DeckFormation.dungeonWrap .deckViewWrap.memoriaEquipMode .formationHead .head.sub:before, #DeckFormation.dungeonInMapWrap .deckViewWrap.memoriaEquipMode .formationHead .head.sub:before {
+  display: none; }
+
+#DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap {
+  width: 950px;
+  left: -webkit-calc(50% - 475px); }
+  #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts {
+    width: 134px; }
+    #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.sub .bg, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.sub .bg {
+      -webkit-border-image: url("/magica/resource/image_web/page/formation/dungeon/bg_deck_wrap_off_sub.png") 52 stretch !important; }
+    #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap {
+      width: 134px;
+      height: 100%;
+      -webkit-mask: url("/magica/resource/image_web/page/formation/dungeon/bg_deck_wrap_mask_top.png") left top no-repeat, url("/magica/resource/image_web/page/formation/dungeon/bg_deck_wrap_mask_bottom.png") left bottom no-repeat, -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(0.03, rgba(0, 0, 0, 0)), color-stop(0.03, black), color-stop(0.97, black), color-stop(0.97, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); }
+      #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .charaImg, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .charaImg {
+        width: 134px;
+        position: absolute;
+        top: 0;
+        left: -webkit-calc(50% - 67.5px);
+        pointer-events: none; }
+      #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status {
+        width: 130px;
+        padding: 40px 16px 0;
+        background: url("/magica/resource/image_web/page/formation/dungeon/bg_deck_wrap_status.png") left top no-repeat; }
+        #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .disk .commandList li, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .disk .commandList li {
+          width: 42px;
+          height: 42px;
+          margin: -2px 0; }
+        #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .magia img, #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .connect img, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .magia img, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .connect img {
+          width: 48px;
+          height: 48px;
+          position: relative;
+          z-index: 10; }
+        #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .magia:not(.doppel):after, #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .connect:not(.doppel):after, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .magia:not(.doppel):after, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .connect:not(.doppel):after {
+          width: 54px;
+          height: 54px;
+          background: url("/magica/resource/image_web/page/formation_2/bg_art_icon.png") left top no-repeat;
+          background-size: 54px 54px; }
+        #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .magia.doppel:before, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .skill .magia.doppel:before {
+          width: 68px;
+          height: 68px;
+          background: url("/magica/resource/image_web/page/formation/doppel_frame.png") left top no-repeat;
+          background-size: 68px 68px;
+          position: absolute;
+          top: -10px;
+          left: -10px; }
+    #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .memoriaSkillWrap, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .memoriaSkillWrap {
+      width: 134px;
+      background: url("/magica/resource/image_web/page/formation/dungeon/bg_deck_memoria.png") left bottom no-repeat;
+      position: absolute;
+      bottom: 0;
+      left: 0; }
+    #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.on .bg, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .bg {
+      -webkit-border-image: url("/magica/resource/image_web/page/formation/dungeon/bg_deck_wrap_off.png") 52 stretch; }
+    #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.off .bg, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.off .bg {
+      -webkit-border-image: url("/magica/resource/image_web/page/formation/dungeon/bg_deck_wrap_off.png") 52 stretch; }
+    #DeckFormation.dungeonWrap .deckViewWrap .deckPartsWrap .deckParts.select .select, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.select .select {
+      width: 139px;
+      height: -webkit-calc(100% + 4px);
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      content: "";
+      pointer-events: none;
+      border-width: 40px;
+      border-style: solid;
+      -webkit-border-image: url("/magica/resource/image_web/page/formation/deck_wrap_select.png") 52 stretch;
+      z-index: 1003; }
+
+#DeckFormation.dungeonInMapWrap #deckFooter #previewBtn, #DeckFormation.dungeonInMapWrap #deckFooter #deckRemovePopBtn {
+  display: none; }
+
+#DeckFormation.dungeonInMapWrap #deckFooter .btns #pieceEquipBtn {
+  background: url("/magica/resource/image_web/page/formation/dungeon/btn_memoria_view.png") left bottom no-repeat; }
+
+#DeckFormation.dungeonInMapWrap .deckViewWrap .deckName {
+  pointer-events: none; }
+  #DeckFormation.dungeonInMapWrap .deckViewWrap .deckName:after {
+    display: none; }
+
+#DeckFormation.dungeonInMapWrap .deckViewWrap .deckChangeModeBtn, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckChangeArrow {
+  display: none; }
+
+#DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .memoriaSetEquipBtn {
+  display: none; }
+
+#DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip {
+  pointer-events: none !important; }
+  #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip .pieceBg {
+    background: url("/magica/resource/image_web/page/formation_2/bg_memoria_none.png") left top no-repeat !important; }
+
+#DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .canEquip {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: #96897b;
+  display: block;
+  position: relative;
+  border: 2px solid #86796b;
+  -webkit-border-radius: 16px; }
+
+#DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.select .select {
+  width: 134px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -webkit-border-image: url("/magica/resource/image_web/page/formation/deck_wrap_select.png") 66 stretch;
+  z-index: 1001; }
+
+#DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status {
+  padding: 40px 3px 0; }
+  #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus {
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .mb {
+      margin-bottom: 3px; }
+    #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .small {
+      font-size: 12px; }
+    #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus dt {
+      width: 36px; }
+    #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus dd {
+      width: 56px; }
+    #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge {
+      width: 124px;
+      height: 14px;
+      padding-right: 5px;
+      position: relative;
+      top: 0;
+      font-size: 12px; }
+      #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.hpGauge {
+        background: url("/magica/resource/image_web/page/formation/dungeon/bg_gauge_hp.png") left bottom repeat-x; }
+        #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.hpGauge .gaugeInner01 {
+          z-index: 2; }
+          #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.hpGauge .gaugeInner01 .gaugeBg {
+            background: url("/magica/resource/image_web/page/formation/dungeon/gauge_hp.png") left bottom repeat-x; }
+        #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.hpGauge .gaugeInner02 {
+          z-index: 1; }
+          #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.hpGauge .gaugeInner02 .gaugeBg {
+            background: url("/magica/resource/image_web/page/formation/dungeon/gauge_hp_memoria.png") left bottom repeat-x; }
+      #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.mpGauge {
+        background: url("/magica/resource/image_web/page/formation/dungeon/bg_gauge_mp.png") left bottom repeat-x; }
+        #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.mpGauge .gaugeInner01 {
+          z-index: 2; }
+          #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.mpGauge .gaugeInner01 .gaugeBg {
+            background: url("/magica/resource/image_web/page/formation/dungeon/gauge_doppel.png") left bottom repeat-x; }
+        #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.mpGauge .gaugeInner02 {
+          z-index: 1; }
+          #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge.mpGauge .gaugeInner02 .gaugeBg {
+            background: url("/magica/resource/image_web/page/formation/dungeon/gauge_magia.png") left bottom repeat-x; }
+      #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge .gaugeInner01, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge .gaugeInner02 {
+        width: 40px;
+        height: 4px;
+        position: absolute;
+        top: 8px;
+        left: 30px; }
+        #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge .gaugeInner01 .gaugeBg, #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status .charaStatus .gauge .gaugeInner02 .gaugeBg {
+          width: 0%;
+          height: 100%; }
+  #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status #rare {
+    margin: 0 0 0; }
+  #DeckFormation.dungeonInMapWrap .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap .status #level {
+    font-size: 15px; }
+
+.autoFormationPop .popupTextArea {
+  padding-top: 18px;
+  padding-bottom: 14px; }
+
+.autoFormationPop .autoText {
+  font-size: 22px;
+  height: 35px; }
+
+.autoFormationPop .flexBox {
+  -webkit-justify-content: left;
+  -webkit-box-pack: left;
+  -ms-flex-pack: left;
+  justify-content: left;
+  padding-left: 88px; }
+
+.autoFormationPop .filterBar, .autoFormationPop .typeBar {
+  width: 726px;
+  height: 48px;
+  margin: 0 auto 12px;
+  padding-right: 23px;
+  padding-left: 76px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .autoFormationPop .filterBar .filterAtt, .autoFormationPop .typeBar .filterAtt {
+    width: auto;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .autoFormationPop .filterBar .filterAtt, .autoFormationPop .typeBar .filterAtt {
+    font-size: 20px; }
+  .autoFormationPop .filterBar.on .checkBox:before, .autoFormationPop .typeBar.on .checkBox:before {
+    width: 27px;
+    height: 21px;
+    background-image: url("/magica/resource/image_web/common/icon/icon_checkbox_check.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 9px;
+    left: 6px;
+    content: ""; }
+  .autoFormationPop .filterBar .checkBox, .autoFormationPop .typeBar .checkBox {
+    margin-right: 11px; }
+  .autoFormationPop .filterBar p, .autoFormationPop .typeBar p {
+    color: #ffffff; }
+
+.autoFormationPop .filterBar {
+  background: url("/magica/resource/image_web/common/filter/filter_header_l.png") left top no-repeat; }
+  .autoFormationPop .filterBar p:before {
+    width: 50px;
+    height: 54px;
+    background: url("/magica/resource/image_web/common/filter/filter_icon_chara.png") left top no-repeat;
+    display: block;
+    position: absolute;
+    top: -9px;
+    left: 18px;
+    content: ""; }
+
+.autoFormationPop .typeBar {
+  margin-top: 20px;
+  background: url("/magica/resource/image_web/common/filter/filter_header_l_02.png") left top no-repeat; }
+  .autoFormationPop .typeBar p:before {
+    width: 50px;
+    height: 54px;
+    background: url("/magica/resource/image_web/page/formation_2/icon_automatic_formation.png") left top no-repeat;
+    display: block;
+    position: absolute;
+    top: -9px;
+    left: 18px;
+    content: ""; }
+
+.autoFormationPop .attribute {
+  width: 112px;
+  font-size: 19px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .autoFormationPop .attribute .icon {
+    width: 40px;
+    height: 40px; }
+
+.autoFormationPop #autoFormationStatusWrap {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.autoFormationPop #autoFormationAttWrap .checkBox, .autoFormationPop #autoFormationStatusWrap .checkBox {
+  margin-right: 9px; }
+
+.autoFormationPop .filterWrap > div {
+  width: 170px;
+  margin: 0 4px 0;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 22px;
+  line-height: 40px; }
+
+.autoFormationPop .checkBox {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  background-image: url("/magica/resource/image_web/common/icon/icon_checkbox.png");
+  display: block;
+  position: relative; }
+
+.autoFormationPop .on .checkBox:before {
+  width: 27px;
+  height: 21px;
+  background-image: url("/magica/resource/image_web/common/icon/icon_checkbox_check.png");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 9px;
+  left: 6px;
+  content: ""; }
+
+#globalMenuContainer.questFormation #menu {
+  display: none !important; }
+
+#globalMenuContainer #globalMenu .helpBtn.on {
+  left: 870px; }
+
+.profileChange #commentInput {
+  width: 512px;
+  height: 64px;
+  margin-bottom: 30px;
+  padding: 0 10px;
+  background: #ffffff;
+  line-height: 64px;
+  line-height: 1.8;
+  -webkit-border-radius: 5px;
+  -webkit-box-shadow: 0 0 0 2px #dccab3, 0 0 0 2px #ffffff inset, 3px 3px 3px 3px #f3f1f0 inset;
+  box-shadow: 0 0 0 2px #dccab3, 0 0 0 2px #ffffff inset, 3px 3px 3px 3px #f3f1f0 inset; }
+
+.profileChange #commentDecide {
+  position: absolute;
+  bottom: 5px;
+  left: -webkit-calc(50% - 95px); }
+
+.profileChange .textCount {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.profileChange .textCount {
+  position: absolute;
+  top: 153px;
+  left: 364px; }
+
+#mainBtn.touch, #nextPageBtn.touch, #deckChangeBtn.touch {
+  -webkit-filter: brightness(120%) !important; }
+
+#charaListWrap {
+  -webkit-transform: translateY(120px);
+  z-index: 100000; }
+#charaListWrap.open {
+  -webkit-animation: card_list_open .1s linear 0s 1 alternate;
+  z-index: 100000;
+    -webkit-animation-fill-mode: forwards; }
+
+#baseContainer #charaListElms .formationCurrent {
+  -webkit-order: -1;
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1; }
+
+#baseContainer #charaListElms .formationRemove {
+  -webkit-order: -2;
+  -webkit-box-ordinal-group: -1;
+  -ms-flex-order: -2;
+  order: -2; }
+
+#DeckFormation {
+  width: 1024px;
+  height: 100%;
+  position: relative; }
+#DeckFormation #bonusTextWrap {
+  width: 100%;
+  height: 24px;
+  display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+#DeckFormation #bonusTextWrap .bonusText {
+  width: 234px;
+  height: 24px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_event_bonus.png") left top no-repeat;
+  display: block;
+  position: relative;
+  line-height: 24px;
+      -webkit-border-radius: 12px 0 0 12px; }
+#DeckFormation #bonusTextWrap .bonusText:nth-child(2) {
+        margin-top: 2px; }
+#DeckFormation #bonusTextWrap .bonusText .bonusIcon {
+  width: 26px;
+  height: 26px;
+  display: block;
+  position: absolute;
+  top: -2px;
+        left: 9px; }
+#DeckFormation #bonusTextWrap .bonusText .iconText {
+  position: absolute;
+  top: 0px;
+  left: 40px;
+        font-size: 18px; }
+#DeckFormation #bonusTextWrap .bonusText .text {
+  position: absolute;
+  top: 0px;
+  right: 14px;
+        font-size: 18px; }
+#DeckFormation.arenaWrap .deckParts .bonusIcon, #DeckFormation.arenaWrap .deckParts .eventTrainingIcon, #DeckFormation.arenaWrap #bonusTextWrap {
+    display: none !important; }
+#DeckFormation.arenaWrap .formationMiniMap {
+    background: url("/magica/resource/image_web/page/formation_2/bg_formation_arena_s_02.png") left bottom no-repeat !important; }
+#DeckFormation.arenaWrap .formationSheet {
+    background: url("/magica/resource/image_web/page/formation_2/bg_formation_arena_l_a.png") left bottom no-repeat !important; }
+#DeckFormation.arenaWrap.preview .formationSheet {
+    background-size: 236px 220px !important; }
+#DeckFormation.arenaWrap.formation .formationMiniMap {
+    background: url("/magica/resource/image_web/page/formation/bg_formation_arena_s.png") left bottom no-repeat !important; }
+#DeckFormation.arenaWrap .formationHead .head {
+    background: url("/magica/resource/image_web/page/formation/bg_deck_formation_arena.png") left bottom no-repeat !important; }
+#DeckFormation.arenaWrap .teamStatus {
+  width: 288px;
+  height: 28px;
+  padding-right: 18px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_team_pt_a.png") left top no-repeat;
+  position: absolute;
+  bottom: -12px;
+  left: -webkit-calc(50% - 144px);
+  overflow: hidden;
+  font-size: 20px;
+  line-height: 32px;
+  text-align: right;
+  pointer-events: none;
+    z-index: 100; }
+#DeckFormation:not(.supportWrap) .deckParts.support .memoriaSkillWrap span {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: #96897b;
+  display: block;
+  border: 2px solid #86796b;
+    -webkit-border-radius: 16px; }
+#DeckFormation:not(.supportWrap) .deckParts.support .memoriaSkillWrap span img {
+  width: 28px;
+      height: 28px; }
+#DeckFormation.supportWrap #bonusTextWrap {
+    display: none !important; }
+#DeckFormation.supportWrap .memoriaEquipMode .head:before {
+    display: none !important; }
+#DeckFormation.supportWrap .formationHead {
+  width: 872px !important;
+    left: -webkit-calc(50% - 436px) !important; }
+#DeckFormation.supportWrap .formationHead .head:before {
+  width: 62px;
+  height: 62px;
+  display: block;
+  position: absolute;
+  top: 7px;
+  left: -webkit-calc(50% - 31px);
+  content: "";
+      border-radius: 100%; }
+#DeckFormation.supportWrap .formationHead .head:nth-child(1):before {
+  background: #4d4462 url("/magica/resource/image_web/common/chara/att_all_f.png") 7px 7px no-repeat;
+      background-size: 48px 48px; }
+#DeckFormation.supportWrap .formationHead .head:nth-child(2):before {
+  background: #4d4462 url("/magica/resource/image_web/common/chara/att_fire_f.png") 7px 7px no-repeat;
+      background-size: 48px 48px; }
+#DeckFormation.supportWrap .formationHead .head:nth-child(3):before {
+  background: #4d4462 url("/magica/resource/image_web/common/chara/att_water_f.png") 7px 7px no-repeat;
+      background-size: 48px 48px; }
+#DeckFormation.supportWrap .formationHead .head:nth-child(4):before {
+  background: #4d4462 url("/magica/resource/image_web/common/chara/att_timber_f.png") 7px 7px no-repeat;
+      background-size: 48px 48px; }
+#DeckFormation.supportWrap .formationHead .head:nth-child(5):before {
+  background: #4d4462 url("/magica/resource/image_web/common/chara/att_light_f.png") 7px 7px no-repeat;
+      background-size: 48px 48px; }
+#DeckFormation.supportWrap .formationHead .head:nth-child(6):before {
+  background: #4d4462 url("/magica/resource/image_web/common/chara/att_dark_f.png") 7px 7px no-repeat;
+      background-size: 48px 48px; }
+#DeckFormation.supportWrap .deckPartsWrap {
+  width: 872px !important;
+    left: -webkit-calc(50% - 436px) !important; }
+#DeckFormation.supportWrap .deckPartsWrap .deckParts.support > .bonusIcon {
+      top: 23px !important; }
+#DeckFormation.supportWrap .deckPartsWrap .deckParts .eventTrainingIcon {
+      display: none !important; }
+#DeckFormation.supportWrap #deckRemovePopBtn {
+    background: url("/magica/resource/image_web/page/formation_2/btn_breakup_support.png") left top no-repeat !important; }
+#DeckFormation.supportWrap #formationSheetChangeBtn, #DeckFormation.supportWrap #previewBtn {
+    display: none !important; }
+#DeckFormation .hide {
+    display: none !important; }
+  #DeckFormation .copyTitle {
+    width: 338px;
+    height: 59px;
+    background: url("/magica/resource/image_web/page/formation_2/title_formation_copy.png") left top no-repeat;
+    text-align: center;
+    padding-top: 13px;
+    position: absolute;
+    top: 0;
+    left: 343px; }
+    #DeckFormation .copyTitle span {
+      font-size: 20px;
+      text-shadow: -1px -1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff, 1px 1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff, 1px 1px #fff, -1px -1px 2px #fff, 1px -1px 2px #fff, -1px 1px 2px #fff, 1px 1px 2px #fff, -1px -1px 2px #fff, 1px -1px 2px #fff, -1px 1px 2px #fff, 1px 1px 2px #fff, -1px -1px 3px #fff, 1px -1px 3px #fff, -1px 1px 3px #fff, 1px 1px 3px #fff; }
+  #DeckFormation .deckCaution, #DeckFormation .copyCaution {
+  width: 750px;
+  height: 24px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_caution_text_a.png") left top no-repeat;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 24px;
+    text-align: center; }
+    #DeckFormation .deckCaution.previewFooter, #DeckFormation .copyCaution.previewFooter {
+  bottom: 80px;
+      left: -22px; }
+    #DeckFormation .deckCaution.deckFooter, #DeckFormation .copyCaution.deckFooter {
+  bottom: 80px;
+      left: -webkit-calc(50% - 375px); }
+    #DeckFormation .deckCaution.fsFooter, #DeckFormation .copyCaution.fsFooter {
+  bottom: -12px;
+      left: -webkit-calc(50% - 375px); }
+#DeckFormation .deckChangeModeBtn {
+    width: 117px;
+    height: 34px;
+    position: absolute;
+    top: 12px;
+    right: 232px; }
+  #DeckFormation #previewBtn {
+    width: 60px;
+  height: 34px;
+    background: url("/magica/resource/image_web/page/formation_2/btn_preview2.png") left top no-repeat;
+  position: absolute;
+  top: 12px;
+    right: 164px;
+    z-index: 10; }
+  #DeckFormation .autoFormationPopBtn {
+    width: 150px;
+    height: 40px;
+    background: url("/magica/resource/image_web/page/formation_2/btn_automatic.png") left top no-repeat;
+    position: absolute;
+    top: 10px;
+    left: 115px;
+    z-index: 10; }
+#DeckFormation #deckSelectWrap {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+    z-index: 1000; }
+#DeckFormation #deckSelectWrap .deckSelectInner {
+  width: 870px;
+  height: 334px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: -webkit-calc(50% - 187px);
+  left: -webkit-calc(50% - 435px);
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  /* Safari */
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  /* Safari */
+      -ms-flex-line-pack: justify;
+      align-content: space-between; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail {
+  width: 283px;
+  height: 98px;
+  background: url("/magica/resource/image_web/page/formation/formation_team_wrap_on.png") right top no-repeat;
+        position: relative; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail:before {
+  width: 76px;
+  height: 20px;
+  position: absolute;
+  top: -12px;
+          left: 23px;
+  content: "";
+          z-index: 1001; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck11:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_1.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck12:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_2.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck13:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_3.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck14:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_4.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck15:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_5.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck16:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_6.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck17:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_7.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck18:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_8.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck19:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_9.png") right top no-repeat; }
+        #DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck41:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_1.png") right top no-repeat; }
+        #DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck42:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_2.png") right top no-repeat; }
+        #DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck43:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_3.png") right top no-repeat; }
+        #DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck44:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_4.png") right top no-repeat; }
+        #DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck45:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_5.png") right top no-repeat; }
+        #DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck46:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_6.png") right top no-repeat; }
+        #DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck47:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_7.png") right top no-repeat; }
+        #DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck48:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_8.png") right top no-repeat; }
+        #DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.deck49:before {
+          background: url("/magica/resource/image_web/page/formation_2/icon_team_9.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail:after {
+  width: 76px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_team_num.png") right top no-repeat;
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  content: "";
+          z-index: 1000; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail .charaIcon {
+  width: 119px;
+  height: 105px;
+  position: absolute;
+  top: -4px;
+          left: 0; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail .charaIcon .charaImg {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  top: 7px;
+  left: 15px;
+  border-radius: 100%;
+            z-index: 5; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail .charaIcon .frame {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/formation/formation_team_leader_frame_on.png") right top no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+            z-index: 10; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail .charaIcon .bg {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/formation/formation_team_leader_frame_on_bg.png") center center no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+            z-index: 1; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail .formationMiniMap {
+  position: absolute;
+  right: 64px;
+          bottom: 10px; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail .deckNameWrap {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 38px;
+  text-align: right;
+          border-radius: 0 0 10px 10px; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.off {
+          background: url("/magica/resource/image_web/page/formation/formation_team_wrap_off.png") right top no-repeat; }
+#DeckFormation #deckSelectWrap .deckSelectInner .deckSelectDetail.off .charaIcon {
+  width: 118px;
+  height: 104px;
+            background: url("/magica/resource/image_web/page/formation/formation_team_leader_frame_off.png") right top no-repeat; }
+  #DeckFormation.deckChange #bonusTextWrap, #DeckFormation.deckCopy #bonusTextWrap {
+    display: none !important; }
+  #DeckFormation.deckChange #deckSelectWrap, #DeckFormation.deckCopy #deckSelectWrap {
+    display: block; }
+  #DeckFormation.deckChange #autoFormationPopBtn, #DeckFormation.deckCopy #autoFormationPopBtn {
+    display: none; }
+  #DeckFormation.deckChange .deckChangeModeBtn, #DeckFormation.deckChange #deckCopyModeBtn, #DeckFormation.deckChange .arrowR, #DeckFormation.deckChange .arrowL, #DeckFormation.deckChange .formationHead, #DeckFormation.deckChange .deckName, #DeckFormation.deckChange .deckPartsWrap, #DeckFormation.deckChange #previewBtn, #DeckFormation.deckCopy .deckChangeModeBtn, #DeckFormation.deckCopy #deckCopyModeBtn, #DeckFormation.deckCopy .arrowR, #DeckFormation.deckCopy .arrowL, #DeckFormation.deckCopy .formationHead, #DeckFormation.deckCopy .deckName, #DeckFormation.deckCopy .deckPartsWrap, #DeckFormation.deckCopy #previewBtn {
+    display: none !important; }
+  #DeckFormation.deckChange #deckCancelBtn, #DeckFormation.deckCopy #deckCancelBtn {
+    width: 96px;
+    height: 65px;
+    background-image: url("/magica/resource/image_web/common/global/global_back.png");
+    background-repeat: no-repeat;
+    background-position: right 9px;
+    background-size: 89px 43px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101; }
+  #DeckFormation.deckChange .copyTitle,
+  #DeckFormation.deckChange .copyCaution {
+    display: none !important; }
+  #DeckFormation.deckCopy .deckViewWrap:before {
+    width: 100%;
+    height: 100%;
+    background: rgba(95, 82, 160, 0.3) !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    -webkit-animation: common_fade_in .3s ease 0s 1 alternate;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1;
+    -webkit-animation-fill-mode: forwards; }
+  #DeckFormation.deckCopy .deckCaution {
+    display: none !important; }
+  #DeckFormation.deckCopy .deckSelectInner .off {
+    pointer-events: none;
+    -webkit-filter: brightness(60%);
+    filter: brightness(60%); }
+  #DeckFormation.deckCopy .deckSelectInner .currentDeck {
+    pointer-events: none;
+    -webkit-filter: none;
+    filter: none; }
+    #DeckFormation.deckCopy .deckSelectInner .currentDeck .detailOverwrap {
+      width: 283px;
+      height: 112px;
+      background: url("/magica/resource/image_web/page/formation_2/copy_bg.png") left bottom no-repeat;
+      position: absolute;
+      top: -12px;
+      left: 0;
+      padding-left: 110px;
+      line-height: 130px;
+      z-index: 1002; }
+      #DeckFormation.deckCopy .deckSelectInner .currentDeck .detailOverwrap:before {
+        font-size: 20px;
+        color: #fff;
+        text-shadow: -1px -1px 2px #ff005d, 1px -1px 2px #ff005d, -1px 1px 2px #ff005d, 1px 1px 2px #ff005d, -1px -1px 2px #ff005d, 1px -1px 2px #ff005d, -1px 1px 2px #ff005d, 1px 1px 2px #ff005d;
+        content: "Copy Destination"; }
+#DeckFormation.formation #bonusTextWrap {
+    display: none !important; }
+#DeckFormation.formation #formationSheetListOuter .list.select:before {
+  -webkit-animation: cursor_anim 1s ease 0s infinite;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards; }
+  #DeckFormation.formation #autoFormationPopBtn {
+    display: none; }
+#DeckFormation.formation #formationSheetListWrap {
+    display: block; }
+#DeckFormation.formation .formationSheet {
+  width: 440px;
+  height: 410px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_formation_l_a.png") left bottom no-repeat;
+  background-size: 440px 410px;
+  display: block;
+  position: absolute;
+  top: -webkit-calc(50% - 205px);
+  left: 48px;
+    z-index: 100; }
+#DeckFormation.formation .formationSheet:before {
+  width: 56px;
+  height: 198px;
+  background: url("/magica/resource/image_web/page/formation_2/formation_arrow_l_a.png") left bottom no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 99px);
+  left: -34px;
+  content: "";
+      z-index: 10000; }
+#DeckFormation.formation .formationSheet .formationMass {
+  width: 114px;
+  height: 114px;
+  background: url("/magica/resource/image_web/page/formation/bg_formation_l_on.png") left bottom no-repeat;
+  background-size: 114px 114px;
+      position: absolute; }
+#DeckFormation.formation .formationSheet .formationMass.pos_1 {
+  bottom: 29px;
+        left: 43px; }
+#DeckFormation.formation .formationSheet .formationMass.pos_2 {
+  top: 148px;
+        left: 43px; }
+#DeckFormation.formation .formationSheet .formationMass.pos_3 {
+  top: 28px;
+        left: 43px; }
+#DeckFormation.formation .formationSheet .formationMass.pos_4 {
+  bottom: 29px;
+        left: 163px; }
+#DeckFormation.formation .formationSheet .formationMass.pos_5 {
+  top: 148px;
+        left: 163px; }
+#DeckFormation.formation .formationSheet .formationMass.pos_6 {
+  top: 28px;
+        left: 163px; }
+#DeckFormation.formation .formationSheet .formationMass.pos_7 {
+  right: 43px;
+        bottom: 29px; }
+#DeckFormation.formation .formationSheet .formationMass.pos_8 {
+  top: 148px;
+        right: 43px; }
+#DeckFormation.formation .formationSheet .formationMass.pos_9 {
+  top: 28px;
+        right: 43px; }
+#DeckFormation.formation .formationSheet .formationEffect {
+  height: 100%;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-end;
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: flex-end; }
+#DeckFormation.formation .formationSheet .formationEffect .attIcon {
+  height: 28px;
+  position: absolute;
+  top: -3px;
+        right: -3px; }
+#DeckFormation.formation .formationSheet .formationEffect img {
+  margin: 1px auto;
+        display: block; }
+  #DeckFormation.formation .deckChangeModeBtn, #DeckFormation.formation .arrowR, #DeckFormation.formation .arrowL, #DeckFormation.formation .formationHead, #DeckFormation.formation .deckName, #DeckFormation.formation .deckPartsWrap, #DeckFormation.formation #deckCopyModeBtn, #DeckFormation.formation #previewBtn {
+    display: none !important; }
+#DeckFormation.preview #bonusTextWrap {
+    display: none !important; }
+#DeckFormation.preview .deckChangeBg:before {
+    background: rgba(0, 0, 0, 0) !important; }
+  #DeckFormation.preview #autoFormationPopBtn {
+    display: none; }
+#DeckFormation.preview .formationSheet {
+  width: 236px;
+  height: 220px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_formation_l_a.png") left bottom no-repeat;
+  background-size: 236px 220px;
+  display: block !important;
+  position: absolute;
+  top: 236px;
+  left: 22px;
+    z-index: 100; }
+#DeckFormation.preview .formationSheet:before {
+  width: 32px;
+  height: 112px;
+  background: url("/magica/resource/image_web/page/formation_2/formation_arrow_l_a.png") left bottom no-repeat;
+  background-size: 32px 112px;
+  position: absolute;
+  top: -webkit-calc(50% - 56px);
+  left: -20px;
+  content: "";
+      z-index: 10000; }
+#DeckFormation.preview .formationSheet .formationMass {
+  width: 60px;
+  height: 60px;
+  background: url("/magica/resource/image_web/page/formation/bg_formation_l_on.png") left bottom no-repeat;
+  background-size: 60px 60px;
+  display: block !important;
+      position: absolute; }
+#DeckFormation.preview .formationSheet .formationMass.pos_1 {
+  bottom: 15px;
+        left: 23px; }
+#DeckFormation.preview .formationSheet .formationMass.pos_2 {
+  top: 80px;
+        left: 23px; }
+#DeckFormation.preview .formationSheet .formationMass.pos_3 {
+  top: 15px;
+        left: 23px; }
+#DeckFormation.preview .formationSheet .formationMass.pos_4 {
+  bottom: 15px;
+        left: 88px; }
+#DeckFormation.preview .formationSheet .formationMass.pos_5 {
+  top: 80px;
+        left: 88px; }
+#DeckFormation.preview .formationSheet .formationMass.pos_6 {
+  top: 15px;
+        left: 88px; }
+#DeckFormation.preview .formationSheet .formationMass.pos_7 {
+  right: 23px;
+        bottom: 15px; }
+#DeckFormation.preview .formationSheet .formationMass.pos_8 {
+  top: 80px;
+        right: 23px; }
+#DeckFormation.preview .formationSheet .formationMass.pos_9 {
+  top: 15px;
+        right: 23px; }
+#DeckFormation.preview .formationSheet .formationMass .formationEffect {
+  height: 100%;
+  padding-top: 22px;
+  display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+  display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  /* Safari */
+  -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+#DeckFormation.preview .formationSheet .formationMass .formationEffect img {
+  height: 18px;
+  margin: 0 auto;
+          display: block; }
+#DeckFormation.preview .formationSheet .formationMass .formationEffect .attIcon {
+  height: 20px;
+  position: absolute;
+  top: 2px;
+          right: 2px; }
+  #DeckFormation.preview .deckChangeModeBtn, #DeckFormation.preview .arrowR, #DeckFormation.preview .arrowL, #DeckFormation.preview .formationHead, #DeckFormation.preview .deckPartsWrap, #DeckFormation.preview #deckCopyModeBtn, #DeckFormation.preview #previewBtn {
+    display: none !important; }
+#DeckFormation #formationSheetListWrap {
+  width: 100%;
+  height: -webkit-calc(100% - 92px);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+    z-index: 1000; }
+#DeckFormation #formationSheetListWrap #formationSheetListOuter {
+  width: 500px;
+  height: -webkit-calc(100% - 72px);
+  position: absolute;
+  top: 72px;
+  right: 70px;
+      overflow: hidden; }
+#DeckFormation #formationSheetListWrap #formationSheetListOuter .formationSheetListInner {
+  height: auto;
+  min-height: 100%;
+        padding: 15px 0 100px; }
+#DeckFormation #formationSheetListWrap #formationSheetListOuter .list {
+  font-size: 14px;
+  width: 388px;
+  height: 72px;
+  margin: 0 0 20px 80px;
+  padding: 8px 10px;
+  position: relative;
+  -webkit-align-items: center;
+  /* Safari */
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+#DeckFormation #formationSheetListWrap #formationSheetListOuter .list .formationMiniMap {
+          margin: 0 10px 0 0; }
+#DeckFormation #formationSheetListWrap #formationSheetListOuter .list.select {
+          -webkit-box-shadow: 0 0 0 6px #ff3b81,0 0 0 2px #ffffff inset;
+          box-shadow: 0 0 0 6px #ff3b81,0 0 0 2px #ffffff inset; }
+#DeckFormation #formationSheetListWrap #formationSheetListOuter .list.select:before {
+  width: 66px;
+  height: 48px;
+  background: url("/magica/resource/image_web/page/formation/cursor.png") left bottom no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 24px);
+  left: -57px;
+            content: ""; }
+#DeckFormation .deckName {
+  width: 308px;
+  height: 54px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_deck_name_a.png") left top no-repeat;
+  position: absolute;
+  top: 0px;
+  left: -webkit-calc(50% - 154px);
+    z-index: 100; }
+#DeckFormation .deckName.noneDisp {
+      display: none; }
+#DeckFormation .deckName p {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  font-size: 20px;
+      text-align: center; }
+#DeckFormation .deckName:after {
+  width: 20px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/formation_2/icon_deck_rename.png") left top no-repeat;
+  position: absolute;
+  right: 22px;
+  bottom: 12px;
+      content: ""; }
+#DeckFormation .deckName:before {
+  width: 76px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 38px);
+      content: ""; }
+#DeckFormation .deckName.deck11:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_1.png") left top no-repeat; }
+#DeckFormation .deckName.deck12:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_2.png") left top no-repeat; }
+#DeckFormation .deckName.deck13:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_3.png") left top no-repeat; }
+#DeckFormation .deckName.deck14:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_4.png") left top no-repeat; }
+#DeckFormation .deckName.deck15:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_5.png") left top no-repeat; }
+#DeckFormation .deckName.deck16:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_6.png") left top no-repeat; }
+#DeckFormation .deckName.deck17:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_7.png") left top no-repeat; }
+#DeckFormation .deckName.deck18:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_8.png") left top no-repeat; }
+#DeckFormation .deckName.deck19:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_9.png") left top no-repeat; }
+    #DeckFormation .deckName.deck41:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_1.png") left top no-repeat; }
+    #DeckFormation .deckName.deck42:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_2.png") left top no-repeat; }
+    #DeckFormation .deckName.deck43:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_3.png") left top no-repeat; }
+    #DeckFormation .deckName.deck44:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_4.png") left top no-repeat; }
+    #DeckFormation .deckName.deck45:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_5.png") left top no-repeat; }
+    #DeckFormation .deckName.deck46:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_6.png") left top no-repeat; }
+    #DeckFormation .deckName.deck47:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_7.png") left top no-repeat; }
+    #DeckFormation .deckName.deck48:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_8.png") left top no-repeat; }
+    #DeckFormation .deckName.deck49:before {
+      background: url("/magica/resource/image_web/page/formation_2/icon_team_9.png") left top no-repeat; }
+#DeckFormation .formationSheet {
+    display: none; }
+#DeckFormation .formationMiniMap {
+  width: 50px;
+  height: 50px;
+  background: url("/magica/resource/image_web/page/formation/bg_formation_s.png") left bottom no-repeat;
+    position: relative; }
+#DeckFormation .formationMiniMap span {
+  width: 10px;
+  height: 10px;
+  background: url("/magica/resource/image_web/page/formation/bg_formation_s_off.png") left bottom no-repeat;
+  display: block;
+      position: absolute; }
+#DeckFormation .formationMiniMap span.on {
+        background: url("/magica/resource/image_web/page/formation/bg_formation_s_on.png") left bottom no-repeat; }
+#DeckFormation .formationMiniMap .pos_1 {
+  top: 32px;
+      left: 8px; }
+#DeckFormation .formationMiniMap .pos_2 {
+  top: 20px;
+      left: 8px; }
+#DeckFormation .formationMiniMap .pos_3 {
+  top: 8px;
+      left: 8px; }
+#DeckFormation .formationMiniMap .pos_4 {
+  top: 32px;
+      left: 20px; }
+#DeckFormation .formationMiniMap .pos_5 {
+  top: 20px;
+      left: 20px; }
+#DeckFormation .formationMiniMap .pos_6 {
+  top: 8px;
+      left: 20px; }
+#DeckFormation .formationMiniMap .pos_7 {
+  top: 32px;
+      left: 32px; }
+#DeckFormation .formationMiniMap .pos_8 {
+  top: 20px;
+      left: 32px; }
+#DeckFormation .formationMiniMap .pos_9 {
+  top: 8px;
+      left: 32px; }
+#DeckFormation .formationHead .head .formationMiniMap {
+  width: 66px;
+  height: 50px;
+    background: url("/magica/resource/image_web/page/formation_2/bg_formation_s_02.png") left bottom no-repeat; }
+#DeckFormation .formationHead .head .formationMiniMap .pos_1 {
+  top: 32px;
+      left: 24px; }
+#DeckFormation .formationHead .head .formationMiniMap .pos_2 {
+  top: 20px;
+      left: 24px; }
+#DeckFormation .formationHead .head .formationMiniMap .pos_3 {
+  top: 8px;
+      left: 24px; }
+#DeckFormation .formationHead .head .formationMiniMap .pos_4 {
+  top: 32px;
+      left: 36px; }
+#DeckFormation .formationHead .head .formationMiniMap .pos_5 {
+  top: 20px;
+      left: 36px; }
+#DeckFormation .formationHead .head .formationMiniMap .pos_6 {
+  top: 8px;
+      left: 36px; }
+#DeckFormation .formationHead .head .formationMiniMap .pos_7 {
+  top: 32px;
+      left: 48px; }
+#DeckFormation .formationHead .head .formationMiniMap .pos_8 {
+  top: 20px;
+      left: 48px; }
+#DeckFormation .formationHead .head .formationMiniMap .pos_9 {
+  top: 8px;
+      left: 48px; }
+  #DeckFormation.dungeonWrap .deckViewWrap .deckChangeArrow {
+    width: 50px;
+    height: 62px;
+    position: absolute;
+    top: -webkit-calc(50% + 21px);
+    z-index: 100000; }
+    #DeckFormation.dungeonWrap .deckViewWrap .deckChangeArrow.arrowR {
+      background: url("/magica/resource/image_web/page/formation_2/arrow_r.png") left top no-repeat;
+      background-size: 50px 62px;
+      right: 0; }
+    #DeckFormation.dungeonWrap .deckViewWrap .deckChangeArrow.arrowL {
+      background: url("/magica/resource/image_web/page/formation_2/arrow_l.png") left top no-repeat;
+      background-size: 50px 62px;
+      left: 0; }
+#DeckFormation .deckViewWrap {
+  width: 100%;
+  height: -webkit-calc(100% - 92px);
+  position: absolute;
+  top: 0;
+    left: 0; }
+#DeckFormation .deckViewWrap .deckChangeArrow {
+  width: 64px;
+  height: 78px;
+  position: absolute;
+  top: -webkit-calc(50% + 21px);
+      z-index: 100000; }
+#DeckFormation .deckViewWrap .deckChangeArrow.arrowR {
+  background: url("/magica/resource/image_web/page/formation_2/arrow_r.png") left top no-repeat;
+        right: 10px; }
+#DeckFormation .deckViewWrap .deckChangeArrow.arrowL {
+  background: url("/magica/resource/image_web/page/formation_2/arrow_l.png") left top no-repeat;
+        left: 10px; }
+#DeckFormation .deckViewWrap.charaStatusMode .status .charaStatus, #DeckFormation .deckViewWrap.charaStatusMode .memoriaSkillWrap {
+  display: -webkit-flex !important;
+      display: -webkit-box !important;
+      display: -ms-flexbox !important;
+      display: flex !important; }
+#DeckFormation .deckViewWrap.diskMode .status .disk {
+      display: block !important; }
+#DeckFormation .deckViewWrap.skillMode .status .skill {
+      display: block !important; }
+#DeckFormation .deckViewWrap.memoriaEquipMode .status, #DeckFormation .deckViewWrap.memoriaEquipMode .deckParts > .bonusIcon, #DeckFormation .deckViewWrap.memoriaEquipMode .deckParts .eventTrainingIcon, #DeckFormation .deckViewWrap.memoriaEquipMode .formationMiniMap, #DeckFormation .deckViewWrap.memoriaEquipMode .memoriaSkillWrap, #DeckFormation .deckViewWrap.memoriaEquipMode .head > .formationEffect, #DeckFormation .deckViewWrap.memoriaEquipMode .epSetBtn {
+      display: none !important; }
+#DeckFormation .deckViewWrap.memoriaEquipMode .deckPartsWrap .deckParts .memoriaWrap {
+  padding-bottom: 6px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: flex-end;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end; }
+#DeckFormation .deckViewWrap.memoriaEquipMode .revisionIcon {
+  display: -webkit-flex !important;
+      display: -webkit-box !important;
+      display: -ms-flexbox !important;
+      display: flex !important; }
+#DeckFormation .deckViewWrap.deckChangeBg .deckChangeModeBtn, #DeckFormation .deckViewWrap.deckChangeBg .arrowR, #DeckFormation .deckViewWrap.deckChangeBg .arrowL {
+      display: none !important; }
+#DeckFormation .deckViewWrap.deckChangeBg:before {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  -webkit-animation: common_fade_in .3s ease 0s 1 alternate;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+      -webkit-animation-fill-mode: forwards; }
+#DeckFormation .deckViewWrap .formationHead {
+  width: 750px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 60px;
+  left: -webkit-calc(50% - 375px);
+  z-index: 2;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-justify-content: space-between;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+#DeckFormation .deckViewWrap .formationHead .head {
+  width: 142px;
+  height: 78px;
+  background: url("/magica/resource/image_web/page/formation/bg_deck_formation.png") left bottom no-repeat;
+        position: relative; }
+#DeckFormation .deckViewWrap .formationHead .head .formationMiniMap {
+  position: absolute;
+  top: 0;
+          left: 30px; }
+#DeckFormation .deckViewWrap .formationHead .head .formationEffect {
+  width: 142px;
+  position: absolute;
+  top: 52px;
+  left: -webkit-calc(50% - 71px);
+  z-index: 100;
+  -webkit-justify-content: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; }
+#DeckFormation .deckViewWrap .formationHead .head .formationEffect img {
+  height: 18px;
+  margin: 0 1px;
+            display: block; }
+#DeckFormation .deckViewWrap .formationHead .head .formationEffect img:not(.attIcon) {
+            margin-right: -5px; }
+#DeckFormation .deckViewWrap .deckPartsWrap {
+  width: 750px;
+  height: -webkit-calc(100% - 158px);
+  min-height: 326px;
+  max-height: 518px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 138px;
+  left: -webkit-calc(50% - 375px);
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-justify-content: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-justify-content: space-between;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+#DeckFormation .deckViewWrap .deckPartsWrap.tapBlock .deckParts:not(.select) {
+  pointer-events: none;
+        -webkit-filter: brightness(50%); }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts {
+  width: 142px;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+        -webkit-filter: brightness(100%); }
+        #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .retiredIcon {
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          position: absolute;
+          top: 0;
+          left: 0;
+          -webkit-border-radius: 5px 5px 15px 15px;
+          z-index: 1000; }
+          #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .retiredIcon:before {
+            width: 132px;
+            height: 28px;
+            background: url("/magica/resource/image_web/event/accomplish/common/deck/icon_die.png") left top no-repeat;
+            display: block;
+            position: absolute;
+            top: -webkit-calc(50% - 14px);
+            left: -webkit-calc(50% - 66px);
+            content: ""; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .revisionIcon {
+  width: 115px;
+  height: 16px;
+  margin-left: 0;
+  display: none;
+  position: absolute;
+  top: -28px;
+  left: -webkit-calc(50% - 57px);
+  z-index: 10000;
+  -webkit-justify-content: flex-end;
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
+          justify-content: flex-end; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .revisionIcon:before {
+  width: 58px;
+  height: 16px;
+  background: url("/magica/resource/image_web/page/formation_2/text_limitbreak.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+            content: ""; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .revisionIcon > div {
+  width: 16px;
+  height: 16px;
+  margin-left: 3px;
+  background: red;
+  background: url("/magica/resource/image_web/common/chara/icon_lb_off.png") left top no-repeat;
+            background-size: 16px 16px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .revisionIcon > div.on {
+  background: url("/magica/resource/image_web/common/chara/icon_lb_on.png") left top no-repeat;
+              background-size: 16px 16px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .epSetBtn {
+  width: 46px;
+  height: 46px;
+  background: url("/magica/resource/image_web/page/formation/icon_deck_wrap_ep_off.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+          z-index: 1001; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .epSetBtn.on {
+            background: url("/magica/resource/image_web/page/formation/icon_deck_wrap_ep_on.png") left top no-repeat, url("/magica/resource/image_web/page/formation/icon_deck_wrap_ep_off.png") left top no-repeat; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .epSetBtn.on:before {
+  width: 50px;
+  height: 12px;
+  background: url("/magica/resource/image_web/page/formation/icon_leader.png") left top no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+              content: ""; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .tapArea {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+          z-index: 1000; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .eventIcon {
+  width: 66px;
+  height: 50px;
+  background: url("/magica/resource/image_web/page/formation/icon_event_formation.png") left top no-repeat;
+  display: none;
+  position: absolute;
+  top: 21px;
+  left: 0;
+          z-index: 100000; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.eventChara .eventIcon {
+          display: block; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .bonusIcon {
+  width: 78px;
+  height: 24px;
+  background: url("/magica/resource/image_web/page/formation/icon_event_bonus.png") left top no-repeat;
+  background-size: 78px 24px;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+          z-index: 100000; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.support > .bonusIcon {
+          top: 23px !important; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .eventTrainingIcon {
+  width: 44px;
+  height: 50px;
+  background: url("/magica/resource/image_web/page/formation_2/icon_training.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: 133px;
+  right: 2px;
+          z-index: 100000; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.select .bg {
+  width: 100%;
+  height: 100%;
+  border-width: 48px;
+  border-style: solid;
+          -webkit-border-image: url("/magica/resource/image_web/page/formation/bg_deck_wrap_off.png") 52 stretch; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.select .select {
+  width: 146px;
+  height: -webkit-calc(100% + 4px);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  content: "";
+  pointer-events: none;
+  border-width: 40px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/page/formation/deck_wrap_select.png") 52 stretch;
+          z-index: 1003; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.on {
+  background: -webkit-linear-gradient(bottom, #e9d7c5 0%, #fffdf3 100%);
+          border-radius: 7px 7px 25px 25px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.on .maskWrap {
+  width: 142px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+            -webkit-mask: url("/magica/resource/image_web/page/formation/bg_deck_wrap_mask_top.png") left top no-repeat, url("/magica/resource/image_web/page/formation/bg_deck_wrap_mask_bottom.png") left bottom no-repeat, -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(0.03, rgba(0, 0, 0, 0)), color-stop(0.03, black), color-stop(0.97, black), color-stop(0.97, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0))); }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.on .bg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-width: 48px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/page/formation/bg_deck_wrap_off.png") 52 stretch;
+            z-index: 10; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.on.support.on:after {
+            display: none; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.off {
+  background: -webkit-linear-gradient(bottom, #e9d7c5 0%, #fffdf3 100%);
+  border-radius: 7px 7px 25px 25px;
+          -webkit-box-shadow: 0 0 10px 4px #a8a3b9 inset;
+          box-shadow: 0 0 10px 4px #a8a3b9 inset; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.off .bg {
+  width: 100%;
+  height: 100%;
+  border-width: 48px;
+  border-style: solid;
+            -webkit-border-image: url("/magica/resource/image_web/page/formation/bg_deck_wrap_off.png") 52 stretch; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.off:after {
+  width: 75px;
+  height: 79px;
+  background: url("/magica/resource/image_web/page/formation/icon_deck_wrap_off.png") left bottom no-repeat;
+  display: inline-block;
+  position: absolute;
+  top: -webkit-calc(50% - 60px);
+  left: -webkit-calc(50% - 37px);
+  text-align: center;
+  content: "";
+  pointer-events: none;
+            z-index: 1000; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .charaImg {
+  width: 142px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 71px);
+          pointer-events: none; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap {
+  width: 136px;
+  height: 50px;
+  padding: 14px 0 0;
+  background: url("/magica/resource/image_web/page/formation/bg_deck_memoria.png") center top no-repeat;
+  display: none;
+  position: absolute;
+  bottom: 1px;
+  left: 3px;
+          z-index: 999;
+  -webkit-justify-content: flex-end;
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-justify-content: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .equiped, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .canEquip, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .cannotEquip {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: #96897b;
+  display: block;
+  position: relative;
+  border: 2px solid #86796b;
+            -webkit-border-radius: 16px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .equiped.invalidRev:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .equiped.invalidChara:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .equiped.invalidAtt:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .canEquip.invalidRev:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .canEquip.invalidChara:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .canEquip.invalidAtt:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .cannotEquip.invalidRev:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .cannotEquip.invalidChara:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .cannotEquip.invalidAtt:before {
+  width: 32px;
+  height: 32px;
+  background: url("/magica/resource/image_web/page/formation_2/memoria_unable_s.png") left top no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+              content: ""; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .equiped img, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .canEquip img, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .cannotEquip img {
+  width: 28px;
+              height: 28px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaSkillWrap .canEquip {
+  background: url("/magica/resource/image_web/page/formation/btn_memoria_equip.png") left top no-repeat;
+  background-size: 100% 100%;
+            border: 0; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  -webkit-border-radius: 5px 5px 15px 15px;
+          z-index: 10000; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .memoriaSetEquipBtn {
+  width: 112px;
+  position: absolute;
+  top: -69px;
+  left: -webkit-calc(50% - 56px);
+            font-size: 14px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip {
+  width: 112px;
+  height: 72px;
+  margin: 3px auto;
+  display: block;
+            position: relative; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped .pieceBg, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip .pieceBg, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip .pieceBg {
+  width: 72px;
+  height: 72px;
+  position: absolute;
+  top: 0;
+  left: 0;
+              z-index: 10; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidRev:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidChara:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidAtt:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidRev:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidChara:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidAtt:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidRev:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidChara:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidAtt:before {
+  width: 70px;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  color: #ffffff;
+  content: "";
+              z-index: 1000; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidRev .pieceLv, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidRev .bonusIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidRev .lbMaxIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidChara .pieceLv, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidChara .bonusIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidChara .lbMaxIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidAtt .pieceLv, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidAtt .bonusIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidAtt .lbMaxIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidRev .pieceLv, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidRev .bonusIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidRev .lbMaxIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidChara .pieceLv, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidChara .bonusIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidChara .lbMaxIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidAtt .pieceLv, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidAtt .bonusIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidAtt .lbMaxIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidRev .pieceLv, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidRev .bonusIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidRev .lbMaxIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidChara .pieceLv, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidChara .bonusIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidChara .lbMaxIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidAtt .pieceLv, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidAtt .bonusIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidAtt .lbMaxIcon {
+              display: none; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidRev:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidRev:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidRev:before {
+              background: url("/magica/resource/image_web/page/formation_2/memoria_unable.png") left top no-repeat; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidChara:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidChara:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidChara:before {
+              background: url("/magica/resource/image_web/page/formation_2/memoria_unable_chara.png") left top no-repeat; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped.invalidAtt:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip.invalidAtt:before, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip.invalidAtt:before {
+              background: url("/magica/resource/image_web/page/formation_2/memoria_unable_element.png") left top no-repeat; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped .pieceIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip .pieceIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip .pieceIcon {
+  width: 70px;
+  height: 70px;
+  margin: 1px;
+  display: block;
+  position: relative;
+              z-index: 100; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped .artIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip .artIcon, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip .artIcon {
+  width: 44px;
+  height: 36px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_art_icon_s.png") left top no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+              z-index: 1; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped .artIcon img, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip .artIcon img, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip .artIcon img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 3px;
+                right: 3px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .equiped .pieceBg, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .cannotEquip .pieceBg {
+            background: url("/magica/resource/image_web/page/formation_2/bg_memoria_none.png") left top no-repeat; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .canEquip .pieceBg {
+            background: url("/magica/resource/image_web/page/formation_2/btn_memoria_equip.png") left top no-repeat; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .pieceLv {
+  position: absolute;
+  right: 0;
+  bottom: -3px;
+  color: #ffffff;
+  font-size: 14px;
+  text-shadow: -1px -1px 1px #504432, 1px -1px 1px #504432, -1px 1px 1px #504432, 1px 1px 1px #504432, -1px -1px #504432, 1px -1px #504432, -1px 1px #504432, 1px 1px #504432, -1px -1px 2px #504432, 1px -1px 2px #504432, -1px 1px 2px #504432, 1px 1px 2px #504432, -1px -1px 2px #504432, 1px -1px 2px #504432, -1px 1px 2px #504432, 1px 1px 2px #504432, -1px -1px 3px #504432, 1px -1px 3px #504432, -1px 1px 3px #504432, 1px 1px 3px #504432;
+            z-index: 100; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .bonusIcon {
+  width: 44px;
+  height: 12px;
+  background-size: 44px 12px;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+            z-index: 100; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .memoriaWrap .lbMaxIcon {
+  width: 48px;
+  height: 18px;
+  background: url("/magica/resource/image_web/page/formation/icon_limit_max.png") left top no-repeat;
+  background-size: 48px 18px;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 17px;
+            z-index: 100; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status {
+  width: 138px;
+  height: 178px;
+  padding: 40px 20px 0;
+  background: url("/magica/resource/image_web/page/formation/bg_deck_wrap_status.png") left top no-repeat;
+  position: absolute;
+  bottom: 4px;
+          left: 2px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status #rare {
+  width: 100%;
+  height: 16px;
+  margin: 5px 0 6px;
+  -webkit-justify-content: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status #rare span {
+  width: 16px;
+              height: 16px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status #level {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.1;
+            text-align: center; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .charaStatus {
+  display: none;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .charaStatus dt, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .charaStatus dd {
+  font-size: 14px;
+  line-height: 1.1;
+              text-shadow: 0 0; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .charaStatus dt {
+              width: 40px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .charaStatus dd {
+  width: 58px;
+              text-align: right; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .disk {
+  display: none;
+  position: absolute;
+  top: 90px;
+            left: 0; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .disk .commandList {
+  display: -webkit-flex;
+              display: -webkit-box;
+              display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+              -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+              -webkit-box-pack: start;
+              -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-end;
+              -webkit-box-pack: end;
+              -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-justify-content: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .disk .commandList li {
+  width: 44px;
+  height: 44px;
+                margin: -2px 0; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill {
+  width: 100%;
+  display: none;
+  position: absolute;
+  bottom: 30px;
+            left: 0; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .flexBox {
+  -webkit-justify-content: center;
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .magia, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .connect {
+  margin: 0 7px;
+              position: relative; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .magia img, #DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .connect img {
+  width: 50px;
+  height: 50px;
+  position: relative;
+                z-index: 10; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .magia.doppel:before {
+  width: 70px;
+  height: 70px;
+  background: url("/magica/resource/image_web/page/formation/doppel_frame.png") left top no-repeat;
+  background-size: 70px 70px;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  content: "";
+              z-index: 10000; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .magia:not(.doppel):before {
+  width: 64px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/formation/text_magia_s.png") left top no-repeat;
+  position: absolute;
+  bottom: -6px;
+  left: -webkit-calc(50% - 32px);
+  content: "";
+              z-index: 100; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .magia:not(.doppel):after {
+  width: 56px;
+  height: 56px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_art_icon.png") left top no-repeat;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  content: "";
+              z-index: 1; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .connect:before {
+  width: 64px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/formation/text_connect_s.png") left top no-repeat;
+  position: absolute;
+  bottom: -6px;
+  left: -webkit-calc(50% - 32px);
+  content: "";
+              z-index: 100; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status .skill .connect:after {
+  width: 56px;
+  height: 56px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_art_icon.png") left top no-repeat;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  content: "";
+              z-index: 1; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status #attribute {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 4px;
+            left: -webkit-calc(50% - 16px); }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts .status #attribute span {
+  width: 32px;
+  height: 32px;
+              background-size: 32px 32px; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.support {
+  background: -webkit-linear-gradient(bottom, #e9d7c5 0%, #fffdf3 100%);
+  border-radius: 7px 7px 25px 25px;
+          -webkit-box-shadow: 0 0 10px 4px #a8a3b9 inset;
+          box-shadow: 0 0 10px 4px #a8a3b9 inset; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.support .bg {
+  width: 100%;
+  height: 100%;
+  border-width: 48px;
+  border-style: solid;
+            -webkit-border-image: url("/magica/resource/image_web/page/formation/bg_deck_wrap_off.png") 52 stretch; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.support:after {
+  width: 75px;
+  height: 79px;
+  background: url("/magica/resource/image_web/page/formation/icon_deck_wrap_support.png") left bottom no-repeat;
+  display: inline-block;
+  position: absolute;
+  top: -webkit-calc(50% - 60px);
+  left: -webkit-calc(50% - 37px);
+  text-align: center;
+            content: ""; }
+#DeckFormation .deckViewWrap .deckPartsWrap .deckParts.support:before {
+  width: 142px;
+  height: 23px;
+  background: url("/magica/resource/image_web/page/formation/icon_deck_wrap_suppor2.png") left bottom no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+            z-index: 100; }
+#DeckFormation #deckFooter {
+  width: 100%;
+  height: 92px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+    z-index: 10; }
+#DeckFormation #deckFooter .attBox {
+  width: 151px;
+  height: 102px;
+  background: url("/magica/resource/image_web/page/formation_2/bg_element_a.png") left top no-repeat;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+      z-index: 1000; }
+#DeckFormation #deckFooter .attBox.enemyDetail {
+        background: url("/magica/resource/image_web/page/formation_2/bg_element_enemy_a.png") left top no-repeat; }
+#DeckFormation #deckFooter .attBox.enemyDetail .att {
+          -webkit-filter: grayscale(100%); }
+#DeckFormation #deckFooter .attBox.enemyDetail .att.on {
+            -webkit-filter: grayscale(0%); }
+#DeckFormation #deckFooter .attBox.enemyDetail .att.on:after {
+  width: 34px;
+  height: 34px;
+  background: url("/magica/resource/image_web/page/formation/enemy_element_highlight.png") left top no-repeat;
+  background-size: 34px 34px;
+  display: block;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+  content: "";
+              z-index: 1; }
+#DeckFormation #deckFooter .attBox .arrow {
+  width: 96px;
+  height: 44px;
+  position: absolute;
+  top: 54px;
+        left: 39px; }
+#DeckFormation #deckFooter .attBox .att {
+  width: 20px;
+  height: 20px;
+        position: absolute; }
+#DeckFormation #deckFooter .attBox .att:before {
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  content: "";
+          z-index: 10; }
+#DeckFormation #deckFooter .attBox .att.fire {
+  top: 39px;
+          left: 101px; }
+#DeckFormation #deckFooter .attBox .att.fire:before {
+  background: url("/magica/resource/image_web/common/chara/att_fire.png") left top no-repeat;
+            background-size: 20px 20px; }
+#DeckFormation #deckFooter .attBox .att.water {
+  top: 73px;
+          left: 83px; }
+#DeckFormation #deckFooter .attBox .att.water:before {
+  background: url("/magica/resource/image_web/common/chara/att_water.png") left top no-repeat;
+            background-size: 20px 20px; }
+#DeckFormation #deckFooter .attBox .att.timber {
+  top: 73px;
+          left: 119px; }
+#DeckFormation #deckFooter .attBox .att.timber:before {
+  background: url("/magica/resource/image_web/common/chara/att_timber.png") left top no-repeat;
+            background-size: 20px 20px; }
+#DeckFormation #deckFooter .attBox .att.dark {
+  top: 73px;
+          left: 47px; }
+#DeckFormation #deckFooter .attBox .att.dark:before {
+  background: url("/magica/resource/image_web/common/chara/att_dark.png") left top no-repeat;
+            background-size: 20px 20px; }
+#DeckFormation #deckFooter .attBox .att.light {
+  top: 39px;
+          left: 47px; }
+#DeckFormation #deckFooter .attBox .att.light:before {
+  background: url("/magica/resource/image_web/common/chara/att_light.png") left top no-repeat;
+            background-size: 20px 20px; }
+#DeckFormation #deckFooter .attBox .att.void {
+  top: 56px;
+          left: 11px; }
+#DeckFormation #deckFooter .attBox .att.void:before {
+  background: url("/magica/resource/image_web/common/chara/att_void.png") left top no-repeat;
+            background-size: 20px 20px; }
+#DeckFormation #deckFooter .bg1 {
+  width: 100%;
+  height: 12px;
+      background: url("/magica/resource/image_web/page/formation_2/footer_line.png") left top no-repeat; }
+#DeckFormation #deckFooter .bg2 {
+  width: 100%;
+  height: 80px;
+  background: url("/magica/resource/image_web/page/formation/formation_footer_bg_01.png") center bottom no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+      z-index: 2; }
+    #DeckFormation #deckFooter .bg3 {
+  width: 100%;
+  height: 80px;
+  background: url("/magica/resource/image_web/page/formation/formation_footer_bg_02.png") center bottom no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+      z-index: 3; }
+#DeckFormation #deckFooter .btns {
+  width: -webkit-calc(100% - 159px);
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  left: 159px;
+  z-index: 100;
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+#DeckFormation #deckFooter .btns.noneDisp {
+        display: none; }
+#DeckFormation #deckFooter .btns #pieceEquipBtn {
+  width: 180px;
+  height: 54px;
+        background: url("/magica/resource/image_web/page/formation_2/btn_memoria.png") left top no-repeat; }
+#DeckFormation #deckFooter .btns #pieceEquipBtn.on {
+          background: url("/magica/resource/image_web/page/formation_2/btn_chara.png") left top no-repeat !important; }
+#DeckFormation #deckFooter .btns #formationSheetChangeBtn {
+  width: 180px;
+  height: 54px;
+        background: url("/magica/resource/image_web/page/formation_2/btn_formation.png") left top no-repeat; }
+#DeckFormation #deckFooter .btns #dispModeChangeBtn {
+  width: 106px;
+  height: 54px;
+        background: url("/magica/resource/image_web/page/formation_2/btn_switch.png") left top no-repeat; }
+      #DeckFormation #deckFooter .btns #deckCopyModeBtn {
+  width: 106px;
+  height: 54px;
+        background: url("/magica/resource/image_web/page/formation_2/btn_copy.png") left top no-repeat; }
+      #DeckFormation #deckFooter .btns .blankPanel {
+        width: 106px;
+        height: 54px; }
+#DeckFormation #deckFooter .btns #deckRemovePopBtn {
+  width: 106px;
+  height: 54px;
+        background: url("/magica/resource/image_web/page/formation_2/btn_breakup.png") left top no-repeat; }
+#DeckFormation #deckFooter .btns #previewCloseBtn {
+  width: 180px;
+  height: 54px;
+        background: url("/magica/resource/image_web/page/formation_2/btn_ok.png") left top no-repeat; }
+#DeckFormation #deckFooter .btns #formationSheetDecideBtn {
+  width: 180px;
+  height: 54px;
+        background: url("/magica/resource/image_web/page/formation_2/btn_done.png") left top no-repeat; }
+#DeckFormation #deckFooter .btns .footerBtn {
+  width: 144px;
+  height: 54px;
+  margin: 0 0 0 8px;
+  background: url("/magica/resource/image_web/page/formation_2/btn_white_s.png") left top no-repeat;
+  line-height: 54px;
+        text-align: center; }
+#DeckFormation #deckFooter .btns .mb_pink {
+  min-width: 116px;
+  height: 44px;
+  margin: 0 2px 0 10px;
+  line-height: 20px;
+        -webkit-filter: none;
+        filter: none; }
+#DeckFormation #deckFooter .btnList {
+  position: absolute;
+  top: 40px;
+      left: 90px; }
+#DeckFormation #deckFooter .btnList li {
+  width: 176px;
+  margin: 0 10px 0 0;
+  font-size: 18px;
+        line-height: 64px; }
+    #DeckFormation #deckFooter #mainBtn, #DeckFormation #deckFooter #nextPageBtn {
+  width: 98px;
+  height: 102px;
+  background: url("/magica/resource/image_web/page/formation/btn_main.png") left top no-repeat;
+  position: absolute;
+  right: 23px;
+  bottom: 4px;
+  color: #ffffff;
+  font-size: 20px;
+  line-height: 102px;
+  text-align: center;
+  opacity: 1;
+  text-shadow: -1px -1px 2px #ff3359, 1px -1px 2px #ff3359, -1px 1px 2px #ff3359, 1px 1px 2px #ff3359, -1px -1px 2px #ff3359, 1px -1px 2px #ff3359, -1px 1px 2px #ff3359, 1px 1px 2px #ff3359;
+      -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25)); }
+      #DeckFormation #deckFooter #mainBtn.off, #DeckFormation #deckFooter #nextPageBtn.off {
+        -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.25)) grayscale(100%); }
+      #DeckFormation #deckFooter #mainBtn.noneDisp, #DeckFormation #deckFooter #nextPageBtn.noneDisp {
+        display: none; }
+
+/* 19-05-27 ios11レンダリングバグ対応を分離 */
+body.ios #DeckFormation.deckChange #deckCancelBtn, body.ios #DeckFormation.deckCopy #deckCancelBtn {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+body.ios #DeckFormation.deckCopy .deckSelectInner .off {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+body.ios #DeckFormation.deckCopy .deckSelectInner .currentDeck {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+body.ios #DeckFormation .deckViewWrap .formationHead .head {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+body.ios #DeckFormation .deckViewWrap .deckPartsWrap.tapBlock .deckParts:not(.select) {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+body.ios #DeckFormation .deckViewWrap .deckPartsWrap .deckParts {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+body.ios #DeckFormation #deckFooter .attBox.enemyDetail .att.on {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+  body.ios #DeckFormation #deckFooter .attBox.enemyDetail .att.on:after {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+
+body.ios #DeckFormation #deckFooter .attBox .att {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+
+body.ios #DeckFormation #mainBtn, body.ios #DeckFormation #nextPageBtn {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0); }
+  body.ios #DeckFormation #mainBtn.off, body.ios #DeckFormation #nextPageBtn.off {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+  body.ios #DeckFormation #mainBtn.noneDisp, body.ios #DeckFormation #nextPageBtn.noneDisp {
+  -webkit-transform: translateZ(0);
+    transform: translateZ(0); }
+
+body.ios #DeckFormation .hide {
+  -webkit-transform: translateZ(0); }
+
+body.ios #charaListWrap {
+  -webkit-transform: translateY(120px) translateZ(0); }
+
+@-webkit-keyframes card_list_open {
+  0% {
+    -webkit-transform: translateY(4px);
+    opacity: .6; }
+  100% {
+    -webkit-transform: translateY(0);
+    opacity: 1; } }
+
+@-webkit-keyframes cursor_anim {
+  0% {
+    -webkit-transform: translateX(-5px); }
+  90% {
+    -webkit-transform: translateX(0); }
+  100% {
+    -webkit-transform: translateX(-5px); } }
+
+@-webkit-keyframes bg_fade_in_out {
+  0% {
+    opacity: .2; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: .2; } }

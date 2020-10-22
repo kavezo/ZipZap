@@ -1,0 +1,1398 @@
+[
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_1",
+        "nextClass": "FREE_RANK_2",
+        "requiredPoint": 30,
+        "className": "Layer 1",
+        "nextClassName": "Layer 2",
+        "storyId": "400001-1",
+        "storyTitle": "An Invitation From the Other Side",
+        "bonusRewardList": [],
+        "sortKey": 28
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_10",
+        "prevClass": "FREE_RANK_9",
+        "nextClass": "FREE_RANK_11",
+        "requiredPoint": 1000,
+        "className": "Layer 10",
+        "nextClassName": "Layer 11",
+        "storyId": "400010-1",
+        "storyTitle": "Modest Revenge (Part 2)",
+        "openConditionSectionId": 101307,
+        "openConditionSection": {
+            "sectionId": 101307,
+            "questType": "MAIN",
+            "genericId": 13,
+            "genericIndex": 7,
+            "secret": "TvyVa",
+            "areaMapId": 12013,
+            "imagePath": "12064",
+            "areaDetailName": "Mizuna Shrine - Inner Grounds - Uwasa's Labyrinth",
+            "title": "The Tainted Soul Gem",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "I'm weighing Yachiyo down... It'll be okay, if I can purify my Soul Gem...",
+            "outline": "When Iroha found Ui, she said, \"Magical Girls can be saved in Kamihama City,\" then vanished. Yachiyo was almost fooled by a false Mifuyu until Iroha defeated it and freed her. They fled, and the Labyrinth reappeared. The rumor says, \"If you meet the one you love, you'll be absorbed in bliss and never return home,\" but they rejected this, so the Uwasa tried to kill them. Their magic didn't work on it, so all they could do was run. Iroha's Soul Gem filled with impurities during the chaos...",
+            "ap": 8,
+            "difficulty": 30,
+            "clearRewardCode": "GEM_1001_5",
+            "clearReward": {
+                "presentType": "GEM",
+                "quantity": 5,
+                "genericId": 1001,
+                "displayName": "Iroha Tamaki"
+            },
+            "openConditionSectionId": 101306,
+            "openConditionSection": {
+                "sectionId": 101306,
+                "questType": "MAIN",
+                "genericId": 13,
+                "genericIndex": 6,
+                "secret": "nx7ER",
+                "areaMapId": 12013,
+                "imagePath": "12063",
+                "areaDetailName": "Mizuna Shrine - Inner Grounds - Uwasa's Labyrinth",
+                "title": "The Two They Long For",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "Is Ui really here...?",
+                "outline": "Having discovered the Séance Shrine, Iroha was full of excitement at the thought of seeing Ui. She visited Mizuna Shrine late at night with Yachiyo and Tsuruno, as described in the rumor. The rumor dictates that they have to write the name of the person they are searching for on a wooden plaque, so Tsuruno guarded them while they wrote. With Yachiyo by her side, Iroha wished with all her heart to be reunited with Ui. When Tsuruno turned back around, Iroha and Yachiyo were gone...",
+                "ap": 7,
+                "difficulty": 13,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemyList": []
+            },
+            "openConditionChapter": {
+                "chapterId": 13,
+                "partNo": 1,
+                "chapterNo": 3,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "3",
+                "title": "Kamihama Rumor Files",
+                "sectionCount": 7
+            },
+            "openEnemy": "113",
+            "openEnemyList": [
+                {
+                    "enemyId": 113,
+                    "enemyNo": 6003,
+                    "type": 3,
+                    "name": "Uwasa of the Commoner's Horse",
+                    "description": "Have you heard? Has anyone told you? The Rumor of the Commoner's Horse. The god of this shrine is a fancy and kind horse! He's a cool guy that grants people's wishes, bringing them to who they are searching for. But too bad! As it turns out, it's all just an illusion. If you realize it's not real and deny it, the kind horse will turn into a gangster! Everyone in Mizuna Ward is talking about it!",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ],
+            "openFunctions": "ARCHIVE_DOPPEL,ARCHIVE_ENEMY"
+        },
+        "openConditionChapter": {
+            "chapterId": 13,
+            "partNo": 1,
+            "chapterNo": 3,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "3",
+            "title": "Kamihama Rumor Files",
+            "sectionCount": 7
+        },
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 19
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_11",
+        "prevClass": "FREE_RANK_10",
+        "nextClass": "FREE_RANK_12",
+        "requiredPoint": 1500,
+        "className": "Layer 11",
+        "nextClassName": "Layer 12",
+        "storyId": "400011-1",
+        "storyTitle": "The Mirror's Abyss",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 18
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_12",
+        "prevClass": "FREE_RANK_11",
+        "nextClass": "FREE_RANK_13",
+        "requiredPoint": 2000,
+        "className": "Layer 12",
+        "nextClassName": "Layer 13",
+        "storyId": "400012-1",
+        "storyTitle": "Iroha, Again",
+        "openConditionSectionId": 101401,
+        "openConditionSection": {
+            "sectionId": 101401,
+            "questType": "MAIN",
+            "genericId": 14,
+            "genericIndex": 1,
+            "secret": "IHgTV",
+            "areaMapId": 13012,
+            "imagePath": "21211",
+            "areaDetailName": "Chinese Restaurant Banbanzai",
+            "title": "The Water Station",
+            "charaId": 1003,
+            "charaName": "Tsuruno Yui",
+            "defaultCardId": 10032,
+            "message": "Today's Meat and Mixed Vegetable＠Ramen! Fish cake, bamboo, spinach!＠Iroha, ready your taste buds!",
+            "outline": "Iroha fainted from the impurities in her Soul Gem. They were being badly beaten by an Uwasa, but a \"strange creature\" emerged from Iroha and slayed it in an instant. Not long after, a girl named Mami Tomoe attacked them, mistaking Iroha for a Witch in human form. Iroha was cornered when Momoko showed up to save her. Afterwards, at Yachiyo's house, Iroha suggested they investigate the rumors together. Yachiyo agreed and they began their search for their friends and family together.",
+            "ap": 8,
+            "difficulty": 30,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openConditionSectionId": 101307,
+            "openConditionSection": {
+                "sectionId": 101307,
+                "questType": "MAIN",
+                "genericId": 13,
+                "genericIndex": 7,
+                "secret": "TvyVa",
+                "areaMapId": 12013,
+                "imagePath": "12064",
+                "areaDetailName": "Mizuna Shrine - Inner Grounds - Uwasa's Labyrinth",
+                "title": "The Tainted Soul Gem",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "I'm weighing Yachiyo down... It'll be okay, if I can purify my Soul Gem...",
+                "outline": "When Iroha found Ui, she said, \"Magical Girls can be saved in Kamihama City,\" then vanished. Yachiyo was almost fooled by a false Mifuyu until Iroha defeated it and freed her. They fled, and the Labyrinth reappeared. The rumor says, \"If you meet the one you love, you'll be absorbed in bliss and never return home,\" but they rejected this, so the Uwasa tried to kill them. Their magic didn't work on it, so all they could do was run. Iroha's Soul Gem filled with impurities during the chaos...",
+                "ap": 8,
+                "difficulty": 30,
+                "clearRewardCode": "GEM_1001_5",
+                "clearReward": {
+                    "presentType": "GEM",
+                    "quantity": 5,
+                    "genericId": 1001,
+                    "displayName": "Iroha Tamaki"
+                },
+                "openEnemy": "113",
+                "openEnemyList": [
+                    {
+                        "enemyId": 113,
+                        "enemyNo": 6003,
+                        "type": 3,
+                        "name": "Uwasa of the Commoner's Horse",
+                        "description": "Have you heard? Has anyone told you? The Rumor of the Commoner's Horse. The god of this shrine is a fancy and kind horse! He's a cool guy that grants people's wishes, bringing them to who they are searching for. But too bad! As it turns out, it's all just an illusion. If you realize it's not real and deny it, the kind horse will turn into a gangster! Everyone in Mizuna Ward is talking about it!",
+                        "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                    }
+                ],
+                "openFunctions": "ARCHIVE_DOPPEL,ARCHIVE_ENEMY"
+            },
+            "openConditionChapter": {
+                "chapterId": 13,
+                "partNo": 1,
+                "chapterNo": 3,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "3",
+                "title": "Kamihama Rumor Files",
+                "sectionCount": 7
+            },
+            "openEnemyList": [],
+            "openDate": "2019/07/16 03:00:00"
+        },
+        "openConditionChapter": {
+            "chapterId": 14,
+            "partNo": 1,
+            "chapterNo": 4,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "4",
+            "title": "Guardians of the Uwasa",
+            "sectionCount": 7
+        },
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 17
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_13",
+        "prevClass": "FREE_RANK_12",
+        "nextClass": "FREE_RANK_14",
+        "requiredPoint": 2500,
+        "className": "Layer 13",
+        "nextClassName": "Layer 14",
+        "storyId": "400013-1",
+        "storyTitle": "A Lively Meeting",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 16
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_14",
+        "prevClass": "FREE_RANK_13",
+        "nextClass": "FREE_RANK_15",
+        "requiredPoint": 3000,
+        "className": "Layer 14",
+        "nextClassName": "Layer 15",
+        "storyId": "400014-1",
+        "storyTitle": "Searching for Friends",
+        "openConditionSectionId": 101402,
+        "openConditionSection": {
+            "sectionId": 101402,
+            "questType": "MAIN",
+            "genericId": 14,
+            "genericIndex": 2,
+            "secret": "JEh2S",
+            "areaMapId": 13011,
+            "imagePath": "21201",
+            "areaDetailName": "Yachiyo's House - Living Room",
+            "title": "Mysterious Papers",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Something's been up since＠yesterday... Why are all these＠papers falling on me?",
+            "outline": "Iroha decided to go to Tsuruno's restaurant in Sankyo Ward every day after hearing Nemu was a regular there. Nemu never came, so Iroha started looking for her house instead. She stopped to drink at a water station with an owl sign. Since then, numbered papers started falling on top of her, counting down from 24. Iroha returned empty-handed from her search for Nemu. As she told Yachiyo she would move to Kamihama, 22 fell on her head. Yachiyo asked what Iroha had gotten herself into...",
+            "ap": 8,
+            "difficulty": 30,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openConditionSectionId": 101401,
+            "openConditionSection": {
+                "sectionId": 101401,
+                "questType": "MAIN",
+                "genericId": 14,
+                "genericIndex": 1,
+                "secret": "IHgTV",
+                "areaMapId": 13012,
+                "imagePath": "21211",
+                "areaDetailName": "Chinese Restaurant Banbanzai",
+                "title": "The Water Station",
+                "charaId": 1003,
+                "charaName": "Tsuruno Yui",
+                "defaultCardId": 10032,
+                "message": "Today's Meat and Mixed Vegetable＠Ramen! Fish cake, bamboo, spinach!＠Iroha, ready your taste buds!",
+                "outline": "Iroha fainted from the impurities in her Soul Gem. They were being badly beaten by an Uwasa, but a \"strange creature\" emerged from Iroha and slayed it in an instant. Not long after, a girl named Mami Tomoe attacked them, mistaking Iroha for a Witch in human form. Iroha was cornered when Momoko showed up to save her. Afterwards, at Yachiyo's house, Iroha suggested they investigate the rumors together. Yachiyo agreed and they began their search for their friends and family together.",
+                "ap": 8,
+                "difficulty": 30,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemyList": [],
+                "openDate": "2019/07/16 03:00:00"
+            },
+            "openConditionChapter": {
+                "chapterId": 14,
+                "partNo": 1,
+                "chapterNo": 4,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "4",
+                "title": "Guardians of the Uwasa",
+                "sectionCount": 7
+            },
+            "openEnemyList": [],
+            "openDate": "2019/07/16 03:00:00"
+        },
+        "openConditionChapter": {
+            "chapterId": 14,
+            "partNo": 1,
+            "chapterNo": 4,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "4",
+            "title": "Guardians of the Uwasa",
+            "sectionCount": 7
+        },
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 15
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_15",
+        "prevClass": "FREE_RANK_14",
+        "nextClass": "FREE_RANK_16",
+        "requiredPoint": 4000,
+        "className": "Layer 15",
+        "nextClassName": "Layer 16",
+        "storyId": "400015-1",
+        "storyTitle": "Emiri Knows",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 14
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_16",
+        "prevClass": "FREE_RANK_15",
+        "nextClass": "FREE_RANK_17",
+        "requiredPoint": 5000,
+        "className": "Layer 16",
+        "nextClassName": "Layer 17",
+        "storyId": "400016-1",
+        "storyTitle": "The Message From Inside the Mirror",
+        "openConditionSectionId": 101403,
+        "openConditionSection": {
+            "sectionId": 101403,
+            "questType": "MAIN",
+            "genericId": 14,
+            "genericIndex": 3,
+            "secret": "GiGzT",
+            "areaMapId": 13011,
+            "imagePath": "21211",
+            "areaDetailName": "Chinese Restaurant Banbanzai",
+            "title": "Black Feather Girls",
+            "charaId": 1005,
+            "charaName": "Felicia Mitsuki",
+            "defaultCardId": 10052,
+            "message": "Ugh, forget that rumor crap＠already! Let's hunt down those＠Witches instead!",
+            "outline": "The papers were down to 11 so Iroha started investigating Rumors to avoid any potential danger. She didn't find the Water Station with the Owl Sign, but met another girl who also drank the water there: Felicia Mitsuki. They began to look for the Rumor together. Yachiyo found a Familiar-like being and tried to listen in, but it ran when a girl, Kyoko Sakura, appeared. Felicia then ran off after sensing a Witch. Not being sure how to deal with Felicia, Iroha decided to regroup with Yachiyo.",
+            "ap": 8,
+            "difficulty": 32,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openConditionSectionId": 101402,
+            "openConditionSection": {
+                "sectionId": 101402,
+                "questType": "MAIN",
+                "genericId": 14,
+                "genericIndex": 2,
+                "secret": "JEh2S",
+                "areaMapId": 13011,
+                "imagePath": "21201",
+                "areaDetailName": "Yachiyo's House - Living Room",
+                "title": "Mysterious Papers",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "Something's been up since＠yesterday... Why are all these＠papers falling on me?",
+                "outline": "Iroha decided to go to Tsuruno's restaurant in Sankyo Ward every day after hearing Nemu was a regular there. Nemu never came, so Iroha started looking for her house instead. She stopped to drink at a water station with an owl sign. Since then, numbered papers started falling on top of her, counting down from 24. Iroha returned empty-handed from her search for Nemu. As she told Yachiyo she would move to Kamihama, 22 fell on her head. Yachiyo asked what Iroha had gotten herself into...",
+                "ap": 8,
+                "difficulty": 30,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemyList": [],
+                "openDate": "2019/07/16 03:00:00"
+            },
+            "openConditionChapter": {
+                "chapterId": 14,
+                "partNo": 1,
+                "chapterNo": 4,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "4",
+                "title": "Guardians of the Uwasa",
+                "sectionCount": 7
+            },
+            "openEnemyList": [],
+            "openDate": "2019/07/16 03:00:00"
+        },
+        "openConditionChapter": {
+            "chapterId": 14,
+            "partNo": 1,
+            "chapterNo": 4,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "4",
+            "title": "Guardians of the Uwasa",
+            "sectionCount": 7
+        },
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 13
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_17",
+        "prevClass": "FREE_RANK_16",
+        "nextClass": "FREE_RANK_18",
+        "requiredPoint": 6000,
+        "className": "Layer 17",
+        "nextClassName": "Layer 18",
+        "storyId": "400017-1",
+        "storyTitle": "I'll Never Say Goodbye!",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 12
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_18",
+        "prevClass": "FREE_RANK_17",
+        "nextClass": "FREE_RANK_19",
+        "requiredPoint": 7000,
+        "className": "Layer 18",
+        "nextClassName": "Layer 19",
+        "storyId": "400018-1",
+        "storyTitle": "See You Again Soon",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 11
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_19",
+        "prevClass": "FREE_RANK_18",
+        "nextClass": "FREE_RANK_20",
+        "requiredPoint": 8000,
+        "className": "Layer 19",
+        "nextClassName": "Layer 20",
+        "storyId": "400019-1",
+        "storyTitle": "An Echoing Voice",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 10
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_2",
+        "prevClass": "FREE_RANK_1",
+        "nextClass": "FREE_RANK_3",
+        "requiredPoint": 100,
+        "className": "Layer 2",
+        "nextClassName": "Layer 3",
+        "storyId": "400002-1",
+        "storyTitle": "Journey to the End",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 27
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_20",
+        "prevClass": "FREE_RANK_19",
+        "nextClass": "FREE_RANK_21",
+        "requiredPoint": 9000,
+        "className": "Layer 20",
+        "nextClassName": "Layer 21",
+        "storyId": "400020-1",
+        "storyTitle": "A Revealing Memory",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 9
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_21",
+        "prevClass": "FREE_RANK_20",
+        "nextClass": "FREE_RANK_22",
+        "requiredPoint": 10000,
+        "className": "Layer 21",
+        "nextClassName": "Layer 22",
+        "storyId": "400021-1",
+        "storyTitle": "The Coordinator's Gone",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 8
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_22",
+        "prevClass": "FREE_RANK_21",
+        "nextClass": "FREE_RANK_23",
+        "requiredPoint": 11000,
+        "className": "Layer 22",
+        "nextClassName": "Layer 23",
+        "storyId": "400022-1",
+        "storyTitle": "An Unending Argument",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 7
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_23",
+        "prevClass": "FREE_RANK_22",
+        "nextClass": "FREE_RANK_24",
+        "requiredPoint": 12000,
+        "className": "Layer 23",
+        "nextClassName": "Layer 24",
+        "storyId": "400023-1",
+        "storyTitle": "Frayed Strings",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 6
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_24",
+        "prevClass": "FREE_RANK_23",
+        "nextClass": "FREE_RANK_25",
+        "requiredPoint": 13000,
+        "className": "Layer 24",
+        "nextClassName": "Layer 25",
+        "storyId": "400024-1",
+        "storyTitle": "Punishment Within Sins",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 5
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_25",
+        "prevClass": "FREE_RANK_24",
+        "nextClass": "FREE_RANK_26",
+        "requiredPoint": 14000,
+        "className": "Layer 25",
+        "nextClassName": "Layer 26",
+        "storyId": "400025-1",
+        "storyTitle": "Triple Threat",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 4
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_26",
+        "prevClass": "FREE_RANK_25",
+        "className": "Layer 26",
+        "storyId": "400026-1",
+        "storyTitle": "Wrapped in Regret",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 3
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_3",
+        "prevClass": "FREE_RANK_2",
+        "nextClass": "FREE_RANK_4",
+        "requiredPoint": 150,
+        "className": "Layer 3",
+        "nextClassName": "Layer 4",
+        "storyId": "400003-1",
+        "storyTitle": "Angry Girl, Crying Girl",
+        "openConditionSectionId": 101302,
+        "openConditionSection": {
+            "sectionId": 101302,
+            "questType": "MAIN",
+            "genericId": 13,
+            "genericIndex": 2,
+            "secret": "oIPz1",
+            "areaMapId": 11012,
+            "imagePath": "21061",
+            "areaDetailName": "Shinsei Chuo Station",
+            "title": "The Shrine's Rumor",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Could Ui be mixed up in one of these rumors? It's possible, right?",
+            "outline": "Iroha searched for Touka and Nemu, the only other people who might remember Ui, but was unable to find any clues about them. After defeating the Uwasa of Ending Friendships, Kaede told Iroha that all the children taken away by it had returned home. Iroha had thought it impossible, but Ui herself had said, \"Anything is possible in this world.\" Reinvigorated, Iroha resolves to investigate, or even experience some of Kamihama City's rumors in hopes of finding Ui.",
+            "ap": 7,
+            "difficulty": 11,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openConditionSectionId": 101301,
+            "openConditionSection": {
+                "sectionId": 101301,
+                "questType": "MAIN",
+                "genericId": 13,
+                "genericIndex": 1,
+                "secret": "1EqbA",
+                "areaMapId": 11012,
+                "imagePath": "11022",
+                "areaDetailName": "Shinsei Ward - Streets",
+                "title": "Anything is Possible",
+                "charaId": 1010,
+                "charaName": "Momoko Togame",
+                "defaultCardId": 10104,
+                "message": "Iroha... She's been sighing real deep for a while now...",
+                "outline": "Iroha teamed up with Yachiyo and Momoko to save Rena and Kaede. Later, Rena used her transformation abilities to help her, and Iroha learned that Touka and Nemu had actually been at the hospital. This gave her more faith in her memories. Many mysteries still remain, though. The enemies that face them are not Witches, but unavoidable beings called Uwasa, who make rumors come true. Even with all this unease, knowing that Touka and Nemu exist has reignited Iroha's desire to search for Ui.",
+                "ap": 7,
+                "difficulty": 11,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemy": "112",
+                "openEnemyList": [
+                    {
+                        "enemyId": 112,
+                        "enemyNo": 7105,
+                        "type": 2,
+                        "name": "Rooftop Witch Minion",
+                        "title": "Role: Confiner",
+                        "description": "These Familiars worry that the Rooftop Witch might fly away. They flit about, checking locks and cleaning the school. They never forget to point out problems. They have the key to the door that leads to the rooftop where the Witch is, but because they are careless, they often lose it, so they decided every Familiar should have their own key. That means anyone can access the rooftop by defeating a Familiar. They hate intruders who enter their \"well-secured\" Labyrinth. If one of them finds an intruder, they will swarm about it, attacking with their precious keys in all sorts of dynamic ways.",
+                        "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                    }
+                ]
+            },
+            "openConditionChapter": {
+                "chapterId": 13,
+                "partNo": 1,
+                "chapterNo": 3,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "3",
+                "title": "Kamihama Rumor Files",
+                "sectionCount": 7
+            },
+            "openEnemyList": []
+        },
+        "openConditionChapter": {
+            "chapterId": 13,
+            "partNo": 1,
+            "chapterNo": 3,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "3",
+            "title": "Kamihama Rumor Files",
+            "sectionCount": 7
+        },
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 26
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_4",
+        "prevClass": "FREE_RANK_3",
+        "nextClass": "FREE_RANK_5",
+        "requiredPoint": 200,
+        "className": "Layer 4",
+        "nextClassName": "Layer 5",
+        "storyId": "400004-1",
+        "storyTitle": "Lost in the Layers",
+        "openConditionSectionId": 101303,
+        "openConditionSection": {
+            "sectionId": 101303,
+            "questType": "MAIN",
+            "genericId": 13,
+            "genericIndex": 3,
+            "secret": "g3Tle",
+            "areaMapId": 12011,
+            "imagePath": "12021",
+            "areaDetailName": "Mizuna Ward - Streets",
+            "title": "In a Fairytale's Footsteps",
+            "charaId": 1003,
+            "charaName": "Tsuruno Yui",
+            "defaultCardId": 10032,
+            "message": "All right! Together anything's＠possible! We'll find the Séance＠Shrine, no problem!",
+            "outline": "Iroha set out in search of some rumors. She was too afraid to talk to anyone though, so Yachiyo scolded her for her lack of resolve. But then Mitama told her about a rumor she'd heard about a shrine in Mizuna Ward. Iroha found no leads in Mizuna Ward, and was at a loss...until a girl named Tsuruno Yui appeared. \"The Séance Shrine lets you see who you long to see.\" Inspired by the prospect of being reuinited with Ui, Iroha and Tsuruno gathered all the information they could about the shrine.",
+            "ap": 7,
+            "difficulty": 12,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openConditionSectionId": 101302,
+            "openConditionSection": {
+                "sectionId": 101302,
+                "questType": "MAIN",
+                "genericId": 13,
+                "genericIndex": 2,
+                "secret": "oIPz1",
+                "areaMapId": 11012,
+                "imagePath": "21061",
+                "areaDetailName": "Shinsei Chuo Station",
+                "title": "The Shrine's Rumor",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "Could Ui be mixed up in one of these rumors? It's possible, right?",
+                "outline": "Iroha searched for Touka and Nemu, the only other people who might remember Ui, but was unable to find any clues about them. After defeating the Uwasa of Ending Friendships, Kaede told Iroha that all the children taken away by it had returned home. Iroha had thought it impossible, but Ui herself had said, \"Anything is possible in this world.\" Reinvigorated, Iroha resolves to investigate, or even experience some of Kamihama City's rumors in hopes of finding Ui.",
+                "ap": 7,
+                "difficulty": 11,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemyList": []
+            },
+            "openConditionChapter": {
+                "chapterId": 13,
+                "partNo": 1,
+                "chapterNo": 3,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "3",
+                "title": "Kamihama Rumor Files",
+                "sectionCount": 7
+            },
+            "openEnemyList": []
+        },
+        "openConditionChapter": {
+            "chapterId": 13,
+            "partNo": 1,
+            "chapterNo": 3,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "3",
+            "title": "Kamihama Rumor Files",
+            "sectionCount": 7
+        },
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 25
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_5",
+        "prevClass": "FREE_RANK_4",
+        "nextClass": "FREE_RANK_6",
+        "requiredPoint": 300,
+        "className": "Layer 5",
+        "nextClassName": "Layer 6",
+        "storyId": "400005-1",
+        "storyTitle": "A Fearful Road Home",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 24
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_6",
+        "prevClass": "FREE_RANK_5",
+        "nextClass": "FREE_RANK_7",
+        "requiredPoint": 400,
+        "className": "Layer 6",
+        "nextClassName": "Layer 7",
+        "storyId": "400006-1",
+        "storyTitle": "Mirror, Mirror...",
+        "openConditionSectionId": 101304,
+        "openConditionSection": {
+            "sectionId": 101304,
+            "questType": "MAIN",
+            "genericId": 13,
+            "genericIndex": 4,
+            "secret": "MmOIb",
+            "areaMapId": 12011,
+            "imagePath": "12021",
+            "areaDetailName": "Mizuna Ward - Streets",
+            "title": "The Séance Shrine",
+            "charaId": 1002,
+            "charaName": "Yachiyo Nanami",
+            "defaultCardId": 10022,
+            "message": "This magic… We need to act fast!",
+            "outline": "Iroha tracked down Mizuna Ward's fabled \"Matchmaking Spot\" as part of her investigation of the Séance Shrine with Tsuruno. Iroha managed to find it by following a stamp collecting event around the city. Yachiyo also took part in the event, and when they met they decided to team up. The Matchmaking Spot turned out to be Mizuna Shrine, and it definitely didn't seem to be the Séance Shrine from the rumor. While heading home empty-handed, Iroha saw a shrine atop a building from the train window...",
+            "ap": 7,
+            "difficulty": 12,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openConditionSectionId": 101303,
+            "openConditionSection": {
+                "sectionId": 101303,
+                "questType": "MAIN",
+                "genericId": 13,
+                "genericIndex": 3,
+                "secret": "g3Tle",
+                "areaMapId": 12011,
+                "imagePath": "12021",
+                "areaDetailName": "Mizuna Ward - Streets",
+                "title": "In a Fairytale's Footsteps",
+                "charaId": 1003,
+                "charaName": "Tsuruno Yui",
+                "defaultCardId": 10032,
+                "message": "All right! Together anything's＠possible! We'll find the Séance＠Shrine, no problem!",
+                "outline": "Iroha set out in search of some rumors. She was too afraid to talk to anyone though, so Yachiyo scolded her for her lack of resolve. But then Mitama told her about a rumor she'd heard about a shrine in Mizuna Ward. Iroha found no leads in Mizuna Ward, and was at a loss...until a girl named Tsuruno Yui appeared. \"The Séance Shrine lets you see who you long to see.\" Inspired by the prospect of being reuinited with Ui, Iroha and Tsuruno gathered all the information they could about the shrine.",
+                "ap": 7,
+                "difficulty": 12,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemyList": []
+            },
+            "openConditionChapter": {
+                "chapterId": 13,
+                "partNo": 1,
+                "chapterNo": 3,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "3",
+                "title": "Kamihama Rumor Files",
+                "sectionCount": 7
+            },
+            "openEnemy": "114",
+            "openEnemyList": [
+                {
+                    "enemyId": 114,
+                    "enemyNo": 7003,
+                    "type": 3,
+                    "name": "Uwasa of the Séance Plaque",
+                    "description": "Have you heard? Has anyone told you? The Rumor of the Séance Plaque. This tablet looks like a huge winged bug, but it may just guide you to the Commoner's Horse! Look at it closely and you'll notice someone's name written on it. In Mizuna Ward they say that if you catch this tablet and put someone's body part on it, they will magically appear! Come on over!",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ]
+        },
+        "openConditionChapter": {
+            "chapterId": 13,
+            "partNo": 1,
+            "chapterNo": 3,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "3",
+            "title": "Kamihama Rumor Files",
+            "sectionCount": 7
+        },
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 23
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_7",
+        "prevClass": "FREE_RANK_6",
+        "nextClass": "FREE_RANK_8",
+        "requiredPoint": 500,
+        "className": "Layer 7",
+        "nextClassName": "Layer 8",
+        "storyId": "400007-1",
+        "storyTitle": "Leave it to Ria!",
+        "openConditionSectionId": 101305,
+        "openConditionSection": {
+            "sectionId": 101305,
+            "questType": "MAIN",
+            "genericId": 13,
+            "genericIndex": 5,
+            "secret": "0ZvpU",
+            "areaMapId": 12012,
+            "imagePath": "20011",
+            "areaDetailName": "Tamaki Household - Iroha's Room",
+            "title": "The Shrine Visit",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "I was so excited, I couldn't even sleep... I'm coming, Ui!",
+            "outline": "Once again, Tsuruno and Iroha divvied up the work of searching for the Séance Shrine. Iroha entered an abandoned hotel hoping to find the shrine on its roof, but ended up entering a powerful Witch's Labyrinth. Yachiyo appeared and helped Iroha, then confessed that she was also searching for the Séance Shrine. Recognizing Iroha's growth, she told her that the Séance Shrine was in fact Mizuna Shrine all along. Iroha and Yachiyo then decided to look into it together.",
+            "ap": 7,
+            "difficulty": 13,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openConditionSectionId": 101304,
+            "openConditionSection": {
+                "sectionId": 101304,
+                "questType": "MAIN",
+                "genericId": 13,
+                "genericIndex": 4,
+                "secret": "MmOIb",
+                "areaMapId": 12011,
+                "imagePath": "12021",
+                "areaDetailName": "Mizuna Ward - Streets",
+                "title": "The Séance Shrine",
+                "charaId": 1002,
+                "charaName": "Yachiyo Nanami",
+                "defaultCardId": 10022,
+                "message": "This magic… We need to act fast!",
+                "outline": "Iroha tracked down Mizuna Ward's fabled \"Matchmaking Spot\" as part of her investigation of the Séance Shrine with Tsuruno. Iroha managed to find it by following a stamp collecting event around the city. Yachiyo also took part in the event, and when they met they decided to team up. The Matchmaking Spot turned out to be Mizuna Shrine, and it definitely didn't seem to be the Séance Shrine from the rumor. While heading home empty-handed, Iroha saw a shrine atop a building from the train window...",
+                "ap": 7,
+                "difficulty": 12,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemy": "114",
+                "openEnemyList": [
+                    {
+                        "enemyId": 114,
+                        "enemyNo": 7003,
+                        "type": 3,
+                        "name": "Uwasa of the Séance Plaque",
+                        "description": "Have you heard? Has anyone told you? The Rumor of the Séance Plaque. This tablet looks like a huge winged bug, but it may just guide you to the Commoner's Horse! Look at it closely and you'll notice someone's name written on it. In Mizuna Ward they say that if you catch this tablet and put someone's body part on it, they will magically appear! Come on over!",
+                        "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                    }
+                ]
+            },
+            "openConditionChapter": {
+                "chapterId": 13,
+                "partNo": 1,
+                "chapterNo": 3,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "3",
+                "title": "Kamihama Rumor Files",
+                "sectionCount": 7
+            },
+            "openEnemyList": []
+        },
+        "openConditionChapter": {
+            "chapterId": 13,
+            "partNo": 1,
+            "chapterNo": 3,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "3",
+            "title": "Kamihama Rumor Files",
+            "sectionCount": 7
+        },
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 22
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_8",
+        "prevClass": "FREE_RANK_7",
+        "nextClass": "FREE_RANK_9",
+        "requiredPoint": 600,
+        "className": "Layer 8",
+        "nextClassName": "Layer 9",
+        "storyId": "400008-1",
+        "storyTitle": "A Terrible Rendition",
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 21
+    },
+    {
+        "arenaBattleFreeRankClass": "FREE_RANK_9",
+        "prevClass": "FREE_RANK_8",
+        "nextClass": "FREE_RANK_10",
+        "requiredPoint": 800,
+        "className": "Layer 9",
+        "nextClassName": "Layer 10",
+        "storyId": "400009-1",
+        "storyTitle": "Modest Revenge (Part 1)",
+        "openConditionSectionId": 101306,
+        "openConditionSection": {
+            "sectionId": 101306,
+            "questType": "MAIN",
+            "genericId": 13,
+            "genericIndex": 6,
+            "secret": "nx7ER",
+            "areaMapId": 12013,
+            "imagePath": "12063",
+            "areaDetailName": "Mizuna Shrine - Inner Grounds - Uwasa's Labyrinth",
+            "title": "The Two They Long For",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Is Ui really here...?",
+            "outline": "Having discovered the Séance Shrine, Iroha was full of excitement at the thought of seeing Ui. She visited Mizuna Shrine late at night with Yachiyo and Tsuruno, as described in the rumor. The rumor dictates that they have to write the name of the person they are searching for on a wooden plaque, so Tsuruno guarded them while they wrote. With Yachiyo by her side, Iroha wished with all her heart to be reunited with Ui. When Tsuruno turned back around, Iroha and Yachiyo were gone...",
+            "ap": 7,
+            "difficulty": 13,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openConditionSectionId": 101305,
+            "openConditionSection": {
+                "sectionId": 101305,
+                "questType": "MAIN",
+                "genericId": 13,
+                "genericIndex": 5,
+                "secret": "0ZvpU",
+                "areaMapId": 12012,
+                "imagePath": "20011",
+                "areaDetailName": "Tamaki Household - Iroha's Room",
+                "title": "The Shrine Visit",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "I was so excited, I couldn't even sleep... I'm coming, Ui!",
+                "outline": "Once again, Tsuruno and Iroha divvied up the work of searching for the Séance Shrine. Iroha entered an abandoned hotel hoping to find the shrine on its roof, but ended up entering a powerful Witch's Labyrinth. Yachiyo appeared and helped Iroha, then confessed that she was also searching for the Séance Shrine. Recognizing Iroha's growth, she told her that the Séance Shrine was in fact Mizuna Shrine all along. Iroha and Yachiyo then decided to look into it together.",
+                "ap": 7,
+                "difficulty": 13,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemyList": []
+            },
+            "openConditionChapter": {
+                "chapterId": 13,
+                "partNo": 1,
+                "chapterNo": 3,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "3",
+                "title": "Kamihama Rumor Files",
+                "sectionCount": 7
+            },
+            "openEnemyList": []
+        },
+        "openConditionChapter": {
+            "chapterId": 13,
+            "partNo": 1,
+            "chapterNo": 3,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "3",
+            "title": "Kamihama Rumor Files",
+            "sectionCount": 7
+        },
+        "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "bonusRewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            }
+        ],
+        "sortKey": 20
+    }
+]

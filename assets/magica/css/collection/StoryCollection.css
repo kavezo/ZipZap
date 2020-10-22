@@ -1,0 +1,290 @@
+.openConditionPopup .openConditionDl {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+.openConditionPopup .openConditionDl:not(:last-child) {
+    margin-bottom: 10px; }
+.openConditionPopup .openConditionDl dt {
+  width: 42px;
+  height: 42px;
+  background: #f66a99;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 42px;
+	border-radius: 5px 0 0 5px; }
+.openConditionPopup .openConditionDl dd {
+  width: 506px;
+  height: 42px;
+  padding: 0 14px;
+  background: #ffffff;
+  font-size: 15px;/*MN*/
+  line-height: 38px;
+  text-align: left;
+  border-top: 2px solid #c6a882;
+  border-right: 2px solid #c6a882;
+  border-bottom: 2px solid #c6a882;
+  border-radius: 0 5px 5px 0; }
+
+.openConditionPopup .popupInner {
+  width: 650px;
+  height: 360px;
+  position: absolute;
+  top: -webkit-calc(50% - 180px);
+  left: -webkit-calc(50% - 325px); }
+.openConditionPopup .popupInner .popupTextArea {
+    height: 280px; }
+
+#StoryCollection {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hidden; }
+#StoryCollection #tabBtn {
+  width: 222px;
+    height: -webkit-calc(100% - 94px);
+    padding: 15px 0px 15px;
+  position: absolute;
+  top: 70px;
+    left: 85px; }
+#StoryCollection #tabBtn .btn {
+      width: 188px;
+      margin-bottom: 4px;
+      margin-left: 18px;
+      font-size: 16px; }
+      #StoryCollection #tabBtn .btn.none {
+        display: none; }
+      #StoryCollection #tabBtn .btn.magirepo {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/tab_magirepo.png") left top no-repeat; }
+        #StoryCollection #tabBtn .btn.magirepo:before {
+          display: none; }
+        #StoryCollection #tabBtn .btn.magirepo:after {
+          display: none; }
+    #StoryCollection #tabBtn #storyTabScroll {
+      position: relative; }
+      #StoryCollection #tabBtn #storyTabScroll .common_tab {
+        padding-top: 9px;
+        display: block;
+        min-height: 100%; }
+      #StoryCollection #tabBtn #storyTabScroll .scrollIndicator {
+        width: 5px;
+        right: 9px; }
+        #StoryCollection #tabBtn #storyTabScroll .scrollIndicator .scrollIndicatorInner {
+          width: 5px; }
+#StoryCollection #listWrap {
+  width: 610px;
+  height: -webkit-calc(100% - 94px);
+  padding: 30px 20px 0 26px;
+  position: absolute;
+  top: 70px;
+    left: 328px; }
+#StoryCollection #listWrap.main #main {
+      display: block; }
+#StoryCollection #listWrap.sub #sub {
+      display: block; }
+#StoryCollection #listWrap.chara #chara {
+      display: block; }
+#StoryCollection #listWrap.arena #arena {
+      display: block; }
+#StoryCollection #listWrap.event #event {
+      display: block; }
+#StoryCollection #listWrap.special #special {
+      display: block; }
+#StoryCollection #listWrap #main, #StoryCollection #listWrap #sub, #StoryCollection #listWrap #chara, #StoryCollection #listWrap #arena, #StoryCollection #listWrap #event, #StoryCollection #listWrap #special {
+  width: 570px;
+  height: -webkit-calc(100% - 50px);
+  display: none;
+  position: absolute;
+  top: 36px;
+      -webkit-overflow-scrolling: touch; }
+#StoryCollection #listWrap #main .hiddenWrap, #StoryCollection #listWrap #sub .hiddenWrap, #StoryCollection #listWrap #chara .hiddenWrap, #StoryCollection #listWrap #arena .hiddenWrap, #StoryCollection #listWrap #event .hiddenWrap, #StoryCollection #listWrap #special .hiddenWrap {
+  height: 100%;
+        overflow: hidden; }
+#StoryCollection #listWrap #main .hiddenWrap .scrollInner, #StoryCollection #listWrap #sub .hiddenWrap .scrollInner, #StoryCollection #listWrap #chara .hiddenWrap .scrollInner, #StoryCollection #listWrap #arena .hiddenWrap .scrollInner, #StoryCollection #listWrap #event .hiddenWrap .scrollInner, #StoryCollection #listWrap #special .hiddenWrap .scrollInner {
+  height: auto;
+  min-height: 100%;
+  padding-top: 17px;
+          overflow: inherit; }
+#StoryCollection #listWrap #main .hiddenWrap .scrollInner .storyCautionText, #StoryCollection #listWrap #sub .hiddenWrap .scrollInner .storyCautionText, #StoryCollection #listWrap #chara .hiddenWrap .scrollInner .storyCautionText, #StoryCollection #listWrap #arena .hiddenWrap .scrollInner .storyCautionText, #StoryCollection #listWrap #event .hiddenWrap .scrollInner .storyCautionText, #StoryCollection #listWrap #special .hiddenWrap .scrollInner .storyCautionText {
+  width: 350px;
+  height: 30px;
+  position: absolute;
+  top: -webkit-calc(50% - 15px);
+  left: -webkit-calc(50% - 175px);
+  font-size: 20px;
+  line-height: 30px;
+            text-align: center; }
+#StoryCollection #listWrap .wrap {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+      position: relative; }
+#StoryCollection #listWrap .wrap:last-child {
+        margin-bottom: 40px; }
+#StoryCollection #listWrap .wrap .chapterTitleWrap {
+  width: 557px;
+  height: 57px;
+  position: relative;
+  overflow: hidden;
+        z-index: 2; }
+#StoryCollection #listWrap .wrap .chapterTitleWrap .faceImg {
+          height: 80px; }
+#StoryCollection #listWrap .wrap .chapterTitleWrap .faceImg img {
+  height: 100%;
+  position: relative;
+  top: -webkit-calc(50% - 60px);
+  left: 10px;
+            -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(5%, black), color-stop(95%, black), to(rgba(0, 0, 0, 0))); }
+#StoryCollection #listWrap .wrap .chapterTitleWrap .chapterNumber {
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+          font-size: 20px; }
+#StoryCollection #listWrap .wrap .chapterTitleWrap .chapterTitle {
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 120px;
+          font-size: 20px; }
+#StoryCollection #listWrap .wrap .chapterTitleWrap .panArrow {
+  width: 40px;
+  height: 40px;
+  background-image: url("/magica/resource/image_web/page/collection/pan_down.png");
+  background-size: 100% 100%;
+  position: absolute;
+  right: 10px;
+          bottom: -webkit-calc(50% - 20px); }
+#StoryCollection #listWrap .wrap .chapterTitleWrap .panArrow.on {
+  background-image: url("/magica/resource/image_web/page/collection/pan_up.png");
+            background-size: 100% 100%; }
+#StoryCollection #listWrap .wrap .sectionListWrap {
+  width: 534px;
+  min-height: 120px;
+  margin: 0 0 0 13px;
+  padding-top: 12px;
+  padding-bottom: 1px;
+  background-color: #e1d3bd;
+  display: none;
+  position: relative;
+  border-radius: 0 0 10px 10px;
+        z-index: 1; }
+#StoryCollection #listWrap .wrap .sectionListWrap.on {
+          display: block; }
+#StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap {
+  width: 492px;
+  height: 87px;
+  margin-bottom: 11px;
+          margin-left: 22px; }
+/* MN */
+#StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .sectionTitle {
+  position: absolute;
+  left: 12px;
+  font-size: 15px;
+  width: 260px;
+  top: 37px;
+  line-height: 17px; }
+#StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .outline, #StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .storyStart, #StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .nextQuest, #StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .lockQuest {
+  position: absolute;
+            bottom: 12px; }
+#StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .outline {
+            right: 117px; }
+#StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .storyStart, #StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .nextQuest, #StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .lockQuest {
+         padding-top: 5px;/*MN*/
+		  display: none;
+		  right: 12px;
+		  font-size: 12px;/*MN*/
+            line-height: 10px;/*MN*/
+             }
+#StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .storyStart .buttonUpper, #StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .nextQuest .buttonUpper, #StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap .lockQuest .buttonUpper {
+              font-size: 10px; }
+#StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap.CLEARED .storyStart {
+	  		padding-top: 0px !important;/*MN*/
+	  		font-size: 14px !important;/*MN*/
+  			line-height: 34px !important;/*MN*/
+            display: block; }
+#StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap.NON_CLEAR .nextQuest {
+            display: block; }
+#StoryCollection #listWrap .wrap .sectionListWrap .sectionWrap.LOCKED .lockQuest {
+            display: block; }
+#StoryCollection #listWrap #arena .chapterTitle {
+      left: 20px; }
+#StoryCollection #listWrap #event .sectionListWrap, #StoryCollection #listWrap #special .sectionListWrap {
+  width: 534px;
+      min-height: 100px; }
+#StoryCollection #listWrap #event .chapterTitle, #StoryCollection #listWrap #special .chapterTitle {
+  top: 0px;
+      left: 0px; }
+#StoryCollection #listWrap #event .eventMultiStory, #StoryCollection #listWrap #special .eventMultiStory {
+  width: 510px;
+  margin: 10px 0 5px 16px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+#StoryCollection #listWrap #event .eventMultiStory .mb_white, #StoryCollection #listWrap #special .eventMultiStory .mb_white {
+  width: 92px;
+  height: 53px;
+  margin: 0 10px 16px 0;
+  font-size: 20px;
+        -webkit-filter: none;
+        filter: none; }
+#StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap, #StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap {
+  margin-bottom: 17px;
+      padding-bottom: 8px; }
+#StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap, #StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap {
+  width: 498px;
+  height: 63px;
+  margin: 7px 0 9px 17px;
+        display: block; }
+#StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara, #StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara {
+  width: 155px;
+  height: 28px;
+  position: absolute;
+  top: 15px;
+          left: -3px; }
+#StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara img, #StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara img {
+  position: absolute;
+  top: 0;
+  left: 0;
+            z-index: 1; }
+#StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara .charaTxt, #StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryChara .charaTxt {
+  height: 28px;
+  padding-right: 12px;
+  position: relative;
+  color: #ffffff;
+  line-height: 28px;
+  text-align: center;
+            z-index: 2; }
+#StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryTitle, #StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .branchStoryTitle {
+  position: absolute;
+  top: 14px;
+          left: 192px;/*MN*/
+          font-size: 20px; }
+#StoryCollection #listWrap #event .wrap.BRANCH .sectionListWrap .storyWrap .sb_gold_01, #StoryCollection #listWrap #special .wrap.BRANCH .sectionListWrap .storyWrap .sb_gold_01 {
+  width: 94px;
+  height: 34px;
+  position: absolute;
+  top: 12px;
+  right: 14px;
+          -webkit-filter: none;
+          filter: none; }
+
+/* MN */
+p.sb_gold_01.se_decide.TE.outline.small {
+    font-size: 10px;
+    line-height: 10px;
+    padding-top: 6px;
+}
+
+

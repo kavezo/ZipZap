@@ -1,0 +1,916 @@
+.gachaPop.popupContent .popupInner .popupTextArea {
+  height: 231px;
+  font-size: 24px;
+  line-height: 42px; }
+
+.gachaPop.popupContent .popupInner .popupBtnArea {
+  margin-top: 58px; }
+
+.gachaPop .useItemIcon {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  bottom: 107px;
+  z-index: 10; }
+  .gachaPop .useItemIcon.item {
+    left: 276px; }
+  .gachaPop .useItemIcon.stone {
+    left: 203px; }
+
+.gachaPop .itemNumWrap {
+  height: 24px;
+  position: absolute;
+  bottom: 122px;
+  line-height: 24px;
+  text-align: left;
+  z-index: 5; }
+  .gachaPop .itemNumWrap .num {
+    position: absolute; }
+  .gachaPop .itemNumWrap.stoneA, .gachaPop .itemNumWrap.stoneB, .gachaPop .itemNumWrap.stoneC {
+    position: absolute;
+    font-size: 18px; }
+  .gachaPop .itemNumWrap.stoneA {
+    width: 147px;
+    padding-left: 24px;
+    left: 231px;
+    z-index: 5; }
+    .gachaPop .itemNumWrap.stoneA .num {
+      right: 14px; }
+  .gachaPop .itemNumWrap.stoneB {
+    width: 132px;
+    padding-left: 20px;
+    color: #a47122;
+    background: #e4dbce;
+    z-index: 3;
+    left: 362px; }
+    .gachaPop .itemNumWrap.stoneB .num {
+      right: 10px; }
+  .gachaPop .itemNumWrap.stoneC {
+    width: 112px;
+    padding-left: 7px;
+    color: #a47122;
+    background: #e4dbce;
+    z-index: 3;
+    left: 496px; }
+    .gachaPop .itemNumWrap.stoneC:before {
+      content: "";
+      width: 12px;
+      height: 24px;
+      background: url("/magica/resource/image_web/common/frame/point_frame_lb_r.png") left top no-repeat;
+      display: block;
+  position: absolute;
+      top: 0;
+      right: -12px; }
+    .gachaPop .itemNumWrap.stoneC .num {
+      right: 4px; }
+  .gachaPop .itemNumWrap.item {
+    width: 248px;
+    padding-left: 40px;
+    left: -webkit-calc(50% - 124px);
+    font-size: 16px; }
+    .gachaPop .itemNumWrap.item .num {
+      right: 18px; }
+
+#GachaTop #leftArrow, #GachaTop #rightArrow {
+  width: 70px;
+  height: 84px;
+  display: block;
+  position: absolute;
+  top: -webkit-calc(50% - 53px);
+  z-index: 10000; }
+
+#GachaTop #leftArrow {
+  background: url("/magica/resource/image_web/page/gacha/gacha_arrow_left_a.png") left top no-repeat;
+  left: 10px; }
+
+#GachaTop #rightArrow {
+  background: url("/magica/resource/image_web/page/gacha/gacha_arrow_right_a.png") left top no-repeat;
+  right: 10px; }
+
+#GachaTop #gachaWrap {
+  width: 100%;
+  height: 100%; }
+  #GachaTop #gachaWrap #gachaFooterWrap {
+  width: 1024px;
+    height: 64px;
+    background: url("/magica/resource/image_web/page/gacha/gacha_footer.png") left top no-repeat;
+  position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1000; }
+    #GachaTop #gachaWrap #gachaFooterWrap #gachaHistoryBtn, #GachaTop #gachaWrap #gachaFooterWrap #probabilityBtn {
+      width: 140px;
+      position: absolute;
+      top: -webkit-calc(50% - 17px); }
+    #GachaTop #gachaWrap #gachaFooterWrap #gachaHistoryBtn {
+      left: 49px; }
+    #GachaTop #gachaWrap #gachaFooterWrap #probabilityBtn {
+      left: 203px; }
+    #GachaTop #gachaWrap #gachaFooterWrap #gachaGroupCountWrap {
+      width: 282px;
+      height: 44px;
+      background: url("/magica/resource/image_web/page/gacha/bg_gacha_fixed.png") left top no-repeat;
+  position: absolute;
+      right: 358px;
+      bottom: 17px; }
+      #GachaTop #gachaWrap #gachaFooterWrap #gachaGroupCountWrap p {
+  position: absolute;
+        right: 18px;
+        bottom: 0;
+        font-size: 20px;
+        line-height: 34px; }
+    #GachaTop #gachaWrap #gachaFooterWrap #hasItemNumWrap {
+  position: absolute;
+      bottom: 17px; }
+      #GachaTop #gachaWrap #gachaFooterWrap #hasItemNumWrap .title {
+  position: absolute;
+  top: 0;
+        font-size: 19px;
+        line-height: 35px; }
+      #GachaTop #gachaWrap #gachaFooterWrap #hasItemNumWrap .hasNum {
+  position: absolute;
+        top: 0;
+        line-height: 35px; }
+      #GachaTop #gachaWrap #gachaFooterWrap #hasItemNumWrap.MONEY {
+        width: 283px;
+        height: 34px;
+        background: url("/magica/resource/image_web/page/gacha/gacha_stone_wrap.png") left top no-repeat;
+        right: 70px; }
+        #GachaTop #gachaWrap #gachaFooterWrap #hasItemNumWrap.MONEY .title {
+          left: 50px; }
+        #GachaTop #gachaWrap #gachaFooterWrap #hasItemNumWrap.MONEY .hasNum {
+          right: 43px;
+          font-size: 22px; }
+      #GachaTop #gachaWrap #gachaFooterWrap #hasItemNumWrap.YELL {
+        width: 368px;
+        height: 34px;
+        background: url("/magica/resource/image_web/page/gacha/support_point_wrap.png") left top no-repeat;
+        right: -27px; }
+        #GachaTop #gachaWrap #gachaFooterWrap #hasItemNumWrap.YELL .title {
+          left: 44px; }
+        #GachaTop #gachaWrap #gachaFooterWrap #hasItemNumWrap.YELL .hasNum {
+          right: 39px;
+          font-size: 20px; }
+    #GachaTop #gachaWrap #gachaFooterWrap #purchaseMoneyBtn {
+      width: 72px;
+      height: 75px;
+      background: url("/magica/resource/image_web/page/gacha/gacha_purchase_btn.png") left top no-repeat;
+      background-size: 72px 75px;
+      position: absolute;
+      right: -34px;
+      bottom: -9px; }
+/*MN*/
+#GachaTop #gachaWrap #gachaTitleWrap p {
+  /*display: none;*/
+}
+/*MN*/
+#GachaTop #gachaWrap #gachaTitleWrap p.onDisp {
+  display: block;
+  padding-left:50px;
+  margin-top: 58px;
+  margin-left: 0px;
+  width: 338px;
+  height: 24px;
+  font-size: 15px;
+  background-image: url("/magica/resource/image_web/page/gacha/gacha_date_bg.png");
+  color: #ffffff;
+  text-shadow: -1px -1px 1px #e93367, 1px -1px 1px #e93367, -1px 1px 1px #e93367, 1px 1px 1px #e93367, -1px -1px #e93367, 1px -1px #e93367, -1px 1px #e93367, 1px 1px #e93367, -1px -1px 2px #e93367, 1px -1px 2px #e93367, -1px 1px 2px #e93367, 1px 1px 2px #e93367, -1px -1px 2px #e93367, 1px -1px 2px #e93367, -1px 1px 2px #e93367, 1px 1px 2px #e93367, -1px -1px 3px #e93367, 1px -1px 3px #e93367, -1px 1px 3px #e93367, 1px 1px 3px #e93367;
+}
+/*MN*/
+#GachaTop #gachaWrap.PICKUP #gachaTitleWrap p.onDisp {
+  display: block;
+  padding-left:50px;
+  margin-top: 58px;
+  margin-left: 0px;
+  width: 338px;
+  height: 24px;
+  font-size: 15px;
+  background-image: url("/magica/resource/image_web/page/gacha/gacha_date_bg.png");
+  color: #ffffff;
+  text-shadow: -1px -1px 1px #e93367, 1px -1px 1px #e93367, -1px 1px 1px #e93367, 1px 1px 1px #e93367, -1px -1px #e93367, 1px -1px #e93367, -1px 1px #e93367, 1px 1px #e93367, -1px -1px 2px #e93367, 1px -1px 2px #e93367, -1px 1px 2px #e93367, 1px 1px 2px #e93367, -1px -1px 2px #e93367, 1px -1px 2px #e93367, -1px 1px 2px #e93367, 1px 1px 2px #e93367, -1px -1px 3px #e93367, 1px -1px 3px #e93367, -1px 1px 3px #e93367, 1px 1px 3px #e93367;
+}
+
+
+  #GachaTop #gachaWrap .displayCard {
+    width: 1024px;
+    height: 768px;
+    display: block;
+  position: absolute;
+    top: -webkit-calc(50% - 309px);
+    right: -138px;
+    z-index: 10;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(20%, transparent), color-stop(45%, black), to(black));
+    display: none; }
+    #GachaTop #gachaWrap .displayCard.onDisp {
+  display: block;
+      -webkit-animation: gachaCommonFadeInOut 7.5s ease .5s 1 alternate;
+      opacity: 0;
+      -webkit-animation-fill-mode: forwards; }
+    #GachaTop #gachaWrap .displayCard.singleCard.onDisp {
+  display: block;
+      -webkit-animation: gachaCommonFadeIn 1.875s ease .5s 1 alternate;
+      opacity: 0;
+      -webkit-animation-fill-mode: forwards; }
+  #GachaTop #gachaWrap #charaData {
+  width: 202px;
+    height: 102px;
+    background-image: url("/magica/resource/image_web/page/gacha/gacha_status_wrap_a.png");
+  position: absolute;
+    bottom: 64px;
+    left: 110px; }
+    #GachaTop #gachaWrap #charaData.hide {
+      display: none; }
+    #GachaTop #gachaWrap #charaData #attribute {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 14px;
+      left: 86px; }
+    #GachaTop #gachaWrap #charaData #rare {
+  width: 80px;
+  position: absolute;
+  top: 46px;
+      left: 61px; }
+      #GachaTop #gachaWrap #charaData #rare span {
+  width: 18px;
+  height: 18px;
+        display: none; }
+      #GachaTop #gachaWrap #charaData #rare.RANK_1 .gachaRarity1 {
+        display: block; }
+      #GachaTop #gachaWrap #charaData #rare.RANK_2 .gachaRarity1, #GachaTop #gachaWrap #charaData #rare.RANK_2 .gachaRarity2 {
+        display: block; }
+      #GachaTop #gachaWrap #charaData #rare.RANK_3 .gachaRarity1, #GachaTop #gachaWrap #charaData #rare.RANK_3 .gachaRarity2, #GachaTop #gachaWrap #charaData #rare.RANK_3 .gachaRarity3 {
+        display: block; }
+      #GachaTop #gachaWrap #charaData #rare.RANK_4 .gachaRarity1, #GachaTop #gachaWrap #charaData #rare.RANK_4 .gachaRarity2, #GachaTop #gachaWrap #charaData #rare.RANK_4 .gachaRarity3, #GachaTop #gachaWrap #charaData #rare.RANK_4 .gachaRarity4 {
+        display: block; }
+      #GachaTop #gachaWrap #charaData #rare.RANK_5 .gachaRarity1, #GachaTop #gachaWrap #charaData #rare.RANK_5 .gachaRarity2, #GachaTop #gachaWrap #charaData #rare.RANK_5 .gachaRarity3, #GachaTop #gachaWrap #charaData #rare.RANK_5 .gachaRarity4, #GachaTop #gachaWrap #charaData #rare.RANK_5 .gachaRarity5 {
+        display: block; }
+    #GachaTop #gachaWrap #charaData #charaName {
+  width: 192px;
+  position: absolute;
+      bottom: 12px;
+  left: 5px;
+  font-size: 15px;
+      text-align: center; }
+    #GachaTop #gachaWrap #charaData #charaTitle {
+  width: 192px;
+  position: absolute;
+      bottom: 0px;
+  left: 5px;
+  font-size: 12px;
+      text-align: center; }
+  #GachaTop #gachaWrap #displayCardBg {
+    width: 514px;
+    height: 514px;
+    background: url("/magica/resource/image_web/page/gacha/selectable/circle.png") left top no-repeat;
+    background-size: 514px 514px;
+    display: block;
+    position: absolute;
+    top: -webkit-calc(50% - 283px);
+    right: 97px;
+    content: "";
+    opacity: .8;
+    z-index: 1; }
+  #GachaTop #gachaWrap #gachaTitleWrap {
+    width: 574px;
+    height: 318px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100; }
+    #GachaTop #gachaWrap #gachaTitleWrap img {
+      position: absolute;
+      right: 0;
+      bottom: 0; }
+    #GachaTop #gachaWrap #gachaTitleWrap .expiredAt {
+      width: 330px;
+      height: 24px;
+      position: absolute;
+      top: 205px;
+      left: -webkit-calc(50% - 165px);
+      color: #FFF;
+  text-align: center;
+      z-index: 10; }
+  #GachaTop #gachaWrap #gachaPickUpWrap {
+    position: absolute;
+    right: 0;
+    z-index: 10; }
+  #GachaTop #gachaWrap #gachaBtnWrap {
+    width: 662px;
+  height: 134px;
+  display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+    position: absolute;
+    right: 26px;
+    bottom: 80px;
+    z-index: 100;
+  -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn {
+      width: 234px;
+  height: 134px;
+      margin: 0 -4px;
+      display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+  position: relative;
+      -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn.off {
+        background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_gray.png") left top no-repeat !important;
+        pointer-events: none; }
+        #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn.off .btnText {
+          color: #cacaca !important;
+          text-shadow: none !important; }
+      #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn .btnBadge {
+        width: 162px;
+        height: 50px;
+  position: absolute;
+        top: -4px;
+        right: 0;
+        pointer-events: none; }
+      #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn .btnText {
+        width: 100%;
+  color: #ffffff;
+        font-size: 23px;
+        line-height: 28px;
+        text-align: center; }
+      #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn .pointFrame {
+        width: 184px;
+        display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+  position: absolute;
+        bottom: 13px;
+        left: -webkit-calc(50% - 92px);
+        -webkit-justify-content: flex-end;
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end; }
+        #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn .pointFrame .useItem {
+          width: 46px;
+          height: 46px;
+          position: absolute;
+          top: -webkit-calc(50% - 23px);
+          left: 0px; }
+        #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn .pointFrame .hasNum {
+          position: relative;
+  top: 1px;
+          font-size: 14px;
+          line-height: 24px; }
+  #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn.freeBtn:not(.off) {
+    background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_gold.png") left top no-repeat !important; }
+    #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn.freeBtn:not(.off) .btnText {
+      text-shadow: 2px 0 2px #c16317, -2px 0 2px #c16317, 0 2px 2px #c16317, 0 -2px 2px #c16317, 2px 2px 2px #c16317, -2px 2px 2px #c16317, 2px -2px 2px #c16317, -2px -2px 2px #c16317 !important; }
+  #GachaTop #gachaWrap.NORMAL #gachaPickUpWrap {
+    width: 320px;
+    height: 768px;
+    top: -webkit-calc(50% - 384px);
+    right: 637px; }
+  #GachaTop #gachaWrap.NORMAL #gachaBtnWrap .gachaBtn {
+    background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_blue.png") left top no-repeat; }
+    #GachaTop #gachaWrap.NORMAL #gachaBtnWrap .gachaBtn .btnText {
+      text-shadow: 2px 0 2px #0e91ce, -2px 0 2px #0e91ce, 0 2px 2px #0e91ce, 0 -2px 2px #0e91ce, 2px 2px 2px #0e91ce, -2px 2px 2px #0e91ce, 2px -2px 2px #0e91ce, -2px -2px 2px #0e91ce; }
+  #GachaTop #gachaWrap.NORMAL #gachaFooterWrap #gachaHistoryBtn {
+    left: 126px; }
+  #GachaTop #gachaWrap.RARE #gachaPickUpWrap {
+    width: 512px;
+    height: 512px;
+    top: -webkit-calc(50% - 256px);
+    right: 100px; }
+  #GachaTop #gachaWrap.RARE #gachaBtnWrap .gachaBtn {
+    background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_purple.png") left top no-repeat; }
+    #GachaTop #gachaWrap.RARE #gachaBtnWrap .gachaBtn .btnText {
+      text-shadow: 2px 0 2px #915bda, -2px 0 2px #915bda, 0 2px 2px #915bda, 0 -2px 2px #915bda, 2px 2px 2px #915bda, -2px 2px 2px #915bda, 2px -2px 2px #915bda, -2px -2px 2px #915bda; }
+  #GachaTop #gachaWrap.ATTRIBUTE #gachaTitleWrap, #GachaTop #gachaWrap.TYPE #gachaTitleWrap {
+    width: 1024px;
+    height: 400px; }
+  #GachaTop #gachaWrap.ATTRIBUTE #gachaPickUpWrap, #GachaTop #gachaWrap.TYPE #gachaPickUpWrap {
+  width: 1024px;
+    height: 768px;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: -webkit-calc(50% - 384px);
+  right: 0;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  #GachaTop #gachaWrap #gachaBtnWrap .gachaBtn {
+    background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_pink.png") left top no-repeat; }
+  #GachaTop #gachaWrap.ATTRIBUTE #gachaBtnWrap .gachaBtn, #GachaTop #gachaWrap.TYPE #gachaBtnWrap .gachaBtn {
+    background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_pink.png") left top no-repeat; }
+    #GachaTop #gachaWrap.ATTRIBUTE #gachaBtnWrap .gachaBtn .btnText, #GachaTop #gachaWrap.TYPE #gachaBtnWrap .gachaBtn .btnText {
+      text-shadow: 2px 0 2px #ff5e7c, -2px 0 2px #ff5e7c, 0 2px 2px #ff5e7c, 0 -2px 2px #ff5e7c, 2px 2px 2px #ff5e7c, -2px 2px 2px #ff5e7c, 2px -2px 2px #ff5e7c, -2px -2px 2px #ff5e7c; }
+  #GachaTop #gachaWrap.PICKUP #gachaPickUpWrap {
+    width: 1024;
+    height: 768px;
+    top: -webkit-calc(50% - 291px); }/*MN*/
+  #GachaTop #gachaWrap.PICKUP #gachaBtnWrap .gachaBtn {
+    background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_pink.png") left top no-repeat; }
+    #GachaTop #gachaWrap.PICKUP #gachaBtnWrap .gachaBtn .btnText {
+      text-shadow: 2px 0 2px #ff5e7c, -2px 0 2px #ff5e7c, 0 2px 2px #ff5e7c, 0 -2px 2px #ff5e7c, 2px 2px 2px #ff5e7c, -2px 2px 2px #ff5e7c, 2px -2px 2px #ff5e7c, -2px -2px 2px #ff5e7c; }
+  #GachaTop #gachaWrap.SPECIAL #gachaPickUpWrap {
+    top: -webkit-calc(50% - 288px);
+    left: 0; }
+  #GachaTop #gachaWrap.STARTDASH #gachaPickUpWrap {
+    top: -webkit-calc(50% - 384px);
+    left: 0; }
+  #GachaTop #gachaWrap.SPECIAL #gachaTitleWrap, #GachaTop #gachaWrap.STARTDASH #gachaTitleWrap {
+  width: 1024px;
+  height: 400px;
+    top: inherit;
+    bottom: 0;
+    left: 0; }
+  #GachaTop #gachaWrap.SPECIAL #gachaFooterWrap, #GachaTop #gachaWrap.STARTDASH #gachaFooterWrap {
+    background: none; }
+  #GachaTop #gachaWrap.SPECIAL #gachaBtnWrap, #GachaTop #gachaWrap.STARTDASH #gachaBtnWrap {
+    bottom: 26px;
+    left: -webkit-calc(50% - 331px); }
+    #GachaTop #gachaWrap.SPECIAL #gachaBtnWrap .gachaBtn, #GachaTop #gachaWrap.STARTDASH #gachaBtnWrap .gachaBtn {
+      background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_pink.png") left top no-repeat; }
+      #GachaTop #gachaWrap.SPECIAL #gachaBtnWrap .gachaBtn .btnText, #GachaTop #gachaWrap.STARTDASH #gachaBtnWrap .gachaBtn .btnText {
+        text-shadow: 2px 0 2px #ff5e7c, -2px 0 2px #ff5e7c, 0 2px 2px #ff5e7c, 0 -2px 2px #ff5e7c, 2px 2px 2px #ff5e7c, -2px 2px 2px #ff5e7c, 2px -2px 2px #ff5e7c, -2px -2px 2px #ff5e7c; }
+  #GachaTop #gachaWrap.SELECTABLE_PICKUP #gachaLargeTitleWrap {
+  position: absolute;
+    bottom: 0;
+  left: 0;
+    z-index: 1000; }
+  #GachaTop #gachaWrap.SELECTABLE_PICKUP #charaSelectBtn {
+    width: 306px;
+    height: 90px;
+    background: url("/magica/resource/image_web/page/gacha/selectable/btn_chara_select.png") left top no-repeat;
+    position: absolute;
+  bottom: 26px;
+    left: -webkit-calc(50% - 153px);
+    z-index: 10000000; }
+  #GachaTop #gachaWrap.SELECTABLE_PICKUP #selectablePopWrap {
+    width: 214px;
+    height: 34px;
+    background: -webkit-linear-gradient(right, rgba(64, 43, 93, 0.7) 0%, rgba(64, 43, 93, 0.7) 65%, rgba(64, 43, 93, 0) 100%);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100000000; }
+    #GachaTop #gachaWrap.SELECTABLE_PICKUP #selectablePopWrap #selectablePopBtn {
+      width: 132px;
+      height: 34px;
+      position: absolute;
+      right: 26px;
+      bottom: 17px; }
+  #GachaTop #gachaWrap.SELECTABLE_PICKUP #gachaPickUpWrap {
+  width: 1024px;
+    height: 768px;
+    top: -webkit-calc(50% - 384px); }
+  #GachaTop #gachaWrap.SELECTABLE_PICKUP #gachaBtnWrap .gachaBtn {
+    background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_pink.png") left top no-repeat; }
+    #GachaTop #gachaWrap.SELECTABLE_PICKUP #gachaBtnWrap .gachaBtn .btnText {
+      text-shadow: 2px 0 2px #ff5e7c, -2px 0 2px #ff5e7c, 0 2px 2px #ff5e7c, 0 -2px 2px #ff5e7c, 2px 2px 2px #ff5e7c, -2px 2px 2px #ff5e7c, 2px -2px 2px #ff5e7c, -2px -2px 2px #ff5e7c; }
+  #GachaTop #gachaWrap.SELECTABLE_PICKUP:not(.notSelectedChara) #gachaPickUpWrap {
+    display: none; }
+  #GachaTop #gachaWrap.SELECTABLE_PICKUP:not(.notSelectedChara) #selectableLinkBtn {
+    width: 106px;
+    height: 110px;
+    background: url("/magica/resource/image_web/page/gacha/selectable/btn_chara_change.png") left top no-repeat;
+    display: block;
+    position: absolute;
+    top: -webkit-calc(50% - 241px);
+    right: 115px;
+    z-index: 100000; }
+  #GachaTop #gachaWrap.SELECTABLE_PICKUP.notSelectedChara #gachaBtnWrap, #GachaTop #gachaWrap.SELECTABLE_PICKUP.notSelectedChara #gachaTitleWrap, #GachaTop #gachaWrap.SELECTABLE_PICKUP.notSelectedChara #gachaFooterWrap {
+    display: none; }
+  #GachaTop #gachaWrap.SELECTABLE_PICKUP.notSelectedChara #selectableLinkBtn {
+    width: 306px;
+    height: 90px;
+    background: url("/magica/resource/image_web/page/gacha/selectable/btn_chara_select.png") left top no-repeat;
+  position: absolute;
+    bottom: 26px;
+    left: -webkit-calc(50% - 153px);
+    z-index: 1000; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL #gachaFooterWrap, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL #gachaFooterWrap {
+    display: none; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL #gachaLargeTitleWrap, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL #gachaLargeTitleWrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+    z-index: 1000; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL #charaSelectBtn, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL #charaSelectBtn {
+    width: 306px;
+    height: 90px;
+    background: url("/magica/resource/image_web/page/gacha/selectable/btn_chara_select.png") left top no-repeat;
+  position: absolute;
+    bottom: 26px;
+    left: -webkit-calc(50% - 153px);
+    z-index: 10000000; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL #selectablePopWrap, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL #selectablePopWrap {
+    width: 214px;
+  height: 34px;
+    background: -webkit-linear-gradient(right, rgba(64, 43, 93, 0.7) 0%, rgba(64, 43, 93, 0.7) 65%, rgba(64, 43, 93, 0) 100%);
+  position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100000000; }
+    #GachaTop #gachaWrap.SELECTABLE_SPECIAL #selectablePopWrap #selectablePopBtn, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL #selectablePopWrap #selectablePopBtn {
+      width: 132px;
+  height: 34px;
+  position: absolute;
+      right: 26px;
+      bottom: 17px; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL #gachaPickUpWrap, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL #gachaPickUpWrap {
+    width: 1024px;
+    height: 768px;
+    top: -webkit-calc(50% - 384px); }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL #gachaBtnWrap .gachaBtn, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL #gachaBtnWrap .gachaBtn {
+    background: url("/magica/resource/image_web/page/gacha/btn/gacha_btn_pink.png") left top no-repeat; }
+    #GachaTop #gachaWrap.SELECTABLE_SPECIAL #gachaBtnWrap .gachaBtn .btnText, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL #gachaBtnWrap .gachaBtn .btnText {
+      text-shadow: 2px 0 2px #ff5e7c, -2px 0 2px #ff5e7c, 0 2px 2px #ff5e7c, 0 -2px 2px #ff5e7c, 2px 2px 2px #ff5e7c, -2px 2px 2px #ff5e7c, 2px -2px 2px #ff5e7c, -2px -2px 2px #ff5e7c; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL #charaData, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL #charaData {
+    bottom: 0; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL:not(.notSelectedChara) #gachaPickUpWrap, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL:not(.notSelectedChara) #gachaPickUpWrap {
+    display: none; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL:not(.notSelectedChara) #selectableLinkBtn, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL:not(.notSelectedChara) #selectableLinkBtn {
+    width: 106px;
+    height: 110px;
+    background: url("/magica/resource/image_web/page/gacha/selectable/btn_chara_change.png") left top no-repeat;
+    display: block;
+    position: absolute;
+    top: -webkit-calc(50% - 241px);
+    right: 115px;
+    z-index: 100000; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL.notSelectedChara #gachaBtnWrap, #GachaTop #gachaWrap.SELECTABLE_SPECIAL.notSelectedChara #gachaTitleWrap, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL.notSelectedChara #gachaBtnWrap, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL.notSelectedChara #gachaTitleWrap {
+    display: none; }
+  #GachaTop #gachaWrap.SELECTABLE_SPECIAL.notSelectedChara #selectableLinkBtn, #GachaTop #gachaWrap.SELECTABLE_TUTORIAL.notSelectedChara #selectableLinkBtn {
+    width: 306px;
+    height: 90px;
+    background: url("/magica/resource/image_web/page/gacha/selectable/btn_chara_select.png") left top no-repeat;
+  position: absolute;
+    bottom: 26px;
+    left: -webkit-calc(50% - 153px);
+    z-index: 1000; }
+
+#popupArea .selectableCharaListPop #scrollOuter {
+  width: 759px;
+  height: 371px;
+  position: absolute;
+  top: 53px;
+  left: -webkit-calc(50% - 372px);
+  overflow: hidden; }
+  #popupArea .selectableCharaListPop #scrollOuter .scrollInner {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 30px;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap {
+      width: 244px;
+      height: 80px;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      background: #ffffff;
+      position: relative;
+      border: 1px solid #d7ba94;
+      -webkit-border-radius: 6px 6px 6px 6px; }
+      #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .rare {
+        position: absolute;
+        top: 10px;
+        left: 79px;
+        -webkit-justify-content: start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start; }
+        #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .rare span {
+          width: 18px;
+          height: 18px;
+          margin: 0 -1px 0 0;
+          -webkit-filter: none;
+          filter: none; }
+      #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .name, #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .title, #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .userCharaIcon {
+        position: absolute; }
+      #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .name {
+        position: absolute;
+        top: 33px;
+        left: 79px;
+        line-height: 1; }
+      #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .title {
+  position: absolute;
+        top: 54px;
+        left: 79px;
+        font-size: 14px;
+        line-height: 1; }
+      #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .userCharaIcon {
+  position: absolute;
+        top: 10px;
+        left: 10px; }
+      #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .userCharaIcon, #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .userCharaIcon .att, #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .userCharaIcon .star, #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .userCharaIcon .rank, #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .userCharaIcon .bg {
+        width: 60px;
+        height: 60px;
+        background-size: 60px 60px; }
+      #popupArea .selectableCharaListPop #scrollOuter .scrollInner .charaWrap .userCharaIcon img {
+        width: 56px;
+        height: 56px; }
+
+.gachaProbabilityPop .popupTextArea {
+  height: 390px !important; }
+
+.gachaProbabilityPop #GachaProbability {
+  width: 100%;
+  height: 450px;
+  position: absolute;
+  top: 57px;
+  left: 0; }
+.gachaProbabilityPop #GachaProbability #btnWrap {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 10;
+    left: 0; }
+.gachaProbabilityPop #GachaProbability #menuPanel {
+  width: 100%;
+  display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center; }
+.gachaProbabilityPop #GachaProbability #menuPanel li {
+  width: 230px;
+  margin: 0 5px;
+  font-size: 16px;
+      line-height: 60px !important; }
+.gachaProbabilityPop #GachaProbability.probability .pickUpWrap, .gachaProbabilityPop #GachaProbability.probability .dischargeListWrap {
+    display: none; }
+.gachaProbabilityPop #GachaProbability.magicGirl .probabilityWrap, .gachaProbabilityPop #GachaProbability.magicGirl .PIECE {
+    display: none; }
+.gachaProbabilityPop #GachaProbability.memoria .probabilityWrap, .gachaProbabilityPop #GachaProbability.memoria .CARD {
+    display: none; }
+.gachaProbabilityPop #GachaProbability #scrollInner {
+  width: 100%;
+  height: 370px;
+  position: absolute;
+  top: 74px;
+  left: 0;
+  overflow: hidden;
+    text-align: left; }
+.gachaProbabilityPop #GachaProbability #scrollInner .scrollInnerWrap {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+      padding: 0 45px 30px 40px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap {
+  width: 100%;
+  height: auto;
+      position: relative; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap .tenTimeText {
+  padding: 5px 0 15px 25px;
+        font-size: 16px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table {
+  margin: 40px auto 10px 28px;
+  border-right: 1px solid #666666;
+        border-bottom: 1px solid #666666; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table tr.probabilityTitles th {
+          width: 141px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td.blankCol {
+          border: 0px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table th.probabilityType {
+          width: 138px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td.starCol {
+  width: 113px;
+  padding: 0px;
+          text-align: center; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td.starCol span {
+  width: 18px;
+  height: 18px;
+  margin-top: 6px;
+  display: inline-block;
+            z-index: 10; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td.starCol.card span {
+  background: url("/magica/resource/image_web/common/chara/star_on.png") left top no-repeat;
+            background-size: 100% 100%; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td.starCol.memoria span {
+  background: url("/magica/resource/image_web/common/icon/memoria_rarity.png") left top no-repeat;
+            background-size: 100% 100%; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table th, .gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td {
+  height: 26px;
+  font-size: 18px;/*MN*/
+  line-height: 26px;
+  text-align: center;
+  border-top: 1px solid #666666;
+          border-left: 1px solid #666666; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td {
+  padding-right: 8px;
+          text-align: right; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td .star, .gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td .memoriaStar {
+  width: 18px;
+  height: 18px;
+  margin-top: 6px;
+  background: url("/magica/resource/image_web/common/chara/star_off.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+            z-index: 10; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td .star.on, .gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td .memoriaStar.on {
+  background: url("/magica/resource/image_web/common/chara/star_on.png") left top no-repeat;
+              background-size: 100% 100%; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table td .memoriaStar.on {
+  background: url("/magica/resource/image_web/common/icon/memoria_rarity.png") left top no-repeat;
+            background-size: 100% 100%; }
+.gachaProbabilityPop #GachaProbability #scrollInner .probabilityWrap table th {
+  background-color: #b28750;
+          color: #ffffff; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap {
+      margin-top: 2px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap {
+      margin-top: 19px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap {
+  width: 100%;
+  height: auto;
+  padding-top: 32px;
+      position: relative; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap .rareWrap, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap .rareWrap {
+  width: 90px;
+  display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: left;
+        -webkit-box-pack: left;
+        -ms-flex-pack: left;
+  justify-content: left;
+  -webkit-align-content: left;
+        -ms-flex-line-pack: left;
+        align-content: left; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap .rareWrap .star, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap .rareWrap .star {
+  width: 18px;
+  height: 18px;
+  background: url("/magica/resource/image_web/common/chara/star_off.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+          z-index: 10; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap .rareWrap .star.on, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap .rareWrap .star.on {
+  background: url("/magica/resource/image_web/common/chara/star_on.png") left top no-repeat;
+            background-size: 100% 100%; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap .rareWrap.PIECE .star.on, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap .rareWrap.PIECE .star.on {
+  background: url("/magica/resource/image_web/common/icon/memoria_rarity.png") left top no-repeat;
+          background-size: 100% 100%; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table {
+  margin: 0px auto 10px 17px;
+  text-align: center;
+        border-bottom: 1px solid #666666; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table tr.probabilityTitles th, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table tr.probabilityTitles th {
+  width: 120px;
+          height: 32px;
+  padding: 0px;
+          border: 0px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table tr.probabilityTitles th div, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table tr.probabilityTitles th div {
+  width: 119px;/*MN*/
+            height: 42px; /*MN*/
+  margin: 0px;/*MN*/
+            background: #b28750;
+            color: #ffffff;
+  font-size: 15px;
+            /* line-height: 32px;*//*MN*/
+  border: 0px;
+            border-radius: 10px 10px 0px 0px;
+             display: table-cell;/*MN*/
+             vertical-align: middle;/*MN*/
+
+}
+ /*MN*/
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table tr.probabilityTitles th div, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table tr.probabilityTitles th div span {
+  vertical-align: middle;
+  color: #FFF;
+  display: table-cell;/*MN*/
+}
+
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td.blankCol, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td.blankCol {
+          border: 0px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table tr.limited th, .gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table tr.limited td, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table tr.limited th, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table tr.limited td {
+          background-color: #ffe9f0; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table tr.limited th.firstCol, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table tr.limited th.firstCol {
+          position: relative; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table tr.limited th.firstCol:before, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table tr.limited th.firstCol:before {
+  width: 50px;
+  height: 50px;
+  background-image: url("/magica/resource/image_web/page/gacha/icon_limited.png");
+  display: block;
+  position: absolute;
+  top: 11px;
+  left: -17px;
+            content: ""; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table .firstCol, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table .firstCol {
+  height: 73px;
+          border-left: 1px solid #666666; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table .firstCol.pieceIcon, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table .firstCol.pieceIcon {
+  padding-right: 0px;
+            text-align: right; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table .lastCol, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table .lastCol {
+          border-right: 1px solid #666666; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table th, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table th {
+  width: 86px;
+  padding: 4px 4px 3px 4px;
+          position: relative; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table th .userCharaIcon, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table th .userCharaIcon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 5px;
+            right: 0px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table th .userCharaIcon *, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table th .userCharaIcon * {
+              background-size: 60px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table th .userCharaIcon div, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table th .userCharaIcon div {
+              width: 60px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td, .gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table th, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table th {
+          border-top: 1px solid #666666; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td img, .gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table th img, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td img, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table th img {
+  width: 58px;
+            height: 58px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td {
+          text-align: left; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td.proNum, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td.proNum {
+            padding-right: 5px;
+  font-size: 16px;
+            text-align: right; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td.dischargeNameWrap, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td.dischargeNameWrap {
+  height: 47px;
+            padding: 0 0 0 10px;
+  font-size: 16px;
+  vertical-align: top;
+            border: 0px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td.dischargeNameWrap .title, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td.dischargeNameWrap .title {
+              font-size: 14px; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td.starWrap, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td.starWrap {
+  min-width: 265px;/* MN:文字数によって白が見えてしまうので調整 */
+  height: 26px;
+  padding: 0 0 0 10px;
+  display: -webkit-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+  display: flex;
+            text-align: left;
+            vertical-align: top;
+  -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: left;
+            -webkit-box-pack: left;
+            -ms-flex-pack: left;
+  justify-content: left;
+  -webkit-align-content: left;
+            -ms-flex-line-pack: left;
+            align-content: left; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td.starWrap span, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td.starWrap span {
+  width: 18px;
+  height: 18px;
+  margin: 6px 0 0 0;
+  background: url("/magica/resource/image_web/common/chara/star_off.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+              z-index: 10; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td.starWrap span.on, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td.starWrap span.on {
+  background: url("/magica/resource/image_web/common/chara/star_on.png") left top no-repeat;
+                background-size: 100% 100%; }
+.gachaProbabilityPop #GachaProbability #scrollInner .pickUpWrap table td.starWrap span.memoriaStar, .gachaProbabilityPop #GachaProbability #scrollInner .dischargeListWrap table td.starWrap span.memoriaStar {
+  background: url("/magica/resource/image_web/common/icon/memoria_rarity.png") left top no-repeat;
+                background-size: 100% 100%; }
+
+@-webkit-keyframes gachaCommonFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes gachaCommonFadeInOut {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 1; }
+  75% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }

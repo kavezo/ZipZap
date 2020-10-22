@@ -1,0 +1,383 @@
+@-webkit-keyframes set_bonus {
+  0% {
+    -webkit-transform: translateY(50px) translateZ(0);
+    transform: translateY(50px) translateZ(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(0) translateZ(0);
+    transform: translateX(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes gift_bg {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes set_effect_circle {
+  0% {
+    -webkit-transform: scale(1.5) translateZ(0);
+    transform: scale(1.5) translateZ(0);
+    opacity: 0;
+  }
+
+  35% {
+    -webkit-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0);
+    opacity: 1;
+  }
+
+  55% {
+    -webkit-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0);
+    opacity: 1;
+  }
+
+  95% {
+    -webkit-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(0) translateZ(0);
+    transform: scale(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes set_effect_sphere {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0;
+  }
+
+  35% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0;
+  }
+
+  55% {
+    -webkit-transform: scale(1) translateZ(0);
+    transform: scale(1) translateZ(0);
+    opacity: 1;
+  }
+
+  95% {
+    -webkit-transform: scale(1.7) translateZ(0);
+    transform: scale(1.7) translateZ(0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: scale(1.7) translateZ(0);
+    transform: scale(1.7) translateZ(0);
+    opacity: 0;
+  }
+}
+
+#charaImg {
+  display: none;
+}
+
+#composeConfirm #confirmCardWrap {
+  width: 230px;
+  margin: 0 auto 18px;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#composeConfirm #confirmCardWrap .arrow {
+  width: 28px;
+  height: 34px;
+}
+
+.setPopup .popupGiftWrap {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0;
+  background: url("/magica/resource/image_web/page/chara/bg_gift_popup.png") left top no-repeat;
+  background-size: 80px 80px;
+  position: relative;
+}
+.setPopup .popupGiftWrap .numWrap {
+  width: 100%;
+  position: absolute;
+  top: -10px;
+  font-size: 18px;
+  z-index: 10;
+}
+.setPopup .popupGiftWrap .numWrap .ts_pink {
+  font-size: 20px;
+}
+.setPopup .popupGiftWrap .giftImg {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -webkit-calc(50% - 40px);
+  left: -webkit-calc(50% - 40px);
+  z-index: 1;
+}
+.setPopup .giftName {
+  margin: 8px 0 10px;
+  font-size: 20px;
+}
+.setPopup .cantSetCaution {
+  font-size: 20px;
+}
+.setPopup .popupBonusWrap {
+  height: 30px;
+  font-size: 18px;
+  line-height: 30px;
+}
+.setPopup .thStyle {
+  width: 112px;
+  height: 30px;
+  margin-right: 18px;
+  background: #b28750;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 30px;
+  -webkit-border-radius: 5px 0 0 5px;
+}
+
+#CharaCustomize {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#CharaCustomize .commonFrame3 {
+  background: rgba(255, 255, 255, 0.6);
+}
+#CharaCustomize #giftWrap {
+  width: 364px;
+  height: 403px;
+  padding: 31px 6px 0 10px;
+  position: absolute;
+  top: -webkit-calc(50% - 235px);
+  right: 102px;
+  overflow: hidden;
+}
+#CharaCustomize #giftWrap.canEvolve .giftWrap.set .bg:before {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/chara/bg_gift_on.png") center center no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  -webkit-animation: gift_bg 3s linear .25s infinite alternate;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+}
+#CharaCustomize #giftWrap .effectWrap {
+  display: none;
+}
+#CharaCustomize #giftWrap .effectWrap .effect01 {
+  width: 116px;
+  height: 116px;
+  background: url("/magica/resource/image_web/page/chara/set_light_sphere.png") center center no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: -webkit-calc(50% - 58px);
+  left: -webkit-calc(50% - 58px);
+  opacity: 0;
+  z-index: 1000;
+  mix-blend-mode: screen !important;
+}
+#CharaCustomize #giftWrap .effectWrap .effect02 {
+  width: 216px;
+  height: 216px;
+  background: url("/magica/resource/image_web/page/chara/set_light_circle.png") center center no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  top: -webkit-calc(50% - 108px);
+  left: -webkit-calc(50% - 108px);
+  opacity: 0;
+  z-index: 1000;
+  mix-blend-mode: screen !important;
+}
+#CharaCustomize #giftWrap .effectWrap.anim {
+  display: block;
+}
+#CharaCustomize #giftWrap .effectWrap.anim .effect01 {
+  -webkit-animation: set_effect_sphere 1s ease-in-out .25s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+#CharaCustomize #giftWrap .effectWrap.anim .effect02 {
+  -webkit-animation: set_effect_circle 1s ease-in-out .25s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+#CharaCustomize #giftWrap #giftWrapInner {
+  height: -webkit-calc(100% - 111px);
+  padding: 5px 0 10px;
+  z-index: 10;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap .bg {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/chara/bg_gift_off.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.set .numWrap {
+  -webkit-animation: common_fade_out .5s ease 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.set .numWrap .hasNum {
+  font-size: 20px;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap .hasNum, #CharaCustomize #giftWrap #giftWrapInner .giftWrap .sla, #CharaCustomize #giftWrap #giftWrapInner .giftWrap .needNum {
+  font-size: 18px;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.canSet:after {
+  width: 24px;
+  height: 24px;
+  background: url("/magica/resource/image_web/page/chara/icon_gift_add.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: -webkit-calc(50% - 12px);
+  left: -webkit-calc(50% - 12px);
+  content: "";
+  z-index: 100;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.canSet .hasNum {
+  font-size: 20px;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.canSet img {
+  opacity: .5;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.off .bg, #CharaCustomize #giftWrap #giftWrapInner .giftWrap.off .bonusWrap {
+  opacity: .7;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: grayscale(100%);
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.off img {
+  opacity: .7;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.pos_1 {
+  top: 35px;
+  left: -webkit-calc(50% - 55px);
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.pos_2 {
+  top: 80px;
+  left: 18px;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.pos_3 {
+  top: 80px;
+  right: 18px;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.pos_4 {
+  top: 198px;
+  left: 18px;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.pos_5 {
+  top: 198px;
+  right: 18px;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap.pos_6 {
+  top: 255px;
+  left: -webkit-calc(50% - 55px);
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -webkit-calc(50% - 40px);
+  left: -webkit-calc(50% - 40px);
+  z-index: 1;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap .numWrap {
+  width: 100%;
+  position: absolute;
+  bottom: 80px;
+  text-align: center;
+  z-index: 10;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap .numWrap, #CharaCustomize #giftWrap #giftWrapInner .giftWrap .numWrap span {
+  color: #ffffff;
+}
+#CharaCustomize #giftWrap #giftWrapInner .giftWrap .bonusWrap {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  color: #fa5181;
+  font-size: 14px;
+  text-align: center;
+  text-shadow: -1px -1px 1px #ffffff, 1px -1px 1px #ffffff, -1px 1px 1px #ffffff, 1px 1px 1px #ffffff, -1px -1px #ffffff, 1px -1px #ffffff, -1px 1px #ffffff, 1px 1px #ffffff, -1px -1px 2px #ffffff, 1px -1px 2px #ffffff, -1px 1px 2px #ffffff, 1px 1px 2px #ffffff, -1px -1px 2px #ffffff, 1px -1px 2px #ffffff, -1px 1px 2px #ffffff, 1px 1px 2px #ffffff, -1px -1px 3px #ffffff, 1px -1px 3px #ffffff, -1px 1px 3px #ffffff, 1px 1px 3px #ffffff;
+  z-index: 10;
+}
+#CharaCustomize #giftWrap .topWrap {
+  width: 100%;
+  height: 28px;
+  padding: 0 0 0 4px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+#CharaCustomize #giftWrap .bottomWrap {
+  width: 100%;
+  height: 29px;
+  background: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 0 0 6px 6px;
+  z-index: 2;
+}
+#CharaCustomize #giftWrap #mainBtn {
+  width: 96px;
+  height: 100px;
+  background: url("/magica/resource/image_web/page/chara/btn_custome_main_on.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 50px);
+  left: -webkit-calc(50% - 48px);
+  line-height: 100px;
+  text-align: center;
+}
+#CharaCustomize #giftWrap #mainBtn.off {
+  pointer-events: none;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: grayscale(100%);
+}
+#CharaCustomize #giftWrap #mainBtn.touch {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-filter: brightness(120%);
+}

@@ -1,0 +1,12 @@
+<div id="HelpPopup">
+	<div class="hiddenWrap" id="helpPopScrollOuter">
+		<div class="scrollInner">
+			<% _.each(model.cols, function(col,index){ %>
+			<div class="helpRows">
+				<div class="colLow se_tabs commonFrame4"><%= col.title %><span class="panArrow"></span></div>
+				<div class="colText"><%= col.text %></div>
+			</div>
+			<% }); %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,245 @@
+<div id="EventQuest">
+
+	<div class='weekTitle'><img src="/magica/resource/image_web/page/quest/week/week_title.png" alt=""></div>
+
+	<div class='missionBtnWrap'>
+		<p class="sb_gold_01 missionBtn se_tabs TE"><span class="b_screen"></span>Mission</p>
+	</div>
+
+	<div class='weeklySchedulePopBtn se_decide TE'></div>
+
+	<div id="questLinkListWrap" class="first">
+		<div class='scrollInner'>
+			<ul id='composeWrap' class="questLinkList">
+				<li id="composeTitle" class="questTitle chapter">
+					<ul class="attributeList flexBox">
+						<li class="attribute"><span class="FIRE off"></span></li>
+						<li class="attribute"><span class="WATER off"></span></li>
+						<li class="attribute"><span class="TIMBER off"></span></li>
+						<li class="attribute"><span class="LIGHT off"></span></li>
+						<li class="attribute"><span class="DARK off"></span></li>
+						<li class="attribute"><span class="CC off"></span></li>
+					</ul>
+					<div class="bg">
+						<div class="header">
+							<p class="text"><span class="week1"></span><span class="week2"></span></p>
+						</div>
+						<div class="title">Labyrinth of Enhancement</div>
+						<span class="toggleBtn"></span>
+					</div>
+				</li>
+
+				<li id="composeQuestWrap"></li>
+			</ul>
+			<ul id='materialWrap' class="questLinkList">
+				<li id="materialTitle" class="questTitle chapter">
+					<ul class="attributeList flexBox op">
+						<li class="attribute"><span class="FIRE off"></span></li>
+						<li class="attribute"><span class="WATER off"></span></li>
+						<li class="attribute"><span class="TIMBER off"></span></li>
+						<li class="attribute"><span class="LIGHT off"></span></li>
+						<li class="attribute"><span class="DARK off"></span></li>
+					</ul>
+					<div class="bg">
+						<div class="header">
+							<p class="text"><span class="week1"></span><span class="week2"></span></p>
+						</div>
+						<div class="title">Labyrinth of Awakening</div>
+						<span class="toggleBtn"></span>
+					</div>
+				</li>
+
+				<li id="materialQuestWrap"></li>
+			</ul>
+		</div>
+	</div>
+
+	<%
+		var subClose = false;
+		if(gameUser){
+			if(gameUser.closeFunctions && gameUser.closeFunctions.indexOf("ARENA") > -1) subClose = true;
+		}
+	%>
+	<div id="questLinkBtnWrap">
+		<ul class="btns">
+			<li class="main linkBtn se_decide" data-href="#/MainQuest"><span></span><div class='bg'></div></li>
+			<li class="side linkBtn se_decide<% if(subClose){ %> limited<% } %>" data-href="#/SubQuest"><span></span><div class='bg'></div></li>
+			<li class="chara linkBtn se_decide" data-href="#/CharaQuest"><span></span><div class='bg'></div></li>
+			<li class="event current"><span></span><div class='bg'></div></li>
+		</ul>
+	</div>
+</div>
+
+<!-- eventShopWrap -->
+<script type="text/template" id="EventShopTemp">
+	<div class='itemNumWrap'>
+		<img class='shopItemImg' src='/magica/resource/image_web/item/event/<%="<%= model.itemId %\>"%>.png' >
+		<p class='numWrap'>×<%="<%= model.quantity %\>"%></p>
+	</div>
+
+	<div class='shopLinkBtn se_decide TE linkBtn' data-href='#/ShopTop/<%="<%= model.shopId %\>"%>'></div>
+</script>
+
+<script type="text/template" id="EventQuestListTitle">
+	<li id="composeTitle" class="questTitle chapter open">
+		<div class="bg">
+			<div class="header">
+				<p class="text"><span class="week1">Limited Time</span></p>
+			</div>
+			<div class="title"><%="<%= model.section.title %\>"%></div>
+			<div class="subTitle"><%="<%= model.section.parameter %\>"%></div>
+			<div class="charaImg">
+				<img src='/magica/resource/image_web/event/training/<%="<%= model.eventObj.event.eventId %\>"%>/quest_title_chara.png' >
+			</div>
+			<div class="endAt pointFrame type_b">Until: <%="<%= model.eventObj.event.endAtText %\>"%></div>
+			<span class="toggleBtn"></span>
+		</div>
+	</li>
+	<li class='questWrap'></li>
+</script>
+
+<script type="text/template" id='WeeklySchedule'>
+	<div class="popupInner">
+		<span class="closeDefault popupCloseBtn se_cancel TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle common_title">Labyrinth Schedule</p>
+
+		<div class="scheduleWrap">
+			<div class='header flexBox'>
+				<div>Monday</div>
+				<div>Tuesday</div>
+				<div>Wednesday</div>
+				<div>Thursday</div>
+				<div>Friday</div>
+				<div>Weekend</div>
+			</div>
+
+			<div class='contents flexBox'>
+				<div class='wrap'>
+					<div class='title'>
+						Labyrinth of Enhancement
+						<p>Enhance Gems</p>
+					</div>
+					<div class='title'>
+						Labyrinth of Awakening
+						<p>Books/Materials</p>
+					</div>
+				</div>
+				<!-- 月曜 -->
+				<div class='wrap'>
+					<div class='attWrap attribute'>
+						<span class='FIRE type_f'></span>
+						<span class='TIMBER type_f'></span>
+					</div>
+					<div class='attWrap attribute'>
+						<span class='DARK type_f'></span>
+					</div>
+				</div>
+				<!-- 火曜 -->
+				<div class='wrap'>
+					<div class='attWrap attribute'>
+						<span class='WATER type_f'></span>
+						<span class='LIGHT type_f'></span>
+					</div>
+					<div class='attWrap attribute'>
+						<span class='FIRE type_f'></span>
+					</div>
+				</div>
+				<!-- 水曜 -->
+				<div class='wrap'>
+					<div class='attWrap attribute'>
+						<span class='TIMBER type_f'></span>
+						<span class='DARK type_f'></span>
+					</div>
+					<div class='attWrap attribute'>
+						<span class='WATER type_f'></span>
+					</div>
+				</div>
+				<!-- 木曜 -->
+				<div class='wrap'>
+					<div class='attWrap attribute'>
+						<span class='LIGHT type_f'></span>
+						<span class='FIRE type_f'></span>
+					</div>
+					<div class='attWrap attribute'>
+						<span class='TIMBER type_f'></span>
+					</div>
+				</div>
+				<!-- 金曜 -->
+				<div class='wrap'>
+					<div class='attWrap attribute'>
+						<span class='DARK type_f'></span>
+						<span class='WATER type_f'></span>
+					</div>
+					<div class='attWrap attribute'>
+						<span class='LIGHT type_f'></span>
+					</div>
+				</div>
+				<!-- 週末 -->
+				<div class='wrap'>
+					<div class='attWrap attribute weekend'>
+						<span class='FIRE type_f'></span>
+						<span class='WATER type_f'></span>
+						<span class='TIMBER type_f'></span>
+						<span class='LIGHT type_f'></span>
+						<span class='DARK type_f'></span>
+						<span class='CC type_f'></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- クエストパーツ -->
+<script type="text/template" id="QuestListParts">
+	<%="<% var mission1 = (model.missionStatus1 === 'CLEARED') ? 'cleared' : null %\>"%>
+	<%="<% var mission2 = (model.missionStatus2 === 'CLEARED') ? 'cleared' : null %\>"%>
+	<%="<% var mission3 = (model.missionStatus3 === 'CLEARED') ? 'cleared' : null %\>"%>
+
+	<%="<% var questState = (model.cleared) ? 'clear' : 'new' %\>"%>
+	<%="<%     questState = (mission1 && mission2 && mission3) ? 'comp' : questState %\>"%>
+	<%="<% var classTxt   = (model.campaignFreeAtNotClear || model.halfAp) ? 'ts_pink' : '' %\>"%>
+
+	<p class="pointFrame type_b apFrame">AP Cost:<span class='<%="<%= classTxt %\>"%>'><%="<%= (model.halfAp) ? model.halfAp : model.questBattle.ap %\>"%></span></p>
+	<p class="pointFrame type_b difficultyFrame">Difficulty:<span><%="<%= model.questBattle.difficulty %\>"%></span></p>
+
+	<span class='questState <%="<%= questState %\>"%>'></span>
+	<div class="firstView">
+		<span class="questTitle c_white"><%="<%= model.questTitle %\>"%></span>
+		<ul class="mission">
+			<li class='<%="<%= mission1 %\>"%>'></li>
+			<li class='<%="<%= mission2 %\>"%>'></li>
+			<li class='<%="<%= mission3 %\>"%>'></li>
+		</ul>
+	</div>
+
+	<ul class="secondView">
+		<li class='<%="<%= mission1 %\>"%>'><%="<%= model.questBattle.missionMaster1.description %\>"%></li>
+		<li class='<%="<%= mission2 %\>"%>'><%="<%= model.questBattle.missionMaster2.description %\>"%></li>
+		<li class='<%="<%= mission3 %\>"%>'><%="<%= model.questBattle.missionMaster3.description %\>"%></li>
+	</ul>
+
+	<span class="treasure">
+		<%="<% if(questState === 'comp') { %\>"%>
+			<%="<% var itemCode = model.missionRewardCode.itemCode.toLowerCase(); %\>"%>
+			<div class="title clear"></div>
+			<%="<% if(itemCode.indexOf('gift') !== -1) { %\>"%>
+				<img data-nativeimgkey='gift_<%="<%= itemCode %\>"%>' data-src='resource/image_native/gift/item_gift_<%="<%= itemCode %\>"%>.png' class="giftImg">
+
+			<%="<% } else { %\>"%>
+				<img class="itemImg" src='/magica/resource/image_web/item/main/<%="<%= itemCode %\>"%>.png' alt=''>
+
+			<%="<% } %\>"%>
+		<%="<% } else { %\>"%>
+			<div class="title"></div>
+			<img class="treasureImg" src='/magica/resource/image_web/common/treasure/<%="<%= model.chestColor.toLowerCase() %\>"%>.png' alt=''>
+		<%="<% } %\>"%>
+	</span>
+
+	<span class="touchObj"></span>
+
+	<span class="params">
+		<span class="questType" data-questtype='<%="<%= model.questType %\>"%>'></span>
+		<span class="questIndex" data-questindex='<%="<%= model.questBattle.sectionIndex %\>"%>'></span>
+	</span>
+</script>

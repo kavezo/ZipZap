@@ -1,0 +1,76 @@
+<div id="sortfilter" class='memoria'>
+	<p class='filterText'>Only the selected fields will be displayed.</p>
+	<ul id="filterListWrap" class="">
+
+		<!-- レアリティ -->
+		<li id="filterRankList" class="filterList" data-btntype="check" data-sortid="3">
+			<div class='filterBar'>
+				<p>Rarity</p>
+				<span class='filterBtn se_tabs ALL' data-filter="ALL"><span class='checkBox'></span>View All</span>
+			</div>
+			<div class="flexBox">
+				<span class="filterBtn se_tabs" data-filter="RANK_1"><span class='checkBox'></span><span class="star"></span>1</span>
+				<span class="filterBtn se_tabs" data-filter="RANK_2"><span class='checkBox'></span><span class="star"></span>2</span>
+				<span class="filterBtn se_tabs" data-filter="RANK_3"><span class='checkBox'></span><span class="star"></span>3</span>
+				<span class="filterBtn se_tabs" data-filter="RANK_4"><span class='checkBox'></span><span class="star"></span>4</span>
+			</div>
+		</li>
+
+		<!-- ロックフィルタ -->
+		<li id="filterLockList" class="filterList" data-btntype="radio" data-sortid="5">
+			<div class='filterBar'>
+				<p>Lock</p>
+				<span class='filterBtn se_tabs ALL' data-filter="ALL"><span class='checkBox'></span>View All</span>
+			</div>
+			<div class='flexBox'>
+				<span class="filterBtn se_tabs" data-filter="LOCKED"><span class='checkBox'></span>Locked</span>
+				<span class="filterBtn se_tabs" data-filter="UNLOCKED"><span class='checkBox'></span>Not Locked</span>
+			</div>
+		</li>
+	<!-- アビリティ/スキル -->
+		<li id="filterAttList" class="filterList" data-btntype="check" data-sortid="2">
+		<div class='filterBar'>
+				<p>Type</p>
+				<span class='filterBtn se_tabs ALL' data-filter="ALL"><span class='checkBox'></span>View All</span>
+		</div>
+		<div class='flexBox'>
+				<span class="filterBtn se_tabs" data-filter="ABILITY"><span class='checkBox'></span>Ability</span>
+				<span class="filterBtn se_tabs" data-filter="SKILL"><span class='checkBox'></span>Skill</span>
+				<span class="filterBtn se_tabs" data-filter="REINFORCEMENT"><span class='checkBox'></span>Enhancement<br>Materials</span>
+	</div>
+
+		<!-- 強化済み -->
+		<li id="filterComposeList" class="filterList" data-btntype="check2" data-sortid="9">
+		<div class='filterBar'>
+				<p>Enhancement Status</p>
+				<span class='filterBtn se_tabs ALL' data-filter="ALL"><span class='checkBox'></span>View All</span>
+		</div>
+		<div class='flexBox'>
+				<span class="filterBtn se_tabs" data-filter="LV_MAX"><span class='checkBox'></span>Lv MAX</span>
+				<span class="filterBtn se_tabs" data-filter="LB_MAX"><span class='checkBox'></span>Ascended</span>
+				<span class="filterBtn se_tabs" data-filter="ETC"><span class='checkBox'></span>Other</span>
+	</div>
+		</li>
+
+		<!-- 効果フィルタ -->
+		<li id="filterEffectList" class="filterList" data-btntype="check" data-sortid="7">
+		<div class='filterBar'>
+				<p>Effect</p>
+				<span class='filterBtn se_tabs ALL' data-filter="ALL"><span class='checkBox'></span>View All</span>
+		</div>
+		<div class="flexBox">
+				<span class="filterBtn se_tabs" data-filter="HEAL"><span class='checkBox'></span>Heal/Cure</span>
+				<span class="filterBtn se_tabs" data-filter="BUFF"><span class='checkBox'></span>Buff</span>
+				<span class="filterBtn se_tabs" data-filter="ANTI"><span class='checkBox'></span>Debuff</span>
+				<span class="filterBtn se_tabs" data-filter="EFFECT"><span class='checkBox'></span>Passive<br>Effects</span>
+				<span class="filterBtn se_tabs" data-filter="BADSTATUS"><span class='checkBox'></span>Status<br>Ailments</span>
+				<span class="filterBtn se_tabs" data-filter="ETC"><span class='checkBox'></span>Other</span>
+	</div>
+		</li>
+	</ul>
+
+	<div id="cardSortBtnsArea">
+		<span class="btn TE b_pink se_decide sort popupCloseBtn"><span class='b_screen'></span>Show</span>
+	</div>
+
+</div>

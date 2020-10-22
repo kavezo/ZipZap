@@ -1,0 +1,61 @@
+<div id="TopPage">
+	<% if(model.aj2018) { %>
+		<style type='text/css'>
+			.aj2018Btn {
+				width: 128px;
+				height: 152px;
+				background: url('/magica/resource/image_web/test/aj2018/event_pop.png') left top no-repeat;
+
+				position: absolute;
+
+				bottom: 56px;
+				left: 12px;
+				z-index: 10000000;
+			}
+		</style>
+		<div class='aj2018Btn linkBtn se_decide TE' data-href='#/RealGachaTop'></div>
+	<% } %>
+
+	<p id="transferBtn"><span class="topBtn se_decide c_gold">Transfer Data</span></p>
+	<p id="clearBtn"><span class="topBtn se_decide c_gold">Clear Cache</span></p>
+
+	<% if(model.user && model.user.tutorialId == 'TU999'){ %>
+		<p id="opMovieBtn"><span class="topBtn se_decide c_gold">OP Movie</span></p>
+	<% } %>
+
+	<% if(model.gameUser && model.gameUser.inviteCode){ %>
+		<p id="userIdPannel">Player ID:<%= model.gameUser.inviteCode %></p>
+	<% } %>
+
+	<div>
+		<div id="touchScreen" class="se_kettei02">
+    		<span class="touchTxt"></span>
+			<div id="touchBackground"></div>
+		</div>
+	</div>
+
+	<p id="terms"><span>Terms of Use</span></p><p id="copy"></p>
+	<p id="app_ver" class="c_purple">VER.<span class="c_purple"></span></p>
+</div>
+
+<script id="transferInner" type="text/template">
+	<div id="transferPopup">
+		<span class="leftCol c_gold">Transfer ID</span><span class="rightCol"><input type="text" id="transferId" class="personalId" value=""></span><br>
+		<span class="leftCol c_gold">Password</span><span class="rightCol"><input type="password" id="transferPassword" class="password" value=""></span>
+		<div class="transferAlert c_red">※Passwords must be 8-15 characters.</div>
+		<div class="transferNotice">You can transfer data by entering the Transfer ID and Password you set on your old device.</div>
+	</div>
+</script>
+
+<script id="nameChangePop" type="text/template">
+	Your Player Name was not successfully set during Chapter 1 Episode 3's Cutscene.
+	Please enter your Player Name.<br><br>
+	<input id="changeName" class="commonFrame3" readonly="readonly" type="text" maxlength="8" value="">
+	<div class="textCount c_gold">
+		<span id="textCount" class='c_gold'>0</span>/8 characters
+	</div>
+	<div class="cautionText c_red">
+		※You may change this later (but not today).<br>
+		※You can read Chapter 1 Episode 3 in the Archive.
+	</div>
+</script>

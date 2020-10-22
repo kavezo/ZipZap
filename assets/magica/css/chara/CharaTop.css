@@ -1,0 +1,43 @@
+#richeWrap {
+  display: none !important;
+}
+
+#CharaTop {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+#CharaTop #btnArea.campaignIcon:before {
+  width: 150px;
+  height: 76px;
+  background: url("/magica/resource/image_web/campaign/point_up/common/card_compose_all_2000.png") left top no-repeat;
+  position: absolute;
+  top: -8px;
+  left: 87px;
+  content: "";
+  pointer-events: none;
+  z-index: 10000;
+}
+#CharaTop #leaderChangeBtn {
+  width: 150px;
+  height: 32px;
+  background: url("/magica/resource/image_web/page/chara/conf_leader_off.png") left top no-repeat;
+  position: absolute;
+  top: 393px;
+  left: 51px;
+  z-index: 100;
+  z-index: 100000;
+}
+#CharaTop #leaderChangeBtn.off {
+  background: url("/magica/resource/image_web/page/chara/conf_leader_on.png") left top no-repeat;
+}
+#CharaTop #poseChangeBtn {
+  width: 66px;
+  height: 66px;
+  background: url("/magica/resource/image_web/page/chara/btn_pose.png") left top no-repeat;
+  position: absolute;
+  top: 365px;
+  left: 234px;
+  z-index: 100;
+  z-index: 100000;
+}

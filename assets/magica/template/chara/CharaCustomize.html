@@ -1,0 +1,57 @@
+<div id="CharaCustomize">
+	<div class="bonusResultWrap">
+		<p class="text"></p>
+		<div class="bg"></div>
+	</div>
+
+	<div id="giftWrap" class="commonFrame3">
+		<div class="topWrap"><img src="/magica/resource/image_web/page/chara/text_customize.png" alt=""></div>
+		<div id="giftWrapInner">
+			<div id="mainBtn" class="se_decide TE">
+				<p class="ts_pink">Awaken</p>
+			</div>
+		</div>
+		<div class="bottomWrap"><p class="descText c_purple">
+		</p></div>
+	</div>
+
+	<div id="btnArea" class="customize offLink">
+		<ul>
+			<li class="TE compose linkBtn se_decide" data-href="#/CharaListCompose"><span></span></li>
+			<li class="TE composeMagia linkBtn se_decide" data-href="#/CharaListComposeMagia"><span></span></li>
+			<li class="TE customize current linkBtn se_decide" data-href="#/CharaListTop"><span></span></li>
+			<li class="TE equip linkBtn se_decide" data-href="#/CharaListEquip"><span></span></li>
+		</ul>
+	</div>
+</div>
+
+<!--  -->
+<script type="text/template" id="evolveCharaTemp">
+	<div class="userCharaIcon <%='<%= card.rank %\>'%> <%='<%= card.attributeId %\>'%>">
+		<%="<% var att = 'att_' + card.attributeId.toLowerCase() %\>"%>
+		<%="<% var star = 'star_' + card.rank.toLowerCase() %\>"%>
+		<%="<% var frame = 'frame_' + card.rank.toLowerCase() %\>"%>
+		<%="<% var bg = 'bg_' + card.attributeId.toLowerCase() %\>"%>
+		<span class="att" data-nativebgkey='<%="<%= att %\>"%>' data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+		<span class="star" data-nativebgkey='<%="<%= star %\>"%>' data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+		<span class="rank" data-nativebgkey='<%="<%= frame %\>"%>' data-src='resource/image_native/card/frame/<%="<%= frame %\>"%>.png'></span>
+		<img data-nativeimgkey='card_<%="<%= cardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= cardId %\>"%>_f.png'>
+		<span class="lv"><span><%="<%= level %\>"%></span></span>
+		<span class="bg" data-nativebgkey='<%="<%= bg %\>"%>' data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+	</div>
+
+	<img class='arrow' src="/magica/resource/image_web/page/chara/arrow.png" alt="">
+
+	<div class="userCharaIcon <%='<%= nextCard.rank %\>'%> <%='<%= nextCard.attributeId %\>'%>">
+		<%="<% var att = 'att_' + nextCard.attributeId.toLowerCase() %\>"%>
+		<%="<% var star = 'star_' + nextCard.rank.toLowerCase() %\>"%>
+		<%="<% var frame = 'frame_' + nextCard.rank.toLowerCase() %\>"%>
+		<%="<% var bg = 'bg_' + nextCard.attributeId.toLowerCase() %\>"%>
+		<span class="att" data-nativebgkey='<%="<%= att %\>"%>' data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+		<span class="star" data-nativebgkey='<%="<%= star %\>"%>' data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+		<span class="rank" data-nativebgkey='<%="<%= frame %\>"%>' data-src='resource/image_native/card/frame/<%="<%= frame %\>"%>.png'></span>
+		<img data-nativeimgkey='card_<%="<%= nextCard.cardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= nextCard.cardId %\>"%>_f.png'>
+		<span class="lv"><span>1</span></span>
+		<span class="bg" data-nativebgkey='<%="<%= bg %\>"%>' data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+	</div>
+</script>

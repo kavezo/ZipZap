@@ -1,0 +1,319 @@
+@charset "UTF-8";
+#globalMenu #title {
+  width: 198px;
+  height: 56px;
+  background: url("/magica/resource/image_web/common/global/title/memoria_collection.png") left top no-repeat;
+  display: block;
+}
+
+#MemoriaCollection {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+#MemoriaCollection .helpBtn {
+  position: absolute;
+  top: 17px;
+  left: 680px;
+}
+#MemoriaCollection li.btn {
+  display: inline-block;
+}
+#MemoriaCollection #sortPanel {
+  position: absolute;
+  top: 4px;
+  right: 115px;
+}
+#MemoriaCollection #sortPanel #sortPopupMemoria {
+  width: 222px;
+  height: 37px;
+  padding-left: 42px;
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_sortfilter_btn.png");
+  line-height: 33px;
+}
+#MemoriaCollection #sortPanel #sortPopupMemoria span {
+  width: 85px;
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+}
+#MemoriaCollection #sortPanel #sortPopupMemoria span#sortType {
+  margin-left: 2px;
+}
+#MemoriaCollection #ascPanel {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+}
+#MemoriaCollection #ascPanelMemoria {
+  width: 80px;
+  height: 24px;
+  position: absolute;
+  top: 10px;
+  right: 28px;
+}
+#MemoriaCollection #ascPanelMemoria .touch {
+  -webkit-filter: brightness(120%);
+}
+#MemoriaCollection #ascPanelMemoria li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 21px;
+  color: #fff;
+}
+#MemoriaCollection #ascPanelMemoria li#ascMemoria {
+  background: url("/magica/resource/image_web/common/filter/btn_memoria_ascending.png") left top no-repeat;
+}
+#MemoriaCollection #ascPanelMemoria li#descMemoria {
+  background: url("/magica/resource/image_web/common/filter/btn_memoria_descending.png") left top no-repeat;
+}
+#MemoriaCollection .none {
+  display: none !important;
+}
+#MemoriaCollection .memoriaScrollWrap {
+  width: 866px;
+  height: -webkit-calc(100% - 18px);
+  margin: 6px 0 0 16px;
+  overflow: hidden;
+}
+#MemoriaCollection .memoriaScrollWrap #memoriaWrapInner {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-top: 7px;
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_blank.png");
+  background-repeat: repeat;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: wrap;
+  flex-flow: wrap;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+}
+#MemoriaCollection #filterPanel {
+  width: 44px;
+  position: absolute;
+  top: 57px;
+  left: -44px;
+}
+#MemoriaCollection #filterPanel li {
+  width: 44px;
+  height: 99px;
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_tab.png");
+  color: #888;
+  font-size: 16px;
+  line-height: 44px;
+  text-align: center;
+  text-shadow: none;
+  -webkit-writing-mode: vertical-rl;
+}
+#MemoriaCollection #filterPanel li.current {
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_tab_current.png");
+}
+#MemoriaCollection #memoriaListHeader {
+  width: 942px;
+  height: 44px;
+  background-image: url(/magica/resource/image_web/page/memoria/memoria_headerpanel_l.png);
+  position: absolute;
+  top: 60px;
+  left: -webkit-calc(50% - 471px) !important;
+  z-index: 1;
+}
+#MemoriaCollection #memoriaWrap {
+  width: 908px;
+  height: -webkit-calc(100% - 124px) !important;
+  position: absolute;
+  top: 112px;
+  left: -webkit-calc(50% - 454px);
+  z-index: 3;
+}
+#MemoriaCollection #memoriaWrap.ability .SKILL,
+#MemoriaCollection #memoriaWrap.ability .DISK {
+  display: none;
+}
+#MemoriaCollection #memoriaWrap.skill .ABILITY,
+#MemoriaCollection #memoriaWrap.skill .DISK {
+  display: none;
+}
+#MemoriaCollection #memoriaWrap.disk .ABILITY,
+#MemoriaCollection #memoriaWrap.disk .SKILL {
+  display: none;
+}
+#MemoriaCollection #memoriaWrap .userMemoriaIcon {
+  width: 126px;
+  height: 126px;
+  margin: 5px 8px 19px 9px;
+  position: relative;
+}
+#MemoriaCollection #memoriaWrap .userMemoriaIcon .notOpen {
+  width: 126px;
+  height: 126px;
+  background: url("/magica/resource/image_web/page/collection/memoria_notopen_bg.png") left top no-repeat;
+  background-size: contain;
+  display: block;
+}
+#MemoriaCollection ul#memoriaListInfo {
+  margin: 10px 0 0 7px;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_1,
+#MemoriaCollection ul#memoriaListInfo .cardCount_2,
+#MemoriaCollection ul#memoriaListInfo .cardCount_3 {
+  padding-right: 10px;
+  display: inline-block;
+  color: #fff;
+  text-align: right;
+  text-shadow: none;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_1 span,
+#MemoriaCollection ul#memoriaListInfo .cardCount_2 span,
+#MemoriaCollection ul#memoriaListInfo .cardCount_3 span {
+  color: #fff;
+  font-size: 18px;
+  text-shadow: none;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_2 {
+  width: 189px;
+  height: 24px;
+  margin-left: 15px;
+  position: relative;
+  line-height: 24px;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_2:before {
+  height: 24px;
+  padding: 0 10px;
+  background-color: #fff;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #ff5491;
+  line-height: 24px;
+  content: 'Stock';
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-shadow: none;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_3 {
+  width: 159px;
+  height: 24px;
+  position: relative;
+  line-height: 24px;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_3:before {
+  height: 24px;
+  padding: 0 10px;
+  background-color: #fff;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  color: #ff5491;
+  line-height: 24px;
+  content: 'Selected';
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-shadow: none;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_4 {
+  width: 185px;
+  height: 50px;
+  padding: 3px 10px;
+  display: block;
+  position: absolute;
+  top: 287px;
+  right: -170px;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_4 #info_saleCount {
+  width: 142px;
+  position: absolute;
+  right: 16px;
+  bottom: 8px;
+  text-align: right;
+  text-shadow: none;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_4 #info_saleCount:before {
+  width: 21px;
+  height: 20px;
+  background-image: url("/magica/resource/image_web/common/icon/icon_cursechip.png");
+  background-size: contain;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  content: '';
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_5 {
+  width: 185px;
+  height: 50px;
+  padding: 3px 10px;
+  display: block;
+  position: absolute;
+  top: 339px;
+  right: -170px;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_5 #info_totalGold {
+  width: 142px;
+  position: absolute;
+  right: 16px;
+  bottom: 8px;
+  color: #444;
+  text-align: right;
+  text-shadow: none;
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_5 #info_totalGold:before {
+  width: 21px;
+  height: 20px;
+  background-image: url("/magica/resource/image_web/common/icon/icon_cursechip.png");
+  background-size: contain;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  content: '';
+}
+#MemoriaCollection ul#memoriaListInfo .cardCount_4 .countTitle,
+#MemoriaCollection ul#memoriaListInfo .cardCount_5 .countTitle {
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  text-align: center;
+  text-shadow: none;
+}
+#MemoriaCollection ul#memoriaListInfo.cardInfo .cardCount_2 {
+  display: none;
+}
+#MemoriaCollection ul#memoriaListInfo.cardInfo .cardCount_3 {
+  display: none;
+}
+#MemoriaCollection ul#memoriaListInfo.cardInfo .cardCount_4 {
+  display: none;
+}
+#MemoriaCollection ul#memoriaListInfo.cardInfo .cardCount_5 {
+  display: none;
+}
+#MemoriaCollection ul#memoriaListInfo.memoriaInfo .cardCount_1 {
+  display: none;
+}
+#MemoriaCollection ul#memoriaListInfo.memoriaInfo .cardCount_3 {
+  display: none;
+}
+#MemoriaCollection ul#memoriaListInfo.memoriaInfo .cardCount_3.saleMode {
+  display: inline-block;
+}
+#MemoriaCollection ul#memoriaListInfo.memoriaInfo .cardCount_4 {
+  display: none;
+}
+#MemoriaCollection ul#memoriaListInfo.memoriaInfo .cardCount_4.saleMode {
+  display: block;
+}
+#MemoriaCollection ul#memoriaListInfo.memoriaInfo .cardCount_5 {
+  display: none;
+}
+#MemoriaCollection ul#memoriaListInfo.memoriaInfo .cardCount_5.saleMode {
+  display: block;
+}

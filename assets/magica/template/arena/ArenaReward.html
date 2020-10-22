@@ -1,0 +1,55 @@
+<div id="ArenaReward">
+	<div id="arenaRewardHeader" class="arenaColor">Layer Rewards</div>
+	<div id="bgWrap">
+		<ul id="arenaRewardTab">
+			<li class="current se_decide rankUp" data-screen="rankup" data-name="Level Up Rewards"></li>
+			<!-- <li class="ranking se_decide" data-screen="ranking" data-name="ランキング報酬"><span>ランキング報酬</span></li> -->
+		</ul>
+		<div id="arenaRewardWrap">
+			<div class="scrollInner">
+				<div id="rewardTypeWrap" class="rankup">
+					<div id="rankupRewards">
+						<h3>◆ Endless Mirrors</h3>
+						<div class="flowWrap">
+							<%
+								var keyObj = {"ITEM":"item","CARD":"card","PIECE":"piece","GIFT":"gift"};
+
+							%>
+							<% _.each(free,function(model,index){ %>
+							<dl class="rewardCols infinite">
+								<dt><%= model.className %></dt>
+								<dd>
+									<%
+										_.each(model.bonusRewardList,function(reward,index){
+									%>
+										<% if(index > 0){ %><br><% } %><img src="<%= resDir %>/magica/resource/image_web/common/icon/icon_<%= reward.itemId.toLowerCase() %>.png"><%= reward[keyObj[reward.presentType]].name %>×<%= reward.quantity %>
+									<% }); %>
+									<% if(model.bonusRewardList.length === 0){%>-<%}%>
+								</dd>
+							</dl>
+							<% }); %>
+						</div>
+					</div>
+					<!-- <div id="rankingRankupRewards">
+						<h3>◆ Rankings</h3>
+						<div class="flowWrap">
+							<% _.each(ranking,function(model,index){ %>
+							<dl class="rewardCols ranking">
+								<dt><%= model.arenaBattleRankingClass %>クラス</dt>
+								<dd>
+									<%
+										_.each(model.bonusRewardList,function(reward,index){
+									%>
+										<% if(index > 0){ %><br><% } %><img src="<%= resDir %>/magica/resource/image_web/common/icon/icon_<%= reward.itemId.toLowerCase() %>.png"><%= reward[keyObj[reward.presentType]].name %>×<%= reward.quantity %>
+									<% }); %>
+									<% if(model.bonusRewardList.length === 0){%>-<%}%>
+								</dd>
+							</dl>
+							<% }); %>
+						</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

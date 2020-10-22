@@ -1,0 +1,57 @@
+li.touch {
+  -webkit-transform: translateZ(0) scale(0.95);
+  -webkit-filter: brightness(120%) !important; }
+
+#MemoriaTop {
+  width: 1024px;
+  height: 100%;
+  position: relative; }
+#MemoriaTop #charaImgWrap {
+  width: 1024px;
+  height: 768px;
+  position: absolute;
+  top: -webkit-calc(50% - 384px);
+    left: -240px; }
+#MemoriaTop .btnList {
+  width: 100%;
+    height: 448px;
+  display: block;
+  position: absolute;
+    top: -webkit-calc(50% - 200px);
+    left: 0; }
+#MemoriaTop .btnList li {
+      width: 166px;
+      height: 224px;
+  position: absolute;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      -webkit-transform: translateZ(0); }
+#MemoriaTop .btnList li .diamond {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        -webkit-transform: translateZ(0); }
+      #MemoriaTop .btnList li.composeLinkBtn, #MemoriaTop .btnList li.listLinkBtn, #MemoriaTop .btnList li.limitBreakLinkBtn {
+        top: 0px; }
+      #MemoriaTop .btnList li.setLinkBtn, #MemoriaTop .btnList li.archiveLinkBtn, #MemoriaTop .btnList li.saleLinkBtn {
+        bottom: 0px; }
+#MemoriaTop .btnList li.composeLinkBtn {
+        background: url("/magica/resource/image_web/page/memoria/memoriatop_btn_compose_b.png") left top no-repeat;
+        right: 387px; }
+      #MemoriaTop .btnList li.listLinkBtn {
+        background: url("/magica/resource/image_web/page/memoria/memoriatop_btn_list_b.png") left top no-repeat;
+        right: 221px; }
+#MemoriaTop .btnList li.limitBreakLinkBtn {
+        background: url("/magica/resource/image_web/page/memoria/memoriatop_btn_limitbreak_b.png") left top no-repeat;
+        right: 55px; }
+#MemoriaTop .btnList li.setLinkBtn {
+        background: url("/magica/resource/image_web/page/memoria/memoriatop_btn_set_a.png") left top no-repeat;
+        right: 387px; }
+      #MemoriaTop .btnList li.archiveLinkBtn {
+        background: url("/magica/resource/image_web/page/memoria/memoriatop_btn_storage.png") left top no-repeat;
+        right: 221px; }
+#MemoriaTop .btnList li.saleLinkBtn {
+        background: url("/magica/resource/image_web/page/memoria/memoriatop_btn_sale_b.png") left top no-repeat;
+        right: 55px; }

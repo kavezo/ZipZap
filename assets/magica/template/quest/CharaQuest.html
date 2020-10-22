@@ -1,0 +1,225 @@
+<div id="CharaQuest" class="CHARA">
+
+	<div id="charaSection" class="hide"></div>
+
+	<div id="charaList" class="show">
+		<div id="toggleQuestType" class="commonFrame2">
+			<ul id="toggleBtns" class="scrollInner common_tab t_pink">
+				<li class="TE btn se_tabs CHARA current" data-type="CHARA"><div class="batch"></div><span>Magical Girls</span></li>
+
+			</ul>
+		</div>
+		<div id="tabArea">
+			<ul class="tabBtns">
+				<li class="se_tabs all current" data-att="ALL"></li>
+				<li class="se_tabs fire" data-att="FIRE"></li>
+				<li class="se_tabs water" data-att="WATER"></li>
+				<li class="se_tabs timber" data-att="TIMBER"></li>
+				<li class="se_tabs light" data-att="LIGHT"></li>
+				<li class="se_tabs dark" data-att="DARK"></li>
+				<li class="se_tabs void" data-att="VOID"></li>
+			</ul>
+			<div class="bg">
+				<div class="bgInner"></div>
+			</div>
+		</div>
+
+		<div id="charaQuestWrap">
+			<p id='charaQuestCation' class='none ts_white'>No Applicable Magical Girls</p>
+			<div id="charaQuestInner" class="charaQuestInner all">
+			</div>
+		</div>
+	</div>
+<%
+	var subClose = false;
+	if(gameUser){
+		if(gameUser.closeFunctions && gameUser.closeFunctions.indexOf("ARENA") > -1) subClose = true;
+	}
+%>
+	<div id="questLinkBtnWrap">
+		<ul class="btns">
+			<li class="main linkBtn se_decide" data-href="#/MainQuest"><span></span><div class='bg'></div></li>
+			<li class="side linkBtn se_decide<% if(subClose){ %> limited<% } %>" data-href="#/SubQuest"><span></span><div class='bg'></div></li>
+			<li class="chara current"><span></span><div class='bg'></div></li>
+			<li class="event linkBtn se_decide" data-href="#/EventQuest"><span></span><div class='bg'></div></li>
+		</ul>
+	</div>
+</div>
+
+<!-- セクション -->
+<script type="text/template" id="Section">
+	<div class="charaImg">
+		<img data-nativeimgkey='card_<%="<%= model.card.displayCardId %\>"%>_l' data-src='resource/image_native/card/image/card_<%="<%= model.card.displayCardId %\>"%>_l.png' alt="">
+	</div>
+	<div id="animationWrap1">
+		<div class="animName">
+			<%="<%= model.chara.name %\>"%>
+			<%="<% if(model.chara.title) { %\>"%>
+				<span class="animNameTitle c_white"><%="<%= model.chara.title %\>"%></span>
+			<%="<% } %\>"%>
+		</div>
+
+		<div class="charaNameLine"></div>
+		<div class="charaNameBg"></div>
+		<div class="twinkle1"></div>
+		<div class="twinkle2"></div>
+		<div class="charaText">
+			<%='<%= model.displayMessage %\>'%>
+		</div>
+	</div>
+	<div id="animationWrap2">
+		<div class="patternbg1"></div>
+		<div class="patternbg2"></div>
+		<div class="patternbg3"></div>
+		<div class="patternbg4"></div>
+	</div>
+
+	<div id="questListWrap" class="off">
+		<div class="sectionType"></div>
+		<div class="sectionName">
+					<span class='attribute'><span class='<%="<%= model.chara.attributeId %\>"%> type_f'></span></span><%="<%= model.chara.name %\>"%>
+					<%="<% if(model.chara.title) { %\>"%>
+						<span class='charaNameTitle c_white'> <%="<%= model.chara.title %\>"%></span>
+					<%="<% } %\>"%>
+			<div class="sectionNameHr"></div>
+		</div>
+		<ul id="questList">
+			<ul class="sectionList"></ul>
+		</ul>
+	</div>
+</script>
+
+<!-- セクションパーツ -->
+<script type="text/template" id="SectionParts">
+
+	<span class='sectionState <%="<%= model.questStatus %\>"%>'></span>
+	<span class="treasure">
+		<div class="title"></div>
+		<%="<% if(model.cleared) { %\>"%>
+			<%="<% var itemCode = model.section.clearRewardCode.toLowerCase(); %\>"%>
+			<%="<% if(itemCode.indexOf('live2d') !== -1 || itemCode.indexOf('doppel') !== -1) { %\>"%>
+				<!-- todo:charaid -->
+				<%="<% if(itemCode.indexOf('live2d') !== -1) { %\>"%>
+					<%="<% var miniId = itemCode.split('_')[1] + '00'; %\>"%>
+				<%="<% } %\>"%>
+
+				<%="<% if(itemCode.indexOf('doppel') !== -1) { %\>"%>
+					<%="<% var miniId = itemCode.split('_')[1]; %\>"%>
+				<%="<% } %\>"%>
+
+				<div class="imgWrap">
+					<div class="charaIcon">
+						<div class="maskWrap">
+							<img data-nativeimgkey='mini_<%="<%= miniId %\>"%>_d' data-src='resource/image_native/mini/image/mini_<%="<%= miniId %\>"%>_d.png'>
+						</div>
+					</div>
+					<%="<% if(itemCode.indexOf('live2d') !== -1) { %\>"%>
+						<img src='/magica/resource/image_web/item/main/live2d.png' alt=''>
+					<%="<% } %\>"%>
+
+					<%="<% if(itemCode.indexOf('doppel') !== -1) { %\>"%>
+						<img src='/magica/resource/image_web/item/main/doppel.png' alt=''>
+					<%="<% } %\>"%>
+				</div>
+			<%="<% } else if(itemCode.indexOf('piece') !== -1) { %\>"%>
+				<%="<% itemCode = 'memoria_' + itemCode.split('_')[1] + '_s' %\>"%>
+				<img data-nativeimgkey='<%="<%= itemCode %\>"%>' data-src='resource/image_native/memoria/<%="<%= itemCode %\>"%>.png' alt=''>
+			<%="<% } else if(itemCode.indexOf('gem') !== -1) { %\>"%>
+				<%="<% itemCode = itemCode.split('_')[1] %\>"%>
+				<div class="imgWrap">
+					<img src='/magica/resource/image_web/item/frame/item_frame03.png'>
+					<img data-nativeimgkey='chara_<%="<%= itemCode %\>"%>_h' data-src='resource/image_native/chara/chara_<%="<%= itemCode %\>"%>_h.png'>
+				</div>
+			<%="<% } else { %\>"%>
+				<%="<% itemCode = itemCode.split('_')[1] + '_' + itemCode.split('_')[2] %\>"%>
+				<img src='/magica/resource/image_web/item/main/<%="<%= itemCode %\>"%>.png' alt=''>
+			<%="<% } %\>"%>
+		<%="<% } else { %\>"%>
+			<img src='/magica/resource/image_web/common/treasure/<%="<%= model.chestColor.toLowerCase() %\>"%>.png' alt=''>
+		<%="<% } %\>"%>
+	</span>
+
+	<%="<% if(model.section.genericIndex < 4) { %\>"%>
+		<span class="sectionNo">Ep.<%="<%= model.section.genericIndex %\>"%></span>
+	<%="<% } else if(model.section.genericIndex == 4) { %\>"%>
+		<span class="sectionNo">Doppel</span>
+	<%="<% } else if(!model.section.genericIndex) { %\>"%>
+
+	<%="<% } %\>"%>
+
+	<span class="sectionTitle"><%="<%= model.section.title %\>"%></span>
+	<%="<% if(model.section.live2d){ %\>"%>
+		<span class="costumeTitle"><%='<%= model.section.live2d.live2d.description %\>'%></span>
+	<%="<% } %\>"%>
+	<span class="questTip">
+		<%="<% var i = 0; %\>"%>
+		<%="<% while(i < model.section.questBattleCount) { %\>"%>
+			<%="<% var _model = model.questBattleList[i] %\>"%>
+
+			<%="<% if(_model) { %\>"%>
+
+				<%="<% var mission1 = (_model.missionStatus1 === 'CLEARED') ? 'cleared' : null %\>"%>
+				<%="<% var mission2 = (_model.missionStatus2 === 'CLEARED') ? 'cleared' : null %\>"%>
+				<%="<% var mission3 = (_model.missionStatus3 === 'CLEARED') ? 'cleared' : null %\>"%>
+
+				<%="<% var questState = (_model.cleared) ? 'clear' : 'new' %\>"%>
+				<%="<%     questState = (mission1 && mission2 && mission3) ? 'comp' : questState %\>"%>
+
+			<%="<% } else { %\>"%>
+				<%="<% var questState = 'new' %\>"%>
+			<%="<% } %\>"%>
+
+			<span class='<%="<%= questState %\>"%>'></span>
+
+		<%="<% 	i=(i+1)|0; %\>"%>
+		<%="<% } %\>"%>
+	</span>
+</script>
+
+<!-- チャプター -->
+<script type="text/template" id="CharaParts">
+	<div class="attribute"><span class='<%="<%= model.chara.attributeId %\>"%> type_f'></span></div>
+	<p class="charaName">
+		<%="<%= model.chara.name %\>"%>
+	<%="<% if(model.chara.title) { %\>"%>
+				<span class="charaNameTitle"><%="<%= model.chara.title %\>"%></span>
+	<%="<% } %\>"%>
+	</p>
+	<div class="charaImg">
+		<img data-nativeimgkey='card_<%="<%= model.card.displayCardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= model.card.displayCardId %\>"%>_f.png' alt="">
+	</div>
+
+	<%="<% var section = (questType === 'CHARA') ? model.section : model.costumeSection; %\>"%>
+
+	<%="<% var addClass = ''; %\>"%>
+	<%="<% if(section.length > 8) addClass = ' multiLine'; %\>"%>
+
+	<ul class="questState<%="<%= addClass %\>"%>">
+		<%="<% if(section.length) { %\>"%>
+			<%="<% _.forEach(section,function(txt,index){ %\>"%>
+				<li class='<%="<%= section[index].questStatus %\>"%>'></li>
+			<%="<% }) %\>"%>
+		<%="<% } %\>"%>
+	</ul>
+</script>
+
+<script type="text/template" id="OpenConditionPopupTemp">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle common_title">Requirements to Unlock</p>
+
+		<div class="popupTextArea">
+			<%="<% _.forEach(model.conditionList,function(txt,index){ %\>"%>
+				<dl class="openConditionDl">
+					<dt><%="<%= index+1 %\>"%></dt>
+					<dd><%="<%= txt %\>"%></dd>
+				</dl>
+			<%="<% }) %\>"%>
+		</div>
+		<!-- <table class="popupBtnArea" width="400" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td><span class="cancelBtn popupCloseBtn btn b_pink TE"><span class='b_screen'></span>OK</span></td>
+			</tr>
+		</table> -->
+	</div>
+</script>

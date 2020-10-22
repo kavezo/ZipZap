@@ -1,0 +1,115 @@
+<div id="QuestBattleSelect">
+	<% if(model.areaDetailName){ %>
+		<span class="areaDetailName c_white">
+				<%= model.areaDetailName %>
+		</span>
+	<% } %>
+
+	<div id="settingBtnWrap" class="">
+		<div id="advSkipPopBtn" class="">
+			Replay Cutscenes<span class='icon'></span>
+		</div>
+	</div>
+
+	<div id="charaWrap">
+		<div class="charaSerif">
+			<span class="charaName"><%= model.charaName %></span>
+			<p class="serifFont"><%= model.message %></p>
+		</div>
+	</div>
+	<div id="questDetail">
+		<p class="storyType">
+			<span class="text c_white"><%= model.questTypeText %></span>
+			<span class="bg"></span>
+		</p>
+		<p class="chapter">
+			<% if(model.questType !== "COSTUME"){ %>
+			<% if(model.chapterNoForView){ %>
+					Ch.<span class="chapterNo"><%= model.chapterNoForView %>: </span>
+				<% } %>
+				<span class="c_purple sectionNo">Ep. <%= model.genericIndex %></span>
+			<% }else{ %>
+				<span class="c_purple sectionNo">Outfit</span>
+			<% } %>
+		</p>
+		<p class="title c_white"><%= model.title %></p>
+		<div class="line"></div>
+		<span class="btn sb_gold_01 se_tabs missionBtn TE"><span class="b_screen"></span>Missions</span>
+
+		<div class="inlineWrap">
+			<p><span class='pointTitle'>Difficulty:</span><span class='point'>
+				<%= (model.challengeModeDifficulty) ? model.challengeModeDifficulty : model.difficulty %>
+			</span></p>
+			<p><span class='pointTitle'>AP Cost:</span>
+				<span id='apDisp' class='point <%= (model.halfAp) ? "ts_pink" : "" %>'>
+					<%= (model.halfAp) ? model.halfAp : (model.challengeModeAp) ? model.challengeModeAp : model.ap %>
+				</span>
+			</p>
+		</div>
+	</div>
+
+	<div id="questLinkListWrap" class="commonFrame2">
+		<div class="hiddenWrap">
+			<div id='scrollWrap'>
+				<ul id="questLinkList" class="scrollInner first">
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- クエストパーツ -->
+<script type="text/template" id="QuestListParts">
+
+	<%="<% var mission1 = (model.missionStatus1 === 'CLEARED') ? 'cleared' : null %\>"%>
+	<%="<% var mission2 = (model.missionStatus2 === 'CLEARED') ? 'cleared' : null %\>"%>
+	<%="<% var mission3 = (model.missionStatus3 === 'CLEARED') ? 'cleared' : null %\>"%>
+
+	<%="<% var questState = (model.cleared) ? 'clear' : 'new' %\>"%>
+	<%="<%     questState = (mission1 && mission2 && mission3) ? 'comp' : questState %\>"%>
+
+	<span class='questState <%="<%= questState %\>"%>'></span>
+	<div class="firstView">
+		<span class="questTitle c_white">BATTLE <%="<%= model.questBattle.sectionIndex %\>"%></span>
+		<ul class="mission">
+			<li class='<%="<%= mission1 %\>"%>'></li>
+			<li class='<%="<%= mission2 %\>"%>'></li>
+			<li class='<%="<%= mission3 %\>"%>'></li>
+		</ul>
+	</div>
+
+	<ul class="secondView">
+		<li class='<%="<%= mission1 %\>"%>'><%="<%= model.questBattle.missionMaster1.description %\>"%></li>
+		<li class='<%="<%= mission2 %\>"%>'><%="<%= model.questBattle.missionMaster2.description %\>"%></li>
+		<li class='<%="<%= mission3 %\>"%>'><%="<%= model.questBattle.missionMaster3.description %\>"%></li>
+	</ul>
+
+	<span class="treasure">
+		<%="<% if(questState === 'comp') { %\>"%>
+			<%="<% var itemCode = model.missionRewardCode.itemCode.toLowerCase(); %\>"%>
+			<div class="title clear"></div>
+			<%="<% if(model.missionRewardCode.rewardType === 'GIFT') { %\>"%>
+				<img data-nativeimgkey='<%="<%= itemCode %\>"%>' data-src='resource/image_native/gift/item_<%="<%= itemCode %\>"%>.png' class="giftImg">
+			<%="<% } else if(model.missionRewardCode.rewardType === 'LIVE2D') { %\>"%>
+				<div class="charaIcon">
+					<div class="charaMaskWrap">
+						<img data-nativeimgkey='mini_<%="<%= model.missionRewardCode.itemCode %\>"%>00_d' data-src='resource/image_native/mini/image/mini_<%="<%= model.missionRewardCode.itemCode %\>"%>00_d.png'>
+					</div>
+				</div>
+				<img class='itemImg' src='/magica/resource/image_web/item/main/live2d.png'>
+			<%="<% } else { %\>"%>
+				<img class="itemImg" src='/magica/resource/image_web/item/main/<%="<%= itemCode %\>"%>.png' alt=''>
+
+			<%="<% } %\>"%>
+		<%="<% } else { %\>"%>
+			<div class="title"></div>
+			<img class="treasureImg" src='/magica/resource/image_web/common/treasure/<%="<%= model.chestColor.toLowerCase() %\>"%>.png' alt=''>
+		<%="<% } %\>"%>
+	</span>
+
+	<span class="touchObj"></span>
+
+	<span class="params">
+	</span>
+</script>

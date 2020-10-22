@@ -1,0 +1,48 @@
+<div class="APPopWrap">
+	<div id="apPointWrap" class='timeShow'>
+		<div class="ap">
+			<span class="pointWrap">
+				<span class="popACP">0</span>/<span class="popMAX_ACP">0</span>
+			</span>
+			<span class="gaugeWrap">
+				<span class="outline"></span>
+				<span class="gauge">
+					<span class="gaugeInner"></span>
+				</span>
+			</span>
+		</div>
+	</div>
+	<% if(message){ %>
+		<div class="message"><span class="c_red"><%= message %></span></div>
+	<% } %>
+	<div class="maxTime">
+		<div class="timer">
+			1 AP will recover in <span id="apFullTime">0:00</span> AP will be fully recovered in <span id="apFullTime2">0:00:00</span></div>
+	</div>
+	<div id="useItemWrap">
+		<div class="itemBtn commonFrame4 sp50">
+			<div class="itemName">50 AP Potion</div>
+			<div class="useNum c_gold">Use 1</div>
+			<div class="itemRemain"><p class="pointFrame">Stock: <%= model.ap50.quantity %></p></div>
+			<div class="mb_pink cureBtn se_decide TE<% if(model.ap50.quantity === 0){ %> off<% } %>" data-item="CURE_AP_50"><span class="b_screen"></span>Restore</div>
+		</div>
+		<div class="itemBtn commonFrame4 spmax">
+			<div class="itemName">AP Potion</div>
+			<div class="useNum c_gold">Use 1</div>
+			<div class="itemRemain"><p class="pointFrame">Stock: <%= model.apMax.quantity %></p></div>
+			<div class="mb_pink cureBtn se_decide TE<% if(model.apMax.quantity === 0){ %> off<% } %>" data-item="CURE_AP"><span class="b_screen"></span>Restore</div>
+		</div>
+		<div class="itemBtn commonFrame4 spstone">
+			<% var moneyQuantity = 0; %>
+			<% _.each(userItemList.models,function(money,index){
+				if(money.get("itemId").indexOf('MONEY') != -1) {
+					moneyQuantity += money.get("quantity");
+				}
+			}) %>
+			<div class="itemName">Magia Stones</div>
+			<div class="useNum c_gold">Cost: 5</div>
+			<div class="itemRemain"><p class="pointFrame">Stock: <%= moneyQuantity %></p></div>
+			<div class="mb_pink cureBtn se_decide TE<% if(moneyQuantity < 5){ %> off<% } %>" data-item="MONEY"><span class="b_screen"></span>Restore</div>
+		</div>
+	</div>
+</div>

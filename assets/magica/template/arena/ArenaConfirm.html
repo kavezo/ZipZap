@@ -1,0 +1,94 @@
+<%
+	var deck = [];
+	var _deck = model.userDeck;
+	var _card = model.userCardList;
+	for(var i=1;i<10;i++){
+		var searchName1 = "questPositionId"+i;
+		var searchName2 = "userCardId"+i;
+		var position    = _deck[searchName1];
+		var card        = _.findWhere(_card,{id:_deck[searchName2]});
+		if(position && card){
+			deck[position] = card;
+		}
+	}
+%>
+
+<% 
+	var battleType = "";
+	if(model.battleType === "FREE_RANK") { battleType = "freeRank"; }
+	else if(model.battleType === "SIMULATE") { battleType = "simulate"; }
+	else{ battleType = "ranking"; }
+%>
+<div id="arenaConfirm" class="<%= battleType %>">
+	<div class="closeBtn se_cancel TE"><span class="b_screen"></span></div>
+	<div id="confirmFormation">
+		<% for(var i=1;i<10;i++){ %>
+			<% if(model.userDeck.formationSheet["place"+i]){ %>
+		<div class="formationCols col<%= i %> on">
+			<% if(deck[i]){ %>
+				<% var cardData = deck[i]; %>
+				<div class="userCharaIcon <%= cardData.card.rank %> <%= cardData.card.attributeId %>">
+					<% att = 'att_' + cardData.card.attributeId.toLowerCase(); %>
+					<% star = 'star_' + cardData.card.rank.toLowerCase(); %>
+					<% frame = 'frame_' + cardData.card.rank.toLowerCase(); %>
+					<% bg = 'bg_' + cardData.card.attributeId.toLowerCase(); %>
+					<span class="att" data-nativebgkey='<%= att %>' data-src='resource/image_native/card/frame/<%= att %>.png'></span>
+					<span class="star" data-nativebgkey='<%= star %>' data-src='resource/image_native/card/frame/<%= star %>.png'></span>
+					<span class="rank" data-nativebgkey='<%= frame %>' data-src='resource/image_native/card/frame/<%= frame %>.png'></span>
+					<img data-nativeimgkey='card_<%= cardData.displayCardId %>_f' data-src='resource/image_native/card/image/card_<%= cardData.displayCardId %>_f.png'>
+					<span class="lv"><span><%= cardData.level %></span></span>
+					<span class="bg" data-nativebgkey='<%= bg %>' data-src='resource/image_native/card/frame/<%= bg %>.png'></span>
+				</div>
+			<% } %>
+			<% var effectArr = []; %>
+			<div class="formationEffect">
+				<% effectArr[i] = model.userDeck.formationSheet['place'+i].split(','); %>
+				<% if(effectArr[i][0].split('_')[2].indexOf('0') == -1) { %>
+					<% formationAtt = effectArr[i][0].split('_')[0].toLowerCase(); %>
+					<img class="attIcon" src='/magica/resource/image_web/common/chara/att_<%= formationAtt %>.png' >
+
+					<div class="effective">
+					<% _.forEach(effectArr[i],function(txt){ %>
+						<% var fileName = txt.toLowerCase().split('_')[1]+'_'+txt.toLowerCase().split('_')[2] %>
+						<% if(fileName.indexOf('0') == -1) { %>
+							<img src='/magica/resource/image_web/icon/formation/<%= fileName %>.png' >
+						<% } %>
+					<% }) %>
+					</div>
+				<% } %>
+
+			</div>
+		</div>
+			<% } %>
+		<% } %>
+	</div>
+	<div class="formationArrow"></div>
+	<div id="confirmRight">
+		<div class="confirmHeader"></div>
+		<div class="confirmLvWrap">Rank <%= model.userRank %></div>
+		<div class="confirmNameWrap arenaColor"><%= model.userName %></div>
+		<% if(model.battleType === "FREE_RANK"){ %>
+			<div class="confirmPower arenaColor"><%= model.userRatingPoint %></div>
+			<div class="confirmPoint arenaColor"><%= model.userArenaBattle.freeRankArenaPoint %>Pt</div>
+			<% var diffBonusArr  = ["0.8","1.0","1.2"]; %>
+			<div class="confirmBonus arenaColor"><span class="diffMark diff<%= model.difficult %>"></span>&nbsp;get&nbsp;Pt×<%= diffBonusArr[model.difficult] %></div>
+		<% }else if(model.battleType === "SIMULATE"){ %>
+			<div class="confirmPower arenaColor"><%= model.userRatingPoint %></div>
+			<div class="confirmPoint arenaColor"><%= model.userArenaBattle.freeRankArenaPoint %>Pt</div>
+		<% }else { %>
+			<div class="confirmPoint arenaColor ranking"><%= model.userArenaBattle.rankingArenaPoint %></div>
+			<div class="confirmPower arenaColor"><%= model.userRatingPoint %></div>
+			<div class="confirmBonus arenaColor">Pts Received&nbsp;×<%= model.difficult %></div>
+		<% } %>
+		<div class="confirmFormation arenaColor"><%= model.userDeck.formationSheet.name %></div>
+		<div id="battleStartBtn" class="se_kettei02 TE"><span class="b_screen"></span></div>
+		<div class="leaderImage">
+			<img data-nativeimgkey='card_<%= model.leaderUserCard.displayCardId %>_m' data-src='resource/image_native/card/image/card_<%= model.leaderUserCard.displayCardId %>_m.png'>
+		</div>
+	</div>
+	<% if(model.battleType === "FREE_RANK" || model.battleType === "SIMULATE"){ %>
+		<% if(!rankingRun && model.userArenaBattle.definiteClassRank){ %>
+			<div class="rankingEmblem rank<%= model.userArenaBattle.definiteClassRank %>"></div>
+		<% } %>
+	<% } %>
+</div>

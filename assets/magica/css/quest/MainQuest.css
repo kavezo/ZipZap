@@ -1,0 +1,470 @@
+@charset "UTF-8";
+#QuestMap {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#QuestMap .param {
+  display: none;
+}
+#QuestMap #modeToggleWrap {
+  width: 184px;
+  height: 90px;
+  background: rgba(35, 20, 42, 0.5);
+  position: absolute;
+  bottom: 92px;
+  left: 0;
+  -webkit-border-radius: 0 45px 45px 0;
+  border-radius: 0 45px 45px 0;
+  z-index: 100;
+}
+#QuestMap #modeToggleWrap .modeToggleBtn {
+  width: 154px;
+  height: 62px;
+  margin: 14px 0 0 15px;
+  background: url("/magica/resource/image_web/page/quest/main/btn_challenge.png") left top no-repeat;
+}
+#QuestMap #modeToggleWrap .modeToggleBtn .b_screen {
+  -webkit-border-radius: 31px;
+  border-radius: 31px;
+}
+#QuestMap #modeToggleWrap.challenge .modeToggleBtn {
+  background: url("/magica/resource/image_web/page/quest/main/btn_normal.png") left top no-repeat;
+}
+#QuestMap #curtain {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+#QuestMap.curtainShow #curtain {
+  -webkit-animation: map_curtain_show .2s ease 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+#QuestMap.curtainHide #curtain {
+  -webkit-animation: map_curtain_hide .2s ease 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+#QuestMap #questListCloseBtn {
+  width: 77px;
+  height: 85px;
+  padding: 24px 0 0;
+  background-image: url("/magica/resource/image_web/common/global/global_sprite01.png");
+  background-repeat: no-repeat;
+  background-position: -237px -257px;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 15px;
+  z-index: 100000;
+}
+#QuestMap #chapterTitleWrap #chapterTitle {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  -webkit-animation: chapter_title_show .25s ease-in-out 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+#QuestMap #content {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+}
+#QuestMap #content #debugArea {
+  width: 572px;
+  height: 114px;
+  background: url("/magica/resource/image_web/page/quest/focus_banner_bg.png") left top no-repeat;
+  position: fixed;
+  top: -webkit-calc(50% - 140px);
+  right: 0;
+  z-index: 1;
+}
+#QuestMap #content #questListWrap {
+  width: 100%;
+  height: 576px;
+  position: absolute;
+  top: -webkit-calc(50% - 288px);
+  right: 0;
+  overflow: hidden;
+  z-index: 2;
+}
+#QuestMap #content #questListWrap #questList {
+  -webkit-box-sizing: initial;
+  padding: 148px 0 314px 550px;
+  position: relative;
+}
+#QuestMap #content #questListWrap #questList.allClear:before {
+  width: 418px;
+  height: 60px;
+  padding: 6px 0 0;
+  background: url("/magica/resource/image_web/page/quest/bg_section_newest.png") left top no-repeat;
+  position: absolute;
+  top: 62px;
+  right: 22px;
+  color: #5b3072;
+  line-height: 1.4;
+  text-align: center;
+  content: "You have completed all released Episodes.\ANew Episodes coming soon!";
+  white-space: pre;
+}
+#QuestMap #content #questListWrap #questList.challenge .chapter:before {
+  width: 122px;
+  height: 34px;
+  background: url("/magica/resource/image_web/page/quest/main/icon_challenge.png") left center no-repeat;
+  position: absolute;
+  top: 4px;
+  left: 30px;
+  content: "";
+  z-index: 100;
+}
+#QuestMap #content #questListWrap #questList.challenge .chapter .chapterTitleWrap {
+  background: url("/magica/resource/image_web/page/quest/main/bg_chapter_challenge.png") left center no-repeat;
+}
+#QuestMap #content #questListWrap #questList.challenge .chapter .chapterTitle {
+  font-size:18px;/*MN*/
+  text-shadow: -1px -1px 1px #bb1d97, 1px -1px 1px #bb1d97, -1px 1px 1px #bb1d97, 1px 1px 1px #bb1d97, -1px -1px #bb1d97, 1px -1px #bb1d97, -1px 1px #bb1d97, 1px 1px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 3px #bb1d97, 1px -1px 3px #bb1d97, -1px 1px 3px #bb1d97, 1px 1px 3px #bb1d97;
+}
+#QuestMap #content #questListWrap #questList.challenge .section {
+  background: url("/magica/resource/image_web/page/quest/main/bg_section_challenge.png") left center no-repeat;
+}
+#QuestMap #content #questListWrap #questList.challenge .section .sectionNo, #QuestMap #content #questListWrap #questList.challenge .section .sectionTitle {
+  font-size:18px;/*MN*/
+  text-shadow: -1px -1px 1px #bb1d97, 1px -1px 1px #bb1d97, -1px 1px 1px #bb1d97, 1px 1px 1px #bb1d97, -1px -1px #bb1d97, 1px -1px #bb1d97, -1px 1px #bb1d97, 1px 1px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 3px #bb1d97, 1px -1px 3px #bb1d97, -1px 1px 3px #bb1d97, 1px 1px 3px #bb1d97;
+}
+#QuestMap #content #questListWrap #questList.challenge .section .treasure {
+  display: none;
+}
+#QuestMap #content #questListWrap #questList.challenge .section .questTip {
+  margin: 2px 0 0 279px;
+}
+#QuestMap #content #questListWrap #questList .section {
+  width: 452px;
+  height: 114px;
+  background: url("/magica/resource/image_web/page/quest/main/bg_section.png") left center no-repeat;
+  position: relative;
+}
+#QuestMap #content #questListWrap #questList .section.off {
+  display: none;
+}
+#QuestMap #content #questListWrap #questList .section .treasure {
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: absolute;
+  top: 27px;
+  right: 8px;
+}
+#QuestMap #content #questListWrap #questList .section .treasure .imgWrap {
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+#QuestMap #content #questListWrap #questList .section .treasure .imgWrap .charaIcon {
+  width: 45px;
+  height: 40px;
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+}
+#QuestMap #content #questListWrap #questList .section .treasure .imgWrap .charaIcon:before {
+  width: 45px;
+  height: 40px;
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 22px);
+  content: "";
+  z-index: 100;
+}
+#QuestMap #content #questListWrap #questList .section .treasure .imgWrap .charaIcon:after {
+  width: 45px;
+  height: 40px;
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 22px);
+  content: "";
+  z-index: 80;
+}
+#QuestMap #content #questListWrap #questList .section .treasure .imgWrap .charaIcon .maskWrap {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 20px);
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: 90;
+}
+#QuestMap #content #questListWrap #questList .section .treasure .imgWrap .charaIcon .maskWrap img {
+  width: 50px;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 25px);
+}
+#QuestMap #content #questListWrap #questList .section .treasure img {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+#QuestMap #content #questListWrap #questList .section .treasure .title {
+  width: 110px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/quest/reward.png") left center no-repeat;
+  position: absolute;
+  top: -20px;
+  left: -24px;
+  z-index: 100;
+}
+#QuestMap #content #questListWrap #questList .section .sectionNo {
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 40px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: -1px -1px 1px #915bda, 1px -1px 1px #915bda, -1px 1px 1px #915bda, 1px 1px 1px #915bda, -1px -1px #915bda, 1px -1px #915bda, -1px 1px #915bda, 1px 1px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 3px #915bda, 1px -1px 3px #915bda, -1px 1px 3px #915bda, 1px 1px 3px #915bda;
+}
+#QuestMap #content #questListWrap #questList .section .sectionTitle {
+  margin: 32px 0 0 50px;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 21px;
+  text-shadow: -1px -1px 1px #915bda, 1px -1px 1px #915bda, -1px 1px 1px #915bda, 1px 1px 1px #915bda, -1px -1px #915bda, 1px -1px #915bda, -1px 1px #915bda, 1px 1px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 3px #915bda, 1px -1px 3px #915bda, -1px 1px 3px #915bda, 1px 1px 3px #915bda;
+}
+#QuestMap #content #questListWrap #questList .section .questTip {
+  width: 160px;
+  margin: 2px 0 0 205px;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-flex-direction: row;
+}
+#QuestMap #content #questListWrap #questList .section .questTip span {
+  width: 28px;
+  height: 28px;
+  margin-right: -4px;
+  background: url("/magica/resource/image_web/page/quest/icon_notclear.png") left center no-repeat;
+  background-size: contain;
+  display: block;
+}
+#QuestMap #content #questListWrap #questList .section .questTip span.clear {
+  background: url("/magica/resource/image_web/page/quest/main/icon_clear.png") left center no-repeat;
+  background-size: contain;
+}
+#QuestMap #content #questListWrap #questList .section .questTip span.comp {
+  background: url("/magica/resource/image_web/page/quest/icon_complete.png") left center no-repeat;
+  background-size: contain;
+}
+#QuestMap #content #questListWrap #questList .chapter {
+  width: 474px;
+  margin: 0;
+  position: relative;
+}
+#QuestMap #content #questListWrap #questList .chapter.halfAp .chapterTitleWrap:before {
+  content: "";
+  width: 126px;
+  height: 26px;
+  position: absolute;
+  top: 11px;
+  right: 184px;
+  z-index: 100;
+  background: url("/magica/resource/image_web/campaign/half_ap/common/icon_ap_half.png") left center no-repeat;
+}
+#QuestMap #content #questListWrap #questList .chapter.halfAp .section:before {
+  content: "";
+  width: 102px;
+  height: 20px;
+  position: absolute;
+  bottom: 27px;
+  left: 49px;
+  z-index: 100;
+  background: url("/magica/resource/image_web/campaign/half_ap/common/icon_ap_half_s.png") left center no-repeat;
+}
+#QuestMap #content #questListWrap #questList .chapter.typeSingleRaid .chapterTitleWrap {
+  background: none;
+}
+#QuestMap #content #questListWrap #questList .chapter.typeSingleRaid .toggleBtn {
+  display: none;
+}
+#QuestMap #content #questListWrap #questList .chapter .chapterTitleWrap {
+  height: 114px;
+  margin: 0 0 0;
+  padding-left: 60px;
+  background: url("/magica/resource/image_web/page/quest/main/bg_chapter.png") left center no-repeat;
+  display: -webkit-flex;
+  display: flex;
+}
+#QuestMap #content #questListWrap #questList .chapter .toggleBtn {
+  width: 48px;
+  height: 114px;
+  background: url("/magica/resource/image_web/page/quest/btn_list_open.png") left center no-repeat;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  pointer-events: none;
+}
+#QuestMap #content #questListWrap #questList .chapter .chapterNo {
+  width: 102px;
+  height: 102px;
+  padding-top: 8px;
+  background: url("/magica/resource/image_web/page/quest/chapter_header.png") left center no-repeat;
+  position: absolute;
+  top: -2px;
+  left: -55px;
+  color: #ffffff;
+  line-height: 102px;
+  text-align: center;
+}
+#QuestMap #content #questListWrap #questList .chapter .chapterNo:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  bottom: 2px;
+  left: -webkit-calc(50%);
+  z-index: 100;
+}
+#QuestMap #content #questListWrap #questList .chapter .chapterNo span {
+  padding: 0 2px;
+  color: #ffffff;
+  font-size: 15px;
+}
+#QuestMap #content #questListWrap #questList .chapter.new .chapterNo:before {
+  width: 84px;
+  height: 21px;
+  left: -webkit-calc(50% - 42px);
+  background: url("/magica/resource/image_web/page/quest/quest_state_new.png") left top no-repeat;
+}
+#QuestMap #content #questListWrap #questList .chapter.clear .chapterNo:before {
+  width: 81px;/*MN*/
+  height: 18px;
+  left: -webkit-calc(50% - 40px);/*MN*/
+  background: url("/magica/resource/image_web/page/quest/quest_state_clear.png") left top no-repeat;
+}
+#QuestMap #content #questListWrap #questList .chapter.comp .chapterNo:before {
+  width: 100px;/*MN*/
+  height: 18px;
+  left: -webkit-calc(50% - 50px);/*MN*/
+  background: url("/magica/resource/image_web/page/quest/quest_state_comp.png") left top no-repeat;
+}
+#QuestMap #content #questListWrap #questList .chapter .chapterTitle {
+    display: flex;/*MN*/
+    color: #ffffff;
+    font-size: 21px;/*MN*/
+    justify-content: left;/*MN*/
+    align-items: center;/*MN*/
+    width: 340px;/*MN*/
+    height: 91px;/*MN*/
+    padding: 24px 0 0 0;/*MN*/
+  text-shadow: -1px -1px 1px #915bda, 1px -1px 1px #915bda, -1px 1px 1px #915bda, 1px 1px 1px #915bda, -1px -1px #915bda, 1px -1px #915bda, -1px 1px #915bda, 1px 1px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 3px #915bda, 1px -1px 3px #915bda, -1px 1px 3px #915bda, 1px 1px 3px #915bda;
+}
+#QuestMap #content #questListWrap #questList .chapter.titleHide .chapterTitleWrap, #QuestMap #content #questListWrap #questList .chapter.titleHide .toggleBtn, #QuestMap #content #questListWrap #questList .chapter.titleHide:after {
+  display: none;
+}
+#QuestMap #content #questListWrap #questList .chapter.open:after {
+  background-repeat: no-repeat;
+  background-position: -41px -254px;
+}
+#QuestMap #content #questListWrap #questList .chapter.open .sectionList {
+  display: block;
+  -webkit-animation: quest_list_show .2s ease .0s 1 alternate;
+  opacity: 0;
+  -webkit-animation-fill-mode: forwards;
+}
+#QuestMap #content #questListWrap #questList .chapter.open .toggleBtn {
+  background: url("/magica/resource/image_web/page/quest/btn_list_close.png") left center no-repeat;
+}
+#QuestMap #content #questListWrap #questList .chapter .sectionList {
+  display: none;
+}
+
+@media screen and (min-device-height: 577px) {
+  #questListWrap {
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), color-stop(3%, black), color-stop(97%, black), to(rgba(0, 0, 0, 0)));
+  }
+}
+@-webkit-keyframes quest_list_show {
+  0% {
+    -webkit-transform: translateX(20px) translateZ(0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0px) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes quest_list_hide {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes map_curtain_show {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes map_curtain_hide {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes chapter_title_show {
+  0% {
+    -webkit-transform: translateX(-155px) translateZ(0);
+    transform: translateX(-155px) translateZ(0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateX(0) translateZ(0);
+    transform: translateX(0) translateZ(0);
+    opacity: 1;
+  }
+}

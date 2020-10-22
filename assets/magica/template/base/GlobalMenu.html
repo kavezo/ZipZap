@@ -1,0 +1,95 @@
+<div id="globalMenu">
+	<% if(gameUser) { %>
+		<div id="userData">
+			<div class="user">
+				<span id="globalBackBtn" class="backLinkBtn TE off">
+					<span class="se_cancel"></span>
+				</span>
+
+				<div id="status">
+					<div id="exp">
+						<span class="userRank"></span>
+						<span class="pointWrap"></span>
+						<span class="gaugeWrap">
+							<span class="gauge">
+								<span class="gaugeInner"></span>
+							</span>
+						</span>
+					</div>
+
+					<div id="money">
+						<span class="pointWrap">0</span>
+						<!-- <span class="plusBtn btnOverlay se_decide"></span> -->
+						<span class="plusBtn grayScale TE se_decide"></span>
+					</div>
+
+					<div id="ap">
+						<span class="pointWrap">
+							<span class="ACP">0</span>/<span class="MAX_ACP">0</span>
+						</span>
+						<!-- <span class="plusBtn btnOverlay se_decide"></span> -->
+						<span class="plusBtn TE se_decide"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	<% } %>
+	<span class="helpBtn se_decide" data-type="05" data-title="Memoria"></span>
+</div>
+<div id="sideMenu">
+	<span id="menu" class="se_tabs btnOverlay"></span>
+	<ul id="menuBtns">
+		<li class="unit"><div class="linkBtn btnOverlay se_decide" data-href="#/CharaListTop"></div></li>
+		<li class="innocent"><div class="linkBtn btnOverlay se_decide" data-href="#/MemoriaTop"></div></li>
+		<li class="gacha"><div class="linkBtn btnOverlay se_decide" data-href="#/GachaTop"></div><span id="gachaBadge" class="globalBadge"></span></li>
+		<li class="mission"><div class="linkBtn btnOverlay se_decide" data-href="#/MissionTop"></div><span id="missionBadge" class="globalBadge"></span></li>
+		<li class="shop"><div class="linkBtn btnOverlay se_decide" data-href="#/ShopTop"></div></li>
+	</ul>
+	<%
+		var arenaLimit = false;
+		if(gameUser){
+			if(gameUser.toJSON().closeFunctions && gameUser.toJSON().closeFunctions.indexOf("ARENA") > -1) arenaLimit = true;
+		}
+	%>
+	<span class="homeBtn btnOverlay se_decide linkBtn" data-href="#/MyPage"></span>
+	<ul id="sideBigBtns">
+		<li class="globalTeamBtn globalBigBtn"><div class="linkBtn btnOverlay se_decide" data-href="#/FormationTop"></div></li>
+		<li class="globalQuestBtn globalBigBtn"><div class="linkBtn btnOverlay se_decide" data-href="#/MainQuest"></div></li>
+		<% if(!arenaLimit){ %>
+			<li class="globalBattleBtn globalBigBtn"><div class="linkBtn btnOverlay se_decide" data-href="#/ArenaTop"></div></li>
+		<% }else{ %>
+			<li class="globalBattleBtn globalBigBtn limited grayScale"></li>
+		<% } %>
+	</ul>
+
+	<div id="sideMenuCurtain"></div>
+	<span id="sideMenuBg"></span>
+</div>
+
+<!-- キャンペーン時のバッジ -->
+<script type="text/template" id="CampaignBadgeTemp">
+	<%="<% if(model.halfAp) { %\>"%>
+		<div class='campaignBadge halfAp' style='
+			background: <%="<%= model.halfAp %\>"%>;
+			background-size: 186px 88px;
+		'></div>
+	<%="<% } %\>"%>
+	<%="<% if(model.expp) { %\>"%>
+		<div class='campaignBadge expp'></div>
+	<%="<% } %\>"%>
+	<%="<% if(model.yell) { %\>"%>
+		<div class='campaignBadge yell'></div>
+	<%="<% } %\>"%>
+</script>
+
+<!-- アリーナキャンペーン時のバッジ -->
+<script type="text/template" id="ArenaCampaignBadgeTemp">
+	<img src='/magica/resource/image_web/campaign/arena_reward_up/common/arena_coin_<%='<%= model.arena %\>'%>.png' alt="">
+</script>
+
+<!-- イベントバッジ -->
+<script type="text/template" id="EventBadgeTemp">
+	<p class='endAtText c_purple'><%="<%= model.endAtText %\>"%></p>
+	<img src='<%="<%= model.imagePath %\>"%>' alt="">
+</script>
+

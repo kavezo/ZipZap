@@ -1,0 +1,252 @@
+#charaImg {
+  display: none;
+}
+
+.confirmPopup .popupGiftWrap {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 0;
+  background: url("/magica/resource/image_web/page/chara/bg_gift_popup.png") left top no-repeat;
+  background-size: 80px 80px;
+  position: relative;
+}
+.confirmPopup .popupGiftWrap .numWrap {
+  width: 100%;
+  position: absolute;
+  top: -10px;
+  font-size: 18px;
+  z-index: 10;
+}
+.confirmPopup .popupGiftWrap .numWrap .ts_pink {
+  font-size: 20px;
+}
+.confirmPopup .popupGiftWrap .giftImg {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -webkit-calc(50% - 40px);
+  left: -webkit-calc(50% - 40px);
+  z-index: 1;
+}
+.confirmPopup .giftName {
+  margin: 8px 0 10px;
+  font-size: 20px;
+}
+.confirmPopup .cantSetCaution {
+  font-size: 20px;
+}
+.confirmPopup .popupBonusWrap {
+  height: 30px;
+  font-size: 18px;
+  line-height: 30px;
+}
+.confirmPopup .thStyle {
+  width: 112px;
+  height: 30px;
+  margin-right: 18px;
+  background: #b28750;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 30px;
+  -webkit-border-radius: 5px 0 0 5px;
+}
+
+#magiaComposeConfirm .popupInner {
+  position: absolute;
+}
+#magiaComposeConfirm .popupTitle {
+  width: 370px;
+}
+#magiaComposeConfirm .popupTextArea {
+  width: 450px;
+  height: 200px;
+  font-size: 20px;
+}
+#magiaComposeConfirm .popupContent .popupInner .popupBtnArea td {
+  padding: 0 14px;
+}
+#magiaComposeConfirm #giftWrapInner {
+  height: 92px;
+  margin: 0 0 15px;
+  display: -webkit-flex;
+  display: flex;
+  z-index: 10;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#magiaComposeConfirm #giftWrapInner .magiaCaution {
+  display: none;
+}
+#magiaComposeConfirm #giftWrapInner .giftWrap {
+  width: 60px;
+  height: 92px;
+  margin: 0 5px;
+  position: relative;
+}
+#magiaComposeConfirm #giftWrapInner .giftWrap .bg {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/chara/bg_magia_material.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+#magiaComposeConfirm #giftWrapInner .giftWrap .hasNum, #magiaComposeConfirm #giftWrapInner .giftWrap .sla, #magiaComposeConfirm #giftWrapInner .giftWrap .needNum {
+  font-size: 18px;
+}
+#magiaComposeConfirm #giftWrapInner .giftWrap.off .bg, #magiaComposeConfirm #giftWrapInner .giftWrap.off .bonusWrap, #magiaComposeConfirm #giftWrapInner .giftWrap.off img {
+  opacity: .5;
+  -webkit-filter: grayscale(100%);
+}
+#magiaComposeConfirm #giftWrapInner .giftWrap img {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  top: -webkit-calc(50% - 35px);
+  left: -webkit-calc(50% - 27px);
+  z-index: 1;
+}
+#magiaComposeConfirm #giftWrapInner .giftWrap .numWrap {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  text-align: center;
+  z-index: 10;
+}
+#magiaComposeConfirm #giftWrapInner .giftWrap .numWrap .ts_gold {
+  font-size: 14px;
+}
+#magiaComposeConfirm #giftWrapInner .giftWrap .numWrap .ts_pink {
+  font-size: 16px;
+}
+#magiaComposeConfirm #giftWrapInner .giftWrap .numWrap, #magiaComposeConfirm #giftWrapInner .giftWrap .numWrap span {
+  color: #ffffff;
+}
+
+#CharaComposeMagia {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#CharaComposeMagia .commonFrame3 {
+  background: rgba(255, 255, 255, 0.6);
+}
+#CharaComposeMagia #giftWrap {
+  width: 364px;
+  height: 403px;
+  padding: 28px 6px 0 10px;
+  position: absolute;
+  top: -webkit-calc(50% - 235px);
+  right: 102px;
+  overflow: hidden;
+}
+#CharaComposeMagia #giftWrap .magiaCaution {
+  width: 100%;
+  text-align: center;
+}
+#CharaComposeMagia #giftWrap .magiaCaution.hide {
+  display: none;
+}
+#CharaComposeMagia #giftWrap .episodeCaution {
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+}
+#CharaComposeMagia #giftWrap .episodeCaution.hide {
+  display: none;
+}
+#CharaComposeMagia #giftWrap #giftWrapInner {
+  height: -webkit-calc(100% - 72px);
+  padding: 25px 18px 25px;
+  display: -webkit-flex;
+  display: flex;
+  z-index: 10;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#CharaComposeMagia #giftWrap #giftWrapInner .giftWrap {
+  width: 78px;
+  height: 118px;
+  position: relative;
+}
+#CharaComposeMagia #giftWrap #giftWrapInner .giftWrap .bg {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/chara/bg_magia_material.png") center center no-repeat;
+  background-size: 100% 100%;
+}
+#CharaComposeMagia #giftWrap #giftWrapInner .giftWrap .hasNum, #CharaComposeMagia #giftWrap #giftWrapInner .giftWrap .sla, #CharaComposeMagia #giftWrap #giftWrapInner .giftWrap .needNum {
+  font-size: 18px;
+}
+#CharaComposeMagia #giftWrap #giftWrapInner .giftWrap.off .bg, #CharaComposeMagia #giftWrap #giftWrapInner .giftWrap.off .bonusWrap, #CharaComposeMagia #giftWrap #giftWrapInner .giftWrap.off img {
+  opacity: .5;
+  -webkit-filter: grayscale(100%);
+}
+#CharaComposeMagia #giftWrap #giftWrapInner .giftWrap img {
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  top: -webkit-calc(50% - 40px);
+  left: -webkit-calc(50% - 28px);
+  z-index: 1;
+}
+#CharaComposeMagia #giftWrap #giftWrapInner .giftWrap .numWrap {
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  text-align: center;
+  z-index: 10;
+}
+#CharaComposeMagia #giftWrap #giftWrapInner .giftWrap .numWrap, #CharaComposeMagia #giftWrap #giftWrapInner .giftWrap .numWrap span {
+  color: #ffffff;
+}
+#CharaComposeMagia #giftWrap .topWrap {
+  width: 100%;
+  height: 28px;
+  padding: 0 0 0 4px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+#CharaComposeMagia #giftWrap .bottomWrap {
+  width: 100%;
+  height: 72px;
+  background: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 6px 6px;
+  z-index: 2;
+}
+#CharaComposeMagia #giftWrap #mainBtn {
+  width: 150px;
+  height: 56px;
+  background: url("/magica/resource/image_web/page/chara/btn_pink.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 28px);
+  left: -webkit-calc(50% - 75px);
+  line-height: 56px;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+#CharaComposeMagia #giftWrap #mainBtn.off {
+  pointer-events: none;
+  -webkit-filter: grayscale(100%);
+}
+#CharaComposeMagia #giftWrap #mainBtn.hide {
+  display: none;
+}
+#CharaComposeMagia #giftWrap #mainBtn.touch {
+  -webkit-transform: scale(0.95) translateZ(0) !important;
+}

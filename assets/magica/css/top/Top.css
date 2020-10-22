@@ -1,0 +1,782 @@
+.popupContent {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: auto;
+  z-index: 100001; }
+.popupContent.open {
+    -webkit-animation: popup_open .3s ease 0s 1 alternate; }
+.popupContent.close {
+    -webkit-animation: popup_close .2s ease 0s 1 alternate; }
+.popupContent .popupInner {
+  -webkit-box-sizing: border-box;
+  display: block;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 22px;
+  border-width: 20px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/common/popup/bg_popup.png") 22 stretch;
+  text-shadow: none;
+    z-index: 902; }
+.popupContent .popupInner .closeDefault {
+  width: 85px;
+  height: 85px;
+  background-image: url("/magica/resource/image_web/common/popup/popup_close.png");
+  background-size: 52px 51px;
+  background-position: 29px 6px;
+  display: inline-block;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+      z-index: 20; }
+.popupContent .popupInner .popupTitle {
+  width: 532px;
+  margin: 0 auto 0;
+  background: url("/magica/resource/image_web/common/popup/bg_popup_title_c.png") left top repeat;
+  position: relative;
+  color: #fff;
+  font-size: 22px;
+  line-height: 43px;
+      text-align: center; }
+.popupContent .popupInner .popupTitle:before, .popupContent .popupInner .popupTitle:after {
+  width: 40px;
+  height: 43px;
+  position: absolute;
+  top: 0;
+        content: ''; }
+.popupContent .popupInner .popupTitle:before {
+  background: url("/magica/resource/image_web/common/popup/bg_popup_title_l.png") left top repeat;
+        left: -38px; }
+.popupContent .popupInner .popupTitle:after {
+  background: url("/magica/resource/image_web/common/popup/bg_popup_title_r.png") left top repeat;
+        right: -38px; }
+.popupContent .popupInner .popupTextArea {
+  width: 988px;
+  height: 340px;
+  margin: 0 auto;
+  display: table-cell;
+  overflow: hidden;
+  font-size: 26px;
+  line-height: 1.3;
+  text-align: center;
+  vertical-align: middle;
+      text-shadow: 0 0 0; }
+.popupContent .popupInner .popupTextArea p,
+.popupContent .popupInner .popupTextArea li {
+        line-height: 1.3; }
+.popupContent .popupInner .popupBtnArea {
+  margin: 0 auto;
+      text-align: center; }
+.popupContent .popupInner .popupBtnArea td {
+        padding: 0 20px; }
+.popupContent.tutorial .popupInner {
+  width: 1024px;
+  height: 518px;
+  padding-top: 10px;
+  position: absolute;
+  top: -webkit-calc(50% - 268px);
+  left: 0;
+  -webkit-box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 0;
+  border-width: 0;
+  border-style: solid;
+  -webkit-border-image: none;
+  text-shadow: none;
+  z-index: 902;
+    background: url("/magica/resource/image_web/page/tutorial/popup/navi_bg.png") left top repeat-x; }
+.popupContent.tutorial .popupInner .popupTextArea {
+      display: none; }
+.popupContent.tutorial .popupInner #naviCarousel {
+  position: relative;
+      opacity: 0; }
+.popupContent.tutorial .popupInner #naviCarousel.show {
+  -webkit-animation: common_fade_in .3s ease 0s 1 alternate;
+        -webkit-animation-fill-mode: forwards; }
+.popupContent.tutorial .popupInner #naviCarousel .indicatorWrap {
+  width: 100%;
+  display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+        bottom: -37px; }
+.popupContent.tutorial .popupInner #naviCarousel .indicatorWrap.hide {
+          display: none; }
+.popupContent.tutorial .popupInner #naviCarousel .indicatorWrap .indiIcon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+          background: url("/magica/resource/image_web/page/mypage/indicator_off.png"); }
+.popupContent.tutorial .popupInner #naviCarousel .indicatorWrap .indiIcon.on {
+            background: url("/magica/resource/image_web/page/mypage/indicator_on.png"); }
+.popupContent.tutorial .popupInner #naviCarousel .imgWrap {
+  height: 498px;
+  position: relative;
+  z-index: 10;
+  -webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;
+  transition: all .3s ease;
+        overflow: hidden; }
+.popupContent.tutorial .popupInner #naviCarousel .imgWrap .elm {
+  float: left;
+  position: relative;
+  width: 1024px;
+          min-width: 1024px; }
+.popupContent.tutorial .popupInner #naviCarousel .arrow {
+  width: 72px;
+  height: 88px;
+  position: absolute;
+  top: 252px;
+        z-index: 100; }
+.popupContent.tutorial .popupInner #naviCarousel .arrow.hide {
+          display: none; }
+.popupContent.tutorial .popupInner #naviCarousel .arrow.left {
+  left: 8px;
+          background: url("/magica/resource/image_web/page/tutorial/popup/navi_arrow_l.png") left top no-repeat; }
+.popupContent.tutorial .popupInner #naviCarousel .arrow.right {
+  right: 8px;
+          background: url("/magica/resource/image_web/page/tutorial/popup/navi_arrow_r.png") left top no-repeat; }
+.popupContent.tutorial .closeDefault {
+  top: -20px;
+    right: 0px; }
+.popupContent.typeA .popupInner {
+  width: 868px;
+  height: 460px;
+  position: absolute;
+  top: -webkit-calc(50% - 230px);
+    left: 78px; }
+.popupContent.typeA .popupInner .popupTextArea {
+  width: 825px;
+      height: 290px; }
+.popupContent.typeB .popupInner {
+  width: 988px;
+  height: 540px;
+  position: absolute;
+  top: -webkit-calc(50% - 270px);
+    left: 18px; }
+.popupContent.typeC .popupInner {
+  width: 655px;
+  height: 348px;
+  position: absolute;
+  top: -webkit-calc(50% - 174px);
+    left: 184.5px; }
+.popupContent.typeC .popupInner .popupTextArea {
+      height: 196px; }
+.popupContent.typeD .popupTitle {
+    width: 93% !important; }
+.popupContent.typeD .popupInner {
+  width: 477px !important;
+  height: 508px !important;
+  position: absolute;
+  top: -webkit-calc(50% - 254px) !important;
+    left: 273.5px !important; }
+.popupContent.typeD .popupInner .popupTextArea {
+      height: 436px !important; }
+.popupContent.typeE .popupTitle {
+    width: 400px !important; }
+.popupContent.typeE .popupInner {
+  width: 550px;
+  height: 508px;
+  position: absolute;
+  top: -webkit-calc(50% - 254px);
+    left: 237px; }
+.popupContent.typeE .popupInner .popupTextArea {
+      height: 196px; }
+
+#gameStartPopup {
+  padding-top: 43px; }/*MN*/
+#gameStartPopup p {
+  font-size: 24px;
+    line-height: 1.5; }
+#gameStartPopup .mb_white {
+  width: 172px;
+  font-size: 18px;
+  display: block;
+    margin: 20px auto 18px; }
+#gameStartPopup .b_pink {
+    width: 326px; }
+
+#nameSettingPopup .popupTextArea {
+  font-size: 22px; }
+#nameSettingPopup .popupTextArea .cautionText {
+  width: 500px;
+  text-align: left;
+  font-size: 20px;
+  line-height: 1.4;
+    margin: 0 auto; }
+#nameSettingPopup .popupTextArea #changeName {
+  width: 462px;
+  height: 54px;
+  text-align: center;
+    font-size: 24px; }
+#nameSettingPopup .popupTextArea .textCount {
+  width: 462px;
+  margin: 0 auto 10px;
+  text-align: right;
+    font-size: 20px; }
+
+#TopPage,
+#Maintenance {
+  width: 1024px;
+  height: 100%;
+  overflow: hidden; }
+#TopPage .topBtn,
+#Maintenance .topBtn {
+  width: 120px;
+  height: 46px;
+  background: url("/magica/resource/image_web/page/top/btn_bg00.png") center center no-repeat;
+  background-size: 110px 28px;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 46px;
+  text-align: center;
+    text-shadow: 0 0; }
+#TopPage #transferInner,
+#Maintenance #transferInner {
+    display: none; }
+#TopPage #movieStartBtn,
+#Maintenance #movieStartBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+    z-index: 80; }
+#TopPage #transferBtn,
+#Maintenance #transferBtn {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 6px;
+    z-index: 80; }
+#TopPage #clearBtn,
+#Maintenance #clearBtn {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 121px;
+    z-index: 80; }
+#TopPage #opMovieBtn,
+#Maintenance #opMovieBtn {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 236px;
+    z-index: 80; }
+#TopPage #touchScreen,
+#Maintenance #touchScreen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 30px;
+  text-align: center;
+  -webkit-animation: TopPageTouchScreenMotion 1.5s linear 0s infinite alternate;
+  opacity: 1;
+  z-index: 20;
+    -webkit-animation-fill-mode: backwards; }
+#TopPage #touchScreen .touchTxt,
+#Maintenance #touchScreen .touchTxt {
+  width: 288px;
+  height: 42px;
+  margin: 0 auto;
+  background: url("/magica/resource/image_web/page/top/game_start00.png") left top no-repeat;
+  background-size: 288px 42px;
+  display: block;
+  position: absolute;
+  top: -webkit-calc(50% + 172px);
+  left: -webkit-calc(50% - 144px);
+      z-index: 10; }
+#TopPage #touchScreen #touchBackground,
+#Maintenance #touchScreen #touchBackground {
+  width: 429px;
+  height: 58px;
+  background: url("/magica/resource/image_web/page/top/game_start_bg.png") center top no-repeat;
+  background-size: 429px 58px;
+  position: absolute;
+  top: -webkit-calc(50% + 160px);
+  left: -webkit-calc(50% - 215px);
+  pointer-events: none;
+  z-index: 1;
+      -webkit-mask-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), black 20%, black 80%, rgba(0, 0, 0, 0)); }
+#TopPage #terms,
+#Maintenance #terms {
+  position: absolute;
+  top: 34px;
+  right: 0;
+  font-size: 16px;
+  text-align: right;
+    z-index: 50; }
+#TopPage #terms a,
+#TopPage #terms span,
+#Maintenance #terms a,
+#Maintenance #terms span {
+  width: 100px;
+  padding: 8px 10px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(10%, rgba(255, 255, 255, 0.5)), color-stop(50%, rgba(255, 255, 255, 0.7)), color-stop(90%, rgba(255, 255, 255, 0.7)), color-stop(100%, rgba(255, 255, 255, 0.7)));
+  display: block;
+  position: relative;
+      z-index: 50; }
+#TopPage #userIdPannel,
+#Maintenance #userIdPannel {
+  width: 220px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+  position: absolute;
+  left: 402px;
+    bottom: 9px; }
+#TopPage #app_ver,
+#Maintenance #app_ver {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  line-height: 1.1;
+    z-index: 20; }
+#TopPage #copy,
+#Maintenance #copy {
+  width: 375px;
+  height: 105px;
+  background: url("/magica/resource/image_web/page/top/copyright.png") left top no-repeat;
+  background-size: 375px 105px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+    pointer-events: none; }
+
+.transferPop .popupTextArea {
+  height: 356px !important; }
+
+.transferPop #transferPopup {
+  width: 510px;
+  height: auto;
+  position: relative;
+  font-size: 20px;
+  text-align: left; }
+.transferPop #transferPopup .leftCol {
+    width: 170px;
+    margin-left: 52px;
+  padding: 5px 5px;
+  display: inline-block;
+  text-align: right;
+    text-shadow: none; }
+.transferPop #transferPopup .rightCol {
+  width: 200px;
+  padding: 5px 5px;
+  display: inline-block;
+    text-align: left; }
+.transferPop #transferPopup .rightCol input {
+  width: 200px;
+  height: auto;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #c6a882;
+  border-radius: 5px;
+      -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+      text-shadow: none; }
+.transferPop #transferPopup #transferSubmit {
+  position: absolute;
+  right: 52px;
+    bottom: 10px; }
+.transferPop #transferPopup .transferCanncel {
+  position: absolute;
+  bottom: 10px;
+    left: 52px; }
+.transferPop #transferPopup .transferAlert {
+  margin: 20px auto 10px;
+  text-align: center;
+    text-shadow: none; }
+.transferPop #transferPopup .transferNotice {
+  width: 448px;
+  word-wrap: break-word;
+  margin: 30px auto 0;
+  padding: 15px 34px;
+  background-color: #e1d2bb;
+  text-align: left;
+    border-radius: 5px; }
+
+.transferCheck .popupTextArea {
+  height: 356px !important;
+  font-size: 20px !important; }
+
+#Maintenance .logo {
+  width: 600px;
+  position: absolute;
+  top: -webkit-calc(50% - 300px);
+  left: -webkit-calc(50% - 300px); }
+#Maintenance .logo img {
+   width: 570px;/*MN*/
+   height: 347px;/*MN*/
+ }
+
+#Maintenance .commentWrap {
+  width: 100%;
+  padding: 0 50px;
+  position: absolute;
+  top: -webkit-calc(45% + 0px);/*MN*/
+  left: 0; }
+
+#Maintenance .commonFrame3 {
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center; }
+
+#Maintenance .flexBox {
+  margin: 20px auto 0;
+  width: 690px;
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+/*MN*/
+#Maintenance .flexBox2 {
+  margin: 20px auto 0;
+  width: 460px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+#Maintenance .flexBox .b_pink {
+  background: url("/magica/resource/image_web/common/btn/btn_pink_c.png") center top no-repeat;
+    background-size: -webkit-calc(100% - 66px) 64px; }
+#Maintenance .flexBox .b_pink,
+#Maintenance .flexBox .b_pink span {
+  color: #fff;
+      text-shadow: -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c; }
+#Maintenance .flexBox .b_pink:before {
+      background: url("/magica/resource/image_web/common/btn/btn_pink_l.png") left top no-repeat; }
+#Maintenance .flexBox .b_pink:after {
+      background: url("/magica/resource/image_web/common/btn/btn_pink_r.png") left top no-repeat; }
+
+.announcementPopupMainte {
+  position: relative; }
+.announcementPopupMainte .announceClose {
+  top: -webkit-calc(50% - 250px);
+    right: 40px; }
+.announcementPopupMainte .newsCloseMini {
+  top: -webkit-calc(50% - 250px);
+    right: 40px; }
+.announcementPopupMainte .popupInner {
+    -webkit-transform: translateZ(0); }
+.announcementPopupMainte .popupInner .popupTitle {
+  width: 100% !important;
+  height: 44px !important;
+  background: url("/magica/resource/image_web/common/popup/bg_popup_title_c.png") top center repeat;
+  display: block;
+  color: #99641f !important;
+  line-height: 44px !important;
+      letter-spacing: 14px; }
+.announcementPopupMainte .popupInner .popupTitle:before, .announcementPopupMainte .popupInner .popupTitle:after {
+        display: none; }
+.announcementPopupMainte .popupInner #popupInfoDetailTitle {
+  width: 868px !important;
+  height: 46px !important;
+  margin: 0 auto 15px;
+  background-image: url("/magica/resource/image_web/page/announce/announce_title_base.png");
+  background-size: 100% 100%;
+  position: absolute;
+  top: -20px;
+      left: -20px; }
+.announcementPopupMainte .popupInner .popupTextArea {
+  width: 100% !important;
+  height: -webkit-calc(100% - 70px) !important;
+      display: block !important; }
+.announcementPopupMainte .popupInner .announceList {
+  width: 100%;
+  height: -webkit-calc(100% - 10px);
+  position: absolute;
+      top: 10px; }
+.announcementPopupMainte .popupInner .announceList.none {
+        display: none !important; }
+.announcementPopupMainte .popupInner .announceScroll1 {
+  width: 470px;
+  height: 95%;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  overflow: scroll;
+      -webkit-overflow-scrolling: touch; }
+.announcementPopupMainte .popupInner .announceScroll1 .iScrollVerticalScrollbar {
+        left: 450px !important; }
+.announcementPopupMainte .popupInner .announceScroll1 #announceBannerArea {
+  height: 100%;
+  position: absolute;
+  top: 0;
+        left: 10px; }
+.announcementPopupMainte .popupInner .announceScroll1 .pickUpEvent {
+  min-height: 109px;
+  margin-bottom: 10px;
+        left: 20px; }
+.announcementPopupMainte .popupInner .announceScroll1 .pickUpEvent .bannerText {
+  width: 429px;
+  position: relative;
+  font-size: 16px;
+          line-height: 24px; }
+.announcementPopupMainte .popupInner .announceScroll1 .scrollBar {
+        padding-bottom: 50px; }
+.announcementPopupMainte .popupInner .announceRightBg {
+  width: 100%;
+  height: -webkit-calc(100% - 30px);
+  position: absolute;
+  top: 20px;
+  left: 0px;
+      z-index: 1; }
+.announcementPopupMainte .popupInner ul#announceTab {
+  width: 100%;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 2;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  /* Safari */
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+.announcementPopupMainte .popupInner ul#announceTab li {
+  width: 232px;
+  min-width: 160px !important;
+  height: 60px;
+  margin: 0 3px;
+  display: block;
+  position: relative;
+  font-size: 15px;
+        line-height: 60px !important; }
+.announcementPopupMainte .popupInner ul#announceTab li .newMark {
+          display: none; }
+.announcementPopupMainte .popupInner ul#announceTab li.newIcon .newMark {
+  display: block;
+  position: absolute;
+  top: -18px;
+  left: 20px;
+  color: #fced02;
+  font-size: 12px;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6), -1px -1px 1px rgba(0, 0, 0, 0.6), -1px 1px 1px rgba(0, 0, 0, 0.6), 1px -1px 1px rgba(0, 0, 0, 0.6); }
+.announcementPopupMainte .popupInner .announceScroll2 {
+  width: 100%;
+  height: -webkit-calc(100% - 100px);
+  background-repeat: no-repeat;
+  background-position: bottom left, bottom right, top right, top left;
+  background-size: 51%;
+  position: absolute;
+  top: 108px;
+  left: 0;
+  padding: 6px 0 20px;
+  z-index: 2;
+      overflow: hidden; }
+.announcementPopupMainte .popupInner .announceTitle {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+      left: 0; }
+.announcementPopupMainte .popupInner .announceTitle {
+      display: block; }
+.announcementPopupMainte .popupInner .announceTitle.off {
+        display: none !important; }
+.announcementPopupMainte .popupInner .announceTitle li {
+  width: 768px;
+  min-height: 60px;
+  margin: 10px auto;
+  padding: 13px 10px 16px;
+  display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  text-align: left;
+  -webkit-align-items: top;
+        -webkit-box-align: top;
+        -ms-flex-align: top;
+        align-items: top; }
+.announcementPopupMainte .popupInner .announceTitle li .newMark {
+          display: none; }
+.announcementPopupMainte .popupInner .announceTitle li:after {
+  width: 22px;
+  height: 12px;
+  background-image: url("/magica/resource/image_web/page/announce/announce_listicon.png");
+  display: block;
+  position: absolute;
+  top: -webkit-calc(50% - 6px);
+  right: 10px;
+          content: ''; }
+.announcementPopupMainte .popupInner .announceTitle li.newIcon .newMark {
+  width: 80px;
+  height: 22px;
+  margin: 5px 10px;
+          background-image: url("/magica/resource/image_web/page/announce/icon_new_a.png");
+  display: block;
+  color: #fced02;
+  font-size: 12px;
+          content: ''; }
+.announcementPopupMainte .popupInner .announceTitle li.more {
+          display: none; }
+.announcementPopupMainte .popupInner .announceTitle li.moreBtn {
+          text-align: center; }
+.announcementPopupMainte .popupInner .announceTitle li .announceDate {
+  padding: 2px 20px 0 0;
+  display: inline-block;
+          font-size: 16px; }
+.announcementPopupMainte .popupInner .announceTitle li .announceMultiLine {
+  width: 610px;
+  max-height: 52px;
+  padding: 2px 0 0 10px;
+  word-break: break-word;
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 18px;
+  -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2; }
+.announcementPopupMainte .popupInner .announceText {
+  width: 820px;
+  height: -webkit-calc(100% - 20px);
+  margin-top: 0;
+  margin-left: 4px;
+  display: block;
+  position: absolute;
+      top: 40px; }
+.announcementPopupMainte .popupInner .announceText.none {
+        display: none !important; }
+.announcementPopupMainte .popupInner .announceText .scrollBar {
+        height: auto; }
+.announcementPopupMainte .popupInner .announceScroll3 {
+  width: 100%;
+  height: -webkit-calc(100% - 10px);
+  position: absolute;
+  top: 0;
+      left: 0; }
+.announcementPopupMainte .popupInner .announceScroll3 #categoryBanner {
+  width: 116px;
+  height: 24px;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  padding-right: 10px;
+  color: #fff;
+  position: absolute;
+  top: -14px;
+  left: -4px;
+        background: url("/magica/resource/image_web/page/announce/announce_caption_base.png"); }
+.announcementPopupMainte .popupInner .announceScroll3 #innerDate {
+  margin-top: 10px;
+  margin-right: 15px;
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 15px;
+        font-size: 18px; }
+.announcementPopupMainte .popupInner .announceScroll3 .announceTextsTitle {
+  width: 768px;
+  min-height: 60px;
+  margin: 10px auto;
+  padding: 13px 10px 16px;
+  display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  text-align: left;
+  -webkit-align-items: top;
+        -webkit-box-align: top;
+        -ms-flex-align: top;
+        align-items: top; }
+.announcementPopupMainte .popupInner .announceScroll3 .announceTextsTitle .newMark {
+          display: none; }
+.announcementPopupMainte .popupInner .announceScroll3 .announceTextsTitle.newIcon .newMark {
+  width: 80px;
+  height: 22px;
+  margin: 5px 10px;
+          background-image: url("/magica/resource/image_web/page/announce/icon_new_a.png");
+  display: block;
+  color: #fced02;
+  font-size: 12px;
+          content: ''; }
+.announcementPopupMainte .popupInner .announceScroll3 .announceTextsTitle.more {
+          display: none; }
+.announcementPopupMainte .popupInner .announceScroll3 .announceTextsTitle.moreBtn {
+          text-align: center; }
+.announcementPopupMainte .popupInner .announceScroll3 .announceTextsTitle .announceDate {
+  padding: 2px 20px 0 0;
+  display: inline-block;
+          font-size: 16px; }
+.announcementPopupMainte .popupInner .announceScroll3 .announceTextsTitle .announceMultiLine {
+  width: 720px;
+  max-height: 52px;
+  padding: 2px 0 0 110px;
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 18px;
+  -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2; }
+.announcementPopupMainte .popupInner .announceScroll3 #scrollTextWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+        overflow: hidden; }
+.announcementPopupMainte .popupInner .announceScroll3 .newsField {
+  width: 820px;
+  height: auto;
+  min-height: 100%;
+  will-change: transform;
+  padding-bottom: 20px;
+  display: block;
+  position: relative;
+        text-align: left; }
+.announcementPopupMainte .popupInner .announceScroll3 .newsField .newsTextField {
+  width: 820px;
+  padding: 30px 30px;
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: left;
+          text-shadow: 0 0 0; }
+.announcementPopupMainte .popupInner .announceScroll3 .newsField .newsTextField .announceTextLink {
+  color: #5b5b5b;
+            text-decoration: none; }
+.announcementPopupMainte .popupInner .announceScroll3 .newsField .newsTextField .announceTextLink.btn {
+              display: none !important; }
+.announcementPopupMainte .popupInner .announceScroll3 .newsField .newsTextField .detailWrap {
+  width: 482px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+            right: 6px; }
+
+@-webkit-keyframes TopPageTouchScreenMotion {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }

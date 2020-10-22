@@ -1,0 +1,334 @@
+<div id="SuppotSelect">
+	<div id="tabArea" class="flexBox">
+		<p>Choose a Support Magical Girl</p>
+		<span id="sortBtnWrap">
+
+			<% if(bonusEventFlag) { %>
+				<span id="eventFilterBtn" class="sb_gold_02 se_tabs TE"><span class="b_screen"></span>Event Filter<span class='switchIcon'></span></span>
+			<% } %>
+
+			<span id="friendSortBtn" class="sb_gold_02 se_tabs TE"><span class="b_screen"></span></span>
+			<span id="friendAscBtn" class="se_tabs TE"></span>
+		</span>
+
+		<div class="tabBtn se_tabs current all" data-att="all"></div>
+		<div class="tabBtn se_tabs fire" data-att="fire"></div>
+		<div class="tabBtn se_tabs water" data-att="water"></div>
+		<div class="tabBtn se_tabs timber" data-att="timber"></div>
+		<div class="tabBtn se_tabs dark" data-att="dark"></div>
+		<div class="tabBtn se_tabs light" data-att="light"></div>
+	</div>
+
+	<div id="friendWrap" class="all">
+		<div class="friendWrapInner">
+			<p class='supportCation ts_white'>No Applicable Magical Girls</p>
+		</div>
+	</div>
+</div>
+
+<script type="text/template" id="QuestDetailTemp">
+	<%="<% if(model.mainQuestMode && model.mainQuestMode == 'HARD') { %\>"%>
+		<span class='challengeModeIcon'></span>
+	<%="<% } %\>"%>
+
+	<%="<% if(model.chapterNoForView) { %\>"%>
+		<p class="chapterTitle c_white">Ch.<%="<%= model.chapterNoForView %\>"%>: </p>
+		<p class="sectionTitle c_purple">Ep.<%="<%= model.genericIndex %\>"%></p>
+	<%="<% } else if(model.eventObj || model.eventFlag) { %\>"%>
+		<p class="chapterTitle c_white event">Event</p>
+	<%="<% } else if(!model.weekText) { %\>"%>
+		<%="<% if(model.questType !== 'COSTUME') { %\>"%>
+			<p class="chapterTitle c_white">Ch:<%="<%= model.genericIndex %\>"%></p>
+		<%="<% } else { %\>"%>
+			<p class="chapterTitle c_white">Outfit</p>
+		<%="<% } %\>"%>
+	<%="<% } %\>"%>
+	<%="<% if(model.weekText) { %\>"%>
+		<p class="chapterTitle c_white"><%="<%= model.weekText %\>"%></p>
+	<%="<% } %\>"%>
+
+	<div class="questDetail">
+		<div class="questTitle">
+			<%="<% if(model.weekText) { %\>"%>
+				<p><%="<%= model.questTypeText %\>"%></p>
+			<%="<% } else { %\>"%>
+				<p><%="<%= model.title %\>"%></p>
+			<%="<% } %\>"%>
+			<%="<% if(model.eventObj && model.eventObj.parameter) { %\>"%>
+				<!-- MN:英語版は文字が入りきらないため外す <p class='questSubTitle'><%="<%= model.eventObj.parameter %\>"%></p> -->
+			<%="<% } %\>"%>
+
+			<%="<% if(model.mainQuestMode) { %\>"%>
+				<p class='questSubTitle'>Challenge Quests</p>
+			<%="<% } %\>"%>
+		</div>
+
+		<%="<% if(model.questClass || model.battleTitle) { %\>"%>
+		<p class='questClassTitle c_gold'>
+			<span class='line'></span>
+			<%="<% if(model.questClass) { %\>"%>
+				<%="<%= model.questClass %\>"%>
+			<%="<% } else if(model.battleTitle) { %\>"%>
+				<%="<%= model.battleTitle %\>"%>
+			<%="<% } %\>"%>
+		</p>
+		<%="<% } %\>"%>
+
+		<div class="pointWrap">
+			<div class="pointInner difficulty">
+				<p class="title">Difficulty:</p><p class="point"><%="<%= model.difficulty %\>"%></p>
+			</div>
+			<div class="pointInner ap">
+				<%="<% if(model.useItemId) { %\>"%>
+					<img class='useItem' src='/magica/resource/image_web/common/icon/event/icon_<%="<%= model.useItemId.toLowerCase() %\>"%>_f.png' alt=''>
+					<p class="title useItemTitle">Cost</p>
+					<p class="point">
+						<%="<%= model.needItemNum %\>"%>
+					</p>
+				<%="<% } else { %\>"%>
+					<p class="title">AP Cost:</p>
+					<%="<% var classTxt = (typeof model.overwriteAp !== 'undefined') ? 'ts_pink' : '' %\>"%>
+					<p class='point <%="<%= classTxt %\>"%>'>
+						<%="<%= (typeof model.overwriteAp !== 'undefined') ? Number(model.overwriteAp) : model.ap %\>"%>
+					</p>
+				<%="<% } %\>"%>
+			</div>
+		</div>
+
+		<div class="enemyDetail">
+			<img class="arrow" src="/magica/resource/image_web/page/formation/enemy_element_arrow_a.png" alt="">
+			<div class="att fire"></div>
+			<div class="att water"></div>
+			<div class="att timber"></div>
+			<div class="att dark"></div>
+			<div class="att light"></div>
+			<div class="att void"></div>
+		</div>
+
+		<div id="dropItemBtn" class="btn b_white TE se_decide">Rewards<span class="b_screen"></span></div>
+	</div>
+
+	<div class="dropDetail">
+		<p class='dropTitle c_gold'>Possible Rewards</p>
+		<div class="common_line lc_beige"></div>
+
+		<div id="dropListWrap">
+			<ul class="dropList flexBox">
+				<%="<% if(model.firstClearReward && model.firstClearReward.length > 0) { %\>"%>
+					<%="<% _.each(model.firstClearReward,function(code,index) { %\>"%>
+					<%="<% if(code.indexOf('gift') !== -1) { %\>"%>
+						<li class='firstReward'>
+							<div class='bgWrap'>
+								<div class="bg"></div>
+								<div class="icon"></div>
+								<img data-nativeimgkey='<%="<%= code %\>"%>' data-src='resource/image_native/gift/<%="<%= code %\>"%>.png' class="giftImg">
+									<span class='name'><%="<%= model.firstClearRewardName[index] %\>"%></span>
+									<span class='quantity'>Stock:<span><%="<%= model.firstClearRewardQuantity[index] %\>"%></span></span>
+							</div>
+						</li>
+					<%="<% } else if(code.indexOf('event') !== -1) { %\>"%>
+						<li class='firstReward'>
+							<div class='bgWrap'>
+								<div class="bg"></div>
+								<div class="icon"></div>
+								<img src='/magica/resource/image_web/item/event/<%="<%= code %\>"%>.png' alt="">
+									<span class='name'><%="<%= model.firstClearRewardName[index] %\>"%></span>
+									<span class='quantity'>Stock:<span><%="<%= model.firstClearRewardQuantity[index] %\>"%></span></span>
+							</div>
+						</li>
+					<%="<% } else { %\>"%>
+						<li class='firstReward'>
+							<div class='bgWrap'>
+								<div class="bg"></div>
+								<div class="icon"></div>
+								<img src='/magica/resource/image_web/item/main/<%="<%= code %\>"%>.png' alt="">
+									<span class='name'><%="<%= model.firstClearRewardName[index] %\>"%></span>
+									<span class='quantity'>Stock:<span><%="<%= model.firstClearRewardQuantity[index] %\>"%></span></span>
+							</div>
+						</li>
+					<%="<% } %\>"%>
+					<%="<% }); %\>"%>
+				<%="<% } %\>"%>
+
+				<%="<% if(model.addDropItem) { %\>"%>
+					<%="<% var code = model.addDropItem %\>"%>
+					<%="<% if(code.indexOf('event') !== -1) { %\>"%>
+						<li>
+							<img src='/magica/resource/image_web/item/event/<%="<%= code %\>"%>.png' alt="">
+							<span class='name'><%="<%= model.addDropItemName %\>"%></span>
+								<span class='quantity'>Stock:<span><%="<%= model.addDropItemQuantity %\>"%></span></span>
+						</li>
+					<%="<% } else { %\>"%>
+						<li>
+							<img src='/magica/resource/image_web/item/main/<%="<%= code %\>"%>.png' alt="">
+							<span class='name'><%="<%= model.addDropItemName %\>"%></span>
+								<span class='quantity'>Stock:<span><%="<%= model.addDropItemQuantity %\>"%></span></span>
+						</li>
+					<%="<% } %\>"%>
+				<%="<% } %\>"%>
+
+				<%="<% _.each(model.rewardCodeArr,function(code,index) { %\>"%>
+					<%="<% if(code.indexOf('gift') !== -1) { %\>"%>
+						<li>
+							<img data-nativeimgkey='<%="<%= code %\>"%>' data-src='resource/image_native/gift/<%="<%= code %\>"%>.png' class="giftImg">
+							<span class='name'><%="<%= model.rewardNameArr[index] %\>"%></span>
+							<span class='quantity'>Stock:<span><%="<%= model.rewardQuantityArr[index] %\>"%></span></span>
+						</li>
+					<%="<% } else if(code.indexOf('event') !== -1) { %\>"%>
+						<li>
+							<img src='/magica/resource/image_web/item/event/<%="<%= code %\>"%>.png' alt="">
+							<span class='name'><%="<%= model.rewardNameArr[index] %\>"%></span>
+							<span class='quantity'>Stock:<span><%="<%= model.rewardQuantityArr[index] %\>"%></span></span>
+						</li>
+					<%="<% } else { %\>"%>
+						<li>
+							<img src='/magica/resource/image_web/item/main/<%="<%= code %\>"%>.png' alt="">
+							<span class='name'><%="<%= model.rewardNameArr[index] %\>"%></span>
+							<span class='quantity'>Stock:<span><%="<%= model.rewardQuantityArr[index] %\>"%></span></span>
+						</li>
+					<%="<% } %\>"%>
+				<%="<% }) %\>"%>
+			</ul>
+		</div>
+
+		<p id='dropDetailClose' class='sb_gold_02 se_cancel TE'>Close<span class='b_screen'></span></p>
+	</div>
+</script>
+
+<script type="text/template" id="FriendTemp">
+	<%="<% if(model && model.card.cardName !== 'Not Set') { %\>"%>
+		<div class='<%="<%= model.card.attributeId %\>"%> <%="<%= model.card.rank %\>"%> userCharaIcon'>
+			<%="<% att = 'att_' + model.card.attributeId.toLowerCase(); %\>"%>
+			<%="<% star = 'star_' + model.card.rank.toLowerCase(); %\>"%>
+			<%="<% frame = 'frame_' + model.card.rank.toLowerCase(); %\>"%>
+			<%="<% bg = 'bg_' + model.card.attributeId.toLowerCase(); %\>"%>
+			<span class="att" data-nativebgkey='<%="<%= att %\>"%>' data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+			<span class="star" data-nativebgkey='<%="<%= star %\>"%>' data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+			<span class="rank" data-nativebgkey='<%="<%= frame %\>"%>' data-src='resource/image_native/card/frame/<%="<%= frame %\>"%>.png'></span>
+
+			<%="<% if(model.faceHidden) { %\>"%>
+				<img src='/magica/resource/image_web/page/formation/npc_unknown_f.png'>
+			<%="<% } else { %\>"%>
+				<img data-nativeimgkey='card_<%="<%= model.displayCardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= model.displayCardId %\>"%>_f.png'>
+			<%="<% } %\>"%>
+
+			<span class="lv"><span><%="<%= model.level %\>"%></span></span>
+			<span class="atk"><%="<%= model.addAttack %\>"%></span>
+			<span class='def'><%="<%= model.addDefense %\>"%></span>
+			<span class='hp'><%="<%= model.addHp %\>"%></span>
+			<span class="bg" data-nativebgkey='<%="<%= bg %\>"%>' data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+		</div>
+
+		<span class='prm_level'><%="<%= model.level %\>"%></span>
+		<span class='prm_atk'><%="<%= model.addAttack %\>"%></span>
+		<span class='prm_def'><%="<%= model.addDefense %\>"%></span>
+		<span class='prm_hp'><%="<%= model.addHp %\>"%></span>
+
+	<%="<% } else { %\>"%>
+		<span class='prm_level'>0</span>
+		<span class='prm_atk'>0</span>
+		<span class='prm_def'>0</span>
+		<span class='prm_hp'>0</span>
+
+	<%="<% } %\>"%>
+		<span class='prm_userRank'><%="<%= model.userRank %\>"%></span>
+
+	<!-- <span class='prm_atk'><%="<%= (model.addDefense) ? model.addDefense : 0 %\>"%></span>
+	<span class='prm_atk'><%="<%= (model.addHp) ? model.addHp : 0 %\>"%></span>
+ -->
+
+	<p class='playerName'><%="<%= model.userName %\>"%></p>
+
+	<%="<% var yellClass = (model.yellFactor !== 1) ? 'c_pink' : 'c_purple'; %\>"%>
+
+	<%="<% if(!model.isNpc) { %\>"%>
+		<span class='prm_follow'><%="<%= (model.follow) ? '1' : '0'  %\>"%></span>
+		<span class='prm_follower'><%="<%= (model.follower) ? '1' : '0'  %\>"%></span>
+
+		<%="<% if(model.definiteClassRank){ %\>"%>
+			<div class="rankingEmblem rank<%='<%= model.definiteClassRank %\>'%>"></div>
+		<%="<% } %\>"%>
+
+		<p class='level'>Rank&nbsp;<%="<%= model.userRank %\>"%></p>
+		<p class='charaName c_purple' ><%="<%= model.card.cardName %\>"%></p>
+		<%="<% if(model.chara && model.chara.title) { %\>"%>
+			<p class='charaTitle c_purple' ><%="<%= model.chara.title %\>"%></p>
+		<%="<% } %\>"%>
+
+		<p class='lastLogin c_gold'>Last Login: <%="<%= model.loginTimeLag %\>"%></p>
+		<div class='getYell flexBox'>
+			<%="<% if(model.bonusMemoriaFlag) { %\>"%>
+				<div class='bonusIcon'></div>
+			<%="<% } %\>"%>
+
+			<%="<% if(!model.resentUse && model.follow) { %\>"%><div class='resentUse'></div><%="<% } %\>"%>
+			<%="<% if(model.follow) { %\>"%><div class='follow'></div><%="<% } %\>"%>
+			<%="<% if(model.follower) { %\>"%><div class='follower'></div><%="<% } %\>"%>
+			<%="<% if(model.follow && model.follower) { %\>"%>
+			<div class='yell <%="<%= yellClass %\>"%>'>+<span class='pt <%="<%= yellClass %\>"%>'><%="<%= (30 * model.yellFactor) %\>"%></span></div>
+			<%="<% } else { %\>"%>
+			<div class='yell <%="<%= yellClass %\>"%>'>+<span class='pt <%="<%= yellClass %\>"%>'><%="<%= (10 * model.yellFactor) %\>"%></span></div>
+			<%="<% } %\>"%>
+		</div>
+	<%="<% } else { %\>"%>
+		<span class='prm_follow'>0</span>
+		<span class='prm_follower'>0</span>
+
+		<div class="npcIcon"></div>
+		<div class='getYell flexBox'>
+			<div class='yell <%="<%= yellClass %\>"%>'>+<span class='pt <%="<%= yellClass %\>"%>'><%="<%= (30 * model.yellFactor) %\>"%></span></div>
+		</div>
+	<%="<% } %\>"%>
+	<%="<% if (model && model.card.cardName !== 'Not Set') { %\>"%>
+		<div class='flexBox magiaWrap'>
+
+			<%="<% var magiaClassTxt  = (model.magiaLevel == 0) ? 'off'    : ''; %\>"%>
+			<%="<% var doppelClassTxt = (model.doppelOpenFlag)  ? 'doppel' : ''; %\>"%>
+			<div class='magia <%="<%= magiaClassTxt %\>"%> <%="<%= doppelClassTxt %\>"%>'>
+				<%="<% var groupId = (!model.doppelOpenFlag)  ? model.card.cardMagia.groupId : model.card.doppelCardMagia.groupId; %\>"%>
+				<img data-nativeimgkey='icon_skill_<%="<%= groupId %\>"%>'
+				     data-src='resource/image_native/art/icon_skill_<%="<%= groupId %\>"%>.png' />
+			</div>
+			<div class='connect'>
+				<img data-nativeimgkey='icon_skill_<%="<%= model.card.cardSkill.groupId %\>"%>' data-src='resource/image_native/art/icon_skill_<%="<%= model.card.cardSkill.groupId %\>"%>.png'>
+			</div>
+		</div>
+		<div class='flexBox skillBox'>
+			<%="<% if(model.equipPiece1) { %\>"%>
+				<div>
+					<img data-nativeimgkey='memoria_<%="<%=  model.equipPiece1.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%=  model.equipPiece1.pieceId %\>"%>_s.png'>
+					<%="<% if(model.equipPiece1.lbCount == 4) { %\>"%>
+						<div class='lbMax'></div>
+					<%="<% } %\>"%>
+				</div>
+
+			<%="<% } %\>"%>
+			<%="<% if(model.equipPiece2) { %\>"%>
+				<div>
+					<img data-nativeimgkey='memoria_<%="<%=  model.equipPiece2.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%=  model.equipPiece2.pieceId %\>"%>_s.png'>
+					<%="<% if(model.equipPiece2.lbCount == 4) { %\>"%>
+						<div class='lbMax'></div>
+					<%="<% } %\>"%>
+				</div>
+			<%="<% } %\>"%>
+			<%="<% if(model.equipPiece3) { %\>"%>
+				<div>
+					<img data-nativeimgkey='memoria_<%="<%=  model.equipPiece3.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%=  model.equipPiece3.pieceId %\>"%>_s.png'>
+					<%="<% if(model.equipPiece3.lbCount == 4) { %\>"%>
+						<div class='lbMax'></div>
+					<%="<% } %\>"%>
+				</div>
+			<%="<% } %\>"%>
+			<%="<% if(model.equipPiece4) { %\>"%>
+				<div>
+					<img data-nativeimgkey='memoria_<%="<%=  model.equipPiece4.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%=  model.equipPiece4.pieceId %\>"%>_s.png'>
+					<%="<% if(model.equipPiece4.lbCount == 4) { %\>"%>
+						<div class='lbMax'></div>
+					<%="<% } %\>"%>
+				</div>
+			<%="<% } %\>"%>
+		</div>
+	<%="<% } %\>"%>
+
+	<div class='tapArea'></div>
+</script>

@@ -1,0 +1,125 @@
+<div id="ArenaFreeRank">
+	<!-- ユーザー情報 -->
+	<div id="userInfoWrap">
+		<!-- ユーザー名 -->
+		<div class="rankNameWrap">
+			<p class="userRank">Rank <%= model.gameUser.level %></p>
+			<p class="userName arenaColor"><%= model.user.loginName %></p>
+		</div>
+
+		<!-- アリーナデッキリーダー画像 -->
+		<div class="userLeader">
+			<%
+				var arenaDeck = _.findWhere(model.userDeckList,{"deckType":21});
+				var leaderCard = _.findWhere(model.userCardList,{"id":(arenaDeck.questEpisodeUserCardId)});
+			%>
+			<img data-nativeimgkey='card_<%= leaderCard.displayCardId %>_l' data-src='resource/image_native/card/image/card_<%= leaderCard.displayCardId %>_l.png'>
+		</div>
+
+		<!-- アリーナデッキ -->
+		<div class="userArenaDeck">
+			<% for(var i=1;i<6;i++){
+				if(arenaDeck["userCardId"+i] && arenaDeck["userCardId"+i] !== arenaDeck.questEpisodeUserCardId){
+					var deckCard = _.findWhere(model.userCardList,{"id":arenaDeck["userCardId"+i]});
+					if(deckCard){ %>
+			<div class="deckIcons">
+				<img data-nativeimgkey='card_<%= deckCard.displayCardId %>_f' data-src='resource/image_native/card/image/card_<%= deckCard.displayCardId %>_f.png'>
+				<div class="deckFrame"></div>
+				<div class="deckBase"></div>
+			</div>
+				<%	}else{ %>
+			<div class="deckIcons">
+				<div class="deckFrame"></div>
+				<div class="deckBase"></div>
+			</div>
+			<%		}
+				}else if(arenaDeck["userCardId"+i] !== arenaDeck.questEpisodeUserCardId){ %>
+			<div class="deckIcons">
+				<div class="deckFrame"></div>
+				<div class="deckBase"></div>
+			</div>
+			<% }
+			}
+			%>
+		</div>
+
+		<!-- チーム力とミラーズポイント -->
+		<div class="userPointInfo">
+			<div class="teamPower arenaColor"><%= model.userArenaBattleMatch.userRatingPoint %></div>
+			<div class="mirrorsPoint arenaColor"><%= model.userArenaBattle.freeRankArenaPoint %>&nbsp;Pts</div>
+		</div>
+
+		<!-- 次の鏡層が実装されている場合 -->
+		<% if(model.userArenaBattle.currentFreeRankClass.nextClass){ %>
+			<!-- 連勝数表示 -->
+			<%
+				if(model.gameUser.numberOfFreeRankConsecutiveWins > 0 && model.gameUser.numberOfFreeRankConsecutiveWins < 7){
+			%>
+				<%
+					// 連勝ボーナス
+					var consectiveBonusArr = [0,1,2,3,5,7,10];
+					var nomberOfWin        = model.gameUser.numberOfFreeRankConsecutiveWins;
+					var consectiveBonus    = consectiveBonusArr[nomberOfWin];
+				%>
+			<div class="consectiveWrap">
+				<p class="numberOfWin">
+					<span class="firstNumber"><%= nomberOfWin %></span>/ 7 Consecutive Wins
+				</p>
+				<p class="bonusPoint arenaColor">Mirrors Pts +&nbsp;<%= consectiveBonus %></p>
+			</div>
+			<% } %>
+
+			<!-- 次の鏡層までのPt表示 -->
+			<%
+				// 残りポイント
+				var leftPoint = (model.userArenaBattle.currentFreeRankClass.requiredPoint - model.userArenaBattle.freeRankArenaPoint);
+			%>
+			<div class="userNextPointInfo">
+				<p>Next: <%= model.userArenaBattle.currentFreeRankClass.nextClassName %></p>
+				<p class="leftPoint">In&nbsp;<%= leftPoint %>&nbsp;Pts</p>
+			</div>
+
+		<% }else{ %>
+			<!-- 最大鏡層到達時(次の鏡層未実装) -->
+			<div class="userNextMax"></div>
+
+		<% } %>
+
+		<div class="vsMark"></div>
+
+		<!-- フッター -->
+		<div id="userInfoBottom">
+			<div class="formationBtn linkBtn se_decide TE" data-href="#/DeckFormation/arena"><span class="b_screen"></span></div>
+		</div>
+	</div>
+
+	<!-- 対戦相手表示 -->
+	<div class="enemySelect"></div>
+	<ul id="matchingWrap"></ul>
+
+	<!-- リロードボタン -->
+	<div class="arenaReloadBtn TE se_decide"><span class="b_screen"></span></div>
+
+	<!-- BPゲージ -->
+	<div id="bpGuageFreeRank" class="bpGuageWrap"></div>
+
+	<!-- グラデーション背景 -->
+	<div class="arenaGradationBg"></div>
+</div>
+
+
+<!-- 対戦相手パーツ -->
+<script type="text/template" id="arenaParts">
+	<p class="enemyRank">Rank <%='<%= model.userRank%\>'%></p>
+	<p class="matchingUserName arenaColor"><%='<%= model.userName %\>'%></p>
+	<div class="difficultWrap difficulty<%='<%= model.difficult+1 %\>'%>"></div>
+	<p class="arenaRateing arenaColor"><%='<%= model.userRatingPoint %\>'%></p>
+	<p class="nowPoint arenaColor"><%='<%= model.userArenaBattle.freeRankArenaPoint %\>'%>&nbsp;Pts</p>
+	<div class="enemyInfoBg"></div>
+	<div class="matchingLeader">
+		<img data-nativeimgkey='card_<%="<%= model.leaderUserCard.displayCardId %\>"%>_m' data-src='resource/image_native/card/image/card_<%="<%= model.leaderUserCard.displayCardId %\>"%>_m.png'>
+	</div>
+	<%='<% if(!isRanking && model.userArenaBattle.definiteClassRank){ %\>'%>
+		<div class="rankingEmblem rank<%='<%= model.userArenaBattle.definiteClassRank %\>'%>"></div>
+	<%='<% } %\>'%>
+</script>

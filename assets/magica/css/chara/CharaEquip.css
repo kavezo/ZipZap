@@ -1,0 +1,215 @@
+#charaImg {
+  display: none; }
+
+#lbConfirm .popupInner {
+  position: absolute; }
+
+#lbConfirm .popupTitle {
+  width: 370px; }
+
+#lbConfirm .popupTextArea {
+  width: 450px;
+  height: 200px;
+  font-size: 20px; }
+
+#lbConfirm .popupContent .popupInner .popupBtnArea td {
+  padding: 0 14px; }
+
+#lbConfirm .imgWrap {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  position: relative; }
+#lbConfirm .imgWrap img {
+  width: 100%;
+    height: 100%; }
+
+#lbConfirm .numWrap {
+  position: absolute;
+  right: 8px;
+  bottom: 5px;
+  font-size: 18px; }
+
+#lbConfirm .revWrap,
+#lbConfirm .canRevWrap {
+  display: none; }
+
+#CharaEquip {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
+#CharaEquip #equipWrap {
+  width: 364px;
+  height: 403px;
+  padding: 28px 6px 0 10px;
+  background: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  top: -webkit-calc(50% - 235px);
+  right: 102px;
+    overflow: hidden; }
+#CharaEquip #equipWrap .topWrap {
+  width: 100%;
+  height: 28px;
+  padding: 0 0 0 4px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+      z-index: 2; }
+#CharaEquip #equipWrap .imgWrap {
+  width: 136px;
+  height: 136px;
+  background: url("/magica/resource/image_web/page/chara/bg_gift_popup.png") left top no-repeat;
+  position: absolute;
+  top: 110px;
+      left: -webkit-calc(50% - 68px); }
+#CharaEquip #equipWrap .imgWrap img {
+  width: 100%;
+        height: 100%; }
+#CharaEquip #equipWrap .numWrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+      font-size: 20px; }
+#CharaEquip #equipWrap .numWrap .hasNum.ts_pink {
+  position: absolute;
+  right: 76px;
+  bottom: 112px;
+        text-align: center; }
+#CharaEquip #equipWrap .numWrap .hasNum.ts_gold {
+  position: absolute;
+  right: 76px;
+  bottom: 114px;
+        text-align: center; }
+#CharaEquip #equipWrap .numWrap .sla {
+  width: 14px;
+  position: absolute;
+  bottom: 114px;
+  left: -webkit-calc(50% - 7px);
+        text-align: center; }
+#CharaEquip #equipWrap .numWrap .needNum {
+  position: absolute;
+  bottom: 114px;
+  left: 76px;
+        text-align: center; }
+#CharaEquip #equipWrap .numWrap .ts_pink {
+        font-size: 24px; }
+#CharaEquip #equipWrap .revWrap, #CharaEquip #equipWrap .canRevWrap {
+  width: 162px;
+  height: 28px;
+  background: #fff;
+  position: absolute;
+  left: -webkit-calc(50% - 81px);
+      -webkit-border-radius: 14px; }
+#CharaEquip #equipWrap .revWrap p, #CharaEquip #equipWrap .canRevWrap p {
+  position: absolute;
+  top: 0;
+  left: 13px;
+        font-size: 14px;/*MN*/
+        line-height: 28px; }
+#CharaEquip #equipWrap .revWrap p .icon, #CharaEquip #equipWrap .canRevWrap p .icon {
+  width: 20px;
+  height: 20px;
+  margin-top: -5px;
+  margin-right: 2px;
+  margin-left: 10px;
+  background: url("/magica/resource/image_web/common/chara/result_icon_equip.png") left top no-repeat;
+  background-size: 20px 20px;
+  display: inline-block;
+          vertical-align: middle; }
+#CharaEquip #equipWrap .revWrap {
+      bottom: -36px; }
+#CharaEquip #equipWrap .revWrap .revisionIcon {
+  position: absolute;
+  top: 5px;
+        left: 80px; }
+#CharaEquip #equipWrap .revWrap.canSet .revisionIcon li {
+        position: relative; }
+#CharaEquip #equipWrap .revWrap.canSet .revisionIcon .on + .off:before,
+#CharaEquip #equipWrap .revWrap.canSet .revisionIcon .off:first-child:before {
+  content: '';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  background: url("/magica/resource/image_web/page/chara/effect_limitbreak.png") left top no-repeat;
+  background-size: 30px 30px;
+  opacity: 0;
+        -webkit-animation: rev_icon_anim 1s ease-in-out 0s infinite normal; }
+#CharaEquip #equipWrap .canRevWrap {
+  display: none;
+      bottom: -68px; }
+#CharaEquip #equipWrap .canRevWrap.canSet {
+        display: block; }
+#CharaEquip #equipWrap .bottomWrap {
+  width: 100%;
+  height: 72px;
+  background: #ffffff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0 0 6px 6px;
+      z-index: 2; }
+#CharaEquip #equipWrap .bottomWrap .equipCaution {
+        font-size: 15px;
+        line-height: 22px;
+        width: 210px;
+        margin-top: 13px;
+        margin-left: 10px;
+        text-align: left;
+        display: block; }
+      #CharaEquip #equipWrap .bottomWrap #convertGemBtn {
+        width: 134px;
+        height: 54px;
+        background: url("/magica/resource/image_web/page/chara/btn_convert.png") left top no-repeat;
+        position: absolute;
+        top: 9px;
+        left: 219px; }
+        #CharaEquip #equipWrap .bottomWrap #convertGemBtn.off {
+          background: url("/magica/resource/image_web/page/chara/btn_convert_gray.png") left top no-repeat;
+          pointer-events: none !important; }
+      #CharaEquip #equipWrap .bottomWrap .crystalPop {
+        width: 134px;
+        height: 46px;
+        background: url("/magica/resource/image_web/page/chara/tag_cristal.png") left top no-repeat;
+        position: absolute;
+        top: -37px;
+        left: 219px;
+        pointer-events: none; }
+#CharaEquip #equipWrap .bottomWrap #mainBtn {
+  width: 150px;
+  height: 56px;
+  background: url("/magica/resource/image_web/page/chara/btn_pink.png") left top no-repeat;
+  position: absolute;
+  top: -webkit-calc(50% - 28px);
+  left: -webkit-calc(50% - 75px);
+  line-height: 56px;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+        transform: translateZ(0); }
+#CharaEquip #equipWrap .bottomWrap #mainBtn.off {
+  pointer-events: none;
+          -webkit-filter: grayscale(100%); }
+#CharaEquip #equipWrap .bottomWrap #mainBtn.hide {
+          display: none; }
+#CharaEquip #equipWrap .bottomWrap #mainBtn.touch {
+          -webkit-transform: scale(0.95) translateZ(0) !important; }
+
+@-webkit-keyframes rev_icon_anim {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 0.8; }
+  25% {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1; }
+  75% {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 0; } }

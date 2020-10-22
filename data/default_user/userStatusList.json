@@ -1,0 +1,83 @@
+[
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "statusId": "ACP",
+        "point": 1,
+        "checkPeriod": 5,
+        "periodicPoint": 1,
+        "checkedAt": "2020/09/14 19:12:49",
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "statusId": "BTP",
+        "point": 5,
+        "checkPeriod": 60,
+        "periodicPoint": 1,
+        "checkedAt": "2020/09/14 19:12:49",
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "statusId": "CP",
+        "point": 5,
+        "checkPeriod": 60,
+        "periodicPoint": 1,
+        "checkedAt": "2020/09/14 19:12:49",
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "statusId": "MAX_FOLLOW",
+        "point": 14,
+        "checkPeriod": 0,
+        "periodicPoint": 0,
+        "checkedAt": "2020/09/14 19:12:49",
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "statusId": "RP",
+        "point": 10,
+        "checkPeriod": 60,
+        "periodicPoint": 1,
+        "checkedAt": "2020/09/14 19:12:49",
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "statusId": "MAX_CP",
+        "point": 5,
+        "checkPeriod": 0,
+        "periodicPoint": 0,
+        "checkedAt": "2020/09/14 19:12:49",
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "statusId": "MAX_RP",
+        "point": 10,
+        "checkPeriod": 0,
+        "periodicPoint": 0,
+        "checkedAt": "2020/09/14 19:12:49",
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "statusId": "MAX_ACP",
+        "point": 1,
+        "checkPeriod": 0,
+        "periodicPoint": 0,
+        "checkedAt": "2020/09/14 19:12:49",
+        "createdAt": "2020/09/14 19:12:49"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "statusId": "MAX_BTP",
+        "point": 5,
+        "checkPeriod": 0,
+        "periodicPoint": 0,
+        "checkedAt": "2020/09/14 19:12:49",
+        "createdAt": "2020/09/14 19:12:49"
+    }
+]

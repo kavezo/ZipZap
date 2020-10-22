@@ -1,0 +1,97 @@
+<div class="debug"></div>
+
+<div id="userItemList" class="item">
+	<div class='searchQuestBtn linkBtn TE se_decide' data-href='#/SearchQuest'></div>
+	<div id="tabBtn" class="commonFrame2">
+		<ul class="common_tab t_gold ml_tab"><!-- MN -->
+			<li class="TE btn se_tabs item current" data-wrap="item">Materials</li>
+			<li class="TE btn se_tabs gem destiny_li" data-wrap="gem"><span>Destiny Gems</span></li>
+			<li class="TE btn se_tabs sticker none" data-wrap="sticker"><span>Magical Girl<br>Sticker</span></li><!-- MN -->
+		</ul>
+	</div>
+	<div id="listWrap" class="commonFrame1">
+		<h2 id="listTitle">Materials</h2>
+		<div class="gemShortInfo c_gold">Used to Unlock Magic. Extra Destiny Gems can be converted into Magia Chips.</div>
+		<div class="stickerCount"><span class="countTitle">Stock</span><span id="stickerCountNum" class="c_pink">0</span></div>
+		<div class="hiddenWrap" id="scrollMainWrap">
+			<div id="item" class="itemInner"></div>
+			<div id="gem" class="gemInner"></div>
+			<div id="sticker" class="stickerInner"></div>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/template" id="itemPartTemp">
+	<%='<% if(type !== "sticker") { %\>'%>
+		<div class="itemImg<%='<% if(type === "lbItem") { %\>'%> se_decide<%='<% } %\>'%>">
+		<%='<% if(model.imagePath.indexOf("chara_") !== -1) { %\>'%>
+			<img data-nativeimgkey="<%='<%= model.imagePath %\>'%>" data-src="resource/image_native/chara/<%='<%= model.imagePath %\>'%>.png">
+		<%='<% } else if(model.imagePath.indexOf("gift_") !== -1) { %\>'%>
+			<img data-nativeimgkey="<%='<%= model.imagePath %\>'%>" data-src="resource/image_native/gift/<%='<%= model.imagePath %\>'%>.png">
+		<%='<% } else { %\>'%>
+				<img src="/magica/resource/image_web/item/main/<%='<%= model.imagePath %\>'%>.png">
+		<%='<% } %\>'%>
+	</div>
+	<span class="itemName"><%='<%= model.dispName %\>'%></span>
+
+		<%='<% if(type === "lbItem") { %\>'%>
+	<%='<% if(model.dispTitle) { %\>'%>
+		<span class="title"><%='<%= model.dispTitle %\>'%></span>
+	<%='<% } %\>'%>
+
+			<div class="revisionWrap">
+				<span class="revTitle c_gold">Unlock Magic</span>
+				<ul class="revIcon">
+					<%='<% for(var i=0;i<3;i++){ %\>'%>
+						<%='<% if(model.revision >= (i+1) ){ %\>'%>
+							<li class="on"></li>
+						<%='<% } else { %\>'%>
+							<li></li>
+						<%='<% } %\>'%>
+					<%='<% } %\>'%>
+				</ul>
+			</div>
+
+		<%='<% } %\>'%>
+	<dl class="common_dl itemQuantity">
+		<dt>Stock</dt>
+		<dd class="itemQuantityNum"><%='<%= model.quantity %\>'%></dd>
+	</dl>
+	<%='<% }else{ %\>'%>
+		<div class="itemImg se_decide">
+			<img src="/magica/resource/image_web/page/collection/sticker/<%='<%= model.imagePath %\>_s'%>.png">
+		</div>
+	<%='<% } %\>'%>
+</script>
+
+<script type="text/template" id="saleCaution">
+	The Magical Girl you have selected hasn't had her Magic fully Enhanced.<br>
+Because of this your Destiny Gem will NOT be converted into a Destiny Crystal. (You will only get Magia Chips)
+	<div class="c_red caution">
+		※Fully Unlock your Magical Girl's Magic to receive a Destiny Crystal along with the Magia Chips you get from exchanging a Destiny Gem.<br>This is only applicable to natural ★4 Magical Girls that were drawn from a Fate Weave.<br>
+		※Destiny Crystals can be exchanged for ★4 Magical Girls.
+	</div>
+</script>
+
+<script type="text/template" id="stickerPopTemp">
+	<div id="collectionClose" class="popupCloseBtn se_cancel"></div>
+	<div class="collectionFrame"></div>
+	<div class="stickerFrame">
+		<img src="/magica/resource/image_web/page/collection/sticker/<%='<%= model.item.itemCode.toLowerCase() %\>'%>_l.png">
+	</div>
+	<div class="textFrame">
+		<div class="name"><%='<%= model.item.name %\>'%></div>
+
+		<%='<% var descript = model.item.description.replace(/＠/g, "<br>"); %\>'%>
+		<div class="description"><%='<%= descript %\>'%></div>
+		<div class="where"><span class="whereTitle">Find Her In: </span><br><%='<%= model.item.shortDescription %\>'%></div>
+
+		<%='<% var prm = model.item.parameter.split(","); %\>'%>
+		<div class="live2D">Live2D<span class="spaceStar"></span><%='<%= prm[1] %\>'%></div>
+		<div class="number">#<%='<%= prm[0] %\>'%></div>
+		<%='<% if(prm[1] !== "Nowhere") { %\>'%>
+			<div class="cameraLink linkBtn TE se_decide" data-href="#/CameraTop"><span class="b_screen"></span></div>
+	<%='<% } %\>'%>
+	</div>
+</script>

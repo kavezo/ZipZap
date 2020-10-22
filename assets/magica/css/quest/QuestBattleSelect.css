@@ -1,0 +1,491 @@
+#QuestBattleSelect {
+  width: 1024px;
+  height: 100%;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch; }
+#QuestBattleSelect .areaDetailName {
+  height: 30px;
+  padding: 0 30px;
+  background: url("/magica/resource/image_web/page/quest/bg_place_c.png") center top no-repeat;
+  background-size: -webkit-calc(100% - 46px) 100%;
+  display: inline-block;
+  position: absolute;
+  top: 72px;
+  left: 12px;
+  color: #794ab8;
+  font-size: 16px;
+  line-height: 30px;
+    text-align: center; }
+#QuestBattleSelect .areaDetailName:before, #QuestBattleSelect .areaDetailName:after {
+  width: 24px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 0;
+      content: ""; }
+#QuestBattleSelect .areaDetailName:before {
+  background: url("/magica/resource/image_web/page/quest/bg_place_l.png") left top no-repeat;
+      left: 0; }
+#QuestBattleSelect .areaDetailName:after {
+  background: url("/magica/resource/image_web/page/quest/bg_place_r.png") left top no-repeat;
+      right: 0; }
+  #QuestBattleSelect.MAIN #settingBtnWrap, #QuestBattleSelect.SUB #settingBtnWrap, #QuestBattleSelect.CHARA #settingBtnWrap, #QuestBattleSelect.COSTUME #settingBtnWrap {
+    display: block; }
+#QuestBattleSelect #settingBtnWrap {
+  width: 344px;
+  height: 54px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+    background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.5) 100%); }
+#QuestBattleSelect #settingBtnWrap #advSkipPopBtn {
+  width: 170px;
+  font-size: 13px;
+  line-height: 34px;
+  text-align: left;
+  position: absolute;
+  top: 10px;
+      right: 108px; }
+#QuestBattleSelect #settingBtnWrap #advSkipPopBtn .icon {
+  width: 34px;
+  height: 18px;
+  position: absolute;
+  right: 9px;
+  top: 8px;
+  background: url("/magica/resource/image_web/common/filter/icon_filter_off.png") left top no-repeat;
+  background-size: 34px 18px;
+        z-index: 100; }
+#QuestBattleSelect #settingBtnWrap #advSkipPopBtn.on .icon {
+  background: url("/magica/resource/image_web/common/filter/icon_filter_on.png") left top no-repeat;
+        background-size: 34px 18px; }
+#QuestBattleSelect #charaWrap .charaName {
+  width: 208px;
+  height: 20px;
+  position: absolute;
+  top: 29px;
+  left: 185px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 20px;
+    text-align: left; }
+#QuestBattleSelect #charaWrap .charaSerif {
+  width: 448px;
+  height: 160px;
+  padding: 45px 40px 0 50px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/bg_serif.png") left top no-repeat;
+  display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 7px;
+  left: 55px;
+  font-size: 22px;
+  line-height: 1.3;
+  -webkit-border-radius: 10px;
+  -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+#QuestBattleSelect #charaWrap .charaSerif .serifFont {
+  width: 358px;
+  display: block;
+  color: #5a5a5a;
+  font-size: 20px;
+  line-height: 1.3;
+  white-space: normal;
+  word-wrap: break-word;
+      text-shadow: 0 0 0; }
+#QuestBattleSelect #questDetail {
+  width: 512px;
+  height: 124px;
+  background: url("/magica/resource/image_web/page/quest/main/bg_section_detail.png") right top no-repeat;
+  background-size: 480px 100%;
+  position: absolute;
+  top: 88px;
+    right: 0; }
+#QuestBattleSelect #questDetail .storyType {
+  position: absolute;
+  top: -16px;
+      right: 0; }
+#QuestBattleSelect #questDetail .storyType .text {
+        width: 200px;/*MN*/
+  display: block;
+  position: absolute;
+  position: relative;
+  top: -2px;
+  right: 0;
+  text-align: center;
+  letter-spacing: .13em;
+        z-index: 100; }
+#QuestBattleSelect #questDetail .storyType .bg {
+        width: 204px;/*MN*/
+  height: 15px;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px 0 0 15px;
+        z-index: 10; }
+#QuestBattleSelect #questDetail .chapter {
+  width: 142px;
+  height: 142px;
+  padding-top: 68px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/section_header.png") left top no-repeat;
+  position: absolute;
+      top: -18px;/*MN*/
+  left: -41px;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 30;
+      -webkit-filter: drop-shadow(0 0 3px rgba(101, 70, 82, 0.5)) drop-shadow(0 0 3px rgba(101, 70, 82, 0.5)); }
+#QuestBattleSelect #questDetail .chapter .chapterNo {
+  margin: 0 4px;
+        color: #ffffff; }
+#QuestBattleSelect #questDetail .chapter .sectionNo {
+  display: block;
+  font-size: 16px;
+        text-align: center; }
+#QuestBattleSelect #questDetail .title {
+      width: 400px;
+      margin: 20px 0 0 108px;
+      font-size: 20px; /*MN*/
+      text-align: left; }
+#QuestBattleSelect #questDetail .line {
+  width: 435px;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(white), to(rgba(255, 255, 255, 0)));
+  position: absolute;
+  top: 63px;
+  left: 60px;
+      z-index: 10; }
+#QuestBattleSelect #questDetail .inlineWrap {
+  width: 267px;
+  height: 24px;
+  padding: 0 23px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/bg_point_frame.png") left top no-repeat;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 17px;
+  left: 97px;
+  -webkit-align-items: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+#QuestBattleSelect #questDetail .inlineWrap * {
+        color: #ffffff; }
+#QuestBattleSelect #questDetail .inlineWrap p {
+  width: 98px;
+  height: 24px;
+  position: relative;
+  font-size: 14px;
+  line-height: 24px;
+        text-align: center; }
+#QuestBattleSelect #questDetail .inlineWrap p .pointTitle {
+  padding-left: 5px;
+  position: absolute;
+          top: 0px;/*MN*/
+          left: 0; }
+#QuestBattleSelect #questDetail .inlineWrap p .point {
+  padding-right: 5px;
+  position: absolute;
+  top: 0;
+          right: 0; }
+#QuestBattleSelect #questDetail .ap {
+      color: #ffffff; }
+#QuestBattleSelect #questDetail .ap span {
+  margin: 0 0 0 10px;
+  display: inline-block;
+        color: #ffffff; }
+#QuestBattleSelect #questDetail .difficulty {
+  margin: 0 0 0 10px;
+      color: #ffffff; }
+#QuestBattleSelect #questDetail .difficulty span {
+  margin: 0 0 0 10px;
+  display: inline-block;
+        color: #ffffff; }
+#QuestBattleSelect #questDetail .missionBtn {
+  width: 122px;
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+      -webkit-filter: drop-shadow(0 2px 1px rgba(0, 0, 0, 0.3)); }
+#QuestBattleSelect #questLinkListWrap {
+  width: 480px;
+  height: -webkit-calc(100% - 211px);
+  padding: 15px 10px;
+  position: fixed;
+  top: 226px;
+    right: 6px; }
+#QuestBattleSelect #questLinkListWrap .FREE_AT_NOT_CLEAR .firstView:before {
+      width: 109px;
+  height: 26px;
+      background: url("/magica/resource/image_web/page/quest/questBattle/icon_ap_zero_02.png") left top no-repeat;
+  position: absolute;
+      top: -10px;
+      left: 144px;
+      content: ""; }
+#QuestBattleSelect #questLinkListWrap .HALF_AP .firstView:before {
+      width: 109px;
+      height: 26px;
+      background: url("/magica/resource/image_web/campaign/half_ap/common/icon_ap_half_02.png") left top no-repeat;
+      position: absolute;
+      top: -10px;
+      left: 144px;
+      content: ""; }
+    #QuestBattleSelect #questLinkListWrap .AUTO_FIRST .firstView:after {
+      width: 108px;
+  height: 26px;
+      background: url("/magica/resource/image_web/page/quest/questBattle/icon_auto.png") left top no-repeat;
+  position: absolute;
+      top: -10px;
+      left: 253px;
+  content: "";
+      z-index: 100; }
+#QuestBattleSelect #questLinkListWrap .limitTurn .firstView:after {
+  width: 82px;
+  height: 26px;
+  background: url("/magica/resource/image_web/page/quest/icon_limited_turn.png") left top no-repeat;
+  position: absolute;
+      top: -10px;
+      left: 259px;
+  content: "";
+      z-index: 100; }
+#QuestBattleSelect #questLinkListWrap #scrollWrap {
+  width: 100%;
+  height: -webkit-calc(100%);
+      overflow: hidden; }
+#QuestBattleSelect #questLinkListWrap #scrollWrap .scrollInner {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  padding-top: 20px;
+        padding-bottom: 10px; }
+#QuestBattleSelect #questLinkListWrap #questLinkList {
+      height: 100%; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .firstView, #QuestBattleSelect #questLinkListWrap #questLinkList .secondView {
+        display: none; }
+#QuestBattleSelect #questLinkListWrap #questLinkList.first .firstView {
+        display: block; }
+#QuestBattleSelect #questLinkListWrap #questLinkList.second .secondView {
+        display: block; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .secondView {
+        padding: 15px 0 0 45px; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .secondView li {
+  padding-left: 25px;
+  position: relative;
+  color: #ffffff;
+  font-size: 13px;
+          line-height: 20px; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .secondView li:before {
+  width: 20px;
+  height: 20px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_s_off.png") left top no-repeat;
+  background-size: 20px 20px;
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: 0;
+            content: ""; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .secondView li.cleared:before {
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_s_on.png") left top no-repeat;
+            background-size: 20px 20px; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest {
+  width: 396px;
+  height: 88px;
+  margin: 0 0 13px 0;
+  background: url("/magica/resource/image_web/page/quest/main/bg_quest_battle.png") left top no-repeat;
+        position: relative; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .questState {
+  position: absolute;
+  top: -8px;
+          left: 26px; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .questTitle {
+  margin: 29px 0 0 60px;
+  display: inline-block;
+          font-size: 20px; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .mission {
+  display: -webkit-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 55px;
+          bottom: 25px; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .mission li {
+  width: 38px;
+  height: 38px;
+  margin: 0 0 0 -5px;
+            background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_l_off.png") left top no-repeat; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .mission li.cleared {
+              background: url("/magica/resource/image_web/page/quest/questBattle/mission_star_l_on.png") left top no-repeat; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .treasure {
+  width: 96px;
+  height: 96px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/bg_reward.png") left top no-repeat;
+  display: -webkit-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: -48px;
+  bottom: -6px;
+  -webkit-justify-content: center;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .treasure .title {
+  width: 116px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/quest/questBattle/mission.png") left top no-repeat;
+  position: absolute;
+  top: -4px;
+            left: -10px; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .treasure .title.clear {
+              background: url("/magica/resource/image_web/page/quest/questBattle/complete.png") left top no-repeat; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .treasure .itemImg {
+  width: 47px;
+            height: 47px; }
+#QuestBattleSelect #questLinkListWrap #questLinkList .quest .treasure .treasureImg {
+  width: 60px;
+            height: 60px; }
+          #QuestBattleSelect #questLinkListWrap #questLinkList .quest .treasure .charaIcon {
+            width: 38px;
+            height: 36px;
+            position: absolute;
+            bottom: 11px;
+            right: 12px;
+            z-index: 10; }
+            #QuestBattleSelect #questLinkListWrap #questLinkList .quest .treasure .charaIcon:before {
+              content: "";
+              width: 38px;
+              height: 36px;
+              display: block;
+              background: url("/magica/resource/image_web/common/chara/chara_frame_S.png");
+              background-size: 38px 36px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              z-index: 100; }
+            #QuestBattleSelect #questLinkListWrap #questLinkList .quest .treasure .charaIcon .charaMaskWrap {
+              width: 34px;
+              height: 34px;
+              overflow: hidden;
+              -webkit-border-radius: 17px;
+              position: absolute;
+              left: 2px;
+              top: 1px; }
+              #QuestBattleSelect #questLinkListWrap #questLinkList .quest .treasure .charaIcon .charaMaskWrap img {
+                width: 40px;
+                height: 44px;
+                position: relative;
+                left: -4px; }
+        #QuestBattleSelect #questLinkListWrap #questLinkList .quest .touchObj {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 352px;
+          height: 88px;
+          z-index: 105; }
+#QuestBattleSelect.MAIN.challenge #questDetail {
+  background: url("/magica/resource/image_web/page/quest/main/bg_section_detail_challenge.png") right top no-repeat;
+    background-size: 480px 100%; }
+#QuestBattleSelect.MAIN.challenge #questDetail:before {
+  width: 122px;
+  height: 34px;
+  background: url("/magica/resource/image_web/page/quest/main/icon_challenge.png") right top no-repeat;
+  content: "";
+  position: absolute;
+  top: -16px;
+  left: 67px;
+      z-index: 100; }
+#QuestBattleSelect.MAIN.challenge #questDetail .title {
+  color: #ffffff;
+      text-shadow: -1px -1px 1px #bb1d97, 1px -1px 1px #bb1d97, -1px 1px 1px #bb1d97, 1px 1px 1px #bb1d97, -1px -1px #bb1d97, 1px -1px #bb1d97, -1px 1px #bb1d97, 1px 1px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 3px #bb1d97, 1px -1px 3px #bb1d97, -1px 1px 3px #bb1d97, 1px 1px 3px #bb1d97; }
+#QuestBattleSelect.MAIN.challenge #questLinkListWrap #questLinkList .quest {
+    background: url("/magica/resource/image_web/page/quest/main/bg_quest_battle_challenge.png") left top no-repeat; }
+#QuestBattleSelect.MAIN.challenge #questLinkListWrap #questLinkList .quest .questTitle, #QuestBattleSelect.MAIN.challenge #questLinkListWrap #questLinkList .quest .secondView {
+      text-shadow: -1px -1px 1px #bb1d97, 1px -1px 1px #bb1d97, -1px 1px 1px #bb1d97, 1px 1px 1px #bb1d97, -1px -1px #bb1d97, 1px -1px #bb1d97, -1px 1px #bb1d97, 1px 1px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 2px #bb1d97, 1px -1px 2px #bb1d97, -1px 1px 2px #bb1d97, 1px 1px 2px #bb1d97, -1px -1px 3px #bb1d97, 1px -1px 3px #bb1d97, -1px 1px 3px #bb1d97, 1px 1px 3px #bb1d97; }
+#QuestBattleSelect.MAIN #questDetail {
+  background: url("/magica/resource/image_web/page/quest/main/bg_section_detail.png") right top no-repeat;
+    background-size: 480px 100%; }
+#QuestBattleSelect.MAIN #questDetail .storyType .bg {
+      background: #8c62c4; }
+#QuestBattleSelect.MAIN #questDetail .text, #QuestBattleSelect.MAIN #questDetail .title {
+  color: #ffffff;
+      text-shadow: -1px -1px 1px #915bda, 1px -1px 1px #915bda, -1px 1px 1px #915bda, 1px 1px 1px #915bda, -1px -1px #915bda, 1px -1px #915bda, -1px 1px #915bda, 1px 1px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 3px #915bda, 1px -1px 3px #915bda, -1px 1px 3px #915bda, 1px 1px 3px #915bda; }
+#QuestBattleSelect.MAIN #questLinkListWrap #questLinkList .quest {
+    background: url("/magica/resource/image_web/page/quest/main/bg_quest_battle.png") left top no-repeat; }
+#QuestBattleSelect.MAIN #questLinkListWrap #questLinkList .quest .questTitle, #QuestBattleSelect.MAIN #questLinkListWrap #questLinkList .quest .secondView {
+      text-shadow: -1px -1px 1px #915bda, 1px -1px 1px #915bda, -1px 1px 1px #915bda, 1px 1px 1px #915bda, -1px -1px #915bda, 1px -1px #915bda, -1px 1px #915bda, 1px 1px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 2px #915bda, 1px -1px 2px #915bda, -1px 1px 2px #915bda, 1px 1px 2px #915bda, -1px -1px 3px #915bda, 1px -1px 3px #915bda, -1px 1px 3px #915bda, 1px 1px 3px #915bda; }
+#QuestBattleSelect.SUB #questDetail {
+  background: url("/magica/resource/image_web/page/quest/sub/bg_section_detail.png") right top no-repeat;
+    background-size: 480px 100%; }
+#QuestBattleSelect.SUB #questDetail .storyType .bg {
+      background: #21a08e; }
+#QuestBattleSelect.SUB #questDetail .text, #QuestBattleSelect.SUB #questDetail .title {
+  color: #ffffff;
+      text-shadow: -1px -1px 1px #0b9885, 1px -1px 1px #0b9885, -1px 1px 1px #0b9885, 1px 1px 1px #0b9885, -1px -1px #0b9885, 1px -1px #0b9885, -1px 1px #0b9885, 1px 1px #0b9885, -1px -1px 2px #0b9885, 1px -1px 2px #0b9885, -1px 1px 2px #0b9885, 1px 1px 2px #0b9885, -1px -1px 2px #0b9885, 1px -1px 2px #0b9885, -1px 1px 2px #0b9885, 1px 1px 2px #0b9885, -1px -1px 3px #0b9885, 1px -1px 3px #0b9885, -1px 1px 3px #0b9885, 1px 1px 3px #0b9885; }
+#QuestBattleSelect.SUB #questLinkListWrap #questLinkList .quest {
+    background: url("/magica/resource/image_web/page/quest/sub/bg_quest_battle.png") left top no-repeat; }
+#QuestBattleSelect.SUB #questLinkListWrap #questLinkList .quest .questTitle, #QuestBattleSelect.SUB #questLinkListWrap #questLinkList .quest .secondView {
+      text-shadow: -1px -1px 1px #0b9885, 1px -1px 1px #0b9885, -1px 1px 1px #0b9885, 1px 1px 1px #0b9885, -1px -1px #0b9885, 1px -1px #0b9885, -1px 1px #0b9885, 1px 1px #0b9885, -1px -1px 2px #0b9885, 1px -1px 2px #0b9885, -1px 1px 2px #0b9885, 1px 1px 2px #0b9885, -1px -1px 2px #0b9885, 1px -1px 2px #0b9885, -1px 1px 2px #0b9885, 1px 1px 2px #0b9885, -1px -1px 3px #0b9885, 1px -1px 3px #0b9885, -1px 1px 3px #0b9885, 1px 1px 3px #0b9885; }
+#QuestBattleSelect.CHARA #questDetail {
+  background: url("/magica/resource/image_web/page/quest/chara/bg_section_detail.png") right top no-repeat;
+    background-size: 480px 100%; }
+#QuestBattleSelect.CHARA #questDetail .storyType .bg {
+      background: #e36f85; }
+#QuestBattleSelect.CHARA #questDetail .text, #QuestBattleSelect.CHARA #questDetail .title {
+  color: #ffffff;
+      text-shadow: -1px -1px 1px #ff5e7c, 1px -1px 1px #ff5e7c, -1px 1px 1px #ff5e7c, 1px 1px 1px #ff5e7c, -1px -1px #ff5e7c, 1px -1px #ff5e7c, -1px 1px #ff5e7c, 1px 1px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 3px #ff5e7c, 1px -1px 3px #ff5e7c, -1px 1px 3px #ff5e7c, 1px 1px 3px #ff5e7c; }
+#QuestBattleSelect.CHARA #questDetail .sectionNo {
+      color: #ffffff; }
+#QuestBattleSelect.CHARA #questLinkListWrap #questLinkList .quest {
+    background: url("/magica/resource/image_web/page/quest/chara/bg_quest_battle.png") left top no-repeat; }
+#QuestBattleSelect.CHARA #questLinkListWrap #questLinkList .quest .questTitle, #QuestBattleSelect.CHARA #questLinkListWrap #questLinkList .quest .secondView {
+      text-shadow: -1px -1px 1px #ff5e7c, 1px -1px 1px #ff5e7c, -1px 1px 1px #ff5e7c, 1px 1px 1px #ff5e7c, -1px -1px #ff5e7c, 1px -1px #ff5e7c, -1px 1px #ff5e7c, 1px 1px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 3px #ff5e7c, 1px -1px 3px #ff5e7c, -1px 1px 3px #ff5e7c, 1px 1px 3px #ff5e7c; }
+  #QuestBattleSelect.COSTUME #questDetail {
+    background: url("/magica/resource/image_web/page/quest/costume/bg_section_detail.png") right top no-repeat;
+    background-size: 480px 100%; }
+    #QuestBattleSelect.COSTUME #questDetail .storyType {
+      width: 160px; }
+      #QuestBattleSelect.COSTUME #questDetail .storyType .bg {
+        width: 160px;
+        background: #f57e4f; }
+    #QuestBattleSelect.COSTUME #questDetail .text {
+      width: 160px;
+      font-size: 17px;
+      letter-spacing: .12em;
+      margin-left: 4px; }
+    #QuestBattleSelect.COSTUME #questDetail .text, #QuestBattleSelect.COSTUME #questDetail .title {
+      color: #ffffff;
+      text-shadow: -1px -1px 1px #ff723a, 1px -1px 1px #ff723a, -1px 1px 1px #ff723a, 1px 1px 1px #ff723a, -1px -1px #ff723a, 1px -1px #ff723a, -1px 1px #ff723a, 1px 1px #ff723a, -1px -1px 2px #ff723a, 1px -1px 2px #ff723a, -1px 1px 2px #ff723a, 1px 1px 2px #ff723a, -1px -1px 2px #ff723a, 1px -1px 2px #ff723a, -1px 1px 2px #ff723a, 1px 1px 2px #ff723a, -1px -1px 3px #ff723a, 1px -1px 3px #ff723a, -1px 1px 3px #ff723a, 1px 1px 3px #ff723a; }
+    #QuestBattleSelect.COSTUME #questDetail .sectionNo {
+      color: #ffffff; }
+  #QuestBattleSelect.COSTUME #questLinkListWrap #questLinkList .quest {
+    background: url("/magica/resource/image_web/page/quest/costume/bg_quest_battle.png") left top no-repeat; }
+    #QuestBattleSelect.COSTUME #questLinkListWrap #questLinkList .quest .questTitle, #QuestBattleSelect.COSTUME #questLinkListWrap #questLinkList .quest .secondView {
+      text-shadow: -1px -1px 1px #ff723a, 1px -1px 1px #ff723a, -1px 1px 1px #ff723a, 1px 1px 1px #ff723a, -1px -1px #ff723a, 1px -1px #ff723a, -1px 1px #ff723a, 1px 1px #ff723a, -1px -1px 2px #ff723a, 1px -1px 2px #ff723a, -1px 1px 2px #ff723a, 1px 1px 2px #ff723a, -1px -1px 2px #ff723a, 1px -1px 2px #ff723a, -1px 1px 2px #ff723a, 1px 1px 2px #ff723a, -1px -1px 3px #ff723a, 1px -1px 3px #ff723a, -1px 1px 3px #ff723a, 1px 1px 3px #ff723a; }

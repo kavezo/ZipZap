@@ -1,0 +1,218 @@
+<div id="GachaTop">
+	<% if(this.gachaScheduleList.length > 1) { %>
+		<div id='rightArrow' class='se_tabs TE'></div>
+		<div id='leftArrow' class='se_tabs TE'></div>
+	<% } %>
+			</div>
+
+<script id="GachaTemp" type="text/template">
+	<%='<% if(model.gachaType && model.gachaType.indexOf("SELECTABLE") !== -1) { %\>'%>
+		<%='<% if(!this.selectableCardId) { %\>'%>
+			<div id="gachaLargeTitleWrap">
+				<img src="/magica/resource/image_web/gacha/<%='<%= model.imageBanner %\>'%>_l.png" alt="">
+			</div>
+			<div id='selectablePopWrap'>
+				<div id='selectablePopBtn' class='sb_gold_01 TE se_decide'>Details</div>
+	</div>
+
+			<div id='charaSelectBtn' class='TE se_decide'></div>
+		<%='<% } else { %\>'%>
+			<div id="selectableLinkBtn" class="TE se_decide"></div>
+			<img id='card0' class='singleCard displayCard' data-nativeimgkey='card_<%='<%= this.selectableCardId %\>'%>_l' data-src='resource/image_native/card/image/card_<%='<%= this.selectableCardId %\>'%>_l.png'>
+			<div id="displayCardBg"></div>
+		<%='<% } %\>'%>
+	<%='<% } %\>'%>
+
+	<%='<% if(model.gachaType.indexOf("RARE") !== -1 && model.displayCardList.length > 0) { %\>'%>
+		<%='<% _.each(model.displayCardList,function(card,i){ %\>'%>
+			<%='<% console.log(card) %\>'%>
+			<img id='card<%='<%= i %\>'%>' class='displayCard' data-nativeimgkey='card_<%='<%= card.cardId %\>'%>_l' data-src='resource/image_native/card/image/card_<%='<%= card.cardId %\>'%>_l.png'>
+		<%='<% }) %\>'%>
+	<%='<% } %\>'%>
+
+		<div id="gachaTitleWrap">
+		<p id="gachaDate"></p>
+		<%='<% if(model.startdashGachaExpiredAt) { %\>'%>
+			<p class='expiredAt'>Available Until: <%='<%= model.startdashGachaExpiredAt %\>'%></p>
+		<%='<% } %\>'%>
+		<img src="/magica/resource/image_web/gacha/<%='<%= model.imageBanner %\>'%>.png" alt="">
+	</div>
+
+	<div id="gachaPickUpWrap">
+		<img src="/magica/resource/image_web/gacha/<%='<%= model.imageChara %\>'%>.png" alt="">
+		</div>
+
+	<div id='gachaBtnWrap'></div>
+
+	<div id="charaData" class='hide'>
+		</div>
+</script>
+
+<script id="CharaDataTemp" type="text/template">
+			<div id="attribute">
+		<span class="type_f <%='<%= model.attributeId %\>'%>"></span>
+			</div>
+	<div id="rare" class="<%='<%= model.rank %\>'%>">
+				<span class="gachaRarity1"></span>
+				<span class="gachaRarity2"></span>
+				<span class="gachaRarity3"></span>
+				<span class="gachaRarity4"></span>
+				<span class="gachaRarity5"></span>
+			</div>
+	<div id="charaName" class="c_purple"><%='<%= model.cardName %\>'%></div>
+	<div id="charaTitle" class="c_purple"><%='<%= model.title %\>'%></div>
+</script>
+
+<script id="GachaBtnTemp" type="text/template">
+	<%='<% if(this.btnBadge) { %\>'%>
+	<div class='btnBadge'>
+		<img src="/magica/resource/image_web/page/gacha/baloon/<%='<%= this.btnBadge %\>'%>.png" alt="">
+		</div>
+	<%='<% } %\>'%>
+
+	<div class='btnText'><%='<%= model.displayTitle %\>'%></div>
+
+	<%='<% if(!this.free) { %\>'%>
+		<div class='pointFrame'>
+			<img class='useItem' src="/magica/resource/image_web/page/gacha/item/icon_<%='<%= model.userUseItem.item.itemCode.toLowerCase() %\>'%>_f.png" alt="">
+
+			<%='<% if(model.userUseItem.subItemFlag || model.needPointKind === "ITEM") { %\>'%>
+				<div class='needItemNum'>×1</div>
+				<div class='hasNum'>（Stock: <%='<%= model.userUseItem.quantity %\>'%>）</div>
+			<%='<% } else if(model.needPointKind === "PURCHASED_MONEY") { %\>'%>
+				<div class='needNum'>×<%='<%= model.needQuantity %\>'%></div>
+				<div class='hasNum'>（Stock: <%='<%= model.userUseItem.quantity %\>'%>）</div>
+			<%='<% } else { %\>'%>
+				<div class='needNum'>×<%='<%= model.needQuantity %\>'%></div>
+			<%='<% } %\>'%>
+			</div>
+	<%='<% } %\>'%>
+</script>
+
+<script id="GachaFooterTemp" type="text/template">
+	<%='<% console.log(this) %\>'%>
+
+	<%='<% if(this.historyDispFlag) { %\>'%>
+		<div id='gachaHistoryBtn' class="btn sb_gold_02 linkBtn TE se_tabs" data-href="#/GachaHistory">
+			<span class="b_screen"></span><span class="c_gold">History</span>
+		</div>
+	<%='<% } %\>'%>
+
+	<%='<% if(this.probabilityDispFlag) { %\>'%>
+		<div id="probabilityBtn" class="btn sb_gold_02 TE se_tabs">
+			<span class="b_screen"></span><span class="c_gold">Details</span>
+	</div>
+	<%='<% } %\>'%>
+
+	<%='<% if(this.gachaGroupCount !== null && this.model.toJSON().gachaType !== "STARTDASH") { %\>'%>
+		<div id="gachaGroupCountWrap">
+			<p><%='<%= this.gachaGroupCount %\>'%>/100</p>
+</div>
+	<%='<% } %\>'%>
+
+	<%='<% if(this.hasItemNum !== null) { %\>'%>
+		<div id="hasItemNumWrap" class="<%='<%= this.useItemType %\>'%>">
+			<p class='title c_white'><%='<%= this.hasItemTxt %\>'%></p>
+			<div class='hasNum'><%='<%= this.hasItemNum %\>'%></div>
+
+			<%='<% if(this.useItemType === "MONEY") { %\>'%>
+				<div id='purchaseMoneyBtn' class="TE se_decide">
+		</div>
+			<%='<% } %\>'%>
+		</div>
+	<%='<% } %\>'%>
+</script>
+
+<!-- ガチャ実行ポップアップ -->
+<script id="GachaStartPop" type="text/template">
+
+	<%='<% var displayTitle = model.displayTitle.replace(/<br>/g, ""); %\>'%>
+
+	<%='<% console.log(this) %\>'%>
+
+	<%='<% if(model.needQuantity === 0) { %\>'%>
+		Draw the free <span class='c_pink'><%='<%= displayTitle %\>'%></span>.<br>
+		Are you sure?
+	<%='<% } else { %\>'%>
+		It costs <span class='c_pink'><%='<%= (model.userUseItem.subItemFlag) ? "1" : model.needQuantity %\>'%> <%='<%= model.userUseItem.item.name %\>'%>(s)</span> to perform a <span class='c_pink'><%='<%= displayTitle %\>'%></span> Fate Weave.<br>Are you sure you want to draw?
+
+		<%='<% if(model.userUseItem.item.itemCode === "MONEY" || model.userUseItem.item.itemCode === "PURCHASED_MONEY") { %\>'%>
+			<img class='useItemIcon stone' src="/magica/resource/image_web/page/gacha/item/icon_money_f.png" />
+
+			<div class='itemNumWrap stoneA pointFrame'>
+				Total<span class="num"><%='<%= model.userUseItem.moneyObj.totalMoney %\>'%>
+		</div>
+			<div class='itemNumWrap stoneB'>
+				Paid<span class="num"><%='<%= model.userUseItem.moneyObj.userMoney %\>'%>
+			</div>
+			<div class='itemNumWrap stoneC'>
+				Free<span class="num"><%='<%= model.userUseItem.moneyObj.presentedMoney %\>'%>
+			</div>
+		<%='<% } else { %\>'%>
+			<img class='useItemIcon item' src="/magica/resource/image_web/page/gacha/item/icon_<%='<%= model.userUseItem.item.itemCode.toLowerCase() %\>'%>_f.png" />
+			<div class='itemNumWrap item pointFrame'>Stock<span class="num"><%='<%= model.userUseItem.quantity %\>'%> <%='<%= model.userUseItem.item.unit %\>'%></div>
+		<%='<% } %\>'%>
+	<%='<% } %\>'%>
+</script>
+
+<!-- 通貨が足りないときのポップアップ -->
+<script id="GachaConfPop" type="text/template">
+	Insufficient <span class='c_pink'><%='<%= model.userUseItem.item.name %\>'%>s</span>.<br>You need <span class='c_pink'><%='<%= needPoint %\>'%></span> more <%='<%= model.userUseItem.item.name %\>'%>(s).
+
+	<%='<% if(model.userUseItem.item.itemCode === "MONEY" || model.userUseItem.item.itemCode === "PURCHASED_MONEY") { %\>'%>
+		<img class='useItemIcon stone' src="/magica/resource/image_web/page/gacha/item/icon_money_f.png" />
+
+		<div class='itemNumWrap stoneA pointFrame'>
+			Total<span class="num"><%='<%= model.userUseItem.moneyObj.totalMoney %\>'%>
+		</div>
+		<div class='itemNumWrap stoneB'>
+			Paid<span class="num"><%='<%= model.userUseItem.moneyObj.userMoney %\>'%>
+		</div>
+		<div class='itemNumWrap stoneC'>
+			Free<span class="num"><%='<%= model.userUseItem.moneyObj.presentedMoney %\>'%>
+		</div>
+	<%='<% } else { %\>'%>
+		<img class='useItemIcon item' src="/magica/resource/image_web/page/gacha/item/icon_<%='<%= model.userUseItem.item.itemCode.toLowerCase() %\>'%>_f.png" />
+		<div class='itemNumWrap item pointFrame'>Stock<span class="num"><%='<%= model.userUseItem.quantity %\>'%> <%='<%= model.userUseItem.item.unit %\>'%></div>
+	<%='<% } %\>'%>
+</script>
+
+<script id="selectablePop" type="text/template">
+	<div class="popupInner">
+		<span class="closeDefault se_cancel popupCloseBtn TE"></span>
+		<p id="popupInfoDetailTitle" class="popupTitle">Selectable Magical Girls</p>
+
+		<div id="scrollOuter">
+			<div class="scrollInner">
+				<%='<% _.each(model.charaList,function(txt){ %\>'%>
+					<%='<% att = "att_" + txt.defaultCard.attributeId.toLowerCase() %\>'%>
+					<%='<% star = "star_" + txt.defaultCard.rank.toLowerCase() %\>'%>
+					<%='<% frame = "frame_" + txt.defaultCard.rank.toLowerCase() %\>'%>
+					<%='<% bg = "bg_" + txt.defaultCard.attributeId.toLowerCase() %\>'%>
+					<div class='charaWrap'>
+
+						<div class="rare <%='<%= txt.defaultCard.rank %\>'%>">
+							<%='<% var i = 0; %\>'%>
+							<%='<% var rankNum = Number(txt.defaultCard.rank.split("_")[1]); %\>'%>
+							<%='<% while(i < rankNum) { %\>'%>
+								<span></span>
+								<%='<% i=(i+1)|0; %\>'%>
+							<%='<% } %\>'%>
+						</div>
+
+						<p class="name c_purple"><%='<%= txt.name %\>'%></p>
+						<p class="title c_purple"><%='<%= txt.title %\>'%></p>
+
+						<div class='userCharaIcon'>
+							<span class="att" data-nativebgkey="<%='<%= att %\>'%>" data-src="resource/image_native/card/frame/<%='<%= att %\>'%>.png"></span>
+
+							<span class="rank" data-nativebgkey="<%='<%= frame %\>'%>" data-src="resource/image_native/card/frame/<%='<%= frame %\>'%>.png"></span>
+							<img data-nativeimgkey="card_<%='<%= txt.defaultCardId %\>'%>_f" data-src='resource/image_native/card/image/card_<%='<%= txt.defaultCardId %\>'%>_f.png'>
+							<span class="bg" data-nativebgkey="<%='<%= bg %\>'%>" data-src="resource/image_native/card/frame/<%='<%= bg %\>'%>.png"></span>
+						</div>
+					</div>
+				<%='<% }) %\>'%>
+			</div>
+		</div>
+	</div>
+</script>

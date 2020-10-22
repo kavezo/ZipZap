@@ -1,0 +1,119 @@
+	<span class="closeDefault se_cancel popupCloseBtn TE" id="memoriaPopClose"></span>
+	<div class="whiteLine"></div>
+	<div class="memoriaNameWrap <%= model.piece.pieceType %>">
+		<span class="memoriaTypeIcon"></span>
+		<span class="memoriaName c_white"><%= model.piece.pieceName %></span>
+		<span class="memoriaTypeName"><% if(model.piece.pieceType === "SKILL"){ %>Skill Type<% }else{ %>Ability Type<% } %></span>
+	</div>
+	<div id="memoriaDetailPopup">
+		<div class="popupCardImage">
+			<img data-nativeimgkey="memoria_<%= model.piece.pieceId %>_c" data-src="resource/image_native/memoria/memoria_<%= model.piece.pieceId %>_c.png">
+		</div>
+		<div class="popupDetailWrap commonFrame1 <%= model.piece.pieceType %>" id="memoriaPopScroll">
+			<div class="infoWrap">
+				<div class="paramWrap">
+					<p class="cardLevel"><span class="nowLevel c_purple"><%= model.level %></span>/<%= model.maxLevel %></p>
+					<p class="memPopLbTitle c_gold">Ascension</p>
+					<ul class="lbCount_3<% if(model.lbCount < 4){ %> thisLb<%= model.lbCount %><% }else if(model.lbCount >= 4){ %> thisLb4 <% } %>">
+						<li class="statuslb1"></li>
+						<li class="statuslb2"></li>
+						<li class="statuslb3"></li>
+						<li class="statuslb4"></li>
+					</ul>
+					<div class="expWrap"><span class='exp'></span></div>
+					<p class="expNum c_gold"></p>
+					<p class="nextLvWrap"><span class="c_gold">NEXT</span>&nbsp;<span class='nextExp'></span></p>
+					<span class="cardHp"><%= model.hp %></span>
+					<span class="cardAttack"><%= model.attack %></span>
+					<span class="cardDefense"><%= model.defense %></span>
+				</div>
+				<div class="effectiveWrap">
+					<div class="cardSkillWrap">
+						<span class="skillImage">
+							<% if(model.piece.pieceSkill){ %>
+								<img data-nativeimgkey='icon_skill_<%= model.piece.pieceSkill.groupId %>' data-src='resource/image_native/art/icon_skill_<%= model.piece.pieceSkill.groupId %>.png'>
+							<% }else{ %>All<% } %>
+						</span>
+						<span class="skillName c_white <%= model.piece.pieceType %>">
+							<% if(model.lbCount > 3 && model.piece.pieceSkill2){%>
+								<%= model.piece.pieceSkill2.name %>
+							<%}else if(model.piece.pieceSkill){ %>
+								<%= model.piece.pieceSkill.name %>
+							<% }else{ %>-<% } %>
+						</span>
+						<span class="skillDescription">
+						<% if(model.lbCount > 3 && model.piece.pieceSkill2){%><%= model.piece.pieceSkill2.shortDescription %><%}else if(model.piece.pieceSkill){ %><%= model.piece.pieceSkill.shortDescription %><% }else{ %>-<% } %>
+
+						<% if(model.eventDescription) { %>
+							<span class='c_red'><%= model.eventDescription %></span>
+						<% } %>
+
+						</span>
+					</div>
+					<% if(model.piece.pieceType === "SKILL"){ %>
+					<div class="intervalTurn c_gold">
+						Turn(s) Until Available&nbsp;<% if(model.lbCount > 3 && model.piece.pieceSkill2){%><%= model.piece.pieceSkill2.intervalTurn %><% }else{ %><%= model.piece.pieceSkill.intervalTurn %><% } %>
+					</div>
+					<% } %>
+					<dl class="equipLimited common_dl">
+						<dt class="limitedTitle">Usable</dt>
+						<dd class="canEquip">
+							<%
+								var equipLimited;
+								switch(model.piece.attributeId){
+									case "ALL":
+										equipLimited = "";
+										break;
+									case "FIRE":
+										equipLimited = "Flame";
+										break;
+									case "WATER":
+										equipLimited = "Aqua";
+										break;
+									case "TIMBER":
+										equipLimited = "Forest";
+										break;
+									case "LIGHT":
+										equipLimited = "Light";
+										break;
+									case "DARK":
+										equipLimited = "Dark";
+										break;
+								};
+							%>
+							<% if(equipLimited){ %>
+								<%= equipLimited %>
+							<% } %>
+
+							<% if(model.piece.charaList) { %>
+								<% _.each(model.piece.charaList,function(obj,index){ %>
+									<% var name = (index !== 0) ? '、'+obj.name : obj.name; %>
+									<%= name %>
+								<% }); %>
+							<% } %>
+
+							<% if(!equipLimited && !model.piece.charaList){ %>
+								All
+							<% } %>
+
+
+
+						</dd>
+					</dl>
+					<div class="memoriaHr common_line lc_beige"></div>
+					<div class="cardDescription">
+						<%= model.piece.description %>
+					</div>
+				</div>
+				<div class="illustrator">
+					<%= model.piece.illustrator %>
+				</div>
+			</div>
+		</div>
+		<%
+			var addClass = "";
+			if(model.protect)            addClass  = " protected";
+			if(model.unprotectLimitFlag) addClass += " cantUnlock";
+		%>
+		<% if(!model.lockFlg && !model.supportFlag){ %><span id="memoriaProtect" class="se_decide<%= addClass %>"><% if(model.protect){ %>Locked<% }else{ %>Lock<% } %></span><% } %>
+	</div>

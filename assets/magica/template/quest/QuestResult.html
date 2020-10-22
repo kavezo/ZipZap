@@ -1,0 +1,410 @@
+<div id="QuestResult">
+	<!-- タップレイヤー -->
+	<div id="tapAction"></div>
+
+	<!-- debug 再戦ボタン -->
+	<div id="retryWrap">
+		<div id="questRetryBtn" class="TE se_decide"><span class="b_screen"></span></div>
+	</div>
+
+	<!-- リザルト表示 -->
+	<div id="ResultWrap">
+		<!-- アニメーション系:リザルトマーク -->
+		<div class="resultMarkOver win"></div>
+		<div class="resultMark win"></div>
+		<div class="resultMarkLight"></div>
+
+		<!-- ミッション表示 -->
+		<% _.each(master,function(mission,index){ %>
+			<%
+				// ミッションクリア状況
+				var missionStatus = missionClear[index];
+				var missionClass  = (missionStatus !== "CLEAR" && missionStatus !== "CLEARED") ? " off" :
+								    (missionStatus === "CLEARED") ? " cleared" : " clear";
+			%>
+			<div class="missionTextBox<%= missionClass %>" id="missionText<%= index+1 %>">
+				<%
+					var missionDescription = mission.description;
+				%>
+				<div class="textWrap"><p class="c_white"><%= missionDescription %></p></div>
+				<div class="clearSprite<% if(missionStatus === 'CLEAR'){ %> anim<% } %>"></div>
+				<div class="missionFlashPanel"></div>
+			</div>
+		<% }); %>
+
+		<!-- ミッション報酬 -->
+		<div id="missionItemList">
+			<div class="missionRewardTitle"></div>
+			<% if(missionReward){ %>
+				<!-- 宝箱 -->
+				<div class="maskWrap <%= missionReward.chestColor %>"></div>
+
+				<!-- 報酬アイテム画像 -->
+				<% if(missionReward.rewardType === "GIFT") { %>
+					<img class='itemImg' data-nativeimgkey='gift_<%= missionReward.itemCode.toLowerCase() %>' data-src='resource/image_native/gift/<%= missionReward.itemCode.toLowerCase() %>.png'>
+					<!-- 報酬アイテム数 -->
+					<span class="rewardNum ts_gold">×<%= missionReward.quantity %></span>
+				<% } else if(missionReward.rewardType === "LIVE2D") { %>
+					<div class="charaIcon">
+						<div class="charaMaskWrap">
+							<img data-nativeimgkey='mini_<%= missionReward.itemCode %>00_d' data-src='resource/image_native/mini/image/mini_<%= missionReward.itemCode %>00_d.png'>
+						</div>
+					</div>
+					<img class='itemImg' src='/magica/resource/image_web/item/main/live2d.png'>
+				<% } else { %>
+					<% var subPath = (missionReward.itemCode.indexOf("EVENT_") > -1) ? "event" : "main"; %>
+					<img class='itemImg' src='/magica/resource/image_web/item/<%= subPath %>/<%= missionReward.itemCode.toLowerCase() %>.png' alt="">
+				<!-- 報酬アイテム数 -->
+				<span class="rewardNum ts_gold">×<%= missionReward.quantity %></span>
+				<% } %>
+
+				<!-- アニメーション系:宝箱開封 -->
+				<div class="effectWrap">
+					<div class="effectCircle"></div>
+					<div class="effectFlash"></div>
+					<div class="effectGlitter"></div>
+				</div>
+			<% } %>
+		</div>
+
+		<!-- リザルト表示 -->
+		<div class="ResultPopup commonFrame1 anim">
+			<!-- リザルト表示1ページ目:経験値系 -->
+			<div class="expWrap" id="expWrap">
+				<!-- Exp:プレイヤー系 -->
+				<div class="expWrapTitle exp"></div>
+				<div class="expMiniTitle">Player</div>
+				<div class='rankTitle'></div>
+				<div class="rank c_red" id="playerLv"></div>
+				<div class="nextRankExp c_gold" id="nextRankExp">Rank UP in:<span id="nextRankExpNum">0</span></div>
+				<div class="exp">
+					<div class="exGuageWrap">
+						<div class="exGuageBar" id="exRankGuageBar"></div>
+					</div>
+				</div>
+				<span class="expNum c_red" id="expNum"></span>
+
+				<div class="hrWrap"></div>
+
+				<!-- Exp:魔法少女系 -->
+				<ul id="charaWrap"></ul>
+			</div>
+			<!-- 1ページ目ここまで -->
+
+			<!-- リザルト表示2ページ目:アイテム系 -->
+			<div class="itemWrap off" id="itemWrap">
+				<div class="expWrapTitle item"></div>
+				<div class="wrapTitle clearRiche">Rewards</div>
+				<span class="gold c_red" id="goldNum"></span>
+				<div class="wrapTitle clearItem">Treasure Boxes</div>
+			</div>
+			<dl class="common_dl getTotalRiche off" id="getTotalRiche">
+				<dt>Earned</dt>
+				<dd><span class="c_red"><%= (rewardRiche + model.riche) %></span>&nbsp;CC</dd>
+			</dl>
+			<dl class="common_dl hasTotalRiche off" id="hasTotalRiche">
+				<dt>Stock</dt>
+				<dd><span class="c_red"><%= (gameUser.riche) %></span>&nbsp;CC</dd>
+			</dl>
+			<!-- 2ページ目ここまで -->
+		</div>
+	</div>
+
+	<!-- 獲得アイテム表示 -->
+	<div id="itemResult" class="off">
+		<div class="itemScroll">
+			<ul id="getItemList">
+				<%
+					// 獲得アイテムの数だけ生成
+					_.each(getItems,function(treasure,index){
+				%>
+					<li>
+						<%
+							// 規定の宝箱の場合
+							if(treasure.chestColor == "GOLD" || treasure.chestColor == "SILVER" || treasure.chestColor == "BRONZE"){
+						%>
+							<div class="maskWrap <%= treasure.chestColor %>"></div>
+						<%
+							} else if(treasure.chestColor == "ADDED_DROP"){
+								// 追加ドロップの場合
+						%>
+							<style type='text/css'>
+								@-webkit-keyframes addedItemBoxOpen {
+									0% {
+										background-image: url('/magica/resource/image_web/common/treasure/event/<%= treasure.itemCode.toLowerCase() %>_close.png');
+										background-repeat: no-repeat!important;
+										-webkit-transform: scale(1) translateZ(0);
+									}
+									33% {
+										background-image: url('/magica/resource/image_web/common/treasure/event/<%= treasure.itemCode.toLowerCase() %>_close.png');
+										background-repeat: no-repeat!important;
+										-webkit-transform: scale(.8) translateZ(0);
+									}
+									34% {
+										background-image: url('/magica/resource/image_web/common/treasure/event/<%= treasure.itemCode.toLowerCase() %>_open.png');
+										background-repeat: no-repeat!important;
+
+										-webkit-transform: scale(1) translateZ(0);
+									}
+									50% {
+										background-image: url('/magica/resource/image_web/common/treasure/event/<%= treasure.itemCode.toLowerCase() %>_open.png');
+										background-repeat: no-repeat!important;
+										-webkit-transform: scale(1.1) translateZ(0);
+
+										opacity: 1;
+									}
+									66% {
+										background-image: url('/magica/resource/image_web/common/treasure/event/<%= treasure.itemCode.toLowerCase() %>_open.png');
+										background-repeat: no-repeat!important;
+										opacity: 1;
+									}
+									100% {
+										background-image: url('/magica/resource/image_web/common/treasure/event/<%= treasure.itemCode.toLowerCase() %>_open.png');
+										background-repeat: no-repeat!important;
+										opacity: 0;
+									}
+								}
+								#getItemList .maskWrap.addedDrop {
+									background: url('/magica/resource/image_web/common/treasure/event/<%= treasure.itemCode.toLowerCase() %>_close.png') bottom center !important;
+									background-repeat: no-repeat!important;
+									background-size: contain!important;
+								}
+								#itemResult.anim #getItemList .maskWrap.addedDrop {
+									-webkit-animation: addedItemBoxOpen .75s ease .0s 1 alternate;
+
+									-webkit-animation-fill-mode: forwards;
+								}
+							</style>
+
+							<div class="maskWrap addedDrop"></div>
+						<% } %>
+
+						<!-- ドロップアイテム画像表示 -->
+						<% if(treasure.itemCode.toLowerCase().indexOf("item_gift") > -1){ %>
+							<img data-nativeimgkey='<%= treasure.itemCode.toLowerCase() %>' data-src='resource/image_native/gift/<%= treasure.itemCode.toLowerCase() %>.png'>
+						<% }else if(treasure.itemCode.toLowerCase().indexOf("memoria_") > -1){ %>
+							<img data-nativeimgkey='<%= treasure.itemCode.toLowerCase() %>' data-src='resource/image_native/memoria/<%= treasure.itemCode.toLowerCase() %>.png'>
+						<% }else{ %>
+							<img src='/magica/resource/image_web/item<%= treasure.imgPath %><%= treasure.itemCode.toLowerCase() %>.png' alt="">
+						<% } %>
+
+						<% if(treasure.effectFlag ){ %>
+							<span class="rewardNum ts_pink">×<%= treasure.quantity %></span>
+						<% }else{ %>
+							<% if(treasure.quantity){ %>
+							<span class="rewardNum ts_gold">×<%= treasure.quantity %></span>
+							<% } %>
+						<% } %>
+
+						<!-- 宝箱開封エフェクト -->
+						<div class="effectWrap">
+							<div class="effectCircle"></div>
+							<div class="effectFlash"></div>
+							<div class="effectGlitter"></div>
+						</div>
+					</li>
+				<% }); %>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- プレイヤーランクアップポップアップ -->
+<script type="text/template" id="rankUpPopup">
+	<div id="rankPop">
+		<div id="rankUpTitle"></div>
+		<div id="rankUpWrap" class="commonFrame1">
+			<div class="common_title_frame">Player Rank</div>
+			<div class="rankUpNumber">
+				<span class="rankBefore"><%='<%= number.beforeLv %\>'%></span>
+				<span class="rankAfter c_red"><%='<%= number.afterLv %\>'%></span>
+			</div>
+			<div class="maxApWrap">
+				<span class="secondWrapTitle">MAX AP</span>
+				<div class="wrapNumber">
+					<span class="beforeNum"><%='<%= number.beforeMaxAp %\>'%></span>
+					<span class="afterNum c_red"><%='<%= number.afterMaxAp %\>'%></span>
+				</div>
+			</div>
+			<div class="rankUpText c_purple">AP/BP Restored!</div>
+			<span class="btn TE b_pink rankPopClose popupCloseBtn"><span class="b_screen"></span>OK</span>
+		</div>
+	</div>
+</script>
+
+<!-- キャラ表示パーツ -->
+<script type="text/template" id="unitPartTemp">
+	<!-- リーダーアイコン -->
+	<%='<% if(isLeader){ %\>'%><div class="leaderIcon"></div><%='<% } %\>'%>
+
+	<!-- キャラアイコン -->
+	<div class="userCharaIcon <%='<%= model.card.rank %\>'%> <%='<%= model.card.attributeId %\>'%>">
+		<%="<% var att = 'att_' + model.card.attributeId.toLowerCase() %\>"%>
+		<%="<% var star = 'star_' + model.card.rank.toLowerCase() %\>"%>
+		<%="<% var frame = 'frame_' + model.card.rank.toLowerCase() %\>"%>
+		<%="<% var bg = 'bg_' + model.card.attributeId.toLowerCase() %\>"%>
+		<span class="att" data-nativebgkey='<%="<%= att %\>"%>' data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+		<span class="star" data-nativebgkey='<%="<%= star %\>"%>' data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+		<span class="rank" data-nativebgkey='<%="<%= frame %\>"%>' data-src='resource/image_native/card/frame/<%="<%= frame %\>"%>.png'></span>
+		<img data-nativeimgkey='card_<%="<%= model.displayCardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= model.displayCardId %\>"%>_f.png'>
+		<span class="bg" data-nativebgkey='<%="<%= bg %\>"%>' data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+	</div>
+
+	<!-- イベントアイコン -->
+	<span class="eventIcon"></span>
+
+	<!-- キャラ経験値 -->
+	<span class="lvup"></span>
+	<div class='charaLvTitle'><span class='lvTitle'></span><span class="unitLv"><%="<%= model.level %\>"%></span></div>
+	<div class="charaExWrap">
+		<div class="miniGuageWrap">
+			<div class="charaExGuage"></div>
+		</div>
+		<div class="exFlashWrap"></div>
+	</div>
+	<div class="getExNum ts_white"></div>
+
+	<!-- キャラエピソード経験値 -->
+	<span class="epup"></span>
+	<div class="charaEpTitle"><span class='epTitle'></span><span class="epLvNum"></span></div>
+	<div class="charaEpWrap">
+		<div class="lvGuageWrap"></div>
+		<div class="miniGuageWrap">
+			<div class="charaEpGuage"></div>
+		</div>
+		<div class="epFlashWrap"></div>
+	</div>
+	<div class="charaEpLeftWrap c_gold">In&nbsp;<span class="epLeft c_gold"><%='<%= model.epRequire %\>'%></span></div>
+	<div class="getEpExNum ts_white"></div>
+
+</script>
+
+<!-- フォローポップアップ -->
+<script type="text/template" id="followPopTemp">
+
+	<div class="nowFollowTitle">Follows:</div>
+	<div class="followCount"><%='<%= follow %\>'%>/<%='<%= maxFollow %\>'%></div>
+
+	<!-- 属性ボタン -->
+	<div class="touchWrap">
+		<div class="touchBtn se_tabs followALL<%='<% if(attribute === "ALL"){%\> current<% } %\>'%>" data-att="ALL"></div>
+		<div class="touchBtn se_tabs followFIRE<%='<% if(attribute === "FIRE"){%\> current<% } %\>'%>" data-att="FIRE"></div>
+		<div class="touchBtn se_tabs followWATER<%='<% if(attribute === "WATER"){%\> current<% } %\>'%>" data-att="WATER"></div>
+		<div class="touchBtn se_tabs followTIMBER<%='<% if(attribute === "TIMBER"){%\> current<% } %\>'%>" data-att="TIMBER"></div>
+		<div class="touchBtn se_tabs followLIGHT<%='<% if(attribute === "LIGHT"){%\> current<% } %\>'%>" data-att="LIGHT"></div>
+		<div class="touchBtn se_tabs followDARK<%='<% if(attribute === "DARK"){%\> current<% } %\>'%>" data-att="DARK"></div>
+	</div>
+
+	<!-- サポート表示 -->
+	<div class="supportWrap">
+		<!-- 初期表示は使った属性 -->
+		<div class="unitWrap <%='<%= attribute %\>'%>">
+			<%="<% if(model.definiteClassRank){ %\>"%>
+				<div class="rankingEmblem rank<%='<%= model.definiteClassRank %\>'%>"></div>
+			<%="<% } %\>"%>
+			<div class="supportUnitWrap">
+				<p class='level'>Rank<%="<%= model.userRank %\>"%></p>
+				<p class='playerName c_purple'><%="<%= model.userName %\>"%></p>
+				<p class='lastLogin c_gold'>Last Login: &nbsp;<%='<%= model.loginTimeLag %\>'%></p>
+
+				<!-- サポートキャラ：属性別に表示 -->
+				<div id="supportDecks"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="followMessageWrap">Follow the Player that supported you?</div>
+
+	<div class="btn TE se_decide b_pink" id="followDecide"><span class="b_screen"></span>Yes</div>
+	<div class="btn TE se_cancel popupCloseBtn b_white" id="followNoBtn"><span class="b_screen"></span>No</div>
+
+</script>
+
+<script type="text/template" id="supportPart">
+	<%="<% if(model && model.card.cardName !== 'Not Set') { %\>"%>
+		<div class='<%="<%= model.card.attributeId %\>"%> <%="<%= model.card.rank %\>"%> userCharaIcon'>
+			<%="<% att = 'att_' + model.card.attributeId.toLowerCase(); %\>"%>
+			<%="<% star = 'star_' + model.card.rank.toLowerCase(); %\>"%>
+			<%="<% frame = 'frame_' + model.card.rank.toLowerCase(); %\>"%>
+			<%="<% bg = 'bg_' + model.card.attributeId.toLowerCase(); %\>"%>
+			<span class="att" data-nativebgkey='<%="<%= att %\>"%>' data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+			<span class="star" data-nativebgkey='<%="<%= star %\>"%>' data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+			<span class="rank" data-nativebgkey='<%="<%= frame %\>"%>' data-src='resource/image_native/card/frame/<%="<%= frame %\>"%>.png'></span>
+
+			<%="<% if(model.faceHidden) { %\>"%>
+				<img src='/magica/resource/image_web/page/formation/npc_unknown_f.png'>
+			<%="<% } else { %\>"%>
+				<img data-nativeimgkey='card_<%="<%= model.displayCardId %\>"%>_f' data-src='resource/image_native/card/image/card_<%="<%= model.displayCardId %\>"%>_f.png'>
+			<%="<% } %\>"%>
+
+			<span class="lv"><span><%="<%= model.level %\>"%></span></span>
+
+			<span class="bg" data-nativebgkey='<%="<%= bg %\>"%>' data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+		</div>
+
+	<%="<% } %\>"%>
+
+	<p class='playerName'><%="<%= model.userName %\>"%></p>
+
+	<%="<% if(model.definiteClassRank){ %\>"%>
+		<div class="rankingEmblem rank<%='<%= model.definiteClassRank %\>'%>"></div>
+	<%="<% } %\>"%>
+
+	<p class='level'>Rank<%="<%= model.userRank %\>"%></p>
+	<p class='charaName c_purple' ><%="<%= model.card.cardName %\>"%></p>
+	<%="<% if(model.chara && model.chara.title) { %\>"%>
+		<p class='charaTitle c_purple' ><%="<%= model.chara.title %\>"%></p>
+	<%="<% } %\>"%>
+
+	<p class='lastLogin c_gold'>Last Login: &nbsp;<%="<%= model.loginTimeLag %\>"%></p>
+
+	<%="<% if (model && model.card.cardName !== 'Not Set') { %\>"%>
+		<div class='flexBox magiaWrap'>
+
+			<%="<% var doppelClassTxt = (model.doppelOpenFlag)  ? 'doppel' : ''; %\>"%>
+			<div class='magia <%="<%= doppelClassTxt %\>"%>'>
+
+				<img data-nativeimgkey='icon_skill_<%="<%= model.card.cardMagia.groupId %\>"%>'
+				     data-src='resource/image_native/art/icon_skill_<%="<%= model.card.cardMagia.groupId %\>"%>.png' />
+			</div>
+			<div class='connect'>
+				<img data-nativeimgkey='icon_skill_<%="<%= model.card.cardSkill.groupId %\>"%>' data-src='resource/image_native/art/icon_skill_<%="<%= model.card.cardSkill.groupId %\>"%>.png'>
+			</div>
+		</div>
+		<div class='flexBox skillBox'>
+			<%="<% if(model.equipPiece1) { %\>"%>
+				<div>
+					<img data-nativeimgkey='memoria_<%="<%=  model.equipPiece1.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%=  model.equipPiece1.pieceId %\>"%>_s.png'>
+					<%="<% if(model.equipPiece1.lbCount == 4) { %\>"%>
+						<div class='lbMax'></div>
+					<%="<% } %\>"%>
+				</div>
+
+			<%="<% } %\>"%>
+			<%="<% if(model.equipPiece2) { %\>"%>
+				<div>
+					<img data-nativeimgkey='memoria_<%="<%=  model.equipPiece2.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%=  model.equipPiece2.pieceId %\>"%>_s.png'>
+					<%="<% if(model.equipPiece2.lbCount == 4) { %\>"%>
+						<div class='lbMax'></div>
+					<%="<% } %\>"%>
+				</div>
+			<%="<% } %\>"%>
+			<%="<% if(model.equipPiece3) { %\>"%>
+				<div>
+					<img data-nativeimgkey='memoria_<%="<%=  model.equipPiece3.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%=  model.equipPiece3.pieceId %\>"%>_s.png'>
+					<%="<% if(model.equipPiece3.lbCount == 4) { %\>"%>
+						<div class='lbMax'></div>
+					<%="<% } %\>"%>
+				</div>
+			<%="<% } %\>"%>
+			<%="<% if(model.equipPiece4) { %\>"%>
+				<div>
+					<img data-nativeimgkey='memoria_<%="<%=  model.equipPiece4.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%=  model.equipPiece4.pieceId %\>"%>_s.png'>
+					<%="<% if(model.equipPiece4.lbCount == 4) { %\>"%>
+						<div class='lbMax'></div>
+					<%="<% } %\>"%>
+				</div>
+			<%="<% } %\>"%>
+		</div>
+	<%="<% } %\>"%>
+</script>

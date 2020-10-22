@@ -1,0 +1,83 @@
+#FormationTop {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#FormationTop .btnWrap {
+  width: 443px;
+  height: 100%;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  right: 84px;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  align-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+#FormationTop .btnWrap .touch {
+  -webkit-filter: brightness(120%);
+}
+#FormationTop .btnWrap.eventArena .formationBtn:not(:last-child) {
+  margin-bottom: 14px;
+}
+#FormationTop #charaImgWrap {
+  width: 1024px;
+  height: 768px;
+  position: absolute;
+  top: -webkit-calc(50% - 315px);
+  left: -240px;
+}
+#FormationTop .formationBtn {
+  width: 443px;
+  height: 100px;
+  padding: 0 0 0 70px;
+  background: url("/magica/resource/image_web/common/btn/btn_common_l.png") left top no-repeat;
+  position: relative;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 98px;
+  text-align: center;
+  text-shadow: -1px -1px 3px #ff3359, 1px -1px 3px #ff3359, -1px 1px 3px #ff3359, 1px 1px 3px #ff3359, -1px -1px 3px #ff3359, 1px -1px 3px #ff3359, -1px 1px 3px #ff3359, 1px 1px 3px #ff3359;
+}
+#FormationTop .formationBtn:not(:last-child) {
+  margin-bottom: 28px;
+}
+#FormationTop .formationBtn:before {
+  width: 69px;
+  height: 77px;
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 80px;
+  content: "";
+}
+#FormationTop .formationBtn.questBtn:before {
+  background: url("/magica/resource/image_web/page/formation/icon_formation_quest.png") left center no-repeat;
+}
+#FormationTop .formationBtn.supportBtn:before {
+  background: url("/magica/resource/image_web/page/formation/icon_formation_support.png") left center no-repeat;
+}
+#FormationTop .formationBtn.arenaBtn:before {
+  background: url("/magica/resource/image_web/page/formation/icon_formation_arena.png") left center no-repeat;
+}
+#FormationTop .formationBtn.eventArenaBtn {
+  background: url("/magica/resource/image_web/page/formation/btn_formation_event_arena.png") left top no-repeat;
+  text-shadow: -1px -1px 3px #07819a, 1px -1px 3px #07819a, -1px 1px 3px #07819a, 1px 1px 3px #07819a, -1px -1px 3px #07819a, 1px -1px 3px #07819a, -1px 1px 3px #07819a, 1px 1px 3px #07819a;
+}
+#FormationTop .formationBtn.eventArenaBtn:before {
+  background: url("/magica/resource/image_web/page/formation/icon_formation_event_arena.png") left center no-repeat;
+}
+#FormationTop .formationBtn.arenaBtn.limited:after {
+  width: 121px;/*MN*/
+  height: 32px;/*MN*/
+  background: url("/magica/resource/image_web/common/closed/condition_02.png");
+  display: block;
+  position: absolute;
+  top: -4px;
+  right: 25px;
+  content: "";
+}

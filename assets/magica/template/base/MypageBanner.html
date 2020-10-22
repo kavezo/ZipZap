@@ -1,0 +1,84 @@
+<%
+	var countBanners = 0;
+	_.each(model,function(banner,index){
+		// 開始時刻と終了時刻を比較できる形に成形
+		var endAt   = banner.endAt.replace(/-/g,"\/");
+		var startAt = banner.startAt.replace(/-/g,"\/");
+		if(Date.parse(endAt) > Date.parse(currentTime) && Date.parse(startAt) < Date.parse(currentTime) && banner.showMypage){
+			var setClass = "";// 画像用クラス
+			var dataSet  = "";// リンクがある場合のデータセット
+			var newsId   = "";// アナウンスIDがある場合
+			if(banner.bannerLink){
+				// リンクがある場合
+				setClass = "mypageBanner linkBtn se_decide";
+				dataSet  = banner.bannerLink;
+			}else if(banner.announcementId){
+				// お知らせがある場合
+				setClass = "mypageBanner announceOpen se_decide";
+				newsId  = banner.announcementId;
+			}else{
+				// リンクがない場合
+				setClass = "mypageBanner";
+			}
+			// １個目の場合は初期表示にする
+			if(countBanners === 0) setClass += " show";
+%>
+<img class="<%= setClass %>"<% if(dataSet){ %> data-href="<%= dataSet %>"<% }else{ %> data-newsId="<%= newsId %>"<% } %> src="<%= banner.imagePath %>_m.png">
+<%
+			countBanners++;
+		}
+	});
+
+%>
+
+<%
+
+	// 追加バナー分のチェック
+	// スタートダッシュガチャ
+	if(addShow.startDash){
+%>
+<img class="mypageBanner linkBtn se_decide<% if(countBanners === 0){ %> show<% } %>" src="/magica/resource/image_web/banner/announce/banner_0119_m.png" data-href="#/GachaTop/268">
+<%		countBanners++;
+	}
+
+
+
+	%>
+
+	<%
+
+	// 曜日クエストのバナー
+	// (0:日,1:月,2:火,3:水……6:土)
+	var weekImgNum;
+	switch(addShow.week){
+		case 0:
+		case 6:
+			weekImgNum = "061";
+			break;
+		case 1:
+			weekImgNum = "011";
+			break;
+		case 2:
+			weekImgNum = "021";
+			break;
+		case 3:
+			weekImgNum = "031";
+			break;
+		case 4:
+			weekImgNum = "041";
+			break;
+		case 5:
+			weekImgNum = "051";
+			break;
+		defalut :
+			weekImgNum = "011";
+			break;
+	}
+%>
+<img class="mypageBanner linkBtn se_decide<% if(countBanners === 0){ %> show<% } %>" data-href="#/EventQuest" src="/magica/resource/image_web/banner/common/banner_week_<%= weekImgNum %>_m.png">
+<% countBanners++; %>
+<div id="indicatorWrap">
+<% for(var i=0;i<countBanners;i++){ %>
+	<div class="indiIcon<% if(i===0){%> on<%}%>"></div>
+<% } %>
+</div>

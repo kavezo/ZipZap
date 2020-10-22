@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>magica</title>
+	<meta id="viewport" name="viewport" content="width=1024, user-scalable=no" />
+	<meta name="format-detection" content="email=no,telephone=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+
+	<script src="/cdn-cgi/apps/head/H-E3y15wY_SgIRTzAMenqwFaE4E.js"></script><link rel="stylesheet" href="/magica/css/_common/sanitize.css">
+	<link rel="stylesheet" href="/magica/css/_common/common.css?v=20200911074932607">
+	<link rel="stylesheet" href="/magica/css/_common/base.css?v=20200911074932607">
+
+	<!-- MN -->
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" charset="utf-8" src="/magica/js/system/replacement.js?v=20200911074932607" id="replaceTag"></script>
+
+	<script type="text/javascript" charset="utf-8" src="/magica/js/libs/jquery-2.2.3.min.js"></script>
+
+	<script type="text/javascript" charset="utf-8" src="/magica/js/libs/require.js"></script>
+	<script type="text/javascript" charset="utf-8" src="/magica/js/_common/baseConfig.js?v=20200911074932607"></script>
+	<script type="text/javascript" charset="utf-8" src="/magica/js/_common/base.js?v=20200911074932607"></script>
+
+	<style id="headStyle"></style>
+</head>
+
+<body>
+
+	<div id="ready" class="">.</div>
+	<div class='debug'></div>
+
+	<!-- ローディング -->
+	<div id="loading">
+		<p></p>
+	</div>
+
+	<div id="tapBlock"></div>
+
+	<div id="popupArea">
+		<div id="popupCurtain"></div>
+	</div>
+
+	<div id="overlapContainer">
+		<div id="curtain"></div>
+	</div>
+
+	<!-- Android、ポップアップした時のクリック壁の為に -->
+	<div id="AndroidLinkStop"></div>
+
+	<!-- コンテンツ領域 -->
+	<div id="baseContainer">
+		<div id="tutorialContainer">
+			<div class="bgWrap"></div>
+			<div class="overlayWrap"></div>
+			<div class="arrowWrap"></div>
+			<div class="arrow2Wrap"></div>
+			<div class="textWrap"></div>
+		</div>
+		<div id="mainContent"></div>
+		<div id="globalMenuContainer"></div>
+	</div>
+
+	<!-- ポップアップテンプレート -->
+	<script id="popupTemp" type="text/template">
+		<div class="popupInner">
+			<% if(model.canClose) { %>
+				<span class="closeDefault popupCloseBtn se_cancel TE"></span>
+			<% } %>
+			<% if(model.title) { %>
+				<p id="popupInfoDetailTitle" class="popupTitle common_title"><%= model.title %></p>
+			<% } %>
+
+			<div class="popupTextArea">
+				<%= model.content %>
+			</div>
+			<% if(model.closeBtnText || model.decideBtnText){ %>
+			<table class="popupBtnArea" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<% if(model.closeBtnText){ %>
+					<td>
+						<span class="TE cancelBtn popupCloseBtn btn b_white se_cancel">
+							<span class='b_screen'></span><%= model.closeBtnText %>
+						</span>
+					</td>
+					<% } %>
+					<% if(model.decideBtnText){ %>
+					<td>
+						<span class="TE decideBtn btn b_pink <%= (model.decideLink) ? 'linkBtn se_kettei02' : 'se_decide' %>"<%= (model.decideLink) ? " data-href=" + model.decideLink : "" %>>
+							<span class='b_screen'></span>
+							<%= model.decideBtnText %>
+						</span></td>
+					<% } %>
+				</tr>
+			</table>
+			<% } %>
+		</div>
+	</script>
+
+
+	<script type="text/template" id="TapEffect">
+		<div class="effect01"></div>
+		<div class="effect02"></div>
+		<div class="effect03"></div>
+	</script>
+
+	<!-- コマンドobjectタグ用 -->
+	<div id="commandDiv"></div>
+
+	<!-- base64データ受取用 -->
+	<div id="baseReceive"></div>
+
+	<!-- アンドロイド戻るボタン用 -->
+	<div id="androidBackKey"></div>
+
+	<!-- クエストリタイア時 -->
+	<div id="questRetire"></div>
+
+	<!-- ネイティブ設定系受取用 -->
+	<div id="configCallback"></div>
+
+	<!-- サスペンド復帰用 -->
+	<div id="suspendAwake"></div>
+</body>
+
+</html>

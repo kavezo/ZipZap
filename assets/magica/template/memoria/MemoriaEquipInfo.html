@@ -1,0 +1,109 @@
+<div class='name'>
+	<% if(model.pieceId){ %><%= model.piece.pieceName %><% } %>
+</div>
+
+<% if(model.equipCharaId) { %>
+	<div class="charaIcon">
+		<div class="maskWrap">
+			<img data-nativeimgkey='mini_<%= model.equipCharaId %>_d' data-src='resource/image_native/mini/image/mini_<%= model.equipCharaId %>_d.png'>
+		</div>
+	</div>
+	<div class="equipIcon"></div>
+<% } %>
+<div class="memoriaImg">
+	<% if(model.pieceId) { %>
+		<% var level   = model.level; %>
+		<% var maxLevel = model.maxLevel; %>
+		<span class="lv">Lvl. <%= level %>/<%= maxLevel %></span>
+
+		<img data-nativeimgkey='memoria_<%= model.pieceId %>_s' data-src='resource/image_native/memoria/memoria_<%= model.pieceId %>_s.png' alt=''>
+	<% } %>
+</div>
+<div class='equipMemoriaStatus'>
+	<div class='dtElm'>HP</div>
+	<div class='hp ddElm'><%= (model.hp >= 0) ? model.hp : '' %></div>
+	<div class='dtElm'>ATK</div>
+	<div class='atk ddElm'><%= (model.attack >= 0) ? model.attack : '' %></div>
+	<div class='dtElm'>DEF</div>
+	<div class='def ddElm'><%= (model.defense >= 0) ? model.defense : '' %></div>
+</div>
+
+<div class='memoriaAdditional'>
+	<% if(additional) { %>
+		<% var classTxt; %>
+		<% classTxt = (additional.hp > 0) ? 'plusColor' : 'minusColor'; %>
+		<% txt      = (additional.hp > 0) ? '+' : ''; %>
+		<div class='<%= classTxt %>'>
+			<%= (additional.hp == 0)      ? '' : '(' + txt + additional.hp + ')' %>
+		</div>
+
+		<% classTxt = (additional.attack > 0) ? 'plusColor' : 'minusColor'; %>
+		<% txt      = (additional.attack > 0) ? '+' : ''; %>
+		<div class='<%= classTxt %>'>
+			<%= (additional.attack == 0)  ? '' : '(' + txt + additional.attack + ')' %>
+		</div>
+
+		<% classTxt = (additional.defense > 0) ? 'plusColor' : 'minusColor'; %>
+		<% txt      = (additional.defense > 0) ? '+' : ''; %>
+		<div class='<%= classTxt %>'>
+			<%= (additional.defense == 0) ? '' : '(' + txt + additional.defense + ')' %>
+		</div>
+	<% } %>
+</div>
+
+<div class="lb">
+	<% var lbCount = model.lbCount; %>
+	<% var i = 0; %>
+	<% while(i < 4) { %>
+		<% var classTxt = ''; %>
+		<% if(lbCount > 0) classTxt = 'on'; %>
+
+		<span class="<%= classTxt %>"></span>
+
+		<% lbCount --; %>
+		<% i=(i+1)|0; %>
+	<% } %>
+</div>
+
+<% if(model.piece && model.piece.pieceType === "SKILL"){ %>
+	<div class="intervalTurn c_gold">
+		Turn(s) Until Available&nbsp;<% if(model.lbCount > 3 && model.piece.pieceSkill2){%><%= model.piece.pieceSkill2.intervalTurn %><% }else{ %><%= model.piece.pieceSkill.intervalTurn %><% } %>
+	</div>
+<% } %>
+
+<div class="skillTitle c_purple">
+
+	<% if(model.piece){ %>
+		<p class='c_purple'>
+			<% if(model.lbCount > 3 && model.piece.pieceSkill2){%>
+				<%= model.piece.pieceSkill2.name %>
+			<%}else if(model.piece.pieceSkill){ %>
+				<%= model.piece.pieceSkill.name %>
+			<% }else{ %>-<% } %>
+		</p>
+	<% } %>
+	<% if(model.piece && model.piece.pieceSkill){ %>
+		<img data-nativeimgkey='icon_skill_<%= model.piece.pieceSkill.groupId %>' data-src='resource/image_native/art/icon_skill_<%= model.piece.pieceSkill.groupId %>.png'>
+	<% } %>
+</div>
+
+<div class="skillDescription">
+	<% if(model.piece){ %>
+		<% if(model.lbCount > 3 && model.piece.pieceSkill2){%>
+			<%= model.piece.pieceSkill2.shortDescription %>
+		<%}else if(model.piece.pieceSkill){ %>
+			<%= model.piece.pieceSkill.shortDescription %>
+		<% }else{ %>-<% } %>
+	<% } %>
+
+	<% if(model.eventDescription){ %>
+		<span class='c_red'><%= model.eventDescription %></span>
+	<% } %>
+</div>
+
+<% if(model.equipRemoveFlag){ %>
+	<p id="memoriaEquipBtn" class="btn se_decide sb_gold_02 <%= (model.id) ? '' : 'off' %>">Remove</p>
+<% }else{ %>
+	<p id="memoriaEquipBtn" class="btn se_decide sb_pink2 <%= (model.id) ? '' : 'off' %>">Set</p>
+<% } %>
+

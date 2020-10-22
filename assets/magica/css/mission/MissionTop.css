@@ -1,0 +1,433 @@
+@charset "UTF-8";
+#MissionList {
+  width: 1024px;
+  height: 100%;
+  overflow: hidden; }
+#MissionList .doppelMissionTab.badge span:before {
+  width: 26px;
+  height: 26px;
+  background: url("/magica/resource/image_web/page/mission/badge.png") left top no-repeat;
+  content: "";
+  position: absolute;
+  left: 4px;
+    top: -7px; }
+#MissionList #doppelMission {
+    min-height: 100%;
+  padding-top: 17px;
+    padding-bottom: 80px;
+    display: none; }
+#MissionList #doppelMission .banner {
+  width: 476px;
+  height: 126px;
+  position: relative;
+  margin: 0 auto 20px;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0); }
+#MissionList #doppelMission .banner .img {
+  width: 100%;
+        height: 100%; }
+#MissionList #doppelMission .banner span {
+  width: auto;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 3px;
+  background-color: #f42d9e;
+  display: none;
+  position: absolute;
+  top: -9px;
+  left: -12px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 13px;
+        text-shadow: none; }
+#MissionList #doppelMission .banner.badge span {
+        display: block; }
+#MissionList #doppelMission .banner.comp {
+  pointer-events: none;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0); }
+#MissionList #doppelMission .banner.comp .img {
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-filter: grayscale(70%);
+  position: relative;
+          z-index: 1; }
+#MissionList #doppelMission .banner.comp:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 5px;
+          z-index: 10; }
+#MissionList #doppelMission .banner.comp:after {
+  width: 78px;
+  height: 22px;
+  content: "";
+  display: block;
+  background: url("/magica/resource/image_web/page/mission/icon_mission_clear.png") left top no-repeat;
+          -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-filter: grayscale(0);
+  z-index: 100;
+  position: absolute;
+  top: -10px;
+          left: -12px; }
+#MissionList.doppelMission #doppelMission {
+    display: block; }
+#MissionList #allReserve {
+  width: 130px;
+  height: 40px;
+  position: absolute;
+  top: 81px;
+  right: 57px;
+  line-height: 15px;
+  z-index: 100;
+  -webkit-filter: unset;
+    filter: unset; }
+#MissionList #allReserve.off {
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+  -webkit-filter: grayscale(100%);
+      filter: grayscale(100%); }
+#MissionList #allReserve.hide {
+      display: none; }
+#MissionList #tabBtn {
+    width: 235px;/*MN*/
+    height: -webkit-calc(100% - 90px);
+    padding: 15px 8px 16px 15px;
+  position: absolute;
+  top: 70px;
+    left: 32px; }
+    #MissionList #tabBtn #tabScroll {
+      position: relative; }
+      #MissionList #tabBtn #tabScroll .common_tab {
+        display: block;
+        min-height: 100%;
+        padding-top: 15px; }
+      #MissionList #tabBtn #tabScroll .scrollIndicator {
+        width: 5px;
+        right: 3px; }
+        #MissionList #tabBtn #tabScroll .scrollIndicator .scrollIndicatorInner {
+          width: 5px; }
+#MissionList #tabBtn .btn {
+      width: 200px;/*MN*/
+      margin-bottom: 14px; }
+#MissionList #tabBtn .btn.noDisp {
+        display: none; }
+#MissionList #tabBtn .batch {
+  width: auto;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 3px;
+  background-color: #f42d9e;
+  display: none;
+  position: absolute;
+  top: -6px;
+  left: 4px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 23px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  border-radius: 13px;
+      text-shadow: none; }
+#MissionList #tabBtn .batch.on {
+        display: block; }
+#MissionList.mission1 #mission1 {
+    display: block; }
+#MissionList.mission2 #mission2 {
+    display: block; }
+#MissionList #listWrap {
+  width: 712px;
+  height: -webkit-calc(100% - 90px);
+  padding: 59px 7px 5px 18px;
+  position: absolute;
+  top: 70px;
+    left: 276px; }
+#MissionList #listWrap:after {
+      z-index: 2; }
+#MissionList #listWrap .scrollIndicator {
+      right: 5px; }
+#MissionList #listWrap #missionScrollWrap {
+  width: 100%;
+  height: -webkit-calc(100% - 10px);
+      overflow: hidden; }
+#MissionList #listWrap #listTitle {
+  width: 703px;
+  height: 50px;
+  padding: 5px 0 0 15px;
+  background: url("/magica/resource/image_web/page/mission/mission_header2.png");
+  background-size: 100% 50px;
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  color: #ffffff;
+  text-shadow: -1px -1px 2px #ff4f92, 1px -1px 2px #ff4f92, -1px 1px 2px #ff4f92, 1px 1px 2px #ff4f92, -1px -1px 2px #ff4f92, 1px -1px 2px #ff4f92, -1px 1px 2px #ff4f92, 1px 1px 2px #ff4f92;
+      z-index: 1; }
+#MissionList #listWrap.clear .wrap {
+      display: none; }
+#MissionList #listWrap.clear .wrap.clear {
+        display: block; }
+#MissionList #listWrap.notClear .wrap.clear {
+      display: none; }
+#MissionList #listWrap #filterWrap {
+  width: 150px;
+  position: absolute;
+  top: 10px;
+  right: 120px;
+      z-index: 90; }
+#MissionList #listWrap #filterWrap select {
+  width: 100%;
+  height: 26px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  position: relative;
+  text-align: center;
+  border: 1px solid #b28750;
+  border-radius: 5px;
+        -webkit-appearance: none; }
+#MissionList #listWrap #filterWrap .triangleArrow {
+  width: 45px;
+  height: 26px;
+  background: -webkit-linear-gradient(top, #e5b271 0%, #b28750 100%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border: 2px solid #b28750;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+        z-index: 2px; }
+#MissionList #listWrap #filterWrap .triangleArrow:before {
+  width: 25px;
+  height: 18px;
+  background-image: url("/magica/resource/image_web/common/icon/icon_select_triangle.png");
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  content: "";
+  pointer-events: none;
+          z-index: 3; }
+#MissionList #mission1, #MissionList #mission2, #MissionList .limitedWrap {
+  width: 664px;
+  height: auto;
+  min-height: 100%;
+  padding-right: 0;
+  padding-bottom: 50px;
+  display: none;
+    position: relative; }
+#MissionList #mission1 .noMission, #MissionList #mission2 .noMission, #MissionList .limitedWrap .noMission {
+  width: 100%;
+  padding-left: 18px;
+  position: absolute;
+  top: -webkit-calc(50% - 10px);
+  left: 0;
+  font-size: 20px;
+      text-align: center; }
+#MissionList .limitedWrap.on {
+    display: block; }
+#MissionList #mission1 .missionLimit, #MissionList #mission2 .missionLimit {
+    display: none; }
+#MissionList #dailyTime {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 163px;/*MN*/
+  font-size: 16px;/*MN*/
+  line-height: 20px;
+  text-align: right;
+    z-index: 101; }
+#MissionList.mission1 #dailyTime {
+    display: block; }
+#MissionList #eventTime {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 166px;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: right;
+    z-index: 101; }
+#MissionList #eventTime.on {
+      display: block; }
+#MissionList .wrap {
+  width: 644px;
+  height: 108px;
+  margin: 10px 0 10px 15px;
+    padding: 8px 20px;/*MN*/
+    position: relative; }
+#MissionList .wrap .missionItemWrap {
+  width: 88px;
+  height: 88px;
+  position: absolute;
+  top: 8px;
+      left: 10px; }
+#MissionList .wrap .missionItemWrap .rewardLabel {
+  width: 65px;
+  height: 15px;
+  background-image: url("/magica/resource/image_web/page/mission/result_treasure_bg.png");
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 9px;
+  line-height: 15px;
+  text-align: center;
+  letter-spacing: 4px;
+        text-shadow: none; }
+#MissionList .wrap .missionItemWrap .rewardQuantity {
+  position: absolute;
+  right: -5px;
+  bottom: -8px;
+  font-size: 20px;
+        z-index: 2; }
+#MissionList .wrap .missionItemWrap img {
+  width: 88px;
+  position: absolute;
+  top: 0;
+        left: 0; }
+#MissionList .wrap .missionItemWrap .charaIcon {
+  width: 58px;
+  height: 52px;
+  position: absolute;
+  right: -8px;
+        bottom: -8px; }
+#MissionList .wrap .missionItemWrap .charaIcon.live2d {
+          right: 176px; }
+#MissionList .wrap .missionItemWrap .charaIcon img {
+          max-width: 100%; }
+#MissionList .wrap .missionItemWrap .charaIcon:before {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+          z-index: 100; }
+#MissionList .wrap .missionItemWrap .charaIcon:after {
+  width: 58px;
+  height: 52px;
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 29px);
+  content: "";
+          z-index: 80; }
+#MissionList .wrap .missionItemWrap .charaIcon .maskWrap {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 26px);
+  overflow: hidden;
+  border-radius: 26px;
+          z-index: 90; }
+#MissionList .wrap .missionItemWrap .charaIcon .maskWrap img {
+  width: 60px;
+  height: auto;
+  position: absolute;
+  top: 0;
+            left: -webkit-calc(50% - 30px); }
+
+/*MN*/
+#MissionList .wrap .missionTitleWrap {
+    width: 438px;
+    height: 80px;
+    font-size: 20px;
+    line-height: 24px;
+    vertical-align: middle;
+    display: table-cell;
+    padding: 0 0 26px 100px;
+ }
+#MissionList .wrap .missionGuageWrap {
+  width: 334px;
+  height: 18px;
+  padding-left: 10px;
+  background: url("/magica/resource/image_web/page/chara/bg_exp_gauge_l.png"), url("/magica/resource/image_web/page/chara/bg_exp_gauge_c.png"), url("/magica/resource/image_web/page/chara/bg_exp_gauge_r.png");
+  background-repeat: no-repeat;
+  background-position: 0 0, 15px 0, 318px 0;
+  background-size: 16px 18px, 304px 18px, 16px 18px;
+  position: absolute;
+  bottom: 10px;
+  left: 120px;
+  font-size: 14px;
+  text-align: left;
+      text-shadow: none;
+        z-index: 99;/*MN*/
+ }
+#MissionList .wrap .missionGuageWrap .missionGuageInner {
+  width: 316px;
+  height: 13px;
+  position: absolute;
+  top: 4px;
+        left: 9px; }
+#MissionList .wrap .missionGuageWrap .missionGuageInner .missionGuage {
+  height: 10px;
+  background: url("/magica/resource/image_web/page/memoria/memoria_compose_guage.png");
+  background-size: 100% 10px;
+  position: relative;
+          z-index: 100; }
+
+/*MN*/
+#MissionList .wrap .missionCompleteNum {
+  width: 200px;
+       position: absolute;
+    font-size: 16px;
+    bottom: 26px;
+    left: 180px;
+    text-align: center;
+    z-index: 100;
+    shape-outside: inherit;
+ }
+#MissionList .wrap .missionLimit {
+  position: absolute;
+  top: 3px;
+  right: 20px;
+  color: #333333;
+  font-size: 14px;
+      text-shadow: none; }
+#MissionList .wrap .missionLimit.noLimit {
+        display: none; }
+#MissionList .wrap .missionLimit .limitNum {
+  color: #333333;
+        text-shadow: none; }
+#MissionList .wrap .missionBtn {
+  width: 166px;
+  min-width: 166px;
+  position: absolute;
+  top: 23.5px;
+      right: 10px; }
+#MissionList .wrap .missionBtn:before {
+  width: 166px;
+  display: inline-block;
+  font-size: 20px;
+  text-align: center;
+        content: "Challenge"; }
+#MissionList .wrap .missionBtn.clear:before {
+        content: "Receive"; }
+#MissionList .wrap.clear:before {
+  width: 66px;
+  height: 68px;
+  background: url("/magica/resource/image_web/page/mission/mission_clear.png");
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  content: "";
+      z-index: 2; }
+
+.missionPop .popupTextArea {
+  height: 240px !important; }

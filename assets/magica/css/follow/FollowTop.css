@@ -1,0 +1,430 @@
+#FriendList {
+  width: 1024px;
+  height: 576px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+#FriendList #tabBtn {
+  width: 222px;
+  height: auto;
+  padding: 30px 16px 20px;
+  position: absolute;
+  top: 70px;
+  left: 32px;
+}
+#FriendList #tabBtn .btn {
+  width: 186px;
+  margin-bottom: 14px;
+}
+#FriendList #tabBtn .btn:nth-child(4) {
+  font-size: 14px;
+}
+#FriendList.follow #followListWrap, #FriendList.follow #followSortWrap {
+  display: block;
+}
+#FriendList.follow #pagingWrap, #FriendList.follow #anotherPagingWrap, #FriendList.follow #followSearchTab, #FriendList.follow #searchInput, #FriendList.follow #searchRefresh, #FriendList.follow #rankSearchWrap, #FriendList.follow #countFollowerWrap, #FriendList.follow #countBlockWrap {
+  display: none !important;
+}
+#FriendList.follower #followerListWrap {
+  display: block;
+}
+#FriendList.follower #anotherPagingWrap, #FriendList.follower #followSearchTab, #FriendList.follower #searchInput, #FriendList.follower #followRefresh, #FriendList.follower #searchRefresh, #FriendList.follower #rankSearchWrap, #FriendList.follower #countFollowWrap, #FriendList.follower #countBlockWrap {
+  display: none !important;
+}
+#FriendList.block #blockListWrap {
+  display: block;
+}
+#FriendList.block #pagingWrap, #FriendList.block #followSearchTab, #FriendList.block #searchInput, #FriendList.block #followRefresh, #FriendList.block #searchRefresh, #FriendList.block #rankSearchWrap, #FriendList.block #countFollowWrap, #FriendList.block #countFollowerWrap {
+  display: none !important;
+}
+#FriendList.find #findListWrap {
+  display: block;
+}
+#FriendList.find #pagingWrap, #FriendList.find #anotherPagingWrap, #FriendList.find #countFollowWrap, #FriendList.find #countFollowerWrap, #FriendList.find #countBlockWrap, #FriendList.find #followRefresh {
+  display: none !important;
+}
+#FriendList #listWrap {
+  width: 716px;
+  height: -webkit-calc(100% - 134px);
+  padding: 42px 5px 20px;
+  position: absolute;
+  top: 114px;
+  left: 276px;
+}
+#FriendList #listWrap .hiddenWrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#FriendList #listWrap .hiddenWrap .scrollIndicator {
+  right: 8px;
+}
+#FriendList #listWrap .hiddenWrap .noUser {
+  width: 350px;
+  height: 30px;
+  position: absolute;
+  top: -webkit-calc(50% - 8px);
+  left: -webkit-calc(50% - 182px);
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+}
+#FriendList.follower #listWrap .hiddenWrap {
+  height: -webkit-calc(100% - 43px);
+  min-height: -webkit-calc(100% - 43px);
+}
+#FriendList #searchInput {
+  width: 180px;
+  height: 30px;
+  padding: 0 10px;
+  background-color: #ffffff;
+  display: none;
+  position: absolute;
+  top: 70px;
+  right: 136px;
+  color: #333333;
+  border: 2px solid #c6a882;
+  border-radius: 5px;
+  box-shadow: none !important;
+  text-shadow: none;
+}
+#FriendList #searchInput.on {
+  display: block;
+}
+#FriendList #followSortWrap {
+  width: 230px;
+}
+#FriendList #rankSearchWrap {
+  width: 180px;
+}
+#FriendList #rankSearchWrap, #FriendList #followSortWrap {
+  height: 30px;
+  display: none;
+  position: absolute;
+  top: 71px;
+  right: 136px;
+}
+#FriendList #rankSearchWrap.on, #FriendList #followSortWrap.on {
+  display: block;
+}
+#FriendList #rankSearchWrap select, #FriendList #followSortWrap select {
+  width: 100%;
+  height: 30px;
+  padding-left: 20px;
+  background-color: #ffffff;
+  position: relative;
+  text-align: center;
+  border: 2px solid #b28750;
+  border-radius: 5px;
+  -webkit-appearance: none;
+}
+#FriendList #rankSearchWrap .triangleArrow, #FriendList #followSortWrap .triangleArrow {
+  width: 45px;
+  height: 30px;
+  background: -webkit-linear-gradient(top, #e5b271 0%, #b28750 100%);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border: 2px solid #b28750;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 2px;
+}
+#FriendList #rankSearchWrap .triangleArrow:before, #FriendList #followSortWrap .triangleArrow:before {
+  width: 25px;
+  height: 18px;
+  background-image: url("/magica/resource/image_web/common/icon/icon_select_triangle.png");
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  content: "";
+  pointer-events: none;
+  z-index: 3;
+}
+#FriendList #followSearchTab {
+  width: 686px;
+  height: 30px;
+  display: -webkit-flex;
+  display: flex;
+  position: absolute;
+  top: 70px;
+  left: 276px;
+  -webkit-flex-wrap: flex-start;
+  flex-wrap: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+#FriendList #followSearchTab li {
+  width: 110px;
+  min-width: 110px;
+  height: 36px;
+  margin-right: 2px;
+  background-size: 90px 100%;
+  position: relative;
+}
+#FriendList #followSearchTab li:before, #FriendList #followSearchTab li:after {
+  width: 15px;
+}
+#FriendList #followSearchTab li span {
+  height: 36px;
+  position: absolute;
+  font-size: 14px;
+  line-height: 36px;
+}
+#FriendList #followSearchTab li span.breakWrap {
+  padding-top: 4px;
+  font-size: 12px;
+  line-height: 14px;
+}
+#FriendList #searchRefresh, #FriendList #followRefresh {
+  position: absolute;
+  top: 68px;
+  right: 30px;
+}
+#FriendList #countFollowWrap, #FriendList #countFollowerWrap, #FriendList #countBlockWrap {
+  width: 150px;
+  padding: 0 30px 0 55px;
+  position: absolute;
+  top: 70px;
+  left: 276px;
+  text-align: right;
+}
+#FriendList #countFollowWrap:before, #FriendList #countFollowerWrap:before, #FriendList #countBlockWrap:before {
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  top: -6px;
+  left: 0;
+  content: "";
+  border: 3px solid #b28750;
+  border-radius: 8px;
+}
+#FriendList #countFollowWrap:before {
+  background: url("/magica/resource/image_web/page/follow/icon_follow_whiteframe.png") center center;
+}
+#FriendList #countFollowerWrap:before {
+  background: url("/magica/resource/image_web/page/follow/icon_follower_whiteframe.png") center center;
+}
+#FriendList #countBlockWrap:before {
+  background: url("/magica/resource/image_web/page/follow/icon_block_whiteframe.png") center center;
+}
+#FriendList #followListWrap, #FriendList #followerListWrap, #FriendList #blockListWrap, #FriendList #findListWrap {
+  width: 720px;
+  height: auto;
+  min-height: 100%;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  display: none;
+  position: relative;
+}
+#FriendList .infoWrap .followIcon, #FriendList .infoWrap .followerIcon, #FriendList .infoWrap .blockIcon {
+  display: none;
+}
+#FriendList #followListWrap .followIcon {
+  display: block;
+}
+#FriendList #followListWrap .followerIcon.on, #FriendList #followListWrap .blockIcon.on {
+  display: block;
+}
+#FriendList #followListWrap .followBtn {
+  display: none;
+}
+#FriendList #followerListWrap .followerIcon {
+  display: block;
+}
+#FriendList #followerListWrap .followIcon.on, #FriendList #followerListWrap .blockIcon.on {
+  display: block;
+}
+#FriendList #blockListWrap .blockIcon {
+  display: block;
+}
+#FriendList #blockListWrap .followerIcon.on, #FriendList #blockListWrap .followIcon.on {
+  display: block;
+}
+#FriendList .wrap {
+  width: 667px;
+  height: 124px;
+  margin: 10px auto;
+  background-image: url("/magica/resource/image_web/page/follow/follow_wrap_bg_2.png");
+  position: relative;
+}
+#FriendList .wrap .rankingEmblem {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  left: -8px;
+  bottom: 0px;
+  display: block;
+}
+#FriendList .wrap .rankingEmblem.rankB1 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_1.png");
+  background-size: 100% 100%;
+}
+#FriendList .wrap .rankingEmblem.rankB2 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_2.png");
+  background-size: 100% 100%;
+}
+#FriendList .wrap .rankingEmblem.rankB3 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_b_3.png");
+  background-size: 100% 100%;
+}
+#FriendList .wrap .rankingEmblem.rankA1 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_1.png");
+  background-size: 100% 100%;
+}
+#FriendList .wrap .rankingEmblem.rankA2 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_2.png");
+  background-size: 100% 100%;
+}
+#FriendList .wrap .rankingEmblem.rankA3 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_a_3.png");
+  background-size: 100% 100%;
+}
+#FriendList .wrap .rankingEmblem.rankS1 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_1.png");
+  background-size: 100% 100%;
+}
+#FriendList .wrap .rankingEmblem.rankS2 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_2.png");
+  background-size: 100% 100%;
+}
+#FriendList .wrap .rankingEmblem.rankS3 {
+  background: url("/magica/resource/image_web/event/arenaranking/common/emblem/emblem_s_3.png");
+  background-size: 100% 100%;
+}
+#FriendList .wrap .followImage {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+#FriendList .wrap .userCharaIcon {
+  width: 90px;
+  height: 90px;
+  display: block;
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  vertical-align: top;
+}
+#FriendList .wrap .userCharaIcon .att, #FriendList .wrap .userCharaIcon .rank, #FriendList .wrap .userCharaIcon .star, #FriendList .wrap .userCharaIcon .bg {
+  width: 90px;
+  height: 90px;
+  background-size: 90px 90px;
+}
+#FriendList .wrap .userCharaIcon img {
+  width: 86px;
+  height: 86px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 45px;
+  z-index: 5;
+}
+#FriendList .wrap .leaderName {
+  display: block;
+  position: absolute;
+  top: 52px;
+  left: 123px;
+}
+#FriendList .wrap .iconWrap {
+  width: 70px;
+  height: 32px;
+  position: absolute;
+  top: 12px;
+  right: 18px;
+}
+#FriendList .wrap .iconWrap .followIcon, #FriendList .wrap .iconWrap .followerIcon, #FriendList .wrap .iconWrap .blockIcon {
+  width: 32px;
+  height: 32px;
+}
+#FriendList .wrap .iconWrap .followIcon {
+  background-image: url("/magica/resource/image_web/page/follow/icon_follow_whiteframe.png");
+  position: absolute;
+  left: 0;
+}
+#FriendList .wrap .iconWrap .followerIcon {
+  background-image: url("/magica/resource/image_web/page/follow/icon_follower_whiteframe.png");
+  position: absolute;
+  left: 39px;
+}
+#FriendList .wrap .iconWrap .blockIcon {
+  background-image: url("/magica/resource/image_web/page/follow/icon_block_whiteframe.png");
+  position: absolute;
+  right: 0;
+}
+#FriendList .wrap .userLevel {
+  position: absolute;
+  top: 18px;
+  left: 125px;
+  font-size: 18px;
+}
+#FriendList .wrap .userName {
+  position: absolute;
+  top: 15px;
+  left: 223px;
+  font-size: 22px;
+}
+#FriendList .wrap .userLevel, #FriendList .wrap .userName {
+  color: #ffffff;
+  text-shadow: -1px -1px 1px #615188, 1px -1px 1px #615188, -1px 1px 1px #615188, 1px 1px 1px #615188, -1px -1px #615188, 1px -1px #615188, -1px 1px #615188, 1px 1px #615188, -1px -1px 2px #615188, 1px -1px 2px #615188, -1px 1px 2px #615188, 1px 1px 2px #615188, -1px -1px 2px #615188, 1px -1px 2px #615188, -1px 1px 2px #615188, 1px 1px 2px #615188, -1px -1px 3px #615188, 1px -1px 3px #615188, -1px 1px 3px #615188, 1px 1px 3px #615188;
+}
+#FriendList .wrap .loginTime {
+  position: absolute;
+  top: 50px;/*MN*/
+  left: 379px;
+  font-size: 12px;/*MN*/
+}
+#FriendList .wrap .blockBtn, #FriendList .wrap .approvalBtn {
+  position: absolute;
+  top: 12px;
+  right: 40px;
+}
+#FriendList .wrap .deleteBtn, #FriendList .wrap .refusalBtn {
+  position: absolute;
+  top: 83px;
+  right: 40px;
+}
+#FriendList .wrap .deletePendingBtn {
+  position: absolute;
+  top: 48px;
+  right: 40px;
+}
+#FriendList .wrap .infoDetail {
+  width: 125px;
+  height: 35px;
+  margin-top: 10px;
+  background-image: url("/magica/resource/image_web/page/memoria/memoria_sprite1.png");
+  background-position: -236px -65px;
+  display: block;
+  font-size: 14px;
+  line-height: 35px;
+  text-align: center;
+}
+#FriendList .wrap .supportCheckBtn {
+  width: 128px;/*MN*/
+  position: absolute;
+  top: 11px;
+  right: 100px;
+}
+#FriendList .wrap .messageWrap {
+  max-width: 384px;
+  height: 38px;
+  position: absolute;
+  bottom: 5px;
+  left: 122px;
+  overflow: hidden;
+  line-height: 19px;
+}
+#FriendList .wrap .followBtn {
+  width: 120px;
+  position: absolute;
+  right: 12px;/*MN*/
+  bottom: 10px;/*MN*/
+  filter: none;
+}
+#FriendList .wrap .followBtn.already {
+  display: none;
+}

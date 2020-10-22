@@ -1,0 +1,2075 @@
+{
+    "userCardList": [
+        {
+            "id": "f3956d9a-f6f8-11ea-adac-0206fb316737",
+            "userId": "USER_ID_GOES_HERE",
+            "cardId": 10011,
+            "displayCardId": 10011,
+            "revision": 0,
+            "attack": 878,
+            "defense": 1157,
+            "hp": 3068,
+            "level": 1,
+            "experience": 0,
+            "magiaLevel": 1,
+            "enabled": true,
+            "customized1": false,
+            "customized2": false,
+            "createdAt": "CREATION_TIME_GOES_HERE",
+            "card": {
+                "cardId": 10011,
+                "charaNo": 1001,
+                "miniCharaNo": 100100,
+                "magiaCharaNo": 100100,
+                "cardName": "Iroha Tamaki",
+                "rank": "RANK_1",
+                "attributeId": "LIGHT",
+                "initialType": "HEAL",
+                "growthType": "BALANCE",
+                "attack": 878,
+                "defense": 1157,
+                "hp": 3068,
+                "rateGainMpAtk": 1000,
+                "rateGainMpDef": 1200,
+                "magiaId": 10011,
+                "cardMagia": {
+                    "id": 10011,
+                    "groupId": 1014,
+                    "name": "Strada Futuro",
+                    "shortDescription": "Damages All Enemies [I] / Revive",
+                    "artId1": 100300101,
+                    "art1": {
+                        "artId": 100300101,
+                        "verbCode": "ATTACK",
+                        "targetId": "ALL",
+                        "effectValue": 3000,
+                        "growPoint": 100
+                    },
+                    "artId2": 200100601,
+                    "art2": {
+                        "artId": 200100601,
+                        "verbCode": "RESURRECT",
+                        "targetId": "ONE",
+                        "effectValue": 200,
+                        "growPoint": 10
+                    }
+                },
+                "skillId": 10011,
+                "cardSkill": {
+                    "id": 10011,
+                    "groupId": 1078,
+                    "name": "We're Together, We'll Be Fine",
+                    "shortDescription": "Heal [I]",
+                    "artId1": 200400401,
+                    "art1": {
+                        "artId": 200400401,
+                        "verbCode": "HEAL",
+                        "effectCode": "HP",
+                        "targetId": "CONNECT",
+                        "effectValue": 300,
+                        "growPoint": 20
+                    }
+                },
+                "pieceSkillList": [],
+                "maxPieceSkillList": [],
+                "commandType1": "MPUP",
+                "commandType2": "MPUP",
+                "commandType3": "RANGE_H",
+                "commandType4": "RANGE_H",
+                "commandType5": "CHARGE",
+                "illustrator": "aokiume",
+                "cardCustomize": {
+                    "cardId": 10011,
+                    "giftId1": 141,
+                    "gift1": {
+                        "id": 141,
+                        "name": "Light Orb",
+                        "attributeId": "LIGHT",
+                        "rank": 1,
+                        "rankGift": "RANK_1",
+                        "price": 500
+                    },
+                    "giftNum1": 2,
+                    "bonusCode1": "ATTACK",
+                    "bonusNum1": 20,
+                    "giftId2": 301,
+                    "gift2": {
+                        "id": 301,
+                        "name": "Swallowtail Feather",
+                        "rank": 1,
+                        "rankGift": "RANK_1",
+                        "price": 1000
+                    },
+                    "giftNum2": 2,
+                    "bonusCode2": "BLAST",
+                    "bonusNum2": 10
+                }
+            }
+        }
+    ],
+    "userFormationSheetList": [
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "formationSheetId": 111,
+            "createdAt": "CREATION_TIME_GOES_HERE",
+            "formationSheet": {
+                "id": 111,
+                "name": "Brave Echelon",
+                "description": "Boosts the Center",
+                "sheetType": 6,
+                "place1": "ALL_ATTACK_UP0_0",
+                "place3": "ALL_ATTACK_UP0_0",
+                "place5": "ALL_ATTACK_UP1_100,ALL_DEFENSE_UP1_100",
+                "place7": "ALL_ATTACK_UP0_0",
+                "place9": "ALL_ATTACK_UP0_0"
+            }
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "formationSheetId": 121,
+            "createdAt": "CREATION_TIME_GOES_HERE",
+            "formationSheet": {
+                "id": 121,
+                "name": "Bright Phalanx",
+                "description": "Boosts the Front Center + Rear Center",
+                "sheetType": 2,
+                "place1": "ALL_ATTACK_UP0_0",
+                "place2": "ALL_DEFENSE_UP1_100",
+                "place3": "ALL_ATTACK_UP0_0",
+                "place5": "ALL_ATTACK_UP0_0",
+                "place8": "ALL_ATTACK_UP1_100"
+            }
+        }
+    ],
+    "userStatusList": [
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "statusId": "MAX_FOLLOW",
+            "point": 10,
+            "checkedAt": "CREATION_TIME_GOES_HERE",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "statusId": "CP",
+            "point": 5,
+            "checkedAt": "CREATION_TIME_GOES_HERE",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "statusId": "ACP",
+            "point": 20,
+            "checkedAt": "CREATION_TIME_GOES_HERE",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "statusId": "BTP",
+            "point": 5,
+            "checkedAt": "CREATION_TIME_GOES_HERE",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "statusId": "RP",
+            "point": 10,
+            "checkedAt": "CREATION_TIME_GOES_HERE",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "statusId": "MAX_CP",
+            "point": 5,
+            "checkedAt": "CREATION_TIME_GOES_HERE",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "statusId": "MAX_RP",
+            "point": 10,
+            "checkedAt": "CREATION_TIME_GOES_HERE",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "statusId": "MAX_ACP",
+            "point": 20,
+            "checkedAt": "CREATION_TIME_GOES_HERE",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "statusId": "MAX_BTP",
+            "point": 5,
+            "checkedAt": "CREATION_TIME_GOES_HERE",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        }
+    ],
+    "userSectionList": [
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "sectionId": 101101,
+            "section": {
+                "sectionId": 101101,
+                "questType": "MAIN",
+                "genericId": 11,
+                "genericIndex": 1,
+                "areaMapId": 11012,
+                "imagePath": "21061",
+                "areaDetailName": "Shinsei Chuo Station",
+                "title": "The Small Kyubey",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "Could that Kyubey be the cause of my dreams about that girl?",
+                "outline": "Iroha Tamaki has been plagued with dreams of a strange girl since she came to Kamihama City. Each time she meets this girl in her dreams, she feels something in her chest, like she's just on the verge of remembering something... She visits Kamihama City frequently now, in the hopes of finding the source of these mysterious dreams.",
+                "ap": 5,
+                "difficulty": 1,
+                "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                "clearReward": {
+                    "presentType": "ITEM",
+                    "quantity": 5,
+                    "itemId": "PRESENTED_MONEY",
+                    "item": {
+                        "itemCode": "PRESENTED_MONEY",
+                        "treasureChestColor": "GOLD"
+                    },
+                    "displayName": "Magia Stone"
+                },
+                "openEnemy": "101,102,103,104",
+                "openEnemyList": [
+                    {
+                        "enemyId": 101,
+                        "enemyNo": 6400,
+                        "type": 1,
+                        "name": "Chairperson Witch",
+                        "title": "Nature: Bystander",
+                        "description": "This Witch spins spider-like threads to create its own special school inside its Labyrinth. Before turning into a Witch, she was a serious student that didn't stand out, so she continues to repeat those dreary school days together with her Familiars. Even now, if she hears the school bell announcing the end of the day, she may head home, wherever that may be. When humans wander into her Labyrinth, they fall endlessly and eventually melt into the sky, feeding her. She does not attack anyone directly unless they are a scary intruder who disturbs her daily routine.",
+                        "designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)"
+                    },
+                    {
+                        "enemyId": 102,
+                        "enemyNo": 7400,
+                        "type": 2,
+                        "name": "Chairperson Witch Minion",
+                        "title": "Role: Classmate",
+                        "description": "Although they glide gracefully on ice skates, these familiars are just mindless puppets on wires being manipulated by their Witch. When the Witch was still a girl, she always hung her head in shame, so it is enough for her if her classmates have legs. Since they don't need school uniform shirts, their unneeded tops hang on clotheslines throughout the Labyrinth. Since as a girl the Witch was always looking out the window in class, the classrooms in her Labyrinth are minimalistic to an extreme, but judging from the indoor shoes that her Familiars wear, it is indeed indoors.",
+                        "designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)"
+                    },
+                    {
+                        "enemyId": 103,
+                        "enemyNo": 6103,
+                        "type": 1,
+                        "name": "Sandbox Witch",
+                        "title": "Nature: Immersion",
+                        "description": "This Witch has strong preferences and never compromises. She is trying to build an acceptable sandcastle, but she can never satisfy herself. She has destroyed and rebuilt her castles so many times she doesn't even remember what she wanted to create in the first place. When she does manage to make a nice castle, she feels much better for a while, but ends up destroying it again. She looks like a young lady but acts like a little child. If she is interrupted when she is playing with her sand, she cries and goes on a rampage.",
+                        "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                    },
+                    {
+                        "enemyId": 104,
+                        "enemyNo": 7103,
+                        "type": 2,
+                        "name": "Sandbox Witch Minion",
+                        "title": "Role: Toy Train",
+                        "description": "These Familiars are always playing amongst themselves. A quirk of theirs is that as they roll around, all of the things on the ground stick to their bodies. As they do this their Witch collects the debris without them noticing. When their Witch is coming up with a plan for her next castle, they come to her aid. But soon they realize that it is impossible to satisfy her, no matter how hard they try, so they get bored and stray away.",
+                        "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                    }
+                ]
+            },
+            "canPlay": true,
+            "cleared": false,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "sectionId": 310011,
+            "section": {
+                "sectionId": 310011,
+                "questType": "CHARA",
+                "genericId": 1001,
+                "genericIndex": 1,
+                "imagePath": "11061",
+                "title": "Nostalgic Cuisine",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "Grief Seeds... I don't really have that many of them... I wonder how much stronger I can really get?",
+                "ap": 8,
+                "difficulty": 10,
+                "clearRewardCode": "GEM_1001_5",
+                "clearReward": {
+                    "presentType": "GEM",
+                    "quantity": 5,
+                    "genericId": 1001,
+                    "displayName": "Iroha Tamaki"
+                },
+                "openEnemyList": []
+            },
+            "canPlay": true,
+            "cleared": false,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "sectionId": 310014,
+            "section": {
+                "sectionId": 310014,
+                "questType": "CHARA",
+                "genericId": 1001,
+                "genericIndex": 4,
+                "imagePath": "21251",
+                "title": "Iroha's Doppel",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "…",
+                "ap": 20,
+                "difficulty": 80,
+                "clearRewardCode": "DOPPEL_100100",
+                "clearReward": {
+                    "presentType": "DOPPEL",
+                    "quantity": 1,
+                    "genericId": 100100,
+                    "displayName": "Doppel of Silence"
+                },
+                "openConditionMagiaLevel": 5,
+                "openConditionRank": "RANK_5",
+                "openEnemyList": [],
+                "openDate": "2020/06/15 00:10:00"
+            },
+            "canPlay": false,
+            "cleared": false,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "sectionId": 310012,
+            "section": {
+                "sectionId": 310012,
+                "questType": "CHARA",
+                "genericId": 1001,
+                "genericIndex": 2,
+                "imagePath": "21202",
+                "title": "Thinking of Her",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "Isn't it about time Felicia came back?",
+                "ap": 12,
+                "difficulty": 30,
+                "clearRewardCode": "LIVE2D_1001_01",
+                "clearReward": {
+                    "presentType": "LIVE2D",
+                    "quantity": 1,
+                    "genericCode": "01",
+                    "genericId": 1001,
+                    "displayName": "Iroha Tamaki's [Kamihama University Affiliated School Uniform]"
+                },
+                "openConditionSectionId": 101407,
+                "openConditionSection": {
+                    "sectionId": 101407,
+                    "questType": "MAIN",
+                    "genericId": 14,
+                    "genericIndex": 7,
+                    "secret": "njNzO",
+                    "areaMapId": 13013,
+                    "imagePath": "13043",
+                    "areaDetailName": "Sankyo Ward - Streets",
+                    "title": "Iroha's New Life...",
+                    "charaId": 1001,
+                    "charaName": "Iroha Tamaki",
+                    "defaultCardId": 10011,
+                    "message": "Thank goodness it all ended up＠okay. Now I just need to find＠somewhere to stay...",
+                    "outline": "Iroha's team was plagued with bad luck. They kept fighting and discovered the source: an Uwasa, Rhyton. Falling rocks made it hard to fight, but Felicia somehow reached the Uwasa. As time ticked away, Felicia flung the Uwasa up, giving an opening for Iroha's arrow. Though they managed to defeat it, their relief was short-lived. A girl appeared. Yachiyo couldn't believe it: It was her best friend, Mifuyu Azusa. Part of the Wings of the Magius, she left with the Amane sisters.",
+                    "ap": 9,
+                    "difficulty": 40,
+                    "clearRewardCode": "GEM_1001_5",
+                    "clearReward": {
+                        "presentType": "GEM",
+                        "quantity": 5,
+                        "genericId": 1001,
+                        "displayName": "Iroha Tamaki"
+                    },
+                    "openEnemy": "124,125",
+                    "openEnemyList": [
+                        {
+                            "enemyId": 124,
+                            "enemyNo": 6004,
+                            "type": 3,
+                            "name": "Uwasa of the Misery Rhyton",
+                            "description": "Have you heard? Has anyone told you? The Rumor of the Misery Rhyton. Students from Sankyoin Academy are known for excelling in sports and studies. The secret lies in a large cup hidden underground! You can pour in any kind of misery, like accidents, stress, or even stomachaches! But beware, the cup is already full! The students in Sankyo Ward are saying the misery has started to overflow, so the cup decided to give back all that misery! What a disaster!",
+                            "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+                            "openDate": "2019/07/16 00:00:00"
+                        },
+                        {
+                            "enemyId": 125,
+                            "enemyNo": 7004,
+                            "type": 3,
+                            "name": "Uwasa of the Misery Owl",
+                            "description": "Have you heard? Has anyone told you? The Rumor of the Misery Owl. When you're tired and thirsty, a water station appears right in front of you! But beware! It's an illusion created by the Misery Owl that wants to make everyone absolutely miserable! But the students in Sankyo Ward are saying it also offers follow-up alerts! The Misery Owl is happy to let you know how much time you have left until calamity strikes! What a convenient service!",
+                            "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+                            "openDate": "2019/07/16 00:00:00"
+                        }
+                    ],
+                    "openDate": "2019/07/23 03:00:00"
+                },
+                "openConditionChapter": {
+                    "chapterId": 14,
+                    "partNo": 1,
+                    "chapterNo": 4,
+                    "chapterType": "NORMAL",
+                    "questType": "MAIN",
+                    "chapterNoForView": "4",
+                    "title": "Guardians of the Uwasa",
+                    "sectionCount": 7
+                },
+                "openConditionCharaBondsPt": 2,
+                "openEnemyList": []
+            },
+            "canPlay": false,
+            "cleared": false,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "sectionId": 310013,
+            "section": {
+                "sectionId": 310013,
+                "questType": "CHARA",
+                "genericId": 1001,
+                "genericIndex": 3,
+                "imagePath": "21202",
+                "title": "Welcome Home",
+                "charaId": 1001,
+                "charaName": "Iroha Tamaki",
+                "defaultCardId": 10011,
+                "message": "Phew… Thank goodness! Dinner should be done by the time you two get back.",
+                "ap": 16,
+                "difficulty": 50,
+                "clearRewardCode": "PIECE_1073_1",
+                "clearReward": {
+                    "presentType": "PIECE",
+                    "quantity": 1,
+                    "genericId": 1073,
+                    "piece": {
+                        "pieceId": 1073,
+                        "pieceName": "Detailed Recipe",
+                        "rank": "RANK_3"
+                    },
+                    "displayName": "Detailed Recipe"
+                },
+                "openConditionSectionId": 101505,
+                "openConditionSection": {
+                    "sectionId": 101505,
+                    "questType": "MAIN",
+                    "genericId": 15,
+                    "genericIndex": 5,
+                    "secret": "9ZkQS",
+                    "areaMapId": 14013,
+                    "imagePath": "14051",
+                    "areaDetailName": "In Front of the Radio Tower",
+                    "title": "Lurking in the Labyrinth",
+                    "charaId": 1001,
+                    "charaName": "Iroha Tamaki",
+                    "defaultCardId": 10011,
+                    "message": "Don't worry, Sana!＠I'm coming for you!",
+                    "outline": "Iroha learned the Radio Wave Girl's name, Sana Futaba, from Tsuruno's group. After discussing it with Yachiyo, she sent a reply to the strange text messages. The sender was an Uwasa named Ai, who was confining Sana. Ai told Iroha she wanted her to save Sana, and after some research, Iroha found a website about her. Ai was the Uwasa from the \"Rumor of the Anonymous A.I.\". Ai sent Iroha some memories of Sana, so they believed her and decided to go into \"Endless Solitude\"...",
+                    "ap": 8,
+                    "difficulty": 36,
+                    "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+                    "clearReward": {
+                        "presentType": "ITEM",
+                        "quantity": 5,
+                        "itemId": "PRESENTED_MONEY",
+                        "item": {
+                            "itemCode": "PRESENTED_MONEY",
+                            "treasureChestColor": "GOLD"
+                        },
+                        "displayName": "Magia Stone"
+                    },
+                    "openEnemy": "128,129",
+                    "openEnemyList": [
+                        {
+                            "enemyId": 128,
+                            "enemyNo": 6005,
+                            "type": 3,
+                            "name": "Uwasa of the Anonymous AI",
+                            "description": "Have you heard? Has anyone told you? The Rumor of the Anonymous AI. Ding! It's a suspicious message from an unknown sender! That's a trap set by the Anonymous AI that wants to lure you in! It learned this malicious behavior in the digital world and now it's all alone. People in Chuo Ward are saying it won't let go of its prisoner! What a stand-alone!",
+                            "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+                            "openDate": "2019/08/06 00:00:00"
+                        },
+                        {
+                            "enemyId": 129,
+                            "enemyNo": 7005,
+                            "type": 3,
+                            "name": "Uwasa of the Anonymous Message",
+                            "description": "Have you heard? Has anyone told you? The Rumor of the Anonymous E-Mail! It sends 1 message, then 100, and 1,000! It's the postman that carries these messages for the Anonymous AI. It attaches a paper airplane to its back with a message written on it and gets blown away. Then, ding! Everyone receives an anonymous message! The people in Chuo Ward are saying sometimes it even shows its face on your screen. Who IS that?!",
+                            "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+                            "openDate": "2019/08/06 00:00:00"
+                        }
+                    ],
+                    "openDate": "2019/08/20 03:10:00"
+                },
+                "openConditionChapter": {
+                    "chapterId": 15,
+                    "partNo": 1,
+                    "chapterNo": 5,
+                    "chapterType": "NORMAL",
+                    "questType": "MAIN",
+                    "chapterNoForView": "5",
+                    "title": "Endless Solitude",
+                    "sectionCount": 7
+                },
+                "openConditionCharaBondsPt": 3,
+                "openEnemyList": []
+            },
+            "canPlay": false,
+            "cleared": false,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        }
+    ],
+    "resultCode": "success",
+    "userQuestBattleList": [
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 10110152,
+            "questBattle": {
+                "questBattleId": 10110152,
+                "sectionId": 101101,
+                "sectionIndex": 2,
+                "questBattleType": "HARD",
+                "bossFlag": false,
+                "npcHelpId": "126",
+                "npcHelpNameHidden": true,
+                "npcHelpNameQuestHidden": true,
+                "npcHelpDisplayHidden": true,
+                "npcHelpSupportHidden": false,
+                "startStory": "101101-2",
+                "endStory": "101101-4",
+                "questStory": "101101-3",
+                "storyWaveIndex": 1,
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "ap": 15,
+                "difficulty": 60,
+                "exp": 150,
+                "cardExp": 225,
+                "baseBondsPt": 120,
+                "riche": 1200,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "NOT_CONTINUE",
+                "missionMaster3": {
+                    "description": "Clear without using a Continue"
+                },
+                "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "openDate": "2018/01/15 15:10:00",
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 10110153,
+            "questBattle": {
+                "questBattleId": 10110153,
+                "sectionId": 101101,
+                "sectionIndex": 3,
+                "questBattleType": "HARD",
+                "bossFlag": false,
+                "npcHelpId": "126",
+                "npcHelpNameHidden": true,
+                "npcHelpNameQuestHidden": true,
+                "npcHelpDisplayHidden": false,
+                "npcHelpSupportHidden": false,
+                "startStory": "101101-5",
+                "endStory": "101101-7",
+                "questStory": "101101-6",
+                "storyWaveIndex": 1,
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "ap": 15,
+                "difficulty": 60,
+                "exp": 150,
+                "cardExp": 225,
+                "baseBondsPt": 120,
+                "riche": 1200,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "NOT_CONTINUE",
+                "missionMaster3": {
+                    "description": "Clear without using a Continue"
+                },
+                "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "openDate": "2018/01/15 15:10:00",
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100121,
+            "questBattle": {
+                "questBattleId": 3100121,
+                "sectionId": 310012,
+                "sectionIndex": 1,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "startStory": "310012-1",
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "exp": 72,
+                "cardExp": 60,
+                "baseBondsPt": 162,
+                "riche": 912,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100123,
+            "questBattle": {
+                "questBattleId": 3100123,
+                "sectionId": 310012,
+                "sectionIndex": 3,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "startStory": "310012-3",
+                "endStory": "310012-4",
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "exp": 72,
+                "cardExp": 60,
+                "baseBondsPt": 162,
+                "riche": 912,
+                "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 242,
+                "dropItem1": {
+                    "dropItemId": 242,
+                    "rewardCode1": "GIFT_242_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE",
+                    "DARK"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100122,
+            "questBattle": {
+                "questBattleId": 3100122,
+                "sectionId": 310012,
+                "sectionIndex": 2,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "endStory": "310012-2",
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "exp": 72,
+                "cardExp": 60,
+                "baseBondsPt": 162,
+                "riche": 912,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100113,
+            "questBattle": {
+                "questBattleId": 3100113,
+                "sectionId": 310011,
+                "sectionIndex": 3,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "startStory": "310011-3",
+                "endStory": "310011-4",
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "exp": 40,
+                "cardExp": 40,
+                "baseBondsPt": 96,
+                "riche": 552,
+                "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 241,
+                "dropItem1": {
+                    "dropItemId": 241,
+                    "rewardCode1": "GIFT_241_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE",
+                    "DARK"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100112,
+            "questBattle": {
+                "questBattleId": 3100112,
+                "sectionId": 310011,
+                "sectionIndex": 2,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "startStory": "310011-2",
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "exp": 40,
+                "cardExp": 40,
+                "baseBondsPt": 96,
+                "riche": 552,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 10110151,
+            "questBattle": {
+                "questBattleId": 10110151,
+                "sectionId": 101101,
+                "sectionIndex": 1,
+                "questBattleType": "HARD",
+                "bossFlag": false,
+                "startStory": "101101-1",
+                "storyWaveIndex": 0,
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "ap": 15,
+                "difficulty": 60,
+                "exp": 150,
+                "cardExp": 225,
+                "baseBondsPt": 120,
+                "riche": 1200,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "NOT_CONTINUE",
+                "missionMaster3": {
+                    "description": "Clear without using a Continue"
+                },
+                "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "openDate": "2018/01/15 15:10:00",
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100141,
+            "questBattle": {
+                "questBattleId": 3100141,
+                "sectionId": 310014,
+                "sectionIndex": 1,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "placeId": "21251",
+                "bgm": "bgm02_anime07",
+                "bossBgm": "bgm02_anime07",
+                "consumeType": "NORMAL",
+                "exp": 120,
+                "cardExp": 100,
+                "baseBondsPt": 300,
+                "riche": 1760,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "openDate": "2020/06/15 00:10:00",
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100111,
+            "questBattle": {
+                "questBattleId": 3100111,
+                "sectionId": 310011,
+                "sectionIndex": 1,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "endStory": "310011-1",
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "exp": 40,
+                "cardExp": 40,
+                "baseBondsPt": 96,
+                "riche": 552,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100143,
+            "questBattle": {
+                "questBattleId": 3100143,
+                "sectionId": 310014,
+                "sectionIndex": 3,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "placeId": "21251",
+                "bgm": "bgm02_anime07",
+                "bossBgm": "bgm02_anime07",
+                "consumeType": "NORMAL",
+                "exp": 120,
+                "cardExp": 100,
+                "baseBondsPt": 300,
+                "riche": 1760,
+                "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 243,
+                "dropItem1": {
+                    "dropItemId": 243,
+                    "rewardCode1": "GIFT_243_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "LIGHT"
+                ],
+                "parameterMap": {},
+                "openDate": "2020/06/15 00:10:00",
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100142,
+            "questBattle": {
+                "questBattleId": 3100142,
+                "sectionId": 310014,
+                "sectionIndex": 2,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "placeId": "21251",
+                "bgm": "bgm02_anime07",
+                "bossBgm": "bgm02_anime07",
+                "consumeType": "NORMAL",
+                "exp": 120,
+                "cardExp": 100,
+                "baseBondsPt": 300,
+                "riche": 1760,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "openDate": "2020/06/15 00:10:00",
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 1011013,
+            "questBattle": {
+                "questBattleId": 1011013,
+                "sectionId": 101101,
+                "sectionIndex": 3,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "npcHelpId": "101",
+                "npcHelpNameHidden": true,
+                "npcHelpNameQuestHidden": true,
+                "npcHelpDisplayHidden": false,
+                "npcHelpSupportHidden": false,
+                "startStory": "101101-5",
+                "endStory": "101101-7",
+                "questStory": "101101-6",
+                "storyWaveIndex": 1,
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "FREE_AT_NOT_CLEAR",
+                "exp": 25,
+                "cardExp": 50,
+                "baseBondsPt": 40,
+                "riche": 120,
+                "firstClearRewardCodes": "GIFT_301_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "NOT_CONTINUE",
+                "missionMaster3": {
+                    "description": "Clear without using a Continue"
+                },
+                "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100133,
+            "questBattle": {
+                "questBattleId": 3100133,
+                "sectionId": 310013,
+                "sectionIndex": 3,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "startStory": "310013-3",
+                "endStory": "310013-4",
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "exp": 96,
+                "cardExp": 80,
+                "baseBondsPt": 240,
+                "riche": 1312,
+                "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 243,
+                "dropItem1": {
+                    "dropItemId": 243,
+                    "rewardCode1": "GIFT_243_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE",
+                    "DARK"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 1011012,
+            "questBattle": {
+                "questBattleId": 1011012,
+                "sectionId": 101101,
+                "sectionIndex": 2,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "npcHelpId": "101",
+                "npcHelpNameHidden": true,
+                "npcHelpNameQuestHidden": true,
+                "npcHelpDisplayHidden": true,
+                "npcHelpSupportHidden": false,
+                "startStory": "101101-2",
+                "endStory": "101101-4",
+                "questStory": "101101-3",
+                "storyWaveIndex": 1,
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "FREE_AT_NOT_CLEAR",
+                "exp": 25,
+                "cardExp": 50,
+                "baseBondsPt": 40,
+                "riche": 110,
+                "firstClearRewardCodes": "RICHE_1000",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "NOT_CONTINUE",
+                "missionMaster3": {
+                    "description": "Clear without using a Continue"
+                },
+                "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100132,
+            "questBattle": {
+                "questBattleId": 3100132,
+                "sectionId": 310013,
+                "sectionIndex": 2,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "startStory": "310013-2",
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "exp": 96,
+                "cardExp": 80,
+                "baseBondsPt": 240,
+                "riche": 1312,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 1011011,
+            "questBattle": {
+                "questBattleId": 1011011,
+                "sectionId": 101101,
+                "sectionIndex": 1,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "startStory": "101101-1",
+                "storyWaveIndex": 0,
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "FREE_AT_NOT_CLEAR",
+                "exp": 25,
+                "cardExp": 50,
+                "baseBondsPt": 40,
+                "riche": 100,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "NOT_CONTINUE",
+                "missionMaster3": {
+                    "description": "Clear without using a Continue"
+                },
+                "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "questBattleId": 3100131,
+            "questBattle": {
+                "questBattleId": 3100131,
+                "sectionId": 310013,
+                "sectionIndex": 1,
+                "questBattleType": "NORMAL",
+                "bossFlag": false,
+                "startStory": "310013-1",
+                "placeId": "47103",
+                "bgm": "bgm01_anime12",
+                "bossBgm": "bgm01_anime12",
+                "consumeType": "NORMAL",
+                "exp": 96,
+                "cardExp": 80,
+                "baseBondsPt": 240,
+                "riche": 1312,
+                "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+                "defaultDropItemId": 101,
+                "defaultDropItem": {
+                    "dropItemId": 101,
+                    "rewardCode1": "RICHE_300"
+                },
+                "dropItemId1": 401,
+                "dropItem1": {
+                    "dropItemId": 401,
+                    "rewardCode1": "GIFT_401_1"
+                },
+                "mission1": "NOT_DEAD",
+                "missionMaster1": {
+                    "description": "Clear without losing any Magical Girls"
+                },
+                "mission2": "ACTION_15",
+                "missionMaster2": {
+                    "description": "Clear within 15 Turn(s)"
+                },
+                "mission3": "MEMBER_CHARA_1001",
+                "missionMaster3": {
+                    "description": "Clear with Iroha Tamaki"
+                },
+                "missionRewardCode": "ITEM_PRISM_1",
+                "waveEnemyAttributeIdList": [
+                    "FIRE"
+                ],
+                "parameterMap": {},
+                "automationPossibleAtFirst": true
+            },
+            "cleared": false,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": false,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        }
+    ],
+    "fox": {
+        "ltvId": 12019,
+        "eventName": "プロローグクリア"
+    },
+    "userDeckList": [
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "deckType": 11,
+            "userCardId1": "f3956d9a-f6f8-11ea-adac-0206fb316737",
+            "questPositionId1": 5,
+            "questPositionHelper": 3,
+            "questEpisodeUserCardId": "f3956d9a-f6f8-11ea-adac-0206fb316737",
+            "formationSheetId": 111,
+            "formationSheet": {
+                "id": 111,
+                "name": "Brave Echelon",
+                "description": "Boosts the Center",
+                "sheetType": 6,
+                "place1": "ALL_ATTACK_UP0_0",
+                "place3": "ALL_ATTACK_UP0_0",
+                "place5": "ALL_ATTACK_UP1_100,ALL_DEFENSE_UP1_100",
+                "place7": "ALL_ATTACK_UP0_0",
+                "place9": "ALL_ATTACK_UP0_0"
+            },
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "deckType": 21,
+            "userCardId1": "f3956d9a-f6f8-11ea-adac-0206fb316737",
+            "questPositionId1": 5,
+            "questEpisodeUserCardId": "f3956d9a-f6f8-11ea-adac-0206fb316737",
+            "formationSheetId": 111,
+            "formationSheet": {
+                "id": 111,
+                "name": "Brave Echelon",
+                "description": "Boosts the Center",
+                "sheetType": 6,
+                "place1": "ALL_ATTACK_UP0_0",
+                "place3": "ALL_ATTACK_UP0_0",
+                "place5": "ALL_ATTACK_UP1_100,ALL_DEFENSE_UP1_100",
+                "place7": "ALL_ATTACK_UP0_0",
+                "place9": "ALL_ATTACK_UP0_0"
+            },
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        },
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "deckType": 20,
+            "userCardId1": "f3956d9a-f6f8-11ea-adac-0206fb316737",
+            "questPositionId1": 1,
+            "formationSheetId": 111,
+            "formationSheet": {
+                "id": 111,
+                "name": "Brave Echelon",
+                "description": "Boosts the Center",
+                "sheetType": 6,
+                "place1": "ALL_ATTACK_UP0_0",
+                "place3": "ALL_ATTACK_UP0_0",
+                "place5": "ALL_ATTACK_UP1_100,ALL_DEFENSE_UP1_100",
+                "place7": "ALL_ATTACK_UP0_0",
+                "place9": "ALL_ATTACK_UP0_0"
+            },
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        }
+    ],
+    "userChapterList": [
+        {
+            "chapterId": 11,
+            "userId": "USER_ID_GOES_HERE",
+            "chapter": {
+                "chapterId": 11,
+                "partNo": 1,
+                "chapterNo": 1,
+                "chapterType": "NORMAL",
+                "questType": "MAIN",
+                "chapterNoForView": "1",
+                "title": "Iroha: The Beginning",
+                "sectionCount": 3
+            },
+            "cleared": false,
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        }
+    ],
+    "gameUser": {
+        "userId": "USER_ID_GOES_HERE",
+        "exp": 0,
+        "level": 1,
+        "levelTag": 0,
+        "cardCapacity": 400,
+        "deckType": 11,
+        "leaderId": "f3956d9a-f6f8-11ea-adac-0206fb316737",
+        "loginBonusCount": 0,
+        "comment": "Let's have some fun!",
+        "riche": 100000,
+        "inviteCode": "zaJsdSCe",
+        "clearedNativeCacheAt": "CREATION_TIME_GOES_HERE",
+        "closeFunctions": "FRIEND,CHANGE_NAME,ARENA,ARCHIVE_DOPPEL,ARCHIVE_ENEMY,GUILD,GVG",
+        "firstNavi": "GACHA,CHARA_TOP,CHARA_COMPOSE,CHARA_CUSTOMIZE,CHARA_MAGIA_COMPOSE,CHARA_EQUIP_PIECE,PIECE_TOP,ARENA,FORMATION_TOP,FORMATION_SUPPORT,SUB_QUEST,PIECE_SET_LIST,PIECE_SET_EQUIP,CHARA_QUEST",
+        "freeRankArenaPoint": 0,
+        "rankingArenaPoint": 0,
+        "numberOfFreeRankConsecutiveWins": 0,
+        "numberOfFreeRankTotalWins": 0,
+        "remainBattleCountOfRanking": 0,
+        "remainReloadCountOfRanking": 0,
+        "progressTag": 0,
+        "userReviewStatus": "NOT_OPENED",
+        "passwordNotice": false,
+        "skipAdventure": true,
+        "eventArenaMissionPoint": 0,
+        "numberOfEventArenaMissionConsecutiveWins": 0,
+        "startdashGachaExpiredAt": "2020/09/21 19:12:48",
+        "startdashCampaignExpiredAt": "2020/09/21 19:12:48",
+        "createdAt": "CREATION_TIME_GOES_HERE",
+        "needsOpenSection": false
+    },
+    "adjust": {
+        "eventToken": "9hr7dz",
+        "ltvId": "9hr7dz",
+        "eventName": "プロローグクリア"
+    },
+    "userLive2dList": [
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "charaId": 1001,
+            "live2dId": "00",
+            "live2d": {
+                "charaId": 1001,
+                "live2dId": "00",
+                "description": "Magical Girl",
+                "defaultOpened": true,
+                "voicePrefixNo": "00"
+            }
+        }
+    ],
+    "userItemList": [
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "itemId": "PRESENTED_MONEY",
+            "environmentId": "COMMON",
+            "quantity": 25,
+            "total": 0,
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "name": "Magia Stone",
+                "shortDescription": "In-Game Currency",
+                "description": "In-Game Currency",
+                "canUse": false,
+                "isSellable": false,
+                "itemType": "MONEY",
+                "treasureChestColor": "GOLD",
+                "price": 0,
+                "sortKey": 0
+            },
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        }
+    ],
+    "user": {
+        "id": "USER_ID_GOES_HERE",
+        "personalId": "PERSONAL_ID_GOES_HERE",
+        "loginName": "?????",
+        "lastLoginDate": "2020/09/14 19:04:49",
+        "penultimateLoginDate": "2020/09/14 18:49:23",
+        "lastAccessDate": "2020/09/14 19:04:49",
+        "loginDaysInRow": 2,
+        "loginCount": 5,
+        "todayFirstAccessDate": "2020/09/14 14:25:44",
+        "platform": "ANDROID",
+        "os": "5.1.1",
+        "model": "SM-G965N",
+        "version": "1.1.12",
+        "monthlyPurchase": 0,
+        "totalPurchase": 0,
+        "purchaseTag": 0,
+        "tutorialId": "TU010",
+        "foxFlag": 1,
+        "searchable": false,
+        "banned": false,
+        "country": "US",
+        "dataPatchedAt": "2020/09/13 16:01:13",
+        "createdAt": "2020/09/13 16:01:13"
+    },
+    "userCharaList": [
+        {
+            "userId": "USER_ID_GOES_HERE",
+            "charaId": 1001,
+            "chara": {
+                "id": 1001,
+                "name": "Iroha Tamaki",
+                "kana": "Iroha Tamaki",
+                "attributeId": "LIGHT",
+                "attackType": 3,
+                "initialType": "HEAL",
+                "growthType": "BALANCE",
+                "enemyFlg": false,
+                "doubleUnitFlg": false,
+                "saleItemId": "PRISM",
+                "defaultCardId": 10011,
+                "defaultCard": {
+                    "cardId": 10011,
+                    "rank": "RANK_1",
+                    "attributeId": "LIGHT",
+                    "initialType": "HEAL",
+                    "growthType": "BALANCE",
+                    "attack": 878,
+                    "defense": 1157,
+                    "hp": 3068,
+                    "miniCharaNo": 100100,
+                    "charaNo": 1001,
+                    "cardName": "Iroha Tamaki"
+                },
+                "evolutionCardId1": 10012,
+                "evolutionCard1": {
+                    "cardId": 10012,
+                    "rank": "RANK_2",
+                    "attributeId": "LIGHT",
+                    "initialType": "HEAL",
+                    "growthType": "BALANCE",
+                    "attack": 948,
+                    "defense": 1255,
+                    "hp": 3323,
+                    "miniCharaNo": 100100,
+                    "charaNo": 1001,
+                    "cardName": "Iroha Tamaki"
+                },
+                "evolutionCardId2": 10013,
+                "evolutionCard2": {
+                    "cardId": 10013,
+                    "rank": "RANK_3",
+                    "attributeId": "LIGHT",
+                    "initialType": "HEAL",
+                    "growthType": "BALANCE",
+                    "attack": 1132,
+                    "defense": 1497,
+                    "hp": 3963,
+                    "miniCharaNo": 100100,
+                    "charaNo": 1001,
+                    "cardName": "Iroha Tamaki"
+                },
+                "evolutionCardId3": 10014,
+                "evolutionCard3": {
+                    "cardId": 10014,
+                    "rank": "RANK_4",
+                    "attributeId": "LIGHT",
+                    "initialType": "HEAL",
+                    "growthType": "BALANCE",
+                    "attack": 1405,
+                    "defense": 1865,
+                    "hp": 4930,
+                    "miniCharaNo": 100100,
+                    "charaNo": 1001,
+                    "cardName": "Iroha Tamaki"
+                },
+                "evolutionCardId4": 10015,
+                "evolutionCard4": {
+                    "cardId": 10015,
+                    "rank": "RANK_5",
+                    "attributeId": "LIGHT",
+                    "initialType": "HEAL",
+                    "growthType": "BALANCE",
+                    "attack": 1569,
+                    "defense": 2083,
+                    "hp": 5505,
+                    "miniCharaNo": 100101,
+                    "charaNo": 1001,
+                    "cardName": "Iroha Tamaki"
+                },
+                "firstMagiaGiftId1": 241,
+                "firstMagiaGiftNum1": 2,
+                "firstMagiaGiftId2": 301,
+                "firstMagiaGiftNum2": 2,
+                "secondMagiaGiftId1": 241,
+                "secondMagiaGiftNum1": 4,
+                "secondMagiaGiftId2": 303,
+                "secondMagiaGiftNum2": 4,
+                "secondMagiaGiftId3": 242,
+                "secondMagiaGiftNum3": 2,
+                "secondMagiaGiftId4": 401,
+                "secondMagiaGiftNum4": 2,
+                "thirdMagiaGiftId1": 241,
+                "thirdMagiaGiftNum1": 6,
+                "thirdMagiaGiftId2": 305,
+                "thirdMagiaGiftNum2": 6,
+                "thirdMagiaGiftId3": 242,
+                "thirdMagiaGiftNum3": 4,
+                "thirdMagiaGiftId4": 401,
+                "thirdMagiaGiftNum4": 4,
+                "thirdMagiaGiftId5": 243,
+                "thirdMagiaGiftNum5": 2,
+                "thirdMagiaGiftId6": 501,
+                "thirdMagiaGiftNum6": 2,
+                "fourthMagiaGiftId1": 241,
+                "fourthMagiaGiftNum1": 8,
+                "fourthMagiaGiftId2": 302,
+                "fourthMagiaGiftNum2": 8,
+                "fourthMagiaGiftId3": 242,
+                "fourthMagiaGiftNum3": 6,
+                "fourthMagiaGiftId4": 501,
+                "fourthMagiaGiftNum4": 2,
+                "fourthMagiaGiftId5": 243,
+                "fourthMagiaGiftNum5": 4,
+                "fourthMagiaGiftId6": 552,
+                "fourthMagiaGiftNum6": 4,
+                "firstMagiaGift1": {
+                    "id": 241,
+                    "name": "Light Book",
+                    "rank": 1
+                },
+                "firstMagiaGift2": {
+                    "id": 301,
+                    "name": "Swallowtail Feather",
+                    "rank": 1
+                },
+                "secondMagiaGift1": {
+                    "id": 241,
+                    "name": "Light Book",
+                    "rank": 1
+                },
+                "secondMagiaGift2": {
+                    "id": 303,
+                    "name": "Bunny Ear Wrapping Paper",
+                    "rank": 1
+                },
+                "secondMagiaGift3": {
+                    "id": 242,
+                    "name": "Light Book +",
+                    "rank": 2
+                },
+                "secondMagiaGift4": {
+                    "id": 401,
+                    "name": "Sandbox Shell",
+                    "rank": 2
+                },
+                "thirdMagiaGift1": {
+                    "id": 241,
+                    "name": "Light Book",
+                    "rank": 1
+                },
+                "thirdMagiaGift2": {
+                    "id": 305,
+                    "name": "Rooftop Key",
+                    "rank": 1
+                },
+                "thirdMagiaGift3": {
+                    "id": 242,
+                    "name": "Light Book +",
+                    "rank": 2
+                },
+                "thirdMagiaGift4": {
+                    "id": 401,
+                    "name": "Sandbox Shell",
+                    "rank": 2
+                },
+                "thirdMagiaGift5": {
+                    "id": 243,
+                    "name": "Light Book ++",
+                    "rank": 3
+                },
+                "thirdMagiaGift6": {
+                    "id": 501,
+                    "name": "Sandbox Shovel",
+                    "rank": 3
+                },
+                "fourthMagiaGift1": {
+                    "id": 241,
+                    "name": "Light Book",
+                    "rank": 1
+                },
+                "fourthMagiaGift2": {
+                    "id": 302,
+                    "name": "Mirrors Invitation",
+                    "rank": 1
+                },
+                "fourthMagiaGift3": {
+                    "id": 242,
+                    "name": "Light Book +",
+                    "rank": 2
+                },
+                "fourthMagiaGift4": {
+                    "id": 501,
+                    "name": "Sandbox Shovel",
+                    "rank": 3
+                },
+                "fourthMagiaGift5": {
+                    "id": 243,
+                    "name": "Light Book ++",
+                    "rank": 3
+                },
+                "fourthMagiaGift6": {
+                    "id": 552,
+                    "name": "Bunny Ear Cotton",
+                    "rank": 3
+                },
+                "description": "Iroha came to Kamihama to investigate strange dreams she was having. Kind-hearted, she tends to worry too much about others. She's not up on the latest trends and isn't good with her phone. Usually reserved, she can be a fighter when it matters most.",
+                "school": "Kamihama University Affiliated School",
+                "designer": "aokiume",
+                "voiceActor": "Momo Asakura",
+                "charaMessageList": [
+                    {
+                        "charaNo": 1001,
+                        "messageId": 6,
+                        "message": "Is this what people call...bonds?"
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 7,
+                        "message": "How long...since we've eaten out<br>as a family?"
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 8,
+                        "message": "I lied to myself...<br>I didn't want them to dislike me."
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 9,
+                        "message": "Welcome back. I've been waiting for you."
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 10,
+                        "message": "I'm only interfering because you're so<br>precious to me!"
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 11,
+                        "message": "I'm sorry... Your big sis is actually..."
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 12,
+                        "message": "A little bitter… This taste brings back<br>such good memories."
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 43,
+                        "message": "Good thing I didn't give up!"
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 44,
+                        "message": "I had faith that we'd be okay."
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 45,
+                        "message": "Your big sis did it!"
+                    },
+                    {
+                        "charaNo": 1001,
+                        "messageId": 46,
+                        "message": "Have I become a strong big sis?"
+                    }
+                ]
+            },
+            "bondsTotalPt": 0,
+            "userCardId": "f3956d9a-f6f8-11ea-adac-0206fb316737",
+            "lbItemNum": 0,
+            "visualizable": true,
+            "commandVisualType": "CHARA",
+            "commandVisualId": 100100,
+            "live2dId": "00",
+            "createdAt": "CREATION_TIME_GOES_HERE"
+        }
+    ]
+}

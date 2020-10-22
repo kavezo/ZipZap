@@ -1,0 +1,972 @@
+.openConditionPopup .openConditionDl {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+.openConditionPopup .openConditionDl:not(:last-child) {
+    margin-bottom: 10px; }
+.openConditionPopup .openConditionDl dt {
+  width: 42px;
+  height: 42px;
+  background: #f66a99;
+    color: #ffffff;
+  font-size: 18px;
+  line-height: 42px;
+    border-radius: 5px 0 0 5px; }
+.openConditionPopup .openConditionDl dd {
+  width: 506px;
+  height: 42px;
+  padding: 0 14px;
+    background: #ffffff;
+    font-size: 15px;/*MN*/
+  line-height: 38px;
+  text-align: left;
+  border-top: 2px solid #c6a882;
+  border-right: 2px solid #c6a882;
+  border-bottom: 2px solid #c6a882;
+    border-radius: 0 5px 5px 0; }
+
+.openConditionPopup .popupInner {
+  width: 650px;
+  height: 360px;
+  position: absolute;
+  top: -webkit-calc(50% - 180px);
+  left: -webkit-calc(50% - 325px); }
+.openConditionPopup .popupInner .popupTextArea {
+    height: 280px; }
+
+#CharaQuest {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hide;
+  -webkit-overflow-scrolling: touch; }
+#CharaQuest .hide {
+  pointer-events: none;
+    opacity: 0; }
+#CharaQuest .none {
+    display: none; }
+  #CharaQuest #toggleQuestType {
+    width: 222px;
+    padding: 24px 0;
+    position: absolute;
+    top: 70px;
+    left: 32px; }
+    #CharaQuest #toggleQuestType li {
+      width: 188px;
+      margin: 6px 17px 0px; }
+      #CharaQuest #toggleQuestType li div.batch {
+        min-width: 26px;
+        height: 26px;
+        padding: 0 4px;
+        background: -webkit-linear-gradient(top, #e140a6 0%, #d12f74 100%);
+  display: none;
+        position: absolute;
+        top: -8px;
+        left: 0px;
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+        text-shadow: none;
+        border: 2px solid #ffffff;
+        -webkit-border-radius: 13px;
+        z-index: 100; }
+      #CharaQuest #toggleQuestType li.batch div.batch {
+        display: block; }
+  #CharaQuest.CHARA #charaList #charaQuestWrap #charaQuestInner .charaWrap.COSTUME {
+    display: none !important; }
+  #CharaQuest.COSTUME #charaList #charaQuestWrap #charaQuestInner .charaWrap.CHARA {
+    display: none !important; }
+  #CharaQuest.COSTUME #tabArea .bg {
+    background: url("/magica/resource/image_web/page/quest/costume/header_costume.png") left top no-repeat; }
+  #CharaQuest.COSTUME #charaSection #questListWrap .sectionType {
+    background: url("/magica/resource/image_web/page/quest/costume/header_costume.png") left top no-repeat; }
+  #CharaQuest.COSTUME #charaSection #questListWrap #questList .section {
+    background: url("/magica/resource/image_web/page/quest/costume/bg_section.png") left center no-repeat; }
+    #CharaQuest.COSTUME #charaSection #questListWrap #questList .section .sectionNo {
+      display: none; }
+    #CharaQuest.COSTUME #charaSection #questListWrap #questList .section .sectionState {
+      left: 35px; }
+    #CharaQuest.COSTUME #charaSection #questListWrap #questList .section .sectionTitle, #CharaQuest.COSTUME #charaSection #questListWrap #questList .section .costumeTitle {
+      color: #ffffff;
+      text-shadow: -1px -1px 1px #ff723a,
+ 1px -1px 1px #ff723a,
+ -1px 1px 1px #ff723a,
+ 1px 1px 1px #ff723a,
+ -1px -1px #ff723a,
+ 1px -1px #ff723a,
+ -1px 1px #ff723a,
+ 1px 1px #ff723a,
+ -1px -1px 2px #ff723a,
+ 1px -1px 2px #ff723a,
+ -1px 1px 2px #ff723a,
+ 1px 1px 2px #ff723a,
+ -1px -1px 2px #ff723a,
+ 1px -1px 2px #ff723a,
+ -1px 1px 2px #ff723a,
+ 1px 1px 2px #ff723a,
+ -1px -1px 3px #ff723a,
+ 1px -1px 3px #ff723a,
+ -1px 1px 3px #ff723a,
+ 1px 1px 3px #ff723a; }
+    #CharaQuest.COSTUME #charaSection #questListWrap #questList .section .costumeTitle {
+      display: block;
+      position: absolute;
+      top: 68px;
+      left: 69px;
+      font-size: 14px; }
+  #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap {
+    background: url("/magica/resource/image_web/page/quest/costume/bg_costume.png") left top no-repeat; }
+    #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .charaName, #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .charaNameTitle {
+      color: #ffffff;
+      text-shadow: -1px -1px 1px #ff723a,
+ 1px -1px 1px #ff723a,
+ -1px 1px 1px #ff723a,
+ 1px 1px 1px #ff723a,
+ -1px -1px #ff723a,
+ 1px -1px #ff723a,
+ -1px 1px #ff723a,
+ 1px 1px #ff723a,
+ -1px -1px 2px #ff723a,
+ 1px -1px 2px #ff723a,
+ -1px 1px 2px #ff723a,
+ 1px 1px 2px #ff723a,
+ -1px -1px 2px #ff723a,
+ 1px -1px 2px #ff723a,
+ -1px 1px 2px #ff723a,
+ 1px 1px 2px #ff723a,
+ -1px -1px 3px #ff723a,
+ 1px -1px 3px #ff723a,
+ -1px 1px 3px #ff723a,
+ 1px 1px 3px #ff723a; }
+    #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .questState li:nth-child(4).new {
+      background: url("/magica/resource/image_web/page/quest/icon_notclear.png") left top no-repeat;
+      background-size: contain; }
+    #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .questState li:nth-child(4).close {
+      background: url("/magica/resource/image_web/page/quest/icon_lock.png") left top no-repeat;
+      background-size: contain; }
+    #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .questState li:nth-child(4).clear {
+      background: url("/magica/resource/image_web/page/quest/chara/icon_clear.png") left top no-repeat;
+      background-size: contain; }
+    #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .questState li:nth-child(4).comp {
+      background: url("/magica/resource/image_web/page/quest/icon_complete.png") left top no-repeat;
+      background-size: contain; }
+    #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .questState.multiLine {
+      width: 194px;
+      height: 45px;
+      top: 37px;
+      right: 49px;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      #CharaQuest.COSTUME #charaQuestWrap #charaQuestInner .charaWrap .questState.multiLine li {
+        width: 26px;
+        height: 28px;
+        margin: 0 0 -6px -2px;
+        display: block; }
+#CharaQuest #tabArea {
+    width: 436px;
+  height: 34px;
+  position: absolute;
+    top: 81px;
+    right: 0; }
+#CharaQuest #tabArea .bg {
+      width: 764px;
+      height: 50px;
+      background: url("/magica/resource/image_web/page/quest/chara/header_chara.png") left top no-repeat;
+  position: absolute;
+      right: 0;
+  bottom: -4px;
+      z-index: 10; }
+      #CharaQuest #tabArea .bg .bgInner {
+        width: 436px;
+        height: 28px;
+        background-color: #8a5f29;
+        position: absolute;
+        right: 0;
+        bottom: 0; }
+#CharaQuest #tabArea .tabBtns {
+  position: relative;
+      z-index: 100; }
+#CharaQuest #tabArea li {
+      width: 44px;
+      height: 44px;
+  position: absolute;
+      top: -12px; }
+#CharaQuest #tabArea li.current:after {
+        width: 56px;
+        height: 56px;
+  position: absolute;
+        top: -5px;
+        left: -5px;
+        content: "";
+  content: 0;
+  border: 5px solid #ff3b81;
+  -webkit-border-radius: 32px;
+        -webkit-box-shadow: 0 0 0 3px #ffffff inset;
+        box-shadow: 0 0 0 3px #ffffff inset; }
+#CharaQuest #tabArea .all {
+  background: url("/magica/resource/image_web/common/chara/att_all.png") left top no-repeat;
+  background-size: contain;
+      left: 16px; }
+#CharaQuest #tabArea .fire {
+  background: url("/magica/resource/image_web/common/chara/att_fire.png") left top no-repeat;
+  background-size: contain;
+      left: 76px; }
+#CharaQuest #tabArea .water {
+  background: url("/magica/resource/image_web/common/chara/att_water.png") left top no-repeat;
+  background-size: contain;
+      left: 136px; }
+#CharaQuest #tabArea .timber {
+  background: url("/magica/resource/image_web/common/chara/att_timber.png") left top no-repeat;
+  background-size: contain;
+      left: 196px; }
+#CharaQuest #tabArea .light {
+  background: url("/magica/resource/image_web/common/chara/att_light.png") left top no-repeat;
+  background-size: contain;
+      left: 256px; }
+#CharaQuest #tabArea .dark {
+  background: url("/magica/resource/image_web/common/chara/att_dark.png") left top no-repeat;
+  background-size: contain;
+      left: 316px; }
+#CharaQuest #tabArea .void {
+  background: url("/magica/resource/image_web/common/chara/att_void.png") left top no-repeat;
+  background-size: contain;
+      left: 376px; }
+#CharaQuest #charaSection {
+  height: 100%;
+    position: relative; }
+#CharaQuest #charaSection .charaImg {
+  position: absolute;
+  top: -webkit-calc(50% - 290px);
+  left: -220px;
+  pointer-events: none;
+      z-index: 8; }
+#CharaQuest #charaSection #animationWrap1 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+      z-index: 9; }
+#CharaQuest #charaSection #animationWrap1 * {
+        display: none; }
+#CharaQuest #charaSection #animationWrap1 .animName {
+  width: 420px;
+  position: fixed;
+  top: -webkit-calc(50% - 20px);
+  right: 110px;
+        color: #ffffff;
+  font-size: 38px;
+  text-align: center;
+        text-shadow: 4px 0 4px #ff4f9e,
+ -4px 0 4px #ff4f9e,
+ 0 4px 4px #ff4f9e,
+ 0 -4px 4px #ff4f9e,
+ 4px 4px 4px #ff4f9e,
+ -4px 4px 4px #ff4f9e,
+ 4px -4px 4px #ff4f9e,
+ -4px -4px 4px #ff4f9e,4px 0 4px #ff4f9e,
+ -4px 0 4px #ff4f9e,
+ 0 4px 4px #ff4f9e,
+ 0 -4px 4px #ff4f9e,
+ 4px 4px 4px #ff4f9e,
+ -4px 4px 4px #ff4f9e,
+ 4px -4px 4px #ff4f9e,
+ -4px -4px 4px #ff4f9e;
+        z-index: 5; }
+#CharaQuest #charaSection #animationWrap1 .animName .animNameTitle {
+  display: inline-block;
+          font-size: 24px; }
+#CharaQuest #charaSection #animationWrap1 .charaNameLine {
+  width: 512px;
+  height: 12px;
+        background: url("/magica/resource/image_web/page/quest/chara/chara_name_line.png") left center no-repeat;
+  position: fixed;
+  top: -webkit-calc(50% + 32px);
+  right: 64px;
+        z-index: 4; }
+#CharaQuest #charaSection #animationWrap1 .charaNameBg {
+  width: 541px;
+  height: 247px;
+        background: url("/magica/resource/image_web/page/quest/chara/chara_name_bg.png") left center no-repeat;
+  position: fixed;
+  top: -webkit-calc(50% - 113px);
+  right: 50px;
+        z-index: 3; }
+#CharaQuest #charaSection #animationWrap1 .charaText {
+  width: 600px;
+  position: fixed;
+  top: -webkit-calc(50% + 170px);/*MN*/
+  right: 10px;
+  overflow: hidden;
+  color: #ff4f9e;
+  font-size: 28px;
+  text-align: center;
+        white-space: nowrap;
+        text-shadow: 2px 0 2px #ffffff,
+ -2px 0 2px #ffffff,
+ 0 2px 2px #ffffff,
+ 0 -2px 2px #ffffff,
+ 2px 2px 2px #ffffff,
+ -2px 2px 2px #ffffff,
+ 2px -2px 2px #ffffff,
+ -2px -2px 2px #ffffff; }
+#CharaQuest #charaSection #animationWrap1 .twinkle1 {
+  width: 598px;
+  height: 271px;
+        background: url("/magica/resource/image_web/page/quest/chara/chara_name_bg_twinkle_00.png") left center no-repeat;
+  position: fixed;
+  top: -webkit-calc(50% - 130px);
+        left: 443px; }
+#CharaQuest #charaSection #animationWrap1 .twinkle2 {
+  width: 598px;
+  height: 271px;
+        background: url("/magica/resource/image_web/page/quest/chara/chara_name_bg_twinkle_01.png") left center no-repeat;
+  position: fixed;
+  top: -webkit-calc(50% - 130px);
+        left: 443px; }
+#CharaQuest #charaSection #animationWrap2 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+      z-index: 7; }
+#CharaQuest #charaSection #animationWrap2 * {
+        display: none; }
+      #CharaQuest #charaSection #animationWrap2 .patternbg1, #CharaQuest #charaSection #animationWrap2 .patternbg2, #CharaQuest #charaSection #animationWrap2 .patternbg3, #CharaQuest #charaSection #animationWrap2 .patternbg4 {
+  width: 512px;
+  height: 100%;
+  position: fixed;
+        top: 0; }
+#CharaQuest #charaSection #animationWrap2 .patternbg1 {
+        background: url("/magica/resource/image_web/page/quest/chara/pattern_bg_00.png") left center no-repeat; }
+      #CharaQuest #charaSection #animationWrap2 .patternbg2, #CharaQuest #charaSection #animationWrap2 .patternbg3, #CharaQuest #charaSection #animationWrap2 .patternbg4 {
+        background: url("/magica/resource/image_web/page/quest/chara/pattern_bg_01.png") left center no-repeat; }
+#CharaQuest #charaSection #animationWrap2 .patternbg1 {
+        left: 0; }
+#CharaQuest #charaSection #animationWrap2 .patternbg2 {
+        left: 256px; }
+#CharaQuest #charaSection #animationWrap2 .patternbg3 {
+        left: 512px; }
+#CharaQuest #charaSection #animationWrap2 .patternbg4 {
+        left: 768px; }
+#CharaQuest #charaSection.show .charaImg {
+      -webkit-animation: charaAppear 2.5s cubic-bezier(0, 1, 0.95, 1) 0s 1 normal;
+      -webkit-animation-fill-mode: both; }
+#CharaQuest #charaSection.show .charaImg.animEnd {
+  -webkit-transform: translateX(0);
+  -webkit-animation: none;
+        opacity: 1; }
+    #CharaQuest #charaSection.show #animationWrap1, #CharaQuest #charaSection.show #animationWrap2 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+      left: 0; }
+      #CharaQuest #charaSection.show #animationWrap1 *, #CharaQuest #charaSection.show #animationWrap2 * {
+  display: block;
+        opacity: 0; }
+      #CharaQuest #charaSection.show #animationWrap1.off, #CharaQuest #charaSection.show #animationWrap2.off {
+        display: none; }
+#CharaQuest #charaSection.show #animationWrap1 .twinkle1 {
+      -webkit-animation: twinkleFade 2.6s ease-in-out 0s 1 normal,
+ twinkleSlideOne 2.5s linear 0s 1 normal;
+      -webkit-animation-fill-mode: forwards; }
+#CharaQuest #charaSection.show #animationWrap1 .twinkle2 {
+      -webkit-animation: twinkleFade 2.6s ease-in-out 0s 1 normal,
+ twinkleSlideTwo 2.5s linear 0s 1 normal;
+      -webkit-animation-fill-mode: forwards; }
+    #CharaQuest #charaSection.show #animationWrap1 .charaNameBg, #CharaQuest #charaSection.show #animationWrap1 .charaText, #CharaQuest #charaSection.show #animationWrap1 .animName, #CharaQuest #charaSection.show #animationWrap1 .animNameTitle {
+  -webkit-animation: charaBgAndTextFade 2.6s ease-in-out 0s 1 normal;
+      -webkit-animation-fill-mode: forwards; }
+#CharaQuest #charaSection.show #animationWrap1 .charaNameLine {
+      -webkit-animation: nameLineScale .33s ease-in-out 0s 1 normal,
+ charaBgAndTextFade 2.6s ease-in-out 0s 1 normal;
+      -webkit-animation-fill-mode: forwards; }
+#CharaQuest #charaSection.show #animationWrap2 .patternbg1 {
+  -webkit-animation: firstPannel 2.57s ease-in-out 0s 1 normal;
+      -webkit-animation-fill-mode: forwards; }
+#CharaQuest #charaSection.show #animationWrap2 .patternbg2 {
+  -webkit-animation: secondPannel 2.4s ease-in-out .25s 1 normal;
+      -webkit-animation-fill-mode: forwards; }
+#CharaQuest #charaSection.show #animationWrap2 .patternbg3 {
+  -webkit-animation: thirdPannel 2.2s ease-in-out .5s 1 normal;
+      -webkit-animation-fill-mode: forwards; }
+#CharaQuest #charaSection.show #animationWrap2 .patternbg4 {
+  -webkit-animation: fourthPannel 2.01s ease-in-out .75s 1 normal;
+      -webkit-animation-fill-mode: forwards; }
+#CharaQuest #charaSection #charaName {
+  width: 490px;
+  position: absolute;
+  top: 100px;
+  right: 0;
+      z-index: 10; }
+#CharaQuest #charaSection #charaName.off {
+        display: none; }
+#CharaQuest #charaSection #charaName .bg {
+  width: 100%;
+  height: 114px;
+  margin: 0 0 0;
+  padding-left: 60px;
+  background: url("/magica/resource/image_web/page/quest/chara/bg_chapter.png") left center no-repeat;
+  display: -webkit-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+#CharaQuest #charaSection #charaName .header {
+  width: 102px;
+  height: 102px;
+  padding-top: 8px;
+  background: url("/magica/resource/image_web/page/quest/chapter_header.png") left center no-repeat;
+  position: absolute;
+  top: -2px;
+  left: -55px;
+  line-height: 102px;
+        text-align: center; }
+#CharaQuest #charaSection #charaName .header .text {
+          color: #ffffff; }
+#CharaQuest #charaSection #charaName .title {
+  display: inline-block;
+        color: #ffffff;
+  font-size: 24px;
+  line-height: 114px;
+        text-shadow: -1px -1px 1px #ff5e7c,
+ 1px -1px 1px #ff5e7c,
+ -1px 1px 1px #ff5e7c,
+ 1px 1px 1px #ff5e7c,
+ -1px -1px #ff5e7c,
+ 1px -1px #ff5e7c,
+ -1px 1px #ff5e7c,
+ 1px 1px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 3px #ff5e7c,
+ 1px -1px 3px #ff5e7c,
+ -1px 1px 3px #ff5e7c,
+ 1px 1px 3px #ff5e7c; }
+#CharaQuest #charaSection #charaName:after {
+  width: 41px;
+  height: 41px;
+  background-repeat: no-repeat;
+  background-position: 0 -254px;
+  display: block;
+  position: absolute;
+  top: 29px;
+  right: 15px;
+        content: ""; }
+#CharaQuest #charaSection #questListWrap {
+  width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10; }
+#CharaQuest #charaSection #questListWrap.off {
+        display: none; }
+      #CharaQuest #charaSection #questListWrap .sectionType {
+        width: 552px;
+        height: 50px;
+        background: url("/magica/resource/image_web/page/quest/chara/header_chara.png") left top no-repeat;
+        position: absolute;
+        top: 56px;
+        right: 0px;
+        overflow: hidden; }
+      #CharaQuest #charaSection #questListWrap .sectionName {
+        width: 430px;
+        height: 160px;
+        padding: 58px 0 0 70px;
+        background: url("/magica/resource/image_web/page/quest/chara/chara_name_bg.png") left center no-repeat;
+        background-size: contain;
+        position: absolute;
+        bottom: 18px;
+        left: 0;
+        color: #ffffff;
+        font-size: 30px;
+        text-shadow: 4px 0 4px #ff4f9e,
+ -4px 0 4px #ff4f9e,
+ 0 4px 4px #ff4f9e,
+ 0 -4px 4px #ff4f9e,
+ 4px 4px 4px #ff4f9e,
+ -4px 4px 4px #ff4f9e,
+ 4px -4px 4px #ff4f9e,
+ -4px -4px 4px #ff4f9e,4px 0 4px #ff4f9e,
+ -4px 0 4px #ff4f9e,
+ 0 4px 4px #ff4f9e,
+ 0 -4px 4px #ff4f9e,
+ 4px 4px 4px #ff4f9e,
+ -4px 4px 4px #ff4f9e,
+ 4px -4px 4px #ff4f9e,
+ -4px -4px 4px #ff4f9e; }
+        #CharaQuest #charaSection #questListWrap .sectionName .attribute {
+          width: 44px;
+          height: 44px;
+          display: block;
+          position: absolute;
+          top: 56px;
+          left: 16px;
+          z-index: 2; }
+        #CharaQuest #charaSection #questListWrap .sectionName .charaNameTitle {
+          padding-left: 10px;
+          font-size: 18px; }
+        #CharaQuest #charaSection #questListWrap .sectionName .sectionNameHr {
+          width: 430px;
+          height: 12px;
+          background: url("/magica/resource/image_web/page/quest/chara/chara_name_line.png") left center no-repeat;
+          background-size: contain;
+          position: absolute;
+          top: 100px;
+          left: 0px;
+          z-index: 1; }
+#CharaQuest #charaSection #questListWrap #questList {
+  width: 542px;
+        height: -webkit-calc(100% - 114px);
+        position: absolute;
+        top: 114px;
+        right: 0;
+        overflow: hidden; }
+        #CharaQuest #charaSection #questListWrap #questList .sectionList {
+          min-height: 100%; }
+        #CharaQuest #charaSection #questListWrap #questList .scrollIndicator {
+          right: 12px; }
+#CharaQuest #charaSection #questListWrap #questList .section {
+  width: 452px;
+  height: 114px;
+          margin: 0 0 -5px 44px;
+  background: url("/magica/resource/image_web/page/quest/chara/bg_section.png") left center no-repeat;
+          position: relative; }
+#CharaQuest #charaSection #questListWrap #questList .section .sectionState {
+            left: 100px; }
+#CharaQuest #charaSection #questListWrap #questList .section.off {
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-filter: grayscale(100%) brightness(70%); }
+#CharaQuest #charaSection #questListWrap #questList .section .treasure {
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: absolute;
+  top: 27px;
+            right: 8px; }
+#CharaQuest #charaSection #questListWrap #questList .section .treasure .imgWrap {
+  width: 64px;
+  height: 64px;
+              position: relative; }
+#CharaQuest #charaSection #questListWrap #questList .section .treasure .imgWrap .charaIcon {
+  width: 37px;
+  height: 34px;
+  position: absolute;
+  right: -5px;
+                bottom: -5px; }
+#CharaQuest #charaSection #questListWrap #questList .section .treasure .imgWrap .charaIcon:before {
+  width: 37px;
+  height: 34px;
+  background: url("/magica/resource/image_web/common/chara/chara_frame_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 17px);
+                  content: "";
+                  z-index: 100; }
+#CharaQuest #charaSection #questListWrap #questList .section .treasure .imgWrap .charaIcon:after {
+  width: 37px;
+  height: 34px;
+  background: url("/magica/resource/image_web/common/chara/chara_base_S.png") left top no-repeat;
+  background-size: 100% 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 17px);
+                  content: "";
+                  z-index: 80; }
+#CharaQuest #charaSection #questListWrap #questList .section .treasure .imgWrap .charaIcon .maskWrap {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 0;
+  left: -webkit-calc(50% - 17px);
+  overflow: hidden;
+  border-radius: 17px;
+                  z-index: 90; }
+#CharaQuest #charaSection #questListWrap #questList .section .treasure .imgWrap .charaIcon .maskWrap img {
+  width: 40px;
+  height: auto;
+  position: absolute;
+  top: 0;
+                    left: -webkit-calc(50% - 20px); }
+#CharaQuest #charaSection #questListWrap #questList .section .treasure img {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  top: 0;
+  left: 0;
+              z-index: 1; }
+#CharaQuest #charaSection #questListWrap #questList .section .treasure .title {
+  width: 110px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/quest/reward.png") left center no-repeat;
+  position: absolute;
+  top: -20px;
+  left: -24px;
+              z-index: 100; }
+#CharaQuest #charaSection #questListWrap #questList .section .sectionNo {
+  width: 88px;
+  display: block;
+  position: absolute;
+  top: 6px;
+  left: 26px;
+            color: #ffffff;
+  text-align: center;
+            text-shadow: -1px -1px 1px #ff5e7c,
+ 1px -1px 1px #ff5e7c,
+ -1px 1px 1px #ff5e7c,
+ 1px 1px 1px #ff5e7c,
+ -1px -1px #ff5e7c,
+ 1px -1px #ff5e7c,
+ -1px 1px #ff5e7c,
+ 1px 1px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 3px #ff5e7c,
+ 1px -1px 3px #ff5e7c,
+ -1px 1px 3px #ff5e7c,
+ 1px 1px 3px #ff5e7c; }
+#CharaQuest #charaSection #questListWrap #questList .section .sectionTitle {
+  margin: 32px 0 0 50px;
+  display: inline-block;
+            color: #ffffff;
+  font-size: 21px;
+            text-shadow: -1px -1px 1px #ff5e7c,
+ 1px -1px 1px #ff5e7c,
+ -1px 1px 1px #ff5e7c,
+ 1px 1px 1px #ff5e7c,
+ -1px -1px #ff5e7c,
+ 1px -1px #ff5e7c,
+ -1px 1px #ff5e7c,
+ 1px 1px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 3px #ff5e7c,
+ 1px -1px 3px #ff5e7c,
+ -1px 1px 3px #ff5e7c,
+ 1px 1px 3px #ff5e7c; }
+          #CharaQuest #charaSection #questListWrap #questList .section .costumeTitle {
+            display: none; }
+#CharaQuest #charaSection #questListWrap #questList .section .questTip {
+  width: 160px;
+  margin: 2px 0 0 205px;
+  display: -webkit-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+  display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+            -webkit-box-pack: end;
+            -ms-flex-pack: end;
+  justify-content: flex-end;
+            -webkit-flex-direction: row; }
+#CharaQuest #charaSection #questListWrap #questList .section .questTip span {
+  width: 28px;
+  height: 28px;
+  margin-right: -4px;
+  background: url("/magica/resource/image_web/page/quest/icon_notclear.png") left center no-repeat;
+  background-size: contain;
+              display: block; }
+#CharaQuest #charaSection #questListWrap #questList .section .questTip span.clear {
+                background: url("/magica/resource/image_web/page/quest/chara/icon_clear.png") left center no-repeat;
+                background-size: contain; }
+#CharaQuest #charaSection #questListWrap #questList .section .questTip span.comp {
+  background: url("/magica/resource/image_web/page/quest/icon_complete.png") left center no-repeat;
+                background-size: contain; }
+#CharaQuest #charaQuestWrap {
+    width: 764px;
+    height: -webkit-calc(100% - 177px);
+  position: absolute;
+    top: 119px;
+    right: 0px;
+    overflow: hidden; }
+#CharaQuest #charaQuestWrap #charaQuestCation {
+  width: 350px;
+  height: 30px;
+  position: absolute;
+  top: -webkit-calc(50% - 15px);
+  left: -webkit-calc(50% - 175px);
+      font-size: 20px;
+      line-height: 30px;
+      text-align: center; }
+#CharaQuest #charaQuestWrap #charaQuestInner {
+  width: 100%;
+  height: auto !important;
+  min-height: 100%;
+      padding-top: 17px;
+  padding-bottom: 80px;
+      padding-left: 18px;
+  display: -webkit-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: flex-start;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+      -ms-flex-line-pack: start;
+      align-content: flex-start; }
+#CharaQuest #charaQuestWrap #charaQuestInner.all .charaWrap {
+        display: block; }
+#CharaQuest #charaQuestWrap #charaQuestInner.fire .charaWrap.fire {
+        display: block; }
+#CharaQuest #charaQuestWrap #charaQuestInner.water .charaWrap.water {
+        display: block; }
+#CharaQuest #charaQuestWrap #charaQuestInner.timber .charaWrap.timber {
+        display: block; }
+#CharaQuest #charaQuestWrap #charaQuestInner.light .charaWrap.light {
+        display: block; }
+#CharaQuest #charaQuestWrap #charaQuestInner.dark .charaWrap.dark {
+        display: block; }
+#CharaQuest #charaQuestWrap #charaQuestInner.void .charaWrap.void {
+        display: block; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap {
+        width: 356px;
+        height: 94px;
+        margin: 0 7px 13px;
+        background: url("/magica/resource/image_web/page/quest/chara/bg_chara_a.png") left top no-repeat;
+  display: none;
+        position: relative; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap:before {
+          width: 112px;
+          height: 103px;
+  background: url("/magica/resource/image_web/page/quest/chara/frame_chara.png") left top no-repeat;
+          background-size: contain;
+  display: block;
+  position: absolute;
+          top: 0px;
+  left: -10px;
+          content: "";
+          z-index: 100; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .charaName {
+  position: absolute;
+          top: 10px;
+          left: 106px;
+          font-size: 18px; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .charaNameTitle {
+          margin-left: 5px;
+          font-size: 14px; }
+        #CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .charaName, #CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .charaNameTitle {
+          color: #ffffff;
+          text-shadow: -1px -1px 1px #ff5e7c,
+ 1px -1px 1px #ff5e7c,
+ -1px 1px 1px #ff5e7c,
+ 1px 1px 1px #ff5e7c,
+ -1px -1px #ff5e7c,
+ 1px -1px #ff5e7c,
+ -1px 1px #ff5e7c,
+ 1px 1px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 2px #ff5e7c,
+ 1px -1px 2px #ff5e7c,
+ -1px 1px 2px #ff5e7c,
+ 1px 1px 2px #ff5e7c,
+ -1px -1px 3px #ff5e7c,
+ 1px -1px 3px #ff5e7c,
+ -1px 1px 3px #ff5e7c,
+ 1px 1px 3px #ff5e7c; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .charaImg {
+          width: 84px;
+          height: 84px;
+  position: absolute;
+          top: 6px;
+          left: 3px;
+  overflow: hidden;
+          border-radius: 42px;
+          z-index: 10; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .charaImg img {
+  width: 100%;
+            height: 100%; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .attribute {
+          width: 32px;
+          height: 32px;
+  position: absolute;
+  top: -4px;
+  left: 0;
+          z-index: 1000; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .attribute span {
+            background-size: 32px 32px; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState {
+          width: 219px;
+  display: -webkit-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+          top: 45px;
+          right: 40px;
+          -webkit-justify-content: flex-end;
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
+          justify-content: flex-end; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState li {
+            width: 30px;
+            height: 32px;
+            margin: 0 -3px 0 0; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState li.new {
+  background: url("/magica/resource/image_web/page/quest/icon_notclear.png") left top no-repeat;
+              background-size: contain; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState li.close {
+  background: url("/magica/resource/image_web/page/quest/icon_lock.png") left top no-repeat;
+              background-size: contain; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState li.clear {
+  background: url("/magica/resource/image_web/page/quest/chara/icon_clear.png") left top no-repeat;
+              background-size: contain; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState li.comp {
+  background: url("/magica/resource/image_web/page/quest/icon_complete.png") left top no-repeat;
+              background-size: contain; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState li:nth-child(4).new {
+  background: url("/magica/resource/image_web/page/quest/chara/icon_doppel_notclear.png") left top no-repeat;
+              background-size: contain; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState li:nth-child(4).close {
+  background: url("/magica/resource/image_web/page/quest/icon_doppel_lock.png") left top no-repeat;
+              background-size: contain; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState li:nth-child(4).clear {
+  background: url("/magica/resource/image_web/page/quest/chara/icon_doppel_clear.png") left top no-repeat;
+              background-size: contain; }
+#CharaQuest #charaQuestWrap #charaQuestInner .charaWrap .questState li:nth-child(4).comp {
+  background: url("/magica/resource/image_web/page/quest/chara/icon_doppel_complete.png") left top no-repeat;
+              background-size: contain; }
+
+@-webkit-keyframes charaAppear {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-120px) translateZ(0); }
+  25% {
+    opacity: 1; }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) translateZ(0); } }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes twinkleFade {
+  0%, 100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; }
+  13%, 96% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes twinkleSlideOne {
+  0% {
+    -webkit-transform: translateX(-62px) translateZ(0); }
+  100% {
+    -webkit-transform: translateX(0px) translateZ(0); } }
+
+@-webkit-keyframes twinkleSlideTwo {
+  0% {
+    -webkit-transform: translateX(-42px) translateZ(0); }
+  100% {
+    -webkit-transform: translateX(0px) translateZ(0); } }
+
+@-webkit-keyframes firstPannel {
+  0%, 100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; }
+  13%, 97% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes secondPannel {
+  0%, 100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; }
+  7%, 97% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes thirdPannel {
+  0%, 100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; }
+  15%, 97% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes fourthPannel {
+  0%, 100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; }
+  16%, 97% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes charaBgAndTextFade {
+  0%, 100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 0; }
+  13%, 96% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1; } }
+
+@-webkit-keyframes nameLineScale {
+  0% {
+    -webkit-transform: scale(0) translateZ(0); }
+  100% {
+    -webkit-transform: scale(1) translateZ(0); } }

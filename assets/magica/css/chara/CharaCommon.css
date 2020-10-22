@@ -1,0 +1,602 @@
+@charset "UTF-8";
+input[type=range] {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  -webkit-transform: translateZ(0);
+  -webkit-appearance: none; }
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background-color: #bdb19a;
+  -webkit-transform: translateZ(0);
+  border-radius: 10px; }
+
+input[type=range]::-webkit-slider-thumb {
+  width: 38px;
+  height: 38px;
+  margin-top: -14px;
+  background-image: url("/magica/resource/image_web/page/config/icon_slider_tab.png");
+  -webkit-transform: translateZ(0);
+  border-width: 0px !important;
+  border-radius: 39px;
+  -webkit-appearance: none; }
+  input[type=range]::-webkit-slider-thumb:hover, input[type=range]::-webkit-slider-thumb:active {
+    background-color: transparent;
+    -webkit-transform: translateZ(0);
+    border: none;
+    outline: none;
+    -webkit-appearance: none; }
+
+.param {
+  display: none; }
+
+#btnArea .touch {
+  -webkit-transform: scale(1);
+  -webkit-filter: brightness(120%); }
+
+#baseContainer.fadein #charaData, #baseContainer.fadein #richeWrap {
+  display: block;
+  -webkit-animation: readyFadeIn .2s ease-in;
+  -webkit-animation-fill-mode: forwards; }
+
+#baseContainer.fadeout #charaData, #baseContainer.fadeout #richeWrap {
+  display: none;
+  display: none !important; }
+
+#composeConfirm .popupInner, #magiaComposeConfirm .popupInner, #useComposeItem .popupInner {
+  position: absolute; }
+
+#composeConfirm .popupTitle, #magiaComposeConfirm .popupTitle {
+  width: 370px; }
+
+#composeConfirm .popupTextArea, #magiaComposeConfirm .popupTextArea {
+  width: 450px;
+  height: 200px;
+  font-size: 20px; }
+
+#composeConfirm .popupBtnArea td, #magiaComposeConfirm .popupBtnArea td {
+  padding: 0 14px !important; }
+
+#useComposeItem .popupTitle {
+  width: 526px; }
+
+#useComposeItem .popupTextArea {
+  width: 100%;
+  height: 253px;
+  display: block;
+  position: relative;
+  font-size: 20px; }
+  #useComposeItem .popupTextArea #useItemControllerWrap {
+    width: 590px;
+    height: 72px;
+    background: #dfdedb;
+    position: absolute;
+    bottom: 20px;
+    left: -webkit-calc(50% - 295px);
+    -webkit-border-radius: 5px; }
+    #useComposeItem .popupTextArea #useItemControllerWrap .slider {
+      width: 342px;
+      position: absolute;
+      top: 31px;
+      left: 76px; }
+    #useComposeItem .popupTextArea #useItemControllerWrap .plusBtn {
+      width: 50px;
+      height: 50px;
+      background: url("/magica/resource/image_web/page/chara/btn_plus.png") left top no-repeat;
+      position: absolute;
+      top: 11px;
+      right: 116px;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0); }
+      #useComposeItem .popupTextArea #useItemControllerWrap .plusBtn.off {
+        background: url("/magica/resource/image_web/page/chara/btn_plus_gray.png") left top no-repeat; }
+    #useComposeItem .popupTextArea #useItemControllerWrap .minusBtn {
+      width: 50px;
+      height: 50px;
+      background: url("/magica/resource/image_web/page/chara/btn_minus.png") left top no-repeat;
+      position: absolute;
+      top: 11px;
+      left: 20px;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0); }
+      #useComposeItem .popupTextArea #useItemControllerWrap .minusBtn.off {
+        background: url("/magica/resource/image_web/page/chara/btn_minus_gray.png") left top no-repeat; }
+    #useComposeItem .popupTextArea #useItemControllerWrap .maxBtn {
+      width: 80px;
+      height: 50px;
+      background: url("/magica/resource/image_web/page/chara/btn_max.png") left top no-repeat;
+      position: absolute;
+      top: 11px;
+      right: 20px;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0); }
+      #useComposeItem .popupTextArea #useItemControllerWrap .maxBtn.off {
+        background: url("/magica/resource/image_web/page/chara/btn_max_gray.png") left top no-repeat; }
+  #useComposeItem .popupTextArea .item {
+    width: 90px;
+    height: 90px;
+    margin: 0 14px 0 0;
+    background: url("/magica/resource/image_web/page/chara/bg_compose_item_null.png") top left no-repeat;
+    position: absolute;
+    top: 28px;
+    left: -webkit-calc(50% - 45px);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 20; }
+    #useComposeItem .popupTextArea .item img {
+      width: 90px;
+      height: 90px;
+      position: relative;
+      z-index: 60; }
+    #useComposeItem .popupTextArea .item .hasNum {
+      width: 90px;
+      height: 26px;
+      padding: 4px 10px 0;
+      background: #b28750;
+      position: absolute;
+      bottom: -22px;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: right;
+      border-radius: 0 0 5px 5px;
+      z-index: 50; }
+      #useComposeItem .popupTextArea .item .hasNum span {
+        color: #ffffff; }
+    #useComposeItem .popupTextArea .item .selectNum {
+      width: 56px;
+      height: 26px;
+      background: #e4007f;
+      display: block;
+      position: absolute;
+      top: -6px;
+      left: -12px;
+      color: #ffffff;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: center;
+      border: 2px solid  #ffffff;
+      -webkit-border-radius: 13px;
+      text-shadow: 0 0;
+      z-index: 100; }
+
+.bonusResultWrap {
+  width: 200px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  left: 303px;
+  opacity: 0; }
+  .bonusResultWrap.anim {
+    display: block;
+    -webkit-animation: set_bonus .7s ease-in-out 0s 1 alternate;
+    -webkit-animation-fill-mode: forwards; }
+  .bonusResultWrap .text {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    color: #fa5181;
+    font-size: 22px;
+    text-align: center;
+    text-shadow: -1px -1px 1px #ffffff, 1px -1px 1px #ffffff, -1px 1px 1px #ffffff, 1px 1px 1px #ffffff, -1px -1px #ffffff, 1px -1px #ffffff, -1px 1px #ffffff, 1px 1px #ffffff, -1px -1px 2px #ffffff, 1px -1px 2px #ffffff, -1px 1px 2px #ffffff, 1px 1px 2px #ffffff, -1px -1px 2px #ffffff, 1px -1px 2px #ffffff, -1px 1px 2px #ffffff, 1px 1px 2px #ffffff, -1px -1px 3px #ffffff, 1px -1px 3px #ffffff, -1px 1px 3px #ffffff, 1px 1px 3px #ffffff;
+    z-index: 10; }
+  .bonusResultWrap .bg {
+    width: 130px;
+    height: 54px;
+    background: url("/magica/resource/image_web/page/chara/bg_customize_text.png") left top no-repeat;
+    position: absolute;
+    top: -5px;
+    left: -webkit-calc(50% - 65px);
+    z-index: 1; }
+
+#richeWrap {
+  width: 256px;
+  padding: 5px 10px 2px 4px;
+  position: fixed;
+  top: 390px;
+  left: -8px;
+  z-index: 10010; }
+#richeWrap.hide {
+    display: none !important; }
+#richeWrap #riche {
+  width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+#richeWrap #riche dt {
+  width: 97px;
+  height: 24px;
+  margin: 0 0 3px;
+  background: url("/magica/resource/image_web/page/chara/bg_riche.png") left top no-repeat;
+  color: #ffffff;
+      text-align: center; }
+#richeWrap #riche dd {
+  width: 140px;
+  height: 24px;
+  margin: 0 0 3px;
+  position: relative;
+      text-align: right; }
+#richeWrap #riche dd:before {
+  width: 22px;
+  height: 22px;
+  background: url("/magica/resource/image_web/page/chara/icon_cc.png") left top no-repeat;
+  position: absolute;
+  top: 1px;
+  left: 5px;
+        content: ""; }
+
+.confirmPopupCurtain {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000; }
+.confirmPopupCurtain.show {
+    display: block; }
+.confirmPopupCurtain.hide {
+    display: none; }
+
+#btnArea {
+  width: 313px;
+  height: 403px;
+  position: absolute;
+  top: -webkit-calc(50% - 234px);
+  right: 24px;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  -webkit-transition-duration: .1s;
+  transition-duration: .1s;
+  -webkit-transition-property: -webkit-filter;
+  transition-property: -webkit-filter;
+  transition-property: filter;
+  transition-property: filter, -webkit-filter;
+  z-index: 10000; }
+#btnArea.offLink {
+  pointer-events: none;
+    -webkit-filter: brightness(80%); }
+#btnArea.top ul li {
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    -webkit-transform: translateZ(0); }
+#btnArea ul li {
+  width: 142px;
+  height: 195px;
+    position: absolute; }
+#btnArea ul li span {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      -webkit-transform: translateZ(0); }
+#btnArea ul li.compose {
+  background: url("/magica/resource/image_web/page/chara/btn_top_compose.png") left top no-repeat;
+  background-size: contain;
+  top: 0;
+      right: 84px; }
+#btnArea ul li.composeMagia {
+  background: url("/magica/resource/image_web/page/chara/btn_top_magia.png") left top no-repeat;
+  background-size: contain;
+  top: 105px;
+      right: -3px; }
+#btnArea ul li.customize {
+  background: url("/magica/resource/image_web/page/chara/btn_top_customize.png") left top no-repeat;
+  background-size: contain;
+  top: 105px;
+      left: 0; }
+#btnArea ul li.equip {
+  background: url("/magica/resource/image_web/page/chara/btn_top_limitbreak.png") left top no-repeat;
+  background-size: contain;
+  right: 84px;
+      bottom: -1px; }
+#btnArea.compose, #btnArea.composeMagia, #btnArea.customize, #btnArea.equip {
+  width: 94px;
+  top: 68px;
+    right: 0; }
+#btnArea.compose li, #btnArea.composeMagia li, #btnArea.customize li, #btnArea.equip li {
+  width: 94px;
+  height: 86px;
+      right: 0; }
+#btnArea.compose li span, #btnArea.composeMagia li span, #btnArea.customize li span, #btnArea.equip li span {
+  -webkit-clip-path: none;
+        clip-path: none; }
+#btnArea.compose li.compose, #btnArea.compose li.composeMagia, #btnArea.compose li.customize, #btnArea.compose li.equip, #btnArea.composeMagia li.compose, #btnArea.composeMagia li.composeMagia, #btnArea.composeMagia li.customize, #btnArea.composeMagia li.equip, #btnArea.customize li.compose, #btnArea.customize li.composeMagia, #btnArea.customize li.customize, #btnArea.customize li.equip, #btnArea.equip li.compose, #btnArea.equip li.composeMagia, #btnArea.equip li.customize, #btnArea.equip li.equip {
+  padding-left: 24px;
+  background: url("/magica/resource/image_web/page/chara/btn_chara_off.png") left top no-repeat;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+        text-shadow: -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c, -1px -1px 2px #ff5e7c, 1px -1px 2px #ff5e7c, -1px 1px 2px #ff5e7c, 1px 1px 2px #ff5e7c; }
+#btnArea.compose li.compose span, #btnArea.compose li.composeMagia span, #btnArea.compose li.customize span, #btnArea.compose li.equip span, #btnArea.composeMagia li.compose span, #btnArea.composeMagia li.composeMagia span, #btnArea.composeMagia li.customize span, #btnArea.composeMagia li.equip span, #btnArea.customize li.compose span, #btnArea.customize li.composeMagia span, #btnArea.customize li.customize span, #btnArea.customize li.equip span, #btnArea.equip li.compose span, #btnArea.equip li.composeMagia span, #btnArea.equip li.customize span, #btnArea.equip li.equip span {
+  position: absolute;
+  top: 0;
+          left: 0; }
+#btnArea.compose li.compose, #btnArea.composeMagia li.compose, #btnArea.customize li.compose, #btnArea.equip li.compose {
+  top: 0;
+        right: 0; }
+#btnArea.compose li.compose:before, #btnArea.composeMagia li.compose:before, #btnArea.customize li.compose:before, #btnArea.equip li.compose:before {
+  position: absolute;
+  top: -webkit-calc(50% - 19px);
+          left: 26px;/*MN*/
+            content: "Enhance\AMagic";
+
+  white-space: pre;
+          pointer-events: none; }
+#btnArea.compose li.composeMagia, #btnArea.composeMagia li.composeMagia, #btnArea.customize li.composeMagia, #btnArea.equip li.composeMagia {
+  top: 96px;
+        right: 0; }
+#btnArea.compose li.composeMagia:before, #btnArea.composeMagia li.composeMagia:before, #btnArea.customize li.composeMagia:before, #btnArea.equip li.composeMagia:before {
+  position: absolute;
+  top: -webkit-calc(50% - 19px);
+          left: 26px;/*MN*/
+          content: "Enhance\A Magia";
+
+  white-space: pre;
+          pointer-events: none; }
+#btnArea.compose li.customize, #btnArea.composeMagia li.customize, #btnArea.customize li.customize, #btnArea.equip li.customize {
+  top: 192px;
+        right: 0; }
+#btnArea.compose li.customize:before, #btnArea.composeMagia li.customize:before, #btnArea.customize li.customize:before, #btnArea.equip li.customize:before {
+  position: absolute;
+  top: -webkit-calc(50% - 10px);
+          left: 27px;/*MN*/
+           content: "Awaken";
+
+  white-space: pre;
+          pointer-events: none; }
+#btnArea.compose li.equip, #btnArea.composeMagia li.equip, #btnArea.customize li.equip, #btnArea.equip li.equip {
+  top: 288px;
+        right: 0; }
+#btnArea.compose li.equip:before, #btnArea.composeMagia li.equip:before, #btnArea.customize li.equip:before, #btnArea.equip li.equip:before {
+  position: absolute;
+  top: -webkit-calc(50% - 19px);
+          left: 30px;/*MN*/
+            content: "Unlock\AMagic";
+
+  white-space: pre;
+          pointer-events: none; }
+#btnArea.compose li.current, #btnArea.composeMagia li.current, #btnArea.customize li.current, #btnArea.equip li.current {
+  background: url("/magica/resource/image_web/page/chara/btn_chara_on.png") left top no-repeat;
+  color: #ff5e7c;
+        text-shadow: 0 0; }
+
+.miniCharaWrap {
+  width: 282px;
+  height: 320px;
+  display: block;
+  position: absolute;
+  top: -webkit-calc(50% - 170px);
+  left: 260px;
+  z-index: 1000; }
+
+#charaImg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10; }
+#charaImg .imgL {
+  width: 1024px;
+  height: 768px;
+  position: absolute;
+  top: -webkit-calc(50% - 350px);
+  left: 140px;
+  -webkit-animation: chara_L_frame_in .4s ease-out .5s 1 alternate;
+  opacity: 0;
+  z-index: 10;
+    -webkit-animation-fill-mode: forwards; }
+#charaImg .imgL img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: .6;
+      -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(35%, rgba(0, 0, 0, 0)), color-stop(45%, black), to(black)); }
+
+@-webkit-keyframes chara_data_slide_in {
+  0% {
+    -webkit-transform: translate3d(-252px, 0, 0);
+    opacity: .3; }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1; } }
+
+#charaData {
+  width: 252px;
+  height: 382px;
+  padding: 62px 0 0;
+  background: url("/magica/resource/image_web/page/chara/bg_chara_data.png") left top no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1000;
+  -webkit-filter: drop-shadow(0 0 3px rgba(0, 0, 0, .5));
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur in="SourceAlpha" stdDeviation="3" /><feOffset dx="1" dy="1" result="offsetblur" /><feFlood flood-color="rgba(0,0,0,0.5)" /><feComposite in2="offsetblur" operator="in" /><feMerge><feMergeNode /><feMergeNode in="SourceGraphic" /></feMerge></filter></svg>#filter');
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, .5)); }
+#charaData.show {
+  -webkit-animation: chara_data_slide_in .25s ease-out .3s 1 alternate;
+    -webkit-animation-fill-mode: forwards; }
+#charaData.hide {
+    display: none !important; }
+#charaData.equip .equipWrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+#charaData.equip .magiaLvWrap {
+    display: none; }
+#charaData.popupOpen {
+    z-index: 10000; }
+#charaData.equipIconShow .equipWrap .icon.on {
+    display: block; }
+#charaData .status {
+  position: absolute;
+  top: 232px;
+    left: 22px; }
+#charaData .status li {
+  height: 20px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+#charaData .status li:not(:last-child) {
+        margin-bottom: 3px; }
+#charaData .status .thStyle, #charaData .status .tdStyle {
+  font-size: 14px;
+  line-height: 20px;
+      text-shadow: 0 0; }
+#charaData .status .thStyle {
+  width: 60px;
+  height: 20px;
+  background: #b28750;
+  color: #ffffff;
+  text-align: center;
+      -webkit-border-radius: 5px 0 0 5px; }
+#charaData .status .tdStyle {
+      padding: 0 0 0 6px; }
+#charaData .arrow {
+  width: 16px;
+  height: 20px;
+  margin: 0;
+  background: url("/magica/resource/image_web/page/chara/arrow.png") left top no-repeat;
+  background-size: 100% 100%;
+    display: inline-block; }
+#charaData #rare {
+  margin: 7px 0 8px -2px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+#charaData #rare span {
+  width: 19px;
+  height: 19px;
+      margin: 0 -1px; }
+#charaData #name {
+  height: 44px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+  flex-direction: column;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  /* Safari */
+    -ms-flex-pack: distribute;
+  justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+#charaData #name .title {
+      font-size: 16px; }
+#charaData #detailBtn {
+  width: 43px;
+  height: 34px;
+  background: url("/magica/resource/image_web/common/btn/btn_common_mini.png") left top no-repeat;
+  display: block;
+  position: absolute;
+  top: 97px;
+    right: 0; }
+#charaData #attribute {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 0;
+  display: block;
+    -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .5)); }
+#charaData #attribute span {
+  width: 36px;
+  height: 36px;
+      background-size: 36px 36px; }
+#charaData #lv {
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 172px;
+  left: 22px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  justify-content: flex-start;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+#charaData #lv .before {
+      margin-left: 5px; }
+#charaData #lv .sla {
+      margin: 0 -5px; }
+#charaData #lv .arrow {
+      margin: 0 15px; }
+#charaData #lv #currentLv, #charaData #lv #afterLv {
+      font-size: 22px; }
+#charaData #lv .hide {
+      display: none; }
+#charaData #lv .lvMaxFlag {
+  width: 74px;
+  height: 22px;
+  margin-left: 40px;
+  background: url("/magica/resource/image_web/common/chara/lv_max.png") left top no-repeat;
+      display: none; }
+#charaData #lv .lvMaxFlag.on {
+        display: inline-block; }
+#charaData .expGaugeWrap {
+  position: absolute;
+  top: 204px;
+    left: 22px; }
+#charaData .expGaugeWrap .expGaugeInner2 {
+      display: none; }
+#charaData .revisionWrap, #charaData .magiaLvWrap {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+#charaData .revisionWrap .title, #charaData .magiaLvWrap .title {
+      width: 85px; }
+#charaData .revisionWrap {
+  position: absolute;
+  top: 306px;
+    left: 24px; }
+#charaData .magiaLvWrap, #charaData .equipWrap {
+  position: absolute;
+  top: 330px;
+    left: 24px; }
+#charaData .equipWrap {
+    display: none; }
+#charaData .equipWrap p {
+      margin-right: 8px; }
+#charaData .equipWrap .icon {
+  width: 20px;
+  height: 20px;
+  margin: 2px 2px 0 0;
+  background: url("/magica/resource/image_web/common/chara/result_icon_equip_b.png") left top no-repeat;
+  background-size: 20px 20px;
+  display: block;
+      position: relative; }
+#charaData .equipWrap .icon.on {
+  background: url("/magica/resource/image_web/common/chara/result_icon_equip.png") left top no-repeat;
+  background-size: 20px 20px;
+        display: none; }
+#charaData .equipWrap .icon.on:after {
+  display: inline-block;
+  position: absolute;
+  top: 2px;
+  left: 23px;
+  color: #e52c66;
+  font-size: 16px;
+  line-height: 20px;
+  content: "+1";
+          text-shadow: 0 0; }
+
+@-webkit-keyframes chara_L_frame_in {
+  0% {
+    -webkit-transform: translateX(-50px);
+    opacity: 0; }
+  100% {
+    -webkit-transform: translateX(0px);
+    opacity: 1; } }

@@ -1,0 +1,150 @@
+<div id="PresentHistory">
+	<ul id="filterTab" class="common_tab t_gold">
+		<li data-id="ALL" class="se_tabs TE current"><span>ALL</span></li>
+		<li data-id="LOGIN_BONUS" class="se_tabs TE"><span>Login Bonus</span></li>
+		<li data-id="GACHA" class="se_tabs TE"><span>Fate Weave</span></li>
+		<li data-id="QUEST" class="se_tabs TE"><span>Quest</span></li>
+		<li data-id="OTHER" class="se_tabs TE"><span>Other</span></li>
+	</ul>
+	<div id="historyBaseWrap" class="commonFrame2">
+		<h2><span id="titleFilter" class="c_white">ALL</span></h2>
+		<div id="presentWrap">
+			<div id="presentScrollWrap">
+				<div id="presentInner" class="presentScrollInner">
+				</div>
+			</div>
+			<div id="pagingWrap">
+			</div>
+			<div id="historyCaution" class="hide">No Available History</div>
+		</div>
+		<p class="presentCnt c_gold">Presents: <span id="presentCnt" class="c_gold"></span></p>
+	</div>
+</div>
+
+
+<script type="text/template" id="presentParts">
+	<div class="wrap">
+		<!-- プレゼント日時 -->
+		<p class="presentDate c_gold"><%= "<%= model.presentDate.split(' ')[0] %\>" %></p>
+		<%= "<% if(model.cardId) { %\>" %>
+			<div class="imgWrap">
+				<div class="userCharaIcon <%= "<%= card.rank %\>" %> <%= "<%= card.attributeId %\>" %>">
+					<%="<% att = 'att_' + model.card.attributeId.toLowerCase() %\>"%>
+					<%="<% star = 'star_' + model.card.rank.toLowerCase() %\>"%>
+					<%="<% frame = 'frame_' + model.card.rank.toLowerCase() %\>"%>
+					<%="<% bg = 'bg_' + model.card.attributeId.toLowerCase() %\>"%>
+
+					<span class="att"
+					 data-nativebgkey='<%="<%= att %\>"%>'
+					 data-src='resource/image_native/card/frame/<%="<%= att %\>"%>.png'></span>
+
+					<span class="star"
+					 data-nativebgkey='<%="<%= star %\>"%>'
+					 data-src='resource/image_native/card/frame/<%="<%= star %\>"%>.png'></span>
+
+					<span class="rank"
+					 data-nativebgkey='<%="<%= frame  %\>"%>'
+					 data-src='resource/image_native/card/frame/<%="<%= frame  %\>"%>.png'></span>
+
+					<img data-nativeimgkey='card_<%="<%= model.cardId  %\>"%>_f'
+					 data-src='resource/image_native/card/image/card_<%="<%= model.cardId  %\>"%>_f.png'>
+
+					<span class="bg"
+					 data-nativebgkey='<%="<%= bg  %\>"%>'
+					 data-src='resource/image_native/card/frame/<%="<%= bg %\>"%>.png'></span>
+				</div>
+			</div>
+			<p class="presentName c_purple"><%= "<%= model.displayName %\>" %></p>
+		<%= "<% } else if(model.itemId) { %\> " %>
+			<div class="imgWrap">
+				<div class="imgMiniWrap">
+				<%='<% var subPath = (model.item.itemCode.indexOf("EVENT_") > -1) ? "event/" : "main/"; %\>'%>
+					<img src='/magica/resource/image_web/item/<%="<%= subPath %\>"%><%= "<%= model.itemId.toLowerCase() %\>" %>.png' width="85" alt="">
+					<p class="quantity">×<%= "<%= model.quantity %\>" %></p>
+				</div>
+			</div>
+			<p class="presentName c_purple"><%= "<%= model.displayName %\>" %></p>
+		<%= "<% } else if(model.presentType === 'PIECE' || model.presentType === 'MAXPIECE') {%\> " %>
+			<div class="imgWrap">
+				<div class="imgMiniWrap">
+
+					<img data-nativeimgkey='memoria_<%="<%= model.piece.pieceId %\>"%>_s' data-src='resource/image_native/memoria/memoria_<%="<%= model.piece.pieceId %\>"%>_s.png' alt=''>
+					<%= "<%if(model.quantity > 1){ %\>" %>
+						<p class="quantity">×<%= "<%= model.quantity %\>" %></p>
+					<%= "<% }%\>" %>
+				</div>
+			</div>
+			<p class="presentName c_purple"><%= "<%= model.displayName %\>" %></p>
+		<%= "<% } else if(model.presentType === 'GIFT'){ %\>"%>
+			<div class="imgWrap">
+				<div class="imgMiniWrap">
+					<img data-nativeimgkey='gift_<%="<%= model.genericId %\>"%>' data-src='resource/image_native/gift/item_gift_<%="<%= model.genericId %\>"%>.png' width="85">
+					<p class="quantity">×<%= "<%= model.quantity %\>" %></p>
+				</div>
+			</div>
+			<p class="presentName c_purple"><%= "<%= model.displayName %\>" %></p>
+		<%= "<% } else if(model.presentType === 'RICHE'){ %\>"%>
+			<div class="imgWrap">
+				<div class="imgMiniWrap">
+					<img src='/magica/resource/image_web/item/main/riche.png' width="85" alt="">
+					<p class="quantity">×<%= "<%= model.quantity %\>" %></p>
+				</div>
+			</div>
+			<p class="presentName c_purple"><%= "<%= model.displayName %\>" %></p>
+		<%= "<% } else if(model.presentType === 'LIVE2D' || model.presentType === 'DOPPEL') { %\>"%>
+			<!-- todo:charaid -->
+			<%="<% if(model.presentType === 'LIVE2D') { %\>"%>
+				<%="<% var miniId = model.genericId + '00'; %\>"%>
+			<%="<% } %\>"%>
+
+			<%="<% if(model.presentType === 'DOPPEL') { %\>"%>
+				<%="<% var miniId = model.genericId; %\>"%>
+			<%="<% } %\>"%>
+
+			<div class="imgWrap">
+				<div class="charaIcon">
+					<div class="maskWrap">
+						<img data-nativeimgkey='mini_<%="<%= miniId %\>"%>_d' data-src='resource/image_native/mini/image/mini_<%="<%= miniId %\>"%>_d.png'>
+					</div>
+				</div>
+				<%="<% if(model.presentType === 'LIVE2D') { %\>"%>
+					<img src='/magica/resource/image_web/item/main/live2d.png' alt=''>
+				<%="<% } %\>"%>
+
+				<%="<% if(model.presentType === 'DOPPEL') { %\>"%>
+					<img src='/magica/resource/image_web/item/main/doppel.png' alt=''>
+				<%="<% } %\>"%>
+			</div>
+			<p class="presentName c_purple"><%= "<%= model.displayName %\>" %></p>
+		<%= "<% } else if(model.presentType === 'FORMATION_SHEET'){ %\>"%>
+		<%='<% var sheet = model.formationSheet; %\>'%>
+			<div class="historyFormation">
+				<div class="formationBase">
+					<div class="formationInner">
+						<%='<% for(var i=1;i<10;i++){ %\>'%>
+						<div class="formation<%='<%= i %\>'%> cols<%='<% if(sheet["place"+i]){ %\>'%> on<%='<% } %\>'%>"></div>
+						<%='<% } %\>'%>
+					</div>
+				</div>
+			</div>
+			<p class="presentName c_purple"><%= "<%= model.displayName %\>" %></p>
+		<%= "<% } else if(model.presentType === 'GEM'){ %\>"%>
+			<div class="imgWrap">
+				<div class="imgMiniWrap">
+					<img data-nativeimgkey="chara_<%='<%= model.genericId %\>'%>_h" data-src="resource/image_native/chara/chara_<%='<%= model.genericId %\>'%>_h.png">
+					<p class="quantity">×<%= "<%= model.quantity %\>" %></p>
+				</div>
+			</div>
+			<p class="presentName c_purple"><%= "<%= model.displayName %\>" %>'s Destiny Gem</p>
+		<%= "<% } %\>"%>
+		<!-- プレゼント文言 -->
+
+		<div class="presentCommentWrap">
+			<%= "<% var presentComment = model.presentComment.replace(/＠/g, ' '); %\>" %>
+			<p class="presentComment c_gold"><%= "<%= presentComment.replace(/<br>/g, ' ') %\>" %></p>
+			<%= "<% if(model.presentId) { %\>" %>
+				<p class="presentCaution">Received from your Present Box.</p>
+			<%= "<% } %\>" %>
+		</div>
+	</div>
+</script>

@@ -1,0 +1,45 @@
+<% att = "att_" + model.card.attributeId.toLowerCase() %>
+<% star = "star_" + model.card.rank.toLowerCase() %>
+<% frame = "frame_" + model.card.rank.toLowerCase() %>
+<% bg = "bg_" + model.card.attributeId.toLowerCase() %>
+<span class='eventIcon'></span>
+<span class="att" data-nativebgkey="<%= att %>" data-src="resource/image_native/card/frame/<%= att %>.png"></span>
+<span class="star" data-nativebgkey="<%= star %>" data-src="resource/image_native/card/frame/<%= star %>.png"></span>
+<span class="rank" data-nativebgkey="<%= frame %>" data-src="resource/image_native/card/frame/<%= frame %>.png"></span>
+<img data-nativeimgkey="card_<%= model.displayCardId %>_f" data-src='resource/image_native/card/image/card_<%= model.displayCardId %>_f.png'>
+<span class="lv"><span><%= model.level %></span></span>
+<span class="atk"><%= model.attack %></span>
+<span class='def'><%= model.defense %></span>
+<span class='hp'><%= model.hp %></span>
+<span class='eplv'><%= model.episodeLevel %></span>
+<% var date = model.createdAt.split(" ")[0].substring( model.createdAt.split(" ")[0].length, 2 ).split("/"); %>
+<span class='get'><%= date[1] %>/<%= date[2] %>/<%= date[0] %></span>
+<span class="bg" data-nativebgkey="<%= bg %>" data-src="resource/image_native/card/frame/<%= bg %>.png"></span>
+<span class='rev'><%= model.revision %></span>
+<span class='mlv'><%= model.magiaLevel %></span>
+
+<span class='prm'>
+	<span class="prm_userCardId"><%= model.userCardId %></span>
+	<span class="prm_charaId"><%= model.charaId %></span>
+	<span class="prm_att"><%= model.card.attributeId %></span>
+	<% var getTimeArr = model.createdAt.split(" "); %>
+	<% var getTime1   = getTimeArr[0].split("/"); %>
+	<% var getTime2   = getTimeArr[1].split(":"); %>
+	<% var getDate    = new Date(
+	Number(getTime1[0]),
+	Number(getTime1[1]) - 1,
+	Number(getTime1[2]),
+	Number(getTime2[0]),
+	Number(getTime2[1]),
+	Number(getTime2[2])); %>
+
+	<span class="prm_get"><%= getDate.getTime() %></span>
+	<span class="prm_atk"><%= model.attack %></span>
+	<span class="prm_def"><%= model.defense %></span>
+	<span class="prm_hp"><%= model.hp %></span>
+	<span class="prm_level"><%= model.level %></span>
+	<span class="prm_eplv"><%= model.episodeLevel %></span>
+	<span class="prm_rank"><%= model.card.rank.split("_")[1] %></span>
+	<span class="prm_rev"><%= model.revision %></span>
+	<span class="prm_mlv"><%= model.magiaLevel %></span>
+</span>

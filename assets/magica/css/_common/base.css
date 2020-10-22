@@ -1,0 +1,845 @@
+@-webkit-keyframes common_fade_in_out {
+  0% {
+    -webkit-transform: translateZ(0);
+    opacity: 0; }
+  50% {
+    -webkit-transform: translateZ(0);
+    opacity: .75; }
+  100% {
+    -webkit-transform: translateZ(0);
+    opacity: 0; } }
+
+body #baseContainer.tutorial.TU520.type01 .show .arrowWrap {
+  width: 300px;
+  height: 60px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/touch_screen.png") left top no-repeat;
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+  body #baseContainer.tutorial.TU520.type01 .show .arrowWrap:before {
+    width: 100%;
+    height: 100%;
+    background: url("/magica/resource/image_web/page/tutorial/detail/touch_screen.png") left top no-repeat;
+    display: block;
+    content: "";
+    -webkit-animation: common_fade_in_out 1s ease-in-out 0s infinite;
+    -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU010 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU110 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU210 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU310 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU320 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU410 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU510.type01 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU510.type02 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU520.type02 .show .arrowWrap, body #baseContainer.tutorial.TU540.type01 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU540.type02 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU560.type03 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU560.type03_2 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU560.type04 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU560.type05 #tutorialContainer.show .arrowWrap {
+  width: 176px;
+  height: 108px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/arrow_r.png") left top no-repeat;
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate, arrow_move_r 1s ease-in-out 1s infinite;
+  -webkit-animation-fill-mode: forwards; }
+  body #baseContainer.tutorial.TU010 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU110 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU210 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU310 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU320 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU410 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU510.type01 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU510.type02 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU520.type02 .show .arrowWrap:before, body #baseContainer.tutorial.TU540.type01 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU540.type02 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU560.type03 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU560.type03_2 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU560.type04 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU560.type05 #tutorialContainer.show .arrowWrap:before {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/tutorial/detail/arrow_r_glow.png") left top no-repeat;
+  display: block;
+    content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 0s infinite;
+    -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU520.type02 .show .arrow2Wrap,  body #baseContainer.tutorial.TU560.type01 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU560.type02 #tutorialContainer.show .arrowWrap {
+  width: 176px;
+  height: 108px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/arrow_l.png") left top no-repeat;
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate,arrow_move_l 1s ease-in-out 1s infinite;
+  -webkit-animation-fill-mode: forwards; }
+  body #baseContainer.tutorial.TU520.type02 .show .arrow2Wrap:before, body #baseContainer.tutorial.TU560.type01 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU560.type02 #tutorialContainer.show .arrowWrap:before {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/tutorial/detail/arrow_l_glow.png") left top no-repeat;
+  display: block;
+    content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 0s infinite;
+    -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU120 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU330 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU420 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU550 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU560.type03_1 #tutorialContainer.show .arrowWrap {
+  width: 110px;
+  height: 120px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/arrow_up.png") left top no-repeat;
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate,arrow_move_up 1s ease-in-out 1s infinite;
+  -webkit-animation-fill-mode: forwards; }
+  body #baseContainer.tutorial.TU120 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU330 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU420 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU550 #tutorialContainer.show .arrowWrap:before, body #baseContainer.tutorial.TU560.type03_1 #tutorialContainer.show .arrowWrap:before {
+  width: 100%;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/tutorial/detail/arrow_up_glow.png") left top no-repeat;
+  display: block;
+    content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 0s infinite;
+    -webkit-animation-fill-mode: forwards; }
+
+#tutorialContainer {
+  display: none; }
+
+body #baseContainer.tutorial.fadein #tutorialContainer {
+  display: block;
+  -webkit-animation: readyFadeIn .2s ease-in;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.fadeout #tutorialContainer {
+  display: none !important; }
+
+body #baseContainer.tutorial #globalMenuContainer *, body #baseContainer.tutorial * {
+  pointer-events: none !important; }
+
+body #baseContainer.tutorial #tutorialContainer {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: relative;
+  z-index: 1000000; }
+  body #baseContainer.tutorial #tutorialContainer .bgWrap, body #baseContainer.tutorial #tutorialContainer .textWrap, body #baseContainer.tutorial #tutorialContainer .arrowWrap, body #baseContainer.tutorial #tutorialContainer .arrow2Wrap, body #baseContainer.tutorial #tutorialContainer .overlayWrap {
+  pointer-events: none !important;
+    opacity: 0; }
+body #baseContainer.tutorial #tutorialContainer .textWrap {
+  width: 764px;
+  height: 136px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/bg_tutorial_text.png") left top no-repeat;
+  display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+body #baseContainer.tutorial #tutorialContainer .textWrap p {
+      color: #ffffff;
+  font-size: 24px;
+  line-height: 38px;
+      text-align: center; }
+/* MN:ガチャは文字数が多いためcssを変更する */
+body #baseContainer.tutorial #tutorialContainer .textWrap.gacha {
+	width: 764px;
+  height: 186px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/bg_tutorial_text2.png") left top no-repeat;
+  display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+      }
+body #baseContainer.tutorial #tutorialContainer .textWrap.gacha p {
+      color: #ffffff;
+  font-size: 18px;
+  line-height: 32px;
+      text-align: center; }
+body #baseContainer.tutorial #tutorialContainer.show {
+  display: block;
+    pointer-events: none !important; }
+body #baseContainer.tutorial #tutorialContainer.show * {
+      pointer-events: none !important; }
+body #baseContainer.tutorial #tutorialContainer.show .bgWrap {
+  width: 100%;
+  height: 100%;
+  -webkit-animation: common_fade_in .3s ease .5s 1 alternate;
+  pointer-events: none !important;
+      -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU010 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(50%, rgba(0, 0, 0, 0.75)), color-stop(55%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU010 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 250px;
+  right: 467px; }
+
+body #baseContainer.tutorial.TU010 #tutorialContainer.show .textWrap {
+  bottom: 34px;
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU010 #questLinkList .quest:nth-child(1):before {
+  width: 420px;
+  height: 90px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_horizontal.png") left top no-repeat;
+  background-size: 420px 90px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -40px;
+  content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 1.3s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards;
+  mix-blend-mode: overlay; }
+
+body #baseContainer.tutorial.TU110 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 250px;
+  right: 467px; }
+
+body #baseContainer.tutorial.TU120 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.75)), color-stop(49%, rgba(0, 0, 0, 0.75)), color-stop(54%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU120 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 266px;
+  right: 295px; }
+
+body #baseContainer.tutorial.TU120 #tutorialContainer.show .textWrap {
+  bottom: 34px;
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU120 #friendWrap .wrap:nth-child(1):before {
+  width: 668px;
+  height: 124px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_horizontal.png") left top no-repeat;
+  background-size: 668px 124px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 1.3s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards;
+  mix-blend-mode: overlay; }
+
+body #baseContainer.tutorial.TU210 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 250px;
+  right: 467px; }
+
+body #baseContainer.tutorial.TU310 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: -webkit-calc(50% - 137px);
+  right: 467px; }
+
+body #baseContainer.tutorial.TU320 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 250px;
+  right: 467px; }
+
+body #baseContainer.tutorial.TU330 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 266px;
+  right: 295px; }
+
+body #baseContainer.tutorial.TU410 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 250px;
+  right: 467px; }
+
+body #baseContainer.tutorial.TU420 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 266px;
+  right: 295px; }
+
+body #baseContainer.tutorial.TU510.type01 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(86%, rgba(0, 0, 0, 0.75)), color-stop(91%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU510.type01 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 0;
+  right: 100px; }
+
+body #baseContainer.tutorial.TU510.type01 #tutorialContainer.show .textWrap {
+  top: -webkit-calc(50% - 68px);
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU510.type01 #globalMenuContainer #menu:before {
+  width: 97px;
+  height: 55px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_circle.png") left top no-repeat;
+  background-size: 97px 55px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  -webkit-animation: common_fade_in_out2 1s ease-in-out 1s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU510.type02 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(86%, rgba(0, 0, 0, 0.75)), color-stop(91%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU510.type02 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 255px;
+  right: 100px; }
+
+body #baseContainer.tutorial.TU510.type02 #tutorialContainer.show .textWrap {
+  bottom: 34px;
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU510.type02 #globalMenuContainer .gacha:before {
+  width: 92px;
+  height: 92px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_circle.png") left top no-repeat;
+  background-size: 92px 92px;
+  display: block;
+  position: absolute;
+  top: 12px;
+  right: 3px;
+  content: "";
+  -webkit-animation: common_fade_in_out2 1s ease-in-out 1s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU520 #menu, body #baseContainer.tutorial.TU520 #globalBackBtn {
+  display: none !important; }
+
+body #baseContainer.tutorial.TU520 .helpBtn {
+  display: none; }
+
+body #baseContainer.tutorial.TU520.type01 .show .bgWrap {
+  background: rgba(0, 0, 0, 0.75); }
+
+body #baseContainer.tutorial.TU520.type01 .show .arrowWrap {
+  position: absolute;
+  top: -webkit-calc(50% + 125px);
+  left: -webkit-calc(50% - 150px); }
+
+body #baseContainer.tutorial.TU520.type01 .show .textWrap {
+  top: -webkit-calc(50% - 70px);
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU520.type02 .show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(50%, rgba(0, 0, 0, 0.75)), color-stop(55%, rgba(0, 0, 0, 0)), color-stop(87%, rgba(0, 0, 0, 0)), color-stop(92%, rgba(0, 0, 0, 0.75)), color-stop(100%, rgba(0, 0, 0, 0.75))); }
+
+body #baseContainer.tutorial.TU520.type02 .show .arrowWrap {
+  position: absolute;
+  right: 461px;
+  bottom: 95px; }
+
+body #baseContainer.tutorial.TU520.type02 .show .arrow2Wrap {
+  width: 120px;
+  height: 73px;
+  background-size: 120px 73px;
+  position: absolute;
+  top: -webkit-calc(50% - 220px);
+  right: 6px; }
+  body #baseContainer.tutorial.TU520.type02 .show .arrow2Wrap:before {
+    width: 120px;
+    height: 73px;
+    background-size: 120px 73px; }
+
+body #baseContainer.tutorial.TU520.type02 .show .textWrap {
+  top: -webkit-calc(50% - 95px);
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU540.type01 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(86%, rgba(0, 0, 0, 0.75)), color-stop(91%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU540.type01 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 0;
+  right: 100px; }
+
+body #baseContainer.tutorial.TU540.type01 #globalMenuContainer #menu:before {
+  width: 97px;
+  height: 55px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_circle.png") left top no-repeat;
+  background-size: 97px 55px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 1s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU540.type02 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(57%, rgba(0, 0, 0, 0.75)), color-stop(62%, rgba(0, 0, 0, 0)), color-stop(78%, rgba(0, 0, 0, 0)), color-stop(83%, rgba(0, 0, 0, 0.75)), color-stop(100%, rgba(0, 0, 0, 0.75))); }
+
+body #baseContainer.tutorial.TU540.type02 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  right: 384px;
+  bottom: 238px; }
+
+body #baseContainer.tutorial.TU540.type02 #tutorialContainer.show .textWrap {
+  bottom: 34px;
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU540.type02 #globalMenuContainer .globalTeamBtn:before {
+  width: 156px;
+  height: 156px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_circle.png") left top no-repeat;
+  background-size: 156px 156px;
+  display: block;
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 1s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU550 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.75)), color-stop(54%, rgba(0, 0, 0, 0.75)), color-stop(59%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU550 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: -webkit-calc(50% - 90px);
+  right: 250px; }
+
+body #baseContainer.tutorial.TU550 #tutorialContainer.show .textWrap {
+  bottom: 34px;
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU550 .btnWrap .questBtn:after {
+  width: 443px;
+  height: 100px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_horizontal.png") left top no-repeat;
+  background-size: 443px 100px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 1.3s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 100;
+  -webkit-animation-fill-mode: forwards;
+  mix-blend-mode: overlay; }
+
+body #baseContainer.tutorial.TU560.type01 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(7%, rgba(0, 0, 0, 0.75)), color-stop(12%, rgba(0, 0, 0, 0)), color-stop(29%, rgba(0, 0, 0, 0)), color-stop(34%, rgba(0, 0, 0, 0.75)), color-stop(100%, rgba(0, 0, 0, 0.75))); }
+
+body #baseContainer.tutorial.TU560.type01 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 218px;
+  left: 269px; }
+
+body #baseContainer.tutorial.TU560.type01 #tutorialContainer.show .textWrap {
+  bottom: 34px;
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU560.type01 #DeckFormation .deckViewWrap .deckPartsWrap .deckParts:nth-child(1) {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU560.type01 #DeckFormation .deckViewWrap .deckPartsWrap .deckParts:nth-child(1) .tapArea:before {
+  width: 142px;
+  height: 100%;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_vertical.png") left top no-repeat;
+  background-size: 142px 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 1s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards;
+  mix-blend-mode: overlay; }
+
+body #baseContainer.tutorial.TU560.type02 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(6%, rgba(0, 0, 0, 0.75)), color-stop(11%, rgba(0, 0, 0, 0)), color-stop(19%, rgba(0, 0, 0, 0)), color-stop(24%, rgba(0, 0, 0, 0.75)), color-stop(100%, rgba(0, 0, 0, 0.75))); }
+
+body #baseContainer.tutorial.TU560.type02 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  bottom: 0;
+  left: 200px; }
+
+body #baseContainer.tutorial.TU560.type02 #tutorialContainer.show .textWrap {
+  top: -webkit-calc(50% - 68px);
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU560.type02 #charaListWrap #charaList .userCharaIcon.on {
+  -webkit-order: -1 !important;
+  -webkit-box-ordinal-group: 0 !important;
+  -ms-flex-order: -1 !important;
+  order: -1 !important; }
+
+body #baseContainer.tutorial.TU560.type02 #charaListWrap #charaList .userCharaIcon.formationCurrent {
+  -webkit-order: -2 !important;
+  -webkit-box-ordinal-group: -1 !important;
+  -ms-flex-order: -2 !important;
+  order: -2 !important; }
+
+body #baseContainer.tutorial.TU560.type02 #charaListWrap #charaList .userCharaIcon.on:before {
+  width: 78px;
+  height: 78px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_circle.png") left top no-repeat;
+  background-size: 78px 78px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 1s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards;
+  mix-blend-mode: overlay; }
+
+body #baseContainer.tutorial.TU560.type03 #tutorialContainer.show .bgWrap, body #baseContainer.tutorial.TU560.type03_2 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(83%, rgba(0, 0, 0, 0.75)), color-stop(88%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU560.type03 #tutorialContainer.show .arrowWrap, body #baseContainer.tutorial.TU560.type03_2 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  right: 120px;
+  bottom: 0; }
+
+body #baseContainer.tutorial.TU560.type03 #tutorialContainer.show .textWrap, body #baseContainer.tutorial.TU560.type03_2 #tutorialContainer.show .textWrap {
+  top: -webkit-calc(50% - 68px);
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU560.type03 #mainBtn:before, body #baseContainer.tutorial.TU560.type03_2 #mainBtn:before {
+  width: 98px;
+  height: 102px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_circle.png") left top no-repeat;
+  background-size: 98px 102px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  -webkit-animation: common_fade_in_out 1s ease-in-out 1s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards;
+  mix-blend-mode: overlay; }
+
+body #baseContainer.tutorial.TU560.type03_1 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.75)), color-stop(83%, rgba(0, 0, 0, 0.75)), color-stop(88%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU560.type03_1 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  left: 138px;
+  top: 72px; }
+
+body #baseContainer.tutorial.TU560.type03_1 #tutorialContainer.show .textWrap {
+  top: -webkit-calc(50% - 68px);
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU560.type03_1 #autoFormationPopBtn {
+  pointer-events: auto !important; }
+  body #baseContainer.tutorial.TU560.type03_1 #autoFormationPopBtn:before {
+    width: 150px;
+    height: 40px;
+    background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_horizontal.png") left top no-repeat;
+    background-size: 150px 40px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    -webkit-animation: common_fade_in_out 1s ease-in-out 1s infinite;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
+    -webkit-animation-fill-mode: forwards;
+    mix-blend-mode: overlay; }
+
+body #baseContainer.tutorial.TU560.type04 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(86%, rgba(0, 0, 0, 0.75)), color-stop(91%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU560.type04 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  top: 0;
+  right: 100px; }
+
+body #baseContainer.tutorial.TU560.type04 #globalMenuContainer #menu:before {
+  width: 97px;
+  height: 55px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_circle.png") left top no-repeat;
+  background-size: 97px 55px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  -webkit-animation: common_fade_in_out2 1s ease-in-out 1s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU560.type05 #tutorialContainer.show .bgWrap {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.75)), color-stop(68%, rgba(0, 0, 0, 0.75)), color-stop(73%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0))); }
+
+body #baseContainer.tutorial.TU560.type05 #tutorialContainer.show .arrowWrap {
+  position: absolute;
+  right: 272px;
+  bottom: 115px; }
+
+body #baseContainer.tutorial.TU560.type05 #tutorialContainer.show .textWrap {
+  bottom: 340px;
+  left: -webkit-calc(50% - 382px);
+  -webkit-animation: common_fade_in .3s ease .75s 1 alternate;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU560.type05 #globalMenuContainer .globalQuestBtn:before {
+  width: 156px;
+  height: 156px;
+  background: url("/magica/resource/image_web/page/tutorial/detail/btn_glow_circle.png") left top no-repeat;
+  background-size: 156px 156px;
+  display: block;
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  content: "";
+  -webkit-animation: common_fade_in_out2 1s ease-in-out 1s infinite;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  -webkit-animation-fill-mode: forwards; }
+
+body #baseContainer.tutorial.TU010 #questLinkList .quest:nth-child(1) .touchObj, body #baseContainer.tutorial.TU110 #questLinkList .quest:nth-child(1) .touchObj, body #baseContainer.tutorial.TU210 #questLinkList .quest:nth-child(1) .touchObj, body #baseContainer.tutorial.TU320 #questLinkList .quest:nth-child(1) .touchObj, body #baseContainer.tutorial.TU410 #questLinkList .quest:nth-child(1) .touchObj {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU310 #questListWrap .section.new {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU510 #globalMenuContainer #menu, body #baseContainer.tutorial.TU510 #globalMenuContainer #menu *, body #baseContainer.tutorial.TU510 #globalMenuContainer .gacha, body #baseContainer.tutorial.TU510 #globalMenuContainer .gacha * {
+  pointer-events: auto !important; }
+  body #baseContainer.tutorial.TU510 #globalMenuContainer #menu.off, body #baseContainer.tutorial.TU510 #globalMenuContainer #menu *.off, body #baseContainer.tutorial.TU510 #globalMenuContainer .gacha.off, body #baseContainer.tutorial.TU510 #globalMenuContainer .gacha *.off {
+    pointer-events: none !important; }
+
+body #baseContainer.tutorial.TU520.type01 #tutorialContainer.show {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU520 #mainContent * {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU540 #globalMenuContainer #menu, body #baseContainer.tutorial.TU540 #globalMenuContainer #menu *, body #baseContainer.tutorial.TU540 #globalMenuContainer .globalTeamBtn, body #baseContainer.tutorial.TU540 #globalMenuContainer .globalTeamBtn * {
+  pointer-events: auto !important; }
+  body #baseContainer.tutorial.TU540 #globalMenuContainer #menu.off, body #baseContainer.tutorial.TU540 #globalMenuContainer #menu *.off, body #baseContainer.tutorial.TU540 #globalMenuContainer .globalTeamBtn.off, body #baseContainer.tutorial.TU540 #globalMenuContainer .globalTeamBtn *.off {
+    pointer-events: none !important; }
+
+body #baseContainer.tutorial.TU540 .btnWrap {
+  display: none; }
+
+body #baseContainer.tutorial.TU540 #popupArea .decideBtn {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU550 .questBtn {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU560 #charaListWrap #charaList li.on {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU560 #mainBtn.on, body #baseContainer.tutorial.TU560 #autoFormationPopBtn.on {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU560 #mainBtn.tapOff, body #baseContainer.tutorial.TU560 #autoFormationPopBtn.tapOff {
+  pointer-events: none !important; }
+
+body #baseContainer.tutorial.TU560 #globalMenuContainer.on #menu, body #baseContainer.tutorial.TU560 #globalMenuContainer.on #menu *, body #baseContainer.tutorial.TU560 #globalMenuContainer.on .globalQuestBtn, body #baseContainer.tutorial.TU560 #globalMenuContainer.on .globalQuestBtn * {
+  pointer-events: auto !important; }
+  body #baseContainer.tutorial.TU560 #globalMenuContainer.on #menu.off, body #baseContainer.tutorial.TU560 #globalMenuContainer.on #menu *.off, body #baseContainer.tutorial.TU560 #globalMenuContainer.on .globalQuestBtn.off, body #baseContainer.tutorial.TU560 #globalMenuContainer.on .globalQuestBtn *.off {
+    pointer-events: none !important; }
+
+body #baseContainer.tutorial.TU040 *, body #baseContainer.tutorial.TU150 *, body #baseContainer.tutorial.TU240 *, body #baseContainer.tutorial.TU360 *, body #baseContainer.tutorial.TU450 * {
+  pointer-events: auto !important; }
+
+body #baseContainer.tutorial.TU120 .wrap, body #baseContainer.tutorial.TU120 .wrap *, body #baseContainer.tutorial.TU330 .wrap, body #baseContainer.tutorial.TU330 .wrap *, body #baseContainer.tutorial.TU420 .wrap, body #baseContainer.tutorial.TU420 .wrap * {
+  pointer-events: auto !important; }
+
+@-webkit-keyframes arrow_move_r {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0); }
+  50% {
+    -webkit-transform: translate3d(20px, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0); } }
+
+@-webkit-keyframes arrow_move_l {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0); }
+  50% {
+    -webkit-transform: translate3d(-20px, 0, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0); } }
+
+@-webkit-keyframes arrow_move_up {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0); }
+  50% {
+    -webkit-transform: translate3d(0, -20px, 0); }
+  100% {
+    -webkit-transform: translate3d(0, 0, 0); } }
+
+#tapBlock {
+  width: 1024px;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000000000; }
+
+#baseContainer {
+  width: 1024px;
+  height: 100%;
+  background-color: transparent !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden; }
+#baseContainer.fadein #mainContent {
+  display: block;
+  -webkit-animation: readyFadeIn .25s ease-in;
+    -webkit-animation-fill-mode: forwards; }
+#baseContainer.fadeout #mainContent {
+    display: none !important; }
+
+#overlapContainer {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000; }
+#overlapContainer #curtain {
+  width: 1024px;
+  height: 100%;
+  background-color: #000;
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+    z-index: 901; }
+#overlapContainer #curtain.show {
+  display: block;
+      opacity: .8; }
+
+#mainContent {
+  width: 1024px;
+  height: 100%;
+  background-color: transparent !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1000; }
+#mainContent > div:nth-of-type(1), #mainContent > div:nth-of-type(1) > div {
+  width: 1024px;
+    height: 100%; }
+#mainContent.hide {
+  display: none !important;
+    pointer-events: none; }
+
+#ready {
+  width: 1024px;
+  height: 100%;
+  background: #000;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #000;
+  z-index: 100002; }
+#ready.show {
+    display: block; }
+#ready.fadein {
+    display: block; }
+#ready.fadeout {
+  display: block;
+  -webkit-animation: readyFadeOut .4s ease-in;
+    -webkit-animation-fill-mode: forwards; }
+#ready.tutorialStart {
+    display: block; }
+#ready.tutorialStartFadeout {
+  display: block;
+  -webkit-animation: readyFadeOut 1.5s ease-in 1s 1 alternate;
+    -webkit-animation-fill-mode: forwards; }
+#ready.preNativeFadeIn {
+  display: block;
+  -webkit-animation: readyFadeIn .6s ease-in;
+    -webkit-animation-fill-mode: forwards; }
+#ready.nativeFadeOut {
+  display: block;
+  -webkit-animation: readyFadeOut .6s ease-in;
+    -webkit-animation-fill-mode: forwards; }
+#ready.gameStartFadeIn {
+  display: block;
+  background: #FFF;
+  color: #FFF;
+  -webkit-animation: readyFadeIn .6s ease-in;
+    -webkit-animation-fill-mode: forwards; }
+#ready.gameStartFadeOut {
+  display: block;
+  background: #FFF;
+  color: #FFF;
+  -webkit-animation: readyFadeOut .4s ease-in;
+    -webkit-animation-fill-mode: forwards; }
+
+/* loading ------------------------------------------------------------------ */
+#loading {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 1000000000; }
+#loading p {
+  width: 334px;
+  height: 54px;
+  background: url("/magica/resource/image_web/common/global/connecting.png") left top no-repeat;
+  position: absolute;
+  right: 0;
+    bottom: 20px; }
+
+@-webkit-keyframes readyFadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@-webkit-keyframes readyFadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }

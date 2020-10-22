@@ -1,0 +1,166 @@
+#DoppelCollection {
+  width: 1024px;
+  height: 100%;
+  position: relative;
+  overflow: hide;
+}
+#DoppelCollection .show {
+  -webkit-animation: common_fade_in .2s ease 0s 1 alternate;
+  -webkit-animation-fill-mode: forwards;
+}
+#DoppelCollection .hide {
+  -webkit-animation: common_fade_out .2s ease 0s 1 alternate;
+  pointer-events: none;
+  -webkit-animation-fill-mode: forwards;
+}
+#DoppelCollection .noDisp {
+  display: none;
+}
+#DoppelCollection h1 {
+  width: 256px;
+  height: 52px;
+  background: url("/magica/resource/image_web/page/collection/header.png") left top no-repeat;
+  position: absolute;
+  top: -2px;
+  left: -webkit-calc(50% - 128px);
+  z-index: 10;
+}
+#DoppelCollection #doppelBackBtn {
+  width: 90px;
+  height: 44px;
+  background: url("/magica/resource/image_web/page/collection/btn_doppel_back.png") left top no-repeat;
+  position: absolute;
+  top: 8px;
+  left: 6px;
+  z-index: 100;
+}
+#DoppelCollection #doppelListWrap {
+  height: 100%;
+}
+#DoppelCollection #doppelListWrap .doppelCount {
+  min-width: 98px;
+  position: fixed;
+  top: 38px;
+  right: 44px;
+  font-size: 18px;
+  line-height: 1.45;
+  text-align: right;
+  border-bottom: 1px solid #000;
+}
+#DoppelCollection #doppelListWrap .doppelCount,
+#DoppelCollection #doppelListWrap .doppelCount span {
+  color: #261f14;
+}
+#DoppelCollection #doppelList {
+  width: -webkit-calc(100% - 90px);
+  height: -webkit-calc(100% - 100px);
+  top: 70px;
+  left: 45px;
+  overflow: hidden;
+}
+#DoppelCollection #doppelList .doppelListInner {
+  width: 822px;
+  height: auto;
+  min-height: 100%;
+  margin: 0 auto;
+  padding: 10px 0 30px;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: flex-start;
+  /* Safari */
+  align-content: flex-start;
+}
+#DoppelCollection #doppelList .doppelListInner .doppel {
+  width: 194px;
+  height: 194px;
+  margin: 0 15px 10px 0;
+  background: url("/magica/resource/image_web/page/collection/doppel_frame.png") left top no-repeat;
+  position: relative;
+}
+#DoppelCollection #doppelList .doppelListInner .doppel .mask {
+  width: 154px;
+  height: 154px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  overflow: hidden;
+  -webkit-border-radius: 100%;
+}
+#DoppelCollection #doppelList .doppelListInner .doppel .mask img {
+  width: 154px;
+  height: 154px;
+}
+#DoppelCollection #doppelList .doppelListInner .doppel.none {
+  background: url("/magica/resource/image_web/page/collection/doppel_none.png") left top no-repeat;
+}
+#DoppelCollection #doppelList .doppelListInner .doppel:nth-child(4n) {
+  margin: 0 0 10px 0;
+}
+#DoppelCollection #doppelDetailWrap {
+  width: 1024px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#DoppelCollection #doppelDetailWrap .doppelImg {
+  position: absolute;
+  top: -webkit-calc(50% - 258px);
+  left: 32px;
+}
+#DoppelCollection #doppelDetailWrap .doppelDetail {
+  width: 505px;
+  padding: 0 10px;
+  background: url("/magica/resource/image_web/page/collection/detail_line.png") left bottom repeat;
+  position: absolute;
+  right: 40px;
+  bottom: 67px;
+  font-size: 13px;
+  line-height: 35px;
+}
+#DoppelCollection #doppelDetailWrap .doppelDetail,
+#DoppelCollection #doppelDetailWrap .doppelDetail span {
+  color: #261f14;
+}
+#DoppelCollection #doppelDetailWrap .doppelDesigner {
+  position: absolute;
+  right: 42px;
+  bottom: 44px;
+  font-size: 12px;
+}
+#DoppelCollection #doppelDetailWrap .doppelDesigner,
+#DoppelCollection #doppelDetailWrap .doppelDesigner span,
+#DoppelCollection #doppelDetailWrap .doppelDesigner p {
+  color: #261f14;
+}
+#DoppelCollection #doppelDetailWrap .nameWrap {
+  height: -webkit-calc(100% - 350px);
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 14px;
+  text-align: right;
+}
+#DoppelCollection #doppelDetailWrap .nameWrap .doppelNameImg img {
+  margin: 0 -20px 10px 0;
+}
+#DoppelCollection #doppelDetailWrap .nameWrap .doppelName {
+  margin: 0 0 5px;
+}
+#DoppelCollection #doppelDetailWrap .nameWrap,
+#DoppelCollection #doppelDetailWrap .nameWrap span,
+#DoppelCollection #doppelDetailWrap .nameWrap p {
+  color: #261f14;
+}
+#DoppelCollection .frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  border-width: 64px;
+  border-style: solid;
+  -webkit-border-image: url("/magica/resource/image_web/page/collection/bg_frame.png") 68 stretch;
+  z-index: 1;
+}

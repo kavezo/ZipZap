@@ -1,0 +1,598 @@
+<div id="ConfigTop">
+	<div id="menuPanel" class="commonFrame2">
+		<ul class="common_tab t_pink">
+			<li class="btn se_tabs TE current" data-type="user">Game Settings</li>
+			<li class="btn se_tabs TE" data-type="push">Notifications</li>
+			<li class="btn se_tabs TE" data-type="datas">Manage Data</li>
+			<li class="btn se_tabs TE" data-type="transfer">Transfer Data<span class="noPassIcon<% if(setPassword){ %> off<% }%>"></span></li>
+		</ul>
+	</div>
+	<div id="configWrap" class="commonFrame1 user">
+		<h2 id="listTitle">Game Settings</h2>
+		<div id="userWrap">
+			<h3>Players</h3>
+			<dl class="colWrap common_dl">
+				<dt class="colLeft playerName">Player Name</dt>
+				<%
+					var nameChangeLimited = (gameUser.closeFunctions && gameUser.closeFunctions.indexOf("CHANGE_NAME") > -1) ? true : false;
+				%>
+				<dd class="colRight"><span id="userName" class="black"><%= user.loginName %></span><span class="btn rightPosition sb_gold_01 TE se_decide <% if(!canChangeLoginName || nameChangeLimited){ %> off<% } %>" id="nameChange"><span class="b_screen"></span>Change</span></dd>
+			</dl>
+			<dl class="colWrap common_dl">
+				<dt class="colLeft">Player ID</dt>
+				<dd class="colRight"><span id="userName" class="black"><%= gameUser.inviteCode %></span><span class="btn rightPosition se_decide sb_gold_01 TE " id="idCopy"><span class="b_screen"></span>Copy</span></dd>
+			</dl>
+			<h3>Volume</h3>
+			<dl class="colWrap common_dl soundDl">
+				<dt class="colLeft">BGM</dt>
+				<dd class="colRight soundCol">
+					<input id="bgmSlider" class="slider" type="range" max="10" value="">
+				</dd>
+			</dl>
+			<dl class="colWrap common_dl soundDl">
+				<dt class="colLeft">SE</dt>
+				<dd class="colRight soundCol">
+					<input id="soundSlider" class="slider" type="range" max="10" value="">
+				</dd>
+			</dl>
+			<dl class="colWrap common_dl soundDl">
+				<dt class="colLeft">Voices</dt>
+				<dd class="colRight soundCol">
+					<input id="voiceSlider" class="slider" type="range" max="10" value="">
+				</dd>
+			</dl>
+
+		</div>
+
+		<div id="pushWrap">
+			<div class="pushMiniWrap">
+				<div class="pushToggle">Event<span id="pushEvent" class="sb_gold_02 TE se_decide"><span class="b_screen"></span>ON</span></div>
+				<div class="pushToggle">AP Recovery<span id="pushAP" class="sb_gold_02 TE se_decide"><span class="b_screen"></span>ON</span></div>
+			</div>
+
+			<h3>Daily Quests</h3>
+			<div class="pushDailyWrap">
+				<div class="pushDailyQuest" id="Mon">
+					<div class="weekName c_gold">Monday</div>
+					<select class="selectClass" data-type="pushDaily" data-val="Mon">
+						<option value="off">OFF</option>
+						<option value="0000">12:00 AM</option>
+						<option value="0030">12:30 AM</option>
+						<option value="0100">1:00 AM</option>
+						<option value="0130">1:30 AM</option>
+						<option value="0200">2:00 AM</option>
+						<option value="0230">2:30 AM</option>
+						<option value="0300">3:00 AM</option>
+						<option value="0330">3:30 AM</option>
+						<option value="0400">4:00 AM</option>
+						<option value="0430">4:30 AM</option>
+						<option value="0500">5:00 AM</option>
+						<option value="0530">5:30 AM</option>
+						<option value="0600">6:00 AM</option>
+						<option value="0630">6:30 AM</option>
+						<option value="0700">7:00 AM</option>
+						<option value="0730">7:30 AM</option>
+						<option value="0800">8:00 AM</option>
+						<option value="0830">8:30 AM</option>
+						<option value="0900">9:00 AM</option>
+						<option value="0930">9:30 AM</option>
+						<option value="1000">10:00 AM</option>
+						<option value="1030">10:30 AM</option>
+						<option value="1100">11:00 AM</option>
+						<option value="1130">11:30 AM</option>
+						<option value="1200">12:00 PM</option>
+						<option value="1230">12:30 PM</option>
+						<option value="1300">1:00 PM</option>
+						<option value="1330">1:30 PM</option>
+						<option value="1400">2:00 PM</option>
+						<option value="1430">2:30 PM</option>
+						<option value="1500">3:00 PM</option>
+						<option value="1530">3:30 PM</option>
+						<option value="1600">4:00 PM</option>
+						<option value="1630">4:30 PM</option>
+						<option value="1700">5:00 PM</option>
+						<option value="1730">5:30 PM</option>
+						<option value="1800">6:00 PM</option>
+						<option value="1830">6:30 PM</option>
+						<option value="1900">7:00 PM</option>
+						<option value="1930">7:30 PM</option>
+						<option value="2000">8:00 PM</option>
+						<option value="2030">8:30 PM</option>
+						<option value="2100">9:00 PM</option>
+						<option value="2130">9:30 PM</option>
+						<option value="2200">10:00 PM</option>
+						<option value="2230">10:30 PM</option>
+						<option value="2300">11:00 PM</option>
+						<option value="2330">11:30 PM</option>
+					</select>
+					<div class="triangleArrow">
+						<img src="/magica/resource/image_web/common/icon/icon_select_triangle.png" class="arrow">
+					</div>
+				</div>
+				<div class="pushDailyQuest" id="Tue">
+					<div class="weekName c_gold">Tuesday</div>
+					<select class="selectClass" data-type="pushDaily" data-val="Tue">
+						<option value="off">OFF</option>
+						<option value="0000">12:00 AM</option>
+						<option value="0030">12:30 AM</option>
+						<option value="0100">1:00 AM</option>
+						<option value="0130">1:30 AM</option>
+						<option value="0200">2:00 AM</option>
+						<option value="0230">2:30 AM</option>
+						<option value="0300">3:00 AM</option>
+						<option value="0330">3:30 AM</option>
+						<option value="0400">4:00 AM</option>
+						<option value="0430">4:30 AM</option>
+						<option value="0500">5:00 AM</option>
+						<option value="0530">5:30 AM</option>
+						<option value="0600">6:00 AM</option>
+						<option value="0630">6:30 AM</option>
+						<option value="0700">7:00 AM</option>
+						<option value="0730">7:30 AM</option>
+						<option value="0800">8:00 AM</option>
+						<option value="0830">8:30 AM</option>
+						<option value="0900">9:00 AM</option>
+						<option value="0930">9:30 AM</option>
+						<option value="1000">10:00 AM</option>
+						<option value="1030">10:30 AM</option>
+						<option value="1100">11:00 AM</option>
+						<option value="1130">11:30 AM</option>
+						<option value="1200">12:00 PM</option>
+						<option value="1230">12:30 PM</option>
+						<option value="1300">1:00 PM</option>
+						<option value="1330">1:30 PM</option>
+						<option value="1400">2:00 PM</option>
+						<option value="1430">2:30 PM</option>
+						<option value="1500">3:00 PM</option>
+						<option value="1530">3:30 PM</option>
+						<option value="1600">4:00 PM</option>
+						<option value="1630">4:30 PM</option>
+						<option value="1700">5:00 PM</option>
+						<option value="1730">5:30 PM</option>
+						<option value="1800">6:00 PM</option>
+						<option value="1830">6:30 PM</option>
+						<option value="1900">7:00 PM</option>
+						<option value="1930">7:30 PM</option>
+						<option value="2000">8:00 PM</option>
+						<option value="2030">8:30 PM</option>
+						<option value="2100">9:00 PM</option>
+						<option value="2130">9:30 PM</option>
+						<option value="2200">10:00 PM</option>
+						<option value="2230">10:30 PM</option>
+						<option value="2300">11:00 PM</option>
+						<option value="2330">11:30 PM</option>
+					</select>
+					<div class="triangleArrow">
+						<img src="/magica/resource/image_web/common/icon/icon_select_triangle.png" class="arrow">
+					</div>
+				</div>
+				<div class="pushDailyQuest" id="Wed">
+					<div class="weekName c_gold">Wednesday</div>
+					<select class="selectClass" data-type="pushDaily" data-val="Wed">
+						<option value="off">OFF</option>
+						<option value="0000">12:00 AM</option>
+						<option value="0030">12:30 AM</option>
+						<option value="0100">1:00 AM</option>
+						<option value="0130">1:30 AM</option>
+						<option value="0200">2:00 AM</option>
+						<option value="0230">2:30 AM</option>
+						<option value="0300">3:00 AM</option>
+						<option value="0330">3:30 AM</option>
+						<option value="0400">4:00 AM</option>
+						<option value="0430">4:30 AM</option>
+						<option value="0500">5:00 AM</option>
+						<option value="0530">5:30 AM</option>
+						<option value="0600">6:00 AM</option>
+						<option value="0630">6:30 AM</option>
+						<option value="0700">7:00 AM</option>
+						<option value="0730">7:30 AM</option>
+						<option value="0800">8:00 AM</option>
+						<option value="0830">8:30 AM</option>
+						<option value="0900">9:00 AM</option>
+						<option value="0930">9:30 AM</option>
+						<option value="1000">10:00 AM</option>
+						<option value="1030">10:30 AM</option>
+						<option value="1100">11:00 AM</option>
+						<option value="1130">11:30 AM</option>
+						<option value="1200">12:00 PM</option>
+						<option value="1230">12:30 PM</option>
+						<option value="1300">1:00 PM</option>
+						<option value="1330">1:30 PM</option>
+						<option value="1400">2:00 PM</option>
+						<option value="1430">2:30 PM</option>
+						<option value="1500">3:00 PM</option>
+						<option value="1530">3:30 PM</option>
+						<option value="1600">4:00 PM</option>
+						<option value="1630">4:30 PM</option>
+						<option value="1700">5:00 PM</option>
+						<option value="1730">5:30 PM</option>
+						<option value="1800">6:00 PM</option>
+						<option value="1830">6:30 PM</option>
+						<option value="1900">7:00 PM</option>
+						<option value="1930">7:30 PM</option>
+						<option value="2000">8:00 PM</option>
+						<option value="2030">8:30 PM</option>
+						<option value="2100">9:00 PM</option>
+						<option value="2130">9:30 PM</option>
+						<option value="2200">10:00 PM</option>
+						<option value="2230">10:30 PM</option>
+						<option value="2300">11:00 PM</option>
+						<option value="2330">11:30 PM</option>
+					</select>
+					<div class="triangleArrow">
+						<img src="/magica/resource/image_web/common/icon/icon_select_triangle.png" class="arrow">
+					</div>
+				</div>
+				<div class="pushDailyQuest" id="Thu">
+					<div class="weekName c_gold">Thursday</div>
+					<select class="selectClass" data-type="pushDaily" data-val="Thu">
+						<option value="off">OFF</option>
+						<option value="0000">12:00 AM</option>
+						<option value="0030">12:30 AM</option>
+						<option value="0100">1:00 AM</option>
+						<option value="0130">1:30 AM</option>
+						<option value="0200">2:00 AM</option>
+						<option value="0230">2:30 AM</option>
+						<option value="0300">3:00 AM</option>
+						<option value="0330">3:30 AM</option>
+						<option value="0400">4:00 AM</option>
+						<option value="0430">4:30 AM</option>
+						<option value="0500">5:00 AM</option>
+						<option value="0530">5:30 AM</option>
+						<option value="0600">6:00 AM</option>
+						<option value="0630">6:30 AM</option>
+						<option value="0700">7:00 AM</option>
+						<option value="0730">7:30 AM</option>
+						<option value="0800">8:00 AM</option>
+						<option value="0830">8:30 AM</option>
+						<option value="0900">9:00 AM</option>
+						<option value="0930">9:30 AM</option>
+						<option value="1000">10:00 AM</option>
+						<option value="1030">10:30 AM</option>
+						<option value="1100">11:00 AM</option>
+						<option value="1130">11:30 AM</option>
+						<option value="1200">12:00 PM</option>
+						<option value="1230">12:30 PM</option>
+						<option value="1300">1:00 PM</option>
+						<option value="1330">1:30 PM</option>
+						<option value="1400">2:00 PM</option>
+						<option value="1430">2:30 PM</option>
+						<option value="1500">3:00 PM</option>
+						<option value="1530">3:30 PM</option>
+						<option value="1600">4:00 PM</option>
+						<option value="1630">4:30 PM</option>
+						<option value="1700">5:00 PM</option>
+						<option value="1730">5:30 PM</option>
+						<option value="1800">6:00 PM</option>
+						<option value="1830">6:30 PM</option>
+						<option value="1900">7:00 PM</option>
+						<option value="1930">7:30 PM</option>
+						<option value="2000">8:00 PM</option>
+						<option value="2030">8:30 PM</option>
+						<option value="2100">9:00 PM</option>
+						<option value="2130">9:30 PM</option>
+						<option value="2200">10:00 PM</option>
+						<option value="2230">10:30 PM</option>
+						<option value="2300">11:00 PM</option>
+						<option value="2330">11:30 PM</option>
+					</select>
+					<div class="triangleArrow">
+						<img src="/magica/resource/image_web/common/icon/icon_select_triangle.png" class="arrow">
+					</div>
+				</div>
+				<div class="pushDailyQuest" id="Fri">
+					<div class="weekName c_gold">Friday</div>
+					<select class="selectClass" data-type="pushDaily" data-val="Fri">
+						<option value="off">OFF</option>
+						<option value="0000">12:00 AM</option>
+						<option value="0030">12:30 AM</option>
+						<option value="0100">1:00 AM</option>
+						<option value="0130">1:30 AM</option>
+						<option value="0200">2:00 AM</option>
+						<option value="0230">2:30 AM</option>
+						<option value="0300">3:00 AM</option>
+						<option value="0330">3:30 AM</option>
+						<option value="0400">4:00 AM</option>
+						<option value="0430">4:30 AM</option>
+						<option value="0500">5:00 AM</option>
+						<option value="0530">5:30 AM</option>
+						<option value="0600">6:00 AM</option>
+						<option value="0630">6:30 AM</option>
+						<option value="0700">7:00 AM</option>
+						<option value="0730">7:30 AM</option>
+						<option value="0800">8:00 AM</option>
+						<option value="0830">8:30 AM</option>
+						<option value="0900">9:00 AM</option>
+						<option value="0930">9:30 AM</option>
+						<option value="1000">10:00 AM</option>
+						<option value="1030">10:30 AM</option>
+						<option value="1100">11:00 AM</option>
+						<option value="1130">11:30 AM</option>
+						<option value="1200">12:00 PM</option>
+						<option value="1230">12:30 PM</option>
+						<option value="1300">1:00 PM</option>
+						<option value="1330">1:30 PM</option>
+						<option value="1400">2:00 PM</option>
+						<option value="1430">2:30 PM</option>
+						<option value="1500">3:00 PM</option>
+						<option value="1530">3:30 PM</option>
+						<option value="1600">4:00 PM</option>
+						<option value="1630">4:30 PM</option>
+						<option value="1700">5:00 PM</option>
+						<option value="1730">5:30 PM</option>
+						<option value="1800">6:00 PM</option>
+						<option value="1830">6:30 PM</option>
+						<option value="1900">7:00 PM</option>
+						<option value="1930">7:30 PM</option>
+						<option value="2000">8:00 PM</option>
+						<option value="2030">8:30 PM</option>
+						<option value="2100">9:00 PM</option>
+						<option value="2130">9:30 PM</option>
+						<option value="2200">10:00 PM</option>
+						<option value="2230">10:30 PM</option>
+						<option value="2300">11:00 PM</option>
+						<option value="2330">11:30 PM</option>
+					</select>
+					<div class="triangleArrow">
+						<img src="/magica/resource/image_web/common/icon/icon_select_triangle.png" class="arrow">
+					</div>
+				</div>
+				<div class="pushDailyQuest" id="Sat">
+					<div class="weekName c_gold">Saturday</div>
+					<select class="selectClass" data-type="pushDaily" data-val="Sat">
+						<option value="off">OFF</option>
+						<option value="0000">12:00 AM</option>
+						<option value="0030">12:30 AM</option>
+						<option value="0100">1:00 AM</option>
+						<option value="0130">1:30 AM</option>
+						<option value="0200">2:00 AM</option>
+						<option value="0230">2:30 AM</option>
+						<option value="0300">3:00 AM</option>
+						<option value="0330">3:30 AM</option>
+						<option value="0400">4:00 AM</option>
+						<option value="0430">4:30 AM</option>
+						<option value="0500">5:00 AM</option>
+						<option value="0530">5:30 AM</option>
+						<option value="0600">6:00 AM</option>
+						<option value="0630">6:30 AM</option>
+						<option value="0700">7:00 AM</option>
+						<option value="0730">7:30 AM</option>
+						<option value="0800">8:00 AM</option>
+						<option value="0830">8:30 AM</option>
+						<option value="0900">9:00 AM</option>
+						<option value="0930">9:30 AM</option>
+						<option value="1000">10:00 AM</option>
+						<option value="1030">10:30 AM</option>
+						<option value="1100">11:00 AM</option>
+						<option value="1130">11:30 AM</option>
+						<option value="1200">12:00 PM</option>
+						<option value="1230">12:30 PM</option>
+						<option value="1300">1:00 PM</option>
+						<option value="1330">1:30 PM</option>
+						<option value="1400">2:00 PM</option>
+						<option value="1430">2:30 PM</option>
+						<option value="1500">3:00 PM</option>
+						<option value="1530">3:30 PM</option>
+						<option value="1600">4:00 PM</option>
+						<option value="1630">4:30 PM</option>
+						<option value="1700">5:00 PM</option>
+						<option value="1730">5:30 PM</option>
+						<option value="1800">6:00 PM</option>
+						<option value="1830">6:30 PM</option>
+						<option value="1900">7:00 PM</option>
+						<option value="1930">7:30 PM</option>
+						<option value="2000">8:00 PM</option>
+						<option value="2030">8:30 PM</option>
+						<option value="2100">9:00 PM</option>
+						<option value="2130">9:30 PM</option>
+						<option value="2200">10:00 PM</option>
+						<option value="2230">10:30 PM</option>
+						<option value="2300">11:00 PM</option>
+						<option value="2330">11:30 PM</option>
+					</select>
+					<div class="triangleArrow">
+						<img src="/magica/resource/image_web/common/icon/icon_select_triangle.png" class="arrow">
+					</div>
+				</div>
+				<div class="pushDailyQuest" id="Sun">
+					<div class="weekName c_gold">Sunday</div>
+					<select class="selectClass" data-type="pushDaily" data-val="Sun">
+						<option value="off">OFF</option>
+						<option value="0000">12:00 AM</option>
+						<option value="0030">12:30 AM</option>
+						<option value="0100">1:00 AM</option>
+						<option value="0130">1:30 AM</option>
+						<option value="0200">2:00 AM</option>
+						<option value="0230">2:30 AM</option>
+						<option value="0300">3:00 AM</option>
+						<option value="0330">3:30 AM</option>
+						<option value="0400">4:00 AM</option>
+						<option value="0430">4:30 AM</option>
+						<option value="0500">5:00 AM</option>
+						<option value="0530">5:30 AM</option>
+						<option value="0600">6:00 AM</option>
+						<option value="0630">6:30 AM</option>
+						<option value="0700">7:00 AM</option>
+						<option value="0730">7:30 AM</option>
+						<option value="0800">8:00 AM</option>
+						<option value="0830">8:30 AM</option>
+						<option value="0900">9:00 AM</option>
+						<option value="0930">9:30 AM</option>
+						<option value="1000">10:00 AM</option>
+						<option value="1030">10:30 AM</option>
+						<option value="1100">11:00 AM</option>
+						<option value="1130">11:30 AM</option>
+						<option value="1200">12:00 PM</option>
+						<option value="1230">12:30 PM</option>
+						<option value="1300">1:00 PM</option>
+						<option value="1330">1:30 PM</option>
+						<option value="1400">2:00 PM</option>
+						<option value="1430">2:30 PM</option>
+						<option value="1500">3:00 PM</option>
+						<option value="1530">3:30 PM</option>
+						<option value="1600">4:00 PM</option>
+						<option value="1630">4:30 PM</option>
+						<option value="1700">5:00 PM</option>
+						<option value="1730">5:30 PM</option>
+						<option value="1800">6:00 PM</option>
+						<option value="1830">6:30 PM</option>
+						<option value="1900">7:00 PM</option>
+						<option value="1930">7:30 PM</option>
+						<option value="2000">8:00 PM</option>
+						<option value="2030">8:30 PM</option>
+						<option value="2100">9:00 PM</option>
+						<option value="2130">9:30 PM</option>
+						<option value="2200">10:00 PM</option>
+						<option value="2230">10:30 PM</option>
+						<option value="2300">11:00 PM</option>
+						<option value="2330">11:30 PM</option>
+
+					</select>
+					<div class="triangleArrow">
+						<img src="/magica/resource/image_web/common/icon/icon_select_triangle.png" class="arrow">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="dataWrap">
+			<div class="configScroll">
+				<h3>Voice Settings</h3>
+				<div class="nowDataSet commonFrame3" id="voices">
+					<div id="voiceDataWrap">
+						<span class="checkBox se_decide"></span>
+						<span class="voiceCheck"></span>
+						<span class="dataTexts">Play with Voices</span>
+					</div>
+					<div id="voiceDataOffWrap">
+						<span class="checkBox se_decide"></span>
+						<span class="voiceCheck"></span>
+						<span class="dataTexts">Play without Voices</span>
+					</div>
+					<div id="fullVoiceBtn" class="fullVoiceDl btn mb_pink se_decide TE">
+						<span class="b_screen"></span>
+						<span class="fullVoiceTx">Download All Story Voice Data</span>
+					</div>
+				</div>
+
+				<h3>Video Settings</h3>
+				<div class="nowDataSet commonFrame3" id="movies">
+					<div id="movieDataWrap">
+						<span class="checkBox se_decide" data-movie-type="high"></span>
+						<span class="movieCheck"></span>
+						<span class="dataTexts">Play with High Quality Videos</span>
+					</div>
+					<div id="movieDataLowWrap">
+						<span class="checkBox se_decide" data-movie-type="low"></span>
+						<span class="movieCheck"></span>
+						<span class="dataTexts">Play with Low Quality Videos</span>
+					</div>
+					<div id="movieDataOffWrap">
+						<span class="checkBox se_decide" data-movie-type="off"></span>
+						<span class="movieCheck"></span>
+						<span class="dataTexts">Play without Videos</span>
+					</div>
+					<%
+						var spl     = window.app_ver.split(".");
+						var g_cwVer = spl.join('') | 0;
+						if(g_cwVer > 162 || window.isLocal){
+					%>
+					<div id="movieAddBtn" class="movieAdd btn mb_pink se_decide TE">
+						<span class="b_screen"></span>
+						<span class="fullVoiceTx">Video Data Download</span>
+					</div>
+					<% } %>
+				</div>
+
+				<h3>Download All Data</h3>
+				<div class="commonFrame3 dataFrames">
+					Try doing this when images are not being displayed properly.<br>
+					<div id="allDownload" class="btn se_decide b_pink TE"><span class="b_screen"></span>Download All</div>
+				</div>
+				<h3>Clear Cache</h3>
+				<div class="commonFrame3 dataFrames">
+					Try doing this when images and voices are not being played/displayed.<br>
+					<div id="cacheClear" class="btn se_decide b_pink TE"><span class="b_screen"></span>Clear Cache</div>
+				</div>
+			</div>
+		</div>
+		<div id="transferWrap">
+			<p class="firstText">Set your Transfer Password here.</p>
+			<dl class="colWrap common_dl">
+				<dt class="colLeft">Transfer ID</dt>
+				<dd class="colRight"><%= user.personalId %></dd>
+			</dl>
+			<span class="btn rightPosition se_decide sb_gold_01 TE " id="transferIdCopy"><span class="b_screen"></span>Copy</span>
+			<dl class="colWrap common_dl">
+				<dt class="colLeft">Password</dt>
+				<dd class="colRight" id="transferSettings"><% if(!setPassword){ %>Not Set<% }else{ %>Set<% } %></dd>
+			</dl>
+			<p class="c_red">※Passwords must be 8-15 characters.</p>
+			<p class="transferNotice">※If you don't set a Transfer Password on this device, you can not transfer data to your new device.<br>
+				Once you set a password, make sure not to forget your Transfer ID/Password.</p>
+			<div class="relationWrap">
+				<span class="btn se_decide b_pink TE" id="transfer"><span class="b_screen"></span>Set Password</span>
+			</div>
+			<p class="c_red">※Data can be transferred from the Title Page.</p>
+		</div>
+	</div>
+</div>
+
+<script id="transferInner" type="text/template">
+	<div id="transferPopup">
+		<span class="leftCol c_gold">Transfer ID</span><span class="rightCol transferId"><%='<%= user.personalId %\>'%></span><br>
+		<span class="leftCol c_gold">Password</span><span class="rightCol"><input readonly="readonly" type="password" id="transferPassword" class="commonFrame3" value=""></span><br>
+		<span class="leftCol c_gold">Confirm Password</span><span class="rightCol"><input readonly="readonly" type="password" id="checkPassWord" class="commonFrame3" value=""></span>
+		<div class="transferAlert">※Passwords must be 8-15 characters.</div>
+		<div class="transferNotice">Your Transfer ID is needed when transfering accounts.<br>Please make a note of your ID and password.</div>
+	</div>
+</script>
+
+<script id="dataPopInner" type="text/template">
+	<div id="dataPopup">
+		<div id="<%="<%= model.type %\>"%>DataWrapBefore"<%="<% if(model.onFlag){ %\>"%> class="on"<%="<% } %\>"%>>
+			<span class="pointFrame">Before</span>
+			<span class="<%="<%= model.type %\>"%>Check<%="<% if(model.type === 'movie' && model.oldType !== 0){ %\>"%> on<%="<% } %\>"%>"></span>
+			<span class="changeText"><%="<% if(model.type === 'voice'){ %\>"%><%="<% if(model.onFlag){ %\>"%>Play With Voices<%="<% }else{ %\>"%>Play Without Voices<%="<% } %\>"%><%="<% }else{ %\>"%><%='<% if(model.oldType === 0){ %\>'%>Play Without Videos<%='<% }else if(model.oldType === 2){ %\>'%>Play With High Quality Videos<%='<% }else if(model.oldType === 1){ %\>'%>Play With Low Quality Videos<%="<% } %\>"%><%="<% } %\>"%></span>
+		</div>
+		<div id="<%="<%= model.type %\>"%>DataWrapAfter"<%="<% if(!model.onFlag){ %\>"%> class="on"<%="<% } %\>"%>>
+			<span class="pointFrame">After</span>
+			<span class="<%="<%= model.type %\>"%>Check<%="<% if(model.type === 'movie' && model.newType !== 'off'){ %\>"%> on<%="<% } %\>"%>"></span>
+			<span class="changeText"><%="<% if(model.type === 'voice'){ %\>"%><%="<% if(model.onFlag){ %\>"%>Play Without Voices<%="<% }else{ %\>"%>Play With Voices<%="<% } %\>"%><%="<% }else{ %\>"%><%='<% if(model.newType === "off"){ %\>'%>Play Without Videos<%='<% }else if(model.newType === "high"){ %\>'%>Play With High Quality Videos<%='<% }else if(model.newType === "low"){ %\>'%>Play With Low Quality Videos<%="<% } %\>"%><%="<% } %\>"%></span>
+		</div>
+		<p id="dataPopText">
+			<%='<% if((model.type === "voice" && model.onFlag) || (model.type === "movie" && model.newType === "off")){ %\>'%>
+				This will delete all downloaded <%="<% if(model.type === 'voice'){ %\>"%>Voices<%="<% }else{ %\>"%>Videos<%="<% } %\>"%>.<br>
+				<%="<% if(model.type === 'voice'){ %\>"%>Voices<%="<% }else{ %\>"%>Videos<%="<% } %\>"%> will not be played after this change.
+			<%="<% }else{ %\>"%>
+				Downloading <%="<% if(model.type === 'voice'){ %\>"%>Voices<%="<% }else{ %\>"%>Videos<%="<% } %\>"%> Data<br>
+				All <%="<% if(model.type === 'voice'){ %\>"%>Voices<%="<% }else{ %\>"%>Videos<%="<% } %\>"%> will be played after this change.<br>
+				<span class="c_red">※We recommend using a stable Wi-Fi network.</span>
+			<%="<% } %\>"%>
+		</p>
+		<div class="popBtnWrap">
+			<span class="btn b_white se_cancel TE popupCloseBtn"><span class="b_screen"></span>Cancel</span>
+			<span class="btn b_pink se_decide TE dataDecide popupCloseBtn"><span class="b_screen"></span>OK</span>
+		</div>
+	</div>
+</script>
+
+<script id="allDownloadPop" type="text/template">
+	Downloading all necessary images, voices, and videos.<br>
+
+	<div class="settings">
+		<span class="pointFrame">Voices</span><span class="voiceIcon<%='<% if(voice > 0){ %\>'%> on<%='<% }%\>'%>"></span>
+		<span><%='<% if(voice > 0){ %\>'%>Play With Voices<%='<% }else{ %\>'%>Play Without Voices<%='<% }%\>'%></span><br>
+		<span class="pointFrame">Videos</span><span class="movieIcon<%='<% if(movie > 0){ %\>'%> on<%='<% }%\>'%>"></span>
+		<span><%='<% if(movie === 0){ %\>'%>Play Without Videos<%='<% }else if(movie === 2){ %\>'%>Play With High Quality Videos<%='<% }else{ %\>'%>Play With Low Quality Videos<%='<% }%\>'%></span>
+	</div>
+	<span class="c_red">Due to the amount of data, we recommend using a stable Wi-Fi network.</span>
+</script>
+
+<script id="nameChangePop" type="text/template">
+	Please enter your new Player Name.<br><br>
+	<input id="changeName" class="commonFrame3" readonly="readonly" type="text" maxlength="8" value="">
+	<div class="textCount" style="display:inline-block;margin-left:50px;">
+		<span id="textCount">0</span>/8
+	</div>
+	<div class="c_red" style="margin-top:20px;">※Player Names can be changed only once a day.</div>
+</script>
