@@ -19,12 +19,14 @@ run mitmweb though, you can close the browser window.)
 ### Connecting to the private server
 
 1. Make sure MagiReco is already installed on your device. I've only tested it on when it's past the tutorial, so no 
-guarantees it'll work for a fresh install.
-2. Find the IP address of the computer you're running the server on
-3. Configure a proxy on your device with the server address as your computer's IP address, and the port as 8080
-4. Open mitm.it, and download and enable a certificate for your device
-5. If you can load google.com through the proxy, then you can open the app and everything will be through the private
-server.
+guarantees it'll work for a fresh install. But it works even if you haven't updated.
+2. Find the IP address of the computer you're running the server on. I've only tested this with a local IP address (ones
+that start with 192.168) but external IP addresses should work.
+3. Configure a proxy on your device with the server address as your computer's IP address, and the port as 8080. You can
+google this if you don't know how to.
+4. Open mitm.it in a browser, and download and enable a certificate for your device
+5. Try loading google.com through the proxy -- if it works, then you can open the app and everything will be through the
+private server.
 
 I had a horrible time getting mitmproxy to work on some of my devices; specifically, I never got it to work with my Mac
 running mitmproxy and my iPhone 6 trying to get through it. Try googling any errors you have with mitmproxy; it may or
