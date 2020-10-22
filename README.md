@@ -2,11 +2,6 @@
 
 ### Installation and running
 
-On Windows x64, just download the zip in releases and run runServer.bat. (At least I think. Haven't tested this on an 
-x32 machine so it might only work on x64...) You can close the browser window that pops up but not the command line
-that does.
-
-On any other system,
 1. Make sure you have python3, either in a separate env (recommended because system-wide Python dependency graphs are 
 gross) or on your system
 2. Run `pip install -r requirements.txt` in a command line
