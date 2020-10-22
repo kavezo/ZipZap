@@ -69,6 +69,7 @@ The default user is a level 999 account with only Iroha and no memoria but 999 o
     - putting memoria into the vault and taking them out
 - gacha (api/gacha.py)
     - pull premium, x1 and x10, using stones and tickets
+        - this currently includes all limited megucas and memes, and welfare ones as well. no reason not to lol
     - pull normal
     - view history
 - changing user settings (api/gameUser.py, api/user.py, api/userChara.py)
