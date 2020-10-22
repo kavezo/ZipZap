@@ -5,7 +5,7 @@ physical device work).
 
 ### On the computer: installation and running
 
-On Windows, if you have Python 3 installed (it *may* need to be Python 3.8), you can just run startServer.bat. You can
+On Windows, if you have Python 3.8 installed, you can just run startServer.bat. You can
 close the browser window that pops up but not the command line.
 
 1. Make sure you have python3, either in a separate env (recommended because system-wide Python dependency graphs are 
@@ -34,7 +34,7 @@ may not help. In the future I might move off of mitmproxy and find a different s
 ---
 ### Porting over your existing data
 
-On Windows, if you have Python installed, run getUserData.bat. You can close the browser window that pops up, but not 
+On Windows, if you have Python 3.8 installed, run getUserData.bat. You can close the browser window that pops up, but not 
 the command line. 
 
 On other systems, follow steps 1 and 2 in the Installation and Running section, then run
