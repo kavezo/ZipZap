@@ -1,0 +1,28 @@
+[
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "charaId": 1001,
+        "live2dId": "02",
+        "live2d": {
+            "charaId": 1001,
+            "live2dId": "02",
+            "description": "School Uniform",
+            "defaultOpened": false,
+            "voicePrefixNo": "00"
+        },
+        "createdAt": "2020/09/14 20:54:41"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "charaId": 1001,
+        "live2dId": "00",
+        "live2d": {
+            "charaId": 1001,
+            "live2dId": "00",
+            "description": "Magical Girl",
+            "defaultOpened": true,
+            "voicePrefixNo": "00"
+        },
+        "createdAt": "2020/09/14 19:12:48"
+    }
+]

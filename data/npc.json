@@ -1,0 +1,530 @@
+{
+    "npcHelpId": 101,
+    "userCardList": [
+        {
+            "cardId": 10113,
+            "displayCardId": 10113,
+            "revision": 3,
+            "attack": 1565,
+            "defense": 1175,
+            "hp": 3714,
+            "level": 1,
+            "experience": 0,
+            "magiaLevel": 1,
+            "enabled": true,
+            "customized1": false,
+            "customized2": false,
+            "customized3": false,
+            "customized4": false,
+            "customized5": false,
+            "customized6": false,
+            "card": {
+                "cardId": 10113,
+                "charaNo": 1011,
+                "miniCharaNo": 101100,
+                "magiaCharaNo": 101100,
+                "cardName": "Kaede Akino",
+                "rank": "RANK_3",
+                "attributeId": "TIMBER",
+                "initialType": "MAGIA",
+                "growthType": "ATKHP",
+                "attack": 1565,
+                "defense": 1175,
+                "hp": 3714,
+                "rateGainMpAtk": 1200,
+                "rateGainMpDef": 1200,
+                "magiaId": 10113,
+                "cardMagia": {
+                    "id": 10113,
+                    "groupId": 1014,
+                    "name": "Judgment Earth",
+                    "shortDescription": "Deals Stronger Elemental Damage to All Enemies [IV]",
+                    "artId1": 100300204,
+                    "art1": {
+                        "artId": 100300204,
+                        "verbCode": "ATTACK",
+                        "effectCode": "ALIGNMENT",
+                        "targetId": "ALL",
+                        "effectValue": 3050,
+                        "growPoint": 100
+                    }
+                },
+                "skillId": 10113,
+                "cardSkill": {
+                    "id": 10113,
+                    "groupId": 1087,
+                    "name": "I-I'll Help with What I Can!",
+                    "shortDescription": "Damage Inflicted UP [V] / MP Gain UP [V]",
+                    "artId1": 310401305,
+                    "art1": {
+                        "artId": 310401305,
+                        "verbCode": "BUFF",
+                        "effectCode": "DAMAGE",
+                        "targetId": "CONNECT",
+                        "effectValue": 300,
+                        "enableTurn": 1,
+                        "growPoint": 25
+                    },
+                    "artId2": 310401905,
+                    "art2": {
+                        "artId": 310401905,
+                        "verbCode": "BUFF",
+                        "effectCode": "MP_GAIN",
+                        "targetId": "CONNECT",
+                        "effectValue": 200,
+                        "enableTurn": 1,
+                        "growPoint": 25
+                    }
+                },
+                "pieceSkillList": [],
+                "maxPieceSkillList": [],
+                "commandType1": "MPUP",
+                "commandType2": "MPUP",
+                "commandType3": "RANGE_H",
+                "commandType4": "RANGE_V",
+                "commandType5": "CHARGE",
+                "illustrator": "aokiume",
+                "cardCustomize": {
+                    "cardId": 10113,
+                    "giftId1": 133,
+                    "gift1": {
+                        "id": 133,
+                        "name": "Forest Orb ++",
+                        "attributeId": "TIMBER",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 2000
+                    },
+                    "giftNum1": 4,
+                    "bonusCode1": "ATTACK",
+                    "bonusNum1": 60,
+                    "giftId2": 131,
+                    "gift2": {
+                        "id": 131,
+                        "name": "Forest Orb",
+                        "attributeId": "TIMBER",
+                        "rank": 1,
+                        "rankGift": "RANK_1",
+                        "price": 500
+                    },
+                    "giftNum2": 9,
+                    "bonusCode2": "DEFENSE",
+                    "bonusNum2": 40,
+                    "giftId3": 132,
+                    "gift3": {
+                        "id": 132,
+                        "name": "Forest Orb +",
+                        "attributeId": "TIMBER",
+                        "rank": 2,
+                        "rankGift": "RANK_2",
+                        "price": 1000
+                    },
+                    "giftNum3": 7,
+                    "bonusCode3": "HP",
+                    "bonusNum3": 50,
+                    "giftId4": 551,
+                    "gift4": {
+                        "id": 551,
+                        "name": "Rainbow Orb",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 10000
+                    },
+                    "giftNum4": 2,
+                    "bonusCode4": "ACCEL",
+                    "bonusNum4": 50,
+                    "giftId5": 554,
+                    "gift5": {
+                        "id": 554,
+                        "name": "Rooftop Balloon",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 5000
+                    },
+                    "giftNum5": 3,
+                    "bonusCode5": "BLAST",
+                    "bonusNum5": 50,
+                    "giftId6": 301,
+                    "gift6": {
+                        "id": 301,
+                        "name": "Swallowtail Feather",
+                        "rank": 1,
+                        "rankGift": "RANK_1",
+                        "price": 1000
+                    },
+                    "giftNum6": 8,
+                    "bonusCode6": "CHARGE",
+                    "bonusNum6": 30
+                }
+            },
+            "npcHelpId": 101,
+            "npcPieceId1": 1037
+        }
+    ],
+    "userCharaList": [
+        {
+            "charaId": 1011,
+            "chara": {
+                "id": 1011,
+                "name": "Kaede Akino",
+                "kana": "Kaede Akino",
+                "attributeId": "TIMBER",
+                "attackType": 2,
+                "initialType": "MAGIA",
+                "growthType": "ATKHP",
+                "enemyFlg": false,
+                "doubleUnitFlg": false,
+                "saleItemId": "PRISM",
+                "saleItem": {
+                    "itemCode": "PRISM",
+                    "name": "Magia Chip",
+                    "shortDescription": "Magia Chip",
+                    "description": "Can be exchanged in the Shop for special Items",
+                    "canUse": false,
+                    "isSellable": false,
+                    "treasureChestColor": "GOLD",
+                    "price": 0,
+                    "sortKey": 0
+                },
+                "defaultCardId": 10113,
+                "defaultCard": {
+                    "cardId": 10113,
+                    "rank": "RANK_3",
+                    "attributeId": "TIMBER",
+                    "initialType": "MAGIA",
+                    "growthType": "ATKHP",
+                    "attack": 1565,
+                    "defense": 1175,
+                    "hp": 3714,
+                    "miniCharaNo": 101100,
+                    "charaNo": 1011,
+                    "cardName": "Kaede Akino"
+                },
+                "evolutionCardId1": 10114,
+                "evolutionCard1": {
+                    "cardId": 10114,
+                    "rank": "RANK_4",
+                    "attributeId": "TIMBER",
+                    "initialType": "MAGIA",
+                    "growthType": "ATKHP",
+                    "attack": 1921,
+                    "defense": 1443,
+                    "hp": 4560,
+                    "miniCharaNo": 101100,
+                    "charaNo": 1011,
+                    "cardName": "Kaede Akino"
+                },
+                "evolutionCardId2": 10115,
+                "evolutionCard2": {
+                    "cardId": 10115,
+                    "rank": "RANK_5",
+                    "attributeId": "TIMBER",
+                    "initialType": "MAGIA",
+                    "growthType": "ATKHP",
+                    "attack": 2129,
+                    "defense": 1600,
+                    "hp": 5052,
+                    "miniCharaNo": 101101,
+                    "charaNo": 1011,
+                    "cardName": "Kaede Akino"
+                },
+                "firstMagiaGiftId1": 231,
+                "firstMagiaGiftNum1": 4,
+                "firstMagiaGiftId2": 304,
+                "firstMagiaGiftNum2": 4,
+                "firstMagiaGiftId3": 232,
+                "firstMagiaGiftNum3": 2,
+                "firstMagiaGiftId4": 402,
+                "firstMagiaGiftNum4": 2,
+                "secondMagiaGiftId1": 231,
+                "secondMagiaGiftNum1": 6,
+                "secondMagiaGiftId2": 301,
+                "secondMagiaGiftNum2": 6,
+                "secondMagiaGiftId3": 232,
+                "secondMagiaGiftNum3": 4,
+                "secondMagiaGiftId4": 402,
+                "secondMagiaGiftNum4": 4,
+                "secondMagiaGiftId5": 233,
+                "secondMagiaGiftNum5": 2,
+                "secondMagiaGiftId6": 502,
+                "secondMagiaGiftNum6": 2,
+                "thirdMagiaGiftId1": 231,
+                "thirdMagiaGiftNum1": 8,
+                "thirdMagiaGiftId2": 303,
+                "thirdMagiaGiftNum2": 8,
+                "thirdMagiaGiftId3": 232,
+                "thirdMagiaGiftNum3": 6,
+                "thirdMagiaGiftId4": 402,
+                "thirdMagiaGiftNum4": 6,
+                "thirdMagiaGiftId5": 233,
+                "thirdMagiaGiftNum5": 4,
+                "thirdMagiaGiftId6": 553,
+                "thirdMagiaGiftNum6": 4,
+                "fourthMagiaGiftId1": 231,
+                "fourthMagiaGiftNum1": 10,
+                "fourthMagiaGiftId2": 302,
+                "fourthMagiaGiftNum2": 10,
+                "fourthMagiaGiftId3": 232,
+                "fourthMagiaGiftNum3": 8,
+                "fourthMagiaGiftId4": 502,
+                "fourthMagiaGiftNum4": 4,
+                "fourthMagiaGiftId5": 233,
+                "fourthMagiaGiftNum5": 6,
+                "fourthMagiaGiftId6": 552,
+                "fourthMagiaGiftNum6": 6,
+                "firstMagiaGift1": {
+                    "id": 231,
+                    "name": "Forest Book",
+                    "rank": 1
+                },
+                "firstMagiaGift2": {
+                    "id": 304,
+                    "name": "Sheep Warhorn",
+                    "rank": 1
+                },
+                "firstMagiaGift3": {
+                    "id": 232,
+                    "name": "Forest Book +",
+                    "rank": 2
+                },
+                "firstMagiaGift4": {
+                    "id": 402,
+                    "name": "Padlock Chain",
+                    "rank": 2
+                },
+                "secondMagiaGift1": {
+                    "id": 231,
+                    "name": "Forest Book",
+                    "rank": 1
+                },
+                "secondMagiaGift2": {
+                    "id": 301,
+                    "name": "Swallowtail Feather",
+                    "rank": 1
+                },
+                "secondMagiaGift3": {
+                    "id": 232,
+                    "name": "Forest Book +",
+                    "rank": 2
+                },
+                "secondMagiaGift4": {
+                    "id": 402,
+                    "name": "Padlock Chain",
+                    "rank": 2
+                },
+                "secondMagiaGift5": {
+                    "id": 233,
+                    "name": "Forest Book ++",
+                    "rank": 3
+                },
+                "secondMagiaGift6": {
+                    "id": 502,
+                    "name": "Staircase Monument",
+                    "rank": 3
+                },
+                "thirdMagiaGift1": {
+                    "id": 231,
+                    "name": "Forest Book",
+                    "rank": 1
+                },
+                "thirdMagiaGift2": {
+                    "id": 303,
+                    "name": "Bunny Ear Wrapping Paper",
+                    "rank": 1
+                },
+                "thirdMagiaGift3": {
+                    "id": 232,
+                    "name": "Forest Book +",
+                    "rank": 2
+                },
+                "thirdMagiaGift4": {
+                    "id": 402,
+                    "name": "Padlock Chain",
+                    "rank": 2
+                },
+                "thirdMagiaGift5": {
+                    "id": 233,
+                    "name": "Forest Book ++",
+                    "rank": 3
+                },
+                "thirdMagiaGift6": {
+                    "id": 553,
+                    "name": "Sheep Horn",
+                    "rank": 3
+                },
+                "fourthMagiaGift1": {
+                    "id": 231,
+                    "name": "Forest Book",
+                    "rank": 1
+                },
+                "fourthMagiaGift2": {
+                    "id": 302,
+                    "name": "Mirrors Invitation",
+                    "rank": 1
+                },
+                "fourthMagiaGift3": {
+                    "id": 232,
+                    "name": "Forest Book +",
+                    "rank": 2
+                },
+                "fourthMagiaGift4": {
+                    "id": 502,
+                    "name": "Staircase Monument",
+                    "rank": 3
+                },
+                "fourthMagiaGift5": {
+                    "id": 233,
+                    "name": "Forest Book ++",
+                    "rank": 3
+                },
+                "fourthMagiaGift6": {
+                    "id": 552,
+                    "name": "Bunny Ear Cotton",
+                    "rank": 3
+                },
+                "description": "A worrywart, Kaede is easily scared. She is also kind, caring, and ready to take risks for her friends. She loves animals, plants, and insects, and nature in general. She enjoys gardening, and though she's not good at them, she likes UFO Catchers.",
+                "school": "Kamihama University Affiliated School",
+                "designer": "aokiume",
+                "voiceActor": "Ayaka Ohashi",
+                "charaMessageList": [
+                    {
+                        "charaNo": 1011,
+                        "messageId": 6,
+                        "message": "Why did I agree to become a Magical Girl?"
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 7,
+                        "message": "This way! W-wait! No, this way!"
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 8,
+                        "message": "That's so m-mean! Um...I...I'm sorry..."
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 9,
+                        "message": "I want to be your teammate again...!"
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 10,
+                        "message": "I keep holding them back..."
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 11,
+                        "message": "Oh, no! I spent 5,000 yen on this..."
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 12,
+                        "message": "Huh? Oh, wh-what should I do?!"
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 43,
+                        "message": "I won...right?"
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 44,
+                        "message": "What a relief…"
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 45,
+                        "message": "Wow! Amazing!"
+                    },
+                    {
+                        "charaNo": 1011,
+                        "messageId": 46,
+                        "message": "I…I can do it too!"
+                    }
+                ]
+            },
+            "bondsTotalPt": 0,
+            "userCardId": "2848b3ce-2cdb-44f6-b64c-e433e49dbf48",
+            "lbItemNum": 0,
+            "visualizable": false,
+            "commandVisualType": "CHARA",
+            "commandVisualId": 101100,
+            "npcHelpId": 101
+        }
+    ],
+    "userDoppelList": [],
+    "userPieceList": [
+        {
+            "pieceId": 1037,
+            "piece": {
+                "pieceId": 1037,
+                "pieceType": "ABILITY",
+                "pieceName": "A World of Sheer Bliss",
+                "attributeId": "ALL",
+                "rank": "RANK_2",
+                "attack": 364,
+                "defense": 0,
+                "hp": 444,
+                "skillId": 103700,
+                "pieceSkill": {
+                    "id": 103700,
+                    "groupId": 1120,
+                    "name": "Shield Adept [II]",
+                    "type": "ABILITY",
+                    "shortDescription": "Reduce Damage [II]",
+                    "artId1": 690206202,
+                    "art1": {
+                        "artId": 690206202,
+                        "verbCode": "CONDITION_GOOD",
+                        "effectCode": "DAMAGE_DOWN",
+                        "targetId": "SELF",
+                        "effectValue": 100,
+                        "growPoint": 25,
+                        "probability": 1000
+                    }
+                },
+                "skillId2": 103701,
+                "pieceSkill2": {
+                    "id": 103701,
+                    "groupId": 1120,
+                    "name": "Shield Adept [III]",
+                    "type": "ABILITY",
+                    "shortDescription": "Reduce Damage [III]",
+                    "artId1": 690206203,
+                    "art1": {
+                        "artId": 690206203,
+                        "verbCode": "CONDITION_GOOD",
+                        "effectCode": "DAMAGE_DOWN",
+                        "targetId": "SELF",
+                        "effectValue": 150,
+                        "growPoint": 25,
+                        "probability": 1000
+                    }
+                },
+                "description": "Paradise in my eyes is when books lie in heaped piles around me, tea and snacks within sight. I turn the pages gradually, not wanting to rush this lovely moment...!",
+                "illustrator": "Sino"
+            },
+            "level": 1,
+            "lbCount": 0,
+            "attack": 364,
+            "defense": 0,
+            "hp": 444,
+            "protect": false,
+            "archive": false,
+            "npcHelpId": 101
+        }
+    ],
+    "isNpc": true,
+    "userName": "Kaede Akino",
+    "userRank": 1,
+    "cardId": 10113,
+    "charaName": "Kaede Akino",
+    "cardRank": "RANK_3",
+    "attributeId": "TIMBER",
+    "level": 1,
+    "displayCardId": 10113,
+    "revision": 1,
+    "follow": false,
+    "follower": false
+}

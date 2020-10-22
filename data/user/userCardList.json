@@ -1,0 +1,108 @@
+[
+    {
+        "id": "f3956d9a-f6f8-11ea-adac-0206fb316737",
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "cardId": 10011,
+        "displayCardId": 10011,
+        "revision": 0,
+        "attack": 1237,
+        "defense": 1631,
+        "hp": 4325,
+        "level": 9,
+        "experience": 45,
+        "magiaLevel": 1,
+        "enabled": true,
+        "customized1": false,
+        "customized2": false,
+        "createdAt": "2020/09/14 19:12:49",
+        "card": {
+            "cardId": 10011,
+            "charaNo": 1001,
+            "miniCharaNo": 100100,
+            "magiaCharaNo": 100100,
+            "cardName": "Iroha Tamaki",
+            "rank": "RANK_1",
+            "attributeId": "LIGHT",
+            "initialType": "HEAL",
+            "growthType": "BALANCE",
+            "attack": 878,
+            "defense": 1157,
+            "hp": 3068,
+            "rateGainMpAtk": 1000,
+            "rateGainMpDef": 1200,
+            "magiaId": 10011,
+            "cardMagia": {
+                "id": 10011,
+                "groupId": 1014,
+                "name": "Strada Futuro",
+                "shortDescription": "Damages All Enemies [I] / Revive",
+                "artId1": 100300101,
+                "art1": {
+                    "artId": 100300101,
+                    "verbCode": "ATTACK",
+                    "targetId": "ALL",
+                    "effectValue": 3000,
+                    "growPoint": 100
+                },
+                "artId2": 200100601,
+                "art2": {
+                    "artId": 200100601,
+                    "verbCode": "RESURRECT",
+                    "targetId": "ONE",
+                    "effectValue": 200,
+                    "growPoint": 10
+                }
+            },
+            "skillId": 10011,
+            "cardSkill": {
+                "id": 10011,
+                "groupId": 1078,
+                "name": "We're Together, We'll Be Fine",
+                "shortDescription": "Heal [I]",
+                "artId1": 200400401,
+                "art1": {
+                    "artId": 200400401,
+                    "verbCode": "HEAL",
+                    "effectCode": "HP",
+                    "targetId": "CONNECT",
+                    "effectValue": 300,
+                    "growPoint": 20
+                }
+            },
+            "pieceSkillList": [],
+            "maxPieceSkillList": [],
+            "commandType1": "MPUP",
+            "commandType2": "MPUP",
+            "commandType3": "RANGE_H",
+            "commandType4": "RANGE_H",
+            "commandType5": "CHARGE",
+            "illustrator": "aokiume",
+            "cardCustomize": {
+                "cardId": 10011,
+                "giftId1": 141,
+                "gift1": {
+                    "id": 141,
+                    "name": "Light Orb",
+                    "attributeId": "LIGHT",
+                    "rank": 1,
+                    "rankGift": "RANK_1",
+                    "price": 500
+                },
+                "giftNum1": 2,
+                "bonusCode1": "ATTACK",
+                "bonusNum1": 20,
+                "giftId2": 301,
+                "gift2": {
+                    "id": 301,
+                    "name": "Swallowtail Feather",
+                    "rank": 1,
+                    "rankGift": "RANK_1",
+                    "price": 1000
+                },
+                "giftNum2": 2,
+                "bonusCode2": "BLAST",
+                "bonusNum2": 10
+            }
+        }
+    }
+]
