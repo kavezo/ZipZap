@@ -1,6 +1,12 @@
 # ZipZap: MagiReco NA Private Server
 
-### Installation and running
+You need to have a computer to run the server on, and a device with MagiReco to connect to it (both emulator and real 
+physical device work).
+
+### On the computer: installation and running
+
+On Windows, if you have Python 3 installed (it *may* need to be Python 3.8), you can just run startServer.bat. You can
+close the browser window that pops up but not the command line.
 
 1. Make sure you have python3, either in a separate env (recommended because system-wide Python dependency graphs are 
 gross) or on your system
@@ -8,7 +14,7 @@ gross) or on your system
 3. Run `mitmproxy -s server.py` or `mitmweb -s server.py` in a command line, and do not close this command line. (If you
 run mitmweb though, you can close the browser window.)
 
-### Connecting to the private server
+### On your phone/tablet/emulator: connecting to the private server
 
 1. Make sure MagiReco is already installed on your device. I've only tested it on when it's past the tutorial, so no 
 guarantees it'll work for a fresh install. But it works even if you haven't updated.
@@ -28,7 +34,8 @@ may not help. In the future I might move off of mitmproxy and find a different s
 ---
 ### Porting over your existing data
 
-On Windows, run getUserData.bat. You can close the browser window that pops up, but not the command line. 
+On Windows, if you have Python installed, run getUserData.bat. You can close the browser window that pops up, but not 
+the command line. 
 
 On another system, follow steps 1 and 2 in the Installation and Running section, then run
 `mitmproxy -s getUserData.py` or `mitmweb -s getUserData.py` in a command line without closing it.
