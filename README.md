@@ -24,6 +24,7 @@ guarantees it'll work for a fresh install. But it works even if you haven't upda
 that start with 192.168) but external IP addresses should work.
 3. Configure a proxy on your device with the server address as your computer's IP address, and the port as 8080. You can
 google this if you don't know how to.
+3.5 By the way, if you're new to this, this needs to be done with the server running on your computer.
 4. Open mitm.it in a browser, and download and enable a certificate for your device
 5. Try loading google.com through the proxy -- if it works, then you can open the app and everything will be through the
 private server.
