@@ -140,6 +140,6 @@ screen or the different shops. None of the other endpoints are called until you 
 game data.
 
 ----
-If you have suggestions or want to help (you can help even if you don't know how to code!), please contact me at
-u/rhyme_or_rationale or rinsfouriertransform#2303. And feel free to send a pull request 
+If you have suggestions or want to help, please contact me at
+u/rhyme_or_rationale or rins_fourier_transform#2303. And feel free to send a pull request 
 anytime~
