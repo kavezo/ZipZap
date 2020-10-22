@@ -1,8 +1,5 @@
-# MagiReco NA Private Server
+# ZipZap: MagiReco NA Private Server
 
-This is the code for kávézó's MagiReco private server.
-
----
 ### Installation and running
 
 On Windows x64, just download the zip in releases and run runServer.bat. (At least I think. Haven't tested this on an 
@@ -142,5 +139,5 @@ game data.
 
 ----
 If you have suggestions or want to help (you can help even if you don't know how to code!), please contact me at
-threethirtyseven111@gmail.com, u/rhyme_or_rationale, or rinsfouriertransform#2303. And feel free to send a pull request 
+u/rhyme_or_rationale or rinsfouriertransform#2303. And feel free to send a pull request 
 anytime~
