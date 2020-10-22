@@ -37,13 +37,13 @@ may not help. In the future I might move off of mitmproxy and find a different s
 On Windows, if you have Python installed, run getUserData.bat. You can close the browser window that pops up, but not 
 the command line. 
 
-On another system, follow steps 1 and 2 in the Installation and Running section, then run
+On other systems, follow steps 1 and 2 in the Installation and Running section, then run
 `mitmproxy -s getUserData.py` or `mitmweb -s getUserData.py` in a command line without closing it.
 
 Follow the instructions for connecting to the private server to get your device connected to the script. Then, get to the
 title screen (the one that has the MagiReco logo on it, and from which you can see the ToS and transfer your account).
 You should now see the command line print a lot of lines saying "writing to ------". Once the command line says it's done,
-close the command line. You can run the private server now, and it will serve your your own data.
+you can close it. You can run the private server now, and it will serve your your own data.
 
 User data is stored in the files in data/user. When you run getUserData.py, the data is backed up to in data/userBackup.
 You can change the data in the data/user folder and the data displayed in the game will change as well.
