@@ -1,9 +1,9 @@
-#MagiReco NA Private Server
+# MagiReco NA Private Server
 
 This is the code for kávézó's MagiReco private server.
 
 ---
-###Installation and running
+### Installation and running
 
 On Windows x64, just download the zip in releases and run runServer.bat. (At least I think. Haven't tested this on an 
 x32 machine so it might only work on x64...) You can close the browser window that pops up but not the command line
@@ -16,7 +16,7 @@ gross) or on your system
 3. Run `mitmproxy -s server.py` or `mitmweb -s server.py` in a command line, and do not close this command line. (If you
 run mitmweb though, you can close the browser window.)
 
-###Connecting to the private server
+### Connecting to the private server
 
 1. Make sure MagiReco is already installed on your device. I've only tested it on when it's past the tutorial, so no 
 guarantees it'll work for a fresh install.
@@ -31,7 +31,7 @@ running mitmproxy and my iPhone 6 trying to get through it. Try googling any err
 may not help. In the future I might move off of mitmproxy and find a different solution.
 
 ---
-###Porting over your existing data
+### Porting over your existing data
 
 On Windows, run getUserData.bat. You can close the browser window that pops up, but not the command line. 
 
@@ -40,7 +40,7 @@ On another system, follow steps 1 and 2 in the Installation and Running section,
 
 Follow the instructions for connecting to the private server to get your device connected to the script. Then, get to the
 title screen (the one that has the MagiReco logo on it, and from which you can see the ToS and transfer your account).
-You should now see the command line print a lot of lines saying "writing to ____". Once the command line says it's done,
+You should now see the command line print a lot of lines saying "writing to ------". Once the command line says it's done,
 close the command line. You can run the private server now, and it will serve your your own data.
 
 User data is stored in the files in data/user. When you run getUserData.py, the data is backed up to in data/userBackup.
@@ -50,7 +50,7 @@ The default user is a level 999 account with only Iroha and no memoria but 999 o
 
 ---
 
-###Currently supported functions:
+### Currently supported functions:
 - displaying any page in the app (api/page.py)
     + as well as displaying anything in the archive
     + and listing memoria
@@ -74,7 +74,7 @@ The default user is a level 999 account with only Iroha and no memoria but 999 o
     - set leader
     - set background (only two backgrounds are available, but...)
 
-###Currently missing functions:
+### Currently missing functions:
 - can't customize magical girls' looks (e.g. in disks)
 - can't recover AP
 - can't lock or sell memoria
@@ -82,7 +82,7 @@ The default user is a level 999 account with only Iroha and no memoria but 999 o
 - mirrors, quests, and team-making are entirely nonfunctional
 - can't buy anything from shop
 
-###What's next?
+### What's next?
 I coded very fast, and very not well, because I wanted to get as many features out before the 30th. Code quality is still
 important to me, though, and I really don't want to get anything done outside of the basics before improving it enough
 that maintenance will not be horrendous. But before the 30th, my priority is to get all the basic functions implemented
@@ -112,7 +112,7 @@ the user's data.
 - move server to the cloud
 - hack app to call the server's address rather than having to rely on mitmproxy
 
-###Structure of this package
+### Structure of this package
 As you can tell from the instructions, server.py is the main event handler. It intercepts requests from the app thanks
 to mitmproxy, and decides what to do.
 
