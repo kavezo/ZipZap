@@ -1,1 +1,1 @@
-START env\Scripts\mitmweb.exe -s getUserData.py
+START env\Scripts\python.exe env\Scripts\mitmweb.exe -s getUserData.py
