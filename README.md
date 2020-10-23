@@ -5,14 +5,25 @@ physical device work).
 
 ### On the computer: installation and running
 
-On Windows, if you have Python 3.8 installed, you can just run startServer.bat. You can
-close the browser window that pops up but not the command line.
+On Windows, if you have Python 3.8 installed, you can just run startServer.bat. You can close the browser window that 
+pops up but not the command line.
 
 1. Make sure you have python3, either in a separate env (recommended because system-wide Python dependency graphs are 
 gross) or on your system
 2. Run `pip install -r requirements.txt` in a command line
 3. Run `mitmproxy -s server.py` or `mitmweb -s server.py` in a command line, and do not close this command line. (If you
 run mitmweb though, you can close the browser window.)
+
+#### Debugging
+
+_importError: DLL_load failed while importing \_brotli_
+
+Install the right vcredist for your system from [here](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) 
+
+_When I run the .bat file, it can't find python.exe or env\Scripts\mitmweb.exe._
+
+Make sure you have the latest version of the server. For some, a reinstall of Python worked. For others, we have yet to 
+find a solution.
 
 ### On your phone/tablet/emulator: connecting to the private server
 
