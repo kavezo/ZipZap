@@ -10,7 +10,7 @@ data1 = ['giftList','itemList','pieceList','gameUser','user','userCardList','use
     'userCharaList','userDailyChallengeList','userDeckList','userDoppelList','userFollowList','userFormationSheetList',
     'userGiftList','userItemList']
 data2 = ['userLimitedChallengeList','userList','userLive2dList','userPieceList','userPieceSetList','userPieceCollectionList',
-    'userQuestAdventureList','userQuestBattleList','userSectionList',
+    'userQuestAdventureList','userQuestBattleList','userSectionList', 'userArenaBattle',
     'userShopItem','userStatusList','userTotalChallengeList','userGachaGroupList'
     ]
 
