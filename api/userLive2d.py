@@ -24,5 +24,5 @@ def handleUserLive2d(flow):
     if endpoint.endswith('/set'):
         setLive2d(flow)
     else:
-        print(endpoint)
+        print(flow.request.path)
         flow.response = http.HTTPResponse.make(501, "Not implemented", {})

@@ -45,5 +45,5 @@ def handleUserPieceSet(flow):
     if endpoint.endswith('/save'):
         save(flow)
     else:
-        print(endpoint)
+        print(flow.request.path)
         flow.response = http.HTTPResponse.make(501, "Not implemented", {})

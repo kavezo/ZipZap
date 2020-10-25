@@ -4,7 +4,7 @@ import requests
 import os
 import json
 from getUserData import data1, data2
-from api import page, gacha, user, gameUser, userCard, userChara, friend, userPiece, userPieceSet, userLive2d, money
+from api import page, gacha, user, gameUser, userCard, userChara, friend, userPiece, userPieceSet, userLive2d, money, shop
 
 isLoggingIn = False
 
@@ -19,7 +19,7 @@ def serveAsset(flow):
     
     isAnnouncement = 'json/announcements' in flow.request.path
 
-    if not diskAssets or not os.path.exists('assets'+versionless): #or isAnnouncement:
+    if not diskAssets or not os.path.exists('assets'+versionless) or isAnnouncement:
 
         if diskAssets and not os.path.exists(os.path.dirname('assets'+versionless)) and not isAnnouncement:
             os.makedirs(os.path.dirname('assets'+versionless))
@@ -33,8 +33,17 @@ def serveAsset(flow):
                 with open('assets'+versionless, 'wb+') as f:
                     f.write(asset_request.content)
         else:
-            print('status code was not 200 D:')
-            flow.response = http.HTTPResponse.make(asset_request.status_code, asset_request.content, {})
+            asset_request = requests.get('https://en.rika.ren'+flow.request.path)
+            print('not on S3, requested ' + 'https://en.rika.ren' + flow.request.path)
+            if asset_request.status_code == 200:
+                flow.response = http.HTTPResponse.make(200, asset_request.content, {})
+                if diskAssets and not isAnnouncement:
+                    print('writing to assets' + versionless)
+                    with open('assets'+versionless, 'wb+') as f:
+                        f.write(asset_request.content)
+            else:
+                print('couldn\'t find on S3 or rika.ren D:')
+                flow.response = http.HTTPResponse.make(asset_request.status_code, asset_request.content, {})
     else:
         with open('assets'+versionless, 'rb') as f:
             text = f.read()
@@ -59,7 +68,8 @@ def request(flow: http.HTTPFlow) -> None:
                 '/magica/api/userPiece/': userPiece.handleUserPiece,
                 '/magica/api/userPieceSet/': userPieceSet.handleUserPieceSet,
                 '/magica/api/userLive2d': userLive2d.handleUserLive2d,
-                '/magica/api/money': money.handleMoney}
+                '/magica/api/money': money.handleMoney,
+                '/magica/api/shop': shop.handleShop}
         if flow.request.path.startswith('/magica/api/test/logger/error'):
             flow.response = http.HTTPResponse.make(200, '{"resultCode": "success"}', {})
             return

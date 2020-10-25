@@ -47,7 +47,7 @@ def drawTenNormal():
 
 def drawOnePremium(pity, probs=None):
     if probs is None:
-        probs = [0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
+        probs = [0.5,0,0,0.5,0,0]#[0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
     if pity == 99:
         return [np.random.choice(cardsByRarity[3])], 'p3', 0
     else:
@@ -59,7 +59,7 @@ def drawOnePremium(pity, probs=None):
 
 def drawTenPremium(pity):
     # highest rarity meguca to lowest, then highest rarity meme to lowest
-    normal = [0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
+    normal = [0.5,0,0,0.5,0,0]#[0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
     meguca = [0.01, 0.14, 0.85, 0, 0, 0]
     threestar = [0.02, 0.2, 0, 0.18, 0.6, 0]
 
@@ -123,13 +123,13 @@ def setUpPity(groupId, pity=None):
     pityList.append(newPity)
     with open('data/user/userGachaGroupList.json', 'w', encoding='utf-8') as f:
         json.dump(pityList, f, ensure_ascii=False)
-    return pityGroup, 0
+    return newPity, 0
 
 def spend(itemId, amount, preferredItemId = None, preferredItemAmount = 1):
     with open('data/user/userItemList.json', encoding='utf-8') as f:
         userItems = json.load(f)
     
-    updatedItem = None
+    updatedItems = []
     foundPreferred = False
     if preferredItemId is not None:
         for i in range(len(userItems)):
@@ -139,22 +139,43 @@ def spend(itemId, amount, preferredItemId = None, preferredItemAmount = 1):
                 item['quantity'] -= preferredItemAmount
                 userItems[i] = item
                 foundPreferred = True
-                updatedItem = item
+                updatedItems.append(item)
                 break
     
     if not foundPreferred:
-        for i in range(len(userItems)):
-            item = userItems[i]
-            if item['itemId'] == itemId:
-                print("Spending " + str(amount) + " " + itemId)
-                item['quantity'] -= amount
-                userItems[i] = item
-                updatedItem = item
-                break
+        if itemId != 'MONEY':
+            for i in range(len(userItems)):
+                item = userItems[i]
+                if item['itemId'] == itemId:
+                    print("Spending " + str(amount) + " " + itemId)
+                    item['quantity'] -= amount
+                    userItems[i] = item
+                    updatedItems.append(item)
+                    break
+        else: # spend paid gems after free gems, and also the ID is different
+            print("Spending " + str(amount) + " " + itemId)
+            paidIdx = 0
+            freeIdx = 0
+            for i in range(len(userItems)):
+                item = userItems[i]
+                if item['itemId'] == 'MONEY':
+                    paidIdx = i
+                if item['itemId'] == 'PRESENTED_MONEY':
+                    freeIdx = i
+            
+            numFreeStones = userItems[freeIdx]['quantity']
+            userItems[freeIdx]['quantity'] -= amount
+            if userItems[freeIdx]['quantity'] < 0:
+                userItems[freeIdx]['quantity'] = 0
+                amount -= numFreeStones
+                userItems[paidIdx]['quantity'] -= amount
+
+            updatedItems += [userItems[freeIdx], userItems[paidIdx]]
+
     
     with open('data/user/userItemList.json', 'w', encoding='utf-8') as f:
         json.dump(userItems, f, ensure_ascii=False)
-    return updatedItem
+    return updatedItems
 
 def addGem(gem):
     with open('data/user/userItemList.json', encoding='utf-8') as f:
@@ -387,8 +408,8 @@ def draw(flow):
         if kind['beanKind'] == body['gachaBeanKind']:
             gachaKind = kind
 
-    userItemList.append(
-        spend(gachaKind['needPointKind'], gachaKind['needQuantity'], gachaKind['substituteItemId'] if 'substituteItemId' in gachaKind else None))
+    userItemList += \
+        spend(gachaKind['needPointKind'], gachaKind['needQuantity'], gachaKind['substituteItemId'] if 'substituteItemId' in gachaKind else None)
 
 
     # create response

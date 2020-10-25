@@ -65,10 +65,8 @@ def shopTop(response):
         response['userShopItemList'] = json.load(f)
 
 def storyCollection(response):
-    with open('data/eventStoryList.json', encoding='utf-8') as f:
-        response['eventStoryList'] = json.load(f)
-    with open('data/arenaBattleFreeRankClassList.json', encoding='utf-8') as f:
-        response['arenaBattleFreeRankClassList'] = json.load(f)
+    response['eventStoryList'] = []
+    response['arenaBattleFreeRankClassList'] = []
     with open('data/user/userArenaBattle.json', encoding='utf-8') as f:
         response['userArenaBattle'] = json.load(f)
 
@@ -109,6 +107,12 @@ def login(user):
     user['lastLoginDate'] = nowstr
     user['lastAccessDate'] = nowstr
     user['indexingTargetDate'] = nowstr
+
+    with open('data/user/gameUser.json', encoding='utf-8') as f:
+        gameUser = json.load(f)
+    gameUser['announcementViewAt'] = nowstr
+    with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
+        json.dump(gameUser, f, ensure_ascii=False)
     return user
 
 def addArgs(response, args, isLogin):
@@ -139,17 +143,14 @@ def handlePage(flow, isLogin):
         response = json.load(f)
 
     endpoint_and_args = request.path.replace('/magica/api/page/', '')
-    endpoint, args = endpoint_and_args.split('?')
+    if len(endpoint_and_args.split('?')) ==2:
+        endpoint, args = endpoint_and_args.split('?')
+    else:
+        endpoint = endpoint_and_args
+        args = ''
     args = re.sub(r'&timeStamp=\d+', '', args) \
             .replace('value=', '') \
             .split(',')
-
-    with open('transferring') as f:
-        isTransferring = 'y' in f.read()
-    if isTransferring and endpoint=="TopPage":
-        getUserData.request(flow)
-        with open('transferring', 'w+') as f:
-            f.write('n')
 
     if endpoint in specialCases.keys():
         specialCases[endpoint](response)
