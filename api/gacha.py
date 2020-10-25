@@ -47,7 +47,7 @@ def drawTenNormal():
 
 def drawOnePremium(pity, probs=None):
     if probs is None:
-        probs = [0.5,0,0,0.5,0,0]#[0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
+        probs = [0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
     if pity == 99:
         return [np.random.choice(cardsByRarity[3])], 'p3', 0
     else:
@@ -59,7 +59,7 @@ def drawOnePremium(pity, probs=None):
 
 def drawTenPremium(pity):
     # highest rarity meguca to lowest, then highest rarity meme to lowest
-    normal = [0.5,0,0,0.5,0,0]#[0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
+    normal = [0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
     meguca = [0.01, 0.14, 0.85, 0, 0, 0]
     threestar = [0.02, 0.2, 0, 0.18, 0.6, 0]
 
