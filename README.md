@@ -3,6 +3,9 @@
 You need to have a computer to run the server on, and a device with MagiReco to connect to it (both emulator and real 
 physical device work).
 
+To update to a new release: download the release, unzip it without overwriting the old one, then copy your data/user
+folder from the old one to the new one
+
 ### On the computer: installation and running
 
 On Windows, if you have Python 3.8 installed, you can just run getStarted.bat and then startServer.bat. You can close 
