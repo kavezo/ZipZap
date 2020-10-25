@@ -16,6 +16,7 @@ data2 = ['userLimitedChallengeList', 'userList', 'userLive2dList', 'userPieceLis
 
 
 def fetchData(transferId, transferPassword):
+    os.makedirs(userDir)
     myUuid = uuid.uuid4()
     createResponse = post('/magica/api/user/create', myUuid)
     if json.loads(createResponse)['resultCode'] != 'success':
@@ -28,7 +29,16 @@ def fetchData(transferId, transferPassword):
     print(transferResponse)
     fetchDataSet(myUuid, data1)
     fetchDataSet(myUuid, data2)
+    fetchStoryCollection(myUuid)
     print('\nDone getting data')
+
+
+def fetchStoryCollection(myUuid):
+    dataResponse = get('/magica/api/page/StoryCollection', myUuid)
+    dataBody = json.loads(dataResponse)
+    print(f'Writing story collection...')
+    with open(f'{userDir}/StoryCollection.json', 'w+', encoding='utf-8') as f:
+        json.dump(dataBody, f, ensure_ascii=False)
 
 
 def fetchDataSet(myUuid, dataSet):
@@ -81,6 +91,8 @@ def get(path, reqUuid):
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
-        print(f'Usage: {os.path.basename(__file__)} [transferId] [password]')
-        exit(1)
-    fetchData(sys.argv[1], sys.argv[2])
+        transferId = input("Enter Transfer ID: ")
+        transferPassword = input("Enter Password: ")
+        fetchData(transferId, transferPassword)
+    else:
+        fetchData(sys.argv[1], sys.argv[2])
