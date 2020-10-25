@@ -5,25 +5,15 @@ physical device work).
 
 ### On the computer: installation and running
 
-On Windows, if you have Python 3.8 installed, you can just run startServer.bat. You can close the browser window that 
-pops up but not the command line.
+On Windows, if you have Python 3.8 installed, you can just run getStarted.bat and then startServer.bat. You can close 
+the browser window that pops up but not the command line.
 
+If you don't have Windows,
 1. Make sure you have python3, either in a separate env (recommended because system-wide Python dependency graphs are 
 gross) or on your system
 2. Run `pip install -r requirements.txt` in a command line
 3. Run `mitmproxy -s server.py` or `mitmweb -s server.py` in a command line, and do not close this command line. (If you
 run mitmweb though, you can close the browser window.)
-
-#### Debugging
-
-_importError: DLL_load failed while importing \_brotli_
-
-Install the right vcredist for your system from [here](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) 
-
-_When I run the .bat file, it can't find python.exe or env\Scripts\mitmweb.exe._
-
-Make sure you have the latest version of the server. For some, a reinstall of Python worked. For others, we have yet to 
-find a solution.
 
 ### On your phone/tablet/emulator: connecting to the private server
 
@@ -42,9 +32,22 @@ I had a horrible time getting mitmproxy to work on some of my devices; specifica
 running mitmproxy and my iPhone 6 trying to get through it. Try googling any errors you have with mitmproxy; it may or
 may not help. In the future I might move off of mitmproxy and find a different solution.
 
+If you have trouble, check the original Reddit post -- the comments have a lot of common problems and ways people resolved
+them. Also, the official Magia Record discord has some amazing volunteers helping debug in the #en-closure channel right 
+now.
+
 ---
 ### Porting over your existing data
 
+#### The easy way
+Start the server and connect your phone to it. Use the transfer button, and put your info in. This will erase your data 
+on the real server, though, so you'll have to transfer it back if you still want to play it on your device.
+
+#### The standalone way
+If you have trouble getting the server running, we're going to have a script up shortly that doesn't require an mitmproxy
+connection to transfer data. Stand by.
+
+#### The old way 
 On Windows, if you have Python 3.8 installed, run getUserData.bat. You can close the browser window that pops up, but not 
 the command line. 
 
@@ -72,6 +75,7 @@ The default user is a level 999 account with only Iroha and no memoria but 999 o
     - magia level up
     - awaken
     - limit break
+    - customize magical girls' looks (in disks, etc.)
 - managing memoria (api/userPiece.py and api/userPieceSet.py)
     - level up
     - limit break
@@ -87,14 +91,17 @@ The default user is a level 999 account with only Iroha and no memoria but 999 o
     - set comment
     - set leader
     - set background (only two backgrounds are available, but...)
+- buying things from the shop
+    - spending items to get items
+    - spending gems to get packs
+    - you can get megucas too, but they won't show up in your present box and instead you'll just have them
+    - but you can't get formation sheets yet   
 
 ### Currently missing functions:
-- can't customize magical girls' looks (e.g. in disks)
 - can't recover AP
 - can't lock or sell memoria
 - you can't clear any missions or accept their rewards
 - mirrors, quests, and team-making are entirely nonfunctional
-- can't buy anything from shop
 
 ### What's next?
 I coded very fast, and very not well, because I wanted to get as many features out before the 30th. Code quality is still
@@ -107,12 +114,12 @@ The features are in order of the most overlap with the knowledge I have currentl
 implement a new feature I don't know much about at least half of the time is spent researching how it fits in with all 
 the user's data.
 
-- implement shop
 - implement team-making
 - implement quests
 - implement mirrors
 - implement missions
-- implement random things I left off, like AP recovering
+- implement tutorial 
+- implement random things I left off, like AP recovering, login bonuses, and announcements
 - add unit tests
 - refactor
     - put all the data reading and writing into a util module to avoid race conditions with 50 different functions 
