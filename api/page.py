@@ -2,6 +2,7 @@ import json
 import re
 from datetime import datetime
 import os
+import getUserData
 
 def charaCollection(response):
     with open('data/user/userCharaList.json', encoding='utf-8') as f:
@@ -18,10 +19,10 @@ def charaTop(response):
         response['gameUser'] = json.load(f)
 
 def configTop(response):
-    with open('data/user/user.json', encoding='utf-8') as f:
-        user = json.load(f)
+    with open('data/user/gameUser.json', encoding='utf-8') as f:
+        gameUser = json.load(f)
     response['canChangeLoginName'] = True
-    response['setPassword'] = user['setPassword']
+    response['setPassword'] = 'passwordNotice' in gameUser and gameUser['passwordNotice']
 
 def followTop(response):
     with open('data/user/userFollowList.json', encoding='utf-8') as f:
@@ -132,7 +133,8 @@ def addArgs(response, args, isLogin):
         elif arg.lower().endswith('list'):
             response[arg] = []
 
-def handlePage(request, isLogin):
+def handlePage(flow, isLogin):
+    request = flow.request
     with open('data/events.json', encoding='UTF-8') as f:
         response = json.load(f)
 
@@ -141,6 +143,13 @@ def handlePage(request, isLogin):
     args = re.sub(r'&timeStamp=\d+', '', args) \
             .replace('value=', '') \
             .split(',')
+
+    with open('transferring') as f:
+        isTransferring = 'y' in f.read()
+    if isTransferring and endpoint=="TopPage":
+        getUserData.request(flow)
+        with open('transferring', 'w+') as f:
+            f.write('n')
 
     if endpoint in specialCases.keys():
         specialCases[endpoint](response)
