@@ -1,2 +1,7 @@
 env
 api/__pycache__
+.idea
+build
+dist/transferUserData
+*.spec
+*.pyc
