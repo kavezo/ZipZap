@@ -63,5 +63,5 @@ def handleFriend(flow):
     if endpoint.startswith('/user'):
         user(flow)
     else:
-        print(endpoint)
+        print(flow.request.path)
         flow.response = http.HTTPResponse.make(501, "Not implemented", {})

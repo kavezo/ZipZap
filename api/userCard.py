@@ -571,5 +571,5 @@ def handleUserCard(flow):
     elif endpoint.endswith('/evolve'):
         evolve(flow)
     else:
-        print(endpoint)
+        print(flow.request.path)
         flow.response = http.HTTPResponse.make(501, "Not implemented", {})

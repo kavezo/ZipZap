@@ -77,5 +77,5 @@ def handleGameUser(flow):
     elif endpoint.endswith('/setBackground'):
         setBackground(flow)
     else:
-        print(endpoint)
+        print(flow.request.path)
         flow.response = http.HTTPResponse.make(501, "Not implemented", {})

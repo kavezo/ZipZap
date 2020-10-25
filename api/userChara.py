@@ -84,5 +84,5 @@ def handleUserChara(flow):
     elif endpoint.endswith('/visualize'):
         visualize(flow)
     else:
-        print(endpoint)
+        print(flow.request.path)
         flow.response = http.HTTPResponse.make(501, "Not implemented", {})

@@ -150,7 +150,7 @@ def compose(flow):
                     "lbCount": originalUserPiece['lbCount'],
                     "level": originalUserPiece['level'],
                     "limitExp": parExArr[originalUserPiece['level']],
-                    "limitLevel": getMaxLevel(originalUserPiece['piece']['rank'], originalUserPiece['level']),
+                    "limitLevel": getMaxLevel(originalUserPiece['piece']['rank'], originalUserPiece['lbCount']),
                     "rarity": int(originalUserPiece['piece']['rank'][-1])
                 },
                 "result": {
@@ -161,7 +161,7 @@ def compose(flow):
                     "lbCount": targetUserPiece['lbCount'],
                     "level": targetUserPiece['level'],
                     "limitExp": parExArr[targetUserPiece['level']],
-                    "limitLevel": getMaxLevel(targetUserPiece['piece']['rank'], targetUserPiece['level']),
+                    "limitLevel": getMaxLevel(targetUserPiece['piece']['rank'], targetUserPiece['lbCount']),
                     "rarity": int(targetUserPiece['piece']['rank'][-1])
                 }
             },
@@ -208,5 +208,5 @@ def handleUserPiece(flow):
     elif endpoint.endswith('/unarchive'):
         setArchive(flow, False)
     else:
-        print(endpoint)
+        print(flow.request.path)
         flow.response = http.HTTPResponse.make(501, "Not implemented", {})
