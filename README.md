@@ -44,8 +44,8 @@ Start the server and connect your phone to it. Use the transfer button, and put 
 on the real server, though, so you'll have to transfer it back if you still want to play it on your device.
 
 #### The standalone way
-If you have trouble getting the server running, we're going to have a script up shortly that doesn't require an mitmproxy
-connection to transfer data. Stand by.
+If you have trouble getting the server running and you're on Windows, run transferUserData.bat. If you're not on Windows
+and have Python, you can run `pip install -r requirements.txt` and then `python transferUserData.py`.
 
 #### The old way 
 On Windows, if you have Python 3.8 installed, run getUserData.bat. You can close the browser window that pops up, but not 
@@ -63,6 +63,17 @@ User data is stored in the files in data/user. When you run getUserData.py, the 
 You can change the data in the data/user folder and the data displayed in the game will change as well.
 
 The default user is a level 999 account with only Iroha and no memoria but 999 of every material, including summon tickets.
+
+---
+### Configuration
+
+By default, the app makes all requests to the cloud. If your internet is slow, this will also make the app significantly
+laggier than it usually is, and you might want to store the assets to serve from disk. All the assets will take up about 3GB
+of space, but they'll only be pulled from the cloud as needed. To do this, change the value of diskAssets in config.json to
+true.
+
+If you want to have all the assets on disk instead of downloading them as needed, you can pull everything from 
+https://github.com/kavezo/MagiRecoStatic into the assets folder.
 
 ---
 
