@@ -28669,6 +28669,247 @@
     },
     {
         "charaId": 3002,
+        "chara": {
+            "id": 3002,
+            "name": "Natsuki Utsuho",
+            "kana": "Natsuki Utsuho",
+            "attributeId": "WATER",
+            "attackType": 1,
+            "initialType": "SUPPORT",
+            "growthType": "DEFHP",
+            "enemyFlg": false,
+            "doubleUnitFlg": false,
+            "saleItemId": "PRISM",
+            "defaultCardId": 30022,
+            "defaultCard": {
+                "cardId": 30022,
+                "rank": "RANK_2",
+                "attributeId": "WATER",
+                "initialType": "SUPPORT",
+                "growthType": "DEFHP",
+                "attack": 1059,
+                "defense": 1065,
+                "hp": 3866,
+                "miniCharaNo": 300200,
+                "charaNo": 3002,
+                "cardName": "Natsuki Utsuho"
+            },
+            "evolutionCardId1": 30023,
+            "evolutionCard1": {
+                "cardId": 30023,
+                "rank": "RANK_3",
+                "attributeId": "WATER",
+                "initialType": "SUPPORT",
+                "growthType": "DEFHP",
+                "attack": 1263,
+                "defense": 1270,
+                "hp": 4611,
+                "miniCharaNo": 300200,
+                "charaNo": 3002,
+                "cardName": "Natsuki Utsuho"
+            },
+            "evolutionCardId2": 30024,
+            "evolutionCard2": {
+                "cardId": 30024,
+                "rank": "RANK_4",
+                "attributeId": "WATER",
+                "initialType": "SUPPORT",
+                "growthType": "DEFHP",
+                "attack": 1570,
+                "defense": 1578,
+                "hp": 5730,
+                "miniCharaNo": 300200,
+                "charaNo": 3002,
+                "cardName": "Natsuki Utsuho"
+            },
+            "firstMagiaGiftId1": 221,
+            "firstMagiaGiftNum1": 3,
+            "firstMagiaGiftId2": 304,
+            "firstMagiaGiftNum2": 3,
+            "secondMagiaGiftId1": 221,
+            "secondMagiaGiftNum1": 5,
+            "secondMagiaGiftId2": 301,
+            "secondMagiaGiftNum2": 5,
+            "secondMagiaGiftId3": 222,
+            "secondMagiaGiftNum3": 3,
+            "secondMagiaGiftId4": 403,
+            "secondMagiaGiftNum4": 3,
+            "thirdMagiaGiftId1": 221,
+            "thirdMagiaGiftNum1": 7,
+            "thirdMagiaGiftId2": 303,
+            "thirdMagiaGiftNum2": 7,
+            "thirdMagiaGiftId3": 222,
+            "thirdMagiaGiftNum3": 5,
+            "thirdMagiaGiftId4": 403,
+            "thirdMagiaGiftNum4": 5,
+            "thirdMagiaGiftId5": 223,
+            "thirdMagiaGiftNum5": 3,
+            "thirdMagiaGiftId6": 503,
+            "thirdMagiaGiftNum6": 3,
+            "fourthMagiaGiftId1": 221,
+            "fourthMagiaGiftNum1": 9,
+            "fourthMagiaGiftId2": 302,
+            "fourthMagiaGiftNum2": 9,
+            "fourthMagiaGiftId3": 222,
+            "fourthMagiaGiftNum3": 7,
+            "fourthMagiaGiftId4": 503,
+            "fourthMagiaGiftNum4": 3,
+            "fourthMagiaGiftId5": 223,
+            "fourthMagiaGiftNum5": 5,
+            "fourthMagiaGiftId6": 553,
+            "fourthMagiaGiftNum6": 5,
+            "firstMagiaGift1": {
+                "id": 221,
+                "name": "Aqua Book",
+                "rank": 1
+            },
+            "firstMagiaGift2": {
+                "id": 304,
+                "name": "Sheep Warhorn",
+                "rank": 1
+            },
+            "secondMagiaGift1": {
+                "id": 221,
+                "name": "Aqua Book",
+                "rank": 1
+            },
+            "secondMagiaGift2": {
+                "id": 301,
+                "name": "Swallowtail Feather",
+                "rank": 1
+            },
+            "secondMagiaGift3": {
+                "id": 222,
+                "name": "Aqua Book +",
+                "rank": 2
+            },
+            "secondMagiaGift4": {
+                "id": 403,
+                "name": "Plaque Cord",
+                "rank": 2
+            },
+            "thirdMagiaGift1": {
+                "id": 221,
+                "name": "Aqua Book",
+                "rank": 1
+            },
+            "thirdMagiaGift2": {
+                "id": 303,
+                "name": "Bunny Ear Wrapping Paper",
+                "rank": 1
+            },
+            "thirdMagiaGift3": {
+                "id": 222,
+                "name": "Aqua Book +",
+                "rank": 2
+            },
+            "thirdMagiaGift4": {
+                "id": 403,
+                "name": "Plaque Cord",
+                "rank": 2
+            },
+            "thirdMagiaGift5": {
+                "id": 223,
+                "name": "Aqua Book ++",
+                "rank": 3
+            },
+            "thirdMagiaGift6": {
+                "id": 503,
+                "name": "Commoner's Horse Wheel",
+                "rank": 3
+            },
+            "fourthMagiaGift1": {
+                "id": 221,
+                "name": "Aqua Book",
+                "rank": 1
+            },
+            "fourthMagiaGift2": {
+                "id": 302,
+                "name": "Mirrors Invitation",
+                "rank": 1
+            },
+            "fourthMagiaGift3": {
+                "id": 222,
+                "name": "Aqua Book +",
+                "rank": 2
+            },
+            "fourthMagiaGift4": {
+                "id": 503,
+                "name": "Commoner's Horse Wheel",
+                "rank": 3
+            },
+            "fourthMagiaGift5": {
+                "id": 223,
+                "name": "Aqua Book ++",
+                "rank": 3
+            },
+            "fourthMagiaGift6": {
+                "id": 553,
+                "name": "Sheep Horn",
+                "rank": 3
+            },
+            "description": "An enthusiastic supporter of everyone around her, there isn't a Magical Girl livelier than Natsuki. She is a huge fan of baseball, and as a cheerleader and the baseball team's manager, she's there for the team year-round.",
+            "school": "Sankyoin Academy",
+            "designer": "Nan Yaegashi",
+            "voiceActor": "Mako Morino",
+            "charaMessageList": [
+                {
+                    "charaNo": 3002,
+                    "messageId": 6,
+                    "message": "You can win for sure! I guarantee it!"
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 7,
+                    "message": "I didn't just want to play baseball…"
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 8,
+                    "message": "I always dreamed of fighting together."
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 9,
+                    "message": "Well, I'm not cheering for nothing."
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 10,
+                    "message": "If only things could stay like this forever…"
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 11,
+                    "message": "I made up my mind!<br>I'm going to cheer for everyone's future!"
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 12,
+                    "message": "Go for it! I'm cheering for all of you!"
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 43,
+                    "message": "Don't forget to stretch after the game!"
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 44,
+                    "message": "Nice play! Good work!"
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 45,
+                    "message": "I gave it everything I got too!"
+                },
+                {
+                    "charaNo": 3002,
+                    "messageId": 46,
+                    "message": "Yeah! Let's win again!"
+                }
+            ]
+        },
         "cardList": [
             {
                 "cardId": 30022,

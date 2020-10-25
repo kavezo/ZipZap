@@ -2,36 +2,43 @@ from mitmproxy import http
 from mitmproxy.script import concurrent
 import requests
 import os
-from api import page, gacha, userCard, user, gameUser, userChara, friend, userPiece, userPieceSet, userLive2d
+import json
+from getUserData import data1, data2
+from api import page, gacha, user, gameUser, userCard, userChara, friend, userPiece, userPieceSet, userLive2d, money
 
 isLoggingIn = False
 
 def serveAsset(flow):
+    with open('config.json') as f:
+        diskAssets = json.load(f)['diskAssets']
     versionless = flow.request.path.split('?')[0]
-        
-    if not flow.request.path.startswith('/magica/resource'):
-        if not os.path.exists('assets'+versionless):
-            if not os.path.exists(os.path.dirname('assets'+versionless)):
-                os.makedirs(os.path.dirname('assets'+versionless))
-            asset_request = requests.get('https://en.rika.ren'+flow.request.path)
-            print('requested ' + flow.request.path)
-            if (asset_request.status_code == 200):
+
+    if versionless.endswith('.json.gz'):
+        flow.response = http.HTTPResponse.make(304, "", {})
+        return
+    
+    isAnnouncement = 'json/announcements' in flow.request.path
+
+    if not diskAssets or not os.path.exists('assets'+versionless): #or isAnnouncement:
+
+        if diskAssets and not os.path.exists(os.path.dirname('assets'+versionless)) and not isAnnouncement:
+            os.makedirs(os.path.dirname('assets'+versionless))
+
+        asset_request = requests.get('https://zipzap-assets.s3.us-east-2.amazonaws.com'+flow.request.path)
+        print('requested ' + 'https://zipzap-assets.s3.us-east-2.amazonaws.com' + flow.request.path)
+        if asset_request.status_code == 200:
+            flow.response = http.HTTPResponse.make(200, asset_request.content, {})
+            if diskAssets and not isAnnouncement:
                 print('writing to assets' + versionless)
                 with open('assets'+versionless, 'wb+') as f:
                     f.write(asset_request.content)
-            else:
-                print('status code was not 200 D:')
-                flow.response = http.HTTPResponse.make(304, "", {})
         else:
-            with open('assets'+versionless, 'rb') as f:
-                text = f.read()
-            flow.response = http.HTTPResponse.make(200, text, {})
-    elif versionless.endswith('.json.gz'):
-        flow.response = http.HTTPResponse.make(304, "", {})
+            print('status code was not 200 D:')
+            flow.response = http.HTTPResponse.make(asset_request.status_code, asset_request.content, {})
     else:
-        # This is suuuuuuuper slow because it doesn't run in parallel...
-        asset_request = requests.get('https://en.rika.ren'+flow.request.path)
-        flow.response  = http.HTTPResponse.make(200, asset_request.content, {})
+        with open('assets'+versionless, 'rb') as f:
+            text = f.read()
+        flow.response = http.HTTPResponse.make(200, text, {})
 
 @concurrent
 def request(flow: http.HTTPFlow) -> None:
@@ -51,12 +58,13 @@ def request(flow: http.HTTPFlow) -> None:
                 '/magica/api/friend': friend.handleFriend,
                 '/magica/api/userPiece/': userPiece.handleUserPiece,
                 '/magica/api/userPieceSet/': userPieceSet.handleUserPieceSet,
-                '/magica/api/userLive2d': userLive2d.handleUserLive2d}
-        if flow.request.path.startswith('/magica/api/test/error'):
+                '/magica/api/userLive2d': userLive2d.handleUserLive2d,
+                '/magica/api/money': money.handleMoney}
+        if flow.request.path.startswith('/magica/api/test/logger/error'):
             flow.response = http.HTTPResponse.make(200, '{"resultCode": "success"}', {})
             return
         if flow.request.path.startswith('/magica/api/page'):
-            apiResponse = page.handlePage(flow.request, isLoggingIn)
+            apiResponse = page.handlePage(flow, isLoggingIn)
             if isLoggingIn: isLoggingIn = False
             flow.response = http.HTTPResponse.make(200, apiResponse, {})
         for endpoint in apis.keys():

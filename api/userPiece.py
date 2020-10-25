@@ -101,13 +101,14 @@ def compose(flow):
         flow.response = http.HTTPResponse.make(400, 'Tried to level up a memoria you don\'t have...', {})
         return
 
-    originalUserPiece = targetUserPiece
+    originalUserPiece = {k: v for k, v in targetUserPiece.items()}
     targetUserPiece, success = levelUp(targetUserPiece, memoriaToSpend)
 
     # limit break
     isLimitBreak = False
     for memoria in memoriaToSpend:
-        if memoria['pieceId'] == targetUserPiece['pieceId'] or userPiece['piece']['pieceKind']=='LIMIT_BREAK':
+        if memoria['pieceId'] == targetUserPiece['pieceId'] or \
+        ('pieceKind' in userPiece['piece'] and userPiece['piece']['pieceKind']=='LIMIT_BREAK'):
             isLimitBreak = True
     if isLimitBreak:
         targetUserPiece['lbCount'] += len(memoriaToSpend)
