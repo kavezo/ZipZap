@@ -8,8 +8,8 @@ folder from the old one to the new one
 
 ### On the computer: installation and running
 
-On Windows, if you have Python 3.8 installed, you can just run getStarted.bat and then startServer.bat. You can close 
-the browser window that pops up but not the command line.
+On Windows, if you have Python 3.8 installed (with pip, and with python added to PATH), you can just run getStarted.bat 
+and then startServer.bat. You can close the browser window that pops up but not the command line.
 
 If you don't have Windows,
 1. Make sure you have python3, either in a separate env (recommended because system-wide Python dependency graphs are 
