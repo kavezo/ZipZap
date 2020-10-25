@@ -44,8 +44,8 @@ Start the server and connect your phone to it. Use the transfer button, and put 
 on the real server, though, so you'll have to transfer it back if you still want to play it on your device.
 
 #### The standalone way
-If you have trouble getting the server running and you're on Windows 64-bit, run transferUserData.bat (have not tested this
-on Windows 32-bit). If you're not on Windows and have Python, you can run `pip install -r requirements.txt` and then 
+If you have trouble getting the server running and you're on Windows, delete the data/user folder and run 
+transferUserData.bat. If you're not on Windows and have Python, you can run `pip install -r requirements.txt` and then 
 `python transferUserData.py`.
 
 #### The old way 
