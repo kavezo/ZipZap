@@ -1,0 +1,25 @@
+<div id='MagiRepoDetail'>
+	<% console.log(model) %>
+	<img class="imgL" src="/magica/resource/image_web/page/collection/magirepo/common/chara_l.png" alt="">
+	<img class="imgR" src="/magica/resource/image_web/page/collection/magirepo/common/chara_r.png" alt="">
+
+	<div class="arrowR se_decide TE"></div>
+	<div class="arrowL se_decide TE"></div>
+
+	<div id='number'>
+		<span class='tag'>
+			<img src="/magica/resource/image_web/page/collection/magirepo/common/tag_part<%= model.part %>.png" alt="">
+		</span>
+		<span class='numText head'></span>
+		<% _.each(model.textNumber,function(value,index){ %>
+			<span class='numText num<%= value %>'></span>
+		<% }); %>
+	</div>
+
+	<div id='imgWrap' class='thumb hide'>
+		<div class='inner'>
+			<img id='mainImg' src="/magica/resource/image_web/page/collection/magirepo/img<%= model.imagePath %>" alt="">
+		</div>
+		<div class='loading'></div>
+	</div>
+</div>

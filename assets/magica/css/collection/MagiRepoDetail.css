@@ -1,0 +1,111 @@
+#status {
+  display: none; }
+
+#MagiRepoDetail {
+  width: 1024px;
+  height: 100%;
+  position: relative; }
+  #MagiRepoDetail #number {
+    width: 78px;
+    height: 98px;
+    padding-top: 40px;
+    background: url("/magica/resource/image_web/page/collection/magirepo/common/bg_story.png") left top no-repeat;
+    display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 214px;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    #MagiRepoDetail #number .tag {
+      position: absolute;
+      left: 0;
+      top: 0; }
+    #MagiRepoDetail #number .numText {
+      width: 18px;
+      height: 26px;
+      margin-right: -1px;
+      display: block; }
+      #MagiRepoDetail #number .numText.head {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_sharp.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num0 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_0.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num1 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_1.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num2 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_2.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num3 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_3.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num4 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_4.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num5 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_5.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num6 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_6.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num7 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_7.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num8 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_8.png") left top no-repeat; }
+      #MagiRepoDetail #number .numText.num9 {
+        background: url("/magica/resource/image_web/page/collection/magirepo/common/num_9.png") left top no-repeat; }
+  #MagiRepoDetail .imgL, #MagiRepoDetail .imgR {
+    position: absolute;
+    bottom: 0;
+    z-index: 10; }
+  #MagiRepoDetail .imgL {
+    left: 0; }
+  #MagiRepoDetail .imgR {
+    right: 0; }
+  #MagiRepoDetail .arrowR, #MagiRepoDetail .arrowL {
+    width: 76px;
+    height: 96px;
+    position: absolute;
+    top: -webkit-calc(50% - 55px); }
+  #MagiRepoDetail .arrowR {
+    background: url("/magica/resource/image_web/page/collection/magirepo/common/btn_prev.png") left top no-repeat;
+    right: 213px; }
+  #MagiRepoDetail .arrowL {
+    background: url("/magica/resource/image_web/page/collection/magirepo/common/btn_next.png") left top no-repeat;
+    left: 213px; }
+  #MagiRepoDetail #imgWrap #mainImg {
+    width: 100%;
+    height: 100%; }
+  #MagiRepoDetail #imgWrap.zoom {
+    width: 1024px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000000;
+    overflow: hidden; }
+    #MagiRepoDetail #imgWrap.zoom .inner {
+      width: 100%;
+      height: auto;
+      min-height: 100%; }
+  #MagiRepoDetail #imgWrap.thumb {
+    width: 405px;
+    height: 576px;
+    position: absolute;
+    top: -webkit-calc(50% - 288px);
+    left: 310px; }
+    #MagiRepoDetail #imgWrap.thumb .scrollIndicatorInner {
+      display: none; }
+    #MagiRepoDetail #imgWrap.thumb.hide #mainImg {
+      opacity: 0; }
+    #MagiRepoDetail #imgWrap.thumb.hide .loading {
+      width: 112px;
+      height: 66px;
+      background: url("/magica/resource/image_web/page/collection/magirepo/common/loading.png") left top no-repeat;
+      position: absolute;
+      top: -webkit-calc(50% - 33px);
+      left: -webkit-calc(50% - 56px);
+      z-index: 10000; }
+    #MagiRepoDetail #imgWrap.thumb.show #mainImg {
+      opacity: 1; }
