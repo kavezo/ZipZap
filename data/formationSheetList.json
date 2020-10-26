@@ -1,34 +1,156 @@
 [
     {
-        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
-        "formationSheetId": 111,
-        "createdAt": "2020/09/14 19:12:48",
-        "formationSheet": {
-            "id": 111,
-            "name": "Brave Echelon",
-            "description": "Boosts the Center",
-            "sheetType": 6,
-            "place1": "ALL_ATTACK_UP0_0",
-            "place3": "ALL_ATTACK_UP0_0",
-            "place5": "ALL_ATTACK_UP1_100,ALL_DEFENSE_UP1_100",
-            "place7": "ALL_ATTACK_UP0_0",
-            "place9": "ALL_ATTACK_UP0_0"
-        }
+        "description": "Boosts Front Top (Dark) + Center/Rear Bottom (Aqua)",
+        "id": 923,
+        "name": "Dark Tercio (Aqua)",
+        "place3": "DARK_ATTACK_UP2_150,DARK_DEFENSE_UP1_100",
+        "place4": "ALL_ATTACK_UP0_0",
+        "place5": "WATER_ATTACK_UP3_250",
+        "place7": "WATER_ATTACK_UP3_250",
+        "place8": "ALL_ATTACK_UP0_0",
+        "sheetType": 9
     },
     {
-        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
-        "formationSheetId": 121,
-        "createdAt": "2020/09/14 19:12:48",
-        "formationSheet": {
-            "id": 121,
-            "name": "Bright Phalanx",
-            "description": "Boosts the Front Center + Rear Center",
-            "sheetType": 2,
-            "place1": "ALL_ATTACK_UP0_0",
-            "place2": "ALL_DEFENSE_UP1_100",
-            "place3": "ALL_ATTACK_UP0_0",
-            "place5": "ALL_ATTACK_UP0_0",
-            "place8": "ALL_ATTACK_UP1_100"
-        }
+        "description": "Boosts the Front Center + Rear Top/Bottom (Forest Only)",
+        "id": 161,
+        "name": "Attribute Delta (Forest)",
+        "place2": "TIMBER_ATTACK_UP2_150",
+        "place5": "ALL_ATTACK_UP0_0",
+        "place7": "TIMBER_ATTACK_UP2_150",
+        "place8": "ALL_ATTACK_UP0_0",
+        "place9": "TIMBER_ATTACK_UP2_150",
+        "sheetType": 3
+    },
+    {
+        "description": "Boosts the Front Center + Rear Center",
+        "id": 131,
+        "name": "Mighty Cross",
+        "place2": "ALL_ATTACK_DOWN1_-100,ALL_DEFENSE_UP1_100",
+        "place4": "ALL_ATTACK_UP0_0",
+        "place5": "ALL_ATTACK_UP0_0",
+        "place6": "ALL_ATTACK_UP0_0",
+        "place8": "ALL_ATTACK_UP1_100",
+        "sheetType": 1
+    },
+    {
+        "description": "Boosts Front Center + Rear Top/Bottom (Light Only)",
+        "id": 171,
+        "name": "Attribute Delta (Light)",
+        "place2": "LIGHT_ATTACK_UP2_150",
+        "place5": "ALL_ATTACK_UP0_0",
+        "place7": "LIGHT_ATTACK_UP2_150",
+        "place8": "ALL_ATTACK_UP0_0",
+        "place9": "LIGHT_ATTACK_UP2_150",
+        "sheetType": 3
+    },
+    {
+        "description": "Boosts the Front Center + Rear Top/Bottom (Flame Only)",
+        "id": 141,
+        "name": "Attribute Delta (Flame)",
+        "place2": "FIRE_ATTACK_UP2_150",
+        "place5": "ALL_ATTACK_UP0_0",
+        "place7": "FIRE_ATTACK_UP2_150",
+        "place8": "ALL_ATTACK_UP0_0",
+        "place9": "FIRE_ATTACK_UP2_150",
+        "sheetType": 3
+    },
+    {
+        "description": "Boosts Front Top (Light) + Center/Rear Bottom (Flame)",
+        "id": 912,
+        "name": "Light Tercio (Flame)",
+        "place3": "LIGHT_ATTACK_UP1_100,LIGHT_DEFENSE_UP2_150",
+        "place4": "ALL_ATTACK_UP0_0",
+        "place5": "FIRE_ATTACK_UP3_250",
+        "place7": "FIRE_ATTACK_UP3_250",
+        "place8": "ALL_ATTACK_UP0_0",
+        "sheetType": 9
+    },
+    {
+        "description": "Boosts the Center",
+        "id": 111,
+        "name": "Brave Echelon",
+        "place1": "ALL_ATTACK_UP0_0",
+        "place3": "ALL_ATTACK_UP0_0",
+        "place5": "ALL_ATTACK_UP1_100,ALL_DEFENSE_UP1_100",
+        "place7": "ALL_ATTACK_UP0_0",
+        "place9": "ALL_ATTACK_UP0_0",
+        "sheetType": 6
+    },
+    {
+        "description": "Boosts Front Top (Light) + Center/Rear Bottom (Forest)",
+        "id": 911,
+        "name": "Light Tercio (Forest)",
+        "place3": "LIGHT_ATTACK_UP1_100,LIGHT_DEFENSE_UP2_150",
+        "place4": "ALL_ATTACK_UP0_0",
+        "place5": "TIMBER_ATTACK_UP3_250",
+        "place7": "TIMBER_ATTACK_UP3_250",
+        "place8": "ALL_ATTACK_UP0_0",
+        "sheetType": 9
+    },
+    {
+        "description": "Boosts Front Top (Light) + Center/Rear Bottom (Aqua)",
+        "id": 913,
+        "name": "Light Tercio (Aqua)",
+        "place3": "LIGHT_ATTACK_UP1_100,LIGHT_DEFENSE_UP2_150",
+        "place4": "ALL_ATTACK_UP0_0",
+        "place5": "WATER_ATTACK_UP3_250",
+        "place7": "WATER_ATTACK_UP3_250",
+        "place8": "ALL_ATTACK_UP0_0",
+        "sheetType": 9
+    },
+    {
+        "description": "Boosts the Front Center + Rear Top/Bottom (Dark Only)",
+        "id": 181,
+        "name": "Attribute Delta (Dark)",
+        "place2": "DARK_ATTACK_UP2_150",
+        "place5": "ALL_ATTACK_UP0_0",
+        "place7": "DARK_ATTACK_UP2_150",
+        "place8": "ALL_ATTACK_UP0_0",
+        "place9": "DARK_ATTACK_UP2_150",
+        "sheetType": 3
+    },
+    {
+        "description": "Boosts the Front Center + Rear Top/Bottom (Aqua Only)",
+        "id": 151,
+        "name": "Attribute Delta (Aqua)",
+        "place2": "WATER_ATTACK_UP2_150",
+        "place5": "ALL_ATTACK_UP0_0",
+        "place7": "WATER_ATTACK_UP2_150",
+        "place8": "ALL_ATTACK_UP0_0",
+        "place9": "WATER_ATTACK_UP2_150",
+        "sheetType": 3
+    },
+    {
+        "description": "Boosts Front Top (Dark) + Center/Rear Bottom (Flame)",
+        "id": 922,
+        "name": "Dark Tercio (Flame)",
+        "place3": "DARK_ATTACK_UP2_150,DARK_DEFENSE_UP1_100",
+        "place4": "ALL_ATTACK_UP0_0",
+        "place5": "FIRE_ATTACK_UP3_250",
+        "place7": "FIRE_ATTACK_UP3_250",
+        "place8": "ALL_ATTACK_UP0_0",
+        "sheetType": 9
+    },
+    {
+        "description": "Boosts the Front Center + Rear Center",
+        "id": 121,
+        "name": "Bright Phalanx",
+        "place1": "ALL_ATTACK_UP0_0",
+        "place2": "ALL_DEFENSE_UP1_100",
+        "place3": "ALL_ATTACK_UP0_0",
+        "place5": "ALL_ATTACK_UP0_0",
+        "place8": "ALL_ATTACK_UP1_100",
+        "sheetType": 2
+    },
+    {
+        "description": "Boosts Front Top (Dark) + Center/Rear Bottom (Forest)",
+        "id": 921,
+        "name": "Dark Tercio (Forest)",
+        "place3": "DARK_ATTACK_UP2_150,DARK_DEFENSE_UP1_100",
+        "place4": "ALL_ATTACK_UP0_0",
+        "place5": "TIMBER_ATTACK_UP3_250",
+        "place7": "TIMBER_ATTACK_UP3_250",
+        "place8": "ALL_ATTACK_UP0_0",
+        "sheetType": 9
     }
 ]

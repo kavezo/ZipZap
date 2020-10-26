@@ -12,7 +12,7 @@ data1 = ['giftList', 'itemList', 'pieceList', 'gameUser', 'user', 'userCardList'
          'userFormationSheetList', 'userGiftList', 'userItemList']
 data2 = ['userLimitedChallengeList', 'userList', 'userLive2dList', 'userPieceList', 'userPieceSetList',
          'userPieceCollectionList', 'userQuestAdventureList', 'userQuestBattleList', 'userSectionList',
-         'userArenaBattle', 'userShopItem', 'userStatusList', 'userTotalChallengeList', 'userGachaGroupList']
+         'userArenaBattle', 'userShopItemList', 'userStatusList', 'userTotalChallengeList', 'userGachaGroupList']
 
 
 def fetchData(transferId, transferPassword):
