@@ -16,7 +16,8 @@ data2 = ['userLimitedChallengeList', 'userList', 'userLive2dList', 'userPieceLis
 
 
 def fetchData(transferId, transferPassword):
-    os.makedirs(userDir)
+    if not os.path.exists(userDir):
+        os.makedirs(userDir)
     myUuid = uuid.uuid4()
     createResponse = post('/magica/api/user/create', myUuid)
     if json.loads(createResponse)['resultCode'] != 'success':
