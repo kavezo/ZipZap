@@ -13,6 +13,7 @@ data1 = ['giftList', 'itemList', 'pieceList', 'gameUser', 'user', 'userCardList'
 data2 = ['userLimitedChallengeList', 'userList', 'userLive2dList', 'userPieceList', 'userPieceSetList',
          'userPieceCollectionList', 'userQuestAdventureList', 'userQuestBattleList', 'userSectionList',
          'userArenaBattle', 'userShopItemList', 'userStatusList', 'userTotalChallengeList', 'userGachaGroupList']
+dataEnemyCollection = ['userEnemyList']
 
 
 def fetchData(transferId, transferPassword):
@@ -31,6 +32,7 @@ def fetchData(transferId, transferPassword):
     fetchDataSet(myUuid, data1)
     fetchDataSet(myUuid, data2)
     fetchStoryCollection(myUuid)
+    fetchEnemyCollection(myUuid)
     print('\nDone getting data')
 
 
@@ -42,9 +44,22 @@ def fetchStoryCollection(myUuid):
         json.dump(dataBody, f, ensure_ascii=False)
 
 
+def fetchEnemyCollection(myUuid):
+    dataResponse = get('/magica/api/page/EnemyCollection', myUuid)
+    dataBody = json.loads(dataResponse)
+    print(f'Writing enemy collection...')
+    with open(f'{userDir}/EnemyCollection.json', 'w+', encoding='utf-8') as f:
+        json.dump(dataBody, f, ensure_ascii=False)
+    saveDataSet(dataBody, dataEnemyCollection)
+
+
 def fetchDataSet(myUuid, dataSet):
     dataResponse = get('/magica/api/page/TopPage?value=' + ','.join(dataSet), myUuid)
     dataBody = json.loads(dataResponse)
+    saveDataSet(dataBody, dataSet)
+
+
+def saveDataSet(dataBody, dataSet):
     for dataName in dataSet:
         if dataName not in dataBody:
             continue

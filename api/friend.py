@@ -50,11 +50,10 @@ def user(flow):
             userDeck = deck
     response['userDeck'] = userDeck
 
-    for key in ['userCharaList', 'userPieceList']:
+    for key in ['userCharaList', 'userPieceList', 'userDoppelList', 'userArenaBattle']:
         with open('data/user/' + key + '.json', encoding='utf-8') as f:
             value = json.load(f)
         response[key] = value
-    response['userDoppelList'] = []
 
     flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {"Content-Type": "application/json"})
 
