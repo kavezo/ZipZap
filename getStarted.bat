@@ -18,7 +18,7 @@ python -m pip install -r ./requirements.txt
 @echo Virtual environment is installed, and configured.
 @echo Now is time to follow the instructions to either get your account data
 @echo or just run the server.
-@echo anyway, next step is to run startServer.bat, and configure the proxy on your
+@echo anyway, the next steps are to run startServer.bat, and configure the proxy on your
 @echo Magia Record device.
 @echo.
 @echo.
