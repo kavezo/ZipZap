@@ -92,6 +92,7 @@ https://github.com/kavezo/MagiRecoStatic into the assets folder.
     - awaken
     - limit break
     - customize magical girls' looks (in disks, etc.)
+- making teams with magical girls and memoria (api/userDeck.py)
 - managing memoria (api/userPiece.py and api/userPieceSet.py)
     - level up
     - limit break
@@ -107,17 +108,16 @@ https://github.com/kavezo/MagiRecoStatic into the assets folder.
     - set comment
     - set leader
     - set background (only two backgrounds are available, but...)
-- buying things from the shop
+- buying things from the shop (api/shop.py)
     - spending items to get items
     - spending gems to get packs
     - you can get megucas too, but they won't show up in your present box and instead you'll just have them
-    - but you can't get formation sheets yet   
 
 ### Currently missing functions:
 - can't recover AP
 - can't lock or sell memoria
 - you can't clear any missions or accept their rewards
-- mirrors, quests, and team-making are entirely nonfunctional
+- mirrors and quests are entirely nonfunctional
 
 ### What's next?
 I coded very fast, and very not well, because I wanted to get as many features out before the 30th. Code quality is still
@@ -130,7 +130,6 @@ The features are in order of the most overlap with the knowledge I have currentl
 implement a new feature I don't know much about at least half of the time is spent researching how it fits in with all 
 the user's data.
 
-- implement team-making
 - implement quests
 - implement mirrors
 - implement missions
