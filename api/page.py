@@ -65,10 +65,14 @@ def shopTop(response):
         response['userShopItemList'] = json.load(f)
 
 def storyCollection(response):
-    response['eventStoryList'] = []
-    response['arenaBattleFreeRankClassList'] = []
+    with open('data/eventStoryList.json', encoding='utf-8') as f:
+        response['eventStoryList'] = json.load(f)
+    with open('data/arenaBattleFreeRankClassList.json', encoding='utf-8') as f:
+        response['arenaBattleFreeRankClassList'] = json.load(f)
     with open('data/user/userArenaBattle.json', encoding='utf-8') as f:
         response['userArenaBattle'] = json.load(f)
+    with open('data/campaignStoryList.json', encoding='utf-8') as f:
+        response['campaignStoryList'] = json.load(f)
 
 def supportSelect(response):
     with open('data/npc.json', encoding='utf-8') as f:
