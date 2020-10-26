@@ -4,7 +4,8 @@ import requests
 import os
 import json
 from getUserData import data1, data2
-from api import page, gacha, user, gameUser, userCard, userChara, friend, userPiece, userPieceSet, userLive2d, money, shop
+from api import page, gacha, user, gameUser, userCard, userChara, friend, userPiece, \
+    userPieceSet, userLive2d, money, shop, userDeck
 
 isLoggingIn = False
 
@@ -25,7 +26,6 @@ def serveAsset(flow):
             os.makedirs(os.path.dirname('assets'+versionless))
 
         asset_request = requests.get('https://zipzap-assets.s3.us-east-2.amazonaws.com'+flow.request.path)
-        print('requested ' + 'https://zipzap-assets.s3.us-east-2.amazonaws.com' + flow.request.path)
         if asset_request.status_code == 200:
             flow.response = http.HTTPResponse.make(200, asset_request.content, {})
             if diskAssets and not isAnnouncement:
@@ -69,7 +69,8 @@ def request(flow: http.HTTPFlow) -> None:
                 '/magica/api/userPieceSet/': userPieceSet.handleUserPieceSet,
                 '/magica/api/userLive2d': userLive2d.handleUserLive2d,
                 '/magica/api/money': money.handleMoney,
-                '/magica/api/shop': shop.handleShop}
+                '/magica/api/shop': shop.handleShop,
+                '/magica/api/userDeck': userDeck.handleUserDeck}
         if flow.request.path.startswith('/magica/api/test/logger/error'):
             flow.response = http.HTTPResponse.make(200, '{"resultCode": "success"}', {})
             return

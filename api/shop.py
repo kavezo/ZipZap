@@ -14,6 +14,34 @@ def getCard(charaNo):
             userCard, userChara, userLive2d, _ = gacha.addMeguca(card)
     return {'userCardList': [userCard], 'userCharaList': [userChara], 'userLive2dList': [userLive2d]}
 
+def getFormation(formationId):
+    with open('data/formationSheetList.json', encoding='utf-8') as f:
+        formationSheetList = json.load(f)
+    with open('data/user/userFormationSheetList.json', encoding='utf-8') as f:
+        userFormations = json.load(f)
+    with open('data/user/user.json', encoding='utf-8') as f:
+        userId = json.load(f)['id']
+    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+
+    for formation in userFormations:
+        if formation['formationSheetId'] == formationId: # if already exists, do nothing
+            return {}
+    
+    chosenFormation = {}
+    for formation in formationSheetList:
+        if formation['id'] == formationId:
+            chosenFormation = formation
+    
+    userFormation = {
+        "userId": userId,
+        "formationSheetId": formationId,
+        "createdAt": nowstr,
+        "formationSheet": chosenFormation
+    }
+    with open('data/user/userFormationSheetList.json', 'w+', encoding='utf-8') as f:
+        json.dump(userFormations+[userFormation], f, ensure_ascii=False)
+    return {'userFormationSheetList': [userFormation]}
+
 def getGift(giftId, amount):
     with open('data/user/userGiftList.json', encoding='utf-8') as f:
         gifts = json.load(f)
@@ -160,6 +188,8 @@ def obtainSet(item, body, args):
 def obtain(item, body, args):
     if item['shopItemType'] == 'CARD':
         args.update(getCard(item['card']['charaNo']))
+    elif item['shopItemType'] == 'FORMATION_SHEET':
+        args.update(getFormation(item['formationSheet']['id']))
     elif item['shopItemType'] == 'GIFT':
         args.update(getGift(int(item['gift']['rewardCode'].split('_')[1]), body['num']*int(item['rewardCode'].split('_')[-1])))
     elif item['shopItemType'] == 'ITEM':
@@ -196,10 +226,7 @@ def buy(flow):
 
     # get the thing
     args = {}
-    if item['shopItemType'] == 'FORMATION_SHEET':
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
-        return
-    elif item['shopItemType'] == 'SET':
+    if item['shopItemType'] == 'SET':
         obtainSet(item, body, args)
     else:
         obtain(item, body, args)
