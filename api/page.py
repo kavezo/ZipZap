@@ -151,7 +151,7 @@ def addArgs(response, args, isLogin):
             print('loading ' + arg + ' from json')
             fpath = 'data/user/'+arg+'.json'
             if os.path.exists(fpath):
-                with open('data/user/'+arg+'.json', encoding='utf-8') as f:
+                with open(fpath, encoding='utf-8') as f:
                     response[arg] = json.load(f)
             else:
                 print(f'{fpath} not found')
