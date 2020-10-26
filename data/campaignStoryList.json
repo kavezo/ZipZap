@@ -1,0 +1,106 @@
+[
+	{
+		"campaignId": 1005,
+		"campaignType": "LOGIN_BONUS",
+		"storyList": [
+			{
+				"storyTitle": "Ep.1",
+				"storyIds": "501011-1"
+			}
+		]
+	},
+	{
+		"campaignId": 1011,
+		"campaignType": "LOGIN_BONUS",
+		"storyList": [
+			{
+				"storyTitle": "Ep.1",
+				"storyIds": "501411-1"
+			}
+		]
+	},
+	{
+		"campaignId": 1017,
+		"campaignType": "LOGIN_BONUS",
+		"storyList": [
+			{
+				"storyTitle": "Ep.1",
+				"storyIds": "601701-1"
+			},
+			{
+				"storyTitle": "Ep.2",
+				"storyIds": "601701-2"
+			},
+			{
+				"storyTitle": "Ep.3",
+				"storyIds": "601701-3"
+			},
+			{
+				"storyTitle": "Ep.4",
+				"storyIds": "601701-4"
+			},
+			{
+				"storyTitle": "Ep.5",
+				"storyIds": "601701-5"
+			}
+		]
+	},
+	{
+		"campaignId": 1019,
+		"campaignType": "LOGIN_BONUS",
+		"storyList": [
+			{
+				"storyTitle": "Ep.1",
+				"storyIds": "601901-1"
+			},
+			{
+				"storyTitle": "Ep.2",
+				"storyIds": "601901-2"
+			},
+			{
+				"storyTitle": "Ep.3",
+				"storyIds": "601901-3"
+			},
+			{
+				"storyTitle": "Ep.4",
+				"storyIds": "601901-4"
+			},
+			{
+				"storyTitle": "Ep.5",
+				"storyIds": "601901-5"
+			},
+			{
+				"storyTitle": "Ep.6",
+				"storyIds": "601901-6"
+			},
+			{
+				"storyTitle": "Ep.7",
+				"storyIds": "601901-7"
+			},
+			{
+				"storyTitle": "Ep.8",
+				"storyIds": "601901-8"
+			}
+		]
+	},
+	{
+		"campaignId": 1032,
+		"campaignType": "LOGIN_BONUS",
+		"storyList": [
+			{
+				"storyTitle": "Ep.1",
+				"storyIds": "602301-1_Ep4Oo,602301-2_rfiUy,602301-3_ySYA8,602301-4_UOpSQ,602301-5_chlZr"
+			}
+		]
+	},
+	{
+		"campaignId": 20200397,
+		"campaignType": "LOGIN_BONUS",
+		"storyList": [
+			{
+				"storyTitle": "Ep.1",
+				"storyIds": "6020039-1_kcs,6020039-2_w3j,6020039-3_zts,6020039-4_Oo8,6020039-5_cia,6020039-6_8br,6020039-7_z6j"
+			}
+		]
+	}
+]
