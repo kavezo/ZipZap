@@ -134,6 +134,17 @@ def compose(flow):
     with open('data/user/userPieceList.json', 'w+', encoding='utf-8') as f:
         json.dump(userPieceList, f, ensure_ascii=False)
 
+    with open('data/user/userPieceCollectionList.json', encoding='utf-8') as f:
+        pieceCollection = json.load(f)
+    for i, piece in enumerate(pieceCollection):
+        if piece['pieceId'] == targetUserPiece['pieceId']:
+            if targetUserPiece['level'] > piece['maxLevel']:
+                pieceCollection[i]['maxLevel'] = targetUserPiece['level']
+            if targetUserPiece['lbCount'] > piece['maxLbCount']:
+                pieceCollection[i]['maxLbCount'] = targetUserPiece['lbCount']
+    with open('data/user/userPieceCollectionList.json', 'w+', encoding='utf-8') as f:
+        json.dump(pieceCollection, f, ensure_ascii=False)
+
     response = {
         'resultCode': 'success',
         'gameUser': gameUser,

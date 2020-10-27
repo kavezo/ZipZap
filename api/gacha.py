@@ -300,6 +300,22 @@ def addPiece(piece):
         "createdAt": nowstr
     }
     pieceList.append(userPiece)
+    
+    if not foundExisting:
+        with open('data/user/userPieceCollectionList.json', encoding='utf-8') as f:
+            pieceCollection = json.load(f)
+        existingIds = [collPiece['pieceId'] for collPiece in pieceCollection]
+        if not piece['pieceId'] in existingIds:
+            pieceCollection.append({
+                "createdAt": nowstr,
+                "maxLbCount": 0,
+                "maxLevel": 1,
+                "piece": piece,
+                "pieceId": piece['pieceId'],
+                "userId": userId
+            })
+        with open('data/user/userPieceCollectionList.json', 'w+', encoding='utf-8') as f:
+            json.dump(pieceCollection, f, ensure_ascii=False)
 
     with open('data/user/userPieceList.json', 'w', encoding='utf-8') as f:
         json.dump(pieceList, f, ensure_ascii=False)
