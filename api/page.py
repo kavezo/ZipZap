@@ -79,6 +79,16 @@ def supportSelect(response):
         npc = json.load(f)
     response['npcHelpList'] = [npc]
 
+def doppelCollection(response):
+    with open('data/doppelList.json', encoding='utf-8') as f:
+        response['doppelList'] = json.load(f)
+
+def enemyCollection(response):
+    with open('data/enemyList.json', encoding='utf-8') as f:
+        response['enemyList'] = json.load(f)
+    with open('data/user/userEnemyList.json', encoding='utf-8') as f:
+        response['userEnemyList'] = json.load(f)
+
 specialCases = {
     "CharaCollection": charaCollection,
     "CharaTop": charaTop,
@@ -93,7 +103,9 @@ specialCases = {
     "PresentList": presentList,
     "ShopTop": shopTop,
     "StoryCollection": storyCollection,
-    "SupportSelect": supportSelect
+    "SupportSelect": supportSelect,
+    "DoppelCollection": doppelCollection,
+    "EnemyCollection": enemyCollection
 }
 
 # TODO: clear history on first day's login
@@ -134,10 +146,15 @@ def addArgs(response, args, isLogin):
         if arg in ['user', 'gameUser', 'userStatusList',
         'userLive2dList', 'userCardList', 'userCharaList', 'userDeckList', 'userFormationSheetList',
         'userPieceList', 'userPieceSetList', 'userItemList', 'userSectionList', 'userGiftList',
-        'userQuestAdventureList', 'userQuestBattleList', 'userChapterList']:
+        'userQuestAdventureList', 'userQuestBattleList', 'userChapterList', 'userDoppelList',
+        'userDailyChallengeList', 'userLimitedChallengeList', 'userTotalChallengeList']:
             print('loading ' + arg + ' from json')
-            with open('data/user/'+arg+'.json', encoding='utf-8') as f:
-                response[arg] = json.load(f)
+            fpath = 'data/user/'+arg+'.json'
+            if os.path.exists(fpath):
+                with open(fpath, encoding='utf-8') as f:
+                    response[arg] = json.load(f)
+            else:
+                print(f'{fpath} not found')
         elif arg.lower().endswith('list'):
             response[arg] = []
 

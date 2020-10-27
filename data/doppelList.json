@@ -1,0 +1,510 @@
+[
+	{
+		"id": 100100,
+		"name": "Doppel of Silence",
+		"title": "Feature: Cuckoo",
+		"description": "The master of this emotion is aware of how pitiful her Doppel is, and refuses to look at it. This Doppel wordlessly wraps around and strangles anything it doesn't want to hear as it continues its search for something to fill the hole in its heart. While it should be calling for someone, it is cowardly and afraid of acknowledging the reality it has concealed, and so it remains, silently covering its ears.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/06/15 00:10:00"
+	},
+	{
+		"id": 100200,
+		"name": "Doppel of Admittance",
+		"title": "Feature: Ticket Puncher",
+		"description": "The master of this Doppel dreams of the day she will begin her journey, following in the footsteps of all the friends she has parted from. The light from the lantern at the end of the Doppel's tail can call forth a myriad of illusions, and the scissors are said to cause great devastation in the near futures of those who have been harmed by them. As Magical Girls get older, their emotional range becomes smaller, and such is the case for this master, who cannot separate her body from her Doppel.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2019/09/05 03:10:00"
+	},
+	{
+		"id": 100300,
+		"name": "Doppel of Camaraderie",
+		"title": "Feature: Ham",
+		"description": "The master of this emotion is unhappy with both the appearance and behavior of her Doppel. In contrast to her own desires to achieve great deeds through her own hard work, this Doppel creates a stream of wealth to satisfy the desires of her relatives in an attempt to preserve family peace. Though this is only a short-lived harmony. She believes that it exists in contrast to her own goals and prefers to keep it hidden. However, she may one day find that she needs this Doppel to protect the harmony between her family, no matter how fragile that harmony might be.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2019/08/22 03:10:00"
+	},
+	{
+		"id": 100400,
+		"name": "Doppel of Transparency",
+		"title": "Feature: Interrogation Chair",
+		"description": "The master of this emotion feels both pain and satisfaction from her Doppel's form. The main body of this Doppel is not the chair, but an invisible entity that is tortured endlessly while sitting atop it. This transparent Doppel uses its own blood to attack its enemies; however, it is not so easily controlled, and should the visible Doppel emerge from its master's right ear instead of the invisible one that typically appears from her left ear, it will scream and go on a rampage, swinging its guillotine at allies and enemies alike.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/06/05 00:10:00"
+	},
+	{
+		"id": 100500,
+		"name": "Doppel of Tumult",
+		"title": "Feature: Eyelids",
+		"description": "The master of this emotion falls into a deep sleep while this Doppel is present, and is therefore unable to witness what it experiences. While its master is sleeping, it paints over all inconveniences with muddy tears that flow from its vacant stare. This duplicate will surely awaken when it requires the power to crush reality.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/03/30 00:10:00"
+	},
+	{
+		"id": 100600,
+		"name": "Doppel of Vocation",
+		"title": "Feature: Aviary",
+		"description": "The master of this emotion will use all powers at her disposal to stay alive in this reality, including this all-in-one Doppel. Countless bird-shaped minions known as \"Sugar Geese\" emerge from her shadows on the ground, attacking her foes on command. The mere touch of a Sugar Goose will cause its target to taste such sweetness that it will inspire a maddening addiction. This makes it easy to make targets accept most lies, even with just a few geese. The Doppel sprouts from the tongue and arms, so she cannot speak while using it.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/01/30 00:10:00"
+	},
+	{
+		"id": 100700,
+		"name": "Doppel of Daydreaming",
+		"title": "Feature: Match Seller",
+		"description": "The master of this emotion desires more power even after becoming a Magical Girl, in order to achieve more wishes. This Doppel divides its master's lifespan up into matches, and grants a \"What If\" wish whenever a match is lit. When the Doppel runs out of matches, the master's life is over. It is very powerful, but similar to the Doppel of Dying Wishes, it mustn't be abused, for it sacrifices one's own lifespan.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/06/15 00:10:00"
+	},
+	{
+		"id": 100800,
+		"name": "Doppel of Fever",
+		"title": "Feature: Tube",
+		"description": "The master of this Doppel is entranced by the beauty of her own Doppel, but has yet to realize that it is still hiding its true form. It attacks from where it sprouts out of her back, using a large projection of itself made from the hardened paint (Pathogen Tempera) it emits. It boasts a Witch-like figure as it does this, despite its Doppel nature — this is because its human body becomes so coated in paint that she's no longer visible. The master cannot verify the appearance of her Doppel, but apparently it is \"just as beautiful when you view it from the inside\".",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2018/03/02 15:10:00"
+	},
+	{
+		"id": 100900,
+		"name": "Doppel of Transformation",
+		"title": "Feature: Glass Slipper",
+		"description": "The master of this emotion uses its power to their utmost content. This Doppel enhances the transforming ability of its possessor manyfold, allowing her to transform into someone else for a certain amount of time. The result of this transformation is truer to the ideal image of the person than the actual person it is based on. However, because the transformation is so perfect, if it is used too much, the user is likely to lose track of their own identity. It turns the user into the ideal state of its target, so it sometimes appears slightly different from the original.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true
+	},
+	{
+		"id": 101000,
+		"name": "Doppel of Self Discipline",
+		"title": "Feature: Nails",
+		"description": "The master of this emotion cares not where its power fly. This Doppel attacks with its huge fingers, along with the many fingers that fly around it. All the nails on the fingers are polished and decorated. It cares very much about its nails. When someone praises them, it becomes quite happy, but when someone says something bad about them, it gets discouraged and depressed. It is quite troublesome to deal with when this happens, so it is a good idea to let it attack the enemy as soon as you summon it.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true
+	},
+	{
+		"id": 101100,
+		"name": "Doppel of Conquest",
+		"title": "Feature: Plot of Land",
+		"description": "The master of this emotion fears that it will eat away at their everyday life and carefully chooses when to summon it, for the instant this Doppel is summoned, regardless of its master's intentions, it will cover its surroundings with rotten moss to conquer the land, with its only goal being to expand its territory. Summoning this Doppel accidentally, even in a beloved area, will destroy its surroundings by covering everything in its moss. Within the confines of its territory, it can unleash tremendous power.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/02/03 00:10:00"
+	},
+	{
+		"id": 101200,
+		"name": "Doppel of Larceny",
+		"title": "Feature: Mortsafe",
+		"description": "The master of this Doppel is cowardly by nature, which is why she gave birth to this stubborn Doppel. It fears losing anything and is fixated on obtaining more. It shares its proclivity for thievery with its master, and will pilfer anything it can get its hands on, even if those items belong to an ally. This Doppel is extremely greedy and refuses to give up anything once it has it in its possession.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2017/10/30 15:10:00"
+	},
+	{
+		"id": 101300,
+		"name": "Doppel of Assault",
+		"title": "Feature: War Drum",
+		"description": "The master of this emotion is eager to become stronger through her Doppel's power. It energizes itself with the beat of its drum and sends out orders to turn its allies into valiant warriors. However, it also shares its master's hastiness, so once the order is given, its allies are forced to perform an act of utter disgrace against their will. Its reputation with its allies is terrible as a result of this unreasonableness. It is difficult to handle as, like its master, it attempts to kill itself after committing a blunder.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/04/13 00:10:00"
+	},
+	{
+		"id": 101400,
+		"name": "Doppel of Dying Wishes",
+		"title": "Feature: Wood Beetle",
+		"description": "The master of this emotion will sacrifice everything she has. This terrifying Doppel uses both of its bug-headed hands to devour the stories of the world. It can then use its ridiculous power to materialize these stories into the real world. It is said its power comes from its weakening master, and that as she gets weaker, the Doppel get stronger. However since it uses all of its power to materialize the stories it eats it doesn't pack a physical punch, some even believe it wouldn't stand a chance against a direct hit from a Witch.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/06/19 00:10:00"
+	},
+	{
+		"id": 101500,
+		"name": "Doppel of Suffering",
+		"title": "Feature: The Happy Statue",
+		"description": "The master of this emotion shares in all the pain of the ones she loves and takes it on as her own. The pain then takes the shape of jewels, which decorate the Doppel and add to its power. However, as the Doppel cannot move, it cannot avoid attacks, and though it carries a sword and shield, they are there for decorative purposes only.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/07/07 00:10:00"
+	},
+	{
+		"id": 101600,
+		"name": "Doppel of Demolition",
+		"title": "Feature: Hearth Lion",
+		"description": "The master of this emotion is coolheaded, but her Doppel is burning with endless rage. Its form is a rampaging lion that rends all around it to pieces with its gnashing teeth. It refuses to forgive the smallest of injustices and demolishes anything it deems irrational. Strictness incarnate, it may target others simply for living in Kamihama, so its master must take care when summoning it, lest it hurt her allies. If she continues to use this Doppel, she may become similarly unforgiving. It may be uncontrollable, but its master half agrees with its judgment.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/03/09 00:10:00"
+	},
+	{
+		"id": 101700,
+		"name": "Doppel of Forewarning",
+		"title": "Feature: Flower Petals",
+		"description": "The master of this Doppel resents her environment and wishes to destroy everything. Her Doppel never forgets that death comes to all things equally. It covers everything with dancing flower petals and escorts girls elegantly with its white gloves. Like its master, it isn't able to attack directly, but its power, which is connected to the end of all things, is utterly terrifying - the magic of anything hidden under its flower petals rots away to nothing. The more the master relies on this Doppel, the closer her left arm will get to becoming completely one with it.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2019/11/01 00:10:00"
+	},
+	{
+		"id": 101800,
+		"name": "Doppel of Seclusion",
+		"title": "Feature: Terrarium",
+		"description": "The master of this Doppel isn't swayed by mood or emotion. She does, however, rely on her other half, the only person who truly understands her. Through this, the two of them are capable of completely isolating themselves from the outside. Together in their miniature world, they need only the company of the other to survive. This Doppel shuts out all physical and magical phenomena, allowing its master to perfectly protect herself and her twin. Though doing so causes their memories of anyone but each other to fade away.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2017/11/30 15:10:00"
+	},
+	{
+		"id": 101900,
+		"name": "Doppel of Disassociation",
+		"title": "Feature: Aquarium",
+		"description": "The master of this emotion will not bend or break to any situation or circumstance, but she will lose herself utterly in her other half, the only person who truly understands her. Through this, the two are capable of severing their connection to the world outside. No matter the opinion or attitude taken, together in their miniature world they can only trust each other's presence. No one else can understand them. This Doppel shuts out any unknown values in order to keep its master's spirit stable, though doing so causes her sense of ethics to weaken.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/07/15 00:10:00"
+	},
+	{
+		"id": 110100,
+		"name": "Doppel of Silence",
+		"title": "Feature: Cuckoo",
+		"description": "The master of this emotion is in the slow process of accepting herself on her journey to find her sister. Her excitement for the summer has also made her a bit cheerier. This mood is reflected in the Doppel's clothing and mast, giving the impression that it's being unreasonably influenced by its master's temporary emotional state. In other words, its appearance is only skin-deep. Despite being optimized for battle at sea, its master cannot swim, which hinders its movements somewhat. It simply attacks enemies in front of it with all the power at its disposal.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/06/02 00:10:00"
+	},
+	{
+		"id": 110300,
+		"name": "Doppel of Camaraderie",
+		"title": "Feature: Ham",
+		"description": "Have you heard? Has anybody told you? The Rumor of the Doppel of Camaraderie! It's a little pig that's grown nice and plump, capable of granting wishes for its master's family. It represents great wealth with its grand, glittering body, and ensures her family's wealth in the years to come! However, the master of this piggy doesn't much care for it, it actually puts her in quite the grumpy mood. \"It's way too embarrassing to let anyone see it!\" she says, so she hides it. It's a hot rumor in Kamihama!  No, stop, don't look!",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/01/17 00:10:00"
+	},
+	{
+		"id": 110800,
+		"name": "Doppel of Fever",
+		"title": "Feature: Piping Bag",
+		"description": "The master of this emotion believes that the art it seeks and the art humanity desires subconsciously are one and the same, and she gathers energy to make that art reality. The joy of the realization that the universal theme of humanity is the manifestation of an individual's emotion is reflected in this Doppel's appearance. Not only does it experience euphoria, but its pathogenetic tempera paint also shines with brilliant hues. However, the pain it inflicts and the suffering it endures are one and the same. Its victims' death rattles like echoes accolades in its master's ears.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2019/12/13 00:10:00"
+	},
+	{
+		"id": 111700,
+		"name": "Doppel of Forewarning",
+		"title": "Feature: Auspicious Day",
+		"description": "The master of this emotion is happy to welcome the new year with newly made friends, despite resenting her situation. That happiness takes the form of golden lilies, as well as red and white striped cloth. She shares her joy by scattering flowers about everyone nearby before wrapping them in the cloth to ring in the new year. Then again, no one is allowed to go home when it's time to serve the New Year's feast, so they languish in agony as they endure an eternal end to the year.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/01/08 00:10:00"
+	},
+	{
+		"id": 111800,
+		"name": "Doppel of Seclusion & Detachment",
+		"title": "Feature: Terrarium",
+		"description": "The masters of this emotion have forgotten the darkness inside one another and become completely absorbed in playing at their own private resort. This Doppel typically makes magic out of moonlight, but it has been overcome with affection for the sun, and now creates it from sunlight. As a result it bounces around gleefully, causing tragedy to all those around it, erasing that which it touches from existence and leaving pandemonium in its wake. Since it has none of the five senses, even should one scream in agony, those screams do not reach it.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/07/15 00:10:00"
+	},
+	{
+		"id": 200100,
+		"name": "Doppel of Mercy",
+		"title": "Feature: Salvation",
+		"description": "The master of this emotion tries to save all of existence. This Doppel appears as a huge floating Soul Gem. Once it is summoned, it creates an existence within which all things around it are consumed, and then takes control of everything within that existence. After that, it floats higher into the air and a shower of light arrows rains down. While all of this is happening, the master of this emotion sleeps inside the huge Soul Gem.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true
+	},
+	{
+		"id": 200200,
+		"name": "Doppel of Karma",
+		"title": "Feature: The Mortal World",
+		"description": "The master of this emotion visits many worlds in search of an exit, spinning giant threads of fate. Fourteen incomplete bodies born from emotion trail behind the master's body, which has almost completely transformed into glass. In order to achieve their mission, these 14 bodies work methodically and tirelessly to remove obstacles. Regardless of their master's will, they weave the threads of fate, which become tangled in ever more complex patterns, driving her yet further into a maze, the exit of which can hardly be found. These bodies of emotion have no names.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/04/03 00:10:00"
+	},
+	{
+		"id": 200300,
+		"name": "Doppel of Closed Circuits",
+		"title": "Feature: The Mortal World",
+		"description": "The master of this emotion loops through time in an endless cycle of trial-and-error. Master and Doppel fuse together, her skin becomes glass, and her expression freezes into that of a doll. She launches volley after volley of attacks that only end when her target falls silent. In this way she is more like a Witch than other Magical Girls. Not only can she can manipulate the sands of time, but she can pluck information of low importance from the alien lifeforms on her hat and create anything around the level of an earthly weapon by solidifying the sand.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2019/12/24 00:10:00"
+	},
+	{
+		"id": 200400,
+		"name": "Doppel of Unrequited Love",
+		"title": "Feature: Mermaid",
+		"description": "The master of this emotion suffered from young love and chose a fate so harsh that she could not bear it alone. As such, the Doppel dreams of love while it swims effortlessly through the air, playing a song for its master from its vast hollow body. It can control several swords to attack its enemies with the soundwaves that emanate from its body, but as long as the master uses it, she cannot flee from the discontent that troubles her heart.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2018/01/22 15:10:00"
+	},
+	{
+		"id": 200500,
+		"name": "Doppel of Invitations",
+		"title": "Feature: Dressing Up",
+		"description": "The master of this emotion doesn't trust it but battles on, regardless of its presence. This Doppel is very small compared to other Doppels and always sits on its master's head, so the master is hardly aware of it. It is doubtful that they communicate, so its master fights normally while it supports her. It is small and looks unreliable, but its vines are powerful enough to penetrate any enemy.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true
+	},
+	{
+		"id": 200600,
+		"name": "Doppel of Desperation",
+		"title": "Feature: Warrior Actress",
+		"description": "The master of this emotion doesn't trust its mysterious power, she only borrows its weapon and wields it herself. To the master, it's is no more than a hateful thing that drags up her painful past due to its power, a dubious hypnotic magic that controls mist to produce illusions. But even still, it possesses her regrets, hidden deep in her heart, so she allows it to aid her somewhat in battle, though she remains suspicious of it. The Doppel itself is the fluttering kimono-like thing, while the candlestick holder the master rides is a separate being altogether.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2017/09/28 23:40:00"
+	},
+	{
+		"id": 200700,
+		"name": "Doppel of Attachment",
+		"title": "Feature: Dessert",
+		"description": "The master of this emotion gets attached to people and objects as soon as they pluck her heartstrings. She may behave in a shameful manner at times, but in her heart is a well of deep love. The Doppel does not fuse with its host; rather, it emerges as a mask from her nose, which then covers her face completely. The host does not move while her Doppel is present. Instead she sits completely still and stares as though she were staring at the object of her obsession.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/04/13 00:10:00"
+	},
+	{
+		"id": 210000,
+		"name": "Doppel of Mercy",
+		"title": "Feature: New Year's Tidings",
+		"description": "The master of this emotion is filled with aspirations for the new year from inside her Doppel, which gathers all wishes for the year the moment it manifests and bestows them upon its enemy in the form of blessings of mercy. Any and all life that has thrived on this earth over the millenia of its existence are sure to be equally condensed and crushed by the enormity of this fleeting creature's wish.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/01/01 00:00:00"
+	},
+	{
+		"id": 230000,
+		"name": "Doppel of Closed Circuits",
+		"title": "Feature: The Mortal World",
+		"description": "The master of this emotion wound up on the beach during her trips of trial and error through time. She's got a holiday vibe, maybe due to the summer sun. By absorbing strange skills from the alien she has trapped on her straw hat, she conjures a palm tree that fires rounds of coconuts. No Witch would enjoy being pelted with supersonic coconuts, and the Doppel's attacks are guaranteed to hit due to the game mechanics, so they forfeit the moment it aims. The palm tree boasts high accuracy and it can target and hit a lone enemy repeatedly. Consider it an improvement.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/05/01 00:10:00"
+	},
+	{
+		"id": 250000,
+		"name": "Doppel of Worship",
+		"title": "Feature: Nimbus",
+		"description": "The master of this emotion has accepted salvation in a moment of despair on the darkest of nights. As a result, she was miraculously given the strength to overcome the fear and anxiety that she once had. Due to the mental state of it's master, this pitiful Doppel's appearance has changed, leading it to believe it can be a savior. Tiro Saint Doppelion is a symbol that represents a new hope for all girls in despair.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2019/12/04 00:10:00"
+	},
+	{
+		"id": 260000,
+		"name": "Doppel of Desperation",
+		"title": "Feature: Warrior Actress",
+		"description": "The master of this emotion does not trust its mysterious power, but she cannot hide her excitement over finally being able to swim. Although its master typically despises Doppels, this Doppel uses hypnotic magic to give her the illusion that she can swim. Her excitement is apparent in its attack as well. When sunlight hits the mirror on its back, it concentrates all that energy into a beam that it rains down on its enemies. As soon as it has dealt with them, its master rides the candlestick holder sea turtle, and swims freely with the fish of the sea.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/08/03 00:10:00"
+	},
+	{
+		"id": 300300,
+		"name": "Doppel of Imprudence",
+		"title": "Feature: Smog",
+		"description": "The master of this Doppel is thrilled with its legs, which have grown much longer. It boils the contents of its right leg and condenses the contents of its left to cause the chemical reaction that forms its gaseous upper body. It therefore boasts a high resistence to physical attacks; however, it also envelops enemy and ally alike in its toxicity. Once it appears, its surroundings are contaminated by its gas, and even its master would likely not be able to withstand it if she did not wear a gas mask. It also has a strong curiosity for rare kinds of Witches.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2019/09/25 03:10:00"
+	},
+	{
+		"id": 300500,
+		"name": "Doppel of Duplicity",
+		"title": "Feature: Shop Curtain",
+		"description": "This Doppel reflects two sides of the same coin. The master of this emotion feels guilty in some way about the lack of floral elements in her Doppel. Its frontside primarily supports its allies, while its back side's offensive power is high. It is skilled at parrying enemy attacks, and it guides any souls who pass through its curtains to the underworld.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/05/11 00:10:00"
+	},
+	{
+		"id": 301500,
+		"name": "Doppel of Unity",
+		"title": "Feature: Cloak",
+		"description": "The master of this Doppel wishes for beautiful friendships to last for eternity. This Doppel answers that desire by compressing everything it captures into a single concentrated lump, which turns into an unbreakable crystal that will shine for thousands of years. Attacks by the Doppel are made by crystallizing its master's emotions, but continued use of this power causes even the master's memories to harden, making it impossible to create new ones.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2018/03/12 15:10:00"
+	},
+	{
+		"id": 301600,
+		"name": "Doppel of Restraint",
+		"title": "Feature: Shell",
+		"description": "The master of this emotion knows it's simply a way for her to release her pent-up frustration. She views it with mixed feelings, as she understands there are drawbacks. This Doppel sprouts thorns to resist those who would harm it and attacks ferociously when it senses danger. On rare occasions, the agitated emotional state of its master may cause it to explode, and its shell – though stronger than metal – will break and release a surge of powerful magic.",
+		"designer": "Idea/Supervision: GAN",
+		"archive": true,
+		"openDate": "2017/11/10 15:10:00"
+	},
+	{
+		"id": 301800,
+		"name": "Doppel of Refutation",
+		"title": "Feature: Pet",
+		"description": "The master of this emotion learned to control others using a borrowed power. In time this act morphed into a form of desire, and this is the embodiment of that twisted state. It is a freakish kind of vengeance brought upon by a past of suffering at the hands of others, a reversed and bloated projection of the self. There is not an ounce of guilt in it, only pure madness. This Doppel binds those it faces in numerous leashes and crushes them with its gargantuan hands as it trembles in endless ecstasy.",
+		"designer": "Idea/Supervision: MURA KUROE",
+		"archive": true,
+		"openDate": "2020/08/21 00:10:00"
+	},
+	{
+		"id": 302000,
+		"name": "Doppel of Dissolution",
+		"title": "Feature: Bonds",
+		"description": "The master of this emotion finds a sense of security by entrusting the dormant desires in her heart to her Doppel, which keeps them held in check. It transmutes her ego into a sphere, while her ties and obligations to her family become snakes binding it tightly together in place. The sphere yearns for freedom, but the snakes confining it are the only things maintaining its form. Were it to wrest itself free, the sphere would burst and fly away...but the master would never allow that to happen.",
+		"designer": "Idea/Supervision: PAPA",
+		"archive": true,
+		"openDate": "2019/11/05 00:10:00"
+	},
+	{
+		"id": 302500,
+		"name": "Doppel of Electronic Ordinance",
+		"title": "Feature: Electrocardiogram",
+		"description": "The master of this emotion uses powerful electrical signals to burn the ill will from its target's body, incinerating its personality along with everything else. Though they are horrified by this Doppel's power, they are also tempted to believe that murder such as this is the only way to put an end to all human ill will. This Doppel also has power over both life and death, and, when it appears, the master's body and soul split apart temporarily, leaving her soul meandering in the space between life and death.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2017/09/15 15:10:00"
+	},
+	{
+		"id": 302600,
+		"name": "Doppel of Retribution",
+		"title": "Feature: Fox",
+		"description": "The master of this emotion performs acts of vengeance against those she hates, using a variety of magic attacks. This Doppel is part of the Fox Trinity and represents retaliation. It is skilled in magic and can use will-o'-wisps to confuse its enemies. So long as their master's grudge burns on, not even water can extinguish them. The master will lose her ability to think logically while using the Doppel; instead, she will act purely on instinct and perform extraordinary acrobatics.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2017/10/10 15:10:00"
+	},
+	{
+		"id": 303200,
+		"name": "Doppel of Adoration",
+		"title": "Feature: Carnation",
+		"description": "The master of this emotion is reluctant to admit that her Doppel represents her nature. It has the power to ensnare others' hearts and hold them under its sway. Anyone pulled in by this Doppel will be unable to resist its allure. Many of its victims will devotedly throw their lives away for it; others will find it hard to raise a hand against its loveliness. If she were to use this power to gain too many blind fanatics, however, she would bring about her own end.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2019/11/25 00:10:00"
+	},
+	{
+		"id": 303300,
+		"name": "Doppel of Duty",
+		"title": "Feature: Short Sword",
+		"description": "The master of this emotion believes that it is her duty to embrace the massive herd of adoration, excessive expectation, and envy directed at her by others. This Doppel exists to assist its master with her final task when her heart fails her and she is no longer able to fulfill her responsibilities. It serves as a second only for its master; however, it is merciful, and as such it selects a single person to accompany her on her final journey. It often finds itself unintentionally cutting down only those meant to accompany her, but that is part of its charm.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/05/22 00:10:00"
+	},
+	{
+		"id": 303500,
+		"name": "Doppel of Magnetic Pull",
+		"title": "Feature: Matchmaker",
+		"description": "The master of this emotion does not acknowledge that this Doppel lurks within her heart. It appears under a thick sheet of ice that it spreads under her feet. When attacking, it switches places with its master, trapping her beneath the ice, and reels in all interpersonal connections to steal them. It tries to collect all those she had formed in an attempt to restore things to their original state, but cut connections only sink to the bottom of the ice. The more the master uses this Doppel, the more feelings that she had given up on become dredged up and disperse.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/03/19 00:10:00"
+	},
+	{
+		"id": 304900,
+		"name": "Doppel of Resonance",
+		"title": "Feature: Hummingbird",
+		"description": "The master of this emotion is fond of her Doppel's body, which reverberates well. The Doppel aligns the pitch of its singing voice to resonate with any physical object until it shatters. It is also likely to use its voice to oscillate the brains of organisms, then use high frequency sound waves to vibrate its beak, with which it pierces the hearts of its victims with great precision.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/01/21 00:10:00"
+	},
+	{
+		"id": 305200,
+		"name": "Doppel of Faith",
+		"title": "Feature: Kawaii",
+		"description": "The master of this emotion loves kawaii culture and takes extreme pleasure in promoting it. Her face turns to pure delight when she gazes at this image of herself. This Doppel understands fully its master's desire to spread her interests, so it strives to implant a fondness for manga, anime, yumekawa, and gurokawa in others. If it encounters someone less kawaii than its master, it releases rainbow beams from its six eyes, enveloping them in a plethora of ribbons and lace, altering their hobbies and tastes. Its victims are said to then bow down to it in reverence.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/06/29 00:10:00"
+	},
+	{
+		"id": 305300,
+		"name": "Doppel of Attention-Seeking",
+		"title": "Feature: Wind-Up Doll",
+		"description": "The master of this emotion views wanting other people to smile and being desired as the same thing in some small way. Her Doppel frantically smashes its cymbals together, and anchors shoot toward the eyes of those whose attention the cymbals gather. Those cursed by the sound are then chased down by the anchors until their eyeballs are taken from them. If this Doppel is used often, the user will feel anxious unless someone is watching them at all times.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": true,
+		"openDate": "2020/04/22 00:10:00"
+	},
+	{
+		"id": 400100,
+		"name": "Doppel of Anguish",
+		"title": "Feature: Ballroom Dance",
+		"description": "The master of this emotion has been given the duty of changing the fortold future. A strong wind blows, scattering flowers, the petals of which drift into another world. When the mist at last accumulates, the time comes. It intermingles with the fluttering flower petals, and the festivities begin. The Doppel starts to dance, and at the dance's climax, the enemy shadows vanish like flowers in a storm as an offering to the festivities.",
+		"designer": "Idea/Supervision: MURA KUROE",
+		"archive": true,
+		"openDate": "2020/04/13 00:10:00"
+	},
+	{
+		"id": 400200,
+		"name": "Doppel of Manipulation",
+		"title": "Feature: Needles",
+		"description": "The master of this emotion has vowed absolute loyalty to her savior. It penetrates enemy and master alike with sharp needles, sewing the fate of all things tight. This act represents its extreme devotion, such that it offers up everything, including its life to its benefactor, while symbolizing the perilousness of its dependence upon the other, which it cannot maintain its identity without. The sharper the needles are, the more the stitches there are, and the harder it becomes to extricate oneself from it. However, this merely serves as an expression of the master's desire.",
+		"designer": "Idea/Supervision: MURA KUROE",
+		"archive": true
+	},
+	{
+		"id": 401100,
+		"name": "Doppel of Famine",
+		"title": "Feature: Dark Cook",
+		"description": "The master of this Doppel is much more particular about food than most. It wants to feed on anything within reach, and it does not care whether it eats Magical Girls or Witches. It is a chef born of the desire to eat itself, a Doppel of gluttony that devours all and returns it to nothingness. It has several plates prepared on its table at all times. Should you find yourself at its table on the battlefield, be careful you are not part of the meal…",
+		"designer": "Idea/Supervision: Masaki Hiramatsu & Takashi Tensugi",
+		"archive": true,
+		"openDate": "2017/11/20 15:10:00"
+	},
+	{
+		"id": 402100,
+		"name": "Doppel of Holy Flame",
+		"title": "Feature: Salvation",
+		"description": "The master of this Doppel has a pious heart, free of sin. The crosses that rain down from above are no ordinary ones. They are upside down crosses, and rather than exude divinity, they draw out sin and make those who bear witness to them face their own evil, wreathing them in purifying flame and burning them swiftly to ash. There is no sin that this Doppel cannot find and bring to light. Simply put, enemies have no choice but to accept its overwhelming purity.",
+		"designer": "Idea & Supervision: Masugitsune & Kawazuku",
+		"archive": true,
+		"openDate": "2018/02/15 15:10:00"
+	},
+	{
+		"id": 402200,
+		"name": "Doppel of Obsession",
+		"title": "Feature: Shadow",
+		"description": "The master of this Doppel feels deep sympathy for others, even at the most dire of times. Where there is light, there is dark. This is providence. But it is also providence that those who are blanketed in shadow will never have light shined upon them. This is a Doppel that stands beside the hero as their shadow, surrounded by their dazzling brilliance. It is the elusive shadow itself, and yet, it is exactly what makes the light shine so brightly. The two are connected by an unbreakable bond.",
+		"designer": "Idea & Supervision: Masugitsune & Kawazuku",
+		"archive": true,
+		"openDate": "2018/02/21 15:10:00"
+	},
+	{
+		"id": 402300,
+		"name": "Doppel of Destruction",
+		"title": "Feature: Thundering Wrath",
+		"description": "The master of this emotion is seen by all as mild-mannered and kind. Every action or force exerted upon another object results in a \"reaction\", and since this Doppel is a reaction to its master's personality, it appears as rage incarnate. It will disintegrate anything that stands in its path; the more her heart yearns for peace, the more violently its rage will gush forth. It would be wise not to underestimate it just because it allows you to strike it without fighting back.",
+		"designer": "Idea & Supervision: Masugitsune & Kawazuku",
+		"archive": true,
+		"openDate": "2020/07/22 00:10:00"
+	},
+	{
+		"id": 402600,
+		"name": "Doppel of Conceit",
+		"title": "Feature: Wild Dragon",
+		"description": "The master of this emotion is incredibly proud of being a member of the Order of the Dragon. Her Doppel is that pride made manifest, and also highlights its fiery master's core personality. Her sense of duty to carry out her knightly orders, as well as the accompanying pressure of those duties are encompassed within as well. When this dragon appears, it demonstrates her unrivaled might through a tyrannical rampage of trampled battlegrounds and rampant devouring.",
+		"designer": "Idea & Supervision: Masugitsune & Kawazuku",
+		"archive": true,
+		"openDate": "2020/07/22 00:10:00"
+	},
+	{
+		"id": 403100,
+		"name": "Doppel of Commitment",
+		"title": "Feature: Mayfly",
+		"description": "A flame blazes within the master of this Doppel. It rages with her desire for vengeance, affirming her bond with the woman who once took care of her. While its fiery pillar is meant to exterminate the Witches she loathes so much, it also scorches its host, who bears the burden of a callous fate. Perhaps the fact that it takes the form of a mayfly represents the brevity of its host's life? That may be why its bells reverberate through to the very souls of those who hear them. What does she see beyond the flickering flames? Only she who controls them can say.",
+		"designer": "Idea/Supervision: GAN",
+		"archive": true,
+		"openDate": "2018/05/01 15:10:00"
+	}
+]

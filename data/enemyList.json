@@ -1,0 +1,509 @@
+[
+	{
+		"enemyId": 101,
+		"enemyNo": 6400,
+		"type": 1,
+		"name": "Chairperson Witch",
+		"title": "Nature: Bystander",
+		"description": "This Witch spins spider-like threads to create its own special school inside its Labyrinth. Before turning into a Witch, she was a serious student that didn't stand out, so she continues to repeat those dreary school days together with her Familiars. Even now, if she hears the school bell announcing the end of the day, she may head home, wherever that may be. When humans wander into her Labyrinth, they fall endlessly and eventually melt into the sky, feeding her. She does not attack anyone directly unless they are a scary intruder who disturbs her daily routine.",
+		"designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 102,
+		"enemyNo": 7400,
+		"type": 2,
+		"name": "Chairperson Witch Minion",
+		"title": "Role: Classmate",
+		"description": "Although they glide gracefully on ice skates, these familiars are just mindless puppets on wires being manipulated by their Witch. When the Witch was still a girl, she always hung her head in shame, so it is enough for her if her classmates have legs. Since they don't need school uniform shirts, their unneeded tops hang on clotheslines throughout the Labyrinth. Since as a girl the Witch was always looking out the window in class, the classrooms in her Labyrinth are minimalistic to an extreme, but judging from the indoor shoes that her Familiars wear, it is indeed indoors.",
+		"designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 103,
+		"enemyNo": 6103,
+		"type": 1,
+		"name": "Sandbox Witch",
+		"title": "Nature: Immersion",
+		"description": "This Witch has strong preferences and never compromises. She is trying to build an acceptable sandcastle, but she can never satisfy herself. She has destroyed and rebuilt her castles so many times she doesn't even remember what she wanted to create in the first place. When she does manage to make a nice castle, she feels much better for a while, but ends up destroying it again. She looks like a young lady but acts like a little child. If she is interrupted when she is playing with her sand, she cries and goes on a rampage.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 104,
+		"enemyNo": 7103,
+		"type": 2,
+		"name": "Sandbox Witch Minion",
+		"title": "Role: Toy Train",
+		"description": "These Familiars are always playing amongst themselves. A quirk of theirs is that as they roll around, all of the things on the ground stick to their bodies. As they do this their Witch collects the debris without them noticing. When their Witch is coming up with a plan for her next castle, they come to her aid. But soon they realize that it is impossible to satisfy her, no matter how hard they try, so they get bored and stray away.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 105,
+		"enemyNo": 6001,
+		"type": 1,
+		"name": "Bunny Eared Witch",
+		"title": "Nature: Princess",
+		"description": "This Witch collects cute things from inside her Labyrinth. She regards herself as the personification of cuteness, and loves to be praised for her appearance and accessories. For this reason, her attacks can be avoided by complimenting her on her looks. However, if she senses even the slightest negativity, she will lose her temper and throw a tantrum, so one needs to be extra careful when flattering her. Because of her fickle nature, even if she looks like she is in a good mood, one should not let their guard down, as she is known to bite and impale things with spears.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 106,
+		"enemyNo": 7001,
+		"type": 2,
+		"name": "Bunny Eared Witch Minion",
+		"title": "Role: Decorator",
+		"description": "In order to keep their Witch happy, these Familiars are always looking for cute things to decorate her with. When they do find something nice, they bring it to her. When a Familiar fails to satisfy her, she slices it open, so their lives are always on the line. One must not panic when one runs into this Familiar. If one simply throws something pretty at it, like wrapping paper, it will take it and run back to its Witch.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 107,
+		"enemyNo": 6104,
+		"type": 1,
+		"name": "Sheep Witch",
+		"title": "Nature: Insomnia",
+		"description": "This Witch is scared of everything. Not knowing what to do, she stays within a fence in her Labyrinth. Being so wary, she has grown many eyes. There is no moment, neither day or night, that she closes all of her eyes at the same time, which means she does not sleep. She has never gone outside of her fence, and never will. She sees herself as her Familiars' pet and waits inside her fence for them to hunt humans to feed her. She looks so meek because she seems scared, but when one of her Familiars is defeated, she becomes filled with panic and goes on a rampage.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 108,
+		"enemyNo": 7104,
+		"type": 2,
+		"name": "Sheep Witch Minion",
+		"title": "Role: Shepherd",
+		"description": "These Familiars stroll leisurely about their Labyrinth. They regard themselves as shepherds of their most precious possession: their Witch. Normally they simply watch over her, but when they see a stray human in their Labyrinth, they signal each other using the horns that hang around their necks. Once they have gathered, their hunt begins. Since there are so many of them taking care of the meek Sheep Witch, they do not have much to do other than hunt humans. They have too much time on their hands, so they spend a lot of their days talking about the quality of this year's cheese.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 109,
+		"enemyNo": 6002,
+		"type": 3,
+		"name": "Uwasa of the Friendship Ending Staircase",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Friendship Breaking Staircase. If you say, \"Hmph! I hate you! We're over!\" this staircase will appear, but you won't be able to see it. If you try to rekindle your friendship, it will take you away! All the girls in Kamihama say that a shadow girl who pushed her friend down the stairs will appear and catch you and make you clean the staircase forever. How scary!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 110,
+		"enemyNo": 7002,
+		"type": 3,
+		"name": "Uwasa of the Friendship Ending Padlock",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Friendship Breaking Padlock. Many couples and friends put padlocks on bridges, capes, and observatories as a symbol of their bond. But what happens if you do the opposite and break it? The Friendship Breaking Padlock is there to destroy such bonds. It will swarm about and capture you, and that will be the end of you! According to the kids in Kamihama, it will lock you up in the Friendship Breaking Staircase! How horrible!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 111,
+		"enemyNo": 6105,
+		"type": 1,
+		"name": "Rooftop Witch",
+		"title": "Nature: Dreamer",
+		"description": "This Witch sits on a rooftop under the blue sky, dreaming about what could be. The best part of her life is when she wastes time between naps, thinking about all the things that will never come to pass. Her Familiars tie her legs down and lock the door to the rooftop so that she will not fly away. She does not seem to be bothered by this, because she wants to stay on the rooftop forever. She will not fight unless an intruder disturbs her musings. On a side note, the profile on her huge cameo brooch has nothing to do with her.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 112,
+		"enemyNo": 7105,
+		"type": 2,
+		"name": "Rooftop Witch Minion",
+		"title": "Role: Confiner",
+		"description": "These Familiars worry that the Rooftop Witch might fly away. They flit about, checking locks and cleaning the school. They never forget to point out problems. They have the key to the door that leads to the rooftop where the Witch is, but because they are careless, they often lose it, so they decided every Familiar should have their own key. That means anyone can access the rooftop by defeating a Familiar. They hate intruders who enter their \"well-secured\" Labyrinth. If one of them finds an intruder, they will swarm about it, attacking with their precious keys in all sorts of dynamic ways.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 113,
+		"enemyNo": 6003,
+		"type": 3,
+		"name": "Uwasa of the Commoner's Horse",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Commoner's Horse. The god of this shrine is a fancy and kind horse! He's a cool guy that grants people's wishes, bringing them to who they are searching for. But too bad! As it turns out, it's all just an illusion. If you realize it's not real and deny it, the kind horse will turn into a gangster! Everyone in Mizuna Ward is talking about it!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 114,
+		"enemyNo": 7003,
+		"type": 3,
+		"name": "Uwasa of the Séance Plaque",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Séance Plaque. This tablet looks like a huge winged bug, but it may just guide you to the Commoner's Horse! Look at it closely and you'll notice someone's name written on it. In Mizuna Ward they say that if you catch this tablet and put someone's body part on it, they will magically appear! Come on over!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 115,
+		"enemyNo": 7201,
+		"type": 2,
+		"name": "Symbol Witch Minion I",
+		"title": "Role: Reproducer",
+		"description": "These Familiars of the Symbol Witch are called Haunting Chairs. They grow and transform by absorbing vital energy from humans. Compared to other Familiars they can change shape with a small amount of vital energy. Their primary goal is reproduction. Once they have grown enough, they can produce other Familiars, despite not being Witches. They grow, thoroughly enjoying the convenience and completeness of their forms.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 116,
+		"enemyNo": 7202,
+		"type": 2,
+		"name": "Symbol Witch Minion II",
+		"title": "Role: Reproducer",
+		"description": "These Familiars of the Symbol Witch are called Haunting Chairs. They grow and transform by absorbing vital energy from humans. Compared to other Familiars they can change shape with a small amount of vital energy. Their primary goal is reproduction. Once they have grown enough, they can produce other Familiars, despite not being Witches. They grow, thoroughly enjoying the convenience and completeness of their forms.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 117,
+		"enemyNo": 7203,
+		"type": 2,
+		"name": "Symbol Witch Minion III",
+		"title": "Role: Reproducer",
+		"description": "These Familiars of the Symbol Witch are called Haunting Chairs. They grow and transform by absorbing vital energy from humans. Compared to other Familiars they can change shape with a small amount of vital energy. Their primary goal is reproduction. Once they have grown enough, they can produce other Familiars, despite not being Witches. They grow, thoroughly enjoying the convenience and completeness of their forms.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 118,
+		"enemyNo": 7204,
+		"type": 2,
+		"name": "Symbol Witch Minion IV",
+		"title": "Role: Reproducer",
+		"description": "These Familiars of the Symbol Witch are called Haunting Chairs. They grow and transform by absorbing vital energy from humans. Compared to other Familiars they can change shape with a small amount of vital energy. Their primary goal is reproduction. Once they have grown enough, they can produce other Familiars, despite not being Witches. They grow, thoroughly enjoying the convenience and completeness of their forms.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 119,
+		"enemyNo": 7211,
+		"type": 2,
+		"name": "Mirror Witch Minion I",
+		"title": "Role: Bellgirl",
+		"description": "One of the house keepers at the Manor of Mirrors. Like its brethren, it loves to entertain guests. When it finds a guest, it rings a bell, and then gives them a big welcoming hug. Its body is made of canvas that can copy the vital information of the guest it embraces. This stolen information is used to make a copy of the guest.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 120,
+		"enemyNo": 7212,
+		"type": 2,
+		"name": "Mirror Witch Minion II",
+		"title": "Role: Guard",
+		"description": "A security device in the Manor of Mirrors. In Mirrors, however, everyone is welcome, suspicious or not. It has had its telescopic lens enhanced so that it can film guests in the distance more clearly. Thanks to this enhancement, it can now project a greeting kiss to guests from afar.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 121,
+		"enemyNo": 7213,
+		"type": 2,
+		"name": "Mirror Witch Minion III",
+		"title": "Role: Copier",
+		"description": "One of the Manor of Mirrors' house keepers. It can create a jelly man inside its body to entertain guests. It can also make high-quality copies of guests, but that takes far more time than just crafting a jelly man.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 122,
+		"enemyNo": 7102,
+		"type": 2,
+		"name": "Mirror Witch Minion IV",
+		"title": "Role: Solicitor",
+		"description": "A Familiar that waits outside the Manor of Mirrors handing out invitations. When it spots a Magical Girl, it throws a lethal invitation letter at her. That said, it genuinely wants to invite people to the Manor. Some suspect it just believes it is easier to carry the body than actually get a living Magical Girl to go inside.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 123,
+		"enemyNo": 7101,
+		"type": 2,
+		"name": "????? Witch Minion",
+		"description": "These swallow-like Familiars are everywhere in Kamihama. They seem to be collecting magic as offerings to their Witch. They target Magical Girls and steal not only their magic but also their memories, visions, and even emotions. They have also been known to target other Witches. Hunting in a group, they utilize their anchor-shaped legs to capture them. They are uninterested in normal humans without magic, because they don't make good offerings.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)"
+	},
+	{
+		"enemyId": 124,
+		"enemyNo": 6004,
+		"type": 3,
+		"name": "Uwasa of the Misery Rhyton",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Misery Rhyton. Students from Sankyoin Academy are known for excelling in sports and studies. The secret lies in a large cup hidden underground! You can pour in any kind of misery, like accidents, stress, or even stomachaches! But beware, the cup is already full! The students in Sankyo Ward are saying the misery has started to overflow, so the cup decided to give back all that misery! What a disaster!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/07/16 00:00:00"
+	},
+	{
+		"enemyId": 125,
+		"enemyNo": 7004,
+		"type": 3,
+		"name": "Uwasa of the Misery Owl",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Misery Owl. When you're tired and thirsty, a water station appears right in front of you! But beware! It's an illusion created by the Misery Owl that wants to make everyone absolutely miserable! But the students in Sankyo Ward are saying it also offers follow-up alerts! The Misery Owl is happy to let you know how much time you have left until calamity strikes! What a convenient service!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/07/16 00:00:00"
+	},
+	{
+		"enemyId": 126,
+		"enemyNo": 6000,
+		"type": 1,
+		"name": "Pendulum Witch",
+		"title": "Nature: Repetition",
+		"description": "This Witch grows its roots deep into the ground and never moves. Anyone who hears the sound of the pendulum gets stuck in a loop and won't be able to progress any further. It likes more than anything to spend time in the same spot endlessly while rocking its head. It was originally called the Pendulum Clock Witch, but after losing track of time, its numbers and hands were gone forever.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/07/16 00:00:00"
+	},
+	{
+		"enemyId": 127,
+		"enemyNo": 7000,
+		"type": 2,
+		"name": "Pendulum Witch Minion",
+		"title": "Role: Repairman",
+		"description": "It fixes any broken parts of the Witch using parts from its own body. Though it's not doing it for the sake of the Witch, it simply loves fixing things. It will happily repair anything, even if it's not a Witch.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/07/16 00:00:00"
+	},
+	{
+		"enemyId": 128,
+		"enemyNo": 6005,
+		"type": 3,
+		"name": "Uwasa of the Anonymous AI",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Anonymous AI. Ding! It's a suspicious message from an unknown sender! That's a trap set by the Anonymous AI that wants to lure you in! It learned this malicious behavior in the digital world and now it's all alone. People in Chuo Ward are saying it won't let go of its prisoner! What a stand-alone!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/08/06 00:00:00"
+	},
+	{
+		"enemyId": 129,
+		"enemyNo": 7005,
+		"type": 3,
+		"name": "Uwasa of the Anonymous Message",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Anonymous E-Mail! It sends 1 message, then 100, and 1,000! It's the postman that carries these messages for the Anonymous AI. It attaches a paper airplane to its back with a message written on it and gets blown away. Then, ding! Everyone receives an anonymous message! The people in Chuo Ward are saying sometimes it even shows its face on your screen. Who IS that?!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/08/06 00:00:00"
+	},
+	{
+		"enemyId": 130,
+		"enemyNo": 7401,
+		"type": 2,
+		"name": "Rose Garden Witch Minion",
+		"title": "Role: Landscaper.",
+		"description": "Its Witch styles its whiskers. It used to live in Mitakihara, but because it wanted to grow the best roses for its master, it came all the way to Kamihama in search of rich soil. This minion doesn't mind growing roses in a Labyrinth, even if it belongs to another Witch, though some do not welcome it. But since there are so many Witches in Kamihama, it is not rare to see minions of another Witch inside a Labyrinth.",
+		"designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/08/06 00:00:00"
+	},
+	{
+		"enemyId": 131,
+		"enemyNo": 6106,
+		"type": 1,
+		"name": "Babysitter Witch",
+		"title": "Nature: Poverty",
+		"description": "This Witch is ever in search of the baby it lost. When it finds a human, it straps them firmly to its back regardless of their age. But because it fears to lose \"the baby\" again, it will tie the human so tightly that whoever is captured is able to breathe. This Witch's immaturity, however, means it refuses to take care of its captives, as it does not like babies to begin with. It especially hates to see young people free of the misery of poverty, and thus cursed itself for eternity.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/08/09 15:10:00"
+	},
+	{
+		"enemyId": 132,
+		"enemyNo": 7106,
+		"type": 2,
+		"name": "Babysitter Witch Minion",
+		"title": "Role: Hopscotch",
+		"description": "When these Minions send a rock flying, their Witch chases after it thinking it's a baby. Cruel creatures, they simply watch and laugh. They also suck the blood out of the humans that their Witch captures, posing a large nuisance to the Witch. Though no matter how much the Witch hates this, the Minions will always stay by its side.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/08/09 15:10:00"
+	},
+	{
+		"enemyId": 133,
+		"enemyNo": 6006,
+		"type": 3,
+		"name": "Uwasa of the Memory Curator",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Memory Curator! It printed all the books in its archive by itself. It's a total memory master! It can print all kinds of memories, but beware! If you ask to see its work but don't give your memory in return, it won't let you go anytime soon! People in Sakae Ward are saying it can even steal your whole past! Get me out of here!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/08/09 15:10:00"
+	},
+	{
+		"enemyId": 134,
+		"enemyNo": 7006,
+		"type": 3,
+		"name": "Uwasa of the Memory Staff",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Memory Staff! Its duty is to find anyone who reads the books from the archive. If it catches you opening any of them, it will hit you on the head with its typewriter arms and rewrite your memory! People in Sakae Ward are saying if you're overflowing with memories, it'll suck them out with its cute lips. Click-Clack-Click-Clack-DING!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/08/09 15:10:00"
+	},
+	{
+		"enemyId": 135,
+		"enemyNo": 6500,
+		"type": 1,
+		"name": "Chocolate Witch",
+		"description": "Nature: Minor Role.＠The end result of some defeated Magical Girl.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/10/09 15:10:00"
+	},
+	{
+		"enemyId": 136,
+		"enemyNo": 7500,
+		"type": 2,
+		"name": "Chocolate Witch Minion",
+		"description": "A Familiar born to wrap up their Witch, who has nothing. They take all their Witch's loneliness and sorrow, and lovingly bundle it up in their vivid, colorful bodies. These Familiars adorn their Witch in the hope that someday, someone will receive it as a gift, but it lacks the confidence to believe this is possible, which they think is a real shame.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/10/09 15:10:00"
+	},
+	{
+		"enemyId": 137,
+		"enemyNo": 6107,
+		"type": 1,
+		"name": "Saintly Witch",
+		"title": "Nature: Ablutions",
+		"description": "A Witch that perpetually cleanses herself of her sins. In order to wash away the sins soaked deep into her core, she must soak herself thoroughly in water at all times. The countless eyes on her tongue see into the future, but she has got no time for that, instead worrying about the unending impurities ahead. She is fated to purify herself, only ceasing once all her sins are gone. Those who interrupt her purification will be attacked by floods of water and bolts of lightning, and when her sins trickle down upon the intruder, their souls will be stained to death.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/10/09 15:10:00"
+	},
+	{
+		"enemyId": 138,
+		"enemyNo": 7107,
+		"type": 2,
+		"name": "Saintly Witch Minion",
+		"title": "Role: Chamberlain",
+		"description": "These minions are always clinging to their Witch's feet so they can attend to her needs. The holy water that gushes forth from their Witch's purification rites can cause them to dissolve, so they are always running around to dodge it. Still, their passion for their charge holds strong - they will not leave her side until the day comes when she is completely purified. However, they feed upon the sins that gush out of her to survive, so they will be in for a rough ride if she does manage to cleanse herself completely.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/10/09 15:10:00"
+	},
+	{
+		"enemyId": 139,
+		"enemyNo": 6007,
+		"type": 3,
+		"name": "Uwasa of the Chelation Land Ferris Wheel",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Chelation Land Ferris Wheel. What in the world could be inside its whirling gondolas? Of course, it's stuffed with the garbage of human existence, like rage, sorrow, and uncertainty! No one's allowed to ride it because if they did they'd regret it at once! Everyone can free themselves from worry with this Ferris wheel! It's a hot Rumor in Daito Ward! I wanna be happy!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/10/11 00:10:00"
+	},
+	{
+		"enemyId": 140,
+		"enemyNo": 7007,
+		"type": 3,
+		"name": "Uwasa of the Chelation Land Mascot",
+		"description": "Have you heard? Has anyone told you? The Uwasa of the Chelation Land Mascot! These theme park mascots slide across the ground, but still arrive with the jaunty \"clip-clop\" of hooves! Yes, their arrival heralds your end, but you mustn't be scared, no no no! They soothe your heart and mind, and make you all warm inside, you see! They'll carry all those bad feelings away. It's a hot Rumor in Daito Ward! How princely!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2019/10/11 00:10:00"
+	},
+	{
+		"enemyId": 141,
+		"enemyNo": 6108,
+		"type": 1,
+		"name": "Rubber Witch",
+		"title": "Nature: Repulsion",
+		"description": "The Rubber Witch appears in swimming areas, and even the inside of its Labyrinth is an endless ocean. It cannot swim, thus it is fully dependent on its floating Familiars. It's capable of attacking with a high speed bodyslam, but is stuck clinging to its Familiars so as not to drown in its own Labyrinth. It goes into hibernation during seasons where people don't go to the beach to swim.",
+		"designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/01/24 00:10:00"
+	},
+	{
+		"enemyId": 142,
+		"enemyNo": 7108,
+		"type": 2,
+		"name": "Rubber Witch Minion",
+		"title": "Role: Buoyancy",
+		"description": "These Minions can glide along the surface of water like pond skater bugs. The beach balls they fire are capable of turning whoever they hit upside down, and many lost humans who wander into their Labyrinth are drowned in this manner. As they are filled with air, they fear sharp objects. You can usually find Minions like this floating on the water, disguised as inflatable rings.",
+		"designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/01/24 00:10:00"
+	},
+	{
+		"enemyId": 143,
+		"enemyNo": 6008,
+		"type": 3,
+		"name": "Uwasa of the Flower Speaker",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Flower Speaker! This is a top-of-the-line, ready-to-go unit that combines a transmitter and receiver! It'll let you say whatever you wanna say and hear whatever you wanna hear, so try saying something to it! It'll be converted into beautiful words that will pluck the heartstrings of all who hear it. Then it'll be easy to bend them to your will! It's a hot Rumor among the Magius! As you command!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/02/07 00:10:00"
+	},
+	{
+		"enemyId": 144,
+		"enemyNo": 6501,
+		"type": 3,
+		"name": "Uwasa of the Saint of Kamihama",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Saint of Kamihama! A resplendent saint has descended upon Kamihama, accompanied by rays of holy light! She need only reach out her hand to soothe the pain of any brokenhearted girls and bring them salvation. They will be mesmerized by the Holy Maiden of Liberation and do her every bidding! This one's got Mami Tomoe super interested! Deliver us!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/02/07 00:10:00"
+	},
+	{
+		"enemyId": 145,
+		"enemyNo": 6401,
+		"type": 1,
+		"name": "Rose Garden Witch",
+		"title": "Nature: Suspicion",
+		"description": "This Witch treasures its roses above anything else. All of its power is used for the benefit of its beautiful flowers. When people get lost in its Labyrinth, it steals their life force to feed to its roses. It hates intruders, though, and would rather they didn't trample everything inside its Labyrinth.",
+		"designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/02/25 00:10:00"
+	},
+	{
+		"enemyId": 146,
+		"enemyNo": 6010,
+		"type": 3,
+		"name": "Uwasa of the Queen Bear",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Queen Bear! That gigantic tree towering above from the center of the castle is actually the dear mother to all those little baby bears! If anyone dares hurt it, all the bears fly into a frenzy. And if harm should come to one of its babies, the assailants will have to face its full blown, mama bear rage! It's probably the most diabolical Rumor the Magius have ever made, and it's all the talk among the Wings of the Magius! Hurry, run awaaay!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/03/13 00:10:00"
+	},
+	{
+		"enemyId": 147,
+		"enemyNo": 6009,
+		"type": 3,
+		"name": "Uwasa of the Soldier Bear",
+		"description": "Have you heard? Has anyone told you? The Rumor of the Soldier Bear! If you damage the castle in any way, a simple apology won't cut it! The Soldier Bear will get stomping mad and let you have it with the tools clenched in its fists! Its passion and power can't be beat, but it's still young and inexperienced, so it misses often and ends up whirling around, creating a tornado. It's all the talk among the Wings of the Magius! Fly away!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/03/13 00:10:00"
+	},
+	{
+		"enemyId": 148,
+		"enemyNo": 7009,
+		"type": 3,
+		"name": "Uwasa of the Worker Bears",
+		"description": "Have you heard? Has anyone told you? The Uwasa of the Worker Bears! Whether it's general repairs or just touching up the garden, these bears can handle any kind of odd job! You can tell from their heads, plopped right on the ground like that, that their knowledge and experience are the real deal. They're senior members of the castle crew! A bunch of 'em will show up, proud to be there to help whenever things need doing, but they're sure to argue over who gets the job! It's all the talk among the Wings of the Magius! Give me work!",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/03/13 00:10:00"
+	},
+	{
+		"enemyId": 149,
+		"enemyNo": 6109,
+		"type": 1,
+		"name": "Vagrant Witch",
+		"title": "Nature: Nostalgia",
+		"description": "A Witch that wanders in search of its hometown, desperate to collect memories and finally go home. It doesn't care if people are inside its old home, but if it happens to see someone stepping inside, it may become so overwhelmed in grief that it spirits the person away.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/03/13 00:10:00"
+	},
+	{
+		"enemyId": 150,
+		"enemyNo": 7109,
+		"type": 2,
+		"name": "Vagrant Witch Minion",
+		"title": "Role: Signpost",
+		"description": "This Minion provides the Witch with directions. Its head looks very much like a brain, so one would think it is familiar with the lay of the land. However, it does not know where its Witch's hometown is, so it simply points in the first direction that comes to mind. In fact, it does not even differentiate between north, south, east, or west.",
+		"designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/03/13 00:10:00"
+	},
+	{
+		"enemyId": 155,
+		"enemyNo": 6101,
+		"type": 1,
+		"name": "Blessed Witch",
+		"title": "Nature: Suffering",
+		"description": "This \"Half-Witch\" grows in a womb within a force field, feeding off the emotions of humans and the impurities released when Magical Girls become Witches. To stabilize its twisted power, it scatters gems throughout its body as it grows. When it matures the Witch that emerges from it will devour energy, and after it consumes the planet it will feast until it becomes a lump of universe itself.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/06/19 00:10:00"
+	},
+	{
+		"enemyId": 156,
+		"enemyNo": 6102,
+		"type": 1,
+		"name": "Witch of Good Fortune",
+		"title": "Nature: Suffering",
+		"description": "This \"Half-Witch\" is wrapped in a force field that stabilizes its energy. After losing an essential piece, it shakes the ground violently in an attempt to fill the hole left behind. It won't stop until it retrieves a specific girl. If the force field that maintains its physical form is lost, it will dissipate into the air. Should that happen, no one knows what effects its impurities may have.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/06/22 00:10:00"
+	},
+	{
+		"enemyId": 157,
+		"enemyNo": 7190,
+		"type": 2,
+		"name": "Blessed Witch Minion",
+		"title": "Role: Offering",
+		"description": "These swallow-like minions strive to collect energy as offerings to their master. When a large group of them converge, it causes a tornado that builds their nest. It is in this nest that they perform the final preparations for their gift. They live for their master. If they lose their master they are supposed to disappear, but it seems they continue to serve somewhere in a different form.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/06/19 00:10:00"
+	},
+	{
+		"enemyId": 158,
+		"enemyNo": 6405,
+		"type": 1,
+		"name": "Stage Witch",
+		"title": "Nature: Powerlessness",
+		"description": "A symbol of fools spinning inecessantly, tales of this Witch have been passed on throughout history. It will continue to circle about the world until it makes a thespian performance of it in its entirety. When its doll piece, which is normally upside down, reaches the apex, it will fly with the speed of a hurricane and in an instant flip the civilization on the surface of the planet on its head. ",
+		"designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/06/25 00:10:00"
+	},
+	{
+		"enemyId": 159,
+		"enemyNo": 7405,
+		"type": 2,
+		"name": "Stage Witch Minion",
+		"title": "Blue Nose",
+		"description": "These minions only assemble when mighty Walpurgisnacht rears its head. Tugging on the ropes connected to that giant Witch's neck, these creatures appear to be performing in some sort of twisted circus or parade. There is much about them that is unknown. Unlike more dangerous monsters, these little ones only attack if their performance is disturbed. If you come across one of them...run.",
+		"designer": "Original Idea: Gekidan InuCurry / Supervision: Gekidan InuCurry (Doroinu)",
+		"openDate": "2020/06/25 00:10:00"
+	}
+]
