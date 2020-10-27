@@ -2,379 +2,450 @@
     "npcHelpId": 101,
     "userCardList": [
         {
-            "cardId": 10113,
-            "displayCardId": 10113,
-            "revision": 3,
-            "attack": 1565,
-            "defense": 1175,
-            "hp": 3714,
-            "level": 1,
+            "cardId": 30525,
+            "displayCardId": 30525,
+            "revision": 5,
+            "attack": 9168,
+            "defense": 8508,
+            "hp": 28132,
+            "level": 100,
             "experience": 0,
             "magiaLevel": 1,
             "enabled": true,
-            "customized1": false,
-            "customized2": false,
-            "customized3": false,
-            "customized4": false,
-            "customized5": false,
-            "customized6": false,
+            "customized1": true,
+            "customized2": true,
+            "customized3": true,
+            "customized4": true,
+            "customized5": true,
+            "customized6": true,
             "card": {
-                "cardId": 10113,
-                "charaNo": 1011,
-                "miniCharaNo": 101100,
-                "magiaCharaNo": 101100,
-                "cardName": "Kaede Akino",
-                "rank": "RANK_3",
-                "attributeId": "TIMBER",
-                "initialType": "MAGIA",
-                "growthType": "ATKHP",
-                "attack": 1565,
-                "defense": 1175,
-                "hp": 3714,
-                "rateGainMpAtk": 1200,
-                "rateGainMpDef": 1200,
-                "magiaId": 10113,
+                "cardId": 30525,
+                "charaNo": 3052,
+                "miniCharaNo": 305200,
+                "magiaCharaNo": 305200,
+                "cardName": "Ashley Taylor",
+                "rank": "RANK_5",
+                "attributeId": "DARK",
+                "initialType": "ATTACK",
+                "growthType": "BALANCE",
+                "attack": 2292,
+                "defense": 2127,
+                "hp": 7033,
+                "rateGainMpAtk": 1000,
+                "rateGainMpDef": 800,
+                "magiaId": 30525,
                 "cardMagia": {
-                    "id": 10113,
+                    "id": 30525,
                     "groupId": 1014,
-                    "name": "Judgment Earth",
-                    "shortDescription": "Deals Stronger Elemental Damage to All Enemies [IV]",
-                    "artId1": 100300204,
+                    "name": "Glittering Gunk",
+                    "shortDescription": "Damages All Enemies [VIII] / Guaranteed Poison (All Foes/2 Turns) / Guaranteed Bewitch (All Foes/2 Turns)",
+                    "artId1": 100300108,
                     "art1": {
-                        "artId": 100300204,
+                        "artId": 100300108,
                         "verbCode": "ATTACK",
-                        "effectCode": "ALIGNMENT",
                         "targetId": "ALL",
-                        "effectValue": 3050,
+                        "effectValue": 3700,
                         "growPoint": 100
+                    },
+                    "artId2": 9379,
+                    "art2": {
+                        "artId": 9379,
+                        "verbCode": "CONDITION_BAD",
+                        "effectCode": "POISON",
+                        "targetId": "ALL",
+                        "effectValue": 50,
+                        "enableTurn": 2,
+                        "growPoint": 0,
+                        "probability": 1000
+                    },
+                    "artId3": 9356,
+                    "art3": {
+                        "artId": 9356,
+                        "verbCode": "CONDITION_BAD",
+                        "effectCode": "BLINDNESS",
+                        "targetId": "ALL",
+                        "effectValue": 500,
+                        "enableTurn": 2,
+                        "growPoint": 0,
+                        "probability": 1000
                     }
                 },
-                "skillId": 10113,
-                "cardSkill": {
-                    "id": 10113,
-                    "groupId": 1087,
-                    "name": "I-I'll Help with What I Can!",
-                    "shortDescription": "Damage Inflicted UP [V] / MP Gain UP [V]",
-                    "artId1": 310401305,
+                "doppelMagiaId": 30528,
+                "doppelCardMagia": {
+                    "id": 30528,
+                    "groupId": 1014,
+                    "name": "Doppel of Faith",
+                    "shortDescription": "Damages All Enemies [X] / Guaranteed Poison (All Foes/3 Turns) / Guaranteed Bewitch (All Foes/3 Turns)",
+                    "artId1": 100300110,
                     "art1": {
-                        "artId": 310401305,
+                        "artId": 100300110,
+                        "verbCode": "ATTACK",
+                        "targetId": "ALL",
+                        "effectValue": 3900,
+                        "growPoint": 100
+                    },
+                    "artId2": 530304600,
+                    "art2": {
+                        "artId": 530304600,
+                        "verbCode": "CONDITION_BAD",
+                        "effectCode": "POISON",
+                        "targetId": "ALL",
+                        "effectValue": 50,
+                        "enableTurn": 3,
+                        "growPoint": 0,
+                        "probability": 1000
+                    },
+                    "artId3": 530305600,
+                    "art3": {
+                        "artId": 530305600,
+                        "verbCode": "CONDITION_BAD",
+                        "effectCode": "BLINDNESS",
+                        "targetId": "ALL",
+                        "effectValue": 500,
+                        "enableTurn": 3,
+                        "growPoint": 0,
+                        "probability": 1000
+                    }
+                },
+                "doppelCharaNo": 305200,
+                "doppel": {
+                    "id": 305200,
+                    "name": "Doppel of Faith",
+                    "title": "Feature: Kawaii",
+                    "description": "The master of this emotion loves kawaii culture and takes extreme pleasure in promoting it. Her face turns to pure delight when she gazes at this image of herself. This Doppel understands fully its master's desire to spread her interests, so it strives to implant a fondness for manga, anime, yumekawa, and gurokawa in others. If it encounters someone less kawaii than its master, it releases rainbow beams from its six eyes, enveloping them in a plethora of ribbons and lace, altering their hobbies and tastes. Its victims are said to then bow down to it in reverence.",
+                    "designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+                    "archive": true,
+                    "openDate": "2020/06/29 00:10:00"
+                },
+                "skillId": 30525,
+                "cardSkill": {
+                    "id": 30525,
+                    "groupId": 1092,
+                    "name": "BFFs Forever!",
+                    "shortDescription": "Blast Damage UP [IX] / ATK UP [IX] / Guaranteed Bewitch",
+                    "artId1": 310401809,
+                    "art1": {
+                        "artId": 310401809,
                         "verbCode": "BUFF",
-                        "effectCode": "DAMAGE",
+                        "effectCode": "BLAST",
                         "targetId": "CONNECT",
-                        "effectValue": 300,
+                        "effectValue": 800,
                         "enableTurn": 1,
                         "growPoint": 25
                     },
-                    "artId2": 310401905,
+                    "artId2": 310401109,
                     "art2": {
-                        "artId": 310401905,
+                        "artId": 310401109,
                         "verbCode": "BUFF",
-                        "effectCode": "MP_GAIN",
+                        "effectCode": "ATTACK",
                         "targetId": "CONNECT",
-                        "effectValue": 200,
+                        "effectValue": 400,
                         "enableTurn": 1,
                         "growPoint": 25
+                    },
+                    "artId3": 610411100,
+                    "art3": {
+                        "artId": 610411100,
+                        "verbCode": "ENCHANT",
+                        "effectCode": "BLINDNESS",
+                        "targetId": "CONNECT",
+                        "effectValue": 500,
+                        "enableTurn": 1,
+                        "growPoint": 0,
+                        "probability": 1000
                     }
                 },
                 "pieceSkillList": [],
                 "maxPieceSkillList": [],
                 "commandType1": "MPUP",
-                "commandType2": "MPUP",
+                "commandType2": "RANGE_H",
                 "commandType3": "RANGE_H",
                 "commandType4": "RANGE_V",
-                "commandType5": "CHARGE",
-                "illustrator": "aokiume",
+                "commandType5": "RANGE_V",
+                "illustrator": "Benio",
                 "cardCustomize": {
-                    "cardId": 10113,
-                    "giftId1": 133,
+                    "cardId": 30525,
+                    "giftId1": 551,
                     "gift1": {
-                        "id": 133,
-                        "name": "Forest Orb ++",
-                        "attributeId": "TIMBER",
-                        "rank": 3,
-                        "rankGift": "RANK_3",
-                        "price": 2000
-                    },
-                    "giftNum1": 4,
-                    "bonusCode1": "ATTACK",
-                    "bonusNum1": 60,
-                    "giftId2": 131,
-                    "gift2": {
-                        "id": 131,
-                        "name": "Forest Orb",
-                        "attributeId": "TIMBER",
-                        "rank": 1,
-                        "rankGift": "RANK_1",
-                        "price": 500
-                    },
-                    "giftNum2": 9,
-                    "bonusCode2": "DEFENSE",
-                    "bonusNum2": 40,
-                    "giftId3": 132,
-                    "gift3": {
-                        "id": 132,
-                        "name": "Forest Orb +",
-                        "attributeId": "TIMBER",
-                        "rank": 2,
-                        "rankGift": "RANK_2",
-                        "price": 1000
-                    },
-                    "giftNum3": 7,
-                    "bonusCode3": "HP",
-                    "bonusNum3": 50,
-                    "giftId4": 551,
-                    "gift4": {
                         "id": 551,
                         "name": "Rainbow Orb",
                         "rank": 3,
                         "rankGift": "RANK_3",
                         "price": 10000
                     },
-                    "giftNum4": 2,
-                    "bonusCode4": "ACCEL",
-                    "bonusNum4": 50,
-                    "giftId5": 554,
-                    "gift5": {
-                        "id": 554,
-                        "name": "Rooftop Balloon",
+                    "giftNum1": 3,
+                    "bonusCode1": "ATTACK",
+                    "bonusNum1": 70,
+                    "giftId2": 152,
+                    "gift2": {
+                        "id": 152,
+                        "name": "Dark Orb +",
+                        "attributeId": "DARK",
+                        "rank": 2,
+                        "rankGift": "RANK_2",
+                        "price": 1000
+                    },
+                    "giftNum2": 15,
+                    "bonusCode2": "DEFENSE",
+                    "bonusNum2": 70,
+                    "giftId3": 153,
+                    "gift3": {
+                        "id": 153,
+                        "name": "Dark Orb ++",
+                        "attributeId": "DARK",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 2000
+                    },
+                    "giftNum3": 10,
+                    "bonusCode3": "HP",
+                    "bonusNum3": 70,
+                    "giftId4": 553,
+                    "gift4": {
+                        "id": 553,
+                        "name": "Sheep Horn",
                         "rank": 3,
                         "rankGift": "RANK_3",
                         "price": 5000
                     },
-                    "giftNum5": 3,
+                    "giftNum4": 8,
+                    "bonusCode4": "ACCEL",
+                    "bonusNum4": 50,
+                    "giftId5": 503,
+                    "gift5": {
+                        "id": 503,
+                        "name": "Commoner's Horse Wheel",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 5000
+                    },
+                    "giftNum5": 10,
                     "bonusCode5": "BLAST",
-                    "bonusNum5": 50,
-                    "giftId6": 301,
+                    "bonusNum5": 90,
+                    "giftId6": 306,
                     "gift6": {
-                        "id": 301,
-                        "name": "Swallowtail Feather",
+                        "id": 306,
+                        "name": "Pendulum Screw",
                         "rank": 1,
                         "rankGift": "RANK_1",
                         "price": 1000
                     },
-                    "giftNum6": 8,
+                    "giftNum6": 15,
                     "bonusCode6": "CHARGE",
-                    "bonusNum6": 30
+                    "bonusNum6": 50
                 }
             },
             "npcHelpId": 101,
-            "npcPieceId1": 1037
+            "npcPieceId1": 9001,
+            "npcPieceId2": 9002,
+            "npcPieceId3": 9003,
+            "npcPieceId4": 1122
         }
     ],
     "userCharaList": [
         {
-            "charaId": 1011,
+            "charaId": 3052,
             "chara": {
-                "id": 1011,
-                "name": "Kaede Akino",
-                "kana": "Kaede Akino",
-                "attributeId": "TIMBER",
-                "attackType": 2,
-                "initialType": "MAGIA",
-                "growthType": "ATKHP",
+                "id": 3052,
+                "name": "Ashley Taylor",
+                "kana": "Ashley Taylor",
+                "attributeId": "DARK",
+                "attackType": 1,
+                "initialType": "ATTACK",
+                "growthType": "BALANCE",
                 "enemyFlg": false,
                 "doubleUnitFlg": false,
                 "saleItemId": "PRISM",
-                "saleItem": {
-                    "itemCode": "PRISM",
-                    "name": "Magia Chip",
-                    "shortDescription": "Magia Chip",
-                    "description": "Can be exchanged in the Shop for special Items",
-                    "canUse": false,
-                    "isSellable": false,
-                    "treasureChestColor": "GOLD",
-                    "price": 0,
-                    "sortKey": 0
-                },
-                "defaultCardId": 10113,
+                "maxSaleItemId": "DESTINY_CRYSTAL",
+                "defaultCardId": 30524,
                 "defaultCard": {
-                    "cardId": 10113,
-                    "rank": "RANK_3",
-                    "attributeId": "TIMBER",
-                    "initialType": "MAGIA",
-                    "growthType": "ATKHP",
-                    "attack": 1565,
-                    "defense": 1175,
-                    "hp": 3714,
-                    "miniCharaNo": 101100,
-                    "charaNo": 1011,
-                    "cardName": "Kaede Akino"
-                },
-                "evolutionCardId1": 10114,
-                "evolutionCard1": {
-                    "cardId": 10114,
+                    "cardId": 30524,
                     "rank": "RANK_4",
-                    "attributeId": "TIMBER",
-                    "initialType": "MAGIA",
-                    "growthType": "ATKHP",
-                    "attack": 1921,
-                    "defense": 1443,
-                    "hp": 4560,
-                    "miniCharaNo": 101100,
-                    "charaNo": 1011,
-                    "cardName": "Kaede Akino"
+                    "attributeId": "DARK",
+                    "initialType": "ATTACK",
+                    "growthType": "BALANCE",
+                    "attack": 1963,
+                    "defense": 1822,
+                    "hp": 6028,
+                    "miniCharaNo": 305200,
+                    "charaNo": 3052,
+                    "cardName": "Ashley Taylor"
                 },
-                "evolutionCardId2": 10115,
-                "evolutionCard2": {
-                    "cardId": 10115,
+                "evolutionCardId1": 30525,
+                "evolutionCard1": {
+                    "cardId": 30525,
                     "rank": "RANK_5",
-                    "attributeId": "TIMBER",
-                    "initialType": "MAGIA",
-                    "growthType": "ATKHP",
-                    "attack": 2129,
-                    "defense": 1600,
-                    "hp": 5052,
-                    "miniCharaNo": 101101,
-                    "charaNo": 1011,
-                    "cardName": "Kaede Akino"
+                    "attributeId": "DARK",
+                    "initialType": "ATTACK",
+                    "growthType": "BALANCE",
+                    "attack": 2292,
+                    "defense": 2127,
+                    "hp": 7033,
+                    "miniCharaNo": 305200,
+                    "charaNo": 3052,
+                    "cardName": "Ashley Taylor"
                 },
-                "firstMagiaGiftId1": 231,
-                "firstMagiaGiftNum1": 4,
-                "firstMagiaGiftId2": 304,
-                "firstMagiaGiftNum2": 4,
-                "firstMagiaGiftId3": 232,
-                "firstMagiaGiftNum3": 2,
-                "firstMagiaGiftId4": 402,
-                "firstMagiaGiftNum4": 2,
-                "secondMagiaGiftId1": 231,
-                "secondMagiaGiftNum1": 6,
-                "secondMagiaGiftId2": 301,
-                "secondMagiaGiftNum2": 6,
-                "secondMagiaGiftId3": 232,
-                "secondMagiaGiftNum3": 4,
-                "secondMagiaGiftId4": 402,
-                "secondMagiaGiftNum4": 4,
-                "secondMagiaGiftId5": 233,
-                "secondMagiaGiftNum5": 2,
-                "secondMagiaGiftId6": 502,
-                "secondMagiaGiftNum6": 2,
-                "thirdMagiaGiftId1": 231,
-                "thirdMagiaGiftNum1": 8,
-                "thirdMagiaGiftId2": 303,
-                "thirdMagiaGiftNum2": 8,
-                "thirdMagiaGiftId3": 232,
-                "thirdMagiaGiftNum3": 6,
-                "thirdMagiaGiftId4": 402,
-                "thirdMagiaGiftNum4": 6,
-                "thirdMagiaGiftId5": 233,
-                "thirdMagiaGiftNum5": 4,
-                "thirdMagiaGiftId6": 553,
-                "thirdMagiaGiftNum6": 4,
-                "fourthMagiaGiftId1": 231,
-                "fourthMagiaGiftNum1": 10,
-                "fourthMagiaGiftId2": 302,
-                "fourthMagiaGiftNum2": 10,
-                "fourthMagiaGiftId3": 232,
-                "fourthMagiaGiftNum3": 8,
-                "fourthMagiaGiftId4": 502,
-                "fourthMagiaGiftNum4": 4,
-                "fourthMagiaGiftId5": 233,
-                "fourthMagiaGiftNum5": 6,
+                "firstMagiaGiftId1": 251,
+                "firstMagiaGiftNum1": 5,
+                "firstMagiaGiftId2": 301,
+                "firstMagiaGiftNum2": 5,
+                "firstMagiaGiftId3": 252,
+                "firstMagiaGiftNum3": 3,
+                "firstMagiaGiftId4": 403,
+                "firstMagiaGiftNum4": 3,
+                "firstMagiaGiftId5": 253,
+                "firstMagiaGiftNum5": 1,
+                "firstMagiaGiftId6": 503,
+                "firstMagiaGiftNum6": 1,
+                "secondMagiaGiftId1": 251,
+                "secondMagiaGiftNum1": 7,
+                "secondMagiaGiftId2": 302,
+                "secondMagiaGiftNum2": 7,
+                "secondMagiaGiftId3": 252,
+                "secondMagiaGiftNum3": 5,
+                "secondMagiaGiftId4": 403,
+                "secondMagiaGiftNum4": 5,
+                "secondMagiaGiftId5": 253,
+                "secondMagiaGiftNum5": 3,
+                "secondMagiaGiftId6": 553,
+                "secondMagiaGiftNum6": 3,
+                "thirdMagiaGiftId1": 251,
+                "thirdMagiaGiftNum1": 9,
+                "thirdMagiaGiftId2": 305,
+                "thirdMagiaGiftNum2": 9,
+                "thirdMagiaGiftId3": 252,
+                "thirdMagiaGiftNum3": 7,
+                "thirdMagiaGiftId4": 403,
+                "thirdMagiaGiftNum4": 7,
+                "thirdMagiaGiftId5": 253,
+                "thirdMagiaGiftNum5": 5,
+                "thirdMagiaGiftId6": 503,
+                "thirdMagiaGiftNum6": 5,
+                "fourthMagiaGiftId1": 251,
+                "fourthMagiaGiftNum1": 11,
+                "fourthMagiaGiftId2": 304,
+                "fourthMagiaGiftNum2": 11,
+                "fourthMagiaGiftId3": 252,
+                "fourthMagiaGiftNum3": 9,
+                "fourthMagiaGiftId4": 503,
+                "fourthMagiaGiftNum4": 5,
+                "fourthMagiaGiftId5": 253,
+                "fourthMagiaGiftNum5": 7,
                 "fourthMagiaGiftId6": 552,
-                "fourthMagiaGiftNum6": 6,
+                "fourthMagiaGiftNum6": 7,
                 "firstMagiaGift1": {
-                    "id": 231,
-                    "name": "Forest Book",
+                    "id": 251,
+                    "name": "Dark Book",
                     "rank": 1
                 },
                 "firstMagiaGift2": {
-                    "id": 304,
-                    "name": "Sheep Warhorn",
-                    "rank": 1
-                },
-                "firstMagiaGift3": {
-                    "id": 232,
-                    "name": "Forest Book +",
-                    "rank": 2
-                },
-                "firstMagiaGift4": {
-                    "id": 402,
-                    "name": "Padlock Chain",
-                    "rank": 2
-                },
-                "secondMagiaGift1": {
-                    "id": 231,
-                    "name": "Forest Book",
-                    "rank": 1
-                },
-                "secondMagiaGift2": {
                     "id": 301,
                     "name": "Swallowtail Feather",
                     "rank": 1
                 },
-                "secondMagiaGift3": {
-                    "id": 232,
-                    "name": "Forest Book +",
+                "firstMagiaGift3": {
+                    "id": 252,
+                    "name": "Dark Book +",
                     "rank": 2
                 },
-                "secondMagiaGift4": {
-                    "id": 402,
-                    "name": "Padlock Chain",
+                "firstMagiaGift4": {
+                    "id": 403,
+                    "name": "Plaque Cord",
                     "rank": 2
                 },
-                "secondMagiaGift5": {
-                    "id": 233,
-                    "name": "Forest Book ++",
+                "firstMagiaGift5": {
+                    "id": 253,
+                    "name": "Dark Book ++",
                     "rank": 3
                 },
-                "secondMagiaGift6": {
-                    "id": 502,
-                    "name": "Staircase Monument",
+                "firstMagiaGift6": {
+                    "id": 503,
+                    "name": "Commoner's Horse Wheel",
                     "rank": 3
                 },
-                "thirdMagiaGift1": {
-                    "id": 231,
-                    "name": "Forest Book",
+                "secondMagiaGift1": {
+                    "id": 251,
+                    "name": "Dark Book",
                     "rank": 1
                 },
-                "thirdMagiaGift2": {
-                    "id": 303,
-                    "name": "Bunny Ear Wrapping Paper",
-                    "rank": 1
-                },
-                "thirdMagiaGift3": {
-                    "id": 232,
-                    "name": "Forest Book +",
-                    "rank": 2
-                },
-                "thirdMagiaGift4": {
-                    "id": 402,
-                    "name": "Padlock Chain",
-                    "rank": 2
-                },
-                "thirdMagiaGift5": {
-                    "id": 233,
-                    "name": "Forest Book ++",
-                    "rank": 3
-                },
-                "thirdMagiaGift6": {
-                    "id": 553,
-                    "name": "Sheep Horn",
-                    "rank": 3
-                },
-                "fourthMagiaGift1": {
-                    "id": 231,
-                    "name": "Forest Book",
-                    "rank": 1
-                },
-                "fourthMagiaGift2": {
+                "secondMagiaGift2": {
                     "id": 302,
                     "name": "Mirrors Invitation",
                     "rank": 1
                 },
+                "secondMagiaGift3": {
+                    "id": 252,
+                    "name": "Dark Book +",
+                    "rank": 2
+                },
+                "secondMagiaGift4": {
+                    "id": 403,
+                    "name": "Plaque Cord",
+                    "rank": 2
+                },
+                "secondMagiaGift5": {
+                    "id": 253,
+                    "name": "Dark Book ++",
+                    "rank": 3
+                },
+                "secondMagiaGift6": {
+                    "id": 553,
+                    "name": "Sheep Horn",
+                    "rank": 3
+                },
+                "thirdMagiaGift1": {
+                    "id": 251,
+                    "name": "Dark Book",
+                    "rank": 1
+                },
+                "thirdMagiaGift2": {
+                    "id": 305,
+                    "name": "Rooftop Key",
+                    "rank": 1
+                },
+                "thirdMagiaGift3": {
+                    "id": 252,
+                    "name": "Dark Book +",
+                    "rank": 2
+                },
+                "thirdMagiaGift4": {
+                    "id": 403,
+                    "name": "Plaque Cord",
+                    "rank": 2
+                },
+                "thirdMagiaGift5": {
+                    "id": 253,
+                    "name": "Dark Book ++",
+                    "rank": 3
+                },
+                "thirdMagiaGift6": {
+                    "id": 503,
+                    "name": "Commoner's Horse Wheel",
+                    "rank": 3
+                },
+                "fourthMagiaGift1": {
+                    "id": 251,
+                    "name": "Dark Book",
+                    "rank": 1
+                },
+                "fourthMagiaGift2": {
+                    "id": 304,
+                    "name": "Sheep Warhorn",
+                    "rank": 1
+                },
                 "fourthMagiaGift3": {
-                    "id": 232,
-                    "name": "Forest Book +",
+                    "id": 252,
+                    "name": "Dark Book +",
                     "rank": 2
                 },
                 "fourthMagiaGift4": {
-                    "id": 502,
-                    "name": "Staircase Monument",
+                    "id": 503,
+                    "name": "Commoner's Horse Wheel",
                     "rank": 3
                 },
                 "fourthMagiaGift5": {
-                    "id": 233,
-                    "name": "Forest Book ++",
+                    "id": 253,
+                    "name": "Dark Book ++",
                     "rank": 3
                 },
                 "fourthMagiaGift6": {
@@ -382,65 +453,66 @@
                     "name": "Bunny Ear Cotton",
                     "rank": 3
                 },
-                "description": "A worrywart, Kaede is easily scared. She is also kind, caring, and ready to take risks for her friends. She loves animals, plants, and insects, and nature in general. She enjoys gardening, and though she's not good at them, she likes UFO Catchers.",
-                "school": "Kamihama University Affiliated School",
-                "designer": "aokiume",
-                "voiceActor": "Ayaka Ohashi",
+                "description": "A Magical Girl from California who went to Japan in search of Japanese kawaii culture. She is obsessed with all things kawaii, from Harajuku fashion, to anime and manga. She even uploads videos about it for people back home. Kumanosuke, the teddy bear she got from her father, is her most precious treasure.",
+                "school": "Kosho Academy",
+                "designer": "Benio",
+                "voiceActor": "Sally Amaki",
+                "openDate": "2020/03/27 00:10:00",
                 "charaMessageList": [
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 6,
-                        "message": "Why did I agree to become a Magical Girl?"
+                        "message": "I got it! I'm gonna call him Kumanosuke!"
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 7,
-                        "message": "This way! W-wait! No, this way!"
+                        "message": "Hmm. These are all equally kawaii..."
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 8,
-                        "message": "That's so m-mean! Um...I...I'm sorry..."
+                        "message": "I know, I'll impress everyone back home <br>by sending them a video!"
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 9,
-                        "message": "I want to be your teammate again...!"
+                        "message": "Hey, Riko! <br>What do you recommend today?"
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 10,
-                        "message": "I keep holding them back..."
+                        "message": "Finally... I made it to Japan!"
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 11,
-                        "message": "Oh, no! I spent 5,000 yen on this..."
+                        "message": "Daddy... I really want to go to Japan. I hafta."
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 12,
-                        "message": "Huh? Oh, wh-what should I do?!"
+                        "message": "I've totally mastered the art of cheering<br>for my favorite idol group."
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 43,
-                        "message": "I won...right?"
+                        "message": "That wasn't too hard."
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 44,
-                        "message": "What a relief…"
+                        "message": "Now that was kawaii! Time for my signature pose!"
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 45,
-                        "message": "Wow! Amazing!"
+                        "message": "I'm a little tired now... I want soda."
                     },
                     {
-                        "charaNo": 1011,
+                        "charaNo": 3052,
                         "messageId": 46,
-                        "message": "I…I can do it too!"
+                        "message": "We won! Let's have a party!"
                     }
                 ]
             },
@@ -449,82 +521,356 @@
             "lbItemNum": 0,
             "visualizable": false,
             "commandVisualType": "CHARA",
-            "commandVisualId": 101100,
+            "commandVisualId": 305200,
             "npcHelpId": 101
         }
     ],
     "userDoppelList": [],
     "userPieceList": [
         {
-            "pieceId": 1037,
+            "pieceId": 9003,
             "piece": {
-                "pieceId": 1037,
-                "pieceType": "ABILITY",
-                "pieceName": "A World of Sheer Bliss",
+                "pieceId": 9003,
+                "pieceType": "SKILL",
+                "pieceName": "Kumanosuke's Kawaii Vid",
                 "attributeId": "ALL",
-                "rank": "RANK_2",
-                "attack": 364,
-                "defense": 0,
-                "hp": 444,
-                "skillId": 103700,
+                "rank": "RANK_3",
+                "charaIds": "3052",
+                "charaList": [
+                    {
+                        "charaId": 3052,
+                        "name": "Ashley Taylor"
+                    }
+                ],
+                "attack": 0,
+                "defense": 480,
+                "hp": 440,
+                "skillId": 107300,
                 "pieceSkill": {
-                    "id": 103700,
-                    "groupId": 1120,
-                    "name": "Shield Adept [II]",
-                    "type": "ABILITY",
-                    "shortDescription": "Reduce Damage [II]",
-                    "artId1": 690206202,
+                    "id": 107300,
+                    "groupId": 1078,
+                    "name": "Cure Heal [IX]",
+                    "type": "SKILL",
+                    "intervalTurn": 8,
+                    "shortDescription": "Heal [IX]",
+                    "messageId": 70,
+                    "artId1": 200200409,
                     "art1": {
-                        "artId": 690206202,
-                        "verbCode": "CONDITION_GOOD",
-                        "effectCode": "DAMAGE_DOWN",
+                        "artId": 200200409,
+                        "verbCode": "HEAL",
+                        "effectCode": "HP",
                         "targetId": "SELF",
-                        "effectValue": 100,
-                        "growPoint": 25,
-                        "probability": 1000
+                        "effectValue": 500,
+                        "growPoint": 20
                     }
                 },
-                "skillId2": 103701,
+                "skillId2": 107301,
                 "pieceSkill2": {
-                    "id": 103701,
-                    "groupId": 1120,
-                    "name": "Shield Adept [III]",
-                    "type": "ABILITY",
-                    "shortDescription": "Reduce Damage [III]",
-                    "artId1": 690206203,
+                    "id": 107301,
+                    "groupId": 1078,
+                    "name": "Cure Heal [X]",
+                    "type": "SKILL",
+                    "intervalTurn": 7,
+                    "shortDescription": "Heal [X]",
+                    "messageId": 70,
+                    "artId1": 200200410,
                     "art1": {
-                        "artId": 690206203,
+                        "artId": 200200410,
+                        "verbCode": "HEAL",
+                        "effectCode": "HP",
+                        "targetId": "SELF",
+                        "effectValue": 525,
+                        "growPoint": 20
+                    }
+                },
+                "description": "I just put him in front of the camera in a kawaii pose, talk in a funny voice, aaand... \"Hiii, I'm Kumanosuke! Ashley's friend! Today I'll be taking over to show you all the cool kawaii stuff in Kamihama.\" Are you ready? Kumanosuke's Kawaii Kamihama show is about to begin!",
+                "illustrator": "Benio"
+            },
+            "level": 40,
+            "lbCount": 4,
+            "attack": 0,
+            "defense": 1100,
+            "hp": 1200,
+            "protect": false,
+            "archive": false,
+            "npcHelpId": 101
+        },
+        {
+            "pieceId": 9002,
+            "piece":{
+                "pieceId": 9002,
+                "pieceType": "SKILL",
+                "pieceName": "Kawaii Collection",
+                "attributeId": "ALL",
+                "rank": "RANK_4",
+                "attack": 0,
+                "defense": 850,
+                "hp": 770,
+                "skillId": 900200,
+                "pieceSkill": {
+                    "id": 900200,
+                    "groupId": 1092,
+                    "name": "Blast Hallucination [VII]",
+                    "type": "SKILL",
+                    "intervalTurn": 7,
+                    "shortDescription": "Blast Damage UP [VI] / DEF DOWN [VIII] (All Foes/1 Turn)",
+                    "messageId": 70,
+                    "artId1": 310201806,
+                    "art1": {
+                        "artId": 310201806,
+                        "verbCode": "BUFF",
+                        "effectCode": "BLAST",
+                        "targetId": "SELF",
+                        "effectValue": 400,
+                        "enableTurn": 1,
+                        "growPoint": 25
+                    },
+                    "artId2": 410302108,
+                    "art2": {
+                        "artId": 410302108,
+                        "verbCode": "DEBUFF",
+                        "effectCode": "DEFENSE",
+                        "targetId": "ALL",
+                        "effectValue": 400,
+                        "enableTurn": 1,
+                        "growPoint": 25
+                    }
+                },
+                "skillId2": 900201,
+                "pieceSkill2": {
+                    "id": 900201,
+                    "groupId": 1092,
+                    "name": "Blast Hallucination [VIII]",
+                    "type": "SKILL",
+                    "intervalTurn": 6,
+                    "shortDescription": "Blast Damage UP [VII] / DEF DOWN [IX] (All Foes/1 Turn)",
+                    "messageId": 70,
+                    "artId1": 310201807,
+                    "art1": {
+                        "artId": 310201807,
+                        "verbCode": "BUFF",
+                        "effectCode": "BLAST",
+                        "targetId": "SELF",
+                        "effectValue": 450,
+                        "enableTurn": 1,
+                        "growPoint": 25
+                    },
+                    "artId2": 410302109,
+                    "art2": {
+                        "artId": 410302109,
+                        "verbCode": "DEBUFF",
+                        "effectCode": "DEFENSE",
+                        "targetId": "ALL",
+                        "effectValue": 450,
+                        "enableTurn": 1,
+                        "growPoint": 25
+                    }
+                },
+                "description": "The streets are filled with so much kawaii stuff, I don't know where to put my eyes! Everything is so cute, I can't help wanting it ALL. But ya see, my closet's already exploding with stuff, so I can't buy everything... Just the MOST kawaii things!",
+                "illustrator": "Benio",
+                "openDate": "2020/03/27 00:10:00"
+            },
+            "level": 50,
+            "lbCount": 4,
+            "attack": 0,
+            "defense": 2125,
+            "hp": 1925,
+            "protect": false,
+            "archive": false,
+            "npcHelpId": 101
+        }, 
+        {
+            "pieceId": 9001,
+            "piece": {
+                "pieceId": 9001,
+                "pieceType": "ABILITY",
+                "pieceName": "My Victory Pose Is Kawaii Too",
+                "attributeId": "ALL",
+                "rank": "RANK_4",
+                "attack": 885,
+                "defense": 0,
+                "hp": 718,
+                "skillId": 900100,
+                "pieceSkill": {
+                    "id": 900100,
+                    "groupId": 1147,
+                    "name": "Bind Adept [III]",
+                    "type": "ABILITY",
+                    "shortDescription": "Bind (1 Turn) Chance upon Attack [II] / ATK UP [IV]",
+                    "artId1": 690209802,
+                    "art1": {
+                        "artId": 690209802,
+                        "verbCode": "ENCHANT",
+                        "effectCode": "RESTRAINT",
+                        "targetId": "SELF",
+                        "enableTurn": 1,
+                        "growPoint": 0,
+                        "probability": 150
+                    },
+                    "artId2": 310201104,
+                    "art2": {
+                        "artId": 310201104,
+                        "verbCode": "BUFF",
+                        "effectCode": "ATTACK",
+                        "targetId": "SELF",
+                        "effectValue": 200,
+                        "enableTurn": 1,
+                        "growPoint": 25
+                    }
+                },
+                "skillId2": 900101,
+                "pieceSkill2": {
+                    "id": 900101,
+                    "groupId": 1147,
+                    "name": "Bind Adept [IV]",
+                    "type": "ABILITY",
+                    "shortDescription": "Bind (1 Turn) Chance upon Attack [III] / ATK UP [V]",
+                    "artId1": 690209803,
+                    "art1": {
+                        "artId": 690209803,
+                        "verbCode": "ENCHANT",
+                        "effectCode": "RESTRAINT",
+                        "targetId": "SELF",
+                        "enableTurn": 1,
+                        "growPoint": 0,
+                        "probability": 200
+                    },
+                    "artId2": 310201105,
+                    "art2": {
+                        "artId": 310201105,
+                        "verbCode": "BUFF",
+                        "effectCode": "ATTACK",
+                        "targetId": "SELF",
+                        "effectValue": 250,
+                        "enableTurn": 1,
+                        "growPoint": 25
+                    }
+                },
+                "description": "Phew, nice one, guys! That wraps up another day of hunting Witches! All right, Kumanosuke... It's time for our sweet victory pose! Face the camera, and... 1...2... Perfect! SO kawaii!",
+                "illustrator": "Benio",
+                "openDate": "2020/03/27 00:10:00"
+            },
+            "level": 50,
+            "lbCount": 4,
+            "attack": 2212,
+            "defense": 0,
+            "hp": 1795,
+            "protect": false,
+            "archive": false,
+            "npcHelpId": 101
+        },
+        {
+            "pieceId": 1122,
+            "piece": {
+                "pieceId": 1122,
+                "pieceType": "ABILITY",
+                "pieceKind": "EVENT",
+                "pieceName": "I Made Friends!",
+                "attributeId": "ALL",
+                "rank": "RANK_4",
+                "attack": 880,
+                "defense": 0,
+                "hp": 720,
+                "skillId": 112200,
+                "pieceSkill": {
+                    "id": 112200,
+                    "groupId": 1121,
+                    "name": "Esperansa Adept [III]",
+                    "type": "ABILITY",
+                    "shortDescription": "Critical Hit Chance [III] / ATK UP [III]",
+                    "artId1": 690206303,
+                    "art1": {
+                        "artId": 690206303,
                         "verbCode": "CONDITION_GOOD",
-                        "effectCode": "DAMAGE_DOWN",
+                        "effectCode": "CRITICAL",
+                        "targetId": "SELF",
+                        "effectValue": 2000,
+                        "growPoint": 0,
+                        "probability": 200
+                    },
+                    "artId2": 390201103,
+                    "art2": {
+                        "artId": 390201103,
+                        "verbCode": "BUFF",
+                        "effectCode": "ATTACK",
                         "targetId": "SELF",
                         "effectValue": 150,
                         "growPoint": 25,
                         "probability": 1000
-                    }
+                    },
+                    "eventId": 1059,
+                    "eventArtId1": 1059003,
+                    "eventArt1": {
+                        "artId": 1059003,
+                        "verbCode": "OTHER",
+                        "effectCode": "DROPADD",
+                        "effectValue": 3000,
+                        "genericValue": "EVENT_BRANCH_1059_PART_1"
+                    },
+                    "eventDescription": "and +3 to any Red Azalea drop"
                 },
-                "description": "Paradise in my eyes is when books lie in heaped piles around me, tea and snacks within sight. I turn the pages gradually, not wanting to rush this lovely moment...!",
-                "illustrator": "Sino"
+                "skillId2": 112201,
+                "pieceSkill2": {
+                    "id": 112201,
+                    "groupId": 1121,
+                    "name": "Esperansa Adept [IV]",
+                    "type": "ABILITY",
+                    "shortDescription": "Critical Hit Chance [IV] / ATK UP [IV]",
+                    "artId1": 690206304,
+                    "art1": {
+                        "artId": 690206304,
+                        "verbCode": "CONDITION_GOOD",
+                        "effectCode": "CRITICAL",
+                        "targetId": "SELF",
+                        "effectValue": 2000,
+                        "growPoint": 0,
+                        "probability": 250
+                    },
+                    "artId2": 390201104,
+                    "art2": {
+                        "artId": 390201104,
+                        "verbCode": "BUFF",
+                        "effectCode": "ATTACK",
+                        "targetId": "SELF",
+                        "effectValue": 200,
+                        "growPoint": 25,
+                        "probability": 1000
+                    },
+                    "eventId": 1059,
+                    "eventArtId1": 1059004,
+                    "eventArt1": {
+                        "artId": 1059004,
+                        "verbCode": "OTHER",
+                        "effectCode": "DROPADD",
+                        "effectValue": 7000,
+                        "genericValue": "EVENT_BRANCH_1059_PART_1"
+                    },
+                    "eventDescription": "and +7 to any Red Azalea drop"
+                },
+                "description": "I get so excited before I go out! What'm I gonna do today with those two? We'll meet up and play, right? And then, you know! Oooh, it'll be sooo fun! But this feeling makes my heart hurt... I remember before I was a Magical Girl, it was like this every day...",
+                "illustrator": "Yuugen",
+                "openDate": "2019/07/23 03:00:00"
             },
-            "level": 1,
-            "lbCount": 0,
-            "attack": 364,
+            "level": 50,
+            "lbCount": 4,
+            "attack": 2200,
             "defense": 0,
-            "hp": 444,
+            "hp": 1800,
             "protect": false,
             "archive": false,
             "npcHelpId": 101
         }
     ],
     "isNpc": true,
-    "userName": "Kaede Akino",
+    "userName": "Ashley Taylor",
     "userRank": 1,
-    "cardId": 10113,
-    "charaName": "Kaede Akino",
-    "cardRank": "RANK_3",
-    "attributeId": "TIMBER",
-    "level": 1,
-    "displayCardId": 10113,
-    "revision": 1,
+    "cardId": 30525,
+    "charaName": "Ashley Taylor",
+    "cardRank": "RANK_5",
+    "attributeId": "DARK",
+    "level": 5,
+    "displayCardId": 30525,
+    "revision": 4,
     "follow": false,
     "follower": false
 }

@@ -780,6 +780,94 @@
         "illustrator": "MURA KUROE"
     },
     {
+        "pieceId": 1353,
+        "pieceType": "ABILITY",
+        "pieceKind": "EVENT",
+        "pieceName": "Since I'm a Magical Girl Idol",
+        "attributeId": "ALL",
+        "rank": "RANK_4",
+        "attack": 762,
+        "defense": 0,
+        "hp": 850,
+        "skillId": 135300,
+        "pieceSkill": {
+            "id": 135300,
+            "groupId": 1085,
+            "name": "High-End Dreamer [III]",
+            "type": "ABILITY",
+            "shortDescription": "ATK UP [III] / Negate Fog",
+            "artId1": 390201103,
+            "art1": {
+                "artId": 390201103,
+                "verbCode": "BUFF",
+                "effectCode": "ATTACK",
+                "targetId": "SELF",
+                "effectValue": 150,
+                "growPoint": 25,
+                "probability": 1000
+            },
+            "artId2": 690208900,
+            "art2": {
+                "artId": 690208900,
+                "verbCode": "IGNORE",
+                "effectCode": "FOG",
+                "targetId": "SELF",
+                "growPoint": 0,
+                "probability": 1000
+            },
+            "eventId": 1062,
+            "eventArtId1": 1062003,
+            "eventArt1": {
+                "artId": 1062003,
+                "verbCode": "OTHER",
+                "effectCode": "DROPADD",
+                "effectValue": 3000,
+                "genericValue": "EVENT_DAILYTOWER_1062_EXCHANGE_1"
+            },
+            "eventDescription": "and +3 to any Like drop"
+        },
+        "skillId2": 135301,
+        "pieceSkill2": {
+            "id": 135301,
+            "groupId": 1085,
+            "name": "High-End Dreamer [IV]",
+            "type": "ABILITY",
+            "shortDescription": "ATK UP [IV] / Negate Fog",
+            "artId1": 390201104,
+            "art1": {
+                "artId": 390201104,
+                "verbCode": "BUFF",
+                "effectCode": "ATTACK",
+                "targetId": "SELF",
+                "effectValue": 200,
+                "growPoint": 25,
+                "probability": 1000
+            },
+            "artId2": 690208900,
+            "art2": {
+                "artId": 690208900,
+                "verbCode": "IGNORE",
+                "effectCode": "FOG",
+                "targetId": "SELF",
+                "growPoint": 0,
+                "probability": 1000
+            },
+            "eventId": 1062,
+            "eventArtId1": 1062004,
+            "eventArt1": {
+                "artId": 1062004,
+                "verbCode": "OTHER",
+                "effectCode": "DROPADD",
+                "effectValue": 7000,
+                "genericValue": "EVENT_DAILYTOWER_1062_EXCHANGE_1"
+            },
+            "eventDescription": "and +7 to any Like drop"
+        },
+        "description": "She's clumsy and doesn't get the hang of things easily. This is why becoming both a Magical Girl and an idol was challenging for her. But she's never discouraged, and she'll never give up. Instead, she gives a brilliant smile, for Sayuki Fumino is a Magical Girl idol, a symbol of hopes and dreams.",
+        "illustrator": "Mituki Yano",
+        "openDate": "2020/05/22 00:10:00"
+    },
+    {
         "pieceId": 1354,
         "pieceType": "SKILL",
         "pieceName": "Days Off are for the Art Museum",
@@ -1563,6 +1651,75 @@
         },
         "description": "Since my childhood, I have read \"Crime and Punishment\" more times than I can recall. The protagonist bears a striking resemblance to that girl. However, only those who can bear the \"weight of death\" are fit to become her pawns.",
         "illustrator": "Nico Komori"
+    },
+    {
+        "pieceId": 9001,
+        "pieceType": "ABILITY",
+        "pieceName": "My Victory Pose Is Kawaii Too",
+        "attributeId": "ALL",
+        "rank": "RANK_4",
+        "attack": 885,
+        "defense": 0,
+        "hp": 718,
+        "skillId": 900100,
+        "pieceSkill": {
+            "id": 900100,
+            "groupId": 1147,
+            "name": "Bind Adept [III]",
+            "type": "ABILITY",
+            "shortDescription": "Bind (1 Turn) Chance upon Attack [II] / ATK UP [IV]",
+            "artId1": 690209802,
+            "art1": {
+                "artId": 690209802,
+                "verbCode": "ENCHANT",
+                "effectCode": "RESTRAINT",
+                "targetId": "SELF",
+                "enableTurn": 1,
+                "growPoint": 0,
+                "probability": 150
+            },
+            "artId2": 310201104,
+            "art2": {
+                "artId": 310201104,
+                "verbCode": "BUFF",
+                "effectCode": "ATTACK",
+                "targetId": "SELF",
+                "effectValue": 200,
+                "enableTurn": 1,
+                "growPoint": 25
+            }
+        },
+        "skillId2": 900101,
+        "pieceSkill2": {
+            "id": 900101,
+            "groupId": 1147,
+            "name": "Bind Adept [IV]",
+            "type": "ABILITY",
+            "shortDescription": "Bind (1 Turn) Chance upon Attack [III] / ATK UP [V]",
+            "artId1": 690209803,
+            "art1": {
+                "artId": 690209803,
+                "verbCode": "ENCHANT",
+                "effectCode": "RESTRAINT",
+                "targetId": "SELF",
+                "enableTurn": 1,
+                "growPoint": 0,
+                "probability": 200
+            },
+            "artId2": 310201105,
+            "art2": {
+                "artId": 310201105,
+                "verbCode": "BUFF",
+                "effectCode": "ATTACK",
+                "targetId": "SELF",
+                "effectValue": 250,
+                "enableTurn": 1,
+                "growPoint": 25
+            }
+        },
+        "description": "Phew, nice one, guys! That wraps up another day of hunting Witches! All right, Kumanosuke... It's time for our sweet victory pose! Face the camera, and... 1...2... Perfect! SO kawaii!",
+        "illustrator": "Benio",
+        "openDate": "2020/03/27 00:10:00"
     },
     {
         "pieceId": 9002,
@@ -2895,6 +3052,158 @@
         "description": "Everyone's feelings, gathered together. What do you taste, when eating next to a cocoon of impurities? The sweetness of joy travels down to my heart. Maybe just one more bite, while we enjoy the quiet.",
         "illustrator": "―",
         "openDate": "2020/06/15 00:10:00"
+    },
+    {
+        "pieceId": 1177,
+        "pieceType": "SKILL",
+        "pieceKind": "EVENT",
+        "pieceName": "Reinforcements from Another Time",
+        "attributeId": "ALL",
+        "rank": "RANK_4",
+        "attack": 0,
+        "defense": 803,
+        "hp": 803,
+        "skillId": 117700,
+        "pieceSkill": {
+            "id": 117700,
+            "groupId": 1085,
+            "name": "Penetrating Attack [IX]",
+            "type": "SKILL",
+            "intervalTurn": 9,
+            "shortDescription": "ATK UP [IX] / Chance to Ignore Defense [VIII] (Self/1 Turn)",
+            "messageId": 70,
+            "artId1": 310201109,
+            "art1": {
+                "artId": 310201109,
+                "verbCode": "BUFF",
+                "effectCode": "ATTACK",
+                "targetId": "SELF",
+                "effectValue": 450,
+                "enableTurn": 1,
+                "growPoint": 25
+            },
+            "artId2": 610206608,
+            "art2": {
+                "artId": 610206608,
+                "verbCode": "CONDITION_GOOD",
+                "effectCode": "DEFENSE_IGNORED",
+                "targetId": "SELF",
+                "enableTurn": 1,
+                "growPoint": 0,
+                "probability": 450
+            },
+            "eventId": 1061,
+            "eventArtId1": 1061001,
+            "eventArt1": {
+                "artId": 1061001,
+                "verbCode": "OTHER",
+                "effectCode": "DROPADD",
+                "effectValue": 3000,
+                "genericValue": "EVENT_SINGLERAID_1061_EXCHANGE_1"
+            },
+            "eventDescription": "and +3 to any Maiden Medal drop"
+        },
+        "skillId2": 117701,
+        "pieceSkill2": {
+            "id": 117701,
+            "groupId": 1085,
+            "name": "Penetrating Attack [X]",
+            "type": "SKILL",
+            "intervalTurn": 8,
+            "shortDescription": "ATK UP [X] / Chance to Ignore Defense [IX] (Self/1 Turn)",
+            "messageId": 70,
+            "artId1": 310201110,
+            "art1": {
+                "artId": 310201110,
+                "verbCode": "BUFF",
+                "effectCode": "ATTACK",
+                "targetId": "SELF",
+                "effectValue": 500,
+                "enableTurn": 1,
+                "growPoint": 25
+            },
+            "artId2": 610206609,
+            "art2": {
+                "artId": 610206609,
+                "verbCode": "CONDITION_GOOD",
+                "effectCode": "DEFENSE_IGNORED",
+                "targetId": "SELF",
+                "enableTurn": 1,
+                "growPoint": 0,
+                "probability": 500
+            },
+            "eventId": 1061,
+            "eventArtId1": 1061002,
+            "eventArt1": {
+                "artId": 1061002,
+                "verbCode": "OTHER",
+                "effectCode": "DROPADD",
+                "effectValue": 7000,
+                "genericValue": "EVENT_SINGLERAID_1061_EXCHANGE_1"
+            },
+            "eventDescription": "and +7 to any Maiden Medal drop"
+        },
+        "description": "I don't think I could even try to explain how we got there. It's too complicated for words. I suppose you could say it all started with Mitama and a little misunderstanding of hers.",
+        "illustrator": "―",
+        "openDate": "2019/09/11 03:10:00"
+    },
+    {
+        "pieceId": 1178,
+        "pieceType": "SKILL",
+        "pieceName": "Final Piece: Alina's Nine Phases",
+        "attributeId": "ALL",
+        "rank": "RANK_3",
+        "charaIds": "1008",
+        "charaList": [
+            {
+                "charaId": 1008,
+                "name": "Alina Gray"
+            }
+        ],
+        "attack": 0,
+        "defense": 503,
+        "hp": 421,
+        "skillId": 117800,
+        "pieceSkill": {
+            "id": 117800,
+            "groupId": 1161,
+            "name": "Monopolize Draw",
+            "type": "SKILL",
+            "intervalTurn": 15,
+            "shortDescription": "Draw this Magical Girl's Disks",
+            "messageId": 70,
+            "artId1": 700211700,
+            "art1": {
+                "artId": 700211700,
+                "verbCode": "DRAW",
+                "effectCode": "CHARACTER",
+                "targetId": "SELF",
+                "growPoint": 0,
+                "probability": 1000
+            }
+        },
+        "skillId2": 117801,
+        "pieceSkill2": {
+            "id": 117801,
+            "groupId": 1161,
+            "name": "Monopolize Draw",
+            "type": "SKILL",
+            "intervalTurn": 13,
+            "shortDescription": "Draw this Magical Girl's Disks",
+            "messageId": 70,
+            "artId1": 700211700,
+            "art1": {
+                "artId": 700211700,
+                "verbCode": "DRAW",
+                "effectCode": "CHARACTER",
+                "targetId": "SELF",
+                "growPoint": 0,
+                "probability": 1000
+            }
+        },
+        "description": "If all colors seem faded, that means I have lost my color. If my color must fade, then I shall enliven everything for that final moment by sacrificing my very self.",
+        "illustrator": "Neko Tsuduki",
+        "openDate": "2019/09/25 03:10:00"
     },
     {
         "pieceId": 1179,
@@ -4668,6 +4977,74 @@
         },
         "description": "Even if fate keeps them apart, the two girls still share the same dream: the dream of being reunited one day. They can't find each other no matter where they look in the past and future, but perhaps the dream of the future they lost lies hidden somewhere...",
         "illustrator": "Takahiro Kishida",
+        "openDate": "2020/04/03 00:10:00"
+    },
+    {
+        "pieceId": 1302,
+        "pieceType": "ABILITY",
+        "pieceKind": "EVENT",
+        "pieceName": "The Struggle Against Fate",
+        "attributeId": "ALL",
+        "rank": "RANK_3",
+        "attack": 538,
+        "defense": 0,
+        "hp": 661,
+        "skillId": 130200,
+        "pieceSkill": {
+            "id": 130200,
+            "groupId": 1124,
+            "name": "Parry Adept [I]",
+            "type": "ABILITY",
+            "shortDescription": "Evade Chance [I]",
+            "artId1": 690206801,
+            "art1": {
+                "artId": 690206801,
+                "verbCode": "CONDITION_GOOD",
+                "effectCode": "AVOID",
+                "targetId": "SELF",
+                "growPoint": 0,
+                "probability": 100
+            },
+            "eventId": 1049,
+            "eventArtId1": 1049001,
+            "eventArt1": {
+                "artId": 1049001,
+                "verbCode": "OTHER",
+                "effectCode": "DROPADD",
+                "effectValue": 2000,
+                "genericValue": "EVENT_BRANCH_1049_PART_1"
+            },
+            "eventDescription": "and +2 to any Sands of Memory drop"
+        },
+        "skillId2": 130201,
+        "pieceSkill2": {
+            "id": 130201,
+            "groupId": 1124,
+            "name": "Parry Adept [III]",
+            "type": "ABILITY",
+            "shortDescription": "Evade Chance [III]",
+            "artId1": 690206803,
+            "art1": {
+                "artId": 690206803,
+                "verbCode": "CONDITION_GOOD",
+                "effectCode": "AVOID",
+                "targetId": "SELF",
+                "growPoint": 0,
+                "probability": 200
+            },
+            "eventId": 1049,
+            "eventArtId1": 1049002,
+            "eventArt1": {
+                "artId": 1049002,
+                "verbCode": "OTHER",
+                "effectCode": "DROPADD",
+                "effectValue": 5000,
+                "genericValue": "EVENT_BRANCH_1049_PART_1"
+            },
+            "eventDescription": "and +5 to any Sands of Memory drop"
+        },
+        "description": "No matter how many times she tastes defeat or becomes smothered in dirt, she gets back up again to battle the Witch that brings disaster to Mitakihara, for she still seeks hope; she still has not given up on the feelings that drive her to overcome despair and defy fate.",
+        "illustrator": "Kazuki Hoshi",
         "openDate": "2020/04/03 00:10:00"
     },
     {
@@ -8931,6 +9308,73 @@
         "description": "This photo is from a time when we were loved by someone... But once I take my eyes off of it, I see \"the present\" that I find myself in. I know we have to rise to fight \"the present\"...but please, just let me glance at the past for a little longer.",
         "illustrator": "Yuugen",
         "openDate": "2019/07/23 03:00:00"
+    },
+    {
+        "pieceId": 1221,
+        "pieceType": "ABILITY",
+        "pieceName": "Cloaked in Guilt",
+        "attributeId": "ALL",
+        "rank": "RANK_4",
+        "attack": 841,
+        "defense": 0,
+        "hp": 760,
+        "skillId": 122100,
+        "pieceSkill": {
+            "id": 122100,
+            "groupId": 1154,
+            "name": "Mediate Adept [II]",
+            "type": "ABILITY",
+            "shortDescription": "Negate Skill Seal / Accele MP UP [II]",
+            "artId1": 690209200,
+            "art1": {
+                "artId": 690209200,
+                "verbCode": "IGNORE",
+                "effectCode": "BAN_SKILL",
+                "targetId": "SELF",
+                "growPoint": 0,
+                "probability": 1000
+            },
+            "artId2": 390201602,
+            "art2": {
+                "artId": 390201602,
+                "verbCode": "BUFF",
+                "effectCode": "ACCEL",
+                "targetId": "SELF",
+                "effectValue": 125,
+                "growPoint": 25,
+                "probability": 1000
+            }
+        },
+        "skillId2": 122101,
+        "pieceSkill2": {
+            "id": 122101,
+            "groupId": 1154,
+            "name": "Mediate Adept [III]",
+            "type": "ABILITY",
+            "shortDescription": "Negate Skill Seal / Accele MP UP [III]",
+            "artId1": 690209200,
+            "art1": {
+                "artId": 690209200,
+                "verbCode": "IGNORE",
+                "effectCode": "BAN_SKILL",
+                "targetId": "SELF",
+                "growPoint": 0,
+                "probability": 1000
+            },
+            "artId2": 390201603,
+            "art2": {
+                "artId": 390201603,
+                "verbCode": "BUFF",
+                "effectCode": "ACCEL",
+                "targetId": "SELF",
+                "effectValue": 150,
+                "growPoint": 25,
+                "probability": 1000
+            }
+        },
+        "description": "I'd already given up on living a normal life as a normal girl. But for one second, I imagined myself having the life I wished I had. It was a terrible mistake, as it crushed the determination I once had. I am still not sure how I will ever be forgiven for my terrible sin.",
+        "illustrator": "Junichirou Taniguchi",
+        "openDate": "2020/01/30 00:10:00"
     },
     {
         "pieceId": 1222,
@@ -13436,5 +13880,62 @@
         "description": "Melissa! I told you not to come to the front line! A magical arrow flew toward the girl after she rushed recklessly ahead. When Melissa opened her eyes, she saw La Pucelle, who had thrown herself in front of her to protect her. And in an instant, the world lost its light of hope.",
         "illustrator": "Masugitsune & Kawazuku",
         "openDate": "2019/09/11 03:10:00"
+    },
+    {
+        "pieceId": 9003,
+        "pieceType": "SKILL",
+        "pieceName": "Kumanosuke's Kawaii Vid",
+        "attributeId": "ALL",
+        "rank": "RANK_3",
+        "charaIds": "3052",
+        "charaList": [
+            {
+                "charaId": 3052,
+                "name": "Ashley Taylor"
+            }
+        ],
+        "attack": 0,
+        "defense": 480,
+        "hp": 440,
+        "skillId": 107300,
+        "pieceSkill": {
+            "id": 107300,
+            "groupId": 1078,
+            "name": "Cure Heal [IX]",
+            "type": "SKILL",
+            "intervalTurn": 8,
+            "shortDescription": "Heal [IX]",
+            "messageId": 70,
+            "artId1": 200200409,
+            "art1": {
+                "artId": 200200409,
+                "verbCode": "HEAL",
+                "effectCode": "HP",
+                "targetId": "SELF",
+                "effectValue": 500,
+                "growPoint": 20
+            }
+        },
+        "skillId2": 107301,
+        "pieceSkill2": {
+            "id": 107301,
+            "groupId": 1078,
+            "name": "Cure Heal [X]",
+            "type": "SKILL",
+            "intervalTurn": 7,
+            "shortDescription": "Heal [X]",
+            "messageId": 70,
+            "artId1": 200200410,
+            "art1": {
+                "artId": 200200410,
+                "verbCode": "HEAL",
+                "effectCode": "HP",
+                "targetId": "SELF",
+                "effectValue": 525,
+                "growPoint": 20
+            }
+        },
+        "description": "I just put him in front of the camera in a kawaii pose, talk in a funny voice, aaand... \"Hiii, I'm Kumanosuke! Ashley's friend! Today I'll be taking over to show you all the cool kawaii stuff in Kamihama.\" Are you ready? Kumanosuke's Kawaii Kamihama show is about to begin!",
+        "illustrator": "Benio"
     }
 ]

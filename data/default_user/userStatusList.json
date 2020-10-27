@@ -2,7 +2,7 @@
     {
         "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
         "statusId": "ACP",
-        "point": 1,
+        "point": 100,
         "checkPeriod": 5,
         "periodicPoint": 1,
         "checkedAt": "2020/09/14 19:12:49",
@@ -65,7 +65,7 @@
     {
         "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
         "statusId": "MAX_ACP",
-        "point": 1,
+        "point": 100,
         "checkPeriod": 0,
         "periodicPoint": 0,
         "checkedAt": "2020/09/14 19:12:49",
