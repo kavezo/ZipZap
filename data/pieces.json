@@ -13897,9 +13897,9 @@
         "attack": 0,
         "defense": 480,
         "hp": 440,
-        "skillId": 107300,
+        "skillId": 900300,
         "pieceSkill": {
-            "id": 107300,
+            "id": 900300,
             "groupId": 1078,
             "name": "Cure Heal [IX]",
             "type": "SKILL",
@@ -13916,9 +13916,9 @@
                 "growPoint": 20
             }
         },
-        "skillId2": 107301,
+        "skillId2": 900301,
         "pieceSkill2": {
-            "id": 107301,
+            "id": 900301,
             "groupId": 1078,
             "name": "Cure Heal [X]",
             "type": "SKILL",
