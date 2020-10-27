@@ -5,7 +5,7 @@ import os
 import json
 from getUserData import data1, data2
 from api import page, gacha, user, gameUser, userCard, userChara, friend, userPiece, \
-    userPieceSet, userLive2d, money, shop, userDeck
+    userPieceSet, userLive2d, money, shop, userDeck, quest
 
 isLoggingIn = False
 
@@ -70,7 +70,8 @@ def request(flow: http.HTTPFlow) -> None:
                 '/magica/api/userLive2d': userLive2d.handleUserLive2d,
                 '/magica/api/money': money.handleMoney,
                 '/magica/api/shop': shop.handleShop,
-                '/magica/api/userDeck': userDeck.handleUserDeck}
+                '/magica/api/userDeck': userDeck.handleUserDeck,
+                '/magica/api/quest': quest.handleQuest}
         if flow.request.path.startswith('/magica/api/test/logger/error'):
             flow.response = http.HTTPResponse.make(200, '{"resultCode": "success"}', {})
             return

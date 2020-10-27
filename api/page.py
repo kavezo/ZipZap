@@ -97,7 +97,6 @@ def supportSelect(response):
     with open('data/npc.json', encoding='utf-8') as f:
         npc = json.load(f)
     response['npcHelpList'] = [npc]
-    response['supportUserList'] = []
 
 def doppelCollection(response):
     with open('data/doppelList.json', encoding='utf-8') as f:
