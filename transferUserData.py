@@ -14,6 +14,8 @@ data2 = ['userLimitedChallengeList', 'userList', 'userLive2dList', 'userPieceLis
          'userPieceCollectionList', 'userQuestAdventureList', 'userQuestBattleList', 'userSectionList',
          'userArenaBattle', 'userShopItemList', 'userStatusList', 'userTotalChallengeList', 'userGachaGroupList']
 dataEnemyCollection = ['userEnemyList']
+dataPieceCollection = ['userPieceCollectionList']
+dataCharaCollection = ['charaList']
 
 
 def fetchData(transferId, transferPassword):
@@ -31,32 +33,27 @@ def fetchData(transferId, transferPassword):
     print(transferResponse)
     fetchDataSet(myUuid, data1)
     fetchDataSet(myUuid, data2)
-    fetchStoryCollection(myUuid)
-    fetchEnemyCollection(myUuid)
+    fetchCollection(myUuid, "StoryCollection")
+    fetchCollection(myUuid, "EnemyCollection", dataEnemyCollection)
+    fetchCollection(myUuid, "PieceCollection", dataPieceCollection)
+    fetchCollection(myUuid, "CharaCollection", dataCharaCollection)
     print('\nDone getting data')
-
-
-def fetchStoryCollection(myUuid):
-    dataResponse = get('/magica/api/page/StoryCollection', myUuid)
-    dataBody = json.loads(dataResponse)
-    print(f'Writing story collection...')
-    with open(f'{userDir}/StoryCollection.json', 'w+', encoding='utf-8') as f:
-        json.dump(dataBody, f, ensure_ascii=False)
-
-
-def fetchEnemyCollection(myUuid):
-    dataResponse = get('/magica/api/page/EnemyCollection', myUuid)
-    dataBody = json.loads(dataResponse)
-    print(f'Writing enemy collection...')
-    with open(f'{userDir}/EnemyCollection.json', 'w+', encoding='utf-8') as f:
-        json.dump(dataBody, f, ensure_ascii=False)
-    saveDataSet(dataBody, dataEnemyCollection)
 
 
 def fetchDataSet(myUuid, dataSet):
     dataResponse = get('/magica/api/page/TopPage?value=' + ','.join(dataSet), myUuid)
     dataBody = json.loads(dataResponse)
     saveDataSet(dataBody, dataSet)
+
+
+def fetchCollection(myUuid, collectionName, dataSet=None):
+    dataResponse = get('/magica/api/page/' + collectionName, myUuid)
+    dataBody = json.loads(dataResponse)
+    print(f'Writing {collectionName}...')
+    with open(f'{userDir}/{collectionName}.json', 'w+', encoding='utf-8') as f:
+        json.dump(dataBody, f, ensure_ascii=False)
+    if dataSet is not None:
+        saveDataSet(dataBody, dataSet)
 
 
 def saveDataSet(dataBody, dataSet):

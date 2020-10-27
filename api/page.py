@@ -5,8 +5,26 @@ import os
 import getUserData
 
 def charaCollection(response):
+    with open('data/user/userSectionList.json', encoding='utf-8') as f:
+        response['userSectionList'] = json.load(f)
+    with open('data/cards.json', encoding='utf-8') as f:
+        allCards = json.load(f)
     with open('data/user/userCharaList.json', encoding='utf-8') as f:
-        response['charaList'] = json.load(f)
+        userCharas = json.load(f)
+    userCharaIds = [chara['charaId'] for chara in userCharas]
+    with open('data/user/userCardList.json', encoding='utf-8') as f:
+        userCards = json.load(f)
+    cardIds = {card['cardId']: card['id'] for card in userCards}
+        
+    for i in range(len(allCards)):
+        if allCards[i]['charaId'] in userCharaIds:
+            del allCards[i]['chara']
+        for j in range(len(allCards[i]['cardList'])):
+            currId = allCards[i]['cardList'][j]['cardId']
+            if currId in cardIds.keys():
+                allCards[i]['cardList'][j] = {'userCardId': cardIds[currId], 'cardId': currId}
+                
+    response['charaList'] = allCards
 
 def charaListCompose(response):
     with open('data/user/userCharaList.json', encoding='utf-8') as f:
@@ -53,7 +71,8 @@ def pieceArchive(response):
     response['userPieceArchiveList'] = [userPiece for userPiece in userPieceList if userPiece['archive']]
 
 def pieceCollection(response):
-    response['userPieceCollectionList'] = []
+    with open('data/user/userPieceCollectionList.json', encoding='utf-8') as f:
+        response['userPieceCollectionList'] = json.load(f)
 
 def presentList(response):
     response['presentList'] = []
@@ -147,7 +166,8 @@ def addArgs(response, args, isLogin):
         'userLive2dList', 'userCardList', 'userCharaList', 'userDeckList', 'userFormationSheetList',
         'userPieceList', 'userPieceSetList', 'userItemList', 'userSectionList', 'userGiftList',
         'userQuestAdventureList', 'userQuestBattleList', 'userChapterList', 'userDoppelList',
-        'userDailyChallengeList', 'userLimitedChallengeList', 'userTotalChallengeList']:
+        'userDailyChallengeList', 'userLimitedChallengeList', 'userTotalChallengeList',
+        'itemList', 'giftList', 'pieceList']:
             print('loading ' + arg + ' from json')
             fpath = 'data/user/'+arg+'.json'
             if os.path.exists(fpath):
