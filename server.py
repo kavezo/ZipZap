@@ -8,6 +8,7 @@ from api import page, gacha, user, gameUser, userCard, userChara, friend, userPi
     userPieceSet, userLive2d, money, shop, userDeck, quest
 
 isLoggingIn = False
+etag = 'thisisanetag'
 
 def serveAsset(flow):
     with open('config.json') as f:
@@ -15,8 +16,9 @@ def serveAsset(flow):
     versionless = flow.request.path.split('?')[0]
 
     if versionless.endswith('.json.gz'):
-        flow.response = http.HTTPResponse.make(304, "", {})
-        return
+        if flow.request.headers['if-none-match'] == etag:
+            flow.response = http.HTTPResponse.make(304, "", {})
+            return
     
     isAnnouncement = 'json/announcements' in flow.request.path
 
@@ -27,7 +29,7 @@ def serveAsset(flow):
 
         asset_request = requests.get('https://zipzap-assets.s3.us-east-2.amazonaws.com'+flow.request.path)
         if asset_request.status_code == 200:
-            flow.response = http.HTTPResponse.make(200, asset_request.content, {})
+            flow.response = http.HTTPResponse.make(200, asset_request.content, {'etag': etag})
             if diskAssets and not isAnnouncement:
                 print('writing to assets' + versionless)
                 with open('assets'+versionless, 'wb+') as f:
@@ -36,7 +38,7 @@ def serveAsset(flow):
             asset_request = requests.get('https://en.rika.ren'+flow.request.path)
             print('not on S3, requested ' + 'https://en.rika.ren' + flow.request.path)
             if asset_request.status_code == 200:
-                flow.response = http.HTTPResponse.make(200, asset_request.content, {})
+                flow.response = http.HTTPResponse.make(200, asset_request.content, {'etag': etag})
                 if diskAssets and not isAnnouncement:
                     print('writing to assets' + versionless)
                     with open('assets'+versionless, 'wb+') as f:
@@ -47,7 +49,7 @@ def serveAsset(flow):
     else:
         with open('assets'+versionless, 'rb') as f:
             text = f.read()
-        flow.response = http.HTTPResponse.make(200, text, {})
+        flow.response = http.HTTPResponse.make(200, text, {'etag': etag})
 
 @concurrent
 def request(flow: http.HTTPFlow) -> None:
