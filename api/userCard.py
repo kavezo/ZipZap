@@ -90,7 +90,6 @@ def calculateMultiplier(rank, level):
 # stolen from CardUtil.js
 def getStats(baseCard, rank, level):
     growthType = baseCard['growthType']
-    rank = baseCard['rank']
 
     if level > maxLevels[rank]: level = maxLevels[rank]
 
@@ -204,6 +203,18 @@ def setUserCard(cardId, args):
     with open('data/user/userCardList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCardList, f, ensure_ascii=False)
 
+def getFinalLevel(targetUserCard, exp):
+    origLevel = targetUserCard['level']
+    finalExp = exArr[origLevel-1] + targetUserCard['experience'] + exp
+    newLevel = 1
+    extraExp = 0
+    for i in range(len(exArr)-1, 0, -1): # maybe implement a binary rather than a linear search?
+        if exArr[i] <= finalExp:
+            newLevel = i+1
+            extraExp = finalExp - exArr[i]
+            break
+    return newLevel, extraExp
+
 def compose(flow):
     body = json.loads(flow.request.text)
     targetUserCardId = body['userCardId']
@@ -225,17 +236,9 @@ def compose(flow):
     success = np.random.choice([1, 1.5, 2], p=[0.9, 0.08, 0.02])
 
     # modify meguca's level and stats
-    origLevel = targetUserCard['level']
     rank = targetUserCard['card']['rank']
-    finalExp = exArr[origLevel-1] + targetUserCard['experience'] \
-            + getComposeExp(targetUserCard['card']['attributeId'], body['useItem']) * success
-    newLevel = 1
-    extraExp = 0
-    for i in range(len(exArr)-1, 0, -1): # maybe implement a binary rather than a linear search?
-        if exArr[i] <= finalExp:
-            newLevel = i+1
-            extraExp = finalExp - exArr[i]
-            break
+    exp = getComposeExp(targetUserCard['card']['attributeId'], body['useItem']) * success
+    newLevel, extraExp = getFinalLevel(targetUserCard, exp)
 
     if newLevel == maxLevels[rank]:
         extraExp = 0
