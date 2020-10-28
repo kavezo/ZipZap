@@ -1,6 +1,6 @@
-﻿#ZIPZAP server installer - an all in 1 button solution
+#ZIPZAP server installer - an all in 1 button solution
 #Created by Ju @ ZipZap 27/10/2020    
-#Does not work on x32bit architectures
+#It might work on x32bit architectures
 #Script Checks if people have python 3.8.0 and Visual studio redistribuatble before starting   
 
 #Debug-Tracecalls
@@ -50,38 +50,40 @@ $cwf = Get-Location
 $PIF = "" + $cwf+"\python-3.8.0-amd64.exe"
 $VCC = "" + $cwf+"\VC_redist.x64.exe"
 
-
-Write-Host "Files Checked - Proceeding to install VC_Redist.x64 if not installed yet"
-if(!(Test-path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64"))
+if([Environment]::Is64BitOperatingSystem)
 {
-    Write-Host "!!Visual Sutdio Runtime Library not found!!"
-    Write-Host $VCC
 
-    #Write-Host "You don't have Visual Studio Runtime C++ 2019, `nplease install VC_redist.x64 from the internet"
+    Write-Host "Files Checked - Proceeding to install VC_Redist.x64 if not installed yet"
+    if(!(Test-path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64"))
+    {
+        Write-Host "!!Visual Sutdio Runtime Library not found!!"
+        Write-Host $VCC
+
+        #Write-Host "You don't have Visual Studio Runtime C++ 2019, `nplease install VC_redist.x64 from the internet"
     
    
-     Write-Host "!!Python not found or an older version is being used!!"-ForegroundColor red
+         Write-Host "!!Visual Sutdio Runtime Library not found!!"-ForegroundColor red
 
-    if(!(test-path $VCC))
-    {  
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+        if(!(test-path $VCC))
+        {  
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-    Invoke-WebRequest -Uri "https://download.microsoft.com/download/0/6/4/064F84EA-D1DB-4EAA-9A5C-CC2F0FF6A638/vc_redist.x64.exe" -OutFile "VC_redist.x64.exe"
+        Invoke-WebRequest -Uri "https://download.microsoft.com/download/0/6/4/064F84EA-D1DB-4EAA-9A5C-CC2F0FF6A638/vc_redist.x64.exe" -OutFile "VC_redist.x64.exe"
 
+        }
+    
+    
+        Write-Host "Installing now VC_Redist.x64... please wait..."
+        Start-Process -FilePath “$VCC” -ArgumentList “/passive /log log.txt” -Wait
     }
-    
-    
-    Write-Host "Installing now VC_Redist.x64... please wait..."
-    Start-Process -FilePath “$VCC” -ArgumentList “/passive /log log.txt” -Wait
-}
 
 
-Write-Host "Checking current python version if 3.8.0"
-try { $VP = python --version }
-catch{ "Python not found" }
+    Write-Host "Checking current python version if 3.8.0"
+    try { $VP = python --version }
+    catch{ "Python not found" }
 
-if($VP -ne "Python 3.8.0")
-{
+    if($VP -ne "Python 3.8.0")
+                                                            {
 
     Write-Host "!!Python not found or an older version is being used!!"-ForegroundColor red
 
@@ -101,9 +103,69 @@ if($VP -ne "Python 3.8.0")
     cls
     Write-Host "Python finished, please open again this program and run option 1 again so that it may continue ."
     break
+    }
+
 }
+if(!([Environment]::Is64BitOperatingSystem))
+{
+
+   $PIF32 = "" + $cwf+"\python-3.8.0.exe"
+   $VCC32 = "" + $cwf+"\VC_redist.x86.exe"
 
 
+    Write-Host "Files Checked - Proceeding to install VC_Redist if not installed yet"
+    if(!(Test-path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x86"))
+    {
+        Write-Host "!!Visual Sutdio Runtime Library not found!!"
+        Write-Host $VCC32
+
+        #Write-Host "You don't have Visual Studio Runtime C++ 2019, `nplease install VC_redist.x64 from the internet"
+    
+   
+         Write-Host "!!VCC not found or an older version is being used!!"-ForegroundColor red
+
+        if(!(test-path $VCC32))
+        {  
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+        Invoke-WebRequest -Uri "https://aka.ms/vs/16/release/vc_redist.x86.exe" -OutFile "VC_redist.x86.exe"
+
+        }
+    
+    
+        Write-Host "Installing now VC_Redist.x64... please wait..."
+        Start-Process -FilePath “$VCC32” -ArgumentList “/passive /log log.txt” -Wait
+    }
+
+    Write-Host "Checking current python version if 3.8.0 32bits"
+    try { $VP = python --version }
+    catch{ "Python not found" }
+
+    if($VP -ne "Python 3.8.0")
+    {
+
+        Write-Host "!!Python not found or an older version is being used!!"-ForegroundColor red
+
+        if(!(test-path $PIF32))
+        {
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+        Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.8.0/python-3.8.0.exe" -OutFile "python-3.8.0.exe"
+
+        }
+    
+        Write-Host $PIF32
+        Write-Host "Installing now 32bit python-3.8.0.exe ... please wait..."
+        Write-Host "For real, wait. it's gonna take a little while."
+
+        Start-Process -FilePath “$PIF32” -ArgumentList “/quite InstallAllUsers=1 PrependPath=1 Include_test=0 Include_pip=1” -Wait
+        cls
+        Write-Host "Python finished, please open again this program and run option 1 again so that it may continue ."
+        break
+    }
+
+
+}
 
 #fork of getstarted.bat
 Write-Host "All pre-quisites installed.. proceeding to install python dependencies"
@@ -183,13 +245,13 @@ Function StartServer {
                     Write-Host "Starting MITM" -ForegroundColor green
                     Write-Host "`nClosing this console will turn off the proxyServer!`n" -ForegroundColor red
                     Write-Host "You can exit the server by pressing Ctrl+C in the console or closing this window."
-                    Write-Host "NOTE: Closing your web-browser will not close the server and will continue running in the background!"
+                    #Write-Host "NOTE: Closing your web-browser will not close the server and will continue running in the background!"
 
                     $IPstuff = GetCorrectIPv4Address
                 Write-Host "THIS IS YOUR IP and PORT FOR YOUR PROXY: " -ForegroundColor Red 
                    Write-Host "Ip: $IPstuff `nPort: 8080 " -ForegroundColor Red -BackgroundColor Yellow
 
-                    $r = "mitmweb.exe -s server.py"
+                    $r = "mitmweb.exe -s server.py --no-web-open-browser"
                     iex $r
       
 
@@ -235,7 +297,7 @@ Function BackUpUser{
             Write-Host "THIS IS YOUR IP and PORT FOR YOUR PROXY: " -ForegroundColor Red 
             Write-Host "Ip: $IPstuff `nPort: 8080 " -ForegroundColor Red -BackgroundColor Yellow
 
-            $rb = "mitmweb.exe -s getUserData.py"
+            $rb = "mitmweb.exe -s getUserData.py --no-web-open-browser"
             iex $rb
            
            }
