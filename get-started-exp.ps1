@@ -46,52 +46,89 @@ Write-Host "function 1 - Installation will now start"
 Set-Location -Path $PSScriptRoot
 $cwf = Get-Location
 
-$test = "" + $cwf+"\env\Include"
-$PIF = "" + $cwf+"\env\Include\python-3.8.0-amd64.exe"
-$VCC = "" + $cwf+"\env\Include\VC_redist.x64.exe"
-$requirementsFile = "" + $cwf+"\requirements.txt"
-$VEN = "" + $cwf+"\env\Scripts\activate.bat"
 
-Write-Host "Current working folder: " $cwf
-Write-Host "Checking file integrity before requirement's installation"
+$PIF = "" + $cwf+"\python-3.8.0-amd64.exe"
+$VCC = "" + $cwf+"\VC_redist.x64.exe"
 
-if( !( ( test-path $PIF ) -and ( test-path $VCC ) -and (test-path $requirementsFile) -and (test-path $VEN) ))
-{
-    Write-Host "One of the files not found!"
-    Write-Host "Make Sure you're running this script from the ZipZap folder!"
-    break
-}
 
 Write-Host "Files Checked - Proceeding to install VC_Redist.x64 if not installed yet"
 if(!(Test-path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\VisualStudio\14.0\VC\Runtimes\x64"))
 {
     Write-Host "!!Visual Sutdio Runtime Library not found!!"
     Write-Host $VCC
+
+    #Write-Host "You don't have Visual Studio Runtime C++ 2019, `nplease install VC_redist.x64 from the internet"
+    
+   
+     Write-Host "!!Python not found or an older version is being used!!"-ForegroundColor red
+
+    if(!(test-path $VCC))
+    {  
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+    Invoke-WebRequest -Uri "https://download.microsoft.com/download/0/6/4/064F84EA-D1DB-4EAA-9A5C-CC2F0FF6A638/vc_redist.x64.exe" -OutFile "VC_redist.x64.exe"
+
+    }
+    
+    
     Write-Host "Installing now VC_Redist.x64... please wait..."
     Start-Process -FilePath “$VCC” -ArgumentList “/passive /log log.txt” -Wait
 }
 
-$VP = python --version
-Write-Host "Checking current python version:" $VP
+
+Write-Host "Checking current python version if 3.8.0"
+try { $VP = python --version }
+catch{ "Python not found" }
 
 if($VP -ne "Python 3.8.0")
 {
 
     Write-Host "!!Python not found or an older version is being used!!"-ForegroundColor red
+
+    if(!(test-path $PIF))
+    {
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+    Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.8.0/python-3.8.0-amd64.exe" -OutFile "python-3.8.0-amd64.exe"
+
+    }
+    
     Write-Host $PIF
     Write-Host "Installing now python-3.8.0-amd64.exe ... please wait..."
     Write-Host "For real, wait. it's gonna take a little while."
+
     Start-Process -FilePath “$PIF” -ArgumentList “/quite InstallAllUsers=1 PrependPath=1 Include_test=0 Include_pip=1” -Wait
     cls
-    Write-Host "Python finished, please open again this program so that the changes may be seen in the system ."
+    Write-Host "Python finished, please open again this program and run option 1 again so that it may continue ."
     break
 }
 
-cls
+
+
 #fork of getstarted.bat
 Write-Host "All pre-quisites installed.. proceeding to install python dependencies"
 
-python -m venv ./env
+$r = "python -m venv ./env"
+iex $r
+
+
+$requirementsFile = "" + $cwf+"\requirements.txt"
+$VEN = "" + $cwf+"\env\Scripts\activate.bat"
+
+Write-Host "Current working folder: " $cwf
+Write-Host "Checking file integrity before requirement's installation"
+
+if( !( ( test-path $requirementsFile ) -and (test-path $VEN)))
+{
+    Write-Host "One of the files not found!"
+    Write-Host "Make Sure you're running this script from the ZipZap folder!"
+    break
+}
+
+
+cls
+
+
 Start-Process -FilePath “$VEN” -Wait
 python -m pip install --upgrade pip
 python -m pip install -r $requirementsFile
@@ -189,7 +226,7 @@ Function BackUpUser{
      switch ($input3)
      {
          '1' {
-                    Start-Process "transferUserData\transferUserData.exe" -Wait
+                    Start-Process ".\transferUserData.py" -Wait
                   
            } '2' {
             Write-Host "Please connect now your magireco app with your data in it to this server"
