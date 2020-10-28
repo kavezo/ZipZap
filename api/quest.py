@@ -27,29 +27,24 @@ def send(flow):
         gameUser = json.load(f)
     gameUser['exp'] += userExp
     newStatus = []
-    if gameUser['exp'] + gameUser['totalExpForCurrentLevel'] >= gameUser['totalExpForNextLevel']:
-        gameUser['exp'] -= gameUser['totalExpForNextLevel']-gameUser['totalExpForCurrentLevel']
+    if gameUser['exp'] >= gameUser['totalExpForNextLevel']:
         gameUser['level'] += 1
-        gameUser['totalExpForCurrentLevel'] = gameUser['totalExpForNextLevel'] + \
-                                              gameUser['totalExpForNextLevel']-gameUser['totalExpForCurrentLevel']
-        gameUser['totalExpForNextLevel'] += 10
+        gameUser['totalExpForCurrentLevel'] = gameUser['totalExpForNextLevel']
+        gameUser['totalExpForNextLevel'] += 10 # TODO: how does this actually work lol
         with open('data/user/userStatusList.json', encoding='utf-8') as f:
             userStatusList = json.load(f)
         
-        maxAP = 0
         maxAPIdx = 0
-        currAP = 0
         currAPIdx = 0
         for i, status in enumerate(userStatusList):
             if status['statusId'] == 'MAX_ACP':
-                maxAP = status['point']
                 maxAPIdx = i
             if status['statusId'] == 'ACP':
-                currAP = status['point']
                 currAPIdx = i
         userStatusList[maxAPIdx]['point'] += 10
         userStatusList[currAPIdx]['point'] += userStatusList[maxAPIdx]['point']
-        newStatus.append(userStatusList[maxAPIdx], userStatusList[currAP])
+        newStatus.append(userStatusList[maxAPIdx])
+        newStatus.append(userStatusList[currAPIdx])
 
         with open('data/user/userStatusList.json', 'w+', encoding='utf-8') as f:
             json.dump(userStatusList, f, ensure_ascii=False)
@@ -59,9 +54,6 @@ def send(flow):
 
     # TODO: add to stories
     resultUserQuestAdventureList = []
-    with open('data/user/userSectionList.json', encoding='utf-8') as f:
-        userSectionList = json.load(f)
-    resultUserSectionList = userSectionList
 
     # change userQuestBattleResult status
     battle['questBattleStatus'] = 'SUCCESSFUL'
@@ -100,7 +92,7 @@ def send(flow):
     leaderCharaId = 0
     cardIds = []
     resultUserCardList = []
-    for i in range(4):
+    for i in range(9):
         numberedId = 'userCardId'+str(i+1)
         if numberedId in battle:
             cardIds.append(battle[numberedId])
@@ -129,7 +121,7 @@ def send(flow):
         json.dump(userCardList, f, ensure_ascii=False)
 
     # add episode points to charas
-    for i in range(4):
+    for i in range(9):
         numberedId = 'userCardId'+str(i+1)
         if numberedId in body:
             cardIds.append(body[numberedId])
@@ -158,8 +150,7 @@ def send(flow):
         'userCharaList': resultUserCharaList,
         'userItemList': resultUserItemList,
         'userQuestBattleResultList': [battle],
-        'userQuestBattleList': resultUserQuestBattleList,
-        'userSectionList': resultUserSectionList
+        'userQuestBattleList': resultUserQuestBattleList
     }
     if newStatus != []:
         response['userStatusList'] = newStatus
