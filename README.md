@@ -52,23 +52,6 @@ If you have trouble getting the server running and you're on Windows, delete the
 transferUserData.bat. If you're not on Windows and have Python, you can run `pip install -r requirements.txt` and then 
 `python transferUserData.py`.
 
-#### The old way 
-On Windows, if you have Python 3.8 installed, run getUserData.bat. You can close the browser window that pops up, but not 
-the command line. 
-
-On other systems, follow steps 1 and 2 in the Installation and Running section, then run
-`mitmproxy -s getUserData.py` or `mitmweb -s getUserData.py` in a command line without closing it.
-
-Follow the instructions for connecting to the private server to get your device connected to the script. Then, get to the
-title screen (the one that has the MagiReco logo on it, and from which you can see the ToS and transfer your account).
-You should now see the command line print a lot of lines saying "writing to ------". Once the command line says it's done,
-you can close it. You can run the private server now, and it will serve your your own data.
-
-User data is stored in the files in data/user. When you run getUserData.py, the data is backed up to in data/userBackup.
-You can change the data in the data/user folder and the data displayed in the game will change as well.
-
-The default user is a level 999 account with only Iroha and no memoria but 999 of every material, including summon tickets.
-
 ---
 ### Configuration
 
