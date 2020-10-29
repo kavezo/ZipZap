@@ -173,6 +173,8 @@ def addArgs(response, args, isLogin):
             if os.path.exists(fpath):
                 with open(fpath, encoding='utf-8') as f:
                     response[arg] = json.load(f)
+                if arg == 'userPieceList':
+                    response[arg] = [userPiece for userPiece in response[arg] if not userPiece['archive']]
             else:
                 print(f'{fpath} not found')
         elif arg.lower().endswith('list'):
