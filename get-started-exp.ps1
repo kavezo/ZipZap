@@ -2,6 +2,7 @@
 #Created by Ju @ ZipZap 27/10/2020    
 #It might work on x32bit architectures
 #Script Checks if people have python 3.8.0 and Visual studio redistribuatble before starting   
+#KNOWN PAST ERROR - “ was being used instead of " which PS doesn't recognize. Updated file entirely and tested.
 
 #Debug-Tracecalls
 
@@ -74,7 +75,7 @@ if([Environment]::Is64BitOperatingSystem)
     
     
         Write-Host "Installing now VC_Redist.x64... please wait..."
-        Start-Process -FilePath “$VCC” -ArgumentList “/passive /log log.txt” -Wait
+        Start-Process -FilePath "$VCC" -ArgumentList "/passive /log log.txt" -Wait
     }
 
 
@@ -99,7 +100,7 @@ if([Environment]::Is64BitOperatingSystem)
     Write-Host "Installing now python-3.8.0-amd64.exe ... please wait..."
     Write-Host "For real, wait. it's gonna take a little while."
 
-    Start-Process -FilePath “$PIF” -ArgumentList “/quite InstallAllUsers=1 PrependPath=1 Include_test=0 Include_pip=1” -Wait
+    Start-Process -FilePath "$PIF" -ArgumentList "/quite InstallAllUsers=1 PrependPath=1 Include_test=0 Include_pip=1" -Wait
     cls
     Write-Host "Python finished, please open again this program and run option 1 again so that it may continue ."
     break
@@ -134,7 +135,7 @@ if(!([Environment]::Is64BitOperatingSystem))
     
     
         Write-Host "Installing now VC_Redist.x64... please wait..."
-        Start-Process -FilePath “$VCC32” -ArgumentList “/passive /log log.txt” -Wait
+        Start-Process -FilePath "$VCC32" -ArgumentList "/passive /log log.txt" -Wait
     }
 
     Write-Host "Checking current python version if 3.8.0 32bits"
@@ -158,7 +159,7 @@ if(!([Environment]::Is64BitOperatingSystem))
         Write-Host "Installing now 32bit python-3.8.0.exe ... please wait..."
         Write-Host "For real, wait. it's gonna take a little while."
 
-        Start-Process -FilePath “$PIF32” -ArgumentList “/quite InstallAllUsers=1 PrependPath=1 Include_test=0 Include_pip=1” -Wait
+        Start-Process -FilePath "$PIF32" -ArgumentList "/quite InstallAllUsers=1 PrependPath=1 Include_test=0 Include_pip=1" -Wait
         cls
         Write-Host "Python finished, please open again this program and run option 1 again so that it may continue ."
         break
@@ -191,7 +192,7 @@ if( !( ( test-path $requirementsFile ) -and (test-path $VEN)))
 cls
 
 
-Start-Process -FilePath “$VEN” -Wait
+Start-Process -FilePath "$VEN" -Wait
 python -m pip install --upgrade pip
 python -m pip install -r $requirementsFile
 
@@ -318,14 +319,15 @@ do
 #check if running as admin
     If (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole(`
 
-    [Security.Principal.WindowsBuiltInRole] “Administrator”))
+    [Security.Principal.WindowsBuiltInRole] "Administrator"))
 
 {
 
-    Write-Warning “You do not have Administrator rights to run this script!`nPlease re-run this script as an Administrator!”
-
+    Write-Warning "You do not have Administrator rights to run this script!`nPlease re-run this script as an Administrator!"
+    #prompts user to be able to read the error if it happens
+    Read-Host "Press any key to continue..." 
     Break
-
+    
 }
 #proceed to main menu
      Clear-Host
