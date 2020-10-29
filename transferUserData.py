@@ -17,6 +17,14 @@ dataEnemyCollection = ['userEnemyList']
 dataPieceCollection = ['userPieceCollectionList']
 dataCharaCollection = ['charaList']
 
+def fetchPieces(myUuid):
+    pieces = fetchCollection(myUuid, 'PieceArchive', ['userPieceArchiveList', 'userPieceList'])
+    with open('data/user/userPieceList.json', encoding='utf-8') as f:
+        unarchivedPieces = json.load(f)
+    with open('data/user/userPieceArchiveList.json', encoding='utf-8') as f:
+        archivedPieces = json.load(f)
+    with open('data/user/userPieceList.json', 'w+', encoding='utf-8') as f:
+        json.dump(unarchivedPieces + archivedPieces, f, ensure_ascii=False)
 
 def fetchData(transferId, transferPassword):
     if not os.path.exists(userDir):
@@ -37,6 +45,7 @@ def fetchData(transferId, transferPassword):
     fetchCollection(myUuid, "EnemyCollection", dataEnemyCollection)
     fetchCollection(myUuid, "PieceCollection", dataPieceCollection)
     fetchCollection(myUuid, "CharaCollection", dataCharaCollection)
+    fetchPieces(myUuid)
     print('\nDone getting data')
 
 
