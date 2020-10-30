@@ -18,7 +18,7 @@ dataPieceCollection = ['userPieceCollectionList']
 dataCharaCollection = ['charaList']
 
 def fetchPieces(myUuid):
-    pieces = fetchCollection(myUuid, 'PieceArchive', ['userPieceArchiveList', 'userPieceList'])
+    fetchCollection(myUuid, 'PieceArchive', ['userPieceArchiveList'])
     with open('data/user/userPieceList.json', encoding='utf-8') as f:
         unarchivedPieces = json.load(f)
     with open('data/user/userPieceArchiveList.json', encoding='utf-8') as f:
