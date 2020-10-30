@@ -519,8 +519,8 @@ def start(flow):
         }
 
     if 'helpUserCardId' in body:
-        userQuestBattleResult["helpUserCardId"] = body['helpUserCardId'],
-        userQuestBattleResult["helpUserId"] = body['helpUserId'],
+        userQuestBattleResult["helpUserCardId"] = body['helperUserCardId'],
+        userQuestBattleResult["helpUserId"] = body['helperUserId'],
 
     for i in range(4):
         numberedId = 'userCardId'+str(i+1)
