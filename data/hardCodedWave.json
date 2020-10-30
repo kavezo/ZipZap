@@ -1,0 +1,43 @@
+{
+    "boss": false,
+    "effect": 0,
+    "enemyList": [
+        {
+            "action": 1,
+            "ai": 0,
+            "align": "LIGHT",
+            "attack": 832,
+            "blast": 0,
+            "bossType": 0,
+            "cardId": 71013,
+            "charId": 7101,
+            "charge": 0,
+            "defence": 1352,
+            "discType1": "RANGE_H",
+            "discType2": "RANGE_V",
+            "discType3": "MPUP",
+            "enemyKey": "a1a01a4e-1280-11eb-9900-02170e845961",
+            "enemyKindType": "WITCH",
+            "enemySizeType": "SMALL",
+            "genericValue": "HAPPY",
+            "hp": 20000,
+            "hpStart": 20000,
+            "leader": false,
+            "level": 5,
+            "magnification": 100,
+            "maxMp": 1000,
+            "memoriaList": [],
+            "miniCharId": 710103,
+            "miniDoppelId": 710103,
+            "miniMagiaId": 710100,
+            "mpStart": 0,
+            "mpup": 0,
+            "name": "????? Witch Minion",
+            "pos": 5,
+            "rateGainMpAtk": 1000,
+            "rateGainMpDef": 1000,
+            "speed": 0
+        }
+    ],
+    "field": 46211
+}
