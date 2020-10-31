@@ -1,11 +1,11 @@
-from mitmproxy import http
+import flask
 import json
 from datetime import datetime
 from api import userPiece, gacha
 from uuid import uuid1
 
-def save(flow):
-    body = json.loads(flow.request.text)
+def save():
+    body = flask.request.json
     with open('data/user/userDeckList.json', encoding='utf-8') as f:
         userDeckList = json.load(f)    
     with open('data/user/user.json', encoding='utf-8') as f:
@@ -45,7 +45,7 @@ def save(flow):
             chosenFormationSheet = formation
             break
     if chosenFormationSheet == {}:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "Trying to use a nonexistent formation","resultCode": "error","title": "Error"}', {})
+        flask.abort(400, description='{"errorTxt": "Trying to use a nonexistent formation","resultCode": "error","title": "Error"}')
         return
 
     userDeckList[deckIdx]['formationSheet'] = chosenFormationSheet
@@ -63,16 +63,15 @@ def save(flow):
     with open('data/user/userDeckList.json', 'w+', encoding='utf-8') as f:
         json.dump(userDeckList, f, ensure_ascii=False)
     
-    response = json.dumps({
+    return flask.json.dumps({
         'resultCode': 'success',
         'userDeckList': [userDeckList[deckIdx]]
     }, ensure_ascii=False)
-    flow.response = http.HTTPResponse.make(200, response, {})
     
 
-def handleUserDeck(flow):
-    endpoint = flow.request.path.replace('/magica/api/userDeck', '')
-    if endpoint.startswith('/save'):
-        save(flow)
+def handleUserDeck(endpoint):
+    if endpoint.startswith('save'):
+        return save()
     else:
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        print('userDeck/'+endpoint)
+        flask.abort(501, description="Not implemented")

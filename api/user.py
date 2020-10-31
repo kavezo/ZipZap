@@ -1,17 +1,18 @@
 import json
 import transferUserData
-from mitmproxy import http
+import flask
 from uuid import uuid1
-import requests
 
-def isAnswered(flow):
+# TODO: actually figure out what this does
+def isAnswered():
     response = {
         "resultCode": "success",
         'isAnswered': True
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {"Content-Type": "application/json"})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def setPassword(flow):
+# TODO: actually set password
+def setPassword():
     with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
         gameUser = json.load(f)
         gameUser['passwordNotice'] = False
@@ -21,24 +22,23 @@ def setPassword(flow):
         "resultCode": "success",
         'gameUser': gameUser
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {"Content-Type": "application/json"})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def transfer(flow):
-    body = json.loads(flow.request.text)
+def transfer():
+    body = flask.request.json
     try:
         transferUserData.fetchData(body['personalId'], body['password'])
     except ValueError as e:
-        flow.response = http.HTTPResponse.make(400, str(e), {"Content-Type": "application/json"})
-    flow.response = http.HTTPResponse.make(200, '{"resultCode": "success"}', {"Content-Type": "application/json"})
+        flask.abort(400, description=str(e))
+    return flask.jsonify({"resultCode": "success"})
 
-def handleUser(flow):
-    endpoint = flow.request.path.replace('/magica/api/user', '')
-    if endpoint.endswith('/isAnswered'):
-        isAnswered(flow)
-    elif endpoint.endswith('/setPassword'):
-        setPassword(flow)
-    elif endpoint.endswith('/transfer'):
-        transfer(flow)
+def handleUser(endpoint):
+    if endpoint.endswith('isAnswered'):
+        return isAnswered()
+    elif endpoint.endswith('setPassword'):
+        return setPassword()
+    elif endpoint.endswith('transfer'):
+        return transfer()
     else:
-        print(flow.request.path)
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        print('user/'+endpoint)
+        flask.abort(501, description="Not implemented")

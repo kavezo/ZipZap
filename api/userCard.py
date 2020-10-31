@@ -1,4 +1,4 @@
-from mitmproxy import http
+import flask
 import json
 import math
 import numpy as np
@@ -215,8 +215,8 @@ def getFinalLevel(targetUserCard, exp):
             break
     return newLevel, extraExp
 
-def compose(flow):
-    body = json.loads(flow.request.text)
+def compose():
+    body = flask.request.json
     targetUserCardId = body['userCardId']
 
     with open('data/user/userCardList.json', encoding='utf-8') as f:
@@ -228,7 +228,7 @@ def compose(flow):
             targetUserCard = userCard
     
     if targetUserCard == {}:
-        flow.response = http.HTTPResponse.make(400, 'Tried to level up a card you don\'t have...', {})
+        flask.abort(400, description='Tried to level up a card you don\'t have...')
         return
     
     # figure out success type
@@ -256,7 +256,7 @@ def compose(flow):
     try:
         revisedItemList = spend(body['useItem'])
     except ValueError as e:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "'+repr(e)+'","resultCode": "error","title": "Error"}', {})
+        flask.abort(400, description='{"errorTxt": "'+repr(e)+'","resultCode": "error","title": "Error"}')
 
     # modify CC
     cc = getComposeCost(rank, origLevel, body['useItem'])
@@ -264,7 +264,7 @@ def compose(flow):
         gameUser = json.load(f)
     gameUser['riche'] -= cc
     if gameUser['riche'] < 0:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}', {})
+        flask.abort(400, description='{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}')
     
     with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
         json.dump(gameUser, f, ensure_ascii=False)
@@ -277,10 +277,10 @@ def compose(flow):
         'userCardList': [targetUserCard],
         'userItemList': revisedItemList
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def customize(flow):
-    body = json.loads(flow.request.text)
+def customize():
+    body = flask.request.json
     targetUserCardId = body['userCardId']
 
     with open('data/user/userCardList.json', encoding='utf-8') as f:
@@ -292,7 +292,7 @@ def customize(flow):
             targetUserCard = userCard
     
     if targetUserCard == {}:
-        flow.response = http.HTTPResponse.make(400, 'Tried to add a mat to a card you don\'t have...', {})
+        flask.abort(400, description='Tried to add a mat to a card you don\'t have...')
         return
 
     targetMatPos = body['target']
@@ -309,7 +309,7 @@ def customize(flow):
     try:
         revisedItemList = spendGift({matId: amount})
     except ValueError as e:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "'+repr(e)+'","resultCode": "error","title": "Error"}', {})
+        flask.abort(400, description='{"errorTxt": "'+repr(e)+'","resultCode": "error","title": "Error"}')
     
     # make response
     response = {
@@ -317,10 +317,10 @@ def customize(flow):
         'userCardList': [targetUserCard],
         'userGiftList': revisedItemList
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def evolve(flow):
-    body = json.loads(flow.request.text)
+def evolve():
+    body = flask.request.json
     targetUserCardId = body['userCardId']
 
     with open('data/user/userCardList.json', encoding='utf-8') as f:
@@ -335,8 +335,7 @@ def evolve(flow):
             userCardIdx = i
     
     if targetUserCard == {}:
-        flow.response = http.HTTPResponse.make(400, 'Tried to awaken a card you don\'t have...', {})
-        return
+        flask.abort(400, description='Tried to awaken a card you don\'t have...')
 
     # get next card
     with open('data/cards.json', encoding='utf-8') as f:
@@ -347,8 +346,7 @@ def evolve(flow):
         if chara['charaId'] == targetUserCard['card']['charaNo']:
             cardList = chara['cardList']
     if targetUserCard is None:
-        flow.response = http.HTTPResponse.make(400, 'Tried to awaken a character that doesn\'t exist...', {})
-        return
+        flask.abort(400, description='Tried to awaken a character that doesn\'t exist...')
     
     newCard = None
     foundCurrentCard = False
@@ -360,8 +358,7 @@ def evolve(flow):
     if newCard is None and foundCurrentCard:
         newCard = cardList[-1]['card']
     if newCard is None:
-        flow.response = http.HTTPResponse.make(400, 'This character can\'t be awakened anymore...', {})
-        return
+        flask.abort(400, description='This character can\'t be awakened anymore...')
     
     # make new userCard and userChara
     nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
@@ -401,8 +398,7 @@ def evolve(flow):
             revisedUserChara = userCharaList[i]
 
     if revisedUserChara is None:
-        flow.response = http.HTTPResponse.make(400, 'Tried to awaken a character you don\'t have...', {})
-        return
+        flask.abort(400, description='Tried to awaken a character you don\'t have...')
 
     # save user info
     userCardList.append(newUserCard)
@@ -419,7 +415,7 @@ def evolve(flow):
         gameUser = json.load(f)
     gameUser['riche'] -= ccByLevel[newCard['rank']]
     if gameUser['riche'] < 0:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}', {})
+        flask.abort(400, description='{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}')
     
     with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
         json.dump(gameUser, f, ensure_ascii=False)
@@ -444,10 +440,10 @@ def evolve(flow):
         'userCardList': [targetUserCard, newUserCard],
         'userCharaList': [revisedUserChara]
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def limitBreak(flow):
-    body = json.loads(flow.request.text)
+def limitBreak():
+    body = flask.request.json
     targetUserCardId = body['userCardId']
 
     # edit userCard
@@ -461,8 +457,7 @@ def limitBreak(flow):
             targetUserCard = userCardList[i]
     
     if targetUserCard == {}:
-        flow.response = http.HTTPResponse.make(400, 'Tried to limit break a card you don\'t have...', {})
-        return
+        flask.abort(400, description='Tried to limit break a card you don\'t have...')
     
     with open('data/user/userCardList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCardList, f, ensure_ascii=False)
@@ -479,8 +474,7 @@ def limitBreak(flow):
             targetUserChara = userCharaList[i]
     
     if targetUserChara is None:
-        flow.response = http.HTTPResponse.make(400, 'Tried to limit break a card you don\'t have...', {})
-        return
+        flask.abort(400, description='Tried to limit break a card you don\'t have...')
     
     with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCharaList, f, ensure_ascii=False)
@@ -491,7 +485,7 @@ def limitBreak(flow):
         gameUser = json.load(f)
     gameUser['riche'] -= ccBySlotNum[targetUserCard['revision']-1]
     if gameUser['riche'] < 0:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}', {})
+        flask.abort(400, description='{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}')
     
     with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
         json.dump(gameUser, f, ensure_ascii=False)
@@ -503,10 +497,10 @@ def limitBreak(flow):
         'userCardList': [targetUserCard],
         'userCharaList': [targetUserChara]
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def composeMagia(flow):
-    body = json.loads(flow.request.text)
+def composeMagia():
+    body = flask.request.json
     targetUserCardId = body['userCardId']
 
     # change userCard magia level
@@ -521,8 +515,7 @@ def composeMagia(flow):
             targetUserCard['magiaLevel'] += 1
     
     if targetUserCard is None:
-        flow.response = http.HTTPResponse.make(400, 'Tried to level magia of a card you don\'t have...', {})
-        return
+        flask.abort(400, description='Tried to level magia of a card you don\'t have...')
 
     setUserCard(targetUserCardId, {'magiaLevel': targetUserCard['magiaLevel']})
 
@@ -547,7 +540,7 @@ def composeMagia(flow):
         gameUser = json.load(f)
     gameUser['riche'] -= ccByLevel[targetUserCard['magiaLevel']]
     if gameUser['riche'] < 0:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}', {})
+        flask.abort(400, description='{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}')
     
     with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
         json.dump(gameUser, f, ensure_ascii=False)
@@ -559,20 +552,19 @@ def composeMagia(flow):
         'userCardList': [targetUserCard],
         'userGiftList': revisedGiftList
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def handleUserCard(flow):
-    endpoint = flow.request.path.replace('/magica/api/userCard', '')
-    if endpoint.endswith('/compose'):
-        compose(flow)
-    elif endpoint.endswith('/customize'):
-        customize(flow)
-    elif endpoint.endswith('/composeMagia'):
-        composeMagia(flow)
-    elif endpoint.endswith('/limitBreak'):
-        limitBreak(flow)
-    elif endpoint.endswith('/evolve'):
-        evolve(flow)
+def handleUserCard(endpoint):
+    if endpoint.endswith('compose'):
+        return compose()
+    elif endpoint.endswith('customize'):
+        return customize()
+    elif endpoint.endswith('composeMagia'):
+        return composeMagia()
+    elif endpoint.endswith('limitBreak'):
+        return limitBreak()
+    elif endpoint.endswith('evolve'):
+        return evolve()
     else:
-        print(flow.request.path)
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        print('userCard/'+endpoint)
+        flask.abort(501, description="Not implemented")
