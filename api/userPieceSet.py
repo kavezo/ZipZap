@@ -1,9 +1,9 @@
-from mitmproxy import http
+import flask
 import json
 from datetime import datetime
 
-def save(flow):
-    body = json.loads(flow.request.text)
+def save():
+    body = flask.request.json
 
     with open('data/user/userPieceSetList.json', encoding='utf-8') as f:
         userPieceSetList = json.load(f)
@@ -38,12 +38,11 @@ def save(flow):
         'resultCode': 'success',
         'userPieceSetList': [targetUserPieceSet]
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {"Content-Type": "application/json"})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def handleUserPieceSet(flow):
-    endpoint = flow.request.path.replace('/magica/api/userPieceSet', '')
-    if endpoint.endswith('/save'):
-        save(flow)
+def handleUserPieceSet(endpoint):
+    if endpoint.startswith('save'):
+        return save()
     else:
-        print(flow.request.path)
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        print('userPieceSet/'+endpoint)
+        flask.abort(501, description="Not implemented")

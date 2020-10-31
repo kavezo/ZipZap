@@ -1,4 +1,4 @@
-from mitmproxy import http
+import flask
 import json
 from datetime import datetime
 from api import userPiece, gacha
@@ -169,8 +169,9 @@ def getPiece(piece, isMax, num):
     return {'userPieceList': newPieces}
 
 def getCC(amount):
-    with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
+    with open('data/user/gameUser.json', encoding='utf-8') as f:
         gameUser = json.load(f)
+    with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
         gameUser['riche'] += amount
         json.dump(gameUser, f, ensure_ascii=False)
     return {'gameUser': gameUser}
@@ -201,8 +202,8 @@ def obtain(item, body, args):
     return args
 
 # TODO: handle cases where it's a meguca sent to the present box
-def buy(flow):
-    body = json.loads(flow.request.text)
+def buy():
+    body = flask.request.json
     with open('data/shopList.json', encoding='utf-8') as f:
         shopList = json.load(f)
 
@@ -212,8 +213,7 @@ def buy(flow):
             currShop = shop
             break
     if currShop == {}:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "Trying to buy from a nonexistent shop","resultCode": "error","title": "Error"}', {})
-        return
+        flask.abort(400, description='{"errorTxt": "Trying to buy from a nonexistent shop","resultCode": "error","title": "Error"}')
     
     item = {}
     for shopItem in shop['shopItemList']:
@@ -221,8 +221,7 @@ def buy(flow):
             item = shopItem
             break
     if item == {}:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "Trying to buy something not in this shop","resultCode": "error","title": "Error"}', {})
-        return
+        flask.abort(400, description='{"errorTxt": "Trying to buy something not in this shop","resultCode": "error","title": "Error"}')
 
     # get the thing
     args = {}
@@ -260,12 +259,11 @@ def buy(flow):
     with open('data/user/userShopItemList.json', 'w+', encoding='utf-8') as f:
         json.dump(userShopItemList+[userShopItem], f, ensure_ascii=False)
 
-    flow.response = http.HTTPResponse.make(200, json.dumps(args, ensure_ascii=False), {})
+    return flask.json.dumps(args, ensure_ascii=False)
     
 
-def handleShop(flow):
-    endpoint = flow.request.path.replace('/magica/api/shop', '')
-    if endpoint.startswith('/buy'):
-        buy(flow)
+def handleShop(endpoint):
+    if endpoint.startswith('buy'):
+        return buy()
     else:
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        flask.abort(501, description="Not implemented")

@@ -1,5 +1,5 @@
 import json
-from mitmproxy import http
+import flask
 
 with open('data/user/gameUser.json', encoding='utf-8') as f:
     gameUser = json.load(f)
@@ -10,13 +10,13 @@ def saveGameUser():
     with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
         json.dump(gameUser, f, ensure_ascii=False)
 
-def changeLeader(flow):
+def changeLeader():
     global gameUser, user
     with open('data/user/gameUser.json', encoding='utf-8') as f:
         gameUser = json.load(f)
     with open('data/user/user.json', encoding='utf-8') as f:
         user = json.load(f)
-    body = json.loads(flow.request.text)
+    body = flask.request.json
     gameUser['leaderId'] = body['userCardId']
     saveGameUser()
 
@@ -25,16 +25,16 @@ def changeLeader(flow):
         'gameUser': gameUser,
         'user': user
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def editComment(flow):
+def editComment():
     global gameUser, user
     with open('data/user/gameUser.json', encoding='utf-8') as f:
         gameUser = json.load(f)
     with open('data/user/user.json', encoding='utf-8') as f:
         user = json.load(f)
 
-    body = json.loads(flow.request.text)
+    body = flask.request.json
     gameUser['comment'] = body['comment']
     saveGameUser()
 
@@ -43,15 +43,15 @@ def editComment(flow):
         'gameUser': gameUser,
         'user': user
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def setBackground(flow):
+def setBackground():
     global gameUser, user
     with open('data/user/gameUser.json', encoding='utf-8') as f:
         gameUser = json.load(f)
     with open('data/user/user.json', encoding='utf-8') as f:
         user = json.load(f)
-    body = json.loads(flow.request.text)
+    body = flask.request.json
     gameUser['bgItemId'] = body['itemId']
 
     with open('data/user/userItemList.json', encoding='utf-8') as f:
@@ -66,16 +66,15 @@ def setBackground(flow):
         "resultCode": "success",
         'gameUser': gameUser
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
     
-def handleGameUser(flow):
-    endpoint = flow.request.path.replace('/magica/api/gameUser', '')
-    if endpoint.endswith('/changeLeader'):
-        changeLeader(flow)
-    elif endpoint.endswith('/editComment'):
-        editComment(flow)
-    elif endpoint.endswith('/setBackground'):
-        setBackground(flow)
+def handleGameUser(endpoint):
+    if endpoint.endswith('changeLeader'):
+        return changeLeader()
+    elif endpoint.endswith('editComment'):
+        return editComment()
+    elif endpoint.endswith('setBackground'):
+        return setBackground()
     else:
-        print(flow.request.path)
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        print('gameUser' + endpoint)
+        flask.abort(501, description="Not implemented")

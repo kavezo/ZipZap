@@ -1,4 +1,4 @@
-from mitmproxy import http
+import flask
 import json
 import os
 import numpy as np
@@ -321,14 +321,12 @@ def addPiece(piece):
         json.dump(pieceList, f, ensure_ascii=False)
     return userPiece, foundExisting
     
-def draw(flow):
-    # TODO: mark destiny gems somehow
+def draw():
     # TODO: give a destiny gem if there's a dupe in the same multi-pull
-    # TODO: wait destiny gems don't actually work, fix that plzzzzz
     # TODO: get stories
 
     # handle different types of gachas
-    body = json.loads(flow.request.text)
+    body = flask.request.json
 
     with open('data/gachaScheduleList.json', encoding='utf-8') as f:
         gachas = json.load(f)
@@ -339,8 +337,7 @@ def draw(flow):
             chosenGacha = gacha
             break
     if chosenGacha is None:
-        flow.response = http.HTTPResponse.make(404, "Tried to pull on a gacha that doesn't exist...", {})
-        return
+        flask.abort(404, description="Tried to pull on a gacha that doesn't exist...")
 
     if 'gachaGroupId' in chosenGacha.keys():
         _, pity = setUpPity(chosenGacha['gachaGroupId'])
@@ -449,7 +446,6 @@ def draw(flow):
         "userItemList": userItemList,
         "userPieceList": userPieceList
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
 
     # add to user history
     pullId = str(uuid1())
@@ -473,29 +469,30 @@ def draw(flow):
         })
     with open('data/user/gachaHistoryList.json', 'w+', encoding='utf-8') as f:
         json.dump(historyList, f, ensure_ascii=False)
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def getHistory(flow):
-    pullId = flow.request.path.split('/')[-1]
+def getHistory(endpoint):
+    pullId = endpoint.split('/')[-1]
     if os.path.exists('data/user/gachaHistory/'+pullId+'.json'):
         with open('data/user/gachaHistory/'+pullId+'.json', encoding='utf-8') as f:
             response = json.load(f)
         response['resultCode'] = 'success'
-        flow.response = http.HTTPResponse.make(200, json.dumps(response), {'content-type': 'application/json;charset=UTF-8'})
+        return flask.json.dumps(response)
     else:
-        flow.response = http.HTTPResponse.make(404, "Couldn't find gacha history requested", {})
+        flask.abort(404, description='Could not find specified history.')
 
-def getProbability(flow):
+def getProbability():
     with open('data/gachaProbability.json', encoding='utf-8') as f:
         probabilities = f.read()
-    flow.response = http.HTTPResponse.make(200, probabilities, {})
+    return probabilities
 
-def handleGacha(flow):
-    endpoint = flow.request.path.replace('/magica/api/gacha', '')
-    if endpoint.startswith('/draw'):
-        draw(flow)
-    elif endpoint.startswith('/result'):
-        getHistory(flow)
-    elif endpoint.startswith('/probability'):
-        getProbability(flow)
+def handleGacha(endpoint):
+    if endpoint.startswith('draw'):
+        return draw()
+    elif endpoint.startswith('result'):
+        return getHistory(endpoint)
+    elif endpoint.startswith('probability'):
+        return getProbability()
     else:
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        print('gacha/'+endpoint)
+        flask.abort(501, description='Not implemented')

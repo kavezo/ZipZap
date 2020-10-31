@@ -1,12 +1,12 @@
-from mitmproxy import http
+import flask
 import json
 from datetime import datetime
 from uuid import uuid1
 import numpy as np
 from api import userCard
 
-def send(flow):
-    body = json.loads(flow.request.text)
+def send():
+    body = flask.request.json
     nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
 
     with open('data/user/user.json', encoding='utf-8') as f:
@@ -18,8 +18,7 @@ def send(flow):
     with open('data/user/userQuestBattleResult.json', encoding='utf-8') as f:
         battle = json.load(f)
     if not battle['id'] == body['userQuestBattleResultId']:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}', {})
-        return
+        flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
 
     # add exp to user and level up, maybe
     userExp = battle['questBattle']['exp']
@@ -154,7 +153,7 @@ def send(flow):
     }
     if newStatus != []:
         response['userStatusList'] = newStatus
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
 def extractArts(userCard, userPieceList):
     arts = []
@@ -255,16 +254,15 @@ def cardToPlayer(userCard, userChara, battleInfo):
         "memoriaList": battleInfo['memoriaList']
     }
 
-def get(flow):
-    body = json.loads(flow.request.text)
+def get():
+    body = flask.request.json
 
     isMirrors = False # TODO: make this actually represent if it's a mirrors battle
 
     with open('data/user/userQuestBattleResult.json', encoding='utf-8') as f:
         battle = json.load(f)
     if not battle['id'] == body['userQuestBattleResultId']:
-        flow.response = http.HTTPResponse.make(400, '{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}', {})
-        return
+        flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
 
     with open('data/user/userDeckList.json', encoding='utf-8') as f:
         userDeckList = json.load(f)
@@ -301,8 +299,7 @@ def get(flow):
                 if card['id'] == userCardId and card['enabled']:
                     userCard = card
             if userCard == {}:
-                flow.response = http.HTTPResponse.make(400, '{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}', {})
-                return
+                flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}')
             magiaList.append(cardMagiaToMagia(userCard))
             connectList.append(cardSkillToConnect(userCard))
 
@@ -312,8 +309,7 @@ def get(flow):
                 if chara['charaId'] == userCharaId:
                     userChara = chara
             if userChara == {}:
-                flow.response = http.HTTPResponse.make(400, '{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}', {})
-                return
+                flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}')
 
             pieceIds = [deck[key] for key in deck.keys() if key.startswith('userPieceId0'+str(currCardIdx))]
             pieces = [userPiece for userPiece in userPieceList if userPiece['id'] in pieceIds]
@@ -412,10 +408,10 @@ def get(flow):
         'isHalfSkill': isMirrors,
         'webData': webData
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def start(flow):    
-    body = json.loads(flow.request.text)
+def start():    
+    body = flask.request.json
     nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
 
     with open('data/user/gameUser.json', encoding='utf-8') as f:
@@ -458,8 +454,7 @@ def start(flow):
         if userDeck['deckType'] == body['deckType']:
                 chosenTeam = userDeck
     if chosenTeam is None:
-        flow.response = http.HTTPResponse.make(500, '{"errorTxt": "The team doesn\'t exist...","resultCode": "error","title": "Error"}', {})
-        return
+        flask.abort(400, '{"errorTxt": "The team doesn\'t exist...","resultCode": "error","title": "Error"}')
 
     with open('data/user/userFormationSheetList.json', encoding='utf-8') as f:
         formations = json.load(f)
@@ -468,8 +463,7 @@ def start(flow):
         if formation['formationSheetId'] == chosenTeam['formationSheetId']:
             chosenFormation = formation
     if chosenFormation is None:
-        flow.response = http.HTTPResponse.make(500, '{"errorTxt": "You don\'t have that formation.","resultCode": "error","title": "Error"}', {})
-        return
+        flask.abort(500, '{"errorTxt": "You don\'t have that formation.","resultCode": "error","title": "Error"}')
 
     userQuestBattleResult = {
             "battleType": "QUEST",
@@ -535,15 +529,15 @@ def start(flow):
     with open('data/user/userQuestBattleResult.json', 'w+', encoding='utf-8') as f:
         json.dump(userQuestBattleResult, f, ensure_ascii=False)
 
-    flow.response = http.HTTPResponse.make(200, json.dumps(resultdict, ensure_ascii=False), {})
+    return flask.json.dumps(resultdict, ensure_ascii=False)
 
-def handleQuest(flow):
-    endpoint = flow.request.path.replace('/magica/api/quest', '')
-    if endpoint.startswith('/start'):
-        start(flow)
-    elif endpoint.startswith('/native/get'):
-        get(flow)
-    elif endpoint.startswith('/native/result/send'):
-        send(flow)
+def handleQuest(endpoint):
+    if endpoint.startswith('start'):
+        return start()
+    elif endpoint.startswith('native/get'):
+        return get()
+    elif endpoint.startswith('native/result/send'):
+        return send()
     else:
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        print('quest/'+endpoint)
+        abort(501, description="Not implemented")

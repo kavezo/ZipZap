@@ -1,4 +1,4 @@
-from mitmproxy import http
+import flask
 import json
 import math
 import numpy as np
@@ -77,8 +77,8 @@ def levelUp(targetUserPiece, memoriaToSpend):
 
     return targetUserPiece, success
 
-def compose(flow):
-    body = json.loads(flow.request.text)
+def compose():
+    body = flask.requst.json
     targetUserPieceId = body['baseUserPieceId']
 
     with open('data/user/userPieceList.json', encoding='utf-8') as f:
@@ -98,8 +98,7 @@ def compose(flow):
                 removeUserPieceIdxs.append(i)
 
     if targetUserPiece == {}:
-        flow.response = http.HTTPResponse.make(400, 'Tried to level up a memoria you don\'t have...', {})
-        return
+        flask.abort(400, description='Tried to level up a memoria you don\'t have...')
 
     originalUserPiece = {k: v for k, v in targetUserPiece.items()}
     targetUserPiece, success = levelUp(targetUserPiece, memoriaToSpend)
@@ -179,10 +178,10 @@ def compose(flow):
             "successType": success
         }
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def setArchive(flow, isArchive):
-    body = json.loads(flow.request.text)
+def setArchive(isArchive):
+    body = flask.request.json
 
     with open('data/user/userPieceList.json', encoding='utf-8') as f:
         userPieceList = json.load(f)
@@ -195,9 +194,8 @@ def setArchive(flow, isArchive):
             targetUserPieceIdx = i
 
     if targetUserPiece == {}:
-        flow.response = http.HTTPResponse.make(400, 'Tried to ' + ('' if isArchive else 'un') +
-                                                                    'archive a memoria you don\'t have...', {})
-        return
+        flask.abort(400, description='Tried to ' + ('' if isArchive else 'un') +
+                                                                    'archive a memoria you don\'t have...')
 
     targetUserPiece['archive'] = isArchive
     userPieceList[targetUserPieceIdx] = targetUserPiece
@@ -208,16 +206,15 @@ def setArchive(flow, isArchive):
         'resultCode': 'success',
         'userPieceList': [targetUserPiece]
     }
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def handleUserPiece(flow):
-    endpoint = flow.request.path.replace('/magica/api/userPiece', '')
-    if endpoint.endswith('/compose'):
-        compose(flow)
-    elif endpoint.endswith('/archive'):
-        setArchive(flow, True)
-    elif endpoint.endswith('/unarchive'):
-        setArchive(flow, False)
+def handleUserPiece(endpoint):
+    if endpoint.endswith('compose'):
+        return compose()
+    elif endpoint.endswith('archive'):
+        return setArchive(True)
+    elif endpoint.endswith('unarchive'):
+        return setArchive(False)
     else:
-        print(flow.request.path)
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        print('userPiece/'+endpoint)
+        flask.abort(501, description="Not implemented")

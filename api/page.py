@@ -2,7 +2,7 @@ import json
 import re
 from datetime import datetime
 import os
-import getUserData
+import flask
 
 def charaCollection(response):
     with open('data/user/userSectionList.json', encoding='utf-8') as f:
@@ -127,7 +127,7 @@ specialCases = {
     "EnemyCollection": enemyCollection
 }
 
-# TODO: clear history on first day's login
+# TODO: clear history on first login of the day
 def login(user):
     print('logging in')
     nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
@@ -155,7 +155,7 @@ def addArgs(response, args, isLogin):
         user = json.load(f)
 
     lastLogin = datetime.strptime(user['lastLoginDate'], '%Y/%m/%d %H:%M:%S')
-    # need to check if midnight passed; logins have to happen then too
+    # checking if midnight passed; logins have to happen then too
     if isLogin or (lastLogin.date()-datetime.today().date()).days > 0:
         user = login(user)
         with open('data/user/user.json', 'w+', encoding='utf-8') as f:
@@ -180,17 +180,11 @@ def addArgs(response, args, isLogin):
         elif arg.lower().endswith('list'):
             response[arg] = []
 
-def handlePage(flow, isLogin):
-    request = flow.request
+def handlePage(endpoint):
     with open('data/events.json', encoding='UTF-8') as f:
         response = json.load(f)
 
-    endpoint_and_args = request.path.replace('/magica/api/page/', '')
-    if len(endpoint_and_args.split('?')) ==2:
-        endpoint, args = endpoint_and_args.split('?')
-    else:
-        endpoint = endpoint_and_args
-        args = ''
+    args = flask.request.args.get('value')
     args = re.sub(r'&timeStamp=\d+', '', args) \
             .replace('value=', '') \
             .split(',')
@@ -201,6 +195,6 @@ def handlePage(flow, isLogin):
     if endpoint=='ResumeBackground':
         print('resuming')
 
-    addArgs(response, args, isLogin)
+    addArgs(response, args, 'TopPage' in endpoint) # login if it's TopPage
     
-    return json.dumps(response)
+    return flask.json.dumps(response)

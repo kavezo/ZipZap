@@ -1,8 +1,7 @@
 import json
-from mitmproxy import http
+import flask
 
-def user(flow):
-
+def user(endpoint):
     response = {
         "followCount": 0,
         "followerCount": 0,
@@ -15,9 +14,8 @@ def user(flow):
     response['userName'] = user['loginName']
     response['lastAccessDate'] = user['lastLoginDate']
 
-    if flow.request.path.split('/')[-1] != user['id']:
-        flow.response = http.HTTPResponse.make(501, "not implemented :/", {})
-        return
+    if endpoint.split('/')[-1] != user['id']:
+        flask.abort(501, description='User does not exist')
 
     with open('data/user/gameUser.json', encoding='utf-8') as f:
         gameUser = json.load(f)
@@ -55,12 +53,12 @@ def user(flow):
             value = json.load(f)
         response[key] = value
 
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {"Content-Type": "application/json"})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def handleFriend(flow):
-    endpoint = flow.request.path.replace('/magica/api/friend', '')
-    if endpoint.startswith('/user'):
-        user(flow)
+def handleFriend(endpoint):
+    print(endpoint)
+    if endpoint.startswith('user'):
+        return user(endpoint)
     else:
         print(flow.request.path)
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        flask.abort(501, description='Not implemented')

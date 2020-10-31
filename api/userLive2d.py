@@ -1,8 +1,8 @@
 import json
-from mitmproxy import http
+import flask
 
-def setLive2d(flow):
-    body = json.loads(flow.request.text)
+def setLive2d():
+    body = flask.request.json
     with open('data/user/userCharaList.json', encoding='utf-8') as f:
         userCharaList = json.load(f)
 
@@ -17,12 +17,11 @@ def setLive2d(flow):
     with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCharaList, f, ensure_ascii=False)
 
-    flow.response = http.HTTPResponse.make(200, json.dumps(response, ensure_ascii=False), {"Content-Type": "application/json"})
+    return flask.json.dumps(response, ensure_ascii=False)
 
-def handleUserLive2d(flow):
-    endpoint = flow.request.path.replace('/magica/api/userLive2d', '')
-    if endpoint.endswith('/set'):
-        setLive2d(flow)
+def handleUserLive2d(endpoint):
+    if endpoint.endswith('set'):
+        return setLive2d()
     else:
-        print(flow.request.path)
-        flow.response = http.HTTPResponse.make(501, "Not implemented", {})
+        print('userLive2d/'+endpoint)
+        flask.abort(501, description="Not implemented")
