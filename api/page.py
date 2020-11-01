@@ -185,9 +185,12 @@ def handlePage(endpoint):
         response = json.load(f)
 
     args = flask.request.args.get('value')
-    args = re.sub(r'&timeStamp=\d+', '', args) \
-            .replace('value=', '') \
-            .split(',')
+    if args is not None:
+        args = re.sub(r'&timeStamp=\d+', '', args) \
+                .replace('value=', '') \
+                .split(',')
+    else:
+        args = []
 
     if endpoint in specialCases.keys():
         specialCases[endpoint](response)
