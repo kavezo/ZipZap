@@ -30,12 +30,17 @@ class DNSQuery:
     return packet
 
 q = Queue()
+domain_includes = ['magica-us.com', 'app.adjust.com', 'treasuredata.com', 'smbeat', 'xn--80axfjoj.xn--p1ai']
 def getDNS(udps):
   try:
     while True:
       data, addr = q.get()
       p=DNSQuery(data)
-      if p.dominio and not 'magica-us.com' in p.dominio.decode('ascii'):
+      should_redirect = False
+      for domain in domain_includes:
+        if domain in p.dominio.decode('ascii'):
+          should_redirect = True
+      if p.dominio and not should_redirect:
         domain = p.dominio.decode('ascii')
         # just extract the first IP
         for ipval in resolver.resolve(domain if not domain.endswith('.') else domain[:-1], 'A'):
@@ -57,7 +62,7 @@ if __name__ == '__main__':
   udps.bind(('',53))
 
   try:
-    for i in range(10):
+    for i in range(32):
         t = Thread(target=getDNS, args=(udps,))
         t.daemon = True
         t.start()
