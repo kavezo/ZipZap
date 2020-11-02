@@ -1,13 +1,13 @@
 env
 api/__pycache__
-assets
+windows/nginx_windows/assets/magica
 data/user
 data/userBackup
 .idea
 build
-dist/transferUserData
 *.spec
 *.pyc
 transferUserData
 data/extra_ignore
 extra_scripts
+dist

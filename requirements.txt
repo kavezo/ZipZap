@@ -1,3 +1,4 @@
-flask~=5.2
+flask
+pyinstaller
 numpy~=1.19
 requests~=2.24
