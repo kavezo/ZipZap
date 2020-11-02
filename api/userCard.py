@@ -244,6 +244,7 @@ def compose():
         extraExp = 0
     
     stats = getStats(targetUserCard['card'], rank, newLevel)
+    origLevel = targetUserCard['level']
     stats['level'] = newLevel
     stats['experience'] = extraExp
 
