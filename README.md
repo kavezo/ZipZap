@@ -8,8 +8,9 @@ folder from the old one to the new one.
 
 ### On the computer: installation and running
 
-On Windows, run startServer.bat. Two empty cmd windows should pop up; don't close either. If a third pops up saying you can
-close it, go ahead and close it. You can also close anything else that doesn't start out empty. That's it.
+On Windows, run startServer.bat. One empty cmd windows should pop up without immediately closing; don't close it. (If another
+non-empty window pops up saying you can close it, go ahead and close it. You can also close anything else that doesn't start
+out empty.) That's it.
 
 Currently, there isn't support for other systems out of the box. You'll have to get nginx for your system, copy over the
 conf in windows/nginx, and have Python 3. Then, you can run `pip install -r requirements.txt`. In three separate terminals,
