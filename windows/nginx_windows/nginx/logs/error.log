@@ -1,0 +1,2 @@
+2020/11/01 19:18:12 [notice] 13080#16304: signal process started
+2020/11/01 19:18:12 [error] 13080#16304: invalid PID number "" in "D:\0w0\magireco\na_server_flask\ZipZap\windows\nginx_windows\nginx/logs/nginx.pid"
