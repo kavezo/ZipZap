@@ -4,64 +4,34 @@ You need to have a computer to run the server on, and a device with MagiReco to 
 physical device work).
 
 To update to a new release: download the release, unzip it without overwriting the old one, then copy your data/user
-folder from the old one to the new one
+folder from the old one to the new one.
 
 ### On the computer: installation and running
 
-On Windows, if you have Python 3.8 installed (with pip, and with python added to PATH -- look out for these options when
-installing), you can just run getStarted.bat and then startServer.bat. You can close the browser window that pops up but 
-not the command line.
+On Windows, run startServer.bat. Two empty cmd windows should pop up; don't close either. If a third pops up saying you can
+close it, go ahead and close it. That's it.
 
-If you don't have Windows,
-1. Make sure you have python3, either in a separate env (recommended because system-wide Python dependency graphs are 
-gross) or on your system
-2. Run `pip install -r requirements.txt` in a command line
-3. Run `mitmproxy -s server.py` or `mitmweb -s server.py` in a command line, and do not close this command line. (If you
-run mitmweb though, you can close the browser window.)
+Currently, there isn't support for other systems out of the box. You'll have to get nginx for your system, copy over the
+conf in windows/nginx, and have Python 3. Then, you can run `pip install -r requirements.txt`. In three separate terminals,
+you'll need to run
+1. `python dnserver.py`
+2. `python gevent_server.py`
+3. nginx
+
+The server runs on a flask backend and nginx frontend, and uses a custom DNS server to redirect all requests to
+android.magica-us.com and ios.magica-us.com to the computer running it. Currently there's no way to config the ports that
+the server uses, but it needs 8022 for DNS, 5000 for flask, and 80 for nginx.
 
 ### On your phone/tablet/emulator: connecting to the private server
 
+0. Run the server on your computer, and keep it running.
 1. Make sure MagiReco is already installed on your device. I've only tested it on when it's past the tutorial, so no 
 guarantees it'll work for a fresh install. But it works even if you haven't updated.
 2. Find the IP address of the computer you're running the server on. I've only tested this with a local IP address (ones
 that start with 192.168) but external IP addresses should work.
-3. Configure a proxy on your device with the server address as your computer's IP address, and the port as 8080. You can
-google this if you don't know how to.
-4. By the way, if you're new to this, this needs to be done with the server running on your computer.
-5. Open mitm.it in a browser, and download and enable a certificate for your device
-6. Try loading google.com through the proxy -- if it works, then you can open the app and everything will be through the
-private server.
-
-I had a horrible time getting mitmproxy to work on some of my devices; specifically, I never got it to work with my Mac
-running mitmproxy and my iPhone 6 trying to get through it. Try googling any errors you have with mitmproxy; it may or
-may not help. In the future I might move off of mitmproxy and find a different solution.
-
-If you have trouble, check the original Reddit post -- the comments have a lot of common problems and ways people resolved
-them. Also, the official Magia Record discord has some amazing volunteers helping debug in the #en-closure channel right 
-now.
-
----
-### Porting over your existing data
-
-#### The easy way
-Start the server and connect your phone to it. Use the transfer button, and put your info in. This will erase your data 
-on the real server, though, so you'll have to transfer it back if you still want to play it on your device.
-
-#### The standalone way
-If you have trouble getting the server running and you're on Windows, delete the data/user folder and run 
-transferUserData.bat. If you're not on Windows and have Python, you can run `pip install -r requirements.txt` and then 
-`python transferUserData.py`.
-
----
-### Configuration
-
-By default, the app makes all requests to the cloud. If your internet is slow, this will also make the app significantly
-laggier than it usually is, and you might want to store the assets to serve from disk. All the assets will take up about 3GB
-of space, but they'll only be pulled from the cloud as needed. To do this, change the value of diskAssets in config.json to
-true.
-
-If you want to have all the assets on disk instead of downloading them as needed, you can pull everything from 
-https://github.com/kavezo/MagiRecoStatic into the assets folder.
+3. Open https://raw.githubusercontent.com/kavezo/ZipZap/https/windows/nginx_windows/nginx/conf/cert/ca.crt in a browser, 
+and download and install the certificate for your device.
+4. Change your DNS settings to point to your IP address.
 
 ---
 
@@ -130,30 +100,6 @@ the user's data.
 - add support for finding other users, following and using supports
 - move server to the cloud
 - hack app to call the server's address rather than having to rely on mitmproxy
-
-### Structure of this package
-As you can tell from the instructions, server.py is the main event handler. It intercepts requests from the app thanks
-to mitmproxy, and decides what to do.
-
-Most resources are going to be retrieved from an archive. For now that's en.rika.ren, but I don't know anything about
-rika.ren other than that it stores assets, and I might switch to my own archive later if we want to have custom assets 
-(like if we want to bring JP events in).
-
-The exception is website assets (html, js, css, and the like). These are stored locally because they're small in size,
-not likely to change, storing them speeds up loading, and we might want to edit them later to support new features like
-setting a bunch of awaken mats at once, or SE. These are stored in the assets folder.
-
-User data right now is stored locally as well, in the data/user directory. You can actually modify the files in here to
-change which megucas or memes or items you have. Just be careful or the app will error if you messed up on a line or 
-something.
-
-All the support for different API endpoints is stored in the api directory; each endpoint has its own file. They all
-take a request from the app, and generate the response. They edit the user data files directly, and also access the
-general data files in the data directory that store things like a list of all the megucas in the game.
-
-The page endpoint handles all of the info that the app needs to display different views, like the "Magical Girls"
-screen or the different shops. None of the other endpoints are called until you actually try to change the user's
-game data.
 
 ----
 If you have suggestions or want to help, please contact me at
