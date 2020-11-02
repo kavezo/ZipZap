@@ -21,7 +21,7 @@ you'll need to run
 
 The server runs on a flask backend and nginx frontend, and uses a custom DNS server to redirect all requests to
 android.magica-us.com and ios.magica-us.com to the computer running it. Currently there's no way to config the ports that
-the server uses, but it needs 8022 for DNS, 5000 for flask, and 80 for nginx.
+the server uses, but it needs 8022 for DNS, 5000 for flask, and 443 for nginx.
 
 ### On your phone/tablet/emulator: connecting to the private server
 
