@@ -393,8 +393,6 @@ def draw():
             # 3 = no swirlies
             # 4 = swirlies
             directionType = 3
-            #with open("/tmp/rarity.txt", "wt") as f:
-            #    f.write("%d" % result['cardList'][0]['card']['rank'])
             if result['cardList'][0]['card']['rank'] == "RANK_4":
                 directionType = 4
             responseList.append({
@@ -439,8 +437,8 @@ def draw():
             "live2dDetail": gachaKind['live2dDetail'],
             "messageId": gachaKind['messageId'],
             "message": gachaKind['message'],
-            # TODO: i'm guessing each 'direction' determines which picture
-            # to show
+            # 'directionX' controls what is shown as each of the 3 pictures
+            # in the opening animation
             "direction1": 1,
             "direction2": 1,
             "direction3": 1,
@@ -462,8 +460,6 @@ def draw():
         # (other 2 pics are always flower-thingy and mokyuu)
         gachaAnimation["direction2AttributeId"] = das_attribute
 
-    with open("/tmp/gacha.txt", "wt") as f:
-        f.write(json.dumps(gachaAnimation))
     if pityGroup is not None:
         gachaAnimation["userGachaGroup"] = pityGroup
     response = {
