@@ -390,10 +390,11 @@ def draw():
                 userCardList.append(card)
                 userLive2dList.append(live2d)
             userCharaList.append(chara)
-            # 3 = no swirlies
-            # 4 = swirlies
-            directionType = 3
-            if result['cardList'][0]['card']['rank'] == "RANK_4":
+            # set swirly animation based on rarity (4 == rainbow)
+            directionType = 2
+            if result['cardList'][0]['card']['rank'][-1] == "3":
+                directionType = 3
+            elif result['cardList'][0]['card']['rank'][-1] == "4":
                 directionType = 4
             responseList.append({
                 "type": "CARD",
@@ -402,9 +403,6 @@ def draw():
                 "cardId": result['cardList'][0]['cardId'],
                 "attributeId": result['chara']['attributeId'],
                 "charaId": result['charaId'],
-                # NOTE: controls swirlies
-                # 3 = no swirlies
-                # 4 = swirlies
                 "direction": directionType,
                 "displayName": result['chara']['name'],
                 "isNew": not foundExisting
