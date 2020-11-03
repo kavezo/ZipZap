@@ -2,6 +2,7 @@ import flask
 import json
 import os
 import numpy as np
+import random
 from datetime import datetime
 from uuid import uuid1
 
@@ -466,6 +467,13 @@ def draw():
         gachaAnimation["direction3"] = 3
         # to show attribute as 2nd picture, direction2 must == 2
         gachaAnimation["direction2AttributeId"] = das_attribute
+    else:
+        # randomly show attribute if didn't pull a 4 star
+        if random.randint(1, 2) == 2:
+             # pick a card, any card
+             random_card = random.choice([a for a in responseList if a["type"] == "CARD"])
+             gachaAnimation["direction2"] = 2
+             gachaAnimation["direction2AttributeId"] = random_card["attributeId"]
 
     if pityGroup is not None:
         gachaAnimation["userGachaGroup"] = pityGroup
