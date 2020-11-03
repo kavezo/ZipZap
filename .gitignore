@@ -2,6 +2,7 @@ env
 api/__pycache__
 windows/nginx_windows/assets/magica
 windows/nginx_windows/nginx/logs
+windows/nginx_windows/nginx/conf/cert
 windows/nginx_windows/cache
 data/user
 data/userBackup

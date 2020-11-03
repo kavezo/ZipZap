@@ -1,7 +1,8 @@
 import datetime
+import pathlib
 
 from cryptography import x509
-from cryptography.x509.oid import NameOID
+from cryptography.x509.oid import NameOID, ExtendedKeyUsageOID
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives import serialization
@@ -33,6 +34,8 @@ root_cert = x509.CertificateBuilder().subject_name(
     datetime.datetime.utcnow()
 ).not_valid_after(
     datetime.datetime.utcnow() + datetime.timedelta(days=3650)
+).add_extension(
+    x509.BasicConstraints(ca=True, path_length=None), critical=True
 ).sign(root_key, hashes.SHA256(), default_backend())
 
 # Now we want to generate a cert from that root
@@ -59,7 +62,7 @@ cert = x509.CertificateBuilder().subject_name(
 ).not_valid_before(
     datetime.datetime.utcnow()
 ).not_valid_after(
-datetime.datetime.utcnow() + datetime.timedelta(days=2*365)
+    datetime.datetime.utcnow() + datetime.timedelta(days=2 * 365)
 ).add_extension(
     x509.SubjectAlternativeName([
         x509.DNSName(u"*.magica-us.com"),
@@ -68,15 +71,25 @@ datetime.datetime.utcnow() + datetime.timedelta(days=2*365)
         x509.DNSName(u"xn--80axfjoj.xn--p1ai")
     ]),
     critical=False,
+).add_extension(
+    x509.ExtendedKeyUsage([
+        ExtendedKeyUsageOID.SERVER_AUTH
+    ]),
+    critical=True,
 ).sign(root_key, hashes.SHA256(), default_backend())
 
 path = 'windows/nginx_windows/nginx/conf/cert'
 
+pathlib.Path(path).mkdir(parents=False, exist_ok=True)
 with open(path + '/ca.crt', 'bw+') as f:
     f.write(root_cert.public_bytes(encoding=serialization.Encoding.PEM))
+with open(path + '/ca.key', 'bw+') as f:
+    f.write(root_key.private_bytes(encoding=serialization.Encoding.PEM,
+                                   format=serialization.PrivateFormat.TraditionalOpenSSL,
+                                   encryption_algorithm=serialization.NoEncryption()))
 with open(path + '/site.key', 'bw+') as f:
-    f.write(cert_key.private_bytes(encoding=serialization.Encoding.PEM, 
-        format=serialization.PrivateFormat.TraditionalOpenSSL,
-        encryption_algorithm=serialization.NoEncryption()))
+    f.write(cert_key.private_bytes(encoding=serialization.Encoding.PEM,
+                                   format=serialization.PrivateFormat.TraditionalOpenSSL,
+                                   encryption_algorithm=serialization.NoEncryption()))
 with open(path + '/site.crt', 'bw+') as f:
     f.write(cert.public_bytes(encoding=serialization.Encoding.PEM))
