@@ -390,6 +390,13 @@ def draw():
                 userCardList.append(card)
                 userLive2dList.append(live2d)
             userCharaList.append(chara)
+            # 3 = no swirlies
+            # 4 = swirlies
+            directionType = 3
+            #with open("/tmp/rarity.txt", "wt") as f:
+            #    f.write("%d" % result['cardList'][0]['card']['rank'])
+            if result['cardList'][0]['card']['rank'] == "RANK_4":
+                directionType = 4
             responseList.append({
                 "type": "CARD",
                 "rarity": result['cardList'][0]['card']['rank'],
@@ -397,7 +404,10 @@ def draw():
                 "cardId": result['cardList'][0]['cardId'],
                 "attributeId": result['chara']['attributeId'],
                 "charaId": result['charaId'],
-                "direction": 3,
+                # NOTE: controls swirlies
+                # 3 = no swirlies
+                # 4 = swirlies
+                "direction": directionType,
                 "displayName": result['chara']['name'],
                 "isNew": not foundExisting
             })
@@ -424,17 +434,36 @@ def draw():
     userItemList += \
         spend(gachaKind['needPointKind'], gachaKind['needQuantity'], gachaKind['substituteItemId'] if 'substituteItemId' in gachaKind else None)
 
-
     # create response
     gachaAnimation = {
             "live2dDetail": gachaKind['live2dDetail'],
             "messageId": gachaKind['messageId'],
             "message": gachaKind['message'],
+            # TODO: i'm guessing each 'direction' determines which picture
+            # to show
             "direction1": 1,
             "direction2": 1,
             "direction3": 1,
             "gachaResultList": responseList
         }
+
+    got_a_4_star = False
+    das_attribute = None
+    for card in responseList:
+        if card["rarity"] == "RANK_4":
+            got_a_4_star = True
+            das_attribute = card["attributeId"]
+            break
+
+    if got_a_4_star:
+        gachaAnimation["direction3"] = 3
+        # TODO: direction3 works (shows mikazuki villa) but
+        # for some reason direction2AttributeId has no effect
+        # (other 2 pics are always flower-thingy and mokyuu)
+        gachaAnimation["direction2AttributeId"] = das_attribute
+
+    with open("/tmp/gacha.txt", "wt") as f:
+        f.write(json.dumps(gachaAnimation))
     if pityGroup is not None:
         gachaAnimation["userGachaGroup"] = pityGroup
     response = {
