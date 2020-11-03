@@ -1,6 +1,7 @@
-flask
-pyinstaller
+flask~=1.1.2
+pyinstaller~=3.6
 numpy~=1.19
 requests~=2.24
-dnspython
-gevent
+dnspython~=2.0.0
+gevent~=20.9.0
+cryptography~=2.9.2
