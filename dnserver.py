@@ -4,6 +4,8 @@ from dns import resolver
 from queue import Queue
 from threading import Thread
 
+myip = socket.gethostbyname(socket.getfqdn())
+
 class DNSQuery:
   def __init__(self, data):
     self.data=data
@@ -55,14 +57,12 @@ def getDNS(udps):
     q.task_done()
     
 
-if __name__ == '__main__':
-  myip = socket.gethostbyname(socket.gethostname())
-
+def startDNS():
   udps = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
   udps.bind(('',53))
 
   try:
-    for i in range(32):
+    for _ in range(32):
         t = Thread(target=getDNS, args=(udps,))
         t.daemon = True
         t.start()
