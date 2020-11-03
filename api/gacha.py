@@ -439,7 +439,7 @@ def draw():
             #
             # first picture
             # 1 = flower thingy
-            # 2 = inverted flower thingy?
+            # 2 = inverted flower thingy
             "direction1": 1,
             #
             # second picture
