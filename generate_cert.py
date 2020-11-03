@@ -67,8 +67,8 @@ cert = x509.CertificateBuilder().subject_name(
     x509.SubjectAlternativeName([
         x509.DNSName(u"*.magica-us.com"),
         x509.DNSName(u"magica-us.com"),
-        x509.DNSName(u"*.xn--80axfjoj.xn--p1ai"),
-        x509.DNSName(u"xn--80axfjoj.xn--p1ai")
+        x509.DNSName(u"*.snaa.services"),
+        x509.DNSName(u"snaa.services")
     ]),
     critical=False,
 ).add_extension(
