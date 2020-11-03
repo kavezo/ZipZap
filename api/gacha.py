@@ -455,9 +455,7 @@ def draw():
 
     if got_a_4_star:
         gachaAnimation["direction3"] = 3
-        # TODO: direction3 works (shows mikazuki villa) but
-        # for some reason direction2AttributeId has no effect
-        # (other 2 pics are always flower-thingy and mokyuu)
+        # to show attribute as 2nd picture, direction2 must == 2
         gachaAnimation["direction2AttributeId"] = das_attribute
 
     if pityGroup is not None:
