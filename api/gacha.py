@@ -437,11 +437,22 @@ def draw():
             "live2dDetail": gachaKind['live2dDetail'],
             "messageId": gachaKind['messageId'],
             "message": gachaKind['message'],
-            # 'directionX' controls what is shown as each of the 3 pictures
-            # in the opening animation
+            # Determines which picture to show in the intro animation
+            #
+            # first picture
+            # 1 = flower thingy
+            # 2 = inverted flower thingy?
             "direction1": 1,
+            #
+            # second picture
+            # 1 = mokyuu
+            # 2 = attribute (specified with "direction2AttributeId")
             "direction2": 1,
-            "direction3": 1,
+            #
+            # third picture
+            # 1 = spear thingy
+            # 2 = iroha
+            # 3 = mikazuki villa
             "gachaResultList": responseList
         }
 
