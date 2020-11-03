@@ -457,7 +457,7 @@ def draw():
     got_a_4_star = False
     das_attribute = None
     for card in responseList:
-        if card["rarity"] == "RANK_4":
+        if card["type"] == "CARD" and card["rarity"] == "RANK_4":
             got_a_4_star = True
             das_attribute = card["attributeId"]
             break
