@@ -437,20 +437,20 @@ def draw():
             # Determines which picture to show in the intro animation
             #
             # first picture
-            # 1 = flower thingy
-            # 2 = inverted flower thingy
+            # 1 = flower thingy (no real meaning)
+            # 2 = inverted flower thingy (should mean at least 1 3+ star)
             "direction1": 1,
             #
             # second picture
-            # 1 = mokyuu
+            # 1 = mokyuu (no real meaning)
             # 2 = attribute (specified with "direction2AttributeId")
             "direction2": 1,
             #
             # third picture
-            # 1 = spear thingy
-            # 2 = iroha
-            # 3 = mikazuki villa
-            "direction3": random.randint(1,2),
+            # 1 = spear thingy (no real meaning)
+            # 2 = iroha (should mean at least 1 3+ star)
+            # 3 = mikazuki villa (at least 1 4 star)
+            "direction3": 1,
             "gachaResultList": responseList
         }
 
