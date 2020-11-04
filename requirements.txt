@@ -5,3 +5,5 @@ requests~=2.24
 dnspython~=2.0.0
 gevent~=20.9.0
 cryptography~=2.9.2
+twisted~=20.3.0
+service-identity~=18.1.0

@@ -1,75 +1,64 @@
+# Copyright (c) Twisted Matrix Laboratories.
+
+from twisted.internet import reactor, defer
+from twisted.names import client, dns, error, server
 import socket
-import dns
-from dns import resolver
-from queue import Queue
-from threading import Thread
 
 myip = socket.gethostbyname(socket.getfqdn())
 
-class DNSQuery:
-  def __init__(self, data):
-    self.data=data
-    self.dominio=b''
+class DynamicResolver(object):
+    """
+    A resolver which calculates the answers to certain queries based on the
+    query type and name.
+    """
 
-    tipo = (data[2] >> 3) & 15   # Opcode bits
-    if tipo == 0:                     # Standard query
-      ini=12
-      lon=data[ini]
-      while lon != 0:
-        self.dominio+=data[ini+1:ini+lon+1]+b'.'
-        ini+=lon+1
-        lon=data[ini]
+    def _dynamicResponseRequired(self, query):
+        """
+        Check the query to determine if a dynamic response is required.
+        """
+        domain_includes = ['magica-us.com', 'app.adjust.com', 'treasuredata.com', 'smbeat', 'snaa.services']
+        should_redirect = False
+        for domain in domain_includes:
+            if domain in query.name.name.decode('ascii'):
+                should_redirect = True
 
-  def respuesta(self, ip):
-    packet=b''
-    if self.dominio:
-      packet+=self.data[:2] + b"\x81\x80"
-      packet+=self.data[4:6] + self.data[4:6] + b'\x00\x00\x00\x00'   # Questions and Answers Counts
-      packet+=self.data[12:]                                         # Original Domain Name Question
-      packet+=b'\xc0\x0c'                                             # Pointer to domain name
-      packet+=b'\x00\x01\x00\x01\x00\x00\x00\x3c\x00\x04'             # Response type, ttl and resource data length -> 4 bytes
-      packet+=bytes([int(x) for x in ip.split('.')]) # 4bytes of IP
-    return packet
+        return should_redirect
 
-q = Queue()
-domain_includes = ['magica-us.com', 'app.adjust.com', 'treasuredata.com', 'smbeat', 'xn--80axfjoj.xn--p1ai']
-def getDNS(udps):
-  try:
-    while True:
-      data, addr = q.get()
-      p=DNSQuery(data)
-      should_redirect = False
-      for domain in domain_includes:
-        if domain in p.dominio.decode('ascii'):
-          should_redirect = True
-      if p.dominio and not should_redirect:
-        domain = p.dominio.decode('ascii')
-        # just extract the first IP
-        for ipval in resolver.resolve(domain if not domain.endswith('.') else domain[:-1], 'A'):
-          ip = ipval.to_text()
-          break
-      else:
-          ip = myip
-      udps.sendto(p.respuesta(ip), addr)
-  except Exception as e:
-    print(e)
-  finally:
-    q.task_done()
-    
+
+    def _doDynamicResponse(self, query):
+        """
+        Calculate the response to a query.
+        """
+        answer = dns.RRHeader(
+            name=query.name.name,
+            payload=dns.Record_A(address=myip.encode('ascii')))
+        answers = [answer]
+        authority = []
+        additional = []
+        return answers, authority, additional
+
+
+    def query(self, query, timeout=None):
+        """
+        Check if the query should be answered dynamically, otherwise dispatch to
+        the fallback resolver.
+        """
+        if self._dynamicResponseRequired(query):
+            return defer.succeed(self._doDynamicResponse(query))
+        else:
+            return defer.fail(error.DomainError())
 
 def startDNS():
-  udps = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-  udps.bind(('',53))
+    """
+    Run the server.
+    """
+    factory = server.DNSServerFactory(
+        clients=[DynamicResolver(), client.Resolver(resolv='resolv.conf')]
+    )
 
-  try:
-    for _ in range(32):
-        t = Thread(target=getDNS, args=(udps,))
-        t.daemon = True
-        t.start()
-    while True:
-      answer = udps.recvfrom(1024)
-      q.put(answer)
-  except KeyboardInterrupt:
-    print('Shutting down...')
-    q.join()
-    udps.close()
+    protocol = dns.DNSDatagramProtocol(controller=factory)
+
+    reactor.listenUDP(53, protocol)
+    reactor.listenTCP(53, factory)
+
+    reactor.run()

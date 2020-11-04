@@ -4,6 +4,9 @@ windows/nginx_windows/assets/magica
 windows/nginx_windows/nginx/logs
 windows/nginx_windows/nginx/conf/cert
 windows/nginx_windows/cache
+windows/dnserver
+windows/gevent_server
+windows/generate_cert.exe
 data/user
 data/userBackup
 .idea
