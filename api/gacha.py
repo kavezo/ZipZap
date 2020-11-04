@@ -2,6 +2,7 @@ import flask
 import json
 import os
 import numpy as np
+import random
 from datetime import datetime
 from uuid import uuid1
 
@@ -390,6 +391,12 @@ def draw():
                 userCardList.append(card)
                 userLive2dList.append(live2d)
             userCharaList.append(chara)
+            # set swirly animation based on rarity (4 == rainbow)
+            directionType = 2
+            if result['cardList'][0]['card']['rank'][-1] == "3":
+                directionType = 3
+            elif result['cardList'][0]['card']['rank'][-1] == "4":
+                directionType = 4
             responseList.append({
                 "type": "CARD",
                 "rarity": result['cardList'][0]['card']['rank'],
@@ -397,7 +404,7 @@ def draw():
                 "cardId": result['cardList'][0]['cardId'],
                 "attributeId": result['chara']['attributeId'],
                 "charaId": result['charaId'],
-                "direction": 3,
+                "direction": directionType,
                 "displayName": result['chara']['name'],
                 "isNew": not foundExisting
             })
@@ -424,17 +431,50 @@ def draw():
     userItemList += \
         spend(gachaKind['needPointKind'], gachaKind['needQuantity'], gachaKind['substituteItemId'] if 'substituteItemId' in gachaKind else None)
 
-
     # create response
     gachaAnimation = {
             "live2dDetail": gachaKind['live2dDetail'],
             "messageId": gachaKind['messageId'],
             "message": gachaKind['message'],
+            # Determines which picture to show in the intro animation
+            #
+            # first picture
+            # 1 = flower thingy
+            # 2 = inverted flower thingy
             "direction1": 1,
+            #
+            # second picture
+            # 1 = mokyuu
+            # 2 = attribute (specified with "direction2AttributeId")
             "direction2": 1,
-            "direction3": 1,
+            #
+            # third picture
+            # 1 = spear thingy
+            # 2 = iroha
+            # 3 = mikazuki villa
             "gachaResultList": responseList
         }
+
+    got_a_4_star = False
+    das_attribute = None
+    for card in responseList:
+        if card["type"] == "CARD" and card["rarity"] == "RANK_4":
+            got_a_4_star = True
+            das_attribute = card["attributeId"]
+            break
+
+    if got_a_4_star:
+        gachaAnimation["direction3"] = 3
+        # to show attribute as 2nd picture, direction2 must == 2
+        gachaAnimation["direction2AttributeId"] = das_attribute
+    else:
+        # randomly show attribute if didn't pull a 4 star
+        if random.randint(1, 2) == 2:
+             # pick a card, any card
+             random_card = random.choice([a for a in responseList if a["type"] == "CARD"])
+             gachaAnimation["direction2"] = 2
+             gachaAnimation["direction2AttributeId"] = random_card["attributeId"]
+
     if pityGroup is not None:
         gachaAnimation["userGachaGroup"] = pityGroup
     response = {
