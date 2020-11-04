@@ -398,11 +398,9 @@ def draw():
                 userCardList.append(card)
                 userLive2dList.append(live2d)
             userCharaList.append(chara)
-            # set swirly animation based on rarity (4 == rainbow)
-            directionType = 2
-            if result['cardList'][0]['card']['rank'][-1] == "3":
-                directionType = 3
-            elif result['cardList'][0]['card']['rank'][-1] == "4":
+            directionType = 3
+            if result['cardList'][0]['card']['rank'][-1] == "4":
+                # give it the rainbow swirlies
                 directionType = 4
             responseList.append({
                 "type": "CARD",
@@ -446,41 +444,44 @@ def draw():
             # Determines which picture to show in the intro animation
             #
             # first picture
-            # 1 = flower thingy
-            # 2 = inverted flower thingy
+            # 1 = flower thingy (default, no real meaning)
+            # 2 = inverted flower thingy (should mean at least 1 3+ star CARD (not necessarily meguca, could be memoria))
             "direction1": 1,
             #
             # second picture
-            # 1 = mokyuu
+            # 1 = mokyuu (default, no real meaning)
             # 2 = attribute (specified with "direction2AttributeId")
             "direction2": 1,
             #
             # third picture
-            # 1 = spear thingy
-            # 2 = iroha
-            # 3 = mikazuki villa
+            # 1 = spear thingy (default, no real meaning)
+            # 2 = iroha (should mean at least 1 3+ star)
+            # 3 = mikazuki villa (at least 1 4 star)
+            "direction3": 1,
             "gachaResultList": responseList
         }
 
-    got_a_4_star = False
-    das_attribute = None
-    for card in responseList:
-        if card["type"] == "CARD" and card["rarity"] == "RANK_4":
-            got_a_4_star = True
-            das_attribute = card["attributeId"]
-            break
+    high_rarity_pulled = [thingy for thingy in responseList if thingy["rarity"] == "RANK_3" or thingy["rarity"] == "RANK_4"]
+    cards_pulled = [thingy for thingy in responseList if thingy["type"] == "CARD"]
+    any_3stars_pulled = [card for card in cards_pulled if card["rarity"] == "RANK_3"]
+    any_4stars_pulled = [card for card in cards_pulled if card["rarity"] == "RANK_4"]
 
-    if got_a_4_star:
+    # if any high rarity thingies pulled, set direction1
+    if len(high_rarity_pulled) >= 1:
+        gachaAnimation["direction1"] = 2
+
+    # 50-50 chance of displaying a random card's attribute symbol instead of mokyuu
+    if random.randint(1, 2) == 2:
+        random_card = random.choice(cards_pulled)
+        gachaAnimation["direction2"] = 2
+        gachaAnimation["direction2AttributeId"] = random_card["attributeId"]
+
+    if len(any_4stars_pulled) >= 1:
+        # show mikazuki villa if any 4 stars were pulled
         gachaAnimation["direction3"] = 3
-        # to show attribute as 2nd picture, direction2 must == 2
-        gachaAnimation["direction2AttributeId"] = das_attribute
-    else:
-        # randomly show attribute if didn't pull a 4 star
-        if random.randint(1, 2) == 2:
-             # pick a card, any card
-             random_card = random.choice([a for a in responseList if a["type"] == "CARD"])
-             gachaAnimation["direction2"] = 2
-             gachaAnimation["direction2AttributeId"] = random_card["attributeId"]
+    elif len(any_3stars_pulled) >= 1:
+        # show iroha if any 3 stars were pulled
+        gachaAnimation["direction3"] = 2
 
     if pityGroup is not None:
         gachaAnimation["userGachaGroup"] = pityGroup
