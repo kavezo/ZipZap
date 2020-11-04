@@ -9,7 +9,7 @@ def isAnswered():
         "resultCode": "success",
         'isAnswered': True
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 # TODO: actually set password
 def setPassword():
@@ -22,7 +22,7 @@ def setPassword():
         "resultCode": "success",
         'gameUser': gameUser
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def transfer():
     body = flask.request.json

@@ -517,7 +517,7 @@ def draw():
         })
     with open('data/user/gachaHistoryList.json', 'w+', encoding='utf-8') as f:
         json.dump(historyList, f, ensure_ascii=False)
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def getHistory(endpoint):
     pullId = endpoint.split('/')[-1]
@@ -525,7 +525,7 @@ def getHistory(endpoint):
         with open('data/user/gachaHistory/'+pullId+'.json', encoding='utf-8') as f:
             response = json.load(f)
         response['resultCode'] = 'success'
-        return flask.json.dumps(response)
+        return flask.jsonify(response)
     else:
         flask.abort(404, description='Could not find specified history.')
 

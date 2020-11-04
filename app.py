@@ -1,6 +1,8 @@
 import flask
 app = flask.Flask(__name__)
 
+app.config['JSON_AS_ASCII'] = False
+
 from api import friend, gacha, gameUser, money, page, quest, shop, \
     user, userCard, userChara, userDeck, userLive2d, userPiece, userPieceSet, logger
     
@@ -24,7 +26,7 @@ app.add_url_rule('/test/logger/error', view_func=logger.handleError, methods=['P
 
 @app.route('/search/<path:endpoint>', methods=['GET', 'POST'])
 def dummysearch(endpoint):
-    return flask.json.dumps({
+    return flask.jsonify({
         "_shards": {
             "failed": 0,
             "successful": 0,

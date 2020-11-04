@@ -63,7 +63,7 @@ def save():
     with open('data/user/userDeckList.json', 'w+', encoding='utf-8') as f:
         json.dump(userDeckList, f, ensure_ascii=False)
     
-    return flask.json.dumps({
+    return flask.jsonify({
         'resultCode': 'success',
         'userDeckList': [userDeckList[deckIdx]]
     }, ensure_ascii=False)

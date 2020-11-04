@@ -43,7 +43,7 @@ def sale():
         'userCharaList': responseCharaList,
         'userItemList': responseItemList
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def visualize():
     body = flask.request.json
@@ -74,7 +74,7 @@ def visualize():
     with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCharaList, f, ensure_ascii=False)
 
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
     
 def handleUserChara(endpoint):
     if endpoint.startswith('sale'):

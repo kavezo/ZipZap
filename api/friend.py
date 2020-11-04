@@ -60,5 +60,5 @@ def handleFriend(endpoint):
     if endpoint.startswith('user'):
         return user(endpoint)
     else:
-        print(flow.request.path)
+        print(flask.request.path)
         flask.abort(501, description='Not implemented')
