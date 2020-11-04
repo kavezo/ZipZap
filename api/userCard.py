@@ -6,7 +6,7 @@ from uuid import uuid1
 from datetime import datetime
 
 # stolen from CardUtil.js
-exArr = [0, 110, 250, 430, 660, 950, 1310, 1750, 2280, 2910, 3640, 4470, 5400, 6430, 7560, 8790, 10120, 11550, 13080, 14710, 16440, 18270, 20200, 22230, 24360, 26590, 28920, 31350, 33880, 36510, 39240, 42070, 45E3, 48030, 51160, 54390, 57720, 61150, 64680, 68310, 72040, 75870, 79800, 83830, 87960, 92190, 96520, 100950, 105480, 110110, 114840, 119670, 124600, 129630, 134760, 139990, 145320, 150750, 156280, 161910, 167640, 173470, 179400, 185430, 191560, 197790, 204120, 210550, 217080, 223710, 230440, 237270, 244200, 251230, 258360, 265590, 272920, 280350, 287880, 295510,
+expByLvl = [0, 110, 250, 430, 660, 950, 1310, 1750, 2280, 2910, 3640, 4470, 5400, 6430, 7560, 8790, 10120, 11550, 13080, 14710, 16440, 18270, 20200, 22230, 24360, 26590, 28920, 31350, 33880, 36510, 39240, 42070, 45E3, 48030, 51160, 54390, 57720, 61150, 64680, 68310, 72040, 75870, 79800, 83830, 87960, 92190, 96520, 100950, 105480, 110110, 114840, 119670, 124600, 129630, 134760, 139990, 145320, 150750, 156280, 161910, 167640, 173470, 179400, 185430, 191560, 197790, 204120, 210550, 217080, 223710, 230440, 237270, 244200, 251230, 258360, 265590, 272920, 280350, 287880, 295510,
         303240, 311070, 319E3, 327030, 335160, 343390, 351720, 360150, 368680, 377310, 386040, 394870, 403800, 412830, 421960, 431190, 440520, 449950, 459480, 469110
     ]
 itemExp = [100, 500, 2500]
@@ -39,9 +39,7 @@ with open('data/user/user.json', encoding='utf-8') as f:
     userInfo = json.load(f)
 userId = userInfo['id']
 
-# stolen from CardUtil.js
-# this level thing makes zero sense but ig it's what the game does...
-def getComposeCost(rank, level, useItem):
+def getCCAmount(rank, level, useItem):
     totalCC = 0
     if rank in rankNumbers:
         levelExtraCC, baseCC, rankMult = [rankNumbers[rank]]*3
@@ -99,51 +97,36 @@ def getStats(baseCard, rank, level):
         'hp': baseCard['hp']
     }
 
+    multipliers = {
+        'BALANCE': [1,1,1],
+        'ATTACK': [1.03, 0.97, 0.98],
+        'DEFENSE': [0.98, 1.05, 0.97],
+        'HP': [0.97, 0.98, 1.04],
+        'ATKDEF': [1.02, 1.01, 0.99],
+        'ATKHP': [1.01, 0.99, 1.02],
+        'DEFHP': [0.99, 1.02, 1.01]
+    }
+
     level = calculateMultiplier(rank, level)
-    atkMult, defMult, hpMult = 0, 0, 0
-    if growthType == "BALANCE":
-            hpMult = defMult = atkMult = 1
-    elif growthType == "ATTACK":
-            atkMult = 1.03
-            defMult = .97
-            hpMult = .98
-    elif growthType == "DEFENSE":
-            atkMult = .98
-            defMult = 1.05
-            hpMult = .97
-    elif growthType == "HP":
-            atkMult = .97
-            defMult = .98
-            hpMult = 1.04
-    elif growthType == "ATKDEF":
-            atkMult = 1.02
-            defMult = 1.01
-            hpMult = .99
-    elif growthType == "ATKHP":
-            atkMult = 1.01
-            hpMult = 1.02
-    if growthType == "DEFHP":
-            atkMult = .99
-            defMult = 1.02
-            hpMult = 1.01
+    atkMult, defMult, hpMult = multipliers[growthType]
+    multDict = {'attack': atkMult, 'defense': defMult, 'hp': hpMult}
             
-    stats['attack'] = math.ceil(baseCard['attack'] + baseCard['attack'] * level * atkMult)
-    stats['defense'] = math.ceil(baseCard['defense'] + baseCard['defense'] * level * defMult)
-    stats['hp'] = math.ceil(baseCard['hp'] + baseCard['hp'] * level * hpMult)
+    for key in ['attack', 'defense', 'hp']:
+        stats[key] = math.ceil(baseCard[key] + baseCard[key] * level * multDict[key])
     return stats
 
-# stolen from cardUtil.js
 def getComposeExp(cardElem, items):
     exp = 0
     for itemId, amount in items.items():
         isSameElement = 1.5 if cardElem in itemId or 'ALL' in itemId else 1
 
+        addExp = itemExp[0]
         if '_PP' in itemId:
-            exp += itemExp[2] * isSameElement * amount
+            addExp = itemExp[2]
         elif '_P' in itemId:
-            exp += itemExp[1] * isSameElement * amount
-        else:
-            exp += itemExp[2] * isSameElement * amount
+            addExp = itemExp[1]
+        
+        exp += addExp * isSameElement * amount
 
     return exp
 
@@ -205,13 +188,13 @@ def setUserCard(cardId, args):
 
 def getFinalLevel(targetUserCard, exp):
     origLevel = targetUserCard['level']
-    finalExp = exArr[origLevel-1] + targetUserCard['experience'] + exp
+    finalExp = expByLvl[origLevel-1] + targetUserCard['experience'] + exp
     newLevel = 1
     extraExp = 0
-    for i in range(len(exArr)-1, 0, -1): # maybe implement a binary rather than a linear search?
-        if exArr[i] <= finalExp:
+    for i in range(len(expByLvl)-1, 0, -1): # maybe implement a binary rather than a linear search?
+        if expByLvl[i] <= finalExp:
             newLevel = i+1
-            extraExp = finalExp - exArr[i]
+            extraExp = finalExp - expByLvl[i]
             break
     return newLevel, extraExp
 
@@ -260,7 +243,7 @@ def compose():
         flask.abort(400, description='{"errorTxt": "'+repr(e)+'","resultCode": "error","title": "Error"}')
 
     # modify CC
-    cc = getComposeCost(rank, origLevel, body['useItem'])
+    cc = getCCAmount(rank, origLevel, body['useItem'])
     with open('data/user/gameUser.json', encoding='utf-8') as f:
         gameUser = json.load(f)
     gameUser['riche'] -= cc
