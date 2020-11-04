@@ -78,7 +78,7 @@ def levelUp(targetUserPiece, memoriaToSpend):
     return targetUserPiece, success
 
 def compose():
-    body = flask.requst.json
+    body = flask.request.json
     targetUserPieceId = body['baseUserPieceId']
 
     with open('data/user/userPieceList.json', encoding='utf-8') as f:
@@ -178,7 +178,7 @@ def compose():
             "successType": success
         }
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def setArchive(isArchive):
     body = flask.request.json
@@ -206,7 +206,7 @@ def setArchive(isArchive):
         'resultCode': 'success',
         'userPieceList': [targetUserPiece]
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def handleUserPiece(endpoint):
     if endpoint.endswith('compose'):

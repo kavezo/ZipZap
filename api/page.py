@@ -200,4 +200,4 @@ def handlePage(endpoint):
 
     addArgs(response, args, 'TopPage' in endpoint) # login if it's TopPage
     
-    return flask.json.dumps(response)
+    return flask.jsonify(response)

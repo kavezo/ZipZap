@@ -17,7 +17,7 @@ def setLive2d():
     with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCharaList, f, ensure_ascii=False)
 
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def handleUserLive2d(endpoint):
     if endpoint.endswith('set'):

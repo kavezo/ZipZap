@@ -259,7 +259,7 @@ def buy():
     with open('data/user/userShopItemList.json', 'w+', encoding='utf-8') as f:
         json.dump(userShopItemList+[userShopItem], f, ensure_ascii=False)
 
-    return flask.json.dumps(args, ensure_ascii=False)
+    return flask.jsonify(args)
     
 
 def handleShop(endpoint):

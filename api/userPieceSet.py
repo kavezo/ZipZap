@@ -38,7 +38,7 @@ def save():
         'resultCode': 'success',
         'userPieceSetList': [targetUserPieceSet]
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def handleUserPieceSet(endpoint):
     if endpoint.startswith('save'):

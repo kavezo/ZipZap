@@ -25,7 +25,7 @@ def changeLeader():
         'gameUser': gameUser,
         'user': user
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def editComment():
     global gameUser, user
@@ -43,7 +43,7 @@ def editComment():
         'gameUser': gameUser,
         'user': user
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def setBackground():
     global gameUser, user
@@ -66,7 +66,7 @@ def setBackground():
         "resultCode": "success",
         'gameUser': gameUser
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
     
 def handleGameUser(endpoint):
     if endpoint.endswith('changeLeader'):

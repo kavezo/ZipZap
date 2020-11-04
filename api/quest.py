@@ -153,7 +153,7 @@ def send():
     }
     if newStatus != []:
         response['userStatusList'] = newStatus
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def extractArts(userCard, userPieceList):
     arts = []
@@ -408,7 +408,7 @@ def get():
         'isHalfSkill': isMirrors,
         'webData': webData
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def start():    
     body = flask.request.json
@@ -529,7 +529,7 @@ def start():
     with open('data/user/userQuestBattleResult.json', 'w+', encoding='utf-8') as f:
         json.dump(userQuestBattleResult, f, ensure_ascii=False)
 
-    return flask.json.dumps(resultdict, ensure_ascii=False)
+    return flask.jsonify(resultdict)
 
 def handleQuest(endpoint):
     if endpoint.startswith('start'):
@@ -540,4 +540,4 @@ def handleQuest(endpoint):
         return send()
     else:
         print('quest/'+endpoint)
-        abort(501, description="Not implemented")
+        flask.abort(501, description="Not implemented")

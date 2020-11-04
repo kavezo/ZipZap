@@ -278,7 +278,7 @@ def compose():
         'userCardList': [targetUserCard],
         'userItemList': revisedItemList
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def customize():
     body = flask.request.json
@@ -318,7 +318,7 @@ def customize():
         'userCardList': [targetUserCard],
         'userGiftList': revisedItemList
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def evolve():
     body = flask.request.json
@@ -441,7 +441,7 @@ def evolve():
         'userCardList': [targetUserCard, newUserCard],
         'userCharaList': [revisedUserChara]
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def limitBreak():
     body = flask.request.json
@@ -498,7 +498,7 @@ def limitBreak():
         'userCardList': [targetUserCard],
         'userCharaList': [targetUserChara]
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def composeMagia():
     body = flask.request.json
@@ -553,7 +553,7 @@ def composeMagia():
         'userCardList': [targetUserCard],
         'userGiftList': revisedGiftList
     }
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def handleUserCard(endpoint):
     if endpoint.endswith('compose'):
