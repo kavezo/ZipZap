@@ -459,8 +459,8 @@ def draw():
         # pulled a 4 star, show mikazuki villa and pick a random 4star and show its attribute
         random_4star = random.choice(any_4stars_pulled)
         gachaAnimation["direction2"] = 2
-        gachaAnimation["direction3"] = 3
         gachaAnimation["direction2AttributeId"] = random_4star["attributeId"]
+        gachaAnimation["direction3"] = 3
     else:
         # no 4stars pulled
         # 50-50 chance to show the attribute of a random 4star, or just mokyuu
@@ -469,6 +469,10 @@ def draw():
              random_card = random.choice([card for card in responseList if card["type"] == "CARD"])
              gachaAnimation["direction2"] = 2
              gachaAnimation["direction2AttributeId"] = random_card["attributeId"]
+             # show iroha if you pulled a 3star
+             any_3stars_pulled = [card for card in responseList if card["type"] == "CARD" and card["rarity"] == "RANK_3"]
+             if len(any_3stars_pulled) >= 1:
+                 gachaAnimation["direction3"] = 2
 
     if pityGroup is not None:
         gachaAnimation["userGachaGroup"] = pityGroup
