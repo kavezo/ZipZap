@@ -437,42 +437,39 @@ def draw():
             # Determines which picture to show in the intro animation
             #
             # first picture
-            # 1 = flower thingy (no real meaning)
+            # 1 = flower thingy (default, no real meaning)
             # 2 = inverted flower thingy (should mean at least 1 3+ star)
             "direction1": 1,
             #
             # second picture
-            # 1 = mokyuu (no real meaning)
+            # 1 = mokyuu (default, no real meaning)
             # 2 = attribute (specified with "direction2AttributeId")
             "direction2": 1,
             #
             # third picture
-            # 1 = spear thingy (no real meaning)
+            # 1 = spear thingy (default, no real meaning)
             # 2 = iroha (should mean at least 1 3+ star)
             # 3 = mikazuki villa (at least 1 4 star)
             "direction3": 1,
             "gachaResultList": responseList
         }
 
-    any_4stars_pulled = [card for card in responseList if card["type"] == "CARD" and card["rarity"] == "RANK_4"]
-    if len(any_4stars_pulled) >= 1:
-        # pulled a 4 star, show mikazuki villa and pick a random 4star and show its attribute
-        random_4star = random.choice(any_4stars_pulled)
+    cards_pulled = [thingy for thingy in responseList if thingy["type"] == "CARD"]
+    any_3stars_pulled = [card for card in cards_pulled if card["rarity"] == "RANK_3"]
+    any_4stars_pulled = [card for card in cards_pulled if card["rarity"] == "RANK_4"]
+
+    # 50-50 chance of displaying a random card's attribute symbol instead of mokyuu
+    if random.randint(1, 2) == 2:
+        random_card = random.choice(cards_pulled)
         gachaAnimation["direction2"] = 2
-        gachaAnimation["direction2AttributeId"] = random_4star["attributeId"]
+        gachaAnimation["direction2AttributeId"] = random_card["attributeId"]
+
+    if len(any_4stars_pulled) >= 1:
+        # show mikazuki villa if any 4 stars were pulled
         gachaAnimation["direction3"] = 3
-    else:
-        # no 4stars pulled
-        # 50-50 chance to show the attribute of a random 4star, or just mokyuu
-        if random.randint(1, 2) == 2:
-             # pick a card, any card
-             random_card = random.choice([card for card in responseList if card["type"] == "CARD"])
-             gachaAnimation["direction2"] = 2
-             gachaAnimation["direction2AttributeId"] = random_card["attributeId"]
-             # show iroha if you pulled a 3star
-             any_3stars_pulled = [card for card in responseList if card["type"] == "CARD" and card["rarity"] == "RANK_3"]
-             if len(any_3stars_pulled) >= 1:
-                 gachaAnimation["direction3"] = 2
+    elif len(any_3stars_pulled) >= 1:
+        # show iroha if any 3 stars were pulled
+        gachaAnimation["direction3"] = 2
 
     if pityGroup is not None:
         gachaAnimation["userGachaGroup"] = pityGroup
