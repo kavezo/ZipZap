@@ -438,7 +438,7 @@ def draw():
             #
             # first picture
             # 1 = flower thingy (default, no real meaning)
-            # 2 = inverted flower thingy (should mean at least 1 3+ star)
+            # 2 = inverted flower thingy (should mean at least 1 3+ star CARD (not necessarily meguca, could be memoria))
             "direction1": 1,
             #
             # second picture
@@ -454,9 +454,14 @@ def draw():
             "gachaResultList": responseList
         }
 
+    high_rarity_pulled = [thingy for thingy in responseList if thingy["rarity"] == "RANK_3" or thingy["rarity"] == "RANK_4"]
     cards_pulled = [thingy for thingy in responseList if thingy["type"] == "CARD"]
     any_3stars_pulled = [card for card in cards_pulled if card["rarity"] == "RANK_3"]
     any_4stars_pulled = [card for card in cards_pulled if card["rarity"] == "RANK_4"]
+
+    # if any high rarity thingies pulled, set direction1
+    if len(high_rarity_pulled) >= 1:
+        gachaAnimation["direction1"] = 2
 
     # 50-50 chance of displaying a random card's attribute symbol instead of mokyuu
     if random.randint(1, 2) == 2:
@@ -469,7 +474,6 @@ def draw():
         gachaAnimation["direction3"] = 3
     elif len(any_3stars_pulled) >= 1:
         # show iroha if any 3 stars were pulled
-        gachaAnimation["direction1"] = 2
         gachaAnimation["direction3"] = 2
 
     if pityGroup is not None:
