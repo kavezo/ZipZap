@@ -471,7 +471,8 @@ def draw():
         gachaAnimation["direction1"] = 2
 
     # 50-50 chance of displaying a random card's attribute symbol instead of mokyuu
-    if random.randint(1, 2) == 2:
+    # but only if cards were pulled (i.e. not for FP gacha)
+    if len(cards_pulled) >= 1 and random.randint(1, 2) == 2:
         random_card = random.choice(cards_pulled)
         gachaAnimation["direction2"] = 2
         gachaAnimation["direction2AttributeId"] = random_card["attributeId"]
