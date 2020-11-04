@@ -450,6 +450,7 @@ def draw():
             # 1 = spear thingy
             # 2 = iroha
             # 3 = mikazuki villa
+            "direction3": random.randint(1,2),
             "gachaResultList": responseList
         }
 
