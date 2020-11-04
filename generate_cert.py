@@ -9,7 +9,6 @@ from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 
 # From https://stackoverflow.com/a/56292132
-
 root_key = rsa.generate_private_key(
     public_exponent=65537,
     key_size=2048,

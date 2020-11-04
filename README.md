@@ -8,14 +8,21 @@ folder from the old one to the new one.
 
 ### On the computer: installation and running
 
-On Windows, run startServer.bat. Two cmd windows should pop up without immediately closing; don't close them. That's it.
+The first time before you run the server on Windows, you need to do some setup:
+1. Run setupServer.bat.
+2. Three cmd windows should pop up. One of them may immediately say "ERROR: The process "nginx.exe" not found."; you can close
+this safely. Wait until the others close by themselves.
+3. There should now be a new file named "ca.crt" in the server directory. Install this certificate on your phone.
+
+You only need to do this once.
+
+Then, to actually run the server, run startServer.bat. Two cmd windows should pop up without immediately closing; don't 
+close either of them until you want to stop the server. That's all.
 
 Currently, there isn't support for other systems out of the box. You'll have to get nginx for your system, copy over the
-conf in windows/nginx, and have Python 3. Then, you can run `pip install -r requirements.txt`. In three separate terminals,
-you'll need to run
-1. `python dnserver.py`
-2. `python gevent_server.py`
-3. nginx
+conf in windows/nginx, and run `makecert.sh` in the directory where certs are stored for nginx. Then, if you have Python 3,
+you can run `pip install -r requirements.txt`. Finally, to start the server, in two separate terminals, you'll need to run 
+nginx, and `python gevent_server.py`.
 
 The server runs on a flask backend and nginx frontend, and uses a custom DNS server to redirect all requests to
 android.magica-us.com and ios.magica-us.com to the computer running it. Currently there's no way to config the ports that

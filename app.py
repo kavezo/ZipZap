@@ -38,42 +38,5 @@ def dummysearch(endpoint):
         "took": 2
     })
 
-@app.route('/appmeasurements<path:text>', methods=['GET', 'POST'])
-def appmeasurements():
-    print('called appmeasurements')
-    flask.abort(403, description='error code: 1020')
-
-@app.route('/smbeat<path:text>', methods=['GET', 'POST'])
-def smbeat():
-    print('called smartbeat')
-    return """
-    {
-        "status": "OK"
-    }
-    """
-
-@app.route('/treasuredata<path:text>', methods=['GET', 'POST'])
-def treasuredata():
-    print('called treasure data')
-    return """
-    {
-        "mgc_prd.app_active_user_log": [
-            {
-                "success": true
-            }
-        ]
-    }
-    """
-
-@app.route('/adjust<path:text>', methods=['GET', 'POST'])
-def adjust():
-    print('called adjust')
-    return """
-    {
-        "adid": "1b49b125009ba12344ae851a99b3cb1f",
-        "app_token": "yeadkpnaflds"
-    }
-    """
-
 if __name__ == "__main__":
     app.run(host='127.0.0.1')
