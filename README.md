@@ -1,5 +1,8 @@
 # ZipZap: MagiReco NA Private Server
 
+**Please be mindful when sharing.** We don’t want Aniplex shutting down NA yet again, so please keep this off of
+mainstream social media sites. In fact, when you do share, please add a reminder to keep it off social media.
+
 You need to have a computer to run the server on, and a device with MagiReco to connect to it (both emulator and real 
 physical device work).
 
@@ -21,6 +24,8 @@ You only need to do this once.
 Then, to actually run the server, run startServer.bat. Two cmd windows should pop up without immediately closing; don't 
 close either of them until you want to stop the server. That's all.
 
+#### If you’re not on Windows
+
 Currently, there isn't support for other systems out of the box. You'll have to get nginx for your system, copy over the
 conf in windows/nginx, and run `makecert.sh` in the directory where certs are stored for nginx. Then, if you have Python 3,
 you can run `pip install -r requirements.txt`. Finally, to start the server, in two separate terminals, you'll need to run 
@@ -28,7 +33,7 @@ nginx, and `python gevent_server.py`.
 
 The server runs on a flask backend and nginx frontend, and uses a custom DNS server to redirect all requests to
 android.magica-us.com and ios.magica-us.com to the computer running it. Currently there's no way to config the ports that
-the server uses, but it needs 8022 for DNS, 5000 for flask, and 443 for nginx.
+the server uses, but it needs 53 for DNS, 5000 for flask, and 443 for nginx.
 
 ### On your phone/tablet/emulator: connecting to the private server
 
