@@ -453,20 +453,16 @@ def draw():
             "gachaResultList": responseList
         }
 
-    got_a_4_star = False
-    das_attribute = None
-    for card in responseList:
-        if card["type"] == "CARD" and card["rarity"] == "RANK_4":
-            got_a_4_star = True
-            das_attribute = card["attributeId"]
-            break
-
-    if got_a_4_star:
+    any_4stars_pulled = [card for card in responseList if card["rarity"] == "RANK_4"]
+    if len(any_4stars_pulled) > 0:
+        # pulled a 4 star, show mikazuki villa and pick a random 4star and show its attribute
+        random_4star = random.choice(any_4stars_pulled)
+        gachaAnimation["direction2"] = 2
         gachaAnimation["direction3"] = 3
-        # to show attribute as 2nd picture, direction2 must == 2
-        gachaAnimation["direction2AttributeId"] = das_attribute
+        gachaAnimation["direction2AttributeId"] = random_4star["attributeId"]
     else:
-        # randomly show attribute if didn't pull a 4 star
+        # no 4stars pulled
+        # 50-50 chance to show the attribute of a random 4star, or just mokyuu
         if random.randint(1, 2) == 2:
              # pick a card, any card
              random_card = random.choice([a for a in responseList if a["type"] == "CARD"])
