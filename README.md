@@ -35,9 +35,7 @@ the server uses, but it needs 8022 for DNS, 5000 for flask, and 443 for nginx.
 guarantees it'll work for a fresh install. But it works even if you haven't updated.
 2. Find the IP address of the computer you're running the server on. I've only tested this with a local IP address (ones
 that start with 192.168) but external IP addresses should work.
-3. Open https://raw.githubusercontent.com/kavezo/ZipZap/https/windows/nginx_windows/nginx/conf/cert/ca.crt in a browser, 
-and download and install the certificate for your device.
-4. Change your DNS settings to point to your IP address.
+3. Change your DNS settings to point to your IP address.
 
 ---
 
