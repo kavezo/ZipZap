@@ -46,9 +46,14 @@ def drawTenNormal():
         itemTypes.append(itemType)
     return results, itemTypes
 
+def getGachaRates():
+    with open('data/gacha_rates.json', encoding='utf-8') as f:
+        return json.load(f)
+
 def drawOnePremium(pity, probs=None):
+    allRates = getGachaRates()
     if probs is None:
-        probs = [0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
+        probs = allRates["normal"]
     if pity == 99:
         return [np.random.choice(cardsByRarity[3])], 'p3', 0
     else:
@@ -59,10 +64,12 @@ def drawOnePremium(pity, probs=None):
             return [np.random.choice(piecesByRarity[int(itemType[-1])])], itemType, pity+1
 
 def drawTenPremium(pity):
+    allRates = getGachaRates()
+
     # highest rarity meguca to lowest, then highest rarity meme to lowest
-    normal = [0.01, 0.04, 0.255, 0.04, 0.12, 0.535]
-    meguca = [0.01, 0.14, 0.85, 0, 0, 0]
-    threestar = [0.02, 0.2, 0, 0.18, 0.6, 0]
+    normal = allRates["normal"]
+    meguca = allRates["meguca"]
+    threestar = allRates["threestar"]
 
     gotMeguca = False
     got3s = False
