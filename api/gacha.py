@@ -469,6 +469,7 @@ def draw():
         gachaAnimation["direction3"] = 3
     elif len(any_3stars_pulled) >= 1:
         # show iroha if any 3 stars were pulled
+        gachaAnimation["direction1"] = 2
         gachaAnimation["direction3"] = 2
 
     if pityGroup is not None:
