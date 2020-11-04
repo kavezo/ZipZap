@@ -2,7 +2,7 @@ import flask
 app = flask.Flask(__name__)
 
 from api import friend, gacha, gameUser, money, page, quest, shop, \
-    user, userCard, userChara, userDeck, userLive2d, userPiece, userPieceSet
+    user, userCard, userChara, userDeck, userLive2d, userPiece, userPieceSet, logger
     
 app.add_url_rule('/page/<path:endpoint>', view_func=page.handlePage, methods=['GET', 'POST'])
 
@@ -20,6 +20,7 @@ app.add_url_rule('/userDeck/<path:endpoint>', view_func=userDeck.handleUserDeck,
 app.add_url_rule('/userLive2d/<path:endpoint>', view_func=userLive2d.handleUserLive2d, methods=['GET', 'POST'])
 app.add_url_rule('/userPiece/<path:endpoint>', view_func=userPiece.handleUserPiece, methods=['GET', 'POST'])
 app.add_url_rule('/userPieceSet/<path:endpoint>', view_func=userPieceSet.handleUserPieceSet, methods=['GET', 'POST'])
+app.add_url_rule('/test/logger/error', view_func=logger.handleError, methods=['POST'])
 
 @app.route('/search/<path:endpoint>', methods=['GET', 'POST'])
 def dummysearch(endpoint):

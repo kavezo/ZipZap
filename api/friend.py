@@ -53,7 +53,7 @@ def user(endpoint):
             value = json.load(f)
         response[key] = value
 
-    return flask.json.dumps(response, ensure_ascii=False)
+    return flask.jsonify(response)
 
 def handleFriend(endpoint):
     print(endpoint)
