@@ -454,8 +454,8 @@ def draw():
             "gachaResultList": responseList
         }
 
-    any_4stars_pulled = [card for card in responseList if card["rarity"] == "RANK_4"]
-    if len(any_4stars_pulled) > 0:
+    any_4stars_pulled = [card for card in responseList if card["type"] == "CARD" and card["rarity"] == "RANK_4"]
+    if len(any_4stars_pulled) >= 1:
         # pulled a 4 star, show mikazuki villa and pick a random 4star and show its attribute
         random_4star = random.choice(any_4stars_pulled)
         gachaAnimation["direction2"] = 2
