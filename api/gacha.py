@@ -466,7 +466,7 @@ def draw():
         # 50-50 chance to show the attribute of a random 4star, or just mokyuu
         if random.randint(1, 2) == 2:
              # pick a card, any card
-             random_card = random.choice([a for a in responseList if a["type"] == "CARD"])
+             random_card = random.choice([card for card in responseList if card["type"] == "CARD"])
              gachaAnimation["direction2"] = 2
              gachaAnimation["direction2AttributeId"] = random_card["attributeId"]
 
