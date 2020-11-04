@@ -12,7 +12,9 @@ The first time before you run the server on Windows, you need to do some setup:
 1. Run setupServer.bat.
 2. Three cmd windows should pop up. One of them may immediately say "ERROR: The process "nginx.exe" not found."; you can close
 this safely. Wait until the others close by themselves.
-3. There should now be a new file named "ca.crt" in the server directory. Install this certificate on your phone.
+3. There should now be a new file named "ca.crt" in the server directory. Install this certificate on your phone -- on Android
+you can just move it on there and install it through settings/security, but on iOS you have to email it to yourself or download
+it through Safari, then make sure you trust it through Certificate Trust Settings after it's installed.
 
 You only need to do this once.
 
@@ -35,7 +37,9 @@ the server uses, but it needs 8022 for DNS, 5000 for flask, and 443 for nginx.
 guarantees it'll work for a fresh install. But it works even if you haven't updated.
 2. Find the IP address of the computer you're running the server on. I've only tested this with a local IP address (ones
 that start with 192.168) but external IP addresses should work.
-3. Change your DNS settings to point to your IP address.
+3. Change your DNS settings to point to your IP address. On iOS you can do this by editing the network settings as you
+would with a proxy (just make sure to edit DNS, not proxy, settings), but on Android emulator I've had to use a different
+app. The one I use is just called DNS Changer, and its icon is a blue circle with DNS in it.
 
 ---
 
