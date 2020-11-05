@@ -15,7 +15,7 @@ def sale():
     for i in range(len(userCharaList)):
         if userCharaList[i]['charaId'] == charaId:
             userCharaList[i]['lbItemNum'] -= amount
-            rarity = userCharaList[i]['chara']['defaultCard']['rank'][-1]
+            rarity = int(userCharaList[i]['chara']['defaultCard']['rank'][-1])
             saleItemId = userCharaList[i]['chara']['maxSaleItemId'] if 'maxSaleItemId' in userCharaList[i]['chara'] \
                 else userCharaList[i]['chara']['saleItemId']
             responseCharaList.append(userCharaList[i])
@@ -29,9 +29,11 @@ def sale():
     with open('data/user/userItemList.json', encoding='utf-8') as f:
         itemList = json.load(f)
     for i in range(len(itemList)):
-        if itemList[i]['itemId'] == saleItemId:
-            itemList[i]['quantity'] += amount * gemsReceived[rarity]
+        if itemList[i]['itemId'] == saleItemId or itemList[i]['itemId'] == 'PRISM':
+            if itemList[i]['itemId'] == saleItemId:
+                itemList[i]['quantity'] += amount * gemsReceived[rarity-1]
             responseItemList.append(itemList[i])
+
 
     with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCharaList, f, ensure_ascii=False)
@@ -79,7 +81,7 @@ def visualize():
 def handleUserChara(endpoint):
     if endpoint.startswith('sale'):
         return sale()
-    elif endpoint.startswith('/visualize'):
+    elif endpoint.startswith('visualize'):
         return visualize()
     else:
         print('userChara/'+endpoint)

@@ -4,7 +4,9 @@ from twisted.internet import reactor, defer
 from twisted.names import client, dns, error, server
 import socket
 
-myip = socket.gethostbyname(socket.getfqdn())
+myip = socket.gethostbyname(socket.gethostname())
+if myip == '127.0.0.1':
+    myip = socket.gethostbyname(socket.getfqdn())
 
 class DynamicResolver(object):
     """

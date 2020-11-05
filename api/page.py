@@ -83,6 +83,35 @@ def shopTop(response):
     with open('data/user/userShopItemList.json', encoding='utf-8') as f:
         response['userShopItemList'] = json.load(f)
 
+    backgrounds = {'HOME_EV_1003_21028': 381, 'HOME_MAP_11011': 1720, 'HOME_MAP_11012': 1721, 
+                    'HOME_MAP_11013': 1722, 'HOME_EV_1033_13101': 2388}
+    with open('data/user/userItemList.json', encoding='utf-8') as f:
+        userItemList = json.load(f)
+    itemIds = set([item['itemId'] for item in userItemList])
+    shopItemIds = set([item['shopItemId'] for item in response['userShopItemList']])
+    for itemId in itemIds:
+        if itemId in backgrounds.keys() and backgrounds[itemId] not in shopItemIds:
+            response['userShopItemList'].append({
+                "createdAt": str(datetime.now()).split('.')[0].replace('-', '/'),
+                "num": 1,
+                "shopItemId": backgrounds[itemId],
+                "userId": userItemList[0]['userId']
+            })
+
+    formations = {'911': 999429, '912': 999432, '913': 999433, '921': 999434, '922': 999435, '923': 999436, 
+                '131': 5, '141': 424, '151': 425, '161': 426, '171': 427, '181': 428, '711': 999428, '611': 999430}
+    with open('data/user/userFormationSheetList.json', encoding='utf-8') as f:
+        userFormationSheetList = json.load(f)
+    formationIds = [str(form['formationSheetId']) for form in userFormationSheetList]
+    for formationId in formationIds:
+        if formationId in formations.keys() and formations[formationId] not in shopItemIds:
+            response['userShopItemList'].append({
+                "createdAt": str(datetime.now()).split('.')[0].replace('-', '/'),
+                "num": 1,
+                "shopItemId": formations[formationId],
+                "userId": userItemList[0]['userId']
+            })
+
 def storyCollection(response):
     with open('data/eventStoryList.json', encoding='utf-8') as f:
         response['eventStoryList'] = json.load(f)

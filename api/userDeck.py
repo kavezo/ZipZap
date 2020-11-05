@@ -12,6 +12,10 @@ def save():
         userId = json.load(f)['id']
     nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
 
+    with open('data/user/userCardList.json', encoding='utf-8') as f:
+        userCardList = json.load(f)
+    cardsById = {userCard['id']: userCard for userCard in userCardList}
+
     # sometimes, when you continue to edit a team, the deckType isn't sent at all,
     # so we have to store it
     # not sure if it ever doesn't have a deckType on the first time you edit a team
@@ -50,6 +54,11 @@ def save():
 
     userDeckList[deckIdx]['formationSheet'] = chosenFormationSheet
 
+    keys = set(userDeckList[deckIdx].keys())
+    for key in keys:
+        if key.startswith('questPositionId') or key.startswith('userCardId') or key.startswith('userPieceId'):
+            del userDeckList[deckIdx][key]        
+
     for i, positionId in enumerate(body['questPositionIds']):
         userDeckList[deckIdx]['questPositionId'+str(i+1)] = positionId
     
@@ -57,8 +66,14 @@ def save():
         userDeckList[deckIdx]['userCardId'+str(i+1)] = cardId
 
     for i, pieceIdList in enumerate(body['userPieceIdLists']):
+        numSlots = cardsById[userDeckList[deckIdx]['userCardId'+str(i+1)]]['revision'] + 1
+        numMemoriaAssigned = 0
         for j, pieceId in enumerate(pieceIdList):
             userDeckList[deckIdx]['userPieceId0'+str(i+1)+str(j+1)] = pieceId
+            numMemoriaAssigned += 1
+            if numMemoriaAssigned >= numSlots:
+                print('stopped assigning memes')
+                break
 
     with open('data/user/userDeckList.json', 'w+', encoding='utf-8') as f:
         json.dump(userDeckList, f, ensure_ascii=False)
@@ -66,7 +81,7 @@ def save():
     return flask.jsonify({
         'resultCode': 'success',
         'userDeckList': [userDeckList[deckIdx]]
-    }, ensure_ascii=False)
+    })
     
 
 def handleUserDeck(endpoint):
