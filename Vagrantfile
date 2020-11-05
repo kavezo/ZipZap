@@ -3,7 +3,7 @@
 
 # Grab the name of the default interface
 # If your host machine is running Windows, this command will most likely fail
-$default_network_interface = `ip route | awk '/^default/ {printf "%s", $5; exit 0}'`
+#$default_network_interface = `ip route | awk '/^default/ {printf "%s", $5; exit 0}'`
 
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
@@ -42,7 +42,8 @@ Vagrant.configure("2") do |config|
   # Bridged networks make the machine appear as another physical device on
   # your network.
   #config.vm.network "public_network"
-  config.vm.network "public_network", bridge: "#$default_network_interface"
+  config.vm.network "public_network"
+  #config.vm.network "public_network", bridge: "#$default_network_interface"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
