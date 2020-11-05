@@ -13,16 +13,15 @@ folder from the old one to the new one.
 
 The first time before you run the server on Windows, you need to do some setup:
 1. Run setupServer.bat.
-2. Three cmd windows should pop up. One of them may immediately say "ERROR: The process "nginx.exe" not found."; you can close
-this safely. Wait until the others close by themselves.
+2. A cmd window should pop up. Wait until it closes by itself.
 3. There should now be a new file named "ca.crt" in the server directory. Install this certificate on your phone -- on Android
 you can just move it on there and install it through settings/security, but on iOS you have to email it to yourself or download
 it through Safari, then make sure you trust it through Certificate Trust Settings after it's installed.
 
-You only need to do this once.
+You only need to do this once. You'll have to repeat step 3 after running setupServer.bat again. 
 
-Then, to actually run the server, run startServer.bat. Two cmd windows should pop up without immediately closing; don't 
-close either of them until you want to stop the server. That's all.
+Then, to actually run the server, run startServer.bat. A cmd windows should pop up without immediately closing; don't 
+close it until you want to stop the server. That's all.
 
 #### If you’re not on Windows
 
