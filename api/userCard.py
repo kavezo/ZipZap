@@ -337,6 +337,7 @@ def evolve():
     for card in cardList:
         if foundCurrentCard:
             newCard = card['card']
+            break
         if targetUserCard['card']['cardId'] == card['cardId']:
             foundCurrentCard = True
     if newCard is None and foundCurrentCard:
@@ -352,13 +353,13 @@ def evolve():
         "userId": userId,
         "cardId": newCard['cardId'],
         "displayCardId": newCard['cardId'],
-        "revision": 0,
+        "revision": targetUserCard['revision'],
         "attack": newCard['attack'],
         "defense": newCard['defense'],
         "hp": newCard['hp'],
         "level": 1,
         "experience": 0,
-        "magiaLevel": 1,
+        "magiaLevel": targetUserCard['magiaLevel'],
         "enabled": True,
         "customized1": False,
         "customized2": False,
