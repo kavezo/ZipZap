@@ -13,7 +13,7 @@ folder from the old one to the new one.
 
 The first time before you run the server on Windows, you need to do some setup:
 1. Run setupServer.bat.
-2. Three cmd windows should pop up. Wait until they close by themselves.
+2. A cmd window should pop up. Wait until it closes by itself.
 3. There should now be a new file named "ca.crt" in the server directory. Install this certificate on your phone -- on Android
 you can just move it on there and install it through settings/security, but on iOS you have to email it to yourself or download
 it through Safari, then make sure you trust it through Certificate Trust Settings after it's installed.
