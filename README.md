@@ -30,8 +30,8 @@ An alternate method is available, that will run ZipZap in its own self-contained
 
 You will need to download and install [VirtualBox](https://www.virtualbox.org/) (**be sure and also download and install
 the VirtualBox Guest Additions**) as well as [Vagrant](https://www.vagrantup.com/). Both of these apps are completely
-free for personal/non-commercial use. Once these are installed, simply type `vagrant up`. This will automatically
-configure ZipZap and run it.
+free for personal/non-commercial use. Once these are installed, simply open a terminal in the server window and type 
+`vagrant up`. This will automatically configure ZipZap and run it.
 
 In some rare cases, Vagrant will ask you for which network interface you would like to use as the bridge interface.
 Usually the topmost choice is the right one, but in some rare instances you will have to choose one of the other
