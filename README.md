@@ -11,6 +11,8 @@ folder from the old one to the new one.
 
 ### On the computer: installation and running
 
+For Windows, please download a release rather than the source code.
+
 The first time before you run the server on Windows, you need to do some setup:
 1. Run setupServer.bat.
 2. A cmd window should pop up. Wait until it closes by itself.
@@ -18,14 +20,14 @@ The first time before you run the server on Windows, you need to do some setup:
 you can just move it on there and install it through settings/security, but on iOS you have to email it to yourself or download
 it through Safari, then make sure you trust it through Certificate Trust Settings after it's installed.
 
-You only need to do this once. You'll have to repeat step 3 after running setupServer.bat again. 
+You only need to do this once. (Although if you ever run setupServer.bat again, you'll have to repeat step 3.)
 
 Then, to actually run the server, run startServer.bat. A cmd windows should pop up without immediately closing; don't 
 close it until you want to stop the server. That's all.
 
 #### Alternate installation method
 
-An alternate method is available, that will run ZipZap in its own self-contained Linux virtual machine. This method can be used on both Windows, Mac and Linux.
+An alternate method is available, that will run ZipZap in its own self-contained Linux virtual machine. This method can be used on both Windows, Mac and Linux. For this, you need to download the source code rather than the release.
 
 You will need to download and install [VirtualBox](https://www.virtualbox.org/) (**be sure and also download and install
 the VirtualBox Guest Additions**) as well as [Vagrant](https://www.vagrantup.com/). Both of these apps are completely
