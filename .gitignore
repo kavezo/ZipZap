@@ -17,3 +17,5 @@ transferUserData
 data/extra_ignore
 extra_scripts
 dist
+.vagrant
+ssl
