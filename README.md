@@ -23,16 +23,26 @@ You only need to do this once. You'll have to repeat step 3 after running setupS
 Then, to actually run the server, run startServer.bat. A cmd windows should pop up without immediately closing; don't 
 close it until you want to stop the server. That's all.
 
-#### If you’re not on Windows
+#### Alternate installation method
 
-Currently, there isn't support for other systems out of the box. You'll have to get nginx for your system, copy over the
-conf in windows/nginx, and run `makecert.sh` in the directory where certs are stored for nginx. Then, if you have Python 3,
-you can run `pip install -r requirements.txt`. Finally, to start the server, in two separate terminals, you'll need to run 
-nginx, and `python gevent_server.py`.
+An alternate method is available, that will run ZipZap in its own self-contained Linux virtual machine. This method can be used on both Windows, Mac and Linux.
 
-The server runs on a flask backend and nginx frontend, and uses a custom DNS server to redirect all requests to
-android.magica-us.com and ios.magica-us.com to the computer running it. Currently there's no way to config the ports that
-the server uses, but it needs 53 for DNS, 5000 for flask, and 443 for nginx.
+You will need to download and install [VirtualBox](https://www.virtualbox.org/) (**be sure and also download and install
+the VirtualBox Guest Additions**) as well as [Vagrant](https://www.vagrantup.com/). Both of these apps are completely
+free for personal/non-commercial use. Once these are installed, simply open a terminal in the server window and type 
+`vagrant up`. This will automatically configure ZipZap and run it.
+
+In some rare cases, Vagrant will ask you for which network interface you would like to use as the bridge interface.
+Usually the topmost choice is the right one, but in some rare instances you will have to choose one of the other
+options. If the option you choose didn't work, run `vagrant destroy` followed by `vagrant up` and try a different
+choice.
+
+Once the configuration process is complete, the script will display the VM's IP address. On your device or emulator,
+set the DNS server to that IP address, then open a web browser and go to `https://magica.us`. You should see a page
+asking you to install the custom SSL certificate. Follow the instructions to do this. Now you should be able to run
+Magia Record and connect to your private server!
+
+To start up the private server VM, run `vagrant up`; and to shut it down run `vagrant halt`.
 
 ### On your phone/tablet/emulator: connecting to the private server
 
