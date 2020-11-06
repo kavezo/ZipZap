@@ -4,9 +4,17 @@ from twisted.internet import reactor, defer
 from twisted.names import client, dns, error, server
 import socket
 
-myip = socket.gethostbyname(socket.gethostname())
-if myip == '127.0.0.1':
-    myip = socket.gethostbyname(socket.getfqdn())
+# https://stackoverflow.com/questions/166506/finding-local-ip-addresses-using-pythons-stdlib
+# trying three of the methods above, two of them are backup
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+try:
+    s.connect(("8.8.8.8", 8022))
+    myip = s.getsockname()[0]
+    s.close()
+except:
+    myip = socket.gethostbyname(socket.gethostname())
+    if myip == '127.0.0.1':
+        myip = socket.gethostbyname(socket.getfqdn())
 
 class DynamicResolver(object):
     """
