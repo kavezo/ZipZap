@@ -7,8 +7,8 @@ You need to have a computer to run the server on, and a device with MagiReco to 
 physical device work).
 
 To update to a new release: download the release, unzip it without overwriting the old one, then copy your data/user
-folder from the old one to the new one. If you don't want to install a new cert to your phone, also copy the 
-(windows/nginx_windows/)nginx/conf/cert from the old to the new.
+folder from the old one to the new one. If you don't want to install a new cert to your phone every time you update, also 
+copy the (windows/nginx_windows/)nginx/conf/cert from the old to the new.
 
 ### On the computer: installation and running
 
@@ -17,9 +17,10 @@ For Windows, please download a release rather than the source code.
 The first time before you run the server on Windows, you need to do some setup:
 1. Run setupServer.bat.
 2. A cmd window should pop up. Wait until it closes by itself.
-3. There should now be a new file named "ca.crt" in the server directory. Install this certificate on your phone -- on Android
-you can just move it on there and install it through settings/security, but on iOS you have to email it to yourself or download
-it through Safari, then make sure you trust it through Certificate Trust Settings after it's installed.
+3. There should now be a new file named "ca.crt" in the server directory. Install this certificate on your phone -- on 
+Android you can just move it on there and install it through settings/security, but on iOS you have to email it to 
+yourself or download it through Safari, then make sure you trust it through Certificate Trust Settings after it's 
+installed.
 
 You only need to do this once. (Although if you ever run setupServer.bat again, you'll have to repeat step 3.)
 
@@ -28,8 +29,8 @@ close it until you want to stop the server. That's all.
 
 #### Alternate installation method
 
-An alternate method is available that will run ZipZap in its own self-contained Linux virtual machine. This method can be used 
-on Windows, Mac and Linux. For this, you will need to download the source code rather than the release.
+An alternate method is available that will run ZipZap in its own self-contained Linux virtual machine. This method can be 
+used on Windows, Mac and Linux. For this, you will need to download the source code rather than the release.
 
 You will need to download and install [VirtualBox](https://www.virtualbox.org/) (**be sure and also download and install
 the VirtualBox Guest Additions**) as well as [Vagrant](https://www.vagrantup.com/). Both of these apps are completely
@@ -56,8 +57,8 @@ guarantees it'll work for a fresh install. But it works even if you haven't upda
 2. Find the IP address of the computer you're running the server on. I've only tested this with a local IP address (ones
 that start with 192.168) but external IP addresses should work.
 3. Change your DNS settings to point to your IP address. On iOS you can do this by editing the network settings as you
-would with a proxy (just make sure to edit DNS, not proxy, settings), but on Android emulator I've had to use a different
-app. The one I use is just called DNS Changer, and its icon is a blue circle with DNS in it.
+would with a proxy (just make sure to edit DNS, not proxy, settings), but on Android emulator I've had to use a 
+different app. The one I use is just called DNS Changer, and its icon is a blue circle with DNS in it.
 
 ---
 
