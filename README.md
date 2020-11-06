@@ -7,7 +7,8 @@ You need to have a computer to run the server on, and a device with MagiReco to 
 physical device work).
 
 To update to a new release: download the release, unzip it without overwriting the old one, then copy your data/user
-folder from the old one to the new one.
+folder from the old one to the new one. If you don't want to install a new cert to your phone, also copy the 
+(windows/nginx_windows/)nginx/conf/cert from the old to the new.
 
 ### On the computer: installation and running
 
@@ -27,7 +28,8 @@ close it until you want to stop the server. That's all.
 
 #### Alternate installation method
 
-An alternate method is available, that will run ZipZap in its own self-contained Linux virtual machine. This method can be used on both Windows, Mac and Linux. For this, you need to download the source code rather than the release.
+An alternate method is available, that will run ZipZap in its own self-contained Linux virtual machine. This method can be used 
+on both Windows, Mac and Linux. For this, you need to download the source code rather than the release.
 
 You will need to download and install [VirtualBox](https://www.virtualbox.org/) (**be sure and also download and install
 the VirtualBox Guest Additions**) as well as [Vagrant](https://www.vagrantup.com/). Both of these apps are completely
