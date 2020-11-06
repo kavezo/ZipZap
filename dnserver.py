@@ -71,5 +71,5 @@ def startDNS():
     reactor.listenUDP(53, protocol)
     reactor.listenTCP(53, factory)
 
-    print("DNS server started")
+    print(f"DNS server started at {myip}")
     reactor.run()
