@@ -23,13 +23,13 @@ it through Safari, then make sure you trust it through Certificate Trust Setting
 
 You only need to do this once. (Although if you ever run setupServer.bat again, you'll have to repeat step 3.)
 
-Then, to actually run the server, run startServer.bat. A cmd windows should pop up without immediately closing; don't 
+Then, to actually run the server, run startServer.bat. A cmd window should pop up without immediately closing; don't 
 close it until you want to stop the server. That's all.
 
 #### Alternate installation method
 
-An alternate method is available, that will run ZipZap in its own self-contained Linux virtual machine. This method can be used 
-on both Windows, Mac and Linux. For this, you need to download the source code rather than the release.
+An alternate method is available that will run ZipZap in its own self-contained Linux virtual machine. This method can be used 
+on Windows, Mac and Linux. For this, you will need to download the source code rather than the release.
 
 You will need to download and install [VirtualBox](https://www.virtualbox.org/) (**be sure and also download and install
 the VirtualBox Guest Additions**) as well as [Vagrant](https://www.vagrantup.com/). Both of these apps are completely
