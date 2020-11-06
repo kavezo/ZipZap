@@ -24,16 +24,19 @@ def sale():
             flask.abort(400, description='{"errorTxt": "You don\'t have that many gems to sell >:(","resultCode": "error","title": "Error"}')
             return
 
-    gemsReceived = [1, 1, 3, 1]
+    gemsReceived = [1, 1, 3, 10]
     responseItemList = []
     with open('data/user/userItemList.json', encoding='utf-8') as f:
         itemList = json.load(f)
     for i in range(len(itemList)):
-        if itemList[i]['itemId'] == saleItemId or itemList[i]['itemId'] == 'PRISM':
-            if itemList[i]['itemId'] == saleItemId:
-                itemList[i]['quantity'] += amount * gemsReceived[rarity-1]
+        if itemList[i]['itemId'] == 'PRISM':
+            itemList[i]['quantity'] += amount * gemsReceived[rarity-1]
             responseItemList.append(itemList[i])
-
+    if rarity == 4:
+        for i in range(len(itemList)):
+            if itemList[i]['itemId'] == 'DESTINY_CRYSTAL':
+                itemList[i]['quantity'] += amount * gemsReceived[rarity-1]
+                responseItemList.append(itemList[i])
 
     with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCharaList, f, ensure_ascii=False)
