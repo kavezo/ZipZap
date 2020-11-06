@@ -1,5 +1,6 @@
 import datetime
 import pathlib
+import sys
 
 from cryptography import x509
 from cryptography.x509.oid import NameOID, ExtendedKeyUsageOID
@@ -64,6 +65,7 @@ cert = x509.CertificateBuilder().subject_name(
     datetime.datetime.utcnow() + datetime.timedelta(days=2 * 365)
 ).add_extension(
     x509.SubjectAlternativeName([
+        x509.DNSName(u"android.magica-us.com"),
         x509.DNSName(u"*.magica-us.com"),
         x509.DNSName(u"magica-us.com"),
         x509.DNSName(u"*.snaa.services"),
@@ -78,6 +80,11 @@ cert = x509.CertificateBuilder().subject_name(
 ).sign(root_key, hashes.SHA256(), default_backend())
 
 path = 'windows/nginx_windows/nginx/conf/cert'
+
+if len(sys.argv) > 1:
+  path = sys.argv[-1]
+
+print("writing cert to", path)
 
 pathlib.Path(path).mkdir(parents=False, exist_ok=True)
 with open(path + '/ca.crt', 'bw+') as f:
