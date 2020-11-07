@@ -64,14 +64,16 @@ sed -e 's/^daemon/#daemon/' -i.bak /etc/nginx/nginx.conf
 mkdir -p /var/log/nginx
 
 # set up certificate
-echo ""
-echo "# Generating SSL certificate..."
-cd $SRC && mkdir ssl
-cd ssl
-openssl genrsa -out ca.key 4096
-openssl req -new -x509 -nodes -days 3650 -key ca.key -sha256 -extensions v3_ca -subj "/C=US/ST=NA/L=NA/O=NA/CN=*.magica-us.com" -out ca.crt
-openssl req -config $SRC/site.conf -new -newkey rsa:4096 -nodes -keyout site.key -days 730 -subj "/C=US/ST=NA/L=NA/O=NA/CN=*.magica-us.com" -out site.req
-openssl x509 -sha256 -req -in site.req -CA ca.crt -CAkey ca.key -CAcreateserial -out site.crt -days 730 -extensions req_extensions -extensions cert_extensions -extfile $SRC/site.conf
+if [ -d ssl -a -f ssl/ca.crt ]; then
+  echo ""
+  echo "# Found an already existing SSL certificate. Not making a new one."
+  cd ssl
+else
+  echo ""
+  echo "# Generating SSL certificate..."
+  cd $SRC && mkdir ssl && cd ssl
+  python3 ../generate_cert.py .
+fi
 
 # install cert
 echo ""
