@@ -65,23 +65,22 @@ sed -e 's/^daemon/#daemon/' -i.bak /etc/nginx/nginx.conf
 mkdir -p /var/log/nginx
 
 # set up certificate
-if [ -d ssl -a -f ssl/ca.crt ]; then
+if [ -d $SRC/ssl -a -f $SRC/ssl/ca.crt ]; then
   echo ""
   echo "# Found an already existing SSL certificate. Not making a new one."
-  cd ssl
 else
   echo ""
   echo "# Generating SSL certificate..."
-  cd $SRC && mkdir ssl && cd ssl
-  python3 ../generate_cert.py .
+  mkdir -p $SRC/ssl
+  python3 ../generate_cert.py $SRC/ssl
 fi
 
 # install cert
 echo ""
 echo "# Installikng SSL certificate and starting up nginx..."
 mkdir -p /etc/nginx/cert /etc/nginx/html
-cp ca.crt /etc/nginx/html
-for FILE in site.crt site.key; do
+cp $SRC/ssl/ca.crt /etc/nginx/html
+for FILE in $SRC/site.crt $SRC/site.key; do
   cp "$FILE" /etc/nginx/cert/
 done
 # start nginx
