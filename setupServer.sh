@@ -14,7 +14,8 @@ echo "*** BEGINNING ZIPZAP VM SETUP ***"
 echo ""
 echo "# Installing packages..."
 apt update -y -qq
-apt install -y build-essential net-tools nginx python3 python3-dev python3-pip unbound -qq
+#apt install -y build-essential net-tools nginx python3 python3-dev python3-pip unbound -qq
+DEBIAN_FRONTEND=noninteractive apt install -y -qq build-essential net-tools nginx python3 python3-dev python3-pip unbound < /dev/null > /dev/null 2>&1
 
 # disable resolved
 echo ""
@@ -41,21 +42,22 @@ sed -e 's/^daemon/#daemon/' -i.bak /etc/nginx/nginx.conf
 mkdir -p /var/log/nginx
 
 # set up certificate
-echo ""
-echo "# Generating SSL certificate..."
-cd $SRC && mkdir ssl
-cd ssl
-openssl genrsa -out ca.key 4096
-openssl req -new -x509 -nodes -days 3650 -key ca.key -sha256 -extensions v3_ca -subj "/C=US/ST=NA/L=NA/O=NA/CN=*.magica-us.com" -out ca.crt
-openssl req -config $SRC/site.conf -new -newkey rsa:4096 -nodes -keyout site.key -days 730 -subj "/C=US/ST=NA/L=NA/O=NA/CN=*.magica-us.com" -out site.req
-openssl x509 -sha256 -req -in site.req -CA ca.crt -CAkey ca.key -CAcreateserial -out site.crt -days 730 -extensions req_extensions -extensions cert_extensions -extfile $SRC/site.conf
+if [ -d $SRC/ssl -a -f $SRC/ssl/ca.crt ]; then
+  echo ""
+  echo "# Found an already existing SSL certificate. Not making a new one."
+else
+  echo ""
+  echo "# Generating SSL certificate..."
+  mkdir -p $SRC/ssl
+  python3 ../generate_cert.py $SRC/ssl
+fi
 
 # install cert
 echo ""
 echo "# Installing SSL certificate and starting up nginx..."
 mkdir -p /etc/nginx/cert /etc/nginx/html
-cp ca.crt /etc/nginx/html
-for FILE in site.crt site.key; do
+cp $SRC/ssl/ca.crt /etc/nginx/html
+for FILE in $SRC/ssl/site.crt $SRC/ssl/site.key; do
   cp "$FILE" /etc/nginx/cert/
 done
 # start nginx
@@ -64,7 +66,7 @@ systemctl start nginx.service
 # install dependencies etc
 echo ""
 echo "# Installing ZipZap python dependencies..."
-cd $SRC && pip3 install -r requirements.txt
+cd $SRC && pip3 -q  install -r requirements.txt
 
 # enable rc.local
 echo ""

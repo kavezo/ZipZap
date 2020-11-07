@@ -42,7 +42,8 @@ Vagrant.configure("2") do |config|
   # Bridged networks make the machine appear as another physical device on
   # your network.
   #config.vm.network "public_network"
-  config.vm.network "public_network"
+  config.vm.network "public_network", :mac => "AEE94EA873FC"
+
   #config.vm.network "public_network", bridge: "#$default_network_interface"
 
   # Share an additional folder to the guest VM. The first argument is
