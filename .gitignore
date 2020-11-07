@@ -19,3 +19,4 @@ extra_scripts
 dist
 .vagrant
 ssl
+data/user

@@ -1,7 +1,12 @@
 import flask
 app = flask.Flask(__name__)
-
 app.config['JSON_AS_ASCII'] = False
+
+import os
+import shutil
+if not os.path.exists('./data/user/'):
+    print('Copying over default user...')
+    shutil.copytree('data/default_user', 'data/user')
 
 from api import friend, gacha, gameUser, money, page, quest, shop, \
     user, userCard, userChara, userDeck, userLive2d, userPiece, userPieceSet, logger
