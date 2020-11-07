@@ -16,6 +16,7 @@ except:
     if myip == '127.0.0.1':
         myip = socket.gethostbyname(socket.getfqdn())
 
+
 class DynamicResolver(object):
     """
     A resolver which calculates the answers to certain queries based on the
@@ -26,15 +27,10 @@ class DynamicResolver(object):
         """
         Check the query to determine if a dynamic response is required.
         """
-        domain_includes = ['magica-us.com', 'adjust.com', 'treasuredata.com', 'smbeat', 
-                    'snaa.services', 'appmeasurements.com', 'app-measurements.com']
-        should_redirect = False
-        for domain in domain_includes:
-            if domain in query.name.name.decode('ascii'):
-                should_redirect = True
-
-        return should_redirect
-
+        domain_includes = ['magica-us.com', 'adjust.com', 'treasuredata.com', 'smbeat.jp', 'appmeasurements.com',
+                           'snaa.services']
+        query_name = query.name.name.decode('ascii')
+        return any(query_name.endswith(domain) for domain in domain_includes)
 
     def _doDynamicResponse(self, query):
         """
@@ -48,7 +44,6 @@ class DynamicResolver(object):
         additional = []
         return answers, authority, additional
 
-
     def query(self, query, timeout=None):
         """
         Check if the query should be answered dynamically, otherwise dispatch to
@@ -58,6 +53,7 @@ class DynamicResolver(object):
             return defer.succeed(self._doDynamicResponse(query))
         else:
             return defer.fail(error.DomainError())
+
 
 def startDNS():
     """
@@ -74,3 +70,7 @@ def startDNS():
 
     print(f"DNS server started at {myip}")
     reactor.run()
+
+
+if __name__ == '__main__':
+    startDNS()
