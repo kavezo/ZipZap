@@ -35,7 +35,7 @@ def sale():
     if rarity == 4:
         for i in range(len(itemList)):
             if itemList[i]['itemId'] == 'DESTINY_CRYSTAL':
-                itemList[i]['quantity'] += amount * gemsReceived[rarity-1]
+                itemList[i]['quantity'] += amount
                 responseItemList.append(itemList[i])
 
     with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
