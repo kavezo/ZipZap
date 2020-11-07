@@ -80,7 +80,7 @@ echo ""
 echo "# Installikng SSL certificate and starting up nginx..."
 mkdir -p /etc/nginx/cert /etc/nginx/html
 cp $SRC/ssl/ca.crt /etc/nginx/html
-for FILE in $SRC/site.crt $SRC/site.key; do
+for FILE in $SRC/ssl/site.crt $SRC/ssl/site.key; do
   cp "$FILE" /etc/nginx/cert/
 done
 # start nginx
