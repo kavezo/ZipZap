@@ -65,7 +65,6 @@ cert = x509.CertificateBuilder().subject_name(
     datetime.datetime.utcnow() + datetime.timedelta(days=2 * 365)
 ).add_extension(
     x509.SubjectAlternativeName([
-        x509.DNSName(u"android.magica-us.com"),
         x509.DNSName(u"*.magica-us.com"),
         x509.DNSName(u"magica-us.com"),
         x509.DNSName(u"*.snaa.services"),
