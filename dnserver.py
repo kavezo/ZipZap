@@ -26,7 +26,8 @@ class DynamicResolver(object):
         """
         Check the query to determine if a dynamic response is required.
         """
-        domain_includes = ['magica-us.com', 'app.adjust.com', 'treasuredata.com', 'smbeat', 'snaa.services']
+        domain_includes = ['magica-us.com', 'adjust.com', 'treasuredata.com', 'smbeat', 
+                    'snaa.services', 'appmeasurements.com', 'app-measurements.com']
         should_redirect = False
         for domain in domain_includes:
             if domain in query.name.name.decode('ascii'):

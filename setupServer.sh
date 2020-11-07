@@ -34,31 +34,8 @@ systemctl stop nginx.service
 mv /etc/nginx /etc/nginx.bak
 cp -r $SRC/windows/nginx_windows/nginx/conf /etc/nginx
 cp -r $SRC/windows/nginx_windows/nginx/html /etc/nginx/html
-cat << _EOF_HTML_ > /etc/nginx/html/index.html
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to MadokaPriv!</title>
-<style>
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
-</style>
-</head>
-<body>
-<h1>Welcome to MadokaPriv!</h1>
-<p>To use MadokaPriv to play with your Magia Record EN private server, you need to install the CA certificate and trust it</p>
-
-<p><a href="ca.crt">Download CA Cert</a>.<br/></p>
-<h2>Guides to enabling a CA Root Certificate</h2>
-<p><a href="https://support.apple.com/en-us/HT204477">iOS/iPadOS</a></p>
-<p><a href="https://www.lastbreach.com/blog/importing-private-ca-certificates-in-android">Android</a></p>
-</body>
-</html>
-_EOF_HTML_
 sed -e 's/^.*root.*html/root \/etc\/nginx\/html/' -i.bak /etc/nginx/nginx.conf
+sed -e 's/^.*root.*conf\/cert/root \/etc\/nginx\/html/' -i.bak /etc/nginx/nginx.conf
 sed -e 's/^error_log.*$/error_log \/var\/log\/nginx\/error.log;/' -i.bak /etc/nginx/nginx.conf
 sed -e 's/^.*access_log.*$/access_log \/var\/log\/nginx\/access.log combined;/' -i.bak /etc/nginx/nginx.conf
 sed -e 's/^daemon/#daemon/' -i.bak /etc/nginx/nginx.conf
@@ -77,7 +54,7 @@ fi
 
 # install cert
 echo ""
-echo "# Installikng SSL certificate and starting up nginx..."
+echo "# Installing SSL certificate and starting up nginx..."
 mkdir -p /etc/nginx/cert /etc/nginx/html
 cp $SRC/ssl/ca.crt /etc/nginx/html
 for FILE in $SRC/ssl/site.crt $SRC/ssl/site.key; do
