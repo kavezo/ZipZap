@@ -14,7 +14,8 @@ echo "*** BEGINNING ZIPZAP VM SETUP ***"
 echo ""
 echo "# Installing packages..."
 apt update -y -qq
-apt install -y build-essential net-tools nginx python3 python3-dev python3-pip unbound -qq
+#apt install -y build-essential net-tools nginx python3 python3-dev python3-pip unbound -qq
+DEBIAN_FRONTEND=noninteractive apt install -y -qq build-essential net-tools nginx python3 python3-dev python3-pip unbound < /dev/null > /dev/null 2>&1
 
 # disable resolved
 echo ""
@@ -89,7 +90,7 @@ systemctl start nginx.service
 # install dependencies etc
 echo ""
 echo "# Installikng ZipZap python dependencies..."
-cd $SRC && pip3 install -r requirements.txt
+cd $SRC && pip3 -q  install -r requirements.txt
 
 # enable rc.local
 echo ""
