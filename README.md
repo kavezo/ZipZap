@@ -43,7 +43,7 @@ options. If the option you choose didn't work, run `vagrant destroy` followed by
 choice.
 
 Once the configuration process is complete, the script will display the VM's IP address. On your device or emulator,
-set the DNS server to that IP address, then open a web browser and go to `https://magica.us`. You should see a page
+set the DNS server to that IP address, then open a web browser and go to `https://magica-us.com`. You should see a page
 asking you to install the custom SSL certificate. Follow the instructions to do this. Now you should be able to run
 Magia Record and connect to your private server!
 
