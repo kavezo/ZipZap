@@ -65,7 +65,7 @@ systemctl start nginx.service
 
 # install dependencies etc
 echo ""
-echo "# Installikng ZipZap python dependencies..."
+echo "# Installing ZipZap python dependencies..."
 cd $SRC && pip3 -q  install -r requirements.txt
 
 # enable rc.local
