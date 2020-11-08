@@ -398,10 +398,10 @@ def draw():
                 userCardList.append(card)
                 userLive2dList.append(live2d)
             userCharaList.append(chara)
-            directionType = 3
+            directionType = 1
             if result['cardList'][0]['card']['rank'][-1] == "4":
-                # give it the rainbow swirlies
-                directionType = 4
+                # give it the memoria equivalent of the rainbow swirlies
+                directionType = 2
             responseList.append({
                 "type": "CARD",
                 "rarity": result['cardList'][0]['card']['rank'],
@@ -421,7 +421,7 @@ def draw():
             directionType = 1
             if result['rank'][-1] == "4":
                 # give it the rainbow swirlies
-                directionType = 3
+                directionType = 2
             responseList.append({
                 "type": "PIECE",
                 "rarity": result['rank'],
