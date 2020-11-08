@@ -104,6 +104,6 @@ echo ""
 echo "*** ALL DONE! ***"
 echo ""
 sh /etc/rc.local > /tmp/local 2>&1
-i=`$SRC/getipaddress.sh`
+i=`$SRC/showIpAddress.sh`
 echo "This VM's public IP is: $i"
 echo "Set your device/emulator's DNS to that address."
