@@ -1,1 +1,1146 @@
-{"battleType":"ARENA","scenario":{"bgm":"bgm01_battle01","bgmBoss":"bgm01_battle01","difficulty":0,"cost":0,"missionList":[],"sheetType":9,"auto":false},"playerList":[{"diskId":0,"helper":false,"friend":false,"endMessageId":43,"endMessage":"Phew... We won.","memoriaMax":4,"cardId":40215,"charId":4021,"miniCharId":402100,"miniMagiaId":402100,"miniDoppelId":402100,"pos":3,"name":"Darc","level":100,"align":"LIGHT","rank":5,"hpStart":27883,"hp":27883,"mpStart":0,"maxMp":2000,"attack":10564,"defence":13515,"speed":0,"discType1":"MPUP","discType2":"RANGE_V","discType3":"RANGE_V","discType4":"RANGE_H","discType5":"CHARGE","doppelId":402100,"connectId":40215,"magiaId":402155,"blast":9,"charge":5,"mpup":5,"rateGainMpAtk":900,"rateGainMpDef":900,"leader":true,"ai":1,"memoriaList":[900201]},{"diskId":0,"helper":false,"friend":false,"endMessageId":45,"endMessage":"I will not die! Not here!","memoriaMax":4,"cardId":10025,"charId":1002,"miniCharId":100201,"miniMagiaId":100200,"miniDoppelId":100200,"pos":5,"name":"Yachiyo Nanami","level":100,"align":"WATER","rank":5,"hpStart":27779,"hp":27779,"mpStart":0,"maxMp":2000,"attack":8119,"defence":11253,"speed":0,"discType1":"MPUP","discType2":"RANGE_H","discType3":"RANGE_H","discType4":"RANGE_H","discType5":"CHARGE","doppelId":100200,"connectId":10025,"magiaId":100255,"blast":9,"charge":5,"mpup":5,"rateGainMpAtk":900,"rateGainMpDef":900,"leader":false,"ai":1,"memoriaList":[139501,139301]},{"diskId":0,"helper":false,"friend":false,"endMessageId":43,"endMessage":"Well, that\u0027s about it, I guess.","memoriaMax":4,"cardId":30055,"charId":3005,"miniCharId":300501,"miniMagiaId":300500,"pos":7,"name":"Nanaka Tokiwa","level":100,"align":"WATER","rank":5,"hpStart":26373,"hp":26373,"mpStart":0,"maxMp":1000,"attack":8705,"defence":8342,"speed":0,"discType1":"MPUP","discType2":"RANGE_V","discType3":"RANGE_V","discType4":"RANGE_V","discType5":"CHARGE","doppelId":0,"connectId":30055,"magiaId":300551,"blast":9,"charge":5,"mpup":5,"rateGainMpAtk":900,"rateGainMpDef":900,"leader":false,"ai":1,"memoriaList":[]}],"waveList":[{"field":21181,"boss":false,"sheetType":9,"enemyList":[{"action":1,"bossType":0,"magnification":100,"enemyKey":"ad26d6be-93ec-11ea-ac8d-022ea6f80ab5","cardId":30055,"charId":3005,"miniCharId":300501,"miniMagiaId":300500,"miniDoppelId":300501,"pos":7,"name":"Nanaka Tokiwa","level":100,"align":"WATER","rank":5,"hpStart":31855,"hp":31855,"mpStart":0,"maxMp":1000,"attack":13413,"defence":11897,"speed":0,"discType1":"MPUP","discType2":"RANGE_V","discType3":"RANGE_V","discType4":"RANGE_V","discType5":"CHARGE","connectId":30055,"magiaId":300551,"blast":9,"charge":5,"mpup":5,"rateGainMpAtk":900,"rateGainMpDef":900,"leader":false,"ai":1,"initialType":"BALANCE","enemyKindType":"HUMAN","memoriaList":[126701,136401,116401]},{"action":1,"bossType":0,"magnification":100,"enemyKey":"20d0742f-a7d7-11e9-986a-02311564c736","cardId":30255,"charId":3025,"miniCharId":302501,"miniMagiaId":302500,"miniDoppelId":302501,"pos":3,"name":"Ren Isuzu","level":100,"align":"DARK","rank":5,"hpStart":28266,"hp":28266,"mpStart":0,"maxMp":2000,"attack":13202,"defence":11769,"speed":0,"discType1":"MPUP","discType2":"MPUP","discType3":"RANGE_V","discType4":"RANGE_H","discType5":"CHARGE","doppelId":302500,"connectId":30255,"magiaId":302555,"blast":7,"charge":5,"mpup":0,"rateGainMpAtk":1200,"rateGainMpDef":1200,"leader":true,"ai":1,"initialType":"MAGIA","enemyKindType":"HUMAN","memoriaList":[113000,118800,113401]},{"action":1,"bossType":0,"magnification":100,"enemyKey":"302ab152-d03c-11e9-b0e5-02d2e3801fe3","cardId":10025,"charId":1002,"miniCharId":100201,"miniMagiaId":100200,"miniDoppelId":100201,"pos":5,"name":"Yachiyo Nanami","level":100,"align":"WATER","rank":5,"hpStart":30376,"hp":30376,"mpStart":0,"maxMp":2000,"attack":12526,"defence":11770,"speed":0,"discType1":"MPUP","discType2":"RANGE_H","discType3":"RANGE_H","discType4":"RANGE_H","discType5":"CHARGE","doppelId":100200,"connectId":10025,"magiaId":100255,"blast":9,"charge":5,"mpup":0,"rateGainMpAtk":900,"rateGainMpDef":900,"leader":false,"ai":1,"initialType":"BALANCE","enemyKindType":"HUMAN","memoriaList":[113811,129101,106311]}]}],"artList":[{"artId":610407300,"code":"CONDITION_GOOD","target":"CONNECT","sub":"PURSUE","effect":800,"turn":1,"rate":1000,"growPoint":0},{"artId":510005000,"code":"CONDITION_BAD","target":"TARGET","sub":"CURSE","effect":150,"turn":1,"rate":1000,"growPoint":0},{"artId":390203105,"code":"BUFF_HPMAX","target":"SELF","sub":"ATTACK","effect":250,"rate":1000,"growPoint":20},{"artId":190302581,"code":"ATTACK","target":"TARGET","sub":"LINKED_DAMAGE","effect":15000,"param":6000,"growPoint":220},{"artId":390201705,"code":"BUFF","target":"SELF","sub":"CHARGE","effect":150,"rate":1000,"growPoint":25},{"artId":200300700,"code":"REVOKE","target":"ALL","sub":"BUFF","growPoint":0},{"artId":610206900,"code":"CONDITION_GOOD","target":"SELF","sub":"AVOID","turn":1,"rate":1000,"growPoint":0},{"artId":190100281,"code":"ATTACK","target":"ALL","effect":8360,"growPoint":220},{"artId":200400800,"code":"REVOKE","target":"CONNECT","sub":"DEBUFF","growPoint":0},{"artId":410302108,"code":"DEBUFF","target":"ALL","sub":"DEFENSE","effect":400,"turn":1,"growPoint":25},{"artId":100300107,"code":"ATTACK","target":"ALL","effect":3600,"growPoint":100},{"artId":310201807,"code":"BUFF","target":"SELF","sub":"BLAST","effect":450,"turn":1,"growPoint":25},{"artId":690206104,"code":"CONDITION_GOOD","target":"SELF","sub":"DAMAGE_UP","effect":200,"rate":1000,"growPoint":25},{"artId":310201804,"code":"BUFF","target":"SELF","sub":"BLAST","effect":300,"turn":1,"growPoint":25},{"artId":430302109,"code":"DEBUFF","target":"ALL","sub":"DEFENSE","effect":250,"turn":3,"growPoint":25},{"artId":610208100,"code":"IGNORE","target":"SELF","sub":"AVOID","turn":1,"rate":1000,"growPoint":0},{"artId":690208800,"code":"IGNORE","target":"SELF","sub":"CURSE","rate":1000,"growPoint":0},{"artId":610206308,"code":"CONDITION_GOOD","target":"SELF","sub":"CRITICAL","effect":2000,"turn":1,"rate":450,"growPoint":0},{"artId":610206307,"code":"CONDITION_GOOD","target":"SELF","sub":"CRITICAL","effect":2000,"turn":1,"rate":400,"growPoint":0},{"artId":330301809,"code":"BUFF","target":"ALL","sub":"BLAST","effect":550,"turn":3,"growPoint":25},{"artId":100000308,"code":"ATTACK","target":"TARGET","sub":"LINKED_DAMAGE","effect":6000,"param":6000,"growPoint":100},{"artId":630207703,"code":"CONDITION_GOOD","target":"SELF","sub":"AUTO_HEAL","effect":40,"turn":3,"rate":1000,"growPoint":10},{"artId":610406309,"code":"CONDITION_GOOD","target":"CONNECT","sub":"CRITICAL","effect":2000,"turn":1,"rate":700,"growPoint":0},{"artId":610206809,"code":"CONDITION_GOOD","target":"SELF","sub":"AVOID","turn":1,"rate":500,"growPoint":0},{"artId":630207704,"code":"CONDITION_GOOD","target":"SELF","sub":"AUTO_HEAL","effect":50,"turn":3,"rate":1000,"growPoint":10},{"artId":410302009,"code":"DEBUFF","target":"ALL","sub":"ATTACK","effect":450,"turn":1,"growPoint":25},{"artId":410002109,"code":"DEBUFF","target":"TARGET","sub":"DEFENSE","effect":450,"turn":1,"growPoint":25},{"artId":310401808,"code":"BUFF","target":"CONNECT","sub":"BLAST","effect":750,"turn":1,"growPoint":25},{"artId":310401809,"code":"BUFF","target":"CONNECT","sub":"BLAST","effect":800,"turn":1,"growPoint":25},{"artId":390201105,"code":"BUFF","target":"SELF","sub":"ATTACK","effect":250,"rate":1000,"growPoint":25},{"artId":610406900,"code":"CONDITION_GOOD","target":"CONNECT","sub":"AVOID","turn":1,"rate":1000,"growPoint":0},{"artId":310401108,"code":"BUFF","target":"CONNECT","sub":"ATTACK","effect":375,"turn":1,"growPoint":25},{"artId":310401109,"code":"BUFF","target":"CONNECT","sub":"ATTACK","effect":400,"turn":1,"growPoint":25},{"artId":9045,"code":"HEAL","target":"LIMITED","sub":"HP","effect":250,"growPoint":10,"limitedValue":"1001"},{"artId":330301109,"code":"BUFF","target":"ALL","sub":"ATTACK","effect":350,"turn":3,"growPoint":25},{"artId":330301107,"code":"BUFF","target":"ALL","sub":"ATTACK","effect":300,"turn":3,"growPoint":25},{"artId":330301807,"code":"BUFF","target":"ALL","sub":"BLAST","effect":450,"turn":3,"growPoint":25},{"artId":9059,"code":"CONDITION_BAD","target":"SELF","sub":"CURSE","effect":150,"turn":1,"rate":2000,"growPoint":0},{"artId":200300406,"code":"HEAL","target":"ALL","sub":"HP","effect":212,"growPoint":20},{"artId":200300408,"code":"HEAL","target":"ALL","sub":"HP","effect":237,"growPoint":20},{"artId":310401209,"code":"BUFF","target":"CONNECT","sub":"DEFENSE","effect":1050,"turn":1,"growPoint":25},{"artId":410302109,"code":"DEBUFF","target":"ALL","sub":"DEFENSE","effect":450,"turn":1,"growPoint":25},{"artId":190402181,"code":"ATTACK","target":"ALL","effect":8140,"growPoint":220},{"artId":330201804,"code":"BUFF","target":"SELF","sub":"BLAST","effect":300,"turn":3,"growPoint":25},{"artId":310201105,"code":"BUFF","target":"SELF","sub":"ATTACK","effect":250,"turn":1,"growPoint":25},{"artId":310201704,"code":"BUFF","target":"SELF","sub":"CHARGE","effect":125,"turn":1,"growPoint":25}],"memoriaList":[{"memoriaId":116401,"name":"Invisible Blast [VII]","icon":1134,"level":0,"cost":5,"description":"Negate Evade / Blast Damage UP [VII] (Self/1 Turn)","voice":70,"artList":[610208100,310201807],"type":"SKILL","displayType":"MEMORIA"},{"memoriaId":136401,"name":"Lightning Strike [VII]","icon":1121,"level":0,"cost":6,"description":"Critical Hit Chance [VII] / Evade Chance [IX] (Self /1 Turn)","voice":70,"artList":[610206307,610206809],"type":"SKILL","displayType":"MEMORIA"},{"memoriaId":113811,"name":"Full Gauge Drive [V]","icon":1085,"level":0,"cost":0,"description":"ATK UP when at Max HP [V]","voice":0,"artList":[390203105],"type":"ABILITY","displayType":"MEMORIA"},{"memoriaId":113000,"name":"Blessing Adept","icon":1119,"level":0,"cost":0,"description":"Damage UP [IV] / Negate Curse","voice":0,"artList":[690206104,690208800],"type":"ABILITY","displayType":"MEMORIA"},{"memoriaId":106311,"name":"Critical Strike [VIII]","icon":1121,"level":0,"cost":5,"description":"Critical Hit Chance [VIII] (Self/1 Turn)","voice":70,"artList":[610206308],"type":"SKILL","displayType":"MEMORIA"},{"memoriaId":113401,"name":"Curse Word [IX]","icon":1108,"level":0,"cost":4,"description":"Curse (Target/1 Turn) / DEF DOWN [IX](Target/1 Turn)","voice":0,"artList":[510005000,410002109],"type":"SKILL","displayType":"MEMORIA"},{"memoriaId":126701,"name":"Smite Adept [V]","icon":1085,"level":0,"cost":0,"description":"ATK UP [V] / Damage After Using Charge UP [V]","voice":0,"artList":[390201105,390201705],"type":"ABILITY","displayType":"MEMORIA"},{"memoriaId":129101,"name":"Blast UP [IV]","icon":1092,"level":0,"cost":4,"description":"Blast Damage UP [IV] (Self/1 Turn)","voice":70,"artList":[310201804],"type":"SKILL","displayType":"MEMORIA"},{"memoriaId":118800,"name":"Quell Bloom [IX]","icon":1094,"level":0,"cost":6,"description":"ATK DOWN [IX] / DEF DOWN [VIII] (All Foes/1 Turn)","voice":72,"artList":[410302009,410302108],"type":"SKILL","displayType":"MEMORIA"},{"memoriaId":900201,"name":"Blast Hallucination [VIII]","icon":1092,"level":0,"cost":6,"description":"Blast Damage UP [VII] / DEF DOWN [IX] (All Foes/1 Turn)","voice":70,"artList":[310201807,410302109],"type":"SKILL","displayType":"MEMORIA"},{"memoriaId":139301,"name":"Smite UP [V]","icon":1085,"level":0,"cost":7,"description":"ATK UP [V] / Damage After Using Charge UP [IV] (Self/1 Turn)","voice":70,"artList":[310201105,310201704],"type":"SKILL","displayType":"MEMORIA"},{"memoriaId":139501,"name":"Regenerate Blast [IV]","icon":1092,"level":0,"cost":8,"description":"Blast Damage UP [IV] / HP Regen [IV] (Self/3 Turns)","voice":70,"artList":[330201804,630207704],"type":"SKILL","displayType":"MEMORIA"}],"magiaList":[{"magiaId":300551,"name":"White Camellia","icon":1014,"level":1,"description":"Damages All Enemies [VII] / DEF DOWN (All Foes/3 Turns) / Remove Buffs (All Foes)","artList":[100300107,430302109,200300700]},{"magiaId":302555,"name":"Soul Salvation","icon":1067,"level":5,"description":"Damages a Single Enemy [VIII] / Power UP as HP decreases / Evade (Self/1 Turn) / HP Regen (Self/3 Turns)","artList":[100000308,610206900,630207703]},{"magiaId":100255,"name":"Absolute Rain","icon":1014,"level":5,"description":"Damages All Enemies [VII] / Blast Damage UP (Team/3 Turns) / ATK UP (Team/3 Turns)","artList":[100300107,330301807,330301107]},{"magiaId":402155,"name":"La Lumière","icon":1014,"level":5,"description":"Damages All Enemies [VII] / Heal (Team) / ATK UP (Team/3 Turns) / Curse (Self/1 Turn)","artList":[100300107,200300406,330301107,9059]}],"connectList":[{"connectId":30055,"name":"What Do You Think of This Plan?","icon":1092,"description":"Blast Damage UP [VIII] / ATK UP [VIII] / Remove Debuffs","artList":[310401808,310401108,200400800]},{"connectId":10025,"name":"I\u0027ll Light the Way","icon":1092,"description":"Blast Damage UP [IX] / Critical Hit Chance [IX] / Connecting with Iroha will restore some of her HP","artList":[310401809,610406309,9045]},{"connectId":30255,"name":"Allow Me to Write the Next Part","icon":1126,"description":"Guaranteed Follow Up Attack if Target Survives / ATK UP [IX] / Guaranteed Evade","artList":[610407300,310401109,610406900]},{"connectId":40215,"name":"I Vow to Protect You!","icon":1085,"description":"ATK UP [IX] / DEF UP [IX]","artList":[310401109,310401209]}],"doppelList":[{"doppelId":100200,"name":"Doppel of Admittance","icon":1014,"level":5,"voice":40,"description":"Damages All Enemies [IX] / Blast Damage UP (Team/3 Turns)  / ATK UP (Team/3 Turns)","artList":[190100281,330301809,330301109]},{"doppelId":302500,"name":"Doppel of Electronic Ordinance","icon":1067,"level":5,"voice":40,"description":"Damages a Single Enemy [X] / Power UP as HP decreases / Evade (Self/1 Turn) / HP Regen (Self/3 Turns)","artList":[190302581,610206900,630207704]},{"doppelId":402100,"name":"Doppel of Holy Flame","icon":1014,"level":5,"voice":40,"description":"Damages All Enemies [IX] / Heal (Team) / ATK UP (Team/3 Turns)","artList":[190402181,200300408,330301109]}],"webData":{"gameUser":{"userId":"1e895b70-97af-11e9-b26d-023d588abc78","exp":741901,"level":98,"totalExpForCurrentLevel":686379,"totalExpForNextLevel":753287,"levelTag":2,"cardCapacity":400,"deckType":18,"leaderId":"aa06f923-ebd0-11ea-87bd-0206fb316737","loginBonusCount":2,"loginBonusGetAt":"2020/10/30 17:51:53","comment":"well... fucc. see yall  Chu Lokao#9349 on Discord","riche":12598776,"inviteCode":"pyw596yX","clearedNativeCacheAt":"2020/10/26 18:46:23","closeFunctions":"GUILD,GVG","firstNavi":"FORMATION_SUPPORT","loginBonusPattern":"Z2","loginBonusPatternSetAt":"2020/10/29 18:07:10","announcementViewAt":"2020/10/30 17:52:02","freeRankArenaPoint":14000,"rankingArenaPoint":195750,"numberOfFreeRankConsecutiveWins":0,"numberOfFreeRankTotalWins":1172,"remainCountResetAt":"2020/05/20 04:12:47","remainBattleCountOfRanking":0,"remainReloadCountOfRanking":12,"userQuestBattleResultId":"6256b48e-1b13-11eb-94d7-024ec58565ab","lastClearedMainChapterId":20,"lastClearedMainSectionId":102005,"progressTag":20,"userReviewStatus":"ACCEPTED","questBattleHelpReceivedAt":"2020/10/30 17:51:53","freeGachaAt":"2020/08/27 17:10:39","mainQuestOutlineViewedAt":"2020/10/28 18:32:26","subQuestOutlineViewedAt":"2020/08/14 13:53:02","bgItemId":"HOME_EV_1033_20411","bgItem":{"itemCode":"HOME_EV_1033_20411","name":"Hereafter Background 1","shortDescription":"Hereafter 1","description":"A \"Hereafter\" theme for your Home Background","canUse":false,"isSellable":false,"itemType":"BACKGROUND","treasureChestColor":"GOLD","price":0,"sortKey":1020,"backgroundImage":"web_ev_1033_20411.ExportJson"},"passwordNotice":false,"skipAdventure":true,"eventTrainingId":1052,"trainingSelectedCharaNos":"1001,3026","eventArenaMissionPoint":0,"numberOfEventArenaMissionConsecutiveWins":0,"startdashGachaExpiredAt":"2020/01/15 06:55:44","createdAt":"2019/06/25 17:20:01","needsOpenSection":true},"userStatusList":[{"userId":"1e895b70-97af-11e9-b26d-023d588abc78","statusId":"BTP","point":4,"checkPeriod":60,"periodicPoint":1,"checkedAt":"2020/10/30 17:52:45","createdAt":"2019/06/25 17:20:01"}],"userQuestBattleResultList":[{"id":"6256b48e-1b13-11eb-94d7-024ec58565ab","userId":"1e895b70-97af-11e9-b26d-023d588abc78","level":98,"battleType":"ARENA","questBattleStatus":"LOTTERY","deckType":21,"userCardId3":"5f5dae3e-d4fd-11e9-a9e9-02394326990d","userCardId5":"fe5f95e3-cfe8-11e9-b0e5-02d2e3801fe3","userCardId7":"acc74990-9646-11ea-8496-022ea6f80ab5","follow":false,"follower":false,"episodeUserCardId":"5f5dae3e-d4fd-11e9-a9e9-02394326990d","formationSheetId":912,"formationSheet":{"id":912,"name":"Light Tercio (Flame)","description":"Boosts Front Top (Light) + Center/Rear Bottom (Flame)","sheetType":9,"place3":"LIGHT_ATTACK_UP1_100,LIGHT_DEFENSE_UP2_150","place4":"ALL_ATTACK_UP0_0","place5":"FIRE_ATTACK_UP3_250","place7":"FIRE_ATTACK_UP3_250","place8":"ALL_ATTACK_UP0_0"},"dropRewardCodes":"","exp":0,"riche":0,"bondsPt1":0,"bondsPt2":0,"bondsPt3":0,"bondsPt4":0,"bondsPt5":0,"bondsPt6":0,"bondsPt7":0,"bondsPt8":0,"bondsPt9":0,"helpBondsPt":0,"clearedMission1":false,"clearedMission2":false,"clearedMission3":false,"diskAcceleNum":0,"diskBlastNum":0,"diskChargeNum":0,"connectNum":0,"skillNum":0,"magiaNum":0,"doppelNum":0,"deadNum":0,"continuedNum":0,"enemyNum":0,"turns":0,"nativeClearTime":0,"serverClearTime":0,"createdAt":"2020/10/30 17:52:43"}],"resultCode":"success"},"isHalfSkill":false,"continuable":true}
+{
+	"battleType": "ARENA",
+	"scenario": {
+		"bgm": "bgm01_battle01",
+		"bgmBoss": "bgm01_battle01",
+		"difficulty": 0,
+		"cost": 0,
+		"missionList": [],
+		"sheetType": 9,
+		"auto": false
+	},
+	"playerList": [
+		{
+			"diskId": 0,
+			"helper": false,
+			"friend": false,
+			"endMessageId": 43,
+			"endMessage": "Phew... We won.",
+			"memoriaMax": 4,
+			"cardId": 40215,
+			"charId": 4021,
+			"miniCharId": 402100,
+			"miniMagiaId": 402100,
+			"miniDoppelId": 402100,
+			"pos": 3,
+			"name": "Darc",
+			"level": 100,
+			"align": "LIGHT",
+			"rank": 5,
+			"hpStart": 27883,
+			"hp": 27883,
+			"mpStart": 0,
+			"maxMp": 2000,
+			"attack": 10564,
+			"defence": 13515,
+			"speed": 0,
+			"discType1": "MPUP",
+			"discType2": "RANGE_V",
+			"discType3": "RANGE_V",
+			"discType4": "RANGE_H",
+			"discType5": "CHARGE",
+			"doppelId": 402100,
+			"connectId": 40215,
+			"magiaId": 402155,
+			"blast": 9,
+			"charge": 5,
+			"mpup": 5,
+			"rateGainMpAtk": 900,
+			"rateGainMpDef": 900,
+			"leader": true,
+			"ai": 1,
+			"memoriaList": [
+				900201
+			]
+		},
+		{
+			"diskId": 0,
+			"helper": false,
+			"friend": false,
+			"endMessageId": 45,
+			"endMessage": "I will not die! Not here!",
+			"memoriaMax": 4,
+			"cardId": 10025,
+			"charId": 1002,
+			"miniCharId": 100201,
+			"miniMagiaId": 100200,
+			"miniDoppelId": 100200,
+			"pos": 5,
+			"name": "Yachiyo Nanami",
+			"level": 100,
+			"align": "WATER",
+			"rank": 5,
+			"hpStart": 27779,
+			"hp": 27779,
+			"mpStart": 0,
+			"maxMp": 2000,
+			"attack": 8119,
+			"defence": 11253,
+			"speed": 0,
+			"discType1": "MPUP",
+			"discType2": "RANGE_H",
+			"discType3": "RANGE_H",
+			"discType4": "RANGE_H",
+			"discType5": "CHARGE",
+			"doppelId": 100200,
+			"connectId": 10025,
+			"magiaId": 100255,
+			"blast": 9,
+			"charge": 5,
+			"mpup": 5,
+			"rateGainMpAtk": 900,
+			"rateGainMpDef": 900,
+			"leader": false,
+			"ai": 1,
+			"memoriaList": [
+				139501,
+				139301
+			]
+		},
+		{
+			"diskId": 0,
+			"helper": false,
+			"friend": false,
+			"endMessageId": 43,
+			"endMessage": "Well, that\u0027s about it, I guess.",
+			"memoriaMax": 4,
+			"cardId": 30055,
+			"charId": 3005,
+			"miniCharId": 300501,
+			"miniMagiaId": 300500,
+			"pos": 7,
+			"name": "Nanaka Tokiwa",
+			"level": 100,
+			"align": "WATER",
+			"rank": 5,
+			"hpStart": 26373,
+			"hp": 26373,
+			"mpStart": 0,
+			"maxMp": 1000,
+			"attack": 8705,
+			"defence": 8342,
+			"speed": 0,
+			"discType1": "MPUP",
+			"discType2": "RANGE_V",
+			"discType3": "RANGE_V",
+			"discType4": "RANGE_V",
+			"discType5": "CHARGE",
+			"doppelId": 0,
+			"connectId": 30055,
+			"magiaId": 300551,
+			"blast": 9,
+			"charge": 5,
+			"mpup": 5,
+			"rateGainMpAtk": 900,
+			"rateGainMpDef": 900,
+			"leader": false,
+			"ai": 1,
+			"memoriaList": []
+		}
+	],
+	"waveList": [
+		{
+			"field": 21181,
+			"boss": false,
+			"sheetType": 9,
+			"enemyList": [
+				{
+					"action": 1,
+					"bossType": 0,
+					"magnification": 100,
+					"enemyKey": "ad26d6be-93ec-11ea-ac8d-022ea6f80ab5",
+					"cardId": 10015,
+					"charId": 1001,
+					"miniCharId": 100101,
+					"miniMagiaId": 100100,
+					"miniDoppelId": 100101,
+					"pos": 7,
+					"name": "Ashley Taylor",
+					"level": 100,
+					"align": "WATER",
+					"rank": 5,
+					"hpStart": 3185,
+					"hp": 31855,
+					"mpStart": 0,
+					"maxMp": 1000,
+					"attack": 13413,
+					"defence": 11897,
+					"speed": 0,
+					"discType1": "MPUP",
+					"discType2": "RANGE_V",
+					"discType3": "RANGE_V",
+					"discType4": "RANGE_V",
+					"discType5": "CHARGE",
+					"connectId": 30055,
+					"magiaId": 300551,
+					"blast": 9,
+					"charge": 5,
+					"mpup": 5,
+					"rateGainMpAtk": 900,
+					"rateGainMpDef": 900,
+					"leader": false,
+					"ai": 1,
+					"initialType": "BALANCE",
+					"enemyKindType": "HUMAN",
+					"memoriaList": [
+						126701,
+						136401,
+						116401
+					]
+				},
+				{
+					"action": 1,
+					"bossType": 0,
+					"magnification": 100,
+					"enemyKey": "20d0742f-a7d7-11e9-986a-02311564c736",
+					"cardId": 10015,
+					"charId": 1001,
+					"miniCharId": 100101,
+					"miniMagiaId": 100100,
+					"miniDoppelId": 100101,
+					"pos": 3,
+					"name": "Ashley Taylor",
+					"level": 100,
+					"align": "DARK",
+					"rank": 5,
+					"hpStart": 2826,
+					"hp": 28264,
+					"mpStart": 0,
+					"maxMp": 2000,
+					"attack": 13202,
+					"defence": 11769,
+					"speed": 0,
+					"discType1": "MPUP",
+					"discType2": "MPUP",
+					"discType3": "RANGE_V",
+					"discType4": "RANGE_H",
+					"discType5": "CHARGE",
+					"doppelId": 302500,
+					"connectId": 30255,
+					"magiaId": 302555,
+					"blast": 7,
+					"charge": 5,
+					"mpup": 0,
+					"rateGainMpAtk": 1200,
+					"rateGainMpDef": 1200,
+					"leader": true,
+					"ai": 1,
+					"initialType": "MAGIA",
+					"enemyKindType": "HUMAN",
+					"memoriaList": [
+						113000,
+						118800,
+						113401
+					]
+				},
+				{
+					"action": 1,
+					"bossType": 0,
+					"magnification": 100,
+					"enemyKey": "302ab152-d03c-11e9-b0e5-02d2e3801fe3",
+					"cardId": 10015,
+					"charId": 1001,
+					"miniCharId": 100101,
+					"miniMagiaId": 100100,
+					"miniDoppelId": 100101,
+					"pos": 5,
+					"name": "Ashley Taylor",
+					"level": 100,
+					"align": "WATER",
+					"rank": 5,
+					"hpStart": 30376,
+					"hp": 30376,
+					"mpStart": 0,
+					"maxMp": 2000,
+					"attack": 12526,
+					"defence": 11770,
+					"speed": 0,
+					"discType1": "MPUP",
+					"discType2": "RANGE_H",
+					"discType3": "RANGE_H",
+					"discType4": "RANGE_H",
+					"discType5": "CHARGE",
+					"doppelId": 100200,
+					"connectId": 10025,
+					"magiaId": 100255,
+					"blast": 9,
+					"charge": 5,
+					"mpup": 0,
+					"rateGainMpAtk": 900,
+					"rateGainMpDef": 900,
+					"leader": false,
+					"ai": 1,
+					"initialType": "BALANCE",
+					"enemyKindType": "HUMAN",
+					"memoriaList": [
+						113811,
+						129101,
+						106311
+					]
+				}
+			]
+		}
+	],
+	"artList": [
+		{
+			"artId": 610407300,
+			"code": "CONDITION_GOOD",
+			"target": "CONNECT",
+			"sub": "PURSUE",
+			"effect": 800,
+			"turn": 1,
+			"rate": 1000,
+			"growPoint": 0
+		},
+		{
+			"artId": 510005000,
+			"code": "CONDITION_BAD",
+			"target": "TARGET",
+			"sub": "CURSE",
+			"effect": 150,
+			"turn": 1,
+			"rate": 1000,
+			"growPoint": 0
+		},
+		{
+			"artId": 390203105,
+			"code": "BUFF_HPMAX",
+			"target": "SELF",
+			"sub": "ATTACK",
+			"effect": 250,
+			"rate": 1000,
+			"growPoint": 20
+		},
+		{
+			"artId": 190302581,
+			"code": "ATTACK",
+			"target": "TARGET",
+			"sub": "LINKED_DAMAGE",
+			"effect": 15000,
+			"param": 6000,
+			"growPoint": 220
+		},
+		{
+			"artId": 390201705,
+			"code": "BUFF",
+			"target": "SELF",
+			"sub": "CHARGE",
+			"effect": 150,
+			"rate": 1000,
+			"growPoint": 25
+		},
+		{
+			"artId": 200300700,
+			"code": "REVOKE",
+			"target": "ALL",
+			"sub": "BUFF",
+			"growPoint": 0
+		},
+		{
+			"artId": 610206900,
+			"code": "CONDITION_GOOD",
+			"target": "SELF",
+			"sub": "AVOID",
+			"turn": 1,
+			"rate": 1000,
+			"growPoint": 0
+		},
+		{
+			"artId": 190100281,
+			"code": "ATTACK",
+			"target": "ALL",
+			"effect": 8360,
+			"growPoint": 220
+		},
+		{
+			"artId": 200400800,
+			"code": "REVOKE",
+			"target": "CONNECT",
+			"sub": "DEBUFF",
+			"growPoint": 0
+		},
+		{
+			"artId": 410302108,
+			"code": "DEBUFF",
+			"target": "ALL",
+			"sub": "DEFENSE",
+			"effect": 400,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 100300107,
+			"code": "ATTACK",
+			"target": "ALL",
+			"effect": 3600,
+			"growPoint": 100
+		},
+		{
+			"artId": 310201807,
+			"code": "BUFF",
+			"target": "SELF",
+			"sub": "BLAST",
+			"effect": 450,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 690206104,
+			"code": "CONDITION_GOOD",
+			"target": "SELF",
+			"sub": "DAMAGE_UP",
+			"effect": 200,
+			"rate": 1000,
+			"growPoint": 25
+		},
+		{
+			"artId": 310201804,
+			"code": "BUFF",
+			"target": "SELF",
+			"sub": "BLAST",
+			"effect": 300,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 430302109,
+			"code": "DEBUFF",
+			"target": "ALL",
+			"sub": "DEFENSE",
+			"effect": 250,
+			"turn": 3,
+			"growPoint": 25
+		},
+		{
+			"artId": 610208100,
+			"code": "IGNORE",
+			"target": "SELF",
+			"sub": "AVOID",
+			"turn": 1,
+			"rate": 1000,
+			"growPoint": 0
+		},
+		{
+			"artId": 690208800,
+			"code": "IGNORE",
+			"target": "SELF",
+			"sub": "CURSE",
+			"rate": 1000,
+			"growPoint": 0
+		},
+		{
+			"artId": 610206308,
+			"code": "CONDITION_GOOD",
+			"target": "SELF",
+			"sub": "CRITICAL",
+			"effect": 2000,
+			"turn": 1,
+			"rate": 450,
+			"growPoint": 0
+		},
+		{
+			"artId": 610206307,
+			"code": "CONDITION_GOOD",
+			"target": "SELF",
+			"sub": "CRITICAL",
+			"effect": 2000,
+			"turn": 1,
+			"rate": 400,
+			"growPoint": 0
+		},
+		{
+			"artId": 330301809,
+			"code": "BUFF",
+			"target": "ALL",
+			"sub": "BLAST",
+			"effect": 550,
+			"turn": 3,
+			"growPoint": 25
+		},
+		{
+			"artId": 100000308,
+			"code": "ATTACK",
+			"target": "TARGET",
+			"sub": "LINKED_DAMAGE",
+			"effect": 6000,
+			"param": 6000,
+			"growPoint": 100
+		},
+		{
+			"artId": 630207703,
+			"code": "CONDITION_GOOD",
+			"target": "SELF",
+			"sub": "AUTO_HEAL",
+			"effect": 40,
+			"turn": 3,
+			"rate": 1000,
+			"growPoint": 10
+		},
+		{
+			"artId": 610406309,
+			"code": "CONDITION_GOOD",
+			"target": "CONNECT",
+			"sub": "CRITICAL",
+			"effect": 2000,
+			"turn": 1,
+			"rate": 700,
+			"growPoint": 0
+		},
+		{
+			"artId": 610206809,
+			"code": "CONDITION_GOOD",
+			"target": "SELF",
+			"sub": "AVOID",
+			"turn": 1,
+			"rate": 500,
+			"growPoint": 0
+		},
+		{
+			"artId": 630207704,
+			"code": "CONDITION_GOOD",
+			"target": "SELF",
+			"sub": "AUTO_HEAL",
+			"effect": 50,
+			"turn": 3,
+			"rate": 1000,
+			"growPoint": 10
+		},
+		{
+			"artId": 410302009,
+			"code": "DEBUFF",
+			"target": "ALL",
+			"sub": "ATTACK",
+			"effect": 450,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 410002109,
+			"code": "DEBUFF",
+			"target": "TARGET",
+			"sub": "DEFENSE",
+			"effect": 450,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 310401808,
+			"code": "BUFF",
+			"target": "CONNECT",
+			"sub": "BLAST",
+			"effect": 750,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 310401809,
+			"code": "BUFF",
+			"target": "CONNECT",
+			"sub": "BLAST",
+			"effect": 800,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 390201105,
+			"code": "BUFF",
+			"target": "SELF",
+			"sub": "ATTACK",
+			"effect": 250,
+			"rate": 1000,
+			"growPoint": 25
+		},
+		{
+			"artId": 610406900,
+			"code": "CONDITION_GOOD",
+			"target": "CONNECT",
+			"sub": "AVOID",
+			"turn": 1,
+			"rate": 1000,
+			"growPoint": 0
+		},
+		{
+			"artId": 310401108,
+			"code": "BUFF",
+			"target": "CONNECT",
+			"sub": "ATTACK",
+			"effect": 375,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 310401109,
+			"code": "BUFF",
+			"target": "CONNECT",
+			"sub": "ATTACK",
+			"effect": 400,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 9045,
+			"code": "HEAL",
+			"target": "LIMITED",
+			"sub": "HP",
+			"effect": 250,
+			"growPoint": 10,
+			"limitedValue": "1001"
+		},
+		{
+			"artId": 330301109,
+			"code": "BUFF",
+			"target": "ALL",
+			"sub": "ATTACK",
+			"effect": 350,
+			"turn": 3,
+			"growPoint": 25
+		},
+		{
+			"artId": 330301107,
+			"code": "BUFF",
+			"target": "ALL",
+			"sub": "ATTACK",
+			"effect": 300,
+			"turn": 3,
+			"growPoint": 25
+		},
+		{
+			"artId": 330301807,
+			"code": "BUFF",
+			"target": "ALL",
+			"sub": "BLAST",
+			"effect": 450,
+			"turn": 3,
+			"growPoint": 25
+		},
+		{
+			"artId": 9059,
+			"code": "CONDITION_BAD",
+			"target": "SELF",
+			"sub": "CURSE",
+			"effect": 150,
+			"turn": 1,
+			"rate": 2000,
+			"growPoint": 0
+		},
+		{
+			"artId": 200300406,
+			"code": "HEAL",
+			"target": "ALL",
+			"sub": "HP",
+			"effect": 212,
+			"growPoint": 20
+		},
+		{
+			"artId": 200300408,
+			"code": "HEAL",
+			"target": "ALL",
+			"sub": "HP",
+			"effect": 237,
+			"growPoint": 20
+		},
+		{
+			"artId": 310401209,
+			"code": "BUFF",
+			"target": "CONNECT",
+			"sub": "DEFENSE",
+			"effect": 1050,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 410302109,
+			"code": "DEBUFF",
+			"target": "ALL",
+			"sub": "DEFENSE",
+			"effect": 450,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 190402181,
+			"code": "ATTACK",
+			"target": "ALL",
+			"effect": 8140,
+			"growPoint": 220
+		},
+		{
+			"artId": 330201804,
+			"code": "BUFF",
+			"target": "SELF",
+			"sub": "BLAST",
+			"effect": 300,
+			"turn": 3,
+			"growPoint": 25
+		},
+		{
+			"artId": 310201105,
+			"code": "BUFF",
+			"target": "SELF",
+			"sub": "ATTACK",
+			"effect": 250,
+			"turn": 1,
+			"growPoint": 25
+		},
+		{
+			"artId": 310201704,
+			"code": "BUFF",
+			"target": "SELF",
+			"sub": "CHARGE",
+			"effect": 125,
+			"turn": 1,
+			"growPoint": 25
+		}
+	],
+	"memoriaList": [
+		{
+			"memoriaId": 116401,
+			"name": "Invisible Blast [VII]",
+			"icon": 1134,
+			"level": 0,
+			"cost": 5,
+			"description": "Negate Evade / Blast Damage UP [VII] (Self/1 Turn)",
+			"voice": 70,
+			"artList": [
+				610208100,
+				310201807
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 136401,
+			"name": "Lightning Strike [VII]",
+			"icon": 1121,
+			"level": 0,
+			"cost": 6,
+			"description": "Critical Hit Chance [VII] / Evade Chance [IX] (Self /1 Turn)",
+			"voice": 70,
+			"artList": [
+				610206307,
+				610206809
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 113811,
+			"name": "Full Gauge Drive [V]",
+			"icon": 1085,
+			"level": 0,
+			"cost": 0,
+			"description": "ATK UP when at Max HP [V]",
+			"voice": 0,
+			"artList": [
+				390203105
+			],
+			"type": "ABILITY",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 113000,
+			"name": "Blessing Adept",
+			"icon": 1119,
+			"level": 0,
+			"cost": 0,
+			"description": "Damage UP [IV] / Negate Curse",
+			"voice": 0,
+			"artList": [
+				690206104,
+				690208800
+			],
+			"type": "ABILITY",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 106311,
+			"name": "Critical Strike [VIII]",
+			"icon": 1121,
+			"level": 0,
+			"cost": 5,
+			"description": "Critical Hit Chance [VIII] (Self/1 Turn)",
+			"voice": 70,
+			"artList": [
+				610206308
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 113401,
+			"name": "Curse Word [IX]",
+			"icon": 1108,
+			"level": 0,
+			"cost": 4,
+			"description": "Curse (Target/1 Turn) / DEF DOWN [IX](Target/1 Turn)",
+			"voice": 0,
+			"artList": [
+				510005000,
+				410002109
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 126701,
+			"name": "Smite Adept [V]",
+			"icon": 1085,
+			"level": 0,
+			"cost": 0,
+			"description": "ATK UP [V] / Damage After Using Charge UP [V]",
+			"voice": 0,
+			"artList": [
+				390201105,
+				390201705
+			],
+			"type": "ABILITY",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 129101,
+			"name": "Blast UP [IV]",
+			"icon": 1092,
+			"level": 0,
+			"cost": 4,
+			"description": "Blast Damage UP [IV] (Self/1 Turn)",
+			"voice": 70,
+			"artList": [
+				310201804
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 118800,
+			"name": "Quell Bloom [IX]",
+			"icon": 1094,
+			"level": 0,
+			"cost": 6,
+			"description": "ATK DOWN [IX] / DEF DOWN [VIII] (All Foes/1 Turn)",
+			"voice": 72,
+			"artList": [
+				410302009,
+				410302108
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 900201,
+			"name": "Blast Hallucination [VIII]",
+			"icon": 1092,
+			"level": 0,
+			"cost": 6,
+			"description": "Blast Damage UP [VII] / DEF DOWN [IX] (All Foes/1 Turn)",
+			"voice": 70,
+			"artList": [
+				310201807,
+				410302109
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 139301,
+			"name": "Smite UP [V]",
+			"icon": 1085,
+			"level": 0,
+			"cost": 7,
+			"description": "ATK UP [V] / Damage After Using Charge UP [IV] (Self/1 Turn)",
+			"voice": 70,
+			"artList": [
+				310201105,
+				310201704
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+		},
+		{
+			"memoriaId": 139501,
+			"name": "Regenerate Blast [IV]",
+			"icon": 1092,
+			"level": 0,
+			"cost": 8,
+			"description": "Blast Damage UP [IV] / HP Regen [IV] (Self/3 Turns)",
+			"voice": 70,
+			"artList": [
+				330201804,
+				630207704
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+		}
+	],
+	"magiaList": [
+		{
+			"magiaId": 300551,
+			"name": "White Camellia",
+			"icon": 1014,
+			"level": 1,
+			"description": "Damages All Enemies [VII] / DEF DOWN (All Foes/3 Turns) / Remove Buffs (All Foes)",
+			"artList": [
+				100300107,
+				430302109,
+				200300700
+			]
+		},
+		{
+			"magiaId": 302555,
+			"name": "Soul Salvation",
+			"icon": 1067,
+			"level": 5,
+			"description": "Damages a Single Enemy [VIII] / Power UP as HP decreases / Evade (Self/1 Turn) / HP Regen (Self/3 Turns)",
+			"artList": [
+				100000308,
+				610206900,
+				630207703
+			]
+		},
+		{
+			"magiaId": 100255,
+			"name": "Absolute Rain",
+			"icon": 1014,
+			"level": 5,
+			"description": "Damages All Enemies [VII] / Blast Damage UP (Team/3 Turns) / ATK UP (Team/3 Turns)",
+			"artList": [
+				100300107,
+				330301807,
+				330301107
+			]
+		},
+		{
+			"magiaId": 402155,
+			"name": "La Lumière",
+			"icon": 1014,
+			"level": 5,
+			"description": "Damages All Enemies [VII] / Heal (Team) / ATK UP (Team/3 Turns) / Curse (Self/1 Turn)",
+			"artList": [
+				100300107,
+				200300406,
+				330301107,
+				9059
+			]
+		}
+	],
+	"connectList": [
+		{
+			"connectId": 30055,
+			"name": "What Do You Think of This Plan?",
+			"icon": 1092,
+			"description": "Blast Damage UP [VIII] / ATK UP [VIII] / Remove Debuffs",
+			"artList": [
+				310401808,
+				310401108,
+				200400800
+			]
+		},
+		{
+			"connectId": 10025,
+			"name": "I\u0027ll Light the Way",
+			"icon": 1092,
+			"description": "Blast Damage UP [IX] / Critical Hit Chance [IX] / Connecting with Iroha will restore some of her HP",
+			"artList": [
+				310401809,
+				610406309,
+				9045
+			]
+		},
+		{
+			"connectId": 30255,
+			"name": "Allow Me to Write the Next Part",
+			"icon": 1126,
+			"description": "Guaranteed Follow Up Attack if Target Survives / ATK UP [IX] / Guaranteed Evade",
+			"artList": [
+				610407300,
+				310401109,
+				610406900
+			]
+		},
+		{
+			"connectId": 40215,
+			"name": "I Vow to Protect You!",
+			"icon": 1085,
+			"description": "ATK UP [IX] / DEF UP [IX]",
+			"artList": [
+				310401109,
+				310401209
+			]
+		}
+	],
+	"doppelList": [
+		{
+			"doppelId": 100200,
+			"name": "Doppel of Admittance",
+			"icon": 1014,
+			"level": 5,
+			"voice": 40,
+			"description": "Damages All Enemies [IX] / Blast Damage UP (Team/3 Turns)  / ATK UP (Team/3 Turns)",
+			"artList": [
+				190100281,
+				330301809,
+				330301109
+			]
+		},
+		{
+			"doppelId": 302500,
+			"name": "Doppel of Electronic Ordinance",
+			"icon": 1067,
+			"level": 5,
+			"voice": 40,
+			"description": "Damages a Single Enemy [X] / Power UP as HP decreases / Evade (Self/1 Turn) / HP Regen (Self/3 Turns)",
+			"artList": [
+				190302581,
+				610206900,
+				630207704
+			]
+		},
+		{
+			"doppelId": 402100,
+			"name": "Doppel of Holy Flame",
+			"icon": 1014,
+			"level": 5,
+			"voice": 40,
+			"description": "Damages All Enemies [IX] / Heal (Team) / ATK UP (Team/3 Turns)",
+			"artList": [
+				190402181,
+				200300408,
+				330301109
+			]
+		}
+	],
+	"webData": {
+		"gameUser": {
+			"userId": "1e895b70-97af-11e9-b26d-023d588abc78",
+			"exp": 741901,
+			"level": 98,
+			"totalExpForCurrentLevel": 686379,
+			"totalExpForNextLevel": 753287,
+			"levelTag": 2,
+			"cardCapacity": 400,
+			"deckType": 18,
+			"leaderId": "aa06f923-ebd0-11ea-87bd-0206fb316737",
+			"loginBonusCount": 2,
+			"loginBonusGetAt": "2020/10/30 17:51:53",
+			"comment": "well... fucc. see yall  Chu Lokao#9349 on Discord",
+			"riche": 12598776,
+			"inviteCode": "pyw596yX",
+			"clearedNativeCacheAt": "2020/10/26 18:46:23",
+			"closeFunctions": "GUILD,GVG",
+			"firstNavi": "FORMATION_SUPPORT",
+			"loginBonusPattern": "Z2",
+			"loginBonusPatternSetAt": "2020/10/29 18:07:10",
+			"announcementViewAt": "2020/10/30 17:52:02",
+			"freeRankArenaPoint": 14000,
+			"rankingArenaPoint": 195750,
+			"numberOfFreeRankConsecutiveWins": 0,
+			"numberOfFreeRankTotalWins": 1172,
+			"remainCountResetAt": "2020/05/20 04:12:47",
+			"remainBattleCountOfRanking": 0,
+			"remainReloadCountOfRanking": 12,
+			"userQuestBattleResultId": "6256b48e-1b13-11eb-94d7-024ec58565ab",
+			"lastClearedMainChapterId": 20,
+			"lastClearedMainSectionId": 102005,
+			"progressTag": 20,
+			"userReviewStatus": "ACCEPTED",
+			"questBattleHelpReceivedAt": "2020/10/30 17:51:53",
+			"freeGachaAt": "2020/08/27 17:10:39",
+			"mainQuestOutlineViewedAt": "2020/10/28 18:32:26",
+			"subQuestOutlineViewedAt": "2020/08/14 13:53:02",
+			"bgItemId": "HOME_EV_1033_20411",
+			"bgItem": {
+				"itemCode": "HOME_EV_1033_20411",
+				"name": "Hereafter Background 1",
+				"shortDescription": "Hereafter 1",
+				"description": "A \"Hereafter\" theme for your Home Background",
+				"canUse": false,
+				"isSellable": false,
+				"itemType": "BACKGROUND",
+				"treasureChestColor": "GOLD",
+				"price": 0,
+				"sortKey": 1020,
+				"backgroundImage": "web_ev_1033_20411.ExportJson"
+			},
+			"passwordNotice": false,
+			"skipAdventure": true,
+			"eventTrainingId": 1052,
+			"trainingSelectedCharaNos": "1001,3026",
+			"eventArenaMissionPoint": 0,
+			"numberOfEventArenaMissionConsecutiveWins": 0,
+			"startdashGachaExpiredAt": "2020/01/15 06:55:44",
+			"createdAt": "2019/06/25 17:20:01",
+			"needsOpenSection": true
+		},
+		"userStatusList": [
+			{
+				"userId": "1e895b70-97af-11e9-b26d-023d588abc78",
+				"statusId": "BTP",
+				"point": 4,
+				"checkPeriod": 60,
+				"periodicPoint": 1,
+				"checkedAt": "2020/10/30 17:52:45",
+				"createdAt": "2019/06/25 17:20:01"
+			}
+		],
+		"userQuestBattleResultList": [
+			{
+				"id": "6256b48e-1b13-11eb-94d7-024ec58565ab",
+				"userId": "1e895b70-97af-11e9-b26d-023d588abc78",
+				"level": 98,
+				"battleType": "ARENA",
+				"questBattleStatus": "LOTTERY",
+				"deckType": 21,
+				"userCardId3": "5f5dae3e-d4fd-11e9-a9e9-02394326990d",
+				"userCardId5": "fe5f95e3-cfe8-11e9-b0e5-02d2e3801fe3",
+				"userCardId7": "acc74990-9646-11ea-8496-022ea6f80ab5",
+				"follow": false,
+				"follower": false,
+				"episodeUserCardId": "5f5dae3e-d4fd-11e9-a9e9-02394326990d",
+				"formationSheetId": 912,
+				"formationSheet": {
+					"id": 912,
+					"name": "Light Tercio (Flame)",
+					"description": "Boosts Front Top (Light) + Center/Rear Bottom (Flame)",
+					"sheetType": 9,
+					"place3": "LIGHT_ATTACK_UP1_100,LIGHT_DEFENSE_UP2_150",
+					"place4": "ALL_ATTACK_UP0_0",
+					"place5": "FIRE_ATTACK_UP3_250",
+					"place7": "FIRE_ATTACK_UP3_250",
+					"place8": "ALL_ATTACK_UP0_0"
+				},
+				"dropRewardCodes": "",
+				"exp": 0,
+				"riche": 0,
+				"bondsPt1": 0,
+				"bondsPt2": 0,
+				"bondsPt3": 0,
+				"bondsPt4": 0,
+				"bondsPt5": 0,
+				"bondsPt6": 0,
+				"bondsPt7": 0,
+				"bondsPt8": 0,
+				"bondsPt9": 0,
+				"helpBondsPt": 0,
+				"clearedMission1": false,
+				"clearedMission2": false,
+				"clearedMission3": false,
+				"diskAcceleNum": 0,
+				"diskBlastNum": 0,
+				"diskChargeNum": 0,
+				"connectNum": 0,
+				"skillNum": 0,
+				"magiaNum": 0,
+				"doppelNum": 0,
+				"deadNum": 0,
+				"continuedNum": 0,
+				"enemyNum": 0,
+				"turns": 0,
+				"nativeClearTime": 0,
+				"serverClearTime": 0,
+				"createdAt": "2020/10/30 17:52:43"
+			}
+		],
+		"resultCode": "success"
+	},
+	"isHalfSkill": false,
+	"continuable": true
+}

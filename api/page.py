@@ -3,7 +3,6 @@ import re
 from datetime import datetime,timedelta
 import os
 import flask
-import sys
 def arenaTop(response):
     with open('data/arenaTopDummy.json') as f:
         dummyResponse=json.load(f)
@@ -17,14 +16,27 @@ def arenaFreeRank(response):
     with open('data/arenaFreeRankDummy.json') as f:
         dummyResponse=json.load(f)
     response['userArenaBattleMatch']=dummyResponse['userArenaBattleMatch']
+    response['userQuestBattleResultList']=dummyResponse['userQuestBattleResultList']
+    response['userArenaBattleResultList']=dummyResponse['userArenaBattleResultList']
     response['userArenaBattleMatch']['matchedAt']=(datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     response['userArenaBattleMatch']['expiredAt']=(datetime.now()+timedelta(minutes=20)).strftime('%Y/%m/%d %H:%M:%S')
+ #   response.update(dummyResponse)
 
 
 def arenaResult(response):
     with open('data/arenaResultDummy.json') as f:
         dummyResponse=json.load(f)
-    response['userProfile']=dummyResponse['userProfile']
+    #response['userProfile']=dummyResponse['userProfile']
+    #response['userFollowList']=dummyResponse['userFollowList']
+    #response['followCount']=dummyResponse['followCount']
+    #response['followerCount']=dummyResponse['followerCount']
+    #response['userRank']=dummyResponse['userRank']
+    #response['lastAccessDate']=dummyResponse['lastAccessDate']
+    #response['inviteCode']=dummyResponse['inviteCode']
+    #response['comment']=dummyResponse['comment']
+    #response['cardId']=dummyResponse['cardId']
+    response.update(dummyResponse)
+
 
 
 def charaCollection(response):
@@ -253,5 +265,5 @@ def handlePage(endpoint):
         print('resuming')
 
     addArgs(response, args, 'TopPage' in endpoint) # login if it's TopPage
-    
+    #print(response) 
     return flask.jsonify(response)

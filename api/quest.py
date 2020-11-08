@@ -5,18 +5,83 @@ from uuid import uuid1
 import numpy as np
 from api import userCard
 
+def sendArena(request,response):
+    """
+        The response has 7 values:
+        gameUser (should be in response),
+        resultCode="success"
+        userArenaBattle,
+        userArenaBattleResultList,
+        userDailyChallengeList,
+        userItemList,
+        userQuestBattleResultList (should be in response),
+
+    """
+
+
+    with open('data/user/userArenaBattle.json', encoding='utf-8') as f:
+        userArenaBattle=json.load(f)
+
+    #only mirror coins please
+    with open('data/user/userItemList.json', encoding='utf-8') as f:
+        allItems = json.load(f)
+
+    coins=next(filter(lambda item: item['itemId']=='ARENA_COIN',allItems))
+
+    if (request['result']=='SUCCESSFUL'):
+        arenaBattleStatus='WIN'
+        coins['quantity']+=3
+    else:
+        arenaBattleStatus='LOSE'
+        coins['quantity']+=1
+
+    #updating coins
+    with open('data/user/userItemList.json', 'w+', encoding='utf-8') as f:
+        json.dump(allItems, f, ensure_ascii=False)
+
+    userItemList=[coins]
+
+    userDailyChallengeList=[] #TODO
+    resultCode="success"
+    userArenaBattleResultList=[{
+        'arenaBattleStatus': arenaBattleStatus,
+        'arenaBattleType': 'FREE_RANK', #change for ranked
+        'numberOfConsecutiveWins':1,
+        'userQuestBattleResultId':request['userQuestBattleResultId'],
+        'userId':'',
+        'opponentUserId':'',
+        'point':0
+    }]
+    response.update({
+        'userArenaBattle' : userArenaBattle,
+        'userItemList': userItemList,
+        'userArenaBattleResultList': userArenaBattleResultList,
+        'resultCode': resultCode,
+        'userDailyChallengeList': userDailyChallengeList,
+    })
+
+    return flask.jsonify(response)
+
+
 def send():
     body = flask.request.json
     nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
 
     with open('data/user/user.json', encoding='utf-8') as f:
-        userId = json.load(f)['id']
-    with open('data/user/userCardList.json', encoding='utf-8') as f:
-        userCardList = json.load(f)
-    with open('data/user/userCharaList.json', encoding='utf-8') as f:
-        userCharaList = json.load(f)
+        user = json.load(f)
+        userId = user['id']
     with open('data/user/userQuestBattleResult.json', encoding='utf-8') as f:
         battle = json.load(f)
+
+    if(battle['battleType']=="ARENA"):
+        return sendArena(body,{'userQuestBattleResultList':[battle],'gameUser':user})
+        
+    with open('data/user/userCharaList.json', encoding='utf-8') as f:
+        userCharaList = json.load(f)
+    with open('data/user/userCardList.json', encoding='utf-8') as f:
+        userCardList = json.load(f)
+
+
     if not battle['id'] == body['userQuestBattleResultId']:
         flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
 
@@ -254,6 +319,13 @@ def cardToPlayer(userCard, userChara, battleInfo):
         "memoriaList": battleInfo['memoriaList']
     }
 
+def getArena(response):
+    
+    with open('data/arenaNativeGetDummy.json') as f:
+        response.update(json.load(f))
+    print(response)
+    return flask.jsonify(response)
+ 
 def get():
     body = flask.request.json
 
@@ -261,6 +333,10 @@ def get():
 
     with open('data/user/userQuestBattleResult.json', encoding='utf-8') as f:
         battle = json.load(f)
+    if(battle['battleType']=="ARENA"):
+       return getArena({})
+
+
     if not battle['id'] == body['userQuestBattleResultId']:
         flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
 

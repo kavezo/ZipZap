@@ -13,7 +13,7 @@ def arenaStart(response):
     response["userArenaBattleResultList"][0]["createdAt"]=datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
     response["userQuestBattleResultList"]=dummyResponse["userQuestBattleResultList"]
     response["userQuestBattleResultList"][0]["createdAt"]=datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')
-
+    print(response)
     with open('data/user/userQuestBattleResult.json', 'w+', encoding='utf-8') as f:
         json.dump(response["userQuestBattleResultList"][0], f, ensure_ascii=False)
     
@@ -27,11 +27,11 @@ def arenaReload(response):
 
 def handleArena(endpoint):
     specialCases={
-        '/start':arenaStart,
-        '/reload':arenaReload
+        'start':arenaStart,
+        'reload':arenaReload
     }
     response={} 
     if endpoint in specialCases.keys():
         specialCases[endpoint](response)
-        return flask.jsonify(json.dumps(response))
+        return flask.jsonify(response)
 
