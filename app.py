@@ -9,16 +9,16 @@ if not os.path.exists('./data/user/'):
     shutil.copytree('data/default_user', 'data/user')
 
 from api import friend, gacha, gameUser, money, page, quest, shop, \
-    user, userCard, userChara, userDeck, userLive2d, userPiece, userPieceSet, logger
+    user, userCard, userChara, userDeck, userLive2d, userPiece, userPieceSet, arena,logger
     
 app.add_url_rule('/page/<path:endpoint>', view_func=page.handlePage, methods=['GET', 'POST'])
-
 app.add_url_rule('/friend/<path:endpoint>', view_func=friend.handleFriend, methods=['GET', 'POST'])
 app.add_url_rule('/gacha/<path:endpoint>', view_func=gacha.handleGacha, methods=['GET', 'POST'])
 app.add_url_rule('/money/<path:endpoint>', view_func=money.handleMoney, methods=['GET', 'POST'])
 app.add_url_rule('/gameUser/<path:endpoint>', view_func=gameUser.handleGameUser, methods=['GET', 'POST'])
 app.add_url_rule('/quest/<path:endpoint>', view_func=quest.handleQuest, methods=['GET', 'POST'])
 app.add_url_rule('/shop/<path:endpoint>', view_func=shop.handleShop, methods=['GET', 'POST'])
+app.add_url_rule('/arena/<path:endpoint>', view_func=arena.handleArena, methods=['GET', 'POST'])
 
 app.add_url_rule('/user/<path:endpoint>', view_func=user.handleUser, methods=['GET', 'POST'])
 app.add_url_rule('/userCard/<path:endpoint>', view_func=userCard.handleUserCard, methods=['GET', 'POST'])
