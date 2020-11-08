@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /ZipZap
-i=`./getipaddress.sh`
+i=`./showIpAddress.sh`
 echo "IP address is $i"
 echo "Updating DNS"
 cat << _EOF_UNBOUND_ > /etc/unbound/unbound.conf
