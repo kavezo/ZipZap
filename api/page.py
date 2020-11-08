@@ -1,8 +1,31 @@
 import json
 import re
-from datetime import datetime
+from datetime import datetime,timedelta
 import os
 import flask
+import sys
+def arenaTop(response):
+    with open('data/arenaTopDummy.json') as f:
+        dummyResponse=json.load(f)
+    response['userQuestBattleList']=dummyResponse['userQuestBattleList']
+    response['userSectionList']=dummyResponse['userSectionList']
+    response['userArenaBattle']=dummyResponse['userArenaBattle']
+    response['arenaBonusResult']=dummyResponse['arenaBonusResult']
+    response['rankingClosing']=dummyResponse['rankingClosing']
+
+def arenaFreeRank(response):
+    with open('data/arenaFreeRankDummy.json') as f:
+        dummyResponse=json.load(f)
+    response['userArenaBattleMatch']=dummyResponse['userArenaBattleMatch']
+    response['userArenaBattleMatch']['matchedAt']=(datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
+    response['userArenaBattleMatch']['expiredAt']=(datetime.now()+timedelta(minutes=20)).strftime('%Y/%m/%d %H:%M:%S')
+
+
+def arenaResult(response):
+    with open('data/arenaResultDummy.json') as f:
+        dummyResponse=json.load(f)
+    response['userProfile']=dummyResponse['userProfile']
+
 
 def charaCollection(response):
     with open('data/user/userSectionList.json', encoding='utf-8') as f:
@@ -138,6 +161,9 @@ def enemyCollection(response):
         response['userEnemyList'] = json.load(f)
 
 specialCases = {
+    "ArenaFreeRank": arenaFreeRank,
+    "ArenaResult": arenaResult,
+    "ArenaTop": arenaTop,
     "CharaCollection": charaCollection,
     "CharaTop": charaTop,
     "ConfigTop": configTop,
@@ -220,7 +246,6 @@ def handlePage(endpoint):
                 .split(',')
     else:
         args = []
-
     if endpoint in specialCases.keys():
         specialCases[endpoint](response)
     

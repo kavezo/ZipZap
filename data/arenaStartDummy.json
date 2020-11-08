@@ -1,0 +1,63 @@
+{
+	"userQuestBattleResultList": [
+		{
+			"id": "05e972f0-17ef-11eb-94d7-024ec58565ac",
+			"userId": "1e895b70-97af-11e9-b26d-023d588abc78",
+			"level": 98,
+			"battleType": "ARENA",
+			"questBattleStatus": "CREATED",
+			"deckType": 21,
+			"userCardId3": "5f5dae3e-d4fd-11e9-a9e9-02394326990d",
+			"userCardId4": "aa06f923-ebd0-11ea-87bd-0206fb316737",
+			"userCardId5": "fe5f95e3-cfe8-11e9-b0e5-02d2e3801fe3",
+			"userCardId7": "acc74990-9646-11ea-8496-022ea6f80ab5",
+			"follow": false,
+			"follower": false,
+			"episodeUserCardId": "5f5dae3e-d4fd-11e9-a9e9-02394326990d",
+			"formationSheetId": 913,
+			"exp": 0,
+			"riche": 0,
+			"bondsPt1": 0,
+			"bondsPt2": 0,
+			"bondsPt3": 0,
+			"bondsPt4": 0,
+			"bondsPt5": 0,
+			"bondsPt6": 0,
+			"bondsPt7": 0,
+			"bondsPt8": 0,
+			"bondsPt9": 0,
+			"helpBondsPt": 0,
+			"clearedMission1": false,
+			"clearedMission2": false,
+			"clearedMission3": false,
+			"diskAcceleNum": 0,
+			"diskBlastNum": 0,
+			"diskChargeNum": 0,
+			"connectNum": 0,
+			"skillNum": 0,
+			"magiaNum": 0,
+			"doppelNum": 0,
+			"deadNum": 0,
+			"continuedNum": 0,
+			"enemyNum": 0,
+			"turns": 0,
+			"nativeClearTime": 0,
+			"serverClearTime": 0,
+			"createdAt": "2020/10/26 17:54:52"
+		}
+	],
+	"resultCode": "success",
+	"userArenaBattleResultList": [
+		{
+			"userQuestBattleResultId": "05e972f0-17ef-11eb-94d7-024ec58565ac",
+			"userId": "1e895b70-97af-11e9-b26d-023d588abc78",
+			"opponentUserId": "0f2777c4-16f3-11ea-9c9f-02c345565b55",
+			"arenaBattleType": "FREE_RANK",
+			"arenaBattleStatus": "CREATED",
+			"arenaBattleOpponentType": "SAME",
+			"numberOfConsecutiveWins": 0,
+			"point": 0,
+			"createdAt": "2020/10/26 17:54:52"
+		}
+	]
+}
