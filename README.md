@@ -60,6 +60,13 @@ that start with 192.168) but external IP addresses should work.
 would with a proxy (just make sure to edit DNS, not proxy, settings), but on Android emulator I've had to use a 
 different app. The one I use is just called DNS Changer, and its icon is a blue circle with DNS in it.
 
+### A note about Android 7 (Nougat) and above
+
+Due to a change that Google made starting in Android 7 (Nougat)
+[user-installed CA certificates are not trusted by apps](https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html). In order to play on devices and/or emulators running Android 7 and above, you will need to be rooted, and will need to
+install the ZipZap CA certificate as a System (trusted) certificate. [This Magisk plugin](https://github.com/NVISO-BE/MagiskTrustUserCerts)
+will automatically take care of this for you.
+
 ---
 
 ### Currently supported functions:
