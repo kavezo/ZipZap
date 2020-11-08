@@ -98,7 +98,7 @@ def shopTop(response):
                 "userId": userItemList[0]['userId']
             })
 
-    formations = {'911': 999429, '912': 999432, '913': 999433, '921': 999434, '922': 999435, '923': 999436, 
+    formations = {'911': 999431, '912': 999432, '913': 999433, '921': 999434, '922': 999435, '923': 999436, 
                 '131': 5, '141': 424, '151': 425, '161': 426, '171': 427, '181': 428, '711': 999428, '611': 999430}
     with open('data/user/userFormationSheetList.json', encoding='utf-8') as f:
         userFormationSheetList = json.load(f)
