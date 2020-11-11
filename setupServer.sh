@@ -34,7 +34,9 @@ systemctl stop nginx.service
 mv /etc/nginx /etc/nginx.bak
 cp -r $SRC/windows/nginx_windows/nginx/conf /etc/nginx
 cp -r $SRC/windows/nginx_windows/nginx/html /etc/nginx/html
+cp -r $SRC/windows/nginx_windows/nginx/static /etc/nginx/static
 sed -e 's/^.*root.*html/root \/etc\/nginx\/html/' -i.bak /etc/nginx/nginx.conf
+sed -e 's/^.*root.*static/root \/etc\/nginx\/static/' -i.bak /etc/nginx/nginx.conf
 sed -e 's/^.*root.*conf\/cert/root \/etc\/nginx\/html/' -i.bak /etc/nginx/nginx.conf
 sed -e 's/^error_log.*$/error_log \/var\/log\/nginx\/error.log;/' -i.bak /etc/nginx/nginx.conf
 sed -e 's/^.*access_log.*$/access_log \/var\/log\/nginx\/access.log combined;/' -i.bak /etc/nginx/nginx.conf
