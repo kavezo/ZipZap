@@ -3,28 +3,82 @@ import re
 from datetime import datetime,timedelta
 import os
 import flask
+import random
+
 def arenaTop(response):
-    with open('data/arenaTopDummy.json') as f:
-        dummyResponse=json.load(f)
-    response['userQuestBattleList']=dummyResponse['userQuestBattleList']
-    response['userSectionList']=dummyResponse['userSectionList']
-    response['userArenaBattle']=dummyResponse['userArenaBattle']
-    response['arenaBonusResult']=dummyResponse['arenaBonusResult']
-    response['rankingClosing']=dummyResponse['rankingClosing']
+    # with open('data/arenaTopDummy.json') as f:
+    #     dummyResponse=json.load(f)
+    # with open('data/user/userQuestBattleList.json') as f:
+    #     response['userQuestBattleList']=json.load(f)
+    # with open('data/user/userSectionList.json') as f:
+    #     response['userSectionList']=json.load(f)
+    with open('data/user/userArenaBattle.json') as f:
+        response['userArenaBattle']=json.load(f)
+
+    # response['arenaBonusResult']=dummyResponse['arenaBonusResult']
+    response['rankingClosing'] = True
+
+def calculateArenaRating():
+    with open('data/user/userDeckList.json', encoding='utf-8') as f:
+        decks = json.load(f)
+    with open('data/user/userCardList.json', encoding='utf-8') as f:
+        userCards = json.load(f)
+    with open('data/user/userPieceList.json', encoding='utf-8') as f:
+        userPieces = json.load(f)
+
+    arenaDeck = [deck for deck in decks if deck['deckType']==21][0]
+    cards = set([arenaDeck[cardKey] for cardKey in arenaDeck.keys() if cardKey.startswith('userCardId')])
+    pieces = set([arenaDeck[pieceKey] for pieceKey in arenaDeck.keys() if pieceKey.startswith('userPieceId')])
+    
+    rating = 0
+    for userCard in userCards:
+        if userCard['id'] in cards:
+            rating += userCard['hp']
+            rating += userCard['defense']
+            rating += userCard['attack']
+    for userPiece in userPieces:
+        if userPiece['id'] in pieces:
+            rating += userPiece['hp']
+            rating += userPiece['defense']
+            rating += userPiece['attack']
+    return rating
 
 def arenaFreeRank(response):
-    with open('data/arenaFreeRankDummy.json') as f:
-        dummyResponse=json.load(f)
-    response['userArenaBattleMatch']=dummyResponse['userArenaBattleMatch']
-    response['userQuestBattleResultList']=dummyResponse['userQuestBattleResultList']
-    response['userArenaBattleResultList']=dummyResponse['userArenaBattleResultList']
-    response['userArenaBattleMatch']['matchedAt']=(datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
-    response['userArenaBattleMatch']['expiredAt']=(datetime.now()+timedelta(minutes=20)).strftime('%Y/%m/%d %H:%M:%S')
+    # with open('data/arenaFreeRankDummy.json', encoding='utf-8') as f:
+    #     dummyResponse=json.load(f)
+    
+    # Assumes there are at least three enemies possible, no error checking
+    enemies = random.sample(os.listdir('data/arenaEnemies'), k=3)
+    enemyInfo = []
+    for enemy in enemies:
+        with open('data/arenaEnemies/'+enemy, encoding='utf-8') as f:
+            enemyInfo.append(json.load(f)['opponentUserArenaBattleInfo'])
+
+    response['userArenaBattleMatch'] = {
+		"userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+		"arenaBattleType": "FREE_RANK",
+		"userRatingPoint": calculateArenaRating(),
+		"opponentUserId1": enemyInfo[0]['userId'],
+		"opponentUserArenaBattleInfo1": enemyInfo[0],
+		"opponentUserId2": enemyInfo[1]['userId'],
+		"opponentUserArenaBattleInfo2": enemyInfo[1],
+		"opponentUserId3": enemyInfo[2]['userId'],
+		"opponentUserArenaBattleInfo3": enemyInfo[2],
+		"opponentUserIdList": [],
+		"matchedAt": (datetime.now()).strftime('%Y/%m/%d %H:%M:%S'),
+		"expiredAt": (datetime.now()+timedelta(minutes=15)).strftime('%Y/%m/%d %H:%M:%S'),
+		"enable": True,
+		"isNew": False
+	}
+    # response['userArenaBattleMatch']=dummyResponse['userArenaBattleMatch']
+    # response['userQuestBattleResultList']=dummyResponse['userQuestBattleResultList']
+    # response['userArenaBattleResultList']=dummyResponse['userArenaBattleResultList']
+    # response['userArenaBattleMatch']['matchedAt']=(datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
+    # response['userArenaBattleMatch']['expiredAt']=(datetime.now()+timedelta(minutes=15)).strftime('%Y/%m/%d %H:%M:%S')
  #   response.update(dummyResponse)
 
-
 def arenaResult(response):
-    with open('data/arenaResultDummy.json') as f:
+    with open('data/arenaResultDummy.json', encoding='utf-8') as f:
         dummyResponse=json.load(f)
     #response['userProfile']=dummyResponse['userProfile']
     #response['userFollowList']=dummyResponse['userFollowList']
@@ -36,8 +90,6 @@ def arenaResult(response):
     #response['comment']=dummyResponse['comment']
     #response['cardId']=dummyResponse['cardId']
     response.update(dummyResponse)
-
-
 
 def charaCollection(response):
     with open('data/user/userSectionList.json', encoding='utf-8') as f:
@@ -127,7 +179,7 @@ def shopTop(response):
     for itemId in itemIds:
         if itemId in backgrounds.keys() and backgrounds[itemId] not in shopItemIds:
             response['userShopItemList'].append({
-                "createdAt": str(datetime.now()).split('.')[0].replace('-', '/'),
+                "createdAt": (datetime.now()).strftime('%Y/%m/%d %H:%M:%S'),
                 "num": 1,
                 "shopItemId": backgrounds[itemId],
                 "userId": userItemList[0]['userId']
@@ -141,7 +193,7 @@ def shopTop(response):
     for formationId in formationIds:
         if formationId in formations.keys() and formations[formationId] not in shopItemIds:
             response['userShopItemList'].append({
-                "createdAt": str(datetime.now()).split('.')[0].replace('-', '/'),
+                "createdAt": (datetime.now()).strftime('%Y/%m/%d %H:%M:%S'),
                 "num": 1,
                 "shopItemId": formations[formationId],
                 "userId": userItemList[0]['userId']
@@ -197,7 +249,7 @@ specialCases = {
 # TODO: clear history on first login of the day
 def login(user):
     print('logging in')
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     lastLogin = datetime.strptime(user['lastLoginDate'], '%Y/%m/%d %H:%M:%S')
     if (lastLogin.date()-datetime.today().date()).days == 1:
         user['loginDaysInRow'] += 1
@@ -233,8 +285,7 @@ def addArgs(response, args, isLogin):
         'userLive2dList', 'userCardList', 'userCharaList', 'userDeckList', 'userFormationSheetList',
         'userPieceList', 'userPieceSetList', 'userItemList', 'userSectionList', 'userGiftList',
         'userQuestAdventureList', 'userQuestBattleList', 'userChapterList', 'userDoppelList',
-        'userDailyChallengeList', 'userLimitedChallengeList', 'userTotalChallengeList',
-        'itemList', 'giftList', 'pieceList']:
+        'userDailyChallengeList', 'userLimitedChallengeList', 'userTotalChallengeList',]:
             print('loading ' + arg + ' from json')
             fpath = 'data/user/'+arg+'.json'
             if os.path.exists(fpath):
@@ -244,6 +295,20 @@ def addArgs(response, args, isLogin):
                     response[arg] = [userPiece for userPiece in response[arg] if not userPiece['archive']]
             else:
                 print(f'{fpath} not found')
+        elif arg in ['itemList', 'giftList', 'pieceList']:
+            print('loading ' + arg + ' from json')
+            fpath = 'data/'+arg+'.json'
+            if os.path.exists(fpath):
+                with open(fpath, encoding='utf-8') as f:
+                    response[arg] = json.load(f)
+            else:
+                print(f'{fpath} not found')
+        elif arg.endswith('BattleResultList'):
+            print('loading ' + arg[:-4] + ' from json')
+            fpath = 'data/user/'+arg[:-4]+'.json'
+            if os.path.exists(fpath):
+                with open(fpath, encoding='utf-8') as f:
+                    response[arg] = [json.load(f)]
         elif arg.lower().endswith('list'):
             response[arg] = []
 

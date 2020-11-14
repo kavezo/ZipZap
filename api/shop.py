@@ -11,7 +11,7 @@ def getCard(charaNo):
 
     for card in cards:
         if card['charaId'] == charaNo:
-            userCard, userChara, userLive2d, _ = gacha.addMeguca(card)
+            userCard, userChara, userLive2d, _ = gacha.addMeguca(card['charaId'])
     return {'userCardList': [userCard], 'userCharaList': [userChara], 'userLive2dList': [userLive2d]}
 
 def getFormation(formationId):
@@ -21,7 +21,7 @@ def getFormation(formationId):
         userFormations = json.load(f)
     with open('data/user/user.json', encoding='utf-8') as f:
         userId = json.load(f)['id']
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
 
     for formation in userFormations:
         if formation['formationSheetId'] == formationId: # if already exists, do nothing
@@ -47,7 +47,7 @@ def getGift(giftId, amount):
         gifts = json.load(f)
     with open('data/user/user.json', encoding='utf-8') as f:
         userId = json.load(f)['id']
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
 
     foundGift = False
     responseGift = None
@@ -81,7 +81,7 @@ def getItem(itemCode, amount, item=None):
         items = json.load(f)
     with open('data/user/user.json', encoding='utf-8') as f:
         userId = json.load(f)['id']
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     
     foundItem = False
     responseItem = None
@@ -108,7 +108,7 @@ def getItem(itemCode, amount, item=None):
 def getLive2d(charaId, live2dId, live2dItem):
     with open('data/user/userLive2dList.json', encoding='utf-8') as f:
         live2dList = json.load(f)
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     with open('data/user/user.json', encoding='utf-8') as f:
         userId = json.load(f)['id']
     
@@ -135,7 +135,7 @@ def getLive2d(charaId, live2dId, live2dItem):
 def getPiece(piece, isMax, num):
     with open('data/user/userPieceList.json', encoding='utf-8') as f:
         userPieceList = json.load(f)
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     with open('data/user/user.json', encoding='utf-8') as f:
         userId = json.load(f)['id']
     
@@ -246,7 +246,7 @@ def buy():
     
     with open('data/user/user.json', encoding='utf-8') as f:
         userId = json.load(f)['id']
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     userShopItem = {
             "createdAt": nowstr,
             "num": body['num'],

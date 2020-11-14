@@ -1,0 +1,727 @@
+{
+    "opponentUserId": "0f7f45a7-9852-11e9-8b38-0220d74d2a24",
+    "opponentUserArenaBattleInfo": {
+        "userId": "0f7f45a7-9852-11e9-8b38-0220d74d2a24",
+        "type": "SAME",
+        "userName": "hameru",
+        "userRank": 1,
+        "leaderUserCard": {
+            "id": "a211dc69-1475-11ea-b854-0206fb316737",
+            "userId": "0f7f45a7-9852-11e9-8b38-0220d74d2a24",
+            "cardId": 20025,
+            "displayCardId": 20025,
+            "revision": 3,
+            "attack": 11417,
+            "defense": 10644,
+            "hp": 27939,
+            "level": 100,
+            "experience": 0,
+            "magiaLevel": 5,
+            "enabled": true,
+            "customized1": true,
+            "customized2": true,
+            "customized3": true,
+            "customized4": true,
+            "customized5": true,
+            "customized6": true,
+            "createdAt": "2020/01/01 00:00:00",
+            "card": {
+                "cardId": 20025,
+                "charaNo": 2002,
+                "miniCharaNo": 200200,
+                "magiaCharaNo": 200200,
+                "cardName": "Homura Akemi",
+                "rank": "RANK_5",
+                "attributeId": "DARK",
+                "initialType": "ATTACK",
+                "growthType": "DEFENSE",
+                "attack": 2359,
+                "defense": 1978,
+                "hp": 5476,
+                "rateGainMpAtk": 1000,
+                "rateGainMpDef": 800,
+                "magiaId": 20025,
+                "cardMagia": {
+                    "id": 20025,
+                    "groupId": 1014,
+                    "name": "Concentrated Missile Fire",
+                    "shortDescription": "Damages All Enemies [VII] / Stun Chance (All Foes/1 Turn) / Critical Hit Chance (Self/2 Turns)",
+                    "artId1": 100300107,
+                    "art1": {
+                        "artId": 100300107,
+                        "verbCode": "ATTACK",
+                        "targetId": "ALL",
+                        "effectValue": 3600,
+                        "growPoint": 100
+                    },
+                    "artId2": 510304110,
+                    "art2": {
+                        "artId": 510304110,
+                        "verbCode": "CONDITION_BAD",
+                        "effectCode": "STUN",
+                        "targetId": "ALL",
+                        "enableTurn": 1,
+                        "growPoint": 0,
+                        "probability": 525
+                    },
+                    "artId3": 620206314,
+                    "art3": {
+                        "artId": 620206314,
+                        "verbCode": "CONDITION_GOOD",
+                        "effectCode": "CRITICAL",
+                        "targetId": "SELF",
+                        "effectValue": 2000,
+                        "enableTurn": 2,
+                        "growPoint": 0,
+                        "probability": 750,
+                        "limitedValue": "0"
+                    }
+                },
+                "doppelMagiaId": 20028,
+                "doppelCardMagia": {
+                    "id": 20028,
+                    "groupId": 1022,
+                    "name": "Doppel of Karma",
+                    "shortDescription": "Deals 5 Random Hits [VIII] / Stun Chance (Target/1 Turn) / Guaranteed Critical (Self/2 Turns)",
+                    "artId1": 190200281,
+                    "art1": {
+                        "artId": 190200281,
+                        "verbCode": "ATTACK",
+                        "targetId": "RANDOM5",
+                        "effectValue": 3310,
+                        "growPoint": 176
+                    },
+                    "artId2": 510304111,
+                    "art2": {
+                        "artId": 510304111,
+                        "verbCode": "CONDITION_BAD",
+                        "effectCode": "STUN",
+                        "targetId": "ALL",
+                        "enableTurn": 1,
+                        "growPoint": 0,
+                        "probability": 550
+                    },
+                    "artId3": 620206400,
+                    "art3": {
+                        "artId": 620206400,
+                        "verbCode": "CONDITION_GOOD",
+                        "effectCode": "CRITICAL",
+                        "targetId": "SELF",
+                        "effectValue": 2000,
+                        "enableTurn": 2,
+                        "growPoint": 0,
+                        "probability": 1000
+                    }
+                },
+                "doppelCharaNo": 200200,
+                "doppel": {
+                    "id": 200200,
+                    "name": "Doppel of Karma",
+                    "title": "Feature: The Mortal World",
+                    "description": "The master of this emotion visits many worlds in search of an exit, spinning giant threads of fate. Fourteen incomplete bodies born from emotion trail behind the master's body, which has almost completely transformed into glass. In order to achieve their mission, these 14 bodies work methodically and tirelessly to remove obstacles. Regardless of their master's will, they weave the threads of fate, which become tangled in ever more complex patterns, driving her yet further into a maze, the exit of which can hardly be found. These bodies of emotion have no names.",
+                    "designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+                    "archive": true,
+                    "openDate": "2020/04/03 00:10:00"
+                },
+                "skillId": 20025,
+                "cardSkill": {
+                    "id": 20025,
+                    "groupId": 1085,
+                    "name": "It's Your Prey",
+                    "shortDescription": "ATK UP [IX] / Critical Hit Chance [IX] / Stun Chance",
+                    "artId1": 310401109,
+                    "art1": {
+                        "artId": 310401109,
+                        "verbCode": "BUFF",
+                        "effectCode": "ATTACK",
+                        "targetId": "CONNECT",
+                        "effectValue": 400,
+                        "enableTurn": 1,
+                        "growPoint": 25
+                    },
+                    "artId2": 610406309,
+                    "art2": {
+                        "artId": 610406309,
+                        "verbCode": "CONDITION_GOOD",
+                        "effectCode": "CRITICAL",
+                        "targetId": "CONNECT",
+                        "effectValue": 2000,
+                        "enableTurn": 1,
+                        "growPoint": 0,
+                        "probability": 700
+                    },
+                    "artId3": 9378,
+                    "art3": {
+                        "artId": 9378,
+                        "verbCode": "ENCHANT",
+                        "effectCode": "STUN",
+                        "targetId": "CONNECT",
+                        "enableTurn": 1,
+                        "growPoint": 0,
+                        "probability": 500
+                    }
+                },
+                "pieceSkillList": [],
+                "maxPieceSkillList": [],
+                "commandType1": "MPUP",
+                "commandType2": "RANGE_H",
+                "commandType3": "RANGE_V",
+                "commandType4": "RANGE_V",
+                "commandType5": "CHARGE",
+                "illustrator": "Imoan",
+                "cardCustomize": {
+                    "cardId": 20025,
+                    "giftId1": 551,
+                    "gift1": {
+                        "id": 551,
+                        "name": "Rainbow Orb",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 10000
+                    },
+                    "giftNum1": 3,
+                    "bonusCode1": "ATTACK",
+                    "bonusNum1": 90,
+                    "giftId2": 152,
+                    "gift2": {
+                        "id": 152,
+                        "name": "Dark Orb +",
+                        "attributeId": "DARK",
+                        "rank": 2,
+                        "rankGift": "RANK_2",
+                        "price": 1000
+                    },
+                    "giftNum2": 15,
+                    "bonusCode2": "DEFENSE",
+                    "bonusNum2": 50,
+                    "giftId3": 153,
+                    "gift3": {
+                        "id": 153,
+                        "name": "Dark Orb ++",
+                        "attributeId": "DARK",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 2000
+                    },
+                    "giftNum3": 10,
+                    "bonusCode3": "HP",
+                    "bonusNum3": 60,
+                    "giftId4": 506,
+                    "gift4": {
+                        "id": 506,
+                        "name": "Curator's Hood",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 5000,
+                        "openDate": "2019/09/05 03:10:00"
+                    },
+                    "giftNum4": 10,
+                    "bonusCode4": "ACCEL",
+                    "bonusNum4": 50,
+                    "giftId5": 556,
+                    "gift5": {
+                        "id": 556,
+                        "name": "Babysitter's Handle",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 5000,
+                        "openDate": "2019/09/05 03:10:00"
+                    },
+                    "giftNum5": 8,
+                    "bonusCode5": "BLAST",
+                    "bonusNum5": 90,
+                    "giftId6": 309,
+                    "gift6": {
+                        "id": 309,
+                        "name": "Rubber Swim Tube",
+                        "rank": 1,
+                        "rankGift": "RANK_1",
+                        "price": 1000,
+                        "openDate": "2020/01/24 00:10:00"
+                    },
+                    "giftNum6": 15,
+                    "bonusCode6": "CHARGE",
+                    "bonusNum6": 50
+                },
+                "openDate": "2020/04/03 00:10:00"
+            }
+        },
+        "userArenaBattle": {
+            "userId": "0f7f45a7-9852-11e9-8b38-0220d74d2a24",
+            "freeRankArenaPoint": 14000,
+            "currentFreeRankClassType": "FREE_RANK_26",
+            "currentFreeRankClass": {
+                "arenaBattleFreeRankClass": "FREE_RANK_26",
+                "prevClass": "FREE_RANK_25",
+                "className": "Layer 26",
+                "storyId": "400026-1",
+                "storyTitle": "Wrapped in Regret",
+                "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+                "bonusRewardList": [
+                    {
+                        "presentType": "ITEM",
+                        "quantity": 25,
+                        "itemId": "PRESENTED_MONEY",
+                        "item": {
+                            "itemCode": "PRESENTED_MONEY",
+                            "treasureChestColor": "GOLD"
+                        },
+                        "displayName": "Magia Stone"
+                    }
+                ],
+                "sortKey": 3
+            },
+            "previousFreeRankClass": {
+                "arenaBattleFreeRankClass": "FREE_RANK_25",
+                "prevClass": "FREE_RANK_24",
+                "nextClass": "FREE_RANK_26",
+                "requiredPoint": 14000,
+                "className": "Layer 25",
+                "nextClassName": "Layer 26",
+                "storyId": "400025-1",
+                "storyTitle": "Triple Threat",
+                "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+                "bonusRewardList": [
+                    {
+                        "presentType": "ITEM",
+                        "quantity": 25,
+                        "itemId": "PRESENTED_MONEY",
+                        "item": {
+                            "itemCode": "PRESENTED_MONEY",
+                            "treasureChestColor": "GOLD"
+                        },
+                        "displayName": "Magia Stone"
+                    }
+                ],
+                "sortKey": 4
+            },
+            "bonusGetAt": "2020/09/22 07:54:08",
+            "eventArenaMissionId": 1006,
+            "eventArenaMissionPoint": 1600,
+            "eventArenaDeckRate": 6569,
+            "createdAt": "2019/06/27 21:21:55"
+        },
+        "userDeck": {
+            "userId": "0f7f45a7-9852-11e9-8b38-0220d74d2a24",
+            "deckType": 21,
+            "name": "Mirrors Team",
+            "userCardId1": "a211dc69-1475-11ea-b854-0206fb316737",
+            "questPositionId1": 3,
+            "questEpisodeUserCardId": "a211dc69-1475-11ea-b854-0206fb316737",
+            "formationSheetId": 922,
+            "formationSheet": {
+                "description": "Boosts Front Top (Dark) + Center/Rear Bottom (Flame)",
+                "id": 922,
+                "name": "Dark Tercio (Flame)",
+                "place3": "DARK_ATTACK_UP2_150,DARK_DEFENSE_UP1_100",
+                "place4": "ALL_ATTACK_UP0_0",
+                "place5": "FIRE_ATTACK_UP3_250",
+                "place7": "FIRE_ATTACK_UP3_250",
+                "place8": "ALL_ATTACK_UP0_0",
+                "sheetType": 9
+            },
+            "userPieceId011": "38b30a23-077f-11ea-9245-0206fb316737",
+            "userPieceId012": "a21ff6b0-04ef-11ea-a3fb-02d6d7fd150b",
+            "userPieceId013": "70b8b613-af18-11e9-b9ff-02d2e3801fe3",
+            "userPieceId014": "8a88b5cc-cad9-11e9-8fba-029d7e45ce0d",
+            "createdAt": "2019/06/26 12:46:16"
+        },
+        "userCardList": [
+            {
+                "id": "a211dc69-1475-11ea-b854-0206fb316737",
+                "userId": "0f7f45a7-9852-11e9-8b38-0220d74d2a24",
+                "cardId": 20025,
+                "displayCardId": 20025,
+                "revision": 3,
+                "attack": 11417,
+                "defense": 10644,
+                "hp": 27939,
+                "level": 100,
+                "experience": 0,
+                "magiaLevel": 5,
+                "enabled": true,
+                "customized1": true,
+                "customized2": true,
+                "customized3": true,
+                "customized4": true,
+                "customized5": true,
+                "customized6": true,
+                "createdAt": "2020/01/01 00:00:00",
+                "card": {
+                    "cardId": 20025,
+                    "charaNo": 2002,
+                    "miniCharaNo": 200200,
+                    "magiaCharaNo": 200200,
+                    "cardName": "Homura Akemi",
+                    "rank": "RANK_5",
+                    "attributeId": "DARK",
+                    "initialType": "ATTACK",
+                    "growthType": "DEFENSE",
+                    "attack": 2359,
+                    "defense": 1978,
+                    "hp": 5476,
+                    "rateGainMpAtk": 1000,
+                    "rateGainMpDef": 800,
+                    "magiaId": 20025,
+                    "cardMagia": {
+                        "id": 20025,
+                        "groupId": 1014,
+                        "name": "Concentrated Missile Fire",
+                        "shortDescription": "Damages All Enemies [VII] / Stun Chance (All Foes/1 Turn) / Critical Hit Chance (Self/2 Turns)",
+                        "artId1": 100300107,
+                        "art1": {
+                            "artId": 100300107,
+                            "verbCode": "ATTACK",
+                            "targetId": "ALL",
+                            "effectValue": 3600,
+                            "growPoint": 100
+                        },
+                        "artId2": 510304110,
+                        "art2": {
+                            "artId": 510304110,
+                            "verbCode": "CONDITION_BAD",
+                            "effectCode": "STUN",
+                            "targetId": "ALL",
+                            "enableTurn": 1,
+                            "growPoint": 0,
+                            "probability": 525
+                        },
+                        "artId3": 620206314,
+                        "art3": {
+                            "artId": 620206314,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "CRITICAL",
+                            "targetId": "SELF",
+                            "effectValue": 2000,
+                            "enableTurn": 2,
+                            "growPoint": 0,
+                            "probability": 750,
+                            "limitedValue": "0"
+                        }
+                    },
+                    "doppelMagiaId": 20028,
+                    "doppelCardMagia": {
+                        "id": 20028,
+                        "groupId": 1022,
+                        "name": "Doppel of Karma",
+                        "shortDescription": "Deals 5 Random Hits [VIII] / Stun Chance (Target/1 Turn) / Guaranteed Critical (Self/2 Turns)",
+                        "artId1": 190200281,
+                        "art1": {
+                            "artId": 190200281,
+                            "verbCode": "ATTACK",
+                            "targetId": "RANDOM5",
+                            "effectValue": 3310,
+                            "growPoint": 176
+                        },
+                        "artId2": 510304111,
+                        "art2": {
+                            "artId": 510304111,
+                            "verbCode": "CONDITION_BAD",
+                            "effectCode": "STUN",
+                            "targetId": "ALL",
+                            "enableTurn": 1,
+                            "growPoint": 0,
+                            "probability": 550
+                        },
+                        "artId3": 620206400,
+                        "art3": {
+                            "artId": 620206400,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "CRITICAL",
+                            "targetId": "SELF",
+                            "effectValue": 2000,
+                            "enableTurn": 2,
+                            "growPoint": 0,
+                            "probability": 1000
+                        }
+                    },
+                    "doppelCharaNo": 200200,
+                    "doppel": {
+                        "id": 200200,
+                        "name": "Doppel of Karma",
+                        "title": "Feature: The Mortal World",
+                        "description": "The master of this emotion visits many worlds in search of an exit, spinning giant threads of fate. Fourteen incomplete bodies born from emotion trail behind the master's body, which has almost completely transformed into glass. In order to achieve their mission, these 14 bodies work methodically and tirelessly to remove obstacles. Regardless of their master's will, they weave the threads of fate, which become tangled in ever more complex patterns, driving her yet further into a maze, the exit of which can hardly be found. These bodies of emotion have no names.",
+                        "designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+                        "archive": true,
+                        "openDate": "2020/04/03 00:10:00"
+                    },
+                    "skillId": 20025,
+                    "cardSkill": {
+                        "id": 20025,
+                        "groupId": 1085,
+                        "name": "It's Your Prey",
+                        "shortDescription": "ATK UP [IX] / Critical Hit Chance [IX] / Stun Chance",
+                        "artId1": 310401109,
+                        "art1": {
+                            "artId": 310401109,
+                            "verbCode": "BUFF",
+                            "effectCode": "ATTACK",
+                            "targetId": "CONNECT",
+                            "effectValue": 400,
+                            "enableTurn": 1,
+                            "growPoint": 25
+                        },
+                        "artId2": 610406309,
+                        "art2": {
+                            "artId": 610406309,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "CRITICAL",
+                            "targetId": "CONNECT",
+                            "effectValue": 2000,
+                            "enableTurn": 1,
+                            "growPoint": 0,
+                            "probability": 700
+                        },
+                        "artId3": 9378,
+                        "art3": {
+                            "artId": 9378,
+                            "verbCode": "ENCHANT",
+                            "effectCode": "STUN",
+                            "targetId": "CONNECT",
+                            "enableTurn": 1,
+                            "growPoint": 0,
+                            "probability": 500
+                        }
+                    },
+                    "pieceSkillList": [],
+                    "maxPieceSkillList": [],
+                    "commandType1": "MPUP",
+                    "commandType2": "RANGE_H",
+                    "commandType3": "RANGE_V",
+                    "commandType4": "RANGE_V",
+                    "commandType5": "CHARGE",
+                    "illustrator": "Imoan",
+                    "cardCustomize": {
+                        "cardId": 20025,
+                        "giftId1": 551,
+                        "gift1": {
+                            "id": 551,
+                            "name": "Rainbow Orb",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 10000
+                        },
+                        "giftNum1": 3,
+                        "bonusCode1": "ATTACK",
+                        "bonusNum1": 90,
+                        "giftId2": 152,
+                        "gift2": {
+                            "id": 152,
+                            "name": "Dark Orb +",
+                            "attributeId": "DARK",
+                            "rank": 2,
+                            "rankGift": "RANK_2",
+                            "price": 1000
+                        },
+                        "giftNum2": 15,
+                        "bonusCode2": "DEFENSE",
+                        "bonusNum2": 50,
+                        "giftId3": 153,
+                        "gift3": {
+                            "id": 153,
+                            "name": "Dark Orb ++",
+                            "attributeId": "DARK",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 2000
+                        },
+                        "giftNum3": 10,
+                        "bonusCode3": "HP",
+                        "bonusNum3": 60,
+                        "giftId4": 506,
+                        "gift4": {
+                            "id": 506,
+                            "name": "Curator's Hood",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000,
+                            "openDate": "2019/09/05 03:10:00"
+                        },
+                        "giftNum4": 10,
+                        "bonusCode4": "ACCEL",
+                        "bonusNum4": 50,
+                        "giftId5": 556,
+                        "gift5": {
+                            "id": 556,
+                            "name": "Babysitter's Handle",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000,
+                            "openDate": "2019/09/05 03:10:00"
+                        },
+                        "giftNum5": 8,
+                        "bonusCode5": "BLAST",
+                        "bonusNum5": 90,
+                        "giftId6": 309,
+                        "gift6": {
+                            "id": 309,
+                            "name": "Rubber Swim Tube",
+                            "rank": 1,
+                            "rankGift": "RANK_1",
+                            "price": 1000,
+                            "openDate": "2020/01/24 00:10:00"
+                        },
+                        "giftNum6": 15,
+                        "bonusCode6": "CHARGE",
+                        "bonusNum6": 50
+                    },
+                    "openDate": "2020/04/03 00:10:00"
+                }
+            }
+        ],
+        "arenaBattleOpponentTeamType": "A",
+        "userRatingPoint": 72000
+    },
+    "enemyList": [{
+        "action": 1,
+        "bossType": 0,
+        "magnification": 160,
+        "enemyKey": "a211dc69-1475-11ea-b854-0206fb316737",
+        "cardId": 20025,
+        "charId": 2002,
+        "miniCharId": 200200,
+        "miniMagiaId": 200200,
+        "miniDoppelId": 200200,
+        "pos": 3,
+        "name": "Homura Akemi",
+        "level": 100,
+        "align": "DARK",
+        "rank": 5,
+        "attack": 16417,
+        "defence": 17644,
+        "hp": 37939,
+        "hpStart": 37939,
+        "mpStart": 0,
+        "maxMp": 1000,
+        "speed": 0,
+        "discType1": "MPUP",
+        "discType2": "RANGE_H",
+        "discType3": "RANGE_V",
+        "discType4": "RANGE_V",
+        "discType5": "CHARGE",
+        "connectId": 20025,
+        "magiaId": 200255,
+        "blast": 9,
+        "charge": 5,
+        "mpup": 5,
+        "rateGainMpAtk": 900,
+        "rateGainMpDef": 900,
+        "leader": true,
+        "ai": 1,
+        "initialType": "ATTACK",
+        "enemyKindType": "HUMAN",
+        "memoriaList": [
+            129901,
+            132500,
+            111701,
+            106901
+        ]
+    }],
+    "memoriaList": [
+        {
+			"memoriaId": 129901,
+			"name": "Time Skip [X]",
+			"icon": 1124,
+			"level": 0,
+			"cost": 2,
+			"description": "Guaranteed Evade / Guaranteed Counter (Self/1 Turn)",
+			"voice": 70,
+			"artList": [
+				610206900,
+				610207100
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+        },
+        {
+			"memoriaId": 132500,
+			"name": "Critical Strike",
+			"icon": 1124,
+			"level": 0,
+			"cost": 4,
+			"description": "Guaranteed Critical Hit (Self/1 Turn)",
+			"voice": 70,
+			"artList": [
+				610206400
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+        },
+        {
+			"memoriaId": 111701,
+			"name": "Parry Adept [X]",
+			"icon": 1124,
+			"level": 0,
+			"cost": 0,
+			"description": "Evade Chance [X]",
+			"voice": 0,
+			"artList": [
+				690206809
+			],
+			"type": "ABILITY",
+			"displayType": "MEMORIA"
+        },
+        {
+			"memoriaId": 106901,
+			"name": "Blast Adept [VII]",
+			"icon": 1092,
+			"level": 0,
+			"cost": 0,
+			"description": "Blast Damage UP [VII]",
+			"voice": 0,
+			"artList": [
+                390201807
+			],
+			"type": "ABILITY",
+			"displayType": "MEMORIA"
+		}
+    ],
+    "artList": [
+        {
+            "artId": 610206900,
+            "code": "CONDITION_GOOD",
+            "sub": "AVOID",
+            "target": "SELF",
+            "turn": 1,
+            "growPoint": 0,
+            "rate": 1000
+        },
+        {
+            "artId": 610207100,
+            "code": "CONDITION_GOOD",
+            "sub": "COUNTER",
+            "target": "SELF",
+            "effect": 800,
+            "turn": 1,
+            "growPoint": 0,
+            "rate": 1000
+        },
+        {
+            "artId": 610206400,
+            "code": "CONDITION_GOOD",
+            "sub": "CRITICAL",
+            "target": "SELF",
+            "effect": 2000,
+            "turn": 1,
+            "growPoint": 0,
+            "rate": 1000
+        },
+        {
+            "artId": 690206809,
+            "code": "CONDITION_GOOD",
+            "sub": "AVOID",
+            "target": "SELF",
+            "growPoint": 0,
+            "rate": 500
+        },
+        {
+            "artId": 390201805,
+            "code": "BUFF",
+            "sub": "BLAST",
+            "target": "SELF",
+            "effect": 450,
+            "growPoint": 25,
+            "rate": 1000
+        }
+    ]
+}

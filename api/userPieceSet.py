@@ -17,7 +17,7 @@ def save():
             targetUserPieceSet = userPieceSet
             targetUserPieceSetIdx = i
 
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     if targetUserPieceSet == {}:
         targetUserPieceSet = {
             "createdAt": nowstr,

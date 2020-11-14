@@ -10,7 +10,7 @@ def save():
         userDeckList = json.load(f)    
     with open('data/user/user.json', encoding='utf-8') as f:
         userId = json.load(f)['id']
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
 
     with open('data/user/userCardList.json', encoding='utf-8') as f:
         userCardList = json.load(f)
@@ -37,9 +37,10 @@ def save():
     
     userDeckList[deckIdx]['name'] = body['name']
     userDeckList[deckIdx]['questEpisodeUserCardId'] = body['episodeUserCardId']
-    userDeckList[deckIdx]['questPositionHelper'] = body['questPositionHelper']
     userDeckList[deckIdx]['formationSheetId'] = body['formationSheetId']
-
+    
+    if 'questPositionHelper' in userDeckList[deckIdx].keys():
+        userDeckList[deckIdx]['questPositionHelper'] = body['questPositionHelper']
     with open('data/formationSheetList.json', encoding='utf-8') as f:
         formationSheetList = json.load(f)
     

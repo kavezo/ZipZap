@@ -6343,5 +6343,3143 @@
         "clearCount": 0,
         "maxDamage": 0,
         "createdAt": "2020/09/17 18:57:58"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120253,
+        "questBattle": {
+            "questBattleId": 10120253,
+            "sectionId": 101202,
+            "sectionIndex": 3,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "126",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101202-4",
+            "questStory": "101202-5",
+            "storyWaveIndex": 1,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120254,
+        "questBattle": {
+            "questBattleId": 10120254,
+            "sectionId": 101202,
+            "sectionIndex": 4,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "126",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101202-6",
+            "endStory": "101202-7",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120251,
+        "questBattle": {
+            "questBattleId": 10120251,
+            "sectionId": 101202,
+            "sectionIndex": 1,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "startStory": "101202-1",
+            "endStory": "101202-2",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120252,
+        "questBattle": {
+            "questBattleId": 10120252,
+            "sectionId": 101202,
+            "sectionIndex": 2,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101202-3",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120153,
+        "questBattle": {
+            "questBattleId": 10120153,
+            "sectionId": 101201,
+            "sectionIndex": 3,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "138",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101201-3",
+            "endStory": "101201-4",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120154,
+        "questBattle": {
+            "questBattleId": 10120154,
+            "sectionId": 101201,
+            "sectionIndex": 4,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101201-5",
+            "endStory": "101201-7",
+            "questStory": "101201-6",
+            "storyWaveIndex": 1,
+            "placeId": "11022",
+            "bgm": "bgm01_battle04",
+            "bossBgm": "bgm01_battle04",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 122,
+            "dropItem1": {
+                "dropItemId": 122,
+                "rewardCode1": "GIFT_122_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120151,
+        "questBattle": {
+            "questBattleId": 10120151,
+            "sectionId": 101201,
+            "sectionIndex": 1,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "startStory": "101201-1",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120152,
+        "questBattle": {
+            "questBattleId": 10120152,
+            "sectionId": 101201,
+            "sectionIndex": 2,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "138",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101201-2",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120353,
+        "questBattle": {
+            "questBattleId": 10120353,
+            "sectionId": 101203,
+            "sectionIndex": 3,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "126",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101203-3",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120354,
+        "questBattle": {
+            "questBattleId": 10120354,
+            "sectionId": 101203,
+            "sectionIndex": 4,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "126",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101203-4",
+            "endStory": "101203-5",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120351,
+        "questBattle": {
+            "questBattleId": 10120351,
+            "sectionId": 101203,
+            "sectionIndex": 1,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "startStory": "101203-1",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120352,
+        "questBattle": {
+            "questBattleId": 10120352,
+            "sectionId": 101203,
+            "sectionIndex": 2,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "startStory": "101203-2",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120355,
+        "questBattle": {
+            "questBattleId": 10120355,
+            "sectionId": 101203,
+            "sectionIndex": 5,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "126",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101203-6",
+            "endStory": "101203-8",
+            "questStory": "101203-7",
+            "storyWaveIndex": 1,
+            "placeId": "11024",
+            "bgm": "bgm01_battle01",
+            "bossBgm": "bgm01_battle01",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120453,
+        "questBattle": {
+            "questBattleId": 10120453,
+            "sectionId": 101204,
+            "sectionIndex": 3,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127,137",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101204-3",
+            "endStory": "101204-4",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120454,
+        "questBattle": {
+            "questBattleId": 10120454,
+            "sectionId": 101204,
+            "sectionIndex": 4,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127,137",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101204-5",
+            "endStory": "101204-7",
+            "questStory": "101204-6",
+            "storyWaveIndex": 1,
+            "placeId": "11094",
+            "bgm": "bgm01_battle01",
+            "bossBgm": "bgm01_battle01",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "dropItemId2": 132,
+            "dropItem2": {
+                "dropItemId": 132,
+                "rewardCode1": "GIFT_132_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER",
+                "TIMBER"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120451,
+        "questBattle": {
+            "questBattleId": 10120451,
+            "sectionId": 101204,
+            "sectionIndex": 1,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101204-1",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120452,
+        "questBattle": {
+            "questBattleId": 10120452,
+            "sectionId": 101204,
+            "sectionIndex": 2,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127,137",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101204-2",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120553,
+        "questBattle": {
+            "questBattleId": 10120553,
+            "sectionId": 101205,
+            "sectionIndex": 3,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127,138",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101205-4",
+            "endStory": "101205-6",
+            "questStory": "101205-5",
+            "storyWaveIndex": 4,
+            "placeId": "11094",
+            "bgm": "bgm02_boss01",
+            "bossBgm": "bgm02_boss01",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "dropItemId2": 502,
+            "dropItem2": {
+                "dropItemId": 502,
+                "rewardCode1": "GIFT_502_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120554,
+        "questBattle": {
+            "questBattleId": 10120554,
+            "sectionId": 101205,
+            "sectionIndex": 4,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101205-7",
+            "endStory": "101205-8",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120551,
+        "questBattle": {
+            "questBattleId": 10120551,
+            "sectionId": 101205,
+            "sectionIndex": 1,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101205-1",
+            "endStory": "101205-2",
+            "storyWaveIndex": 0,
+            "placeId": "11094",
+            "bgm": "bgm02_boss01",
+            "bossBgm": "bgm02_boss01",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "dropItemId2": 502,
+            "dropItem2": {
+                "dropItemId": 502,
+                "rewardCode1": "GIFT_502_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120552,
+        "questBattle": {
+            "questBattleId": 10120552,
+            "sectionId": 101205,
+            "sectionIndex": 2,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127,138",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101205-3",
+            "storyWaveIndex": 0,
+            "placeId": "11094",
+            "bgm": "bgm01_battle01",
+            "bossBgm": "bgm01_battle01",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 10120555,
+        "questBattle": {
+            "questBattleId": 10120555,
+            "sectionId": 101205,
+            "sectionIndex": 5,
+            "questBattleType": "HARD",
+            "bossFlag": false,
+            "npcHelpId": "127",
+            "startStory": "101205-9",
+            "endStory": "101205-11",
+            "questStory": "101205-10",
+            "storyWaveIndex": 1,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "ap": 15,
+            "difficulty": 60,
+            "exp": 150,
+            "cardExp": 225,
+            "baseBondsPt": 120,
+            "riche": 1200,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "openDate": "2018/02/28 15:10:00",
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012035,
+        "questBattle": {
+            "questBattleId": 1012035,
+            "sectionId": 101203,
+            "sectionIndex": 5,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "101",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101203-6",
+            "endStory": "101203-8",
+            "questStory": "101203-7",
+            "storyWaveIndex": 1,
+            "placeId": "11024",
+            "bgm": "bgm01_battle01",
+            "bossBgm": "bgm01_battle01",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_P_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012034,
+        "questBattle": {
+            "questBattleId": 1012034,
+            "sectionId": 101203,
+            "sectionIndex": 4,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "101",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101203-4",
+            "endStory": "101203-5",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012033,
+        "questBattle": {
+            "questBattleId": 1012033,
+            "sectionId": 101203,
+            "sectionIndex": 3,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "101",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101203-3",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012032,
+        "questBattle": {
+            "questBattleId": 1012032,
+            "sectionId": 101203,
+            "sectionIndex": 2,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "startStory": "101203-2",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "RICHE_1000",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012031,
+        "questBattle": {
+            "questBattleId": 1012031,
+            "sectionId": 101203,
+            "sectionIndex": 1,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "startStory": "101203-1",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012044,
+        "questBattle": {
+            "questBattleId": 1012044,
+            "sectionId": 101204,
+            "sectionIndex": 4,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102,104",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101204-5",
+            "endStory": "101204-7",
+            "questStory": "101204-6",
+            "storyWaveIndex": 1,
+            "placeId": "11094",
+            "bgm": "bgm01_battle01",
+            "bossBgm": "bgm01_battle01",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "dropItemId2": 132,
+            "dropItem2": {
+                "dropItemId": 132,
+                "rewardCode1": "GIFT_132_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER",
+                "TIMBER"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012043,
+        "questBattle": {
+            "questBattleId": 1012043,
+            "sectionId": 101204,
+            "sectionIndex": 3,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102,104",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101204-3",
+            "endStory": "101204-4",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012042,
+        "questBattle": {
+            "questBattleId": 1012042,
+            "sectionId": 101204,
+            "sectionIndex": 2,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102,104",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101204-2",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "RICHE_1000",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012041,
+        "questBattle": {
+            "questBattleId": 1012041,
+            "sectionId": 101204,
+            "sectionIndex": 1,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101204-1",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012054,
+        "questBattle": {
+            "questBattleId": 1012054,
+            "sectionId": 101205,
+            "sectionIndex": 4,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101205-7",
+            "endStory": "101205-8",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012053,
+        "questBattle": {
+            "questBattleId": 1012053,
+            "sectionId": 101205,
+            "sectionIndex": 3,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102,105",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101205-4",
+            "endStory": "101205-6",
+            "questStory": "101205-5",
+            "storyWaveIndex": 4,
+            "placeId": "11094",
+            "bgm": "bgm02_boss01",
+            "bossBgm": "bgm02_boss01",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "dropItemId2": 502,
+            "dropItem2": {
+                "dropItemId": 502,
+                "rewardCode1": "GIFT_502_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012052,
+        "questBattle": {
+            "questBattleId": 1012052,
+            "sectionId": 101205,
+            "sectionIndex": 2,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102,105",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101205-3",
+            "storyWaveIndex": 0,
+            "placeId": "11094",
+            "bgm": "bgm01_battle01",
+            "bossBgm": "bgm01_battle01",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "RICHE_1000",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012051,
+        "questBattle": {
+            "questBattleId": 1012051,
+            "sectionId": 101205,
+            "sectionIndex": 1,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101205-1",
+            "endStory": "101205-2",
+            "storyWaveIndex": 0,
+            "placeId": "11094",
+            "bgm": "bgm02_boss01",
+            "bossBgm": "bgm02_boss01",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 402,
+            "dropItem1": {
+                "dropItemId": 402,
+                "rewardCode1": "GIFT_402_1"
+            },
+            "dropItemId2": 502,
+            "dropItem2": {
+                "dropItemId": 502,
+                "rewardCode1": "GIFT_502_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012055,
+        "questBattle": {
+            "questBattleId": 1012055,
+            "sectionId": 101205,
+            "sectionIndex": 5,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102",
+            "startStory": "101205-9",
+            "endStory": "101205-11",
+            "questStory": "101205-10",
+            "storyWaveIndex": 1,
+            "placeId": "47104",
+            "bgm": "bgm01_anime16",
+            "bossBgm": "bgm01_anime16",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012014,
+        "questBattle": {
+            "questBattleId": 1012014,
+            "sectionId": 101201,
+            "sectionIndex": 4,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101201-5",
+            "endStory": "101201-7",
+            "questStory": "101201-6",
+            "storyWaveIndex": 1,
+            "placeId": "11022",
+            "bgm": "bgm01_battle04",
+            "bossBgm": "bgm01_battle04",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "RICHE_1000",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 122,
+            "dropItem1": {
+                "dropItemId": 122,
+                "rewardCode1": "GIFT_122_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "WATER"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012013,
+        "questBattle": {
+            "questBattleId": 1012013,
+            "sectionId": 101201,
+            "sectionIndex": 3,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "105",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101201-3",
+            "endStory": "101201-4",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012012,
+        "questBattle": {
+            "questBattleId": 1012012,
+            "sectionId": 101201,
+            "sectionIndex": 2,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "105",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101201-2",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "RICHE_1000",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012011,
+        "questBattle": {
+            "questBattleId": 1012011,
+            "sectionId": 101201,
+            "sectionIndex": 1,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "startStory": "101201-1",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 301,
+            "dropItem2": {
+                "dropItemId": 301,
+                "rewardCode1": "GIFT_301_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "LIGHT"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012022,
+        "questBattle": {
+            "questBattleId": 1012022,
+            "sectionId": 101202,
+            "sectionIndex": 2,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "102",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101202-3",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "RICHE_1000",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012021,
+        "questBattle": {
+            "questBattleId": 1012021,
+            "sectionId": 101202,
+            "sectionIndex": 1,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "startStory": "101202-1",
+            "endStory": "101202-2",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012024,
+        "questBattle": {
+            "questBattleId": 1012024,
+            "sectionId": 101202,
+            "sectionIndex": 4,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "101",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101202-6",
+            "endStory": "101202-7",
+            "storyWaveIndex": 0,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_P_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "questBattleId": 1012023,
+        "questBattle": {
+            "questBattleId": 1012023,
+            "sectionId": 101202,
+            "sectionIndex": 3,
+            "questBattleType": "NORMAL",
+            "bossFlag": false,
+            "npcHelpId": "101",
+            "npcHelpNameHidden": false,
+            "npcHelpNameQuestHidden": false,
+            "npcHelpDisplayHidden": false,
+            "npcHelpSupportHidden": false,
+            "startStory": "101202-4",
+            "questStory": "101202-5",
+            "storyWaveIndex": 1,
+            "placeId": "47104",
+            "bgm": "bgm01_anime12",
+            "bossBgm": "bgm01_anime12",
+            "consumeType": "NORMAL",
+            "exp": 36,
+            "cardExp": 90,
+            "baseBondsPt": 48,
+            "riche": 396,
+            "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_1",
+            "defaultDropItemId": 101,
+            "defaultDropItem": {
+                "dropItemId": 101,
+                "rewardCode1": "RICHE_300"
+            },
+            "dropItemId1": 304,
+            "dropItem1": {
+                "dropItemId": 304,
+                "rewardCode1": "GIFT_304_1"
+            },
+            "dropItemId2": 302,
+            "dropItem2": {
+                "dropItemId": 302,
+                "rewardCode1": "GIFT_302_1"
+            },
+            "mission1": "NOT_DEAD",
+            "missionMaster1": {
+                "description": "Clear without losing any Magical Girls"
+            },
+            "mission2": "ACTION_15",
+            "missionMaster2": {
+                "description": "Clear within 15 Turn(s)"
+            },
+            "mission3": "COUNT_CONNECT_1",
+            "missionMaster3": {
+                "description": "Connect 1 time(s)"
+            },
+            "missionRewardCode": "ITEM_PRESENTED_MONEY_3",
+            "waveEnemyAttributeIdList": [
+                "TIMBER",
+                "DARK"
+            ],
+            "parameterMap": {},
+            "automationPossibleAtFirst": true
+        },
+        "cleared": true,
+        "missionStatus1": "CLEARED",
+        "missionStatus2": "CLEARED",
+        "missionStatus3": "CLEARED",
+        "rewardDone": true,
+        "firstClearedAt": "2019/06/27 00:17:20",
+        "lastClearedAt": "2019/06/27 00:17:20",
+        "clearCount": 1,
+        "maxDamage": 9999,
+        "createdAt": "2019/06/25 07:01:22"
     }
 ]

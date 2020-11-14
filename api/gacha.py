@@ -1,32 +1,23 @@
 import flask
-import json
 import os
 import numpy as np
 import random
 from datetime import datetime
 from uuid import uuid1
 
-with open('data/cards.json', encoding='utf-8') as f:
-    allCards = json.load(f)
+from util import dataUtil, newUserObjectUtil
+
 cardsByRarity = [[],[],[],[],[]]
-for chara in allCards:
+for chara in dataUtil.masterCards.values():
     idx = int(chara['cardList'][0]['card']['rank'][-1])-1
     cardsByRarity[idx].append(chara)
 
-with open('data/pieces.json', encoding='utf-8') as f:
-    allPieces = json.load(f)
 piecesByRarity = [[],[],[],[],[]]
-for piece in allPieces:
+for piece in dataUtil.masterPieces.values():
     idx = int(piece['rank'][-1])-1
     piecesByRarity[idx].append(piece)
 
-with open('data/itemList.json', encoding='utf-8') as f:
-    allItems = json.load(f)
-enhanceGems = [item for item in allItems if item['itemCode'].startswith('COMPOSE')]
-
-with open('data/user/user.json', encoding='utf-8') as f:
-    userInfo = json.load(f)
-userId = userInfo['id']
+enhanceGems = [item for item in dataUtil.masterItems.values() if item['itemCode'].startswith('COMPOSE')]
 
 def drawOneNormal():
     itemType = np.random.choice(['g', 'm3', 'm2', 'm1', 'm0'], p=[0.5, 0.05, 0.1, 0.15, 0.2])
@@ -47,8 +38,7 @@ def drawTenNormal():
     return results, itemTypes
 
 def getGachaRates():
-    with open('data/gacha_rates.json', encoding='utf-8') as f:
-        return json.load(f)
+    return dataUtil.readJson('data/gacha_rates.json')
 
 def drawOnePremium(pity, probs=None):
     allRates = getGachaRates()
@@ -101,232 +91,100 @@ def drawTenPremium(pity):
     return results, resultItemTypes, pity
 
 def setUpPity(groupId, pity=None):
-    with open('data/user/userGachaGroupList.json', encoding='utf-8') as f:
-        pityList = json.load(f)
-
-    for i in range(len(pityList)):
-        pityGroup = pityList[i]
-        if pityGroup['gachaGroupId'] == groupId and pity is None:
+    pityGroup = dataUtil.getUserObject('userGachaGroupList', groupId)
+    if pityGroup is not None:
+        if pity is None:
             return pityGroup, pityGroup['count']
         else:
             pityGroup['count'] = pity
-            pityList[i] = pityGroup
-            with open('data/user/userGachaGroupList.json', 'w', encoding='utf-8') as f:
-                json.dump(pityList, f, ensure_ascii=False)
+            dataUtil.setUserObject('userGachaGroupList', groupId, pityGroup)
             return pityGroup, None
+
     # didn't find matching group
-    newPity = {
-        "userId": userId,
-        "gachaGroupId": groupId,
-        "count": 0,
-        "paid": 0,
-        "totalCount": 0,
-        "dailyCount": 0,
-        "weeklyCount": 0,
-        "monthlyCount": 0,
-        "currentScheduleId": 20,
-        "resetCount": 0,
-        "createdAt": str(datetime.now()).split('.')[0].replace('-', '/')
-    }
-    pityList.append(newPity)
-    with open('data/user/userGachaGroupList.json', 'w', encoding='utf-8') as f:
-        json.dump(pityList, f, ensure_ascii=False)
+    newPity = newUserObjectUtil.createUserGachaGroup(groupId)
+    dataUtil.setUserObject('userGachaGroupList', groupId, newPity)
     return newPity, 0
 
 def spend(itemId, amount, preferredItemId = None, preferredItemAmount = 1):
-    with open('data/user/userItemList.json', encoding='utf-8') as f:
-        userItems = json.load(f)
+    getItem = lambda x: dataUtil.getUserObject('userItemList', x)
+    setItem = lambda x, y: dataUtil.setUserObject('userItemList', x, y)
     
     updatedItems = []
     foundPreferred = False
     if preferredItemId is not None:
-        for i in range(len(userItems)):
-            item = userItems[i]
-            if item['itemId'] == preferredItemId and item['quantity'] >= preferredItemAmount:
-                print("Spending " + str(preferredItemAmount) + " " + preferredItemId)
-                item['quantity'] -= preferredItemAmount
-                userItems[i] = item
-                foundPreferred = True
-                updatedItems.append(item)
-                break
+        item = getItem(preferredItemId)
+        if item['quantity'] >= preferredItemAmount:
+            print("Spending " + str(preferredItemAmount) + " " + preferredItemId)
+            item['quantity'] -= preferredItemAmount
+            foundPreferred = True
+            updatedItems.append(item)
+            setItem(preferredItemId, item)
     
     if not foundPreferred:
         if itemId != 'MONEY':
-            for i in range(len(userItems)):
-                item = userItems[i]
-                if item['itemId'] == itemId:
-                    print("Spending " + str(amount) + " " + itemId)
-                    item['quantity'] -= amount
-                    userItems[i] = item
-                    updatedItems.append(item)
-                    break
+            item = getItem(itemId)
+            print("Spending " + str(amount) + " " + itemId)
+            item['quantity'] -= amount
+            updatedItems.append(item)
+            setItem(itemId, item)
+
         else: # spend paid gems after free gems, and also the ID is different
             print("Spending " + str(amount) + " " + itemId)
-            paidIdx = 0
-            freeIdx = 0
-            for i in range(len(userItems)):
-                item = userItems[i]
-                if item['itemId'] == 'MONEY':
-                    paidIdx = i
-                if item['itemId'] == 'PRESENTED_MONEY':
-                    freeIdx = i
-            
-            numFreeStones = userItems[freeIdx]['quantity']
-            userItems[freeIdx]['quantity'] -= amount
-            if userItems[freeIdx]['quantity'] < 0:
-                userItems[freeIdx]['quantity'] = 0
-                amount -= numFreeStones
-                userItems[paidIdx]['quantity'] -= amount
+            freeItem = getItem('PRESENTED_MONEY')
+            paidItem = getItem('MONEY')
 
-            updatedItems += [userItems[freeIdx], userItems[paidIdx]]
+            remainder = amount - freeItem['quantity']
+            freeItem['quantity'] -= min(freeItem['quantity'], amount)
+            if remainder > 0:
+                paidItem['quantity'] -= remainder
 
-    
-    with open('data/user/userItemList.json', 'w', encoding='utf-8') as f:
-        json.dump(userItems, f, ensure_ascii=False)
+            updatedItems += [freeItem, paidItem]
+
+            setItem('PRESENTED_MONEY', freeItem)
+            setItem('MONEY', paidItem)
+
     return updatedItems
 
 def addGem(gem):
-    with open('data/user/userItemList.json', encoding='utf-8') as f:
-        userItems = json.load(f)
+    item = dataUtil.getUserObject('userItemList', gem['itemCode'])
+    item['quantity'] += 1
+    dataUtil.setUserObject('userItemList', gem['itemCode'], item)
+    return item
 
-    for i in range(len(userItems)):
-        if userItems[i]['itemId'] == gem['itemCode']:
-            userItems[i]['quantity'] += 1
-            break
-    with open('data/user/userItemList.json', 'w', encoding='utf-8') as f:
-        json.dump(userItems, f, ensure_ascii=False)
-    return userItems[i]
-
-def addMeguca(chara):
+def addMeguca(charaId):
     # TODO: get the story of the meguca
-    with open('data/user/userLive2dList.json', encoding='utf-8') as f:
-        live2dList = json.load(f)
-    with open('data/user/userCardList.json', encoding='utf-8') as f:
-        cardList = json.load(f)
-    with open('data/user/userCharaList.json', encoding='utf-8') as f:
-        charaList = json.load(f)
-
-    foundExisting = False
-    existingUserChara = None
-    for i in range(len(charaList)):
-        if charaList[i]['charaId'] == chara['charaId']:
-            charaList[i]['lbItemNum'] += 1
-            existingUserChara = charaList[i]
-            foundExisting = True
-
-    userCardId = str(uuid1()) if not foundExisting else existingUserChara['userCardId']
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/') if not foundExisting else existingUserChara['createdAt']
-
-    card = chara['cardList'][0]['card']
-    userCard = {
-        "id": userCardId,
-        "userId": userId,
-        "cardId": card['cardId'],
-        "displayCardId": card['cardId'],
-        "revision": 0,
-        "attack": card['attack'],
-        "defense": card['defense'],
-        "hp": card['hp'],
-        "level": 1,
-        "experience": 0,
-        "magiaLevel": 1,
-        "enabled": True,
-        "customized1": False,
-        "customized2": False,
-        "customized3": False,
-        "customized4": False,
-        "customized5": False,
-        "customized6": False,
-        "createdAt": nowstr,
-        "card": card
-    }
-    userChara = {
-        "userId": userId,
-        "charaId": chara['charaId'],
-        "chara": chara['chara'],
-        "bondsTotalPt": 0,
-        "userCardId": userCardId,
-        "lbItemNum": 0 if not foundExisting else existingUserChara['lbItemNum'],
-        "visualizable": True,
-        "commandVisualType": "CHARA",
-        "commandVisualId": chara['charaId'],
-        "live2dId": "00",
-        "createdAt": nowstr
-    }
-    userLive2d = {
-        "userId": userId,
-        "charaId": chara['charaId'],
-        "live2dId": "00",
-        "live2d": {
-            "charaId": chara['charaId'],
-            "live2dId": "00",
-            "description": "Magical Girl",
-            "defaultOpened": True,
-            "voicePrefixNo": "00"
-        },
-        "createdAt": nowstr
-    }
+    userChara = dataUtil.getUserObject('userCharaList', charaId)
+    foundExisting = userChara is not None
 
     if not foundExisting:
-        live2dList.append(userLive2d)
-        cardList.append(userCard)
-        charaList.append(userChara)
-        with open('data/user/userLive2dList.json', 'w', encoding='utf-8') as f:
-            json.dump(live2dList, f, ensure_ascii=False)
-        with open('data/user/userCardList.json', 'w', encoding='utf-8') as f:
-            json.dump(cardList, f, ensure_ascii=False)
-    with open('data/user/userCharaList.json', 'w', encoding='utf-8') as f:
-        json.dump(charaList, f, ensure_ascii=False)
+        userCard, userChara, userLive2d = newUserObjectUtil.createUserMeguca(charaId)
+        dataUtil.setUserObject('userCardList', userCard['id'], userCard)
+        dataUtil.setUserObject('userCharaList', charaId, userChara)
+
+        live2dPath = 'data/user/userLive2dList.json'
+        dataUtil.saveJson('data/user/userLive2dList.json', dataUtil.readJson(live2dPath) + [userLive2d])
+    else:
+        userChara['lbItemNum'] += 1
+        dataUtil.setUserObject('userCharaList', userChara['userCardId'], userChara)
+
+        userCard = dataUtil.getUserObject('userCardList', userChara['userCardId'])
+        userLive2d = dataUtil.getUserObject('userLive2dList', int(str(charaId)+'00'))
 
     return userCard, userChara, userLive2d, foundExisting
 
-def addPiece(piece):
-    with open('data/user/userPieceList.json', encoding='utf-8') as f:
-        pieceList = json.load(f)
-
-    foundExisting = False
-    for existingPiece in pieceList:
-        if existingPiece['pieceId'] == piece['pieceId']:
-            foundExisting = True
-            break
-
-    userPieceId = str(uuid1())
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
-    userPiece = {
-        "id": userPieceId,
-        "userId": userId,
-        "pieceId": piece['pieceId'],
-        "piece": piece,
-        "level": 1,
-        "experience": 0,
-        "lbCount": 0,
-        "attack": piece['attack'],
-        "defense": piece['defense'],
-        "hp": piece['hp'],
-        "protect": False,
-        "archive": False,
-        "createdAt": nowstr
-    }
-    pieceList.append(userPiece)
+def addPiece(pieceId):
+    userPiece, foundExisting = newUserObjectUtil.createUserMemoria(pieceId)
     
     if not foundExisting:
-        with open('data/user/userPieceCollectionList.json', encoding='utf-8') as f:
-            pieceCollection = json.load(f)
-        existingIds = [collPiece['pieceId'] for collPiece in pieceCollection]
-        if not piece['pieceId'] in existingIds:
-            pieceCollection.append({
-                "createdAt": nowstr,
-                "maxLbCount": 0,
-                "maxLevel": 1,
-                "piece": piece,
-                "pieceId": piece['pieceId'],
-                "userId": userId
-            })
-        with open('data/user/userPieceCollectionList.json', 'w+', encoding='utf-8') as f:
-            json.dump(pieceCollection, f, ensure_ascii=False)
-
-    with open('data/user/userPieceList.json', 'w', encoding='utf-8') as f:
-        json.dump(pieceList, f, ensure_ascii=False)
+        newPieceColle = {
+            "createdAt": userPiece['createdAt'],
+            "maxLbCount": 0,
+            "maxLevel": 1,
+            "piece": piece,
+            "pieceId": pieceId,
+            "userId": dataUtil.userId
+        }
+        dataUtil.setUserObject('userPieceCollectionList', pieceId, newPieceColle)
     return userPiece, foundExisting
     
 def draw():
@@ -336,11 +194,8 @@ def draw():
     # handle different types of gachas
     body = flask.request.json
 
-    with open('data/gachaScheduleList.json', encoding='utf-8') as f:
-        gachas = json.load(f)
-    
     chosenGacha = None
-    for gacha in gachas:
+    for gacha in dataUtil.readJson('data/gachaScheduleList.json'):
         if gacha['id'] == body['gachaScheduleId']:
             chosenGacha = gacha
             break
@@ -393,7 +248,7 @@ def draw():
                 "type": "ITEM"
             })
         if itemType.startswith('p'):
-            card, chara, live2d, foundExisting = addMeguca(result)
+            card, chara, live2d, foundExisting = addMeguca(result['charaId'])
             if not foundExisting:
                 userCardList.append(card)
                 userLive2dList.append(live2d)
@@ -416,7 +271,7 @@ def draw():
             if foundExisting:
                 responseList[-1]["itemId"] = "LIMIT_BREAK_CHARA"
         if itemType.startswith('m'):
-            userPiece, foundExisting = addPiece(result)
+            userPiece, foundExisting = addPiece(result['pieceId'])
             userPieceList.append(userPiece)
             directionType = 1
             if result['rank'][-1] == "4":
@@ -502,42 +357,33 @@ def draw():
 
     # add to user history
     pullId = str(uuid1())
-    
     if not os.path.exists('data/user/gachaHistory'):
         os.mkdir('data/user/gachaHistory')
-        
-    with open('data/user/gachaHistory/'+pullId+'.json', 'w+', encoding='utf-8') as f:
-        json.dump({'gachaAnimation': response['gachaAnimation']}, f, ensure_ascii=False)
-
-    with open('data/user/gachaHistoryList.json', encoding='utf-8') as f:
-        historyList = json.load(f)
-    historyList.append({
-            "id": pullId,
-            "userId": userId,
-            "gachaScheduleId": body['gachaScheduleId'],
-            "gachaSchedule": chosenGacha,
-            "gachaBeanKind": body['gachaBeanKind'],
-            "bonusTimeFlg": False,
-            "createdAt": str(datetime.now()).split('.')[0].replace('-', '/')
-        })
-    with open('data/user/gachaHistoryList.json', 'w+', encoding='utf-8') as f:
-        json.dump(historyList, f, ensure_ascii=False)
+    dataUtil.saveJson('data/user/gachaHistory/'+pullId+'.json', {'gachaAnimation': gachaAnimation})
+    newHistory = {
+        "id": pullId,
+        "userId": dataUtil.userId,
+        "gachaScheduleId": body['gachaScheduleId'],
+        "gachaSchedule": chosenGacha,
+        "gachaBeanKind": body['gachaBeanKind'],
+        "bonusTimeFlg": False,
+        "createdAt": (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
+    }
+    print(gachaAnimation)
+    dataUtil.setUserObject('gachaHistoryList', pullId, newHistory)
     return flask.jsonify(response)
 
 def getHistory(endpoint):
     pullId = endpoint.split('/')[-1]
     if os.path.exists('data/user/gachaHistory/'+pullId+'.json'):
-        with open('data/user/gachaHistory/'+pullId+'.json', encoding='utf-8') as f:
-            response = json.load(f)
+        response = dataUtil.readJson('data/user/gachaHistory/'+pullId+'.json')
         response['resultCode'] = 'success'
         return flask.jsonify(response)
     else:
         flask.abort(404, description='Could not find specified history.')
 
 def getProbability():
-    with open('data/gachaProbability.json', encoding='utf-8') as f:
-        probabilities = f.read()
-    return probabilities
+    return dataUtil.readJson('data/gachaProbability.json')
 
 def handleGacha(endpoint):
     if endpoint.startswith('draw'):

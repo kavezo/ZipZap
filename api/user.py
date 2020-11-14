@@ -3,6 +3,8 @@ import transferUserData
 import flask
 from uuid import uuid1
 
+from util import dataUtil
+
 # TODO: actually figure out what this does
 def isAnswered():
     response = {
@@ -13,11 +15,7 @@ def isAnswered():
 
 # TODO: actually set password
 def setPassword():
-    with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
-        gameUser = json.load(f)
-        gameUser['passwordNotice'] = False
-        json.dump(gameUser, f, ensure_ascii=False)
-
+    gameUser = dataUtil.setGameUserValue('passwordNotice', False)
     response = {
         "resultCode": "success",
         'gameUser': gameUser
