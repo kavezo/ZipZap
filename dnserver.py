@@ -28,7 +28,7 @@ class DynamicResolver(object):
         Check the query to determine if a dynamic response is required.
         """
         domain_includes = ['magica-us.com', 'adjust.com', 'treasuredata.com', 'smbeat.jp', 'appmeasurements.com',
-                           'snaa.services']
+                           'snaa.services', 'trnox.com', 'applinzi.com', 'noahapps.jp', 'yeshen.com']
         query_name = query.name.name.decode('ascii')
         return any(query_name.endswith(domain) for domain in domain_includes)
 
