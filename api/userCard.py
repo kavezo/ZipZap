@@ -160,12 +160,10 @@ def spendGift(gifts):
         for giftId, giftNum in gifts.items():
             if giftNum < 0:
                 raise ValueError('Tried to spend a negative amount of mats >:(')
-                return
             if giftId == giftList[i]['giftId']:
                 giftList[i]['quantity'] -= giftNum
                 if giftList[i]['quantity'] < 0:
                     raise ValueError('Tried to spend more mats than they have D:')
-                    return
                 revisedGiftList.append(giftList[i])
 
     with open('data/user/userGiftList.json', 'w+', encoding='utf-8') as f:
@@ -345,7 +343,7 @@ def evolve():
         flask.abort(400, description='This character can\'t be awakened anymore...')
     
     # make new userCard and userChara
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     newUserCardId = str(uuid1())
     newUserCard = {
         "id": newUserCardId,
@@ -386,12 +384,18 @@ def evolve():
 
     # save user info
     userCardList.append(newUserCard)
-    userCardList[i]['enabled'] = False
+    userCardList[userCardIdx]['enabled'] = False
     with open('data/user/userCardList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCardList, f, ensure_ascii=False)
 
     with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCharaList, f, ensure_ascii=False)
+    
+    with open('data/user/userDeckList.json', encoding='utf-8') as f:
+        decks = f.read()
+    decks = decks.replace(targetUserCardId, newUserCardId)
+    with open('data/user/userDeckList.json', 'w+', encoding='utf-8') as f:
+        f.write(decks)
 
     # spend CC
     ccByLevel = {'RANK_2': 10000, 'RANK_3': 100000, 'RANK_4': 300000, 'RANK_5': 1000000} # not sure about how much CC it takes to go from 2* to 3*

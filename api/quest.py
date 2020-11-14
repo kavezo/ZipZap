@@ -17,8 +17,6 @@ def sendArena(request,response):
         userQuestBattleResultList (should be in response),
 
     """
-
-
     with open('data/user/userArenaBattle.json', encoding='utf-8') as f:
         userArenaBattle=json.load(f)
 
@@ -65,7 +63,7 @@ def sendArena(request,response):
 
 def send():
     body = flask.request.json
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
 
     with open('data/user/user.json', encoding='utf-8') as f:
         user = json.load(f)
@@ -228,22 +226,60 @@ def extractArts(userCard, userPieceList):
 
         arts += [userCard['card']['cardSkill'][key] for key in userCard['card']['cardSkill'].keys() if key.startswith('art')
                  and not key.startswith('artId')]
+        
+        if 'doppelCardMagia' in userCard['card']:
+            arts += [userCard['card']['doppelCardMagia'][key] for key in userCard['card']['doppelCardMagia'].keys() 
+                    if key.startswith('art') and not key.startswith('artId')]
     for piece in userPieceList:
         skills = [piece['piece'][key] for key in piece['piece'].keys() if key.startswith('pieceSkill')]
         for skill in skills:
             arts += [skill[key] for key in skill.keys() if key.startswith('art')
                      and not key.startswith('artId')]
-    return arts
+
+    finalArts = []
+    translationDict = {
+        'verbCode' : 'code',
+        'effectCode' : 'sub',
+        'targetId' : 'target',
+        'effectValue' : 'effect',
+        'probability' : 'rate',
+        'enableTurn' : 'turn',
+        'parameter' : 'param',
+    }
+    for art in arts:
+        finalArt = {}
+        for key in art.keys():
+            if key in translationDict:
+                finalArt[translationDict[key]] = art[key]
+            else:
+                finalArt[key] = art[key]
+        finalArts.append(finalArt)
+    return finalArts
 
 def cardMagiaToMagia(userCard):
     cardMagia = userCard['card']['cardMagia']
     return {
-        "magiaId": cardMagia['id'],
+        "magiaId": int(str(cardMagia['id'])+str(userCard['magiaLevel'])),
         "name": cardMagia['name'],
         "icon": cardMagia['groupId'],
         "level": userCard['magiaLevel'],
         "description": cardMagia['shortDescription'],
         "artList": [cardMagia[key] for key in cardMagia if key.startswith('artId')]
+    }
+
+def cardDoppelToDoppel(userCard):
+    if 'doppelCardMagia' in userCard['card']:
+        cardDoppel = userCard['card']['doppelCardMagia']
+    else:
+        return None
+    return {
+            "artList": [cardDoppel[key] for key in cardDoppel if key.startswith('artId')],
+            "description": cardDoppel['shortDescription'],
+            "doppelId": cardDoppel['id'],
+            "icon": cardDoppel['groupId'],
+            "level": 5,
+            "name": cardDoppel['name'],
+            "voice": 40 # what is this?
     }
 
 def cardSkillToConnect(userCard):
@@ -308,7 +344,7 @@ def cardToPlayer(userCard, userChara, battleInfo):
         "discType4": userCard['card']['commandType4'],
         "discType5": userCard['card']['commandType5'],
         "connectId": userCard['card']['cardSkill']['id'],
-        "magiaId": str(userCard['card']['cardMagia']['id'])+str(userCard['magiaLevel']),
+        "magiaId": int(str(userCard['card']['cardMagia']['id'])+str(userCard['magiaLevel'])),
         "blast": 0,
         "charge": 0,
         "mpup": 0,
@@ -318,26 +354,26 @@ def cardToPlayer(userCard, userChara, battleInfo):
         "ai": 3 if userChara['charaId']==1001 else 1, # TODO: figure out how this actually works
         "memoriaList": battleInfo['memoriaList']
     }
-
-def getArena(response):
-    
-    with open('data/arenaNativeGetDummy.json') as f:
-        response.update(json.load(f))
-    print(response)
-    return flask.jsonify(response)
  
 def get():
     body = flask.request.json
 
-    isMirrors = False # TODO: make this actually represent if it's a mirrors battle
-
     with open('data/user/userQuestBattleResult.json', encoding='utf-8') as f:
         battle = json.load(f)
-    if(battle['battleType']=="ARENA"):
-       return getArena({})
+        
+    isMirrors = battle['battleType']=="ARENA"
 
+    if isMirrors:
+        with open('data/user/userArenaBattleResult.json', encoding='utf-8') as f:
+            arenaBattle = json.load(f)
+        if not arenaBattle['userQuestBattleResultId'] == battle['id']:
+            flask.abort(500, description='{"errorTxt": "Something weird happened with order of battles","resultCode": "error","title": "Error"}')
+
+    # if(battle['battleType']=="ARENA"):
+    #    return getArena({})
 
     if not battle['id'] == body['userQuestBattleResultId']:
+        print('battle ID mismatch')
         flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
 
     with open('data/user/userDeckList.json', encoding='utf-8') as f:
@@ -375,9 +411,13 @@ def get():
                 if card['id'] == userCardId and card['enabled']:
                     userCard = card
             if userCard == {}:
+                print('can\'t find card with id ' + userCardId)
                 flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}')
             magiaList.append(cardMagiaToMagia(userCard))
             connectList.append(cardSkillToConnect(userCard))
+            currDoppel = cardDoppelToDoppel(userCard)
+            if currDoppel is not None:
+                doppelList.append(currDoppel)
 
             userCharaId = userCard['card']['charaNo']
             userChara = {}
@@ -385,6 +425,7 @@ def get():
                 if chara['charaId'] == userCharaId:
                     userChara = chara
             if userChara == {}:
+                print('can\'t find chara with id ' + str(userCharaId))
                 flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}')
 
             pieceIds = [deck[key] for key in deck.keys() if key.startswith('userPieceId0'+str(currCardIdx))]
@@ -404,46 +445,55 @@ def get():
 
     # do the same, but now for the helper
     # TODO: use actual support
-    with open('data/npc.json', encoding='utf-8') as f:
-        helper = json.load(f)
-    helperCard = helper['userCardList'][0]
-    helperChara = helper['userCharaList'][0]
-    helperPieces = helper['userPieceList']
+    if not isMirrors:
+        with open('data/npc.json', encoding='utf-8') as f:
+            helper = json.load(f)
+        helperCard = helper['userCardList'][0]
+        helperChara = helper['userCharaList'][0]
+        helperPieces = helper['userPieceList']
 
-    magiaList.append(cardMagiaToMagia(helperCard))
-    connectList.append(cardSkillToConnect(helperCard))
-    artList += extractArts(helperCard, helperPieces)
-    helperMemoria = piecesToMemoriae(helperPieces)
-    memoria += helperMemoria
+        magiaList.append(cardMagiaToMagia(helperCard))
+        connectList.append(cardSkillToConnect(helperCard))
+        artList += extractArts(helperCard, helperPieces)
+        helperMemoria = piecesToMemoriae(helperPieces)
+        memoria += helperMemoria
 
-    battleInfo = {
-        'helper': True,
-        'friend': True, # TODO: actually change this
-        'pos': deck['questPositionHelper'],
-        'leader': False,
-        'memoriaList': helperMemoria
-    }
-    playerList.append(cardToPlayer(helperCard, helperChara, battleInfo))
+        currDoppel = cardDoppelToDoppel(helperCard)
+        if currDoppel is not None:
+            doppelList.append(currDoppel)
+
+        battleInfo = {
+            'helper': True,
+            'friend': True, # TODO: actually change this
+            'pos': deck['questPositionHelper'],
+            'leader': False,
+            'memoriaList': helperMemoria
+        }
+        playerList.append(cardToPlayer(helperCard, helperChara, battleInfo))
 
     # add support points
-    with open('data/user/userItemList.json', encoding='utf-8') as f:
-        userItems = json.load(f)
-    supportPoints = {}
-    for i, item in enumerate(userItems):
-        if item['itemId'] == 'YELL':
-            userItems[i]['quantity'] += 60 # TODO: change this based on the helper
-            supportPoints = userItems[i]
-    with open('data/user/userItemList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userItems, f)
+    if not isMirrors:
+        with open('data/user/userItemList.json', encoding='utf-8') as f:
+            userItems = json.load(f)
+        supportPoints = {}
+        for i, item in enumerate(userItems):
+            if item['itemId'] == 'YELL':
+                userItems[i]['quantity'] += 60 # TODO: change this based on the helper
+                supportPoints = userItems[i]
+        with open('data/user/userItemList.json', 'w+', encoding='utf-8') as f:
+            json.dump(userItems, f)
 
-    # spend AP
+    # spend AP/BP
     with open('data/user/userStatusList.json', encoding='utf-8') as f:
         userStatuses = json.load(f)
     apStatus = {}
+    apType = 'ACP' if not isMirrors else 'BTP'
     for i, status in enumerate(userStatuses):
-        if status['statusId'] == 'ACP':
-            userStatuses[i]['point'] -= 1 # TODO: figure out how to find this...
+        if status['statusId'] == apType:
+            userStatuses[i]['point'] -= 0 # TODO: figure out how to find this...
             apStatus = userStatuses[i]
+        if userStatuses[i]['point'] < 0:
+            flask.abort(400, '{"errorTxt": "Not enough BP.","resultCode": "error","title": "Error"}')
     with open('data/user/userStatusList.json', 'w+', encoding='utf-8') as f:
         json.dump(userStatuses, f)
 
@@ -463,32 +513,80 @@ def get():
         "userStatusList": [apStatus],
         "userQuestBattleResultList": [battle],
         "resultCode": "success",
-        "userFollowList": [userFollowList],
-        "userItemList": [supportPoints]
+        "userFollowList": userFollowList,
     }
+    if not isMirrors:
+        webData["userItemList"] = [supportPoints]
 
-    with open('data/hardCodedWave.json', encoding='utf-8') as f:
-        wave = json.load(f)
+    # add opponent stuff
+    # TODO: instead of checking if it's mirrors, we need to go through all enemies at all times and check for HUMANs
+    if not isMirrors:
+        with open('data/hardCodedWave.json', encoding='utf-8') as f:
+            waves = [json.load(f)]
+    else:
+        with open('data/arenaEnemies/'+arenaBattle['opponentUserId']+'.json', encoding='utf-8') as f:
+            opponent = json.load(f)
+        waves = [{
+			"field": 21181,
+			"boss": False,
+			"sheetType": 9,
+			"enemyList": opponent['enemyList']
+        }]
+        # this is a mess lol, only the arts from the memoria are in artList
+        memoria += opponent['memoriaList']
+        artList += opponent['artList']
+
+        # the rest have to be extracted from the cards
+        for enemyCard in opponent['opponentUserArenaBattleInfo']['userCardList']:
+            magiaList.append(cardMagiaToMagia(enemyCard))
+            connectList.append(cardSkillToConnect(enemyCard))
+            artList += extractArts(enemyCard, [])
+            currDoppel = cardDoppelToDoppel(enemyCard)
+            if currDoppel is not None:
+                doppelList.append(currDoppel)
+        
+    # dedupe
+    artIds = set({})
+    finalArtList = []
+    for art in artList:
+        if not art['artId'] in artIds:
+            finalArtList.append(art)
+            artIds.add(art['artId'])
+
+    if isMirrors:
+        scenario = {
+            "bgm": "bgm01_battle01",
+            "bgmBoss": "bgm01_battle01",
+            "difficulty": 0,
+            "cost": 0,
+            "missionList": [],
+            "sheetType": 9,
+            "auto": False
+        }
+    else:
+        scenario = battle['questBattle']
 
     response = {
-        'scenario': battle['questBattle'],
-        'waveList': [wave],
-        'battleType': 'QUEST', # TODO: change for tutorials, mirrors
+        'battleType': 'QUEST' if not isMirrors else 'ARENA', # TODO: change for tutorials, challenge quests
+        'scenario': scenario,
+        'waveList': waves,
         'playerList': playerList,
         'doppelList': doppelList,
-        'artList': artList,
+        'artList': finalArtList,
         'memoriaList': memoria,
         'connectList': connectList,
         'magiaList': magiaList,
         'continuable': True,
-        'isHalfSkill': isMirrors,
+        'isHalfSkill': False,
         'webData': webData
     }
+    with open('debugArena.json', 'w+', encoding='utf-8') as f:
+        json.dump(response, f)
     return flask.jsonify(response)
 
 def start():    
     body = flask.request.json
-    nowstr = str(datetime.now()).split('.')[0].replace('-', '/')
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
 
     with open('data/user/gameUser.json', encoding='utf-8') as f:
         userInfo = json.load(f)

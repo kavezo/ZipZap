@@ -1,0 +1,788 @@
+{
+    "opponentUserId": "10b948b9-9f57-11e9-89d1-02fc72f0909c",
+    "opponentUserArenaBattleInfo": {
+        "userId": "10b948b9-9f57-11e9-89d1-02fc72f0909c",
+        "type": "SAME",
+        "userName": "seiyuku",
+        "userRank": 1,
+        "leaderUserCard": {
+            "id": "a211dc69-1475-11ea-b854-0206fb316737",
+            "userId": "10b948b9-9f57-11e9-89d1-02fc72f0909c",
+            "cardId": 20045,
+            "displayCardId": 20045,
+            "revision": 3,
+            "attack": 8750,
+            "defense": 15145,
+            "hp": 45525,
+            "level": 100,
+            "experience": 0,
+            "magiaLevel": 5,
+            "enabled": true,
+            "customized1": true,
+            "customized2": true,
+            "customized3": true,
+            "customized4": true,
+            "customized5": true,
+            "customized6": true,
+            "createdAt": "2020/01/01 00:00:00",
+            "card": {
+                "cardId": 20045,
+                "charaNo": 2004,
+                "miniCharaNo": 200400,
+                "magiaCharaNo": 200400,
+                "cardName": "Sayaka Miki",
+                "rank": "RANK_5",
+                "attributeId": "WATER",
+                "initialType": "DEFENSE",
+                "growthType": "ATTACK",
+                "attack": 1857,
+                "defense": 2428,
+                "hp": 7428,
+                "rateGainMpAtk": 800,
+                "rateGainMpDef": 1000,
+                "magiaId": 20045,
+                "cardMagia": {
+                    "id": 20045,
+                    "groupId": 1012,
+                    "name": "Prestissimo Agitato",
+                    "shortDescription": "Damages a Single Enemy [VII] / Survive / Guaranteed Critical Hit / Guaranteed Counter (Self/2 Turns)",
+                    "artId1": 100000107,
+                    "art1": {
+                        "artId": 100000107,
+                        "code": "ATTACK",
+                        "target": "TARGET",
+                        "effect": 7200,
+                        "growPoint": 100
+                    },
+                    "artId2": 630214707,
+                    "art2": {
+                        "artId": 630214707,
+                        "code": "CONDITION_GOOD",
+                        "sub": "SURVIVE",
+                        "target": "SELF",
+                        "effect": 350,
+                        "turn": 3,
+                        "growPoint": 0,
+                        "rate": 1000
+                    },
+                    "artId3": 620206400,
+                    "art3": {
+                        "artId": 620206400,
+                        "code": "CONDITION_GOOD",
+                        "sub": "CRITICAL",
+                        "target": "SELF",
+                        "effect": 2000,
+                        "turn": 2,
+                        "growPoint": 0,
+                        "rate": 1000
+                    },
+                    "artId4": 9047,
+                    "art4": {
+                        "artId": 9047,
+                        "code": "CONDITION_GOOD",
+                        "sub": "COUNTER",
+                        "target": "SELF",
+                        "effect": 800,
+                        "turn": 2,
+                        "growPoint": 0,
+                        "rate": 1000
+                    }
+                },
+                "doppelMagiaId": 20048,
+                "doppelCardMagia": {
+                    "id": 20048,
+                    "groupId": 1012,
+                    "name": "Doppel of Unrequited Love",
+                    "shortDescription": "Damages a Single Enemy [IX] / Survive / Guaranteed Critical Hit / Guaranteed Counter (Self/2 Turns)",
+                    "artId1": 190200481,
+                    "art1": {
+                        "artId": 190200481,
+                        "code": "ATTACK",
+                        "target": "TARGET",
+                        "effect": 16720,
+                        "growPoint": 220
+                    },
+                    "artId2": 630214709,
+                    "art2": {
+                        "artId": 630214709,
+                        "code": "CONDITION_GOOD",
+                        "sub": "SURVIVE",
+                        "target": "SELF",
+                        "effect": 400,
+                        "turn": 3,
+                        "growPoint": 0,
+                        "rate": 1000
+                    },
+                    "artId3": 620206400,
+                    "art3": {
+                        "artId": 620206400,
+                        "code": "CONDITION_GOOD",
+                        "sub": "CRITICAL",
+                        "target": "SELF",
+                        "effect": 2000,
+                        "turn": 2,
+                        "growPoint": 0,
+                        "rate": 1000
+                    },
+                    "artId4": 9047,
+                    "art4": {
+                        "artId": 9047,
+                        "code": "CONDITION_GOOD",
+                        "sub": "COUNTER",
+                        "target": "SELF",
+                        "effect": 800,
+                        "turn": 2,
+                        "growPoint": 0,
+                        "rate": 1000
+                    }
+                },
+                "doppelCharaNo": 200400,
+                "doppel": {
+                    "id": 200400,
+                    "name": "Doppel of Unrequited Love",
+                    "title": "Feature: Mermaid",
+                    "description": "The master of this emotion suffered from young love and chose a fate so harsh that she could not bear it alone. As such, the Doppel dreams of love while it swims effortlessly through the air, playing a song for its master from its vast hollow body. It can control several swords to attack its enemies with the soundwaves that emanate from its body, but as long as the master uses it, she cannot flee from the discontent that troubles her heart.",
+                    "designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+                    "archive": true,
+                    "openDate": "2018/01/22 15:10:00"
+                },
+                "skillId": 20045,
+                "cardSkill": {
+                    "id": 20045,
+                    "groupId": 1129,
+                    "name": "My Turn Now!",
+                    "shortDescription": "HP Regen [IX] (3 Turns) / ATK UP [IX]",
+                    "artId1": 630407709,
+                    "art1": {
+                        "artId": 630407709,
+                        "code": "CONDITION_GOOD",
+                        "sub": "AUTO_HEAL",
+                        "target": "CONNECT",
+                        "effect": 100,
+                        "turn": 3,
+                        "growPoint": 10,
+                        "rate": 1000
+                    },
+                    "artId2": 310401109,
+                    "art2": {
+                        "artId": 310401109,
+                        "code": "BUFF",
+                        "sub": "ATTACK",
+                        "target": "CONNECT",
+                        "effect": 400,
+                        "turn": 1,
+                        "growPoint": 25
+                    }
+                },
+                "pieceSkillList": [],
+                "maxPieceSkillList": [],
+                "commandType1": "MPUP",
+                "commandType2": "MPUP",
+                "commandType3": "RANGE_H",
+                "commandType4": "CHARGE",
+                "commandType5": "CHARGE",
+                "illustrator": "Sasagi Kohshi",
+                "cardCustomize": {
+                    "cardId": 20045,
+                    "giftId1": 122,
+                    "gift1": {
+                        "id": 122,
+                        "name": "Aqua Orb +",
+                        "attributeId": "WATER",
+                        "rank": 2,
+                        "rankGift": "RANK_2",
+                        "price": 1000
+                    },
+                    "giftNum1": 15,
+                    "bonusCode1": "ATTACK",
+                    "bonusNum1": 50,
+                    "giftId2": 551,
+                    "gift2": {
+                        "id": 551,
+                        "name": "Rainbow Orb",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 10000
+                    },
+                    "giftNum2": 3,
+                    "bonusCode2": "DEFENSE",
+                    "bonusNum2": 90,
+                    "giftId3": 123,
+                    "gift3": {
+                        "id": 123,
+                        "name": "Aqua Orb ++",
+                        "attributeId": "WATER",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 2000
+                    },
+                    "giftNum3": 10,
+                    "bonusCode3": "HP",
+                    "bonusNum3": 70,
+                    "giftId4": 506,
+                    "gift4": {
+                        "id": 506,
+                        "name": "Curator's Hood",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 5000,
+                        "openDate": "2019/09/05 03:10:00"
+                    },
+                    "giftNum4": 10,
+                    "bonusCode4": "ACCEL",
+                    "bonusNum4": 70,
+                    "giftId5": 406,
+                    "gift5": {
+                        "id": 406,
+                        "name": "Staff's Key Switch",
+                        "rank": 2,
+                        "rankGift": "RANK_2",
+                        "price": 3000,
+                        "openDate": "2019/09/05 03:10:00"
+                    },
+                    "giftNum5": 15,
+                    "bonusCode5": "BLAST",
+                    "bonusNum5": 50,
+                    "giftId6": 555,
+                    "gift6": {
+                        "id": 555,
+                        "name": "Pendulum Bob",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 5000
+                    },
+                    "giftNum6": 8,
+                    "bonusCode6": "CHARGE",
+                    "bonusNum6": 70
+                }
+            }
+        },
+        "userArenaBattle": {
+            "userId": "10b948b9-9f57-11e9-89d1-02fc72f0909c",
+            "freeRankArenaPoint": 14000,
+            "currentFreeRankClassType": "FREE_RANK_26",
+            "currentFreeRankClass": {
+                "arenaBattleFreeRankClass": "FREE_RANK_26",
+                "prevClass": "FREE_RANK_25",
+                "className": "Layer 26",
+                "storyId": "400026-1",
+                "storyTitle": "Wrapped in Regret",
+                "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+                "bonusRewardList": [
+                    {
+                        "presentType": "ITEM",
+                        "quantity": 25,
+                        "itemId": "PRESENTED_MONEY",
+                        "item": {
+                            "itemCode": "PRESENTED_MONEY",
+                            "treasureChestColor": "GOLD"
+                        },
+                        "displayName": "Magia Stone"
+                    }
+                ],
+                "sortKey": 3
+            },
+            "previousFreeRankClass": {
+                "arenaBattleFreeRankClass": "FREE_RANK_25",
+                "prevClass": "FREE_RANK_24",
+                "nextClass": "FREE_RANK_26",
+                "requiredPoint": 14000,
+                "className": "Layer 25",
+                "nextClassName": "Layer 26",
+                "storyId": "400025-1",
+                "storyTitle": "Triple Threat",
+                "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+                "bonusRewardList": [
+                    {
+                        "presentType": "ITEM",
+                        "quantity": 25,
+                        "itemId": "PRESENTED_MONEY",
+                        "item": {
+                            "itemCode": "PRESENTED_MONEY",
+                            "treasureChestColor": "GOLD"
+                        },
+                        "displayName": "Magia Stone"
+                    }
+                ],
+                "sortKey": 4
+            },
+            "bonusGetAt": "2020/09/22 07:54:08",
+            "eventArenaMissionId": 1006,
+            "eventArenaMissionPoint": 1600,
+            "eventArenaDeckRate": 6569,
+            "createdAt": "2019/06/27 21:21:55"
+        },
+        "userDeck": {
+            "userId": "10b948b9-9f57-11e9-89d1-02fc72f0909c",
+            "deckType": 21,
+            "name": "Mirrors Team",
+            "userCardId1": "a211dc69-1475-11ea-b854-0206fb316737",
+            "questPositionId1": 5,
+            "questEpisodeUserCardId": "a211dc69-1475-11ea-b854-0206fb316737",
+            "formationSheetId": 922,
+            "formationSheet": {
+                "description": "Boosts Front Top (Light) + Center/Rear Bottom (Aqua)",
+                "id": 913,
+                "name": "Light Tercio (Aqua)",
+                "place3": "LIGHT_ATTACK_UP1_100,LIGHT_DEFENSE_UP2_150",
+                "place4": "ALL_ATTACK_UP0_0",
+                "place5": "WATER_ATTACK_UP3_250",
+                "place7": "WATER_ATTACK_UP3_250",
+                "place8": "ALL_ATTACK_UP0_0",
+                "sheetType": 9
+            },
+            "userPieceId011": "38b30a23-077f-11ea-9245-0206fb316737",
+            "userPieceId012": "a21ff6b0-04ef-11ea-a3fb-02d6d7fd150b",
+            "userPieceId013": "70b8b613-af18-11e9-b9ff-02d2e3801fe3",
+            "userPieceId014": "8a88b5cc-cad9-11e9-8fba-029d7e45ce0d",
+            "createdAt": "2019/06/26 12:46:16"
+        },
+        "userCardList": [
+            {
+                "id": "a211dc69-1475-11ea-b854-0206fb316737",
+                "userId": "10b948b9-9f57-11e9-89d1-02fc72f0909c",
+                "cardId": 20045,
+                "displayCardId": 20045,
+                "revision": 3,
+                "attack": 8750,
+                "defense": 15145,
+                "hp": 45525,
+                "level": 100,
+                "experience": 0,
+                "magiaLevel": 5,
+                "enabled": true,
+                "customized1": true,
+                "customized2": true,
+                "customized3": true,
+                "customized4": true,
+                "customized5": true,
+                "customized6": true,
+                "createdAt": "2020/01/01 00:00:00",
+                "card": {
+                    "cardId": 20045,
+                    "charaNo": 2004,
+                    "miniCharaNo": 200400,
+                    "magiaCharaNo": 200400,
+                    "cardName": "Sayaka Miki",
+                    "rank": "RANK_5",
+                    "attributeId": "WATER",
+                    "initialType": "DEFENSE",
+                    "growthType": "ATTACK",
+                    "attack": 1857,
+                    "defense": 2428,
+                    "hp": 7428,
+                    "rateGainMpAtk": 800,
+                    "rateGainMpDef": 1000,
+                    "magiaId": 20045,
+                    "cardMagia": {
+                        "id": 20045,
+                        "groupId": 1012,
+                        "name": "Prestissimo Agitato",
+                        "shortDescription": "Damages a Single Enemy [VII] / Survive / Guaranteed Critical Hit / Guaranteed Counter (Self/2 Turns)",
+                        "artId1": 100000107,
+                        "art1": {
+                            "artId": 100000107,
+                            "code": "ATTACK",
+                            "target": "TARGET",
+                            "effect": 7200,
+                            "growPoint": 100
+                        },
+                        "artId2": 630214707,
+                        "art2": {
+                            "artId": 630214707,
+                            "code": "CONDITION_GOOD",
+                            "sub": "SURVIVE",
+                            "target": "SELF",
+                            "effect": 350,
+                            "turn": 3,
+                            "growPoint": 0,
+                            "rate": 1000
+                        },
+                        "artId3": 620206400,
+                        "art3": {
+                            "artId": 620206400,
+                            "code": "CONDITION_GOOD",
+                            "sub": "CRITICAL",
+                            "target": "SELF",
+                            "effect": 2000,
+                            "turn": 2,
+                            "growPoint": 0,
+                            "rate": 1000
+                        },
+                        "artId4": 9047,
+                        "art4": {
+                            "artId": 9047,
+                            "code": "CONDITION_GOOD",
+                            "sub": "COUNTER",
+                            "target": "SELF",
+                            "effect": 800,
+                            "turn": 2,
+                            "growPoint": 0,
+                            "rate": 1000
+                        }
+                    },
+                    "doppelMagiaId": 20048,
+                    "doppelCardMagia": {
+                        "id": 20048,
+                        "groupId": 1012,
+                        "name": "Doppel of Unrequited Love",
+                        "shortDescription": "Damages a Single Enemy [IX] / Survive / Guaranteed Critical Hit / Guaranteed Counter (Self/2 Turns)",
+                        "artId1": 190200481,
+                        "art1": {
+                            "artId": 190200481,
+                            "code": "ATTACK",
+                            "target": "TARGET",
+                            "effect": 16720,
+                            "growPoint": 220
+                        },
+                        "artId2": 630214709,
+                        "art2": {
+                            "artId": 630214709,
+                            "code": "CONDITION_GOOD",
+                            "sub": "SURVIVE",
+                            "target": "SELF",
+                            "effect": 400,
+                            "turn": 3,
+                            "growPoint": 0,
+                            "rate": 1000
+                        },
+                        "artId3": 620206400,
+                        "art3": {
+                            "artId": 620206400,
+                            "code": "CONDITION_GOOD",
+                            "sub": "CRITICAL",
+                            "target": "SELF",
+                            "effect": 2000,
+                            "turn": 2,
+                            "growPoint": 0,
+                            "rate": 1000
+                        },
+                        "artId4": 9047,
+                        "art4": {
+                            "artId": 9047,
+                            "code": "CONDITION_GOOD",
+                            "sub": "COUNTER",
+                            "target": "SELF",
+                            "effect": 800,
+                            "turn": 2,
+                            "growPoint": 0,
+                            "rate": 1000
+                        }
+                    },
+                    "doppelCharaNo": 200400,
+                    "doppel": {
+                        "id": 200400,
+                        "name": "Doppel of Unrequited Love",
+                        "title": "Feature: Mermaid",
+                        "description": "The master of this emotion suffered from young love and chose a fate so harsh that she could not bear it alone. As such, the Doppel dreams of love while it swims effortlessly through the air, playing a song for its master from its vast hollow body. It can control several swords to attack its enemies with the soundwaves that emanate from its body, but as long as the master uses it, she cannot flee from the discontent that troubles her heart.",
+                        "designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+                        "archive": true,
+                        "openDate": "2018/01/22 15:10:00"
+                    },
+                    "skillId": 20045,
+                    "cardSkill": {
+                        "id": 20045,
+                        "groupId": 1129,
+                        "name": "My Turn Now!",
+                        "shortDescription": "HP Regen [IX] (3 Turns) / ATK UP [IX]",
+                        "artId1": 630407709,
+                        "art1": {
+                            "artId": 630407709,
+                            "code": "CONDITION_GOOD",
+                            "sub": "AUTO_HEAL",
+                            "target": "CONNECT",
+                            "effect": 100,
+                            "turn": 3,
+                            "growPoint": 10,
+                            "rate": 1000
+                        },
+                        "artId2": 310401109,
+                        "art2": {
+                            "artId": 310401109,
+                            "code": "BUFF",
+                            "sub": "ATTACK",
+                            "target": "CONNECT",
+                            "effect": 400,
+                            "turn": 1,
+                            "growPoint": 25
+                        }
+                    },
+                    "pieceSkillList": [],
+                    "maxPieceSkillList": [],
+                    "commandType1": "MPUP",
+                    "commandType2": "MPUP",
+                    "commandType3": "RANGE_H",
+                    "commandType4": "CHARGE",
+                    "commandType5": "CHARGE",
+                    "illustrator": "Sasagi Kohshi",
+                    "cardCustomize": {
+                        "cardId": 20045,
+                        "giftId1": 122,
+                        "gift1": {
+                            "id": 122,
+                            "name": "Aqua Orb +",
+                            "attributeId": "WATER",
+                            "rank": 2,
+                            "rankGift": "RANK_2",
+                            "price": 1000
+                        },
+                        "giftNum1": 15,
+                        "bonusCode1": "ATTACK",
+                        "bonusNum1": 50,
+                        "giftId2": 551,
+                        "gift2": {
+                            "id": 551,
+                            "name": "Rainbow Orb",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 10000
+                        },
+                        "giftNum2": 3,
+                        "bonusCode2": "DEFENSE",
+                        "bonusNum2": 90,
+                        "giftId3": 123,
+                        "gift3": {
+                            "id": 123,
+                            "name": "Aqua Orb ++",
+                            "attributeId": "WATER",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 2000
+                        },
+                        "giftNum3": 10,
+                        "bonusCode3": "HP",
+                        "bonusNum3": 70,
+                        "giftId4": 506,
+                        "gift4": {
+                            "id": 506,
+                            "name": "Curator's Hood",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000,
+                            "openDate": "2019/09/05 03:10:00"
+                        },
+                        "giftNum4": 10,
+                        "bonusCode4": "ACCEL",
+                        "bonusNum4": 70,
+                        "giftId5": 406,
+                        "gift5": {
+                            "id": 406,
+                            "name": "Staff's Key Switch",
+                            "rank": 2,
+                            "rankGift": "RANK_2",
+                            "price": 3000,
+                            "openDate": "2019/09/05 03:10:00"
+                        },
+                        "giftNum5": 15,
+                        "bonusCode5": "BLAST",
+                        "bonusNum5": 50,
+                        "giftId6": 555,
+                        "gift6": {
+                            "id": 555,
+                            "name": "Pendulum Bob",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000
+                        },
+                        "giftNum6": 8,
+                        "bonusCode6": "CHARGE",
+                        "bonusNum6": 70
+                    }
+                }
+            }
+        ],
+        "arenaBattleOpponentTeamType": "A",
+        "userRatingPoint": 69420
+    },
+    "enemyList": [{
+        "action": 1,
+        "bossType": 0,
+        "magnification": 160,
+        "enemyKey": "does this",
+        "cardId": 20045,
+        "charId": 2004,
+        "miniCharId": 200400,
+        "miniMagiaId": 200400,
+        "miniDoppelId": 200400,
+        "pos": 5,
+        "name": "Sayaka Miki",
+        "level": 100,
+        "align": "WATER",
+        "rank": 5,
+        "attack": 2000,
+        "defence": 17145,
+        "hp": 50275,
+        "hpStart": 50275,
+        "mpStart": 0,
+        "maxMp": 1000,
+        "speed": 0,
+        "discType1": "MPUP",
+        "discType2": "MPUP",
+        "discType3": "RANGE_H",
+        "discType4": "CHARGE",
+        "discType5": "CHARGE",
+        "connectId": 20045,
+        "magiaId": 200455,
+        "blast": 3,
+        "charge": 3,
+        "mpup": 3,
+        "rateGainMpAtk": 900,
+        "rateGainMpDef": 900,
+        "leader": true,
+        "ai": 1,
+        "initialType": "DEFENSE",
+        "enemyKindType": "HUMAN",
+        "memoriaList": [
+            115901,
+            116001,
+            107001,
+            125501
+        ]
+    }],
+    "memoriaList": [
+        {
+			"memoriaId": 115901,
+			"name": "Immortality [VI]",
+			"icon": 1127,
+			"level": 0,
+			"cost": 7,
+			"description": "Endure / HP Regen [VI] (Self/3 Turns)",
+			"voice": 70,
+			"artList": [
+				630207400,
+				630207706
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+        },
+        {
+			"memoriaId": 116001,
+			"name": "Assault Down [X]",
+			"icon": 1094,
+			"level": 0,
+			"cost": 6,
+			"description": "ATK DOWN [X] / Damage Inflicted DOWN [IX] (Target/1 Turn)",
+			"voice": 70,
+			"artList": [
+                410002010,
+                410002209
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+        },
+        {
+			"memoriaId": 107001,
+			"name": "Liberate Adept [IX]",
+			"icon": 1129,
+			"level": 0,
+			"cost": 0,
+			"description": "HP Regen [IX] / Negate Bind",
+			"voice": 0,
+			"artList": [
+                690207709,
+                690208500
+			],
+			"type": "ABILITY",
+			"displayType": "MEMORIA"
+        },
+        {
+			"memoriaId": 125501,
+			"name": "Crisis Shield [VII]",
+			"icon": 1125,
+			"level": 0,
+			"cost": 0,
+			"description": "DEF UP when near-fainting [VII] / DEF UP [V] / Reduce Damage [III]",
+			"voice": 0,
+			"artList": [
+                390203007,
+                390201205,
+                690206203
+			],
+			"type": "ABILITY",
+			"displayType": "MEMORIA"
+		}
+    ],
+    "artList": [
+        {
+            "artId": 630207400,
+            "code": "CONDITION_GOOD",
+            "sub": "GUTS",
+            "target": "SELF",
+            "turn": 3,
+            "growPoint": 0,
+            "rate": 1000
+        },
+        {
+            "artId": 630207706,
+            "code": "CONDITION_GOOD",
+            "sub": "AUTO_HEAL",
+            "target": "SELF",
+            "effect": 90,
+            "turn": 3,
+            "growPoint": 10,
+            "rate": 1000
+        },
+        {
+            "artId": 410002009,
+            "code": "DEBUFF",
+            "sub": "ATTACK",
+            "target": "TARGET",
+            "effect": 450,
+            "turn": 1,
+            "growPoint": 25
+        },
+        {
+            "artId": 410002208,
+            "code": "DEBUFF",
+            "sub": "DAMAGE",
+            "target": "TARGET",
+            "effect": 400,
+            "turn": 1,
+            "growPoint": 25
+        },
+        {
+            "artId": 690207709,
+            "code": "CONDITION_GOOD",
+            "sub": "AUTO_HEAL",
+            "target": "SELF",
+            "effect": 100,
+            "growPoint": 10,
+            "rate": 1000
+        },
+        {
+            "artId": 690208500,
+            "code": "IGNORE",
+            "sub": "RESTRAINT",
+            "target": "SELF",
+            "growPoint": 0,
+            "rate": 1000
+        },
+        {
+            "artId": 390203007,
+            "code": "BUFF_DYING",
+            "sub": "DEFENSE",
+            "target": "SELF",
+            "effect": 800,
+            "growPoint": 20,
+            "rate": 1000
+        },
+        {
+            "artId": 390201205,
+            "code": "BUFF",
+            "sub": "DEFENSE",
+            "target": "SELF",
+            "effect": 375,
+            "growPoint": 25,
+            "rate": 1000
+        },
+        {
+            "artId": 690206203,
+            "code": "CONDITION_GOOD",
+            "sub": "DAMAGE_DOWN",
+            "target": "SELF",
+            "effect": 150,
+            "growPoint": 25,
+            "rate": 1000
+        }
+    ]
+}

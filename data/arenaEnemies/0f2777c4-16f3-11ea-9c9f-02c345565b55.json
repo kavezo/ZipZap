@@ -1,0 +1,725 @@
+{
+    "opponentUserId": "0f2777c4-16f3-11ea-9c9f-02c345565b55",
+    "opponentUserArenaBattleInfo": {
+        "userId": "0f2777c4-16f3-11ea-9c9f-02c345565b55",
+        "type": "SAME",
+        "userName": "meduka",
+        "userRank": 1,
+        "leaderUserCard": {
+            "id": "a211dc69-1475-11ea-b854-0206fb316737",
+            "userId": "0f2777c4-16f3-11ea-9c9f-02c345565b55",
+            "cardId": 20015,
+            "displayCardId": 20015,
+            "revision": 3,
+            "attack": 11136,
+            "defense": 14560,
+            "hp": 40970,
+            "level": 100,
+            "experience": 0,
+            "magiaLevel": 5,
+            "enabled": true,
+            "customized1": true,
+            "customized2": true,
+            "customized3": true,
+            "customized4": true,
+            "customized5": true,
+            "customized6": true,
+            "createdAt": "2020/01/01 00:00:00",
+            "card": {
+                "cardId": 20015,
+                "charaNo": 2001,
+                "miniCharaNo": 200100,
+                "magiaCharaNo": 200100,
+                "cardName": "Madoka Kaname",
+                "rank": "RANK_5",
+                "attributeId": "LIGHT",
+                "initialType": "HEAL",
+                "growthType": "BALANCE",
+                "attack": 1708,
+                "defense": 2319,
+                "hp": 6084,
+                "rateGainMpAtk": 1000,
+                "rateGainMpDef": 1200,
+                "magiaId": 20015,
+                "cardMagia": {
+                    "id": 20015,
+                    "groupId": 1014,
+                    "name": "Pluvia☆Magica",
+                    "shortDescription": "Damages All Enemies [VI] / Charges MP (Team) / Reduce Damage (Team/3 Turns)",
+                    "artId1": 100300106,
+                    "art1": {
+                        "artId": 100300106,
+                        "verbCode": "ATTACK",
+                        "targetId": "ALL",
+                        "effectValue": 3500,
+                        "growPoint": 100
+                    },
+                    "artId2": 630306207,
+                    "art2": {
+                        "artId": 630306207,
+                        "verbCode": "CONDITION_GOOD",
+                        "effectCode": "DAMAGE_DOWN",
+                        "targetId": "ALL",
+                        "effectValue": 350,
+                        "enableTurn": 3,
+                        "growPoint": 25,
+                        "probability": 1000
+                    },
+                    "artId3": 200300507,
+                    "art3": {
+                        "artId": 200300507,
+                        "verbCode": "HEAL",
+                        "effectCode": "MP",
+                        "targetId": "ALL",
+                        "effectValue": 275,
+                        "growPoint": 10
+                    }
+                },
+                "doppelMagiaId": 20018,
+                "doppelCardMagia": {
+                    "id": 20018,
+                    "groupId": 1014,
+                    "name": "Doppel of Mercy",
+                    "shortDescription": "Damages All Enemies [VIII] / Charges MP (Team) / Reduce Damage (Team/3 Turns)",
+                    "artId1": 190200181,
+                    "art1": {
+                        "artId": 190200181,
+                        "verbCode": "ATTACK",
+                        "targetId": "ALL",
+                        "effectValue": 8140,
+                        "growPoint": 220
+                    },
+                    "artId2": 630306209,
+                    "art2": {
+                        "artId": 630306209,
+                        "verbCode": "CONDITION_GOOD",
+                        "effectCode": "DAMAGE_DOWN",
+                        "targetId": "ALL",
+                        "effectValue": 400,
+                        "enableTurn": 3,
+                        "growPoint": 25,
+                        "probability": 1000
+                    },
+                    "artId3": 200300509,
+                    "art3": {
+                        "artId": 200300509,
+                        "verbCode": "HEAL",
+                        "effectCode": "MP",
+                        "targetId": "ALL",
+                        "effectValue": 325,
+                        "growPoint": 10
+                    }
+                },
+                "doppelCharaNo": 200100,
+                "doppel": {
+                    "id": 200100,
+                    "name": "Doppel of Mercy",
+                    "title": "Feature: Salvation",
+                    "description": "The master of this emotion tries to save all of existence. This Doppel appears as a huge floating Soul Gem. Once it is summoned, it creates an existence within which all things around it are consumed, and then takes control of everything within that existence. After that, it floats higher into the air and a shower of light arrows rains down. While all of this is happening, the master of this emotion sleeps inside the huge Soul Gem.",
+                    "designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+                    "archive": true
+                },
+                "skillId": 20015,
+                "cardSkill": {
+                    "id": 20015,
+                    "groupId": 1078,
+                    "name": "I'll Shoulder Your Burden",
+                    "shortDescription": "Heal [VIII] / Charges MP [VIII]",
+                    "artId1": 200400408,
+                    "art1": {
+                        "artId": 200400408,
+                        "verbCode": "HEAL",
+                        "effectCode": "HP",
+                        "targetId": "CONNECT",
+                        "effectValue": 475,
+                        "growPoint": 20
+                    },
+                    "artId2": 200400508,
+                    "art2": {
+                        "artId": 200400508,
+                        "verbCode": "HEAL",
+                        "effectCode": "MP",
+                        "targetId": "CONNECT",
+                        "effectValue": 300,
+                        "growPoint": 10
+                    },
+                    "artId3": 9363,
+                    "art3": {
+                        "artId": 9363,
+                        "verbCode": "HEAL",
+                        "effectCode": "MP",
+                        "targetId": "LIMITED",
+                        "effectValue": 80,
+                        "growPoint": 10,
+                        "limitedValue": "2003"
+                    }
+                },
+                "pieceSkillList": [],
+                "maxPieceSkillList": [],
+                "commandType1": "MPUP",
+                "commandType2": "MPUP",
+                "commandType3": "RANGE_H",
+                "commandType4": "RANGE_V",
+                "commandType5": "CHARGE",
+                "illustrator": "aokiume",
+                "cardCustomize": {
+                    "cardId": 20015,
+                    "giftId1": 551,
+                    "gift1": {
+                        "id": 551,
+                        "name": "Rainbow Orb",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 10000
+                    },
+                    "giftNum1": 3,
+                    "bonusCode1": "ATTACK",
+                    "bonusNum1": 80,
+                    "giftId2": 142,
+                    "gift2": {
+                        "id": 142,
+                        "name": "Light Orb +",
+                        "attributeId": "LIGHT",
+                        "rank": 2,
+                        "rankGift": "RANK_2",
+                        "price": 1000
+                    },
+                    "giftNum2": 15,
+                    "bonusCode2": "DEFENSE",
+                    "bonusNum2": 60,
+                    "giftId3": 143,
+                    "gift3": {
+                        "id": 143,
+                        "name": "Light Orb ++",
+                        "attributeId": "LIGHT",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 2000
+                    },
+                    "giftNum3": 10,
+                    "bonusCode3": "HP",
+                    "bonusNum3": 70,
+                    "giftId4": 553,
+                    "gift4": {
+                        "id": 553,
+                        "name": "Sheep Horn",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 5000
+                    },
+                    "giftNum4": 8,
+                    "bonusCode4": "ACCEL",
+                    "bonusNum4": 70,
+                    "giftId5": 503,
+                    "gift5": {
+                        "id": 503,
+                        "name": "Commoner's Horse Wheel",
+                        "rank": 3,
+                        "rankGift": "RANK_3",
+                        "price": 5000
+                    },
+                    "giftNum5": 10,
+                    "bonusCode5": "BLAST",
+                    "bonusNum5": 70,
+                    "giftId6": 403,
+                    "gift6": {
+                        "id": 403,
+                        "name": "Plaque Cord",
+                        "rank": 2,
+                        "rankGift": "RANK_2",
+                        "price": 3000
+                    },
+                    "giftNum6": 15,
+                    "bonusCode6": "CHARGE",
+                    "bonusNum6": 50
+                }
+            }
+        },
+        "userArenaBattle": {
+            "userId": "0f2777c4-16f3-11ea-9c9f-02c345565b55",
+            "freeRankArenaPoint": 14000,
+            "currentFreeRankClassType": "FREE_RANK_26",
+            "currentFreeRankClass": {
+                "arenaBattleFreeRankClass": "FREE_RANK_26",
+                "prevClass": "FREE_RANK_25",
+                "className": "Layer 26",
+                "storyId": "400026-1",
+                "storyTitle": "Wrapped in Regret",
+                "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+                "bonusRewardList": [
+                    {
+                        "presentType": "ITEM",
+                        "quantity": 25,
+                        "itemId": "PRESENTED_MONEY",
+                        "item": {
+                            "itemCode": "PRESENTED_MONEY",
+                            "treasureChestColor": "GOLD"
+                        },
+                        "displayName": "Magia Stone"
+                    }
+                ],
+                "sortKey": 3
+            },
+            "previousFreeRankClass": {
+                "arenaBattleFreeRankClass": "FREE_RANK_25",
+                "prevClass": "FREE_RANK_24",
+                "nextClass": "FREE_RANK_26",
+                "requiredPoint": 14000,
+                "className": "Layer 25",
+                "nextClassName": "Layer 26",
+                "storyId": "400025-1",
+                "storyTitle": "Triple Threat",
+                "bonusRewardCodes": "ITEM_PRESENTED_MONEY_25",
+                "bonusRewardList": [
+                    {
+                        "presentType": "ITEM",
+                        "quantity": 25,
+                        "itemId": "PRESENTED_MONEY",
+                        "item": {
+                            "itemCode": "PRESENTED_MONEY",
+                            "treasureChestColor": "GOLD"
+                        },
+                        "displayName": "Magia Stone"
+                    }
+                ],
+                "sortKey": 4
+            },
+            "bonusGetAt": "2020/09/22 07:54:08",
+            "eventArenaMissionId": 1006,
+            "eventArenaMissionPoint": 1600,
+            "eventArenaDeckRate": 6569,
+            "createdAt": "2019/06/27 21:21:55"
+        },
+        "userDeck": {
+            "userId": "0f2777c4-16f3-11ea-9c9f-02c345565b55",
+            "deckType": 21,
+            "name": "Mirrors Team",
+            "userCardId1": "a211dc69-1475-11ea-b854-0206fb316737",
+            "questPositionId1": 3,
+            "questEpisodeUserCardId": "a211dc69-1475-11ea-b854-0206fb316737",
+            "formationSheetId": 922,
+            "formationSheet": {
+                "description": "Boosts Front Top (Light) + Center/Rear Bottom (Aqua)",
+                "id": 913,
+                "name": "Light Tercio (Aqua)",
+                "place3": "LIGHT_ATTACK_UP1_100,LIGHT_DEFENSE_UP2_150",
+                "place4": "ALL_ATTACK_UP0_0",
+                "place5": "WATER_ATTACK_UP3_250",
+                "place7": "WATER_ATTACK_UP3_250",
+                "place8": "ALL_ATTACK_UP0_0",
+                "sheetType": 9
+            },
+            "userPieceId011": "38b30a23-077f-11ea-9245-0206fb316737",
+            "userPieceId012": "a21ff6b0-04ef-11ea-a3fb-02d6d7fd150b",
+            "userPieceId013": "70b8b613-af18-11e9-b9ff-02d2e3801fe3",
+            "userPieceId014": "8a88b5cc-cad9-11e9-8fba-029d7e45ce0d",
+            "createdAt": "2019/06/26 12:46:16"
+        },
+        "userCardList": [
+            {
+                "id": "a211dc69-1475-11ea-b854-0206fb316737",
+                "userId": "0f2777c4-16f3-11ea-9c9f-02c345565b55",
+                "cardId": 20015,
+                "displayCardId": 20015,
+                "revision": 3,
+                "attack": 11136,
+                "defense": 14560,
+                "hp": 40970,
+                "level": 100,
+                "experience": 0,
+                "magiaLevel": 5,
+                "enabled": true,
+                "customized1": true,
+                "customized2": true,
+                "customized3": true,
+                "customized4": true,
+                "customized5": true,
+                "customized6": true,
+                "createdAt": "2020/01/01 00:00:00",
+                "card": {
+                    "cardId": 20015,
+                    "charaNo": 2001,
+                    "miniCharaNo": 200100,
+                    "magiaCharaNo": 200100,
+                    "cardName": "Madoka Kaname",
+                    "rank": "RANK_5",
+                    "attributeId": "LIGHT",
+                    "initialType": "HEAL",
+                    "growthType": "BALANCE",
+                    "attack": 1708,
+                    "defense": 2319,
+                    "hp": 6084,
+                    "rateGainMpAtk": 1000,
+                    "rateGainMpDef": 1200,
+                    "magiaId": 20015,
+                    "cardMagia": {
+                        "id": 20015,
+                        "groupId": 1014,
+                        "name": "Pluvia☆Magica",
+                        "shortDescription": "Damages All Enemies [VI] / Charges MP (Team) / Reduce Damage (Team/3 Turns)",
+                        "artId1": 100300106,
+                        "art1": {
+                            "artId": 100300106,
+                            "verbCode": "ATTACK",
+                            "targetId": "ALL",
+                            "effectValue": 3500,
+                            "growPoint": 100
+                        },
+                        "artId2": 630306207,
+                        "art2": {
+                            "artId": 630306207,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "DAMAGE_DOWN",
+                            "targetId": "ALL",
+                            "effectValue": 350,
+                            "enableTurn": 3,
+                            "growPoint": 25,
+                            "probability": 1000
+                        },
+                        "artId3": 200300507,
+                        "art3": {
+                            "artId": 200300507,
+                            "verbCode": "HEAL",
+                            "effectCode": "MP",
+                            "targetId": "ALL",
+                            "effectValue": 275,
+                            "growPoint": 10
+                        }
+                    },
+                    "doppelMagiaId": 20018,
+                    "doppelCardMagia": {
+                        "id": 20018,
+                        "groupId": 1014,
+                        "name": "Doppel of Mercy",
+                        "shortDescription": "Damages All Enemies [VIII] / Charges MP (Team) / Reduce Damage (Team/3 Turns)",
+                        "artId1": 190200181,
+                        "art1": {
+                            "artId": 190200181,
+                            "verbCode": "ATTACK",
+                            "targetId": "ALL",
+                            "effectValue": 8140,
+                            "growPoint": 220
+                        },
+                        "artId2": 630306209,
+                        "art2": {
+                            "artId": 630306209,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "DAMAGE_DOWN",
+                            "targetId": "ALL",
+                            "effectValue": 400,
+                            "enableTurn": 3,
+                            "growPoint": 25,
+                            "probability": 1000
+                        },
+                        "artId3": 200300509,
+                        "art3": {
+                            "artId": 200300509,
+                            "verbCode": "HEAL",
+                            "effectCode": "MP",
+                            "targetId": "ALL",
+                            "effectValue": 325,
+                            "growPoint": 10
+                        }
+                    },
+                    "doppelCharaNo": 200100,
+                    "doppel": {
+                        "id": 200100,
+                        "name": "Doppel of Mercy",
+                        "title": "Feature: Salvation",
+                        "description": "The master of this emotion tries to save all of existence. This Doppel appears as a huge floating Soul Gem. Once it is summoned, it creates an existence within which all things around it are consumed, and then takes control of everything within that existence. After that, it floats higher into the air and a shower of light arrows rains down. While all of this is happening, the master of this emotion sleeps inside the huge Soul Gem.",
+                        "designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+                        "archive": true
+                    },
+                    "skillId": 20015,
+                    "cardSkill": {
+                        "id": 20015,
+                        "groupId": 1078,
+                        "name": "I'll Shoulder Your Burden",
+                        "shortDescription": "Heal [VIII] / Charges MP [VIII]",
+                        "artId1": 200400408,
+                        "art1": {
+                            "artId": 200400408,
+                            "verbCode": "HEAL",
+                            "effectCode": "HP",
+                            "targetId": "CONNECT",
+                            "effectValue": 475,
+                            "growPoint": 20
+                        },
+                        "artId2": 200400508,
+                        "art2": {
+                            "artId": 200400508,
+                            "verbCode": "HEAL",
+                            "effectCode": "MP",
+                            "targetId": "CONNECT",
+                            "effectValue": 300,
+                            "growPoint": 10
+                        },
+                        "artId3": 9363,
+                        "art3": {
+                            "artId": 9363,
+                            "verbCode": "HEAL",
+                            "effectCode": "MP",
+                            "targetId": "LIMITED",
+                            "effectValue": 80,
+                            "growPoint": 10,
+                            "limitedValue": "2003"
+                        }
+                    },
+                    "pieceSkillList": [],
+                    "maxPieceSkillList": [],
+                    "commandType1": "MPUP",
+                    "commandType2": "MPUP",
+                    "commandType3": "RANGE_H",
+                    "commandType4": "RANGE_V",
+                    "commandType5": "CHARGE",
+                    "illustrator": "aokiume",
+                    "cardCustomize": {
+                        "cardId": 20015,
+                        "giftId1": 551,
+                        "gift1": {
+                            "id": 551,
+                            "name": "Rainbow Orb",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 10000
+                        },
+                        "giftNum1": 3,
+                        "bonusCode1": "ATTACK",
+                        "bonusNum1": 80,
+                        "giftId2": 142,
+                        "gift2": {
+                            "id": 142,
+                            "name": "Light Orb +",
+                            "attributeId": "LIGHT",
+                            "rank": 2,
+                            "rankGift": "RANK_2",
+                            "price": 1000
+                        },
+                        "giftNum2": 15,
+                        "bonusCode2": "DEFENSE",
+                        "bonusNum2": 60,
+                        "giftId3": 143,
+                        "gift3": {
+                            "id": 143,
+                            "name": "Light Orb ++",
+                            "attributeId": "LIGHT",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 2000
+                        },
+                        "giftNum3": 10,
+                        "bonusCode3": "HP",
+                        "bonusNum3": 70,
+                        "giftId4": 553,
+                        "gift4": {
+                            "id": 553,
+                            "name": "Sheep Horn",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000
+                        },
+                        "giftNum4": 8,
+                        "bonusCode4": "ACCEL",
+                        "bonusNum4": 70,
+                        "giftId5": 503,
+                        "gift5": {
+                            "id": 503,
+                            "name": "Commoner's Horse Wheel",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000
+                        },
+                        "giftNum5": 10,
+                        "bonusCode5": "BLAST",
+                        "bonusNum5": 70,
+                        "giftId6": 403,
+                        "gift6": {
+                            "id": 403,
+                            "name": "Plaque Cord",
+                            "rank": 2,
+                            "rankGift": "RANK_2",
+                            "price": 3000
+                        },
+                        "giftNum6": 15,
+                        "bonusCode6": "CHARGE",
+                        "bonusNum6": 50
+                    }
+                }
+            }
+        ],
+        "arenaBattleOpponentTeamType": "A",
+        "userRatingPoint": 66666
+    },
+    "enemyList": [{
+        "action": 1,
+        "bossType": 0,
+        "magnification": 160,
+        "enemyKey": "does this",
+        "cardId": 20015,
+        "charId": 2001,
+        "miniCharId": 200100,
+        "miniMagiaId": 200100,
+        "miniDoppelId": 200100,
+        "pos": 3,
+        "name": "Madoka Kaname",
+        "level": 100,
+        "align": "LIGHT",
+        "rank": 5,
+        "attack": 11136,
+        "defence": 14560,
+        "hp": 40970,
+        "hpStart": 40970,
+        "mpStart": 0,
+        "maxMp": 1000,
+        "speed": 0,
+        "discType1": "MPUP",
+        "discType2": "MPUP",
+        "discType3": "RANGE_H",
+        "discType4": "CHARGE",
+        "discType5": "CHARGE",
+        "connectId": 20015,
+        "magiaId": 200155,
+        "blast": 5,
+        "charge": 5,
+        "mpup": 9,
+        "rateGainMpAtk": 1250,
+        "rateGainMpDef": 1250,
+        "leader": true,
+        "ai": 1,
+        "initialType": "HEAL",
+        "enemyKindType": "HUMAN",
+        "memoriaList": [
+            119301,
+            120201,
+            119201,
+            117601
+        ]
+    }],
+    "memoriaList": [
+        {
+			"memoriaId": 119301,
+			"name": "Astral Master [VI]",
+			"icon": 1090,
+			"level": 0,
+			"cost": 4,
+			"description": "Accele MP UP [VI] / Magia Damage UP [V] (Self/3 Turns)",
+			"voice": 70,
+			"artList": [
+				330201606,
+				330201405
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+        },
+        {
+			"memoriaId": 120201,
+			"name": "Charming Eyes [VII]",
+			"icon": 1103,
+			"level": 0,
+			"cost": 4,
+			"description": "Charm Chance [VII] (All Foes/1 Turn)",
+			"voice": 70,
+			"artList": [
+				510303907
+			],
+			"type": "SKILL",
+			"displayType": "MEMORIA"
+        },
+        {
+			"memoriaId": 119201,
+			"name": "Managizer Adept [VI]",
+			"icon": 1129,
+			"level": 0,
+			"cost": 0,
+			"description": "HP Regen [VI] / MP Regen [VI]",
+			"voice": 0,
+			"artList": [
+                690207706,
+				630314806
+			],
+			"type": "ABILITY",
+			"displayType": "MEMORIA"
+        },
+        {
+			"memoriaId": 117601,
+			"name": "Full Throttle Adept [V]",
+			"icon": 1091,
+			"level": 0,
+			"cost": 0,
+			"description": "Damage After Using Charge UP [V] / Accele MP UP [V]",
+			"voice": 0,
+			"artList": [
+                390201605,
+                390201705
+			],
+			"type": "ABILITY",
+			"displayType": "MEMORIA"
+		}
+    ],
+    "artList": [
+        {
+            "artId": 330201606,
+            "code": "BUFF",
+            "sub": "ACCEL",
+            "target": "SELF",
+            "effect": 225,
+            "turn": 3,
+            "growPoint": 25
+        },
+        {
+            "artId": 330201405,
+            "code": "BUFF",
+            "sub": "MAGIA",
+            "target": "SELF",
+            "effect": 150,
+            "turn": 3,
+            "growPoint": 25
+        },
+        {
+            "artId": 510303907,
+            "code": "CONDITION_BAD",
+            "sub": "CHARM",
+            "target": "ALL",
+            "turn": 1,
+            "growPoint": 0,
+            "rate": 500
+        },
+        {
+            "artId": 690207706,
+            "code": "CONDITION_GOOD",
+            "sub": "AUTO_HEAL",
+            "target": "SELF",
+            "effect": 70,
+            "growPoint": 10,
+            "rate": 1000
+        },
+        {
+            "artId": 630314806,
+            "code": "CONDITION_GOOD",
+            "sub": "AUTO_HEAL",
+            "target": "SELF",
+            "effect": 80,
+            "growPoint": 10,
+            "rate": 1000,
+            "genericValue": "MP"
+        },
+        {
+            "artId": 390201605,
+            "code": "BUFF",
+            "sub": "ACCEL",
+            "target": "SELF",
+            "effect": 200,
+            "growPoint": 25,
+            "rate": 1000
+        },
+        {
+            "artId": 390201705,
+            "code": "BUFF",
+            "sub": "CHARGE",
+            "target": "SELF",
+            "effect": 150,
+            "growPoint": 25,
+            "rate": 1000
+        }
+    ]
+}

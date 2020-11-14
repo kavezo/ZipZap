@@ -14,7 +14,7 @@
     "riche": 100000000,
     "inviteCode": "aaaaaaaa",
     "clearedNativeCacheAt": "2020/09/14 19:12:49",
-    "closeFunctions": "ARENA,ARCHIVE_DOPPEL,ARCHIVE_ENEMY,GUILD,GVG",
+    "closeFunctions": "GUILD,GVG",
     "firstNavi": "CHARA_MAGIA_COMPOSE,CHARA_EQUIP_PIECE,ARENA,FORMATION_SUPPORT,SUB_QUEST,PIECE_SET_LIST,PIECE_SET_EQUIP,CHARA_QUEST",
     "loginBonusPattern": "Z1",
     "loginBonusPatternSetAt": "2020/10/16 19:50:05",

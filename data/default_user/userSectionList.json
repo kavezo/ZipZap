@@ -527,6 +527,43 @@
     },
     {
         "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 101202,
+        "section": {
+            "sectionId": 101202,
+            "questType": "MAIN",
+            "genericId": 12,
+            "genericIndex": 2,
+            "areaMapId": 11011,
+            "imagePath": "11041",
+            "areaDetailName": "Shinsei Ward - Streets",
+            "title": "Rumors in Kamihama",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "I wonder if Momoko and the others are really okay… Is there anything I can do to help them?",
+            "outline": "Iroha remembered that Ui had two best friends, Touka Satomi and Nemu Hiiragi. Hoping they might remember Ui, she visited their hospital, but couldn't find them. Then she ran into Yachiyo, who told her that rumors come true in Kamihama. One, \"The Rule of Ending Friendships,\" says if you end a friendship and then try to reconcile, a monster will come and get you. After Yachiyo left, Iroha ran into two girls declaring their friendship over. They are friends of Momoko, who helpd Iroha before.",
+            "ap": 6,
+            "difficulty": 7,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openEnemyList": []
+        },
+        "canPlay": true,
+        "cleared": true,
+        "createdAt": "2020/09/14 20:43:11",
+        "clearedAt": "2020/09/14 20:54:41"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
         "sectionId": 101201,
         "section": {
             "sectionId": 101201,
@@ -569,7 +606,136 @@
             ]
         },
         "canPlay": true,
-        "cleared": false,
-        "createdAt": "2020/09/14 20:54:41"
+        "cleared": true,
+        "createdAt": "2020/09/14 20:43:11",
+        "clearedAt": "2020/09/14 20:54:41"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 101205,
+        "section": {
+            "sectionId": 101205,
+            "questType": "MAIN",
+            "genericId": 12,
+            "genericIndex": 5,
+            "areaMapId": 11012,
+            "imagePath": "11094",
+            "areaDetailName": "Abandoned Construction Site",
+            "title": "An Uwasa Provoked",
+            "charaId": 1010,
+            "charaName": "Momoko Togame",
+            "defaultCardId": 10104,
+            "message": "Looks like I have no choice but to believe it. Rumors really do come true in Kamihama City...",
+            "outline": "Iroha and Momoko chased after the traces of magic left behind when Kaede vanished and Rena ran off. Unable to find her, they were about to go ask Mitama for help when Rena appeared, having asked Yachiyo for the solution to their predicament. If Rena were to apologize, it might lure Kaede back. Once Rena apologized, both Kaede and the Familiars that had taken her appeared. Yachiyo showed up and said she'd handle Kaede while Iroha and Momoko went to face the Witch inside the Labyrinth.",
+            "ap": 7,
+            "difficulty": 10,
+            "clearRewardCode": "GEM_1001_5",
+            "clearReward": {
+                "presentType": "GEM",
+                "quantity": 5,
+                "genericId": 1001,
+                "displayName": "Iroha Tamaki"
+            },
+            "openEnemy": "109",
+            "openEnemyList": [
+                {
+                    "enemyId": 109,
+                    "enemyNo": 6002,
+                    "type": 3,
+                    "name": "Uwasa of the Friendship Ending Staircase",
+                    "description": "Have you heard? Has anyone told you? The Rumor of the Friendship Breaking Staircase. If you say, \"Hmph! I hate you! We're over!\" this staircase will appear, but you won't be able to see it. If you try to rekindle your friendship, it will take you away! All the girls in Kamihama say that a shadow girl who pushed her friend down the stairs will appear and catch you and make you clean the staircase forever. How scary!",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ],
+            "openFunctions": "ARENA"
+        },
+        "canPlay": true,
+        "cleared": true,
+        "createdAt": "2020/09/14 20:43:11",
+        "clearedAt": "2020/09/14 20:54:41"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 101204,
+        "section": {
+            "sectionId": 101204,
+            "questType": "MAIN",
+            "genericId": 12,
+            "genericIndex": 4,
+            "areaMapId": 11012,
+            "imagePath": "21132",
+            "areaDetailName": "Shinsei Ward - River Bank",
+            "title": "In Search of Kaede",
+            "charaId": 1001,
+            "charaName": "Iroha Tamaki",
+            "defaultCardId": 10011,
+            "message": "Could that rumor have come true? We have to find Kaede right away!",
+            "outline": "Iroha made a plan with Momoko to help Rena and Kaede reconcile their differences. Kaede showed up while Iroha was struggling to persuade Rena. She tried to apologize, but Rena shut her down and ran away. Kaede and Iroha chased her, but her strong reaction made Iroha wonder... Did Rena believe in the Rule of Ending Friendships? Nothing strange happened at first when Kaede apologized, but right when Iroha was about to sigh in relief, a group of Familiars appeared and took Kaede away.",
+            "ap": 6,
+            "difficulty": 9,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openEnemyList": []
+        },
+        "canPlay": true,
+        "cleared": true,
+        "createdAt": "2020/09/14 20:43:11",
+        "clearedAt": "2020/09/14 20:54:41"
+    },
+    {
+        "userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
+        "sectionId": 101203,
+        "section": {
+            "sectionId": 101203,
+            "questType": "MAIN",
+            "genericId": 12,
+            "genericIndex": 3,
+            "areaMapId": 11011,
+            "imagePath": "11071",
+            "areaDetailName": "Kamihama University Affiliated School - Main Gate",
+            "title": "Momoko's Master Plan",
+            "charaId": 1010,
+            "charaName": "Momoko Togame",
+            "defaultCardId": 10104,
+            "message": "Geeze, I've never seen 'em fight like this in all the time I've known 'em!",
+            "outline": "If you reconcile after ending a friendship, a monster will come and get you. That's the Rule of Ending Friendships, and Iroha just saw Momoko's friends Kaede Akino and Rena Minami say they're \"done.\" Momoko doesn't believe in rumors and said Kaede and Rena would be back to being friends soon - just give it time. Still, Rena and Kaede showed no sign of making amends, and Momoko soon ran out of patience. It's time to give these girls a push to reconcile. Iroha begs Momoko to let her help.",
+            "ap": 6,
+            "difficulty": 8,
+            "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+            "clearReward": {
+                "presentType": "ITEM",
+                "quantity": 5,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "treasureChestColor": "GOLD"
+                },
+                "displayName": "Magia Stone"
+            },
+            "openEnemy": "110",
+            "openEnemyList": [
+                {
+                    "enemyId": 110,
+                    "enemyNo": 7002,
+                    "type": 3,
+                    "name": "Uwasa of the Friendship Ending Padlock",
+                    "description": "Have you heard? Has anyone told you? The Rumor of the Friendship Breaking Padlock. Many couples and friends put padlocks on bridges, capes, and observatories as a symbol of their bond. But what happens if you do the opposite and break it? The Friendship Breaking Padlock is there to destroy such bonds. It will swarm about and capture you, and that will be the end of you! According to the kids in Kamihama, it will lock you up in the Friendship Breaking Staircase! How horrible!",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ]
+        },
+        "canPlay": true,
+        "cleared": true,
+        "createdAt": "2020/09/14 20:43:11",
+        "clearedAt": "2020/09/14 20:54:41"
     }
 ]
