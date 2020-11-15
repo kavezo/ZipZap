@@ -6,12 +6,7 @@ from uuid import uuid1
 
 # This will only get you the lowest rarity card, but that's what all shop megucas have been...
 def getCard(charaNo):
-    with open('data/cards.json', encoding='utf-8') as f:
-        cards = json.load(f)
-
-    for card in cards:
-        if card['charaId'] == charaNo:
-            userCard, userChara, userLive2d, _ = gacha.addMeguca(card['charaId'])
+    userCard, userChara, userLive2d, _ = gacha.addMeguca(charaNo)
     return {'userCardList': [userCard], 'userCharaList': [userChara], 'userLive2dList': [userLive2d]}
 
 def getFormation(formationId):
