@@ -4,6 +4,7 @@ from datetime import datetime
 from uuid import uuid1
 import numpy as np
 from api import userCard
+from util import dataUtil
 
 def sendArena(request,response):
     """
@@ -44,9 +45,9 @@ def sendArena(request,response):
     userArenaBattleResultList=[{
         'arenaBattleStatus': arenaBattleStatus,
         'arenaBattleType': 'FREE_RANK', #change for ranked
-        'numberOfConsecutiveWins':1,
+        'numberOfConsecutiveWins': 1,
         'userQuestBattleResultId':request['userQuestBattleResultId'],
-        'userId':'',
+        'userId': dataUtil.userId,
         'opponentUserId':'',
         'point':0
     }]
@@ -60,78 +61,56 @@ def sendArena(request,response):
 
     return flask.jsonify(response)
 
+def giveUserExp(battle):
+    userExp = battle['questBattle']['exp']
+    gameUser = dataUtil.setGameUserValue('exp', dataUtil.getGameUserValue('exp')+userExp)
+    newStatus = []
+    if gameUser['exp'] >= gameUser['totalExpForNextLevel']:
+        dataUtil.setGameUserValue('exp', gameUser['exp'] - gameUser['totalExpForNextLevel'])
+        dataUtil.setGameUserValue('level', gameUser['level'] + 1)
+        dataUtil.setGameUserValue('totalExpForCurrentLevel', gameUser['totalExpForNextLevel'])
+        # TODO: how does this actually work lol
+        gameUser = dataUtil.setGameUserValue('totalExpForNextLevel', gameUser['totalExpForNextLevel'] + 10)
+
+        maxAP = dataUtil.getUserObject('userStatusList', 'MAX_ACP')
+        currAP = dataUtil.getUserObject('userStatusList', 'ACP')
+        maxAP['point'] += 10
+        currAP['point'] += maxAP['point']
+
+        newStatus.append(maxAP)
+        newStatus.append(currAP)
+
+        dataUtil.setUserObject('userStatusList', 'MAX_ACP', maxAP)
+        dataUtil.setUserObject('userStatusList', 'ACP', currAP)
+    return gameUser, newStatus
 
 def send():
     body = flask.request.json
     nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
 
-    with open('data/user/user.json', encoding='utf-8') as f:
-        user = json.load(f)
-        userId = user['id']
-    with open('data/user/userQuestBattleResult.json', encoding='utf-8') as f:
-        battle = json.load(f)
+    battle = dataUtil.readJson('data/user/userQuestBattleResult.json')
 
     if(battle['battleType']=="ARENA"):
-        return sendArena(body,{'userQuestBattleResultList':[battle],'gameUser':user})
-        
-    with open('data/user/userCharaList.json', encoding='utf-8') as f:
-        userCharaList = json.load(f)
-    with open('data/user/userCardList.json', encoding='utf-8') as f:
-        userCardList = json.load(f)
-
+        return sendArena(body,{'userQuestBattleResultList':[battle],'gameUser': dataUtil.readJson('data/user/gameUser.json')})
 
     if not battle['id'] == body['userQuestBattleResultId']:
         flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
 
     # add exp to user and level up, maybe
-    userExp = battle['questBattle']['exp']
-    with open('data/user/gameUser.json', encoding='utf-8') as f:
-        gameUser = json.load(f)
-    gameUser['exp'] += userExp
-    newStatus = []
-    if gameUser['exp'] >= gameUser['totalExpForNextLevel']:
-        gameUser['level'] += 1
-        gameUser['totalExpForCurrentLevel'] = gameUser['totalExpForNextLevel']
-        gameUser['totalExpForNextLevel'] += 10 # TODO: how does this actually work lol
-        with open('data/user/userStatusList.json', encoding='utf-8') as f:
-            userStatusList = json.load(f)
-        
-        maxAPIdx = 0
-        currAPIdx = 0
-        for i, status in enumerate(userStatusList):
-            if status['statusId'] == 'MAX_ACP':
-                maxAPIdx = i
-            if status['statusId'] == 'ACP':
-                currAPIdx = i
-        userStatusList[maxAPIdx]['point'] += 10
-        userStatusList[currAPIdx]['point'] += userStatusList[maxAPIdx]['point']
-        newStatus.append(userStatusList[maxAPIdx])
-        newStatus.append(userStatusList[currAPIdx])
-
-        with open('data/user/userStatusList.json', 'w+', encoding='utf-8') as f:
-            json.dump(userStatusList, f, ensure_ascii=False)
-
-    with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
-        json.dump(gameUser, f, ensure_ascii=False)
+    gameUser, newStatus = giveUserExp(battle)
 
     # TODO: add to stories
     resultUserQuestAdventureList = []
 
     # change userQuestBattleResult status
     battle['questBattleStatus'] = 'SUCCESSFUL'
-
+    
     # add to userQuestBattleList
-    with open('data/user/userQuestBattleList.json', encoding='utf-8') as f:
-        userQuestBattleList = json.load(f)
-
-    resultUserQuestBattle = {}
+    resultUserQuestBattle = dataUtil.getUserObject('userQuestBattleList', battle['questBattleId'])
     # TODO: get real mission clear values
-    for userQuestBattle in userQuestBattleList:
-        if userQuestBattle['questBattleId'] == battle['questBattleId']:
-            resultUserQuestBattle = userQuestBattle
-    if resultUserQuestBattle == {}:
+    if resultUserQuestBattle is None:
         resultUserQuestBattle = {
-            "userId": userId,
+            "userId": dataUtil.userId,
             "questBattleId": battle['questBattleId'],
             "questBattle": battle,
             "cleared": True,
@@ -143,10 +122,8 @@ def send():
             "maxDamage": 0,
             "createdAt": nowstr
         }
-        userQuestBattleList.append(resultUserQuestBattle)
     resultUserQuestBattleList = [resultUserQuestBattle]
-    with open('data/user/userQuestBattleList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userQuestBattleList, f, ensure_ascii=False)
+    dataUtil.setUserObject('userQuestBattleList', battle['questBattleId'], resultUserQuestBattle)
 
     # add exp to cards
     charaNos = []
@@ -161,26 +138,24 @@ def send():
             if battle[numberedId] == battle['episodeUserCardId']:
                 leaderCardId = battle[numberedId]
 
-    for i, currUserCard in enumerate(userCardList):
-        if currUserCard['id'] in cardIds:
-            charaNos.append(currUserCard['card']['charaNo'])
-            if currUserCard['id'] == leaderCardId:
-                leaderCharaId = currUserCard['card']['charaNo']
+    for cardId in cardIds:
+        currUserCard = dataUtil.getUserObject('userCardList', cardId)
+        charaNos.append(currUserCard['card']['charaNo'])
+        if currUserCard['id'] == leaderCardId:
+            leaderCharaId = currUserCard['card']['charaNo']
 
-            exp = battle['questBattle']['cardExp']
-            newLevel, extraExp = userCard.getFinalLevel(currUserCard, exp)
-            maxLevel = userCard.maxLevels[currUserCard['card']['rank']]
-            if newLevel >= maxLevel:
-                userCardList[i]['level'] = maxLevel
-                userCardList[i]['experience'] = 0
-            else:
-                userCardList[i]['level'] = newLevel
-                userCardList[i]['experience'] = extraExp
+        exp = battle['questBattle']['cardExp']
+        newLevel, extraExp = userCard.getFinalLevel(currUserCard, exp)
+        maxLevel = userCard.maxLevels[currUserCard['card']['rank']]
+        if newLevel >= maxLevel:
+            currUserCard['level'] = maxLevel
+            currUserCard['experience'] = 0
+        else:
+            currUserCard['level'] = newLevel
+            currUserCard['experience'] = extraExp
 
-            resultUserCardList.append(userCardList[i])
-
-    with open('data/user/userCardList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userCardList, f, ensure_ascii=False)
+        resultUserCardList.append(currUserCard)
+        dataUtil.setUserObject('userCardList', cardId, currUserCard)
 
     # add episode points to charas
     for i in range(9):
@@ -189,16 +164,12 @@ def send():
             cardIds.append(body[numberedId])
 
     resultUserCharaList = []
-    for i, userChara in enumerate(userCharaList):
-        if userChara['charaId'] in charaNos:
-            eps = battle['questBattle']['baseBondsPt']
-            if userChara['charaId'] == leaderCharaId:
-                eps *= 1.5
-            userCharaList[i]['bondsTotalPt'] = min(userCharaList[i]['bondsTotalPt']+eps, 64000)
-            resultUserCharaList.append(userCharaList[i])
-
-    with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userCharaList, f, ensure_ascii=False)
+    eps = battle['questBattle']['baseBondsPt']
+    for charaNo in charaNos:
+        userChara = dataUtil.getUserObject('userCharaList', charaNo)
+        userChara['bondsTotalPt'] += eps if not charaNo == leaderCharaId else eps*1.5
+        resultUserCharaList.append(userChara)
+        dataUtil.setUserObject('userCharaList', charaNo, userChara)
 
     # TODO: calculate drops and add to items
     resultUserItemList = []
@@ -354,49 +325,44 @@ def cardToPlayer(userCard, userChara, battleInfo):
         "ai": 3 if userChara['charaId']==1001 else 1, # TODO: figure out how this actually works
         "memoriaList": battleInfo['memoriaList']
     }
- 
+
+def battleTranslate(battleData, userCard = None, userPieces = []):
+    battleData['artList'] += extractArts(userCard, userPieces)
+    if userCard is not None:
+        battleData['magiaList'].append(cardMagiaToMagia(userCard))
+        battleData['connectList'].append(cardSkillToConnect(userCard))
+        currDoppel = cardDoppelToDoppel(userCard)
+        if currDoppel is not None:
+            battleData['doppelList'].append(currDoppel)
+    if len(userPieces) > 0:
+        currMemoriae = piecesToMemoriae(userPieces)
+        battleData['memoria'] += currMemoriae
+        return currMemoriae
+
 def get():
     body = flask.request.json
-
-    with open('data/user/userQuestBattleResult.json', encoding='utf-8') as f:
-        battle = json.load(f)
-        
+    battle = dataUtil.readJson('data/user/userQuestBattleResult.json')
     isMirrors = battle['battleType']=="ARENA"
 
     if isMirrors:
-        with open('data/user/userArenaBattleResult.json', encoding='utf-8') as f:
-            arenaBattle = json.load(f)
+        arenaBattle = dataUtil.readJson('data/user/userArenaBattleResult.json')
         if not arenaBattle['userQuestBattleResultId'] == battle['id']:
             flask.abort(500, description='{"errorTxt": "Something weird happened with order of battles","resultCode": "error","title": "Error"}')
-
-    # if(battle['battleType']=="ARENA"):
-    #    return getArena({})
 
     if not battle['id'] == body['userQuestBattleResultId']:
         print('battle ID mismatch')
         flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
 
-    with open('data/user/userDeckList.json', encoding='utf-8') as f:
-        userDeckList = json.load(f)
-    with open('data/user/userCardList.json', encoding='utf-8') as f:
-        userCardList = json.load(f)
-    with open('data/user/userCharaList.json', encoding='utf-8') as f:
-        userCharaList = json.load(f)
-    with open('data/user/userPieceList.json', encoding='utf-8') as f:
-        userPieceList = json.load(f)
-
     # grab team info
-    deck = {}
-    for userDeck in userDeckList:
-        if userDeck['deckType'] == battle['deckType']:
-            deck = userDeck
-
-    playerList = []
-    artList = []
-    magiaList = []
-    connectList = []
-    doppelList = []
-    memoria = []
+    deck = dataUtil.getUserObject('userDeckList', battle['deckType'])
+    battleData = {
+        'playerList': [],
+        'artList': [],
+        'magiaList': [],
+        'connectList': [],
+        'doppelList': [],
+        'memoria': []
+    }
     for key in battle.keys():
         if key.startswith('userCardId'):
             currCardIdx = 0
@@ -406,110 +372,74 @@ def get():
                         currCardIdx = i+1
             
             userCardId = deck['userCardId'+str(currCardIdx)]
-            userCard = {}
-            for card in userCardList:
-                if card['id'] == userCardId and card['enabled']:
-                    userCard = card
-            if userCard == {}:
+            userCard = dataUtil.getUserObject('userCardList', userCardId)
+            if userCard is None:
                 print('can\'t find card with id ' + userCardId)
                 flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}')
-            magiaList.append(cardMagiaToMagia(userCard))
-            connectList.append(cardSkillToConnect(userCard))
-            currDoppel = cardDoppelToDoppel(userCard)
-            if currDoppel is not None:
-                doppelList.append(currDoppel)
+            
+            pieceIds = [deck[key] for key in deck.keys() if key.startswith('userPieceId0'+str(currCardIdx))]
+            pieces = [dataUtil.getUserObject('userPieceList', pieceId) for pieceId in pieceIds]
+            currMemoriae = battleTranslate(battleData, userCard, pieces)
 
             userCharaId = userCard['card']['charaNo']
-            userChara = {}
-            for chara in userCharaList:
-                if chara['charaId'] == userCharaId:
-                    userChara = chara
-            if userChara == {}:
+            userChara = dataUtil.getUserObject('userCharaList', userCharaId)
+            if userChara is None:
                 print('can\'t find chara with id ' + str(userCharaId))
                 flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}')
-
-            pieceIds = [deck[key] for key in deck.keys() if key.startswith('userPieceId0'+str(currCardIdx))]
-            pieces = [userPiece for userPiece in userPieceList if userPiece['id'] in pieceIds]
-            artList += extractArts(userCard, pieces)
-            currMemoria = piecesToMemoriae(pieces)
-            memoria += currMemoria
 
             battleInfo = {
                 'helper': False,
                 'friend': False,
                 'pos': int(key[-1]),
                 'leader': deck['questEpisodeUserCardId'] == userCharaId,
-                'memoriaList': currMemoria
+                'memoriaList': currMemoriae
             }
-            playerList.append(cardToPlayer(userCard, userChara, battleInfo))
+            battleData['playerList'].append(cardToPlayer(userCard, userChara, battleInfo))
 
     # do the same, but now for the helper
     # TODO: use actual support
     if not isMirrors:
-        with open('data/npc.json', encoding='utf-8') as f:
-            helper = json.load(f)
+        helper = dataUtil.readJson('data/npc.json')
         helperCard = helper['userCardList'][0]
         helperChara = helper['userCharaList'][0]
         helperPieces = helper['userPieceList']
 
-        magiaList.append(cardMagiaToMagia(helperCard))
-        connectList.append(cardSkillToConnect(helperCard))
-        artList += extractArts(helperCard, helperPieces)
-        helperMemoria = piecesToMemoriae(helperPieces)
-        memoria += helperMemoria
-
-        currDoppel = cardDoppelToDoppel(helperCard)
-        if currDoppel is not None:
-            doppelList.append(currDoppel)
+        helperMemoriae = battleTranslate(battleData, helperCard, helperPieces)
 
         battleInfo = {
             'helper': True,
             'friend': True, # TODO: actually change this
             'pos': deck['questPositionHelper'],
             'leader': False,
-            'memoriaList': helperMemoria
+            'memoriaList': helperMemoriae
         }
-        playerList.append(cardToPlayer(helperCard, helperChara, battleInfo))
+        battleData['playerList'].append(cardToPlayer(helperCard, helperChara, battleInfo))
 
     # add support points
+    # TODO: change this based on the helper
     if not isMirrors:
-        with open('data/user/userItemList.json', encoding='utf-8') as f:
-            userItems = json.load(f)
-        supportPoints = {}
-        for i, item in enumerate(userItems):
-            if item['itemId'] == 'YELL':
-                userItems[i]['quantity'] += 60 # TODO: change this based on the helper
-                supportPoints = userItems[i]
-        with open('data/user/userItemList.json', 'w+', encoding='utf-8') as f:
-            json.dump(userItems, f)
+        supportPoints = dataUtil.getUserObject('userItemList', 'YELL')
+        supportPoints['quantity'] += 60
+        dataUtil.setUserObject('userItemList', 'YELL', supportPoints)
 
     # spend AP/BP
-    with open('data/user/userStatusList.json', encoding='utf-8') as f:
-        userStatuses = json.load(f)
-    apStatus = {}
     apType = 'ACP' if not isMirrors else 'BTP'
-    for i, status in enumerate(userStatuses):
-        if status['statusId'] == apType:
-            userStatuses[i]['point'] -= 0 # TODO: figure out how to find this...
-            apStatus = userStatuses[i]
-        if userStatuses[i]['point'] < 0:
-            flask.abort(400, '{"errorTxt": "Not enough BP.","resultCode": "error","title": "Error"}')
-    with open('data/user/userStatusList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userStatuses, f)
+    apStatus = dataUtil.getUserObject('userStatusList', apType)
+    apStatus['point'] -= 0
+    if apStatus['point'] < 0:
+        flask.abort(400, '{"errorTxt": "Not enough BP.","resultCode": "error","title": "Error"}')
+    dataUtil.setUserObject('userStatusList', apType, apStatus)
 
     # change quest status
     battle['questBattleStatus'] = 'LOTTERY'
-    with open('data/user/userQuestBattleResult.json', 'w+', encoding='utf-8') as f:
-        json.dump(battle, f)
+    dataUtil.saveJson('data/user/userQuestBattleResult.json', battle)
 
     # TODO: use follower
     userFollowList = []
 
     # compile web data
-    with open('data/user/gameUser.json', encoding='utf-8') as f:
-        gameUser = json.load(f)
     webData = {
-        "gameUser": gameUser,
+        "gameUser": dataUtil.readJson('data/user/gameUser.json'),
         "userStatusList": [apStatus],
         "userQuestBattleResultList": [battle],
         "resultCode": "success",
@@ -521,11 +451,9 @@ def get():
     # add opponent stuff
     # TODO: instead of checking if it's mirrors, we need to go through all enemies at all times and check for HUMANs
     if not isMirrors:
-        with open('data/hardCodedWave.json', encoding='utf-8') as f:
-            waves = [json.load(f)]
+        waves = [dataUtil.readJson('data/hardCodedWave.json')]
     else:
-        with open('data/arenaEnemies/'+arenaBattle['opponentUserId']+'.json', encoding='utf-8') as f:
-            opponent = json.load(f)
+        opponent = dataUtil.readJson('data/arenaEnemies/'+arenaBattle['opponentUserId']+'.json')
         waves = [{
 			"field": 21181,
 			"boss": False,
@@ -533,22 +461,17 @@ def get():
 			"enemyList": opponent['enemyList']
         }]
         # this is a mess lol, only the arts from the memoria are in artList
-        memoria += opponent['memoriaList']
-        artList += opponent['artList']
+        battleData['memoria'] += opponent['memoriaList']
+        battleData['artList'] += opponent['artList']
 
         # the rest have to be extracted from the cards
         for enemyCard in opponent['opponentUserArenaBattleInfo']['userCardList']:
-            magiaList.append(cardMagiaToMagia(enemyCard))
-            connectList.append(cardSkillToConnect(enemyCard))
-            artList += extractArts(enemyCard, [])
-            currDoppel = cardDoppelToDoppel(enemyCard)
-            if currDoppel is not None:
-                doppelList.append(currDoppel)
+            battleTranslate(battleData, enemyCard, [])
         
     # dedupe
     artIds = set({})
     finalArtList = []
-    for art in artList:
+    for art in battleData['artList']:
         if not art['artId'] in artIds:
             finalArtList.append(art)
             artIds.add(art['artId'])
@@ -570,18 +493,16 @@ def get():
         'battleType': 'QUEST' if not isMirrors else 'ARENA', # TODO: change for tutorials, challenge quests
         'scenario': scenario,
         'waveList': waves,
-        'playerList': playerList,
-        'doppelList': doppelList,
+        'playerList': battleData['playerList'],
+        'doppelList': battleData['doppelList'],
         'artList': finalArtList,
-        'memoriaList': memoria,
-        'connectList': connectList,
-        'magiaList': magiaList,
+        'memoriaList': battleData['memoria'],
+        'connectList': battleData['connectList'],
+        'magiaList': battleData['magiaList'],
         'continuable': True,
         'isHalfSkill': False,
         'webData': webData
     }
-    with open('debugArena.json', 'w+', encoding='utf-8') as f:
-        json.dump(response, f)
     return flask.jsonify(response)
 
 def start():    
@@ -605,7 +526,7 @@ def start():
         for battle in allBattles: 
             if battle['questBattleId'] == body['questBattleId']:
                 userQuestInfo = {
-                    "userId": userInfo['userId'],
+                    "userId": dataUtil.userId,
                     "questBattleId": battle['questBattleId'],
                     "questBattle": battle,
                     "cleared": True,
@@ -683,7 +604,7 @@ def start():
             "serverClearTime": 0,
             "skillNum": 0,
             "turns": 0,
-            "userId": userInfo['userId']
+            "userId": dataUtil.userId
         }
 
     if 'helpUserCardId' in body:
