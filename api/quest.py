@@ -62,7 +62,7 @@ def sendArena(request,response):
     return flask.jsonify(response)
 
 def giveUserExp(battle):
-    userExp = battle['questBattle']['exp']
+    userExp = 0 # battle['questBattle']['exp']
     gameUser = dataUtil.setGameUserValue('exp', dataUtil.getGameUserValue('exp')+userExp)
     newStatus = []
     if gameUser['exp'] >= gameUser['totalExpForNextLevel']:
@@ -84,47 +84,7 @@ def giveUserExp(battle):
         dataUtil.setUserObject('userStatusList', 'ACP', currAP)
     return gameUser, newStatus
 
-def send():
-    body = flask.request.json
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
-
-    battle = dataUtil.readJson('data/user/userQuestBattleResult.json')
-
-    if(battle['battleType']=="ARENA"):
-        return sendArena(body,{'userQuestBattleResultList':[battle],'gameUser': dataUtil.readJson('data/user/gameUser.json')})
-
-    if not battle['id'] == body['userQuestBattleResultId']:
-        flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
-
-    # add exp to user and level up, maybe
-    gameUser, newStatus = giveUserExp(battle)
-
-    # TODO: add to stories
-    resultUserQuestAdventureList = []
-
-    # change userQuestBattleResult status
-    battle['questBattleStatus'] = 'SUCCESSFUL'
-    
-    # add to userQuestBattleList
-    resultUserQuestBattle = dataUtil.getUserObject('userQuestBattleList', battle['questBattleId'])
-    # TODO: get real mission clear values
-    if resultUserQuestBattle is None:
-        resultUserQuestBattle = {
-            "userId": dataUtil.userId,
-            "questBattleId": battle['questBattleId'],
-            "questBattle": battle,
-            "cleared": True,
-            "missionStatus1": "NON_CLEAR",
-            "missionStatus2": "NON_CLEAR",
-            "missionStatus3": "NON_CLEAR",
-            "rewardDone": False,
-            "clearCount": 0,
-            "maxDamage": 0,
-            "createdAt": nowstr
-        }
-    resultUserQuestBattleList = [resultUserQuestBattle]
-    dataUtil.setUserObject('userQuestBattleList', battle['questBattleId'], resultUserQuestBattle)
-
+def giveMegucaExp(body, battle):
     # add exp to cards
     charaNos = []
     leaderCardId = 0
@@ -167,9 +127,61 @@ def send():
     eps = battle['questBattle']['baseBondsPt']
     for charaNo in charaNos:
         userChara = dataUtil.getUserObject('userCharaList', charaNo)
-        userChara['bondsTotalPt'] += eps if not charaNo == leaderCharaId else eps*1.5
+        if charaNo == leaderCharaId:
+            eps *= 1.5
+        # checking if this is the meguca's MSS
+        strBattleId = str(battle['questBattle']['questBattleId'])
+        if strBattleId.startswith('3') and strBattleId[1:5] == str(charaNo):
+            eps *= 2
+        userChara['bondsTotalPt'] += eps
+
         resultUserCharaList.append(userChara)
         dataUtil.setUserObject('userCharaList', charaNo, userChara)
+    return resultUserCardList, resultUserCharaList
+
+def send():
+    body = flask.request.json
+    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
+
+    battle = dataUtil.readJson('data/user/userQuestBattleResult.json')
+
+    if(battle['battleType']=="ARENA"):
+        return sendArena(body,{'userQuestBattleResultList':[battle],'gameUser': dataUtil.readJson('data/user/gameUser.json')})
+
+    if not battle['id'] == body['userQuestBattleResultId']:
+        flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
+
+    # add exp to user and level up, maybe
+    gameUser, newStatus = giveUserExp(battle)
+
+    # level up/episode up megucas
+    resultUserCardList, resultUserCharaList = giveMegucaExp(body, battle)
+
+    # TODO: add to stories
+    resultUserQuestAdventureList = []
+
+    # change userQuestBattleResult status
+    battle['questBattleStatus'] = 'SUCCESSFUL'
+    
+    # add to userQuestBattleList
+    resultUserQuestBattle = dataUtil.getUserObject('userQuestBattleList', battle['questBattleId'])
+    # TODO: get real mission clear values
+    if resultUserQuestBattle is None:
+        resultUserQuestBattle = {
+            "userId": dataUtil.userId,
+            "questBattleId": battle['questBattleId'],
+            "questBattle": battle,
+            "cleared": True,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": False,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": nowstr
+        }
+    resultUserQuestBattleList = [resultUserQuestBattle]
+    dataUtil.setUserObject('userQuestBattleList', battle['questBattleId'], resultUserQuestBattle)
 
     # TODO: calculate drops and add to items
     resultUserItemList = []

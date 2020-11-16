@@ -2,9 +2,26 @@ from util import dataUtil
 from uuid import uuid1
 from datetime import datetime
 
+def nowstr():
+    return (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
+
+def createUserLive2d(charaId, live2dId, description):
+    return {
+        "userId": dataUtil.userId,
+        "charaId": charaId,
+        "live2dId": live2dId,
+        "live2d": {
+            "charaId": charaId,
+            "live2dId": live2dId,
+            "description": description,
+            "defaultOpened": False,
+            "voicePrefixNo": live2dId
+        },
+        "createdAt": nowstr()
+    }, dataUtil.getUserObject('userLive2dList', str(charaId)+str(live2dId)) is not None
+
 def createUserMeguca(charaId, card=None):
     userCardId = str(uuid1())
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     masterCard = dataUtil.masterCards[charaId]
     chara = masterCard['chara']
 
@@ -29,7 +46,7 @@ def createUserMeguca(charaId, card=None):
         "customized4": False,
         "customized5": False,
         "customized6": False,
-        "createdAt": nowstr,
+        "createdAt": nowstr(),
         "card": card
     }
     userChara = {
@@ -43,21 +60,10 @@ def createUserMeguca(charaId, card=None):
         "commandVisualType": "CHARA",
         "commandVisualId": charaId,
         "live2dId": "00",
-        "createdAt": nowstr
+        "createdAt": nowstr()
     }
-    userLive2d = {
-        "userId": dataUtil.userId,
-        "charaId": charaId,
-        "live2dId": "00",
-        "live2d": {
-            "charaId": charaId,
-            "live2dId": "00",
-            "description": "Magical Girl",
-            "defaultOpened": True,
-            "voicePrefixNo": "00"
-        },
-        "createdAt": nowstr
-    }
+    userLive2d, _ = createUserLive2d(charaId, '00', 'Magical Girl')
+    userLive2d['defaultOpened'] = True
     return userCard, userChara, userLive2d
 
 def createUserMemoria(pieceId):
@@ -65,7 +71,6 @@ def createUserMemoria(pieceId):
     foundExisting = pieceId in dataUtil.userIndices['userPieceList']
 
     userPieceId = str(uuid1())
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     userPiece = {
         "id": userPieceId,
         "userId": dataUtil.userId,
@@ -79,13 +84,12 @@ def createUserMemoria(pieceId):
         "hp": piece['hp'],
         "protect": False,
         "archive": False,
-        "createdAt": nowstr
+        "createdAt": nowstr()
     }
     dataUtil.setUserObject('userPieceList', userPieceId, userPiece)
     return userPiece, foundExisting
 
 def createUserGachaGroup(groupId):
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     return {
         "userId": dataUtil.userId,
         "gachaGroupId": groupId,
@@ -97,5 +101,25 @@ def createUserGachaGroup(groupId):
         "monthlyCount": 0,
         "currentScheduleId": 20,
         "resetCount": 0,
-        "createdAt": nowstr
+        "createdAt": nowstr()
     }
+
+def createUserItem(item):
+    return {
+        "userId": dataUtil.userId,
+        "itemId": item['itemCode'],
+        "environmentId": "COMMON",
+        "quantity": 0,
+        "total": 0,
+        "item": item,
+        "createdAt": nowstr()
+    }
+
+def createUserDoppel(doppelId):
+    doppel = dataUtil.masterDoppels[doppelId]
+    return {
+        "userId": dataUtil.userId,
+        "doppelId": doppelId,
+        "doppel": doppel,
+        "createdAt": nowstr()
+    }, dataUtil.getUserObject('userDoppelList', doppelId) is not None

@@ -9865,16 +9865,16 @@
         "openFunctions": "FRIEND,CHANGE_NAME"
     },
     {
-        "sectionId": 400062,
+        "sectionId": 400052,
         "questType": "MATERIAL",
-        "dayOfTheWeekQuestType": "WEEKEND",
+        "dayOfTheWeekQuestType": "FRIDAY",
         "title": "Labyrinth of Awakening",
         "openEnemyList": []
     },
     {
-        "sectionId": 400061,
+        "sectionId": 400051,
         "questType": "COMPOSE",
-        "dayOfTheWeekQuestType": "WEEKEND",
+        "dayOfTheWeekQuestType": "FRIDAY",
         "title": "Labyrinth of Enhancement",
         "openEnemyList": []
     },
@@ -12793,5 +12793,2148 @@
         },
         "openConditionCharaBondsPt": 2,
         "openEnemyList": []
+    },
+    {
+        "sectionId": 310104,
+        "questType": "CHARA",
+        "genericId": 1010,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Momoko's Doppel",
+        "charaId": 1010,
+        "charaName": "Momoko Togame",
+        "defaultCardId": 10104,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_101000",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 101000,
+            "displayName": "Doppel of Self Discipline"
+        },
+        "openConditionSectionId": 101205,
+        "openConditionSection": {
+            "sectionId": 101205,
+            "questType": "MAIN",
+            "genericId": 12,
+            "genericIndex": 5,
+            "areaMapId": 11012,
+            "imagePath": "11094",
+            "areaDetailName": "Abandoned Construction Site",
+            "title": "An Uwasa Provoked",
+            "charaId": 1010,
+            "charaName": "Momoko Togame",
+            "defaultCardId": 10104,
+            "message": "Looks like I have no choice but to believe it. Rumors really do come true in Kamihama City...",
+            "outline": "Iroha and Momoko chased after the traces of magic left behind when Kaede vanished and Rena ran off. Unable to find her, they were about to go ask Mitama for help when Rena appeared, having asked Yachiyo for the solution to their predicament. If Rena were to apologize, it might lure Kaede back. Once Rena apologized, both Kaede and the Familiars that had taken her appeared. Yachiyo showed up and said she'd handle Kaede while Iroha and Momoko went to face the Witch inside the Labyrinth.",
+            "ap": 7,
+            "difficulty": 10,
+            "clearRewardCode": "GEM_1001_5",
+            "clearReward": {
+                "presentType": "GEM",
+                "quantity": 5,
+                "genericId": 1001,
+                "displayName": "Iroha Tamaki"
+            },
+            "openEnemy": "109",
+            "openEnemyList": [
+                {
+                    "enemyId": 109,
+                    "enemyNo": 6002,
+                    "type": 3,
+                    "name": "Uwasa of the Friendship Ending Staircase",
+                    "description": "Have you heard? Has anyone told you? The Rumor of the Friendship Breaking Staircase. If you say, \"Hmph! I hate you! We're over!\" this staircase will appear, but you won't be able to see it. If you try to rekindle your friendship, it will take you away! All the girls in Kamihama say that a shadow girl who pushed her friend down the stairs will appear and catch you and make you clean the staircase forever. How scary!",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ],
+            "openFunctions": "ARENA"
+        },
+        "openConditionChapter": {
+            "chapterId": 12,
+            "partNo": 1,
+            "chapterNo": 2,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "2",
+            "title": "The Rule of Ending Friendships",
+            "sectionCount": 5
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 310103,
+        "questType": "CHARA",
+        "genericId": 1010,
+        "genericIndex": 3,
+        "imagePath": "46001",
+        "title": "Momoko's Perfect Timing",
+        "charaId": 1010,
+        "charaName": "Momoko Togame",
+        "defaultCardId": 10104,
+        "message": "Don't you dare go underestimatin' our teamwork. All right everyone, charge!!!",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1077_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1077,
+            "piece": {
+                "pieceId": 1077,
+                "pieceName": "I'm a Girl, Too",
+                "rank": "RANK_3"
+            },
+            "displayName": "I'm a Girl, Too"
+        },
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 310102,
+        "questType": "CHARA",
+        "genericId": 1010,
+        "genericIndex": 2,
+        "imagePath": "46001",
+        "title": "If I Were Different",
+        "charaId": 1010,
+        "charaName": "Momoko Togame",
+        "defaultCardId": 10104,
+        "message": "I mean, we have the same favorite idol... There's no way we wouldn't make a good team.",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 310101,
+        "questType": "CHARA",
+        "genericId": 1010,
+        "genericIndex": 1,
+        "imagePath": "46001",
+        "title": "Rabid Girl",
+        "charaId": 1010,
+        "charaName": "Momoko Togame",
+        "defaultCardId": 10104,
+        "message": "Now that I've found you, it's over! As if I'd let ya get away! I'm done playin' nice!",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_1010_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 1010,
+            "displayName": "Momoko Togame's [Kamihama University Affiliated School Uniform]"
+        },
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 310092,
+        "questType": "CHARA",
+        "genericId": 1009,
+        "genericIndex": 2,
+        "imagePath": "11072",
+        "title": "Tears of a Lone Wolf",
+        "charaId": 1009,
+        "charaName": "Rena Minami",
+        "defaultCardId": 10094,
+        "message": "Yeah, you're right. I haven't really been acting like myself these last couple of days.",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 310091,
+        "questType": "CHARA",
+        "genericId": 1009,
+        "genericIndex": 1,
+        "imagePath": "46104",
+        "title": "That Girl, The Good Girl",
+        "charaId": 1009,
+        "charaName": "Rena Minami",
+        "defaultCardId": 10094,
+        "message": "All right! That's it! I'm gonna dish out the final blow today, got it?",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_1009_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 1009,
+            "displayName": "Rena Minami's [Kamihama University Affiliated School Uniform]"
+        },
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 310094,
+        "questType": "CHARA",
+        "genericId": 1009,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Rena's Doppel",
+        "charaId": 1009,
+        "charaName": "Rena Minami",
+        "defaultCardId": 10094,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_100900",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 100900,
+            "displayName": "Doppel of Transformation"
+        },
+        "openConditionSectionId": 101205,
+        "openConditionSection": {
+            "sectionId": 101205,
+            "questType": "MAIN",
+            "genericId": 12,
+            "genericIndex": 5,
+            "areaMapId": 11012,
+            "imagePath": "11094",
+            "areaDetailName": "Abandoned Construction Site",
+            "title": "An Uwasa Provoked",
+            "charaId": 1010,
+            "charaName": "Momoko Togame",
+            "defaultCardId": 10104,
+            "message": "Looks like I have no choice but to believe it. Rumors really do come true in Kamihama City...",
+            "outline": "Iroha and Momoko chased after the traces of magic left behind when Kaede vanished and Rena ran off. Unable to find her, they were about to go ask Mitama for help when Rena appeared, having asked Yachiyo for the solution to their predicament. If Rena were to apologize, it might lure Kaede back. Once Rena apologized, both Kaede and the Familiars that had taken her appeared. Yachiyo showed up and said she'd handle Kaede while Iroha and Momoko went to face the Witch inside the Labyrinth.",
+            "ap": 7,
+            "difficulty": 10,
+            "clearRewardCode": "GEM_1001_5",
+            "clearReward": {
+                "presentType": "GEM",
+                "quantity": 5,
+                "genericId": 1001,
+                "displayName": "Iroha Tamaki"
+            },
+            "openEnemy": "109",
+            "openEnemyList": [
+                {
+                    "enemyId": 109,
+                    "enemyNo": 6002,
+                    "type": 3,
+                    "name": "Uwasa of the Friendship Ending Staircase",
+                    "description": "Have you heard? Has anyone told you? The Rumor of the Friendship Breaking Staircase. If you say, \"Hmph! I hate you! We're over!\" this staircase will appear, but you won't be able to see it. If you try to rekindle your friendship, it will take you away! All the girls in Kamihama say that a shadow girl who pushed her friend down the stairs will appear and catch you and make you clean the staircase forever. How scary!",
+                    "designer": "Original Idea: f4samurai / Supervision: Gekidan InuCurry (Doroinu)"
+                }
+            ],
+            "openFunctions": "ARENA"
+        },
+        "openConditionChapter": {
+            "chapterId": 12,
+            "partNo": 1,
+            "chapterNo": 2,
+            "chapterType": "NORMAL",
+            "questType": "MAIN",
+            "chapterNoForView": "2",
+            "title": "The Rule of Ending Friendships",
+            "sectionCount": 5
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 310093,
+        "questType": "CHARA",
+        "genericId": 1009,
+        "genericIndex": 3,
+        "imagePath": "21073",
+        "title": "Thanks for Finding Me",
+        "charaId": 1009,
+        "charaName": "Rena Minami",
+        "defaultCardId": 10094,
+        "message": "I said, enough! You really shouldn't bother yourself with rotten people like me.",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1076_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1076,
+            "piece": {
+                "pieceId": 1076,
+                "pieceName": "Antithetical Existence",
+                "rank": "RANK_3"
+            },
+            "displayName": "Antithetical Existence"
+        },
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 205705,
+        "questType": "SUB",
+        "genericId": 57,
+        "genericIndex": 5,
+        "secret": "55Me3",
+        "areaMapId": 2001,
+        "imagePath": "21141",
+        "areaDetailName": "Park",
+        "title": "The Assailant's Identity",
+        "charaId": 2001,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 20014,
+        "message": "I thought I was just imagining it...＠But now I think something's wrong.＠Was someone watching us?",
+        "outline": "Madoka and her friends were able to escape thanks to Homura's time-stopping magic. As they fought, they continued to hide their fear of becoming a Witch. But they then realized that they were each struggling with this fear, and shared it with each other through their tears. When Madoka again set off in pursuit of the Witch, she felt someone watching her...but when she looked, no one was there.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/01/17 00:10:00"
+    },
+    {
+        "sectionId": 205704,
+        "questType": "SUB",
+        "genericId": 57,
+        "genericIndex": 4,
+        "secret": "32YSf",
+        "areaMapId": 2001,
+        "imagePath": "46000",
+        "areaDetailName": "Witch Labyrinth",
+        "title": "Time to Share",
+        "charaId": 2001,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 20014,
+        "message": "Sayaka!＠Oh, no! This is all my fault!＠It's because I called out to her!",
+        "outline": "Madoka was worried when her friends didn't show up, so she tried searching for their magic instead. But It wasn't their magic she sensed, it was that of a Witch. Witches were appearing throughout Mitakihara... Madoka thought she might figure out the cause if she went to Kamihama, but decided to stay and fight because there were no other Magical Girls to protect the city. During the battle, Sayaka - whose Soul Gem had become tainted - took a direct hit from a Witch's attack.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/01/17 00:10:00"
+    },
+    {
+        "sectionId": 205703,
+        "questType": "SUB",
+        "genericId": 57,
+        "genericIndex": 3,
+        "secret": "P2O5p",
+        "areaMapId": 2001,
+        "imagePath": "21061",
+        "areaDetailName": "In the Station",
+        "title": "Protecting Our Home",
+        "charaId": 2001,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 20014,
+        "message": "It's almost our meeting time,＠and there's no sign of them.＠I wonder what happened...",
+        "outline": "Homura and Sayaka were the ones who came to Madoka's rescue as she shook off her fear of fighting. They shared their Grief Seeds, saying, \"We need to support each other at times like this!\" Madoka reassured herself that together they can take on even more powerful Witches. She decided to return to Kamihama the next day to identify the cause of the Witches in Mitakihara, investigate the Wings of the Magius, and find Mami. Meanwhile, Kyoko successfully infiltrated those same Wings.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/01/17 00:10:00"
+    },
+    {
+        "sectionId": 205702,
+        "questType": "SUB",
+        "genericId": 57,
+        "genericIndex": 2,
+        "secret": "hUSmS",
+        "areaMapId": 2001,
+        "imagePath": "46105",
+        "areaDetailName": "Witch Labyrinth",
+        "title": "Shadows of Doubt",
+        "charaId": 2001,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 20014,
+        "message": "Th-there's a Witch in Mitakihara?!＠They've been gone for so long...＠Why now?!",
+        "outline": "Not even Kyubey knew how to prevent a Magical Girl from becoming a Witch. Madoka also realized that, no matter how hard she tried, she and Kyubey, who could never understand the pain of Magical Girls, would never see eye-to-eye. Kyubey asked if she would be willing to share information on Kamihama and she was unable to give him a clear answer. That was when she encountered a Witch, which hadn't been seen in Mitakihara for quite some time.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/01/17 00:10:00"
+    },
+    {
+        "sectionId": 205701,
+        "questType": "SUB",
+        "genericId": 57,
+        "genericIndex": 1,
+        "secret": "pDMhD",
+        "areaMapId": 2001,
+        "imagePath": "20032",
+        "areaDetailName": "Outer Road",
+        "title": "Unable to See Ahead",
+        "charaId": 2001,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 20014,
+        "message": "I need to talk to him. I have to find ＠a way to avoid becoming a Witch.＠So no one else has to despair.",
+        "outline": "Kyoko learned the truth from Sayaka: \"Witches are Magical Girls.\" She decided to try to infiltrate the Wings of the Magius to find a way to avoid becoming a Witch. Meanwhile, Madoka decides to meet a certain someone after hearing the same from Sayaka so that she can find another way to stop the tragedy.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/01/17 00:10:00"
+    },
+    {
+        "sectionId": 330492,
+        "questType": "CHARA",
+        "genericId": 3049,
+        "genericIndex": 2,
+        "imagePath": "11021",
+        "title": "Versus the World",
+        "charaId": 3049,
+        "charaName": "Kanae Yukino",
+        "defaultCardId": 30494,
+        "message": "I've been going back and forth for＠a while... I don't think I've ever been＠so uncertain about something.",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/05/21 15:10:00"
+    },
+    {
+        "sectionId": 330491,
+        "questType": "CHARA",
+        "genericId": 3049,
+        "genericIndex": 1,
+        "imagePath": "14043",
+        "title": "Encounter",
+        "charaId": 3049,
+        "charaName": "Kanae Yukino",
+        "defaultCardId": 30494,
+        "message": "It's too late for regrets...＠But it's always on my mind.＠If only I'd done it differently...",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_3049_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 3049,
+            "displayName": "Kanae Yukino's [Sakae Academy Uniform]"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/05/21 15:10:00"
+    },
+    {
+        "sectionId": 330494,
+        "questType": "CHARA",
+        "genericId": 3049,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Kanae's Doppel",
+        "charaId": 3049,
+        "charaName": "Kanae Yukino",
+        "defaultCardId": 30494,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_304900",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 304900,
+            "displayName": "Doppel of Resonance"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2018/05/21 15:10:00"
+    },
+    {
+        "sectionId": 330493,
+        "questType": "CHARA",
+        "genericId": 3049,
+        "genericIndex": 3,
+        "imagePath": "21163",
+        "title": "Watching Over Them",
+        "charaId": 3049,
+        "charaName": "Kanae Yukino",
+        "defaultCardId": 30494,
+        "message": "*Pant* *Pant* Now...＠I'm settling everything right now.＠Same goes for my past!",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1213_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1213,
+            "piece": {
+                "pieceId": 1213,
+                "pieceName": "That Which Speaks for Me",
+                "rank": "RANK_3"
+            },
+            "displayName": "That Which Speaks for Me"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/05/21 15:10:00"
+    },
+    {
+        "sectionId": 311032,
+        "questType": "CHARA",
+        "genericId": 1103,
+        "genericIndex": 2,
+        "imagePath": "17121",
+        "title": "The Day You Went Away",
+        "charaId": 1103,
+        "charaName": "Uwasa Tsuruno",
+        "defaultCardId": 11033,
+        "message": "I'll work as hard as I can, ＠as a Wing of the Magius!",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/06/01 15:10:00"
+    },
+    {
+        "sectionId": 311031,
+        "questType": "CHARA",
+        "genericId": 1103,
+        "genericIndex": 1,
+        "imagePath": "21271",
+        "title": "Requiem for Myself",
+        "charaId": 1103,
+        "charaName": "Uwasa Tsuruno",
+        "defaultCardId": 11033,
+        "message": "This is the last time＠I'll ever come home...",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/06/01 15:10:00"
+    },
+    {
+        "sectionId": 311034,
+        "questType": "CHARA",
+        "genericId": 1103,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Uwasa Tsuruno's Doppel",
+        "charaId": 1103,
+        "charaName": "Uwasa Tsuruno",
+        "defaultCardId": 11033,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_110300",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 110300,
+            "displayName": "Doppel of Camaraderie"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2018/06/01 15:10:00"
+    },
+    {
+        "sectionId": 311033,
+        "questType": "CHARA",
+        "genericId": 1103,
+        "genericIndex": 3,
+        "imagePath": "17142",
+        "title": "Where I Feel Safe",
+        "charaId": 1103,
+        "charaName": "Uwasa Tsuruno",
+        "defaultCardId": 11033,
+        "message": "I see, we're gonna make ＠this place into a lovely＠amusement park.",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1217_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1217,
+            "piece": {
+                "pieceId": 1217,
+                "pieceName": "A Symbol of Relaxation",
+                "rank": "RANK_3"
+            },
+            "displayName": "A Symbol of Relaxation"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/06/01 15:10:00"
+    },
+    {
+        "sectionId": 311012,
+        "questType": "CHARA",
+        "genericId": 1101,
+        "genericIndex": 2,
+        "imagePath": "20261",
+        "title": "Coach Tsuruno's Lesson",
+        "charaId": 1101,
+        "charaName": "Iroha Tamaki",
+        "defaultCardId": 11014,
+        "message": "I'm glad she offered to teach＠me how to swim, but...I wonder＠if I'll be all right?!",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/08/08 15:10:00"
+    },
+    {
+        "sectionId": 311011,
+        "questType": "CHARA",
+        "genericId": 1101,
+        "genericIndex": 1,
+        "imagePath": "20251",
+        "title": "Let's Practice!",
+        "charaId": 1101,
+        "charaName": "Iroha Tamaki",
+        "defaultCardId": 11014,
+        "message": "Ahh, the weather's amazing today too! Being at the beach every day is the best",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/08/08 15:10:00"
+    },
+    {
+        "sectionId": 311014,
+        "questType": "CHARA",
+        "genericId": 1101,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Iroha's Doppel",
+        "charaId": 1101,
+        "charaName": "Iroha Tamaki",
+        "defaultCardId": 11014,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_110100",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 110100,
+            "displayName": "Doppel of Silence"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2018/08/08 15:10:00"
+    },
+    {
+        "sectionId": 311013,
+        "questType": "CHARA",
+        "genericId": 1101,
+        "genericIndex": 3,
+        "imagePath": "20261",
+        "title": "Why I Can't Swim",
+        "charaId": 1101,
+        "charaName": "Iroha Tamaki",
+        "defaultCardId": 11014,
+        "message": "Maybe if that hadn't happened,＠I'd be able to swim now... ",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1238_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1238,
+            "piece": {
+                "pieceId": 1238,
+                "pieceName": "Time for Relaxation",
+                "rank": "RANK_3"
+            },
+            "displayName": "Time for Relaxation"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/08/08 15:10:00"
+    },
+    {
+        "sectionId": 205503,
+        "questType": "SUB",
+        "genericId": 55,
+        "genericIndex": 3,
+        "secret": "uOUBF",
+        "areaMapId": 2002,
+        "imagePath": "21111",
+        "areaDetailName": "Fast Food Restaurant",
+        "title": "Anxious But Fascinated",
+        "charaId": 2003,
+        "charaName": "Homura Akemi",
+        "defaultCardId": 20034,
+        "message": "In Kamihama, rumors can come＠true... Is that...normal here?",
+        "outline": "Investigating with Iroha's team, Homura learned that in Kamihama, rumors can come true. To save Mami, she and Madoka leaped into a Rumor. They met the Wings of the Magius for the first time and faced off against a Magius, Alina - then witnessed a Doppel, proof of how Magical Girls could be freed. Unable to find Mami, Homura returned home with Madoka. She swore to return to Kamihama again and wondered... Could the extraordinary phenomena she saw be the key to changing Magical Girls' fates?",
+        "ap": 13,
+        "difficulty": 50,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2019/08/26 03:00:00"
+    },
+    {
+        "sectionId": 330432,
+        "questType": "CHARA",
+        "genericId": 3043,
+        "genericIndex": 2,
+        "imagePath": "21201",
+        "title": "Life at Mikazuki Villa",
+        "charaId": 3043,
+        "charaName": "Eternal Sakura",
+        "defaultCardId": 30434,
+        "message": "The knowledge I need to blend＠in with humans...I think I've got it.＠Let me try introducing myself.",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2019/03/25 15:10:00"
+    },
+    {
+        "sectionId": 330431,
+        "questType": "CHARA",
+        "genericId": 3043,
+        "genericIndex": 1,
+        "imagePath": "19092",
+        "title": "When I Was Made",
+        "charaId": 3043,
+        "charaName": "Eternal Sakura",
+        "defaultCardId": 30434,
+        "message": "I am the Uwasa of the Eternal ＠Sakura... But I didn't start life ＠out as an Uwasa.",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_3043_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 3043,
+            "displayName": "Eternal Sakura's [Minaminagi Liberty Academy Uniform]"
+        },
+        "openEnemyList": [],
+        "openDate": "2019/03/25 15:10:00"
+    },
+    {
+        "sectionId": 330434,
+        "questType": "CHARA",
+        "genericId": 3043,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Eternal Sakura's Trials",
+        "charaId": 3043,
+        "charaName": "Eternal Sakura",
+        "defaultCardId": 30434,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_304300",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 304300,
+            "displayName": "｜The Sakura Story Consumes All｜"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2019/03/25 15:10:00"
+    },
+    {
+        "sectionId": 330433,
+        "questType": "CHARA",
+        "genericId": 3043,
+        "genericIndex": 3,
+        "imagePath": "21201",
+        "title": "School Life is Boring",
+        "charaId": 3043,
+        "charaName": "Eternal Sakura",
+        "defaultCardId": 30434,
+        "message": "School? Do I have to go even if＠I have no interest in it? I see...＠I really do have to go...",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1325_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1325,
+            "piece": {
+                "pieceId": 1325,
+                "pieceName": "No Touching",
+                "rank": "RANK_3"
+            },
+            "displayName": "No Touching"
+        },
+        "openEnemyList": [],
+        "openDate": "2019/03/25 15:10:00"
+    },
+    {
+        "sectionId": 205602,
+        "questType": "SUB",
+        "genericId": 56,
+        "genericIndex": 2,
+        "secret": "JcJLb",
+        "areaMapId": 2004,
+        "imagePath": "14021",
+        "areaDetailName": "Chuo Ward - Streets",
+        "title": "Inside an Abandoned Building",
+        "charaId": 2004,
+        "charaName": "Sayaka Miki",
+        "defaultCardId": 20044,
+        "message": "I finally made it to Kamihama...＠I wonder where Mami is...",
+        "outline": "Mami was the one who told Sayaka about Magical Girls. She was an important person who opened the door to a brand new world for her. Sayaka wished to heal her childhood friend Kyosuke's arm when she became a Magical Girl, but that wasn't the only reason. She also wanted to protect her loved ones. Sayaka explained that to Madoka and Homura and convinced them to go to Kamihama City with her.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2019/10/04 00:10:00"
+    },
+    {
+        "sectionId": 205601,
+        "questType": "SUB",
+        "genericId": 56,
+        "genericIndex": 1,
+        "secret": "MIcdL",
+        "areaMapId": 2004,
+        "imagePath": "21111",
+        "areaDetailName": "Fast Food Restaurant",
+        "title": "Whereabouts Unknown",
+        "charaId": 2004,
+        "charaName": "Sayaka Miki",
+        "defaultCardId": 20044,
+        "message": "Her, of all people?! No way! But... Why?",
+        "outline": "Madoka and Homura went to Kamihama City to shed some light on the disappearance of their friend Mami, who went missing while investigating Uwasa. They learned of Doppels and the Wings of the Magius there, but didn't manage to find Mami herself. Unable to do any more, they returned home to Mitakihara and explained the situation to a Magical Girl who needed to hear everything.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2019/10/04 00:10:00"
+    },
+    {
+        "sectionId": 205604,
+        "questType": "SUB",
+        "genericId": 56,
+        "genericIndex": 4,
+        "secret": "nqeRX",
+        "areaMapId": 2004,
+        "imagePath": "21143",
+        "areaDetailName": "Park",
+        "title": "Her Next Step",
+        "charaId": 2004,
+        "charaName": "Sayaka Miki",
+        "defaultCardId": 20044,
+        "message": "She... She's one of us, too. At least, that's how I feel... Anyway, I gotta tell her.",
+        "outline": "Eventually all Magical Girls become Witches... Sayaka knew she had to tell Homura and Madoka, but doing so threw all of them into a state of shock. Madoka's determination to look to the future helped them to get back on their feet. First they would bring back Mami, then find more information on the Wings of the Magius. Sayaka promised herself she would face her own fate and find a way to avoid becoming a Witch. However, there was still one more person she needed to inform about the truth...",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2019/10/04 00:10:00"
+    },
+    {
+        "sectionId": 205603,
+        "questType": "SUB",
+        "genericId": 56,
+        "genericIndex": 3,
+        "secret": "5yBeH",
+        "areaMapId": 2004,
+        "imagePath": "12062",
+        "areaDetailName": "Shrine - Grounds",
+        "title": "The Price of Magic",
+        "charaId": 2004,
+        "charaName": "Sayaka Miki",
+        "defaultCardId": 20044,
+        "message": "No way... You've gotta be kidding! No... It doesn't make any sense... I have to tell them, but...!",
+        "outline": "Sayaka finally reunited with Mami at the end of her search at the Kamihama Memorial Museum. But not only was she acting strange, quite unlike her usual self, she was also surrounded by members of the Wings of the Magius. Then things were made even worse with the cruel revelation that all Magical Girls eventually become Witches. Burdened with this unspeakable knowledge, Sayaka headed back to Madoka and Homura to tell them.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2019/10/04 00:10:00"
+    },
+    {
+        "sectionId": 205904,
+        "questType": "SUB",
+        "genericId": 59,
+        "genericIndex": 4,
+        "secret": "hBPpS",
+        "areaMapId": 2005,
+        "imagePath": "14081",
+        "areaDetailName": "Heliport",
+        "title": "Ally and Friend",
+        "charaId": 2005,
+        "charaName": "Mami Tomoe",
+        "defaultCardId": 20054,
+        "message": "I don't believe I'll be forgiven. ＠But I decided that I should do＠what little I can.",
+        "outline": "Fused with the Uwasa and idolized as a saint, Mami hurt her friends, convincing herself it was okay for the sake of salvation. Recalling everything she had done, she wished to stand equally with Madoka and the others, those who never abandoned her, and she became newly determined to correct her mistakes. The Feathers, now aware of the Magius's actions, split ranks into those who would uphold freedom above all and those who would protect Kamihama, taking up arms against each other.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/04/13 00:10:00"
+    },
+    {
+        "sectionId": 205903,
+        "questType": "SUB",
+        "genericId": 59,
+        "genericIndex": 3,
+        "secret": "FM1m9",
+        "areaMapId": 2005,
+        "imagePath": "46001",
+        "areaDetailName": "Witch Labyrinth",
+        "title": "A False Savior",
+        "charaId": 2005,
+        "charaName": "Mami Tomoe",
+        "defaultCardId": 20054,
+        "message": "To measure the worth of one's ＠happiness against another's is ＠wrong... I knew that, but...",
+        "outline": "In her investigation of the Rumors, Mami caught the attention of the Magius and ended up learning the truth about Magical Girls at the Memory Museum. But she couldn't accept it, and the Magius, wanting to use her as a pawn, fused her with an Uwasa. Though she remained herself and wished to bring happiness to others at first, her personality eroded as her union with the Uwasa deepened. Then, when the Feathers became familiar with Mami, the Magius thought of a way to make further use of her.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/04/13 00:10:00"
+    },
+    {
+        "sectionId": 205902,
+        "questType": "SUB",
+        "genericId": 59,
+        "genericIndex": 2,
+        "secret": "t6q9K",
+        "areaMapId": 2005,
+        "imagePath": "15051",
+        "areaDetailName": "Sakae Ward - Abandoned Museum",
+        "title": "Reality and Rumor",
+        "charaId": 2005,
+        "charaName": "Mami Tomoe",
+        "defaultCardId": 20054,
+        "message": "I can't change what I've ＠done, nor can I change ＠what happened that day.",
+        "outline": "The Magius's motives, what they've been doing, what Walpurgisnacht is, what will happen to Kamihaha... Mami explained everything the Magius withheld to the Feathers. In the confusion and discord that followed, they criticized Mami harshly and made her remember when she was being controlled by the Uwasa.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/04/13 00:10:00"
+    },
+    {
+        "sectionId": 205901,
+        "questType": "SUB",
+        "genericId": 59,
+        "genericIndex": 1,
+        "secret": "kJOQ8",
+        "areaMapId": 2005,
+        "imagePath": "11061",
+        "areaDetailName": "Coordinator's Shop",
+        "title": "Making Things Right",
+        "charaId": 2005,
+        "charaName": "Mami Tomoe",
+        "defaultCardId": 20054,
+        "message": "I'm all right now... I have to go,＠for me and for everyone who's＠been with me until now.",
+        "outline": "After her battle with Yachiyo, Mami was freed from the Rumor and woke up at the Coordinator's. Madoka, Sayaka, and Homura were there to greet her. Mami, having done terrible things under the influence of the Uwasa, found that the others from Mitakihara were simply glad to see her safe and welcomed her back warmly. She sprang into action in order to put what she had done to aid the Magius right, and so that she could stand shoulder to shoulder with her friends.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/04/13 00:10:00"
+    },
+    {
+        "sectionId": 206001,
+        "questType": "SUB",
+        "genericId": 60,
+        "genericIndex": 1,
+        "secret": "v8cKb",
+        "areaMapId": 2002,
+        "imagePath": "20031",
+        "areaDetailName": "Road on the Outskirts of Town",
+        "title": "A Vague Uncertainty",
+        "charaId": 2003,
+        "charaName": "Homura Akemi",
+        "defaultCardId": 20034,
+        "message": "Walpurgisnacht is defeated.＠I'm really happy about that, but...",
+        "outline": "Homura succeeded in defeating Walpurgisnacht in Kamihama City. She went back to Mitakihara with Madoka and the others, and they returned to their normal lives. However, a vague unease haunts her now that they have overcome Walpurgisnacht. She is uncertain whether this is what is best for Madoka, or whether there is a better possible outcome for her.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/06/29 00:10:00"
+    },
+    {
+        "sectionId": 340112,
+        "questType": "CHARA",
+        "genericId": 4011,
+        "genericIndex": 2,
+        "imagePath": "21221",
+        "title": "Working Kazumi",
+        "charaId": 4011,
+        "charaName": "Kazumi",
+        "defaultCardId": 40114,
+        "message": "Gotta move as fast as I can!＠Clean up here... Oh, and here too!＠There's so much to do!",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2017/11/20 15:10:00"
+    },
+    {
+        "sectionId": 340111,
+        "questType": "CHARA",
+        "genericId": 4011,
+        "genericIndex": 1,
+        "imagePath": "21221",
+        "title": "Hungry Kazumi",
+        "charaId": 4011,
+        "charaName": "Kazumi",
+        "defaultCardId": 40114,
+        "message": "*Sigh* Oh, I'm in trouble now...＠But it was sooooo good!＠Oh, I'm in so much trouble…",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_4011_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 4011,
+            "displayName": "Kazumi's [Ordinary Clothes]"
+        },
+        "openEnemyList": [],
+        "openDate": "2017/11/20 15:10:00"
+    },
+    {
+        "sectionId": 340114,
+        "questType": "CHARA",
+        "genericId": 4011,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Kazumi's Doppel",
+        "charaId": 4011,
+        "charaName": "Kazumi",
+        "defaultCardId": 40114,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_401100",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 401100,
+            "displayName": "Doppel of Famine"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2017/11/20 15:10:00"
+    },
+    {
+        "sectionId": 340113,
+        "questType": "CHARA",
+        "genericId": 4011,
+        "genericIndex": 3,
+        "imagePath": "21221",
+        "title": "Cooking Kazumi",
+        "charaId": 4011,
+        "charaName": "Kazumi",
+        "defaultCardId": 40114,
+        "message": "An inspiring meal, hmm?＠Well then! I might know＠JUST the recipe for you!",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1139_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1139,
+            "piece": {
+                "pieceId": 1139,
+                "pieceName": "Grandma's Strawberry Risotto",
+                "rank": "RANK_3"
+            },
+            "displayName": "Grandma's Strawberry Risotto"
+        },
+        "openConditionCharaBondsPt": 3,
+        "openEnemyList": [],
+        "openDate": "2017/11/20 15:10:00"
+    },
+    {
+        "sectionId": 205802,
+        "questType": "SUB",
+        "genericId": 58,
+        "genericIndex": 2,
+        "secret": "k8GwN",
+        "areaMapId": 2001,
+        "imagePath": "21301",
+        "areaDetailName": "Alina's Special Labyrinth",
+        "title": "I'll Protect You, No Matter What",
+        "charaId": 2003,
+        "charaName": "Homura Akemi",
+        "defaultCardId": 20034,
+        "message": "I will sacrifice anything if it means protecting you...＠Even if you hate me for it.",
+        "outline": "Homura and the others learned that the Wings of the Magius were controlling the Witches that suddenly appeared in Mitakihara. Before they could ask any questions, Mami and Alina appeared, trapping them inside one of Alina's Labyrinths. As the girls searched for a way out, Homura was worried about something else.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/03/02 00:10:00"
+    },
+    {
+        "sectionId": 205801,
+        "questType": "SUB",
+        "genericId": 58,
+        "genericIndex": 1,
+        "secret": "r2DAe",
+        "areaMapId": 2001,
+        "imagePath": "19081",
+        "areaDetailName": "A Room in Hotel Fendt Hope",
+        "title": "Methods of the Magius",
+        "charaId": 2006,
+        "charaName": "Kyoko Sakura",
+        "defaultCardId": 20064,
+        "message": "The Wings of the Magius's hideout, huh? I'll judge for myself what we're dealin' with. Devils? Or snakes?",
+        "outline": "Kyoko infiltrated the Wings of the Magius, gained their trust, and got them to lead her to their headquarters, Hotel Fendt Hope. Doubtful of their goal to free Magical Girls after seeing the incompetence of the Black and White Feathers, she went to the Magius's base to judge their worth for herself. There, she ran into someone she never expected.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/03/02 00:10:00"
+    },
+    {
+        "sectionId": 205804,
+        "questType": "SUB",
+        "genericId": 58,
+        "genericIndex": 4,
+        "secret": "JfTkK",
+        "areaMapId": 2001,
+        "imagePath": "15023",
+        "areaDetailName": "Sakae Ward - Streets",
+        "title": "Crisis and Reunion in Kamihama",
+        "charaId": 2004,
+        "charaName": "Sayaka Miki",
+        "defaultCardId": 20044,
+        "message": "The air feels heavy...＠Something's definitely up.＠I promise we'll save you, Mami!",
+        "outline": "Full of regret for making her parents worry and not wanting to do so again, Madoka decided not to go to Kamihama, though it weighed heavily on her heart. After hearing Sayaka's determination, Madoka reconsidered and made up her mind to go and do what she could. She snuck out of her house that night and arrived in Kamihama with Sayaka and Homura, only to find it in disarray.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/03/02 00:10:00"
+    },
+    {
+        "sectionId": 205803,
+        "questType": "SUB",
+        "genericId": 58,
+        "genericIndex": 3,
+        "secret": "8DYTw",
+        "areaMapId": 2001,
+        "imagePath": "20162",
+        "areaDetailName": "Madoka's Room",
+        "title": "I Stand By My Decision",
+        "charaId": 2001,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 20014,
+        "message": "I'm sorry, Mom and Dad.＠I made you worried and sad.＠But still...I have to go.",
+        "outline": "With Kyoko's help, Madoka and the others managed to escape Alina's Labyrinth. Kyoko, who infiltrated the Wings of the Magius, told them that Mami had been brainwashed and the Magius were trying to hatch something called \"Eve\" by summoning the Witch Walpurgisnacht. Though Madoka and Sayaka wanted to head to Kamihama right away, they decided to go home first. Meanwhile, Homura, learning that Walpurgisnacht may come to Kamihama, resolved to convince her friends to stay in Mitakihara.",
+        "ap": 15,
+        "difficulty": 70,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/03/02 00:10:00"
+    },
+    {
+        "sectionId": 340343,
+        "questType": "CHARA",
+        "genericId": 4034,
+        "genericIndex": 3,
+        "imagePath": "21027",
+        "title": "The Magic Chisato Weaves",
+        "charaId": 4034,
+        "charaName": "Chisato Shion",
+        "defaultCardId": 40343,
+        "message": "Oh! This is getting good!",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1206_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1206,
+            "piece": {
+                "pieceId": 1206,
+                "pieceName": "A Witch, a Wolf, and Villagers",
+                "rank": "RANK_3"
+            },
+            "displayName": "A Witch, a Wolf, and Villagers"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/05/01 15:10:00"
+    },
+    {
+        "sectionId": 340342,
+        "questType": "CHARA",
+        "genericId": 4034,
+        "genericIndex": 2,
+        "imagePath": "21027",
+        "title": "The Girls Present Their Ideas",
+        "charaId": 4034,
+        "charaName": "Chisato Shion",
+        "defaultCardId": 40343,
+        "message": "This brings back old memories.＠Then again, they're not that long＠ago, are they?",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/05/01 15:10:00"
+    },
+    {
+        "sectionId": 340341,
+        "questType": "CHARA",
+        "genericId": 4034,
+        "genericIndex": 1,
+        "imagePath": "21025",
+        "title": "What Can the Four of Us Cook Up?!",
+        "charaId": 4034,
+        "charaName": "Chisato Shion",
+        "defaultCardId": 40343,
+        "message": "You know how it is.＠And I kinda, yeah...",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_4034_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 4034,
+            "displayName": "Chisato Shion's [Akanegazaki School Uniform]"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/05/01 15:10:00"
+    },
+    {
+        "sectionId": 340264,
+        "questType": "CHARA",
+        "genericId": 4026,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Elisa's Doppel",
+        "charaId": 4026,
+        "charaName": "Elisa",
+        "defaultCardId": 40264,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_402600",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 402600,
+            "displayName": "Doppel of Conceit"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2020/07/22 00:10:00"
+    },
+    {
+        "sectionId": 340263,
+        "questType": "CHARA",
+        "genericId": 4026,
+        "genericIndex": 3,
+        "imagePath": "20121",
+        "title": "An Encounter with the Future",
+        "charaId": 4026,
+        "charaName": "Elisa",
+        "defaultCardId": 40264,
+        "message": "Now then, where is that traitor?",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1372_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1372,
+            "piece": {
+                "pieceId": 1372,
+                "pieceName": "A Jewel Housing a Noble Soul",
+                "rank": "RANK_3"
+            },
+            "displayName": "A Jewel Housing a Noble Soul"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/07/22 00:10:00"
+    },
+    {
+        "sectionId": 340262,
+        "questType": "CHARA",
+        "genericId": 4026,
+        "genericIndex": 2,
+        "imagePath": "20073",
+        "title": "A Dialogue with the Past",
+        "charaId": 4026,
+        "charaName": "Elisa",
+        "defaultCardId": 40264,
+        "message": "So this was all some scheme? ＠This is becoming a real problem.",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/07/22 00:10:00"
+    },
+    {
+        "sectionId": 340261,
+        "questType": "CHARA",
+        "genericId": 4026,
+        "genericIndex": 1,
+        "imagePath": "20073",
+        "title": "Journey to the Present",
+        "charaId": 4026,
+        "charaName": "Elisa",
+        "defaultCardId": 40264,
+        "message": "We're close to France's border...＠It seems as strange as they say.",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_4026_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 4026,
+            "displayName": "Elisa's [Order of the Dragon Traveling Outfit]"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/07/22 00:10:00"
+    },
+    {
+        "sectionId": 340252,
+        "questType": "CHARA",
+        "genericId": 4025,
+        "genericIndex": 2,
+        "imagePath": "20102",
+        "title": "A Tale of a Vision",
+        "charaId": 4025,
+        "charaName": "Corbeau",
+        "defaultCardId": 40253,
+        "message": "She wants to change the future? ＠What's Minou got planned?",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/07/22 00:10:00"
+    },
+    {
+        "sectionId": 340251,
+        "questType": "CHARA",
+        "genericId": 4025,
+        "genericIndex": 1,
+        "imagePath": "20091",
+        "title": "A Tale of an Omen",
+        "charaId": 4025,
+        "charaName": "Corbeau",
+        "defaultCardId": 40253,
+        "message": "Heh...＠I hope there's someone worth＠fighting on our next battlefield.",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_4025_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 4025,
+            "displayName": "Corbeau's [Magical Girl (No Mask)]"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/07/22 00:10:00"
+    },
+    {
+        "sectionId": 340253,
+        "questType": "CHARA",
+        "genericId": 4025,
+        "genericIndex": 3,
+        "imagePath": "20121",
+        "title": "A Tale of a Cycle",
+        "charaId": 4025,
+        "charaName": "Corbeau",
+        "defaultCardId": 40253,
+        "message": "Heh. France's so-called \"saint\" ＠and her friends are pretty weak...",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1373_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1373,
+            "piece": {
+                "pieceId": 1373,
+                "pieceName": "Darkness Given Form",
+                "rank": "RANK_3"
+            },
+            "displayName": "Darkness Given Form"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/07/22 00:10:00"
+    },
+    {
+        "sectionId": 330352,
+        "questType": "CHARA",
+        "genericId": 3035,
+        "genericIndex": 2,
+        "imagePath": "21083",
+        "title": "I Don't Care If I'm Lonely",
+        "charaId": 3035,
+        "charaName": "Riko Chiaki",
+        "defaultCardId": 30354,
+        "message": "I'm so lonely without her,＠I can't even believe it...＠God I'm pathetic...",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/10/09 15:10:00"
+    },
+    {
+        "sectionId": 330351,
+        "questType": "CHARA",
+        "genericId": 3035,
+        "genericIndex": 1,
+        "imagePath": "21025",
+        "title": "I'm the Chiaki Bento Girl",
+        "charaId": 3035,
+        "charaName": "Riko Chiaki",
+        "defaultCardId": 30354,
+        "message": "It's been so long, it's a ＠little nerve-wracking to＠send a message to Miss K...",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_3035_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 3035,
+            "displayName": "Riko Chiaki's [Kosho Academy Uniform]"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/10/09 15:10:00"
+    },
+    {
+        "sectionId": 330354,
+        "questType": "CHARA",
+        "genericId": 3035,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Riko's Doppel",
+        "charaId": 3035,
+        "charaName": "Riko Chiaki",
+        "defaultCardId": 30354,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_303500",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 303500,
+            "displayName": "Doppel of Magnetic Pull"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2018/10/09 15:10:00"
+    },
+    {
+        "sectionId": 330353,
+        "questType": "CHARA",
+        "genericId": 3035,
+        "genericIndex": 3,
+        "imagePath": "21143",
+        "title": "I'll Be a Perfect Big Sis",
+        "charaId": 3035,
+        "charaName": "Riko Chiaki",
+        "defaultCardId": 30354,
+        "message": "*Sob* *Cry* Miss K...",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1263_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1263,
+            "piece": {
+                "pieceId": 1263,
+                "pieceName": "Getting Help to Be My Best",
+                "rank": "RANK_3"
+            },
+            "displayName": "Getting Help to Be My Best"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/10/09 15:10:00"
+    },
+    {
+        "sectionId": 205502,
+        "questType": "SUB",
+        "genericId": 55,
+        "genericIndex": 2,
+        "secret": "16xYb",
+        "areaMapId": 2002,
+        "imagePath": "20061",
+        "areaDetailName": "Mitakihara School - Hallway",
+        "title": "Two Fateful Meetings",
+        "charaId": 2003,
+        "charaName": "Homura Akemi",
+        "defaultCardId": 20034,
+        "message": "There's no way Mami would be＠beaten that easily. That's not the＠Mami I know...",
+        "outline": "When Homura decided to go to Kamihama City to investigate Mami's disappearance, Madoka noticed and insisted they go together. After they arrived, the two were separated by a Witch. Luckily, Homura met Tsuruno and found out her friends were with Madoka. When they were reunited, Homura also met Iroha...the Witch in human's clothing that Mami warned her about. She was hesitant to team up, but after some convincing from Madoka, the girls joined forces.",
+        "ap": 13,
+        "difficulty": 50,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2019/08/26 03:00:00"
+    },
+    {
+        "sectionId": 400021,
+        "questType": "COMPOSE",
+        "dayOfTheWeekQuestType": "TUESDAY",
+        "title": "Labyrinth of Enhancement",
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 400022,
+        "questType": "MATERIAL",
+        "dayOfTheWeekQuestType": "TUESDAY",
+        "title": "Labyrinth of Awakening",
+        "openEnemyList": []
+    },
+    {
+        "sectionId": 321004,
+        "questType": "CHARA",
+        "genericId": 2100,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Madoka's Doppel",
+        "charaId": 2100,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 21004,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_210000",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 210000,
+            "displayName": "Doppel of Mercy"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2018/01/01 00:00:00"
+    },
+    {
+        "sectionId": 321003,
+        "questType": "CHARA",
+        "genericId": 2100,
+        "genericIndex": 3,
+        "imagePath": "21141",
+        "title": "Fun Memories",
+        "charaId": 2100,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 21004,
+        "message": "*Sigh* Why am I so bad at this...?＠I should think about why I want to ＠wear a kimono, huh?",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1159_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1159,
+            "piece": {
+                "pieceId": 1159,
+                "pieceName": "New Year's Game",
+                "rank": "RANK_3"
+            },
+            "displayName": "New Year's Game"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/01/01 00:00:00"
+    },
+    {
+        "sectionId": 321002,
+        "questType": "CHARA",
+        "genericId": 2100,
+        "genericIndex": 2,
+        "imagePath": "21081",
+        "title": "Kimono Dressing Class",
+        "charaId": 2100,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 21004,
+        "message": "Practicing putting on kimonos with Homura... Going to the shrine on New Year's Day... This'll be so fun!",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/01/01 00:00:00"
+    },
+    {
+        "sectionId": 321001,
+        "questType": "CHARA",
+        "genericId": 2100,
+        "genericIndex": 1,
+        "imagePath": "20031",
+        "title": "New Year's Invitation",
+        "charaId": 2100,
+        "charaName": "Madoka Kaname",
+        "defaultCardId": 21004,
+        "message": "Winter vacation! *Giggle*＠There's sooo much I want＠to do during the break!",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2018/01/01 00:00:00"
+    },
+    {
+        "sectionId": 330264,
+        "questType": "CHARA",
+        "genericId": 3026,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Konoha's Doppel",
+        "charaId": 3026,
+        "charaName": "Konoha Shizumi",
+        "defaultCardId": 30264,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_302600",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 302600,
+            "displayName": "Doppel of Retribution"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2017/10/10 15:10:00"
+    },
+    {
+        "sectionId": 330263,
+        "questType": "CHARA",
+        "genericId": 3026,
+        "genericIndex": 3,
+        "imagePath": "17042",
+        "title": "Himika Mao's Lesson",
+        "charaId": 3026,
+        "charaName": "Konoha Shizumi",
+        "defaultCardId": 30264,
+        "message": "This girl... She's a Magical Girl,＠right? There's no other reason＠for her to be here...",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1114_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1114,
+            "piece": {
+                "pieceId": 1114,
+                "pieceName": "A Home Covered in Blossoms",
+                "rank": "RANK_3"
+            },
+            "displayName": "A Home Covered in Blossoms"
+        },
+        "openConditionCharaBondsPt": 3,
+        "openEnemyList": [],
+        "openDate": "2017/10/10 15:10:00"
+    },
+    {
+        "sectionId": 330262,
+        "questType": "CHARA",
+        "genericId": 3026,
+        "genericIndex": 2,
+        "imagePath": "21221",
+        "title": "Manaka Kurumi's Ordeal",
+        "charaId": 3026,
+        "charaName": "Konoha Shizumi",
+        "defaultCardId": 30264,
+        "message": "Now that I've started, I'm nervous...＠But this will make me a better cook.＠I can't show any fear!",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openConditionCharaBondsPt": 2,
+        "openEnemyList": [],
+        "openDate": "2017/10/10 15:10:00"
+    },
+    {
+        "sectionId": 330261,
+        "questType": "CHARA",
+        "genericId": 3026,
+        "genericIndex": 1,
+        "imagePath": "21082",
+        "title": "Konoha Shizumi's Weakness",
+        "charaId": 3026,
+        "charaName": "Konoha Shizumi",
+        "defaultCardId": 30264,
+        "message": "Hazuki is usually home by now...＠Ayame's going to start complaining＠that she's hungry any second...",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "LIVE2D_3026_01",
+        "clearReward": {
+            "presentType": "LIVE2D",
+            "quantity": 1,
+            "genericCode": "01",
+            "genericId": 3026,
+            "displayName": "Konoha Shizumi's [Sankyoin Academy Uniform]"
+        },
+        "openEnemyList": [],
+        "openDate": "2017/10/10 15:10:00"
+    },
+    {
+        "sectionId": 311184,
+        "questType": "CHARA",
+        "genericId": 1118,
+        "genericIndex": 4,
+        "imagePath": "21251",
+        "title": "Amane Sisters' Doppel",
+        "charaId": 1118,
+        "charaName": "Amane Sisters",
+        "defaultCardId": 11184,
+        "message": "…",
+        "ap": 20,
+        "difficulty": 80,
+        "clearRewardCode": "DOPPEL_111800",
+        "clearReward": {
+            "presentType": "DOPPEL",
+            "quantity": 1,
+            "genericId": 111800,
+            "displayName": "Doppel of Seclusion & Detachment"
+        },
+        "openConditionMagiaLevel": 5,
+        "openConditionRank": "RANK_5",
+        "openEnemyList": [],
+        "openDate": "2020/07/15 00:10:00"
+    },
+    {
+        "sectionId": 311181,
+        "questType": "CHARA",
+        "genericId": 1118,
+        "genericIndex": 1,
+        "imagePath": "20261",
+        "title": "How to Enjoy the Beach",
+        "charaId": 1118,
+        "charaName": "Amane Sisters",
+        "defaultCardId": 11184,
+        "message": "My clothes are so sweaty they're ＠sticking to me... I hope we can get in  ＠the ocean real soon, Tsukuyo.",
+        "ap": 8,
+        "difficulty": 10,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openEnemyList": [],
+        "openDate": "2020/07/15 00:10:00"
+    },
+    {
+        "sectionId": 311182,
+        "questType": "CHARA",
+        "genericId": 1118,
+        "genericIndex": 2,
+        "imagePath": "20331",
+        "title": "How to Overcome Adversity",
+        "charaId": 1118,
+        "charaName": "Amane Sisters",
+        "defaultCardId": 11184,
+        "message": "Damn you, Iroha Tamaki! Damn all of you!＠No, I need to stop myself....＠I'm here to enjoy the beach!",
+        "ap": 12,
+        "difficulty": 30,
+        "clearRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "clearReward": {
+            "presentType": "ITEM",
+            "quantity": 5,
+            "itemId": "PRESENTED_MONEY",
+            "item": {
+                "itemCode": "PRESENTED_MONEY",
+                "treasureChestColor": "GOLD"
+            },
+            "displayName": "Magia Stone"
+        },
+        "openConditionCharaBondsPt": 2,
+        "openEnemyList": [],
+        "openDate": "2020/07/15 00:10:00"
+    },
+    {
+        "sectionId": 311183,
+        "questType": "CHARA",
+        "genericId": 1118,
+        "genericIndex": 3,
+        "imagePath": "20261",
+        "title": "How to Make a Shared Memory",
+        "charaId": 1118,
+        "charaName": "Amane Sisters",
+        "defaultCardId": 11184,
+        "message": "Tsukuyo...＠What do we do?!",
+        "ap": 16,
+        "difficulty": 50,
+        "clearRewardCode": "PIECE_1366_1",
+        "clearReward": {
+            "presentType": "PIECE",
+            "quantity": 1,
+            "genericId": 1366,
+            "piece": {
+                "pieceId": 1366,
+                "pieceName": "Small Crescent Moons",
+                "rank": "RANK_3"
+            },
+            "displayName": "Small Crescent Moons"
+        },
+        "openConditionCharaBondsPt": 3,
+        "openEnemyList": [],
+        "openDate": "2020/07/15 00:10:00"
     }
 ]

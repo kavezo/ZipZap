@@ -75680,5 +75680,3633 @@
         "parameterMap": {},
         "openDate": "2019/11/11 00:10:00",
         "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100611,
+        "sectionId": 310061,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310061-1",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100612,
+        "sectionId": 310061,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310061-2",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100613,
+        "sectionId": 310061,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310061-3",
+        "endStory": "310061-4",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 251,
+        "dropItem1": {
+            "dropItemId": 251,
+            "rewardCode1": "GIFT_251_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100621,
+        "sectionId": 310062,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310062-1",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100622,
+        "sectionId": 310062,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310062-2",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100623,
+        "sectionId": 310062,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310062-3",
+        "endStory": "310062-4",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 252,
+        "dropItem1": {
+            "dropItemId": 252,
+            "rewardCode1": "GIFT_252_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100631,
+        "sectionId": 310063,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310063-1",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100632,
+        "sectionId": 310063,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310063-2",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100633,
+        "sectionId": 310063,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310063-3",
+        "endStory": "310063-4",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 253,
+        "dropItem1": {
+            "dropItemId": 253,
+            "rewardCode1": "GIFT_253_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100641,
+        "sectionId": 310064,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100642,
+        "sectionId": 310064,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3100643,
+        "sectionId": 310064,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 253,
+        "dropItem1": {
+            "dropItemId": 253,
+            "rewardCode1": "GIFT_253_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1006",
+        "missionMaster3": {
+            "description": "Clear with Mifuyu Azusa"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "DARK"
+        ],
+        "parameterMap": {},
+        "openDate": "2018/06/08 15:10:00",
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101511,
+        "sectionId": 310151,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310151-1",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101512,
+        "sectionId": 310151,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310151-2",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101513,
+        "sectionId": 310151,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310151-3",
+        "endStory": "310151-4",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 251,
+        "dropItem1": {
+            "dropItemId": 251,
+            "rewardCode1": "GIFT_251_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101521,
+        "sectionId": 310152,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "endStory": "310152-1",
+        "placeId": "46106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime15",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 5561,
+        "dropItem1": {
+            "dropItemId": 5561,
+            "rewardCode1": "GIFT_556_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101522,
+        "sectionId": 310152,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310152-2",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101523,
+        "sectionId": 310152,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310152-3",
+        "endStory": "310152-4",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 252,
+        "dropItem1": {
+            "dropItemId": 252,
+            "rewardCode1": "GIFT_252_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101531,
+        "sectionId": 310153,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310153-1",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101532,
+        "sectionId": 310153,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310153-2",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101533,
+        "sectionId": 310153,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "310153-3",
+        "endStory": "310153-4",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 253,
+        "dropItem1": {
+            "dropItemId": 253,
+            "rewardCode1": "GIFT_253_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101541,
+        "sectionId": 310154,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101542,
+        "sectionId": 310154,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3101543,
+        "sectionId": 310154,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 253,
+        "dropItem1": {
+            "dropItemId": 253,
+            "rewardCode1": "GIFT_253_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1015",
+        "missionMaster3": {
+            "description": "Clear with Ui Tamaki"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130111,
+        "sectionId": 313011,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "313011-1",
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130112,
+        "sectionId": 313011,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "313011-2",
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130113,
+        "sectionId": 313011,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "313011-3",
+        "endStory": "313011-4",
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 241,
+        "dropItem1": {
+            "dropItemId": 241,
+            "rewardCode1": "GIFT_241_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130121,
+        "sectionId": 313012,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "313012-1",
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130122,
+        "sectionId": 313012,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "313012-2",
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130123,
+        "sectionId": 313012,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "313012-3",
+        "endStory": "313012-4",
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 242,
+        "dropItem1": {
+            "dropItemId": 242,
+            "rewardCode1": "GIFT_242_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130131,
+        "sectionId": 313013,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "313013-1",
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130132,
+        "sectionId": 313013,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "313013-2",
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130133,
+        "sectionId": 313013,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "313013-3",
+        "endStory": "313013-4",
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 243,
+        "dropItem1": {
+            "dropItemId": 243,
+            "rewardCode1": "GIFT_243_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130141,
+        "sectionId": 313014,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130142,
+        "sectionId": 313014,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3130143,
+        "sectionId": 313014,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 243,
+        "dropItem1": {
+            "dropItemId": 243,
+            "rewardCode1": "GIFT_243_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1301",
+        "missionMaster3": {
+            "description": "Clear with Iroha & Yachiyo(Final Battle)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "LIGHT"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3302811,
+        "sectionId": 330281,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "330281-1",
+        "storyWaveIndex": 0,
+        "placeId": "46103",
+        "bgm": "bgm01_anime15",
+        "bossBgm": "bgm01_anime15",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 501,
+        "dropItem1": {
+            "dropItemId": 501,
+            "rewardCode1": "GIFT_501_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_3028",
+        "missionMaster3": {
+            "description": "Clear with Ayame Mikuri"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3302812,
+        "sectionId": 330281,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "330281-2",
+        "storyWaveIndex": 0,
+        "placeId": "46103",
+        "bgm": "bgm01_anime15",
+        "bossBgm": "bgm01_anime15",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 501,
+        "dropItem1": {
+            "dropItemId": 501,
+            "rewardCode1": "GIFT_501_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_3028",
+        "missionMaster3": {
+            "description": "Clear with Ayame Mikuri"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3302813,
+        "sectionId": 330281,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "330281-3",
+        "endStory": "330281-4",
+        "storyWaveIndex": 0,
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 211,
+        "dropItem1": {
+            "dropItemId": 211,
+            "rewardCode1": "GIFT_211_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_3028",
+        "missionMaster3": {
+            "description": "Clear with Ayame Mikuri"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3302821,
+        "sectionId": 330282,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "330282-1",
+        "storyWaveIndex": 0,
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_3028",
+        "missionMaster3": {
+            "description": "Clear with Ayame Mikuri"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3302822,
+        "sectionId": 330282,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "330282-2",
+        "storyWaveIndex": 0,
+        "placeId": "47103",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_3028",
+        "missionMaster3": {
+            "description": "Clear with Ayame Mikuri"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3302823,
+        "sectionId": 330282,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "330282-3",
+        "endStory": "330282-4",
+        "storyWaveIndex": 0,
+        "placeId": "46103",
+        "bgm": "bgm01_anime15",
+        "bossBgm": "bgm01_anime15",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 501,
+        "dropItem1": {
+            "dropItemId": 501,
+            "rewardCode1": "GIFT_501_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_3028",
+        "missionMaster3": {
+            "description": "Clear with Ayame Mikuri"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3302831,
+        "sectionId": 330283,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "330283-1",
+        "storyWaveIndex": 0,
+        "placeId": "47103",
+        "bgm": "bgm01_anime16",
+        "bossBgm": "bgm01_anime16",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_3028",
+        "missionMaster3": {
+            "description": "Clear with Ayame Mikuri"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3302832,
+        "sectionId": 330283,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "330283-2",
+        "storyWaveIndex": 0,
+        "placeId": "47103",
+        "bgm": "bgm01_anime16",
+        "bossBgm": "bgm01_anime16",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 401,
+        "dropItem1": {
+            "dropItemId": 401,
+            "rewardCode1": "GIFT_401_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_3028",
+        "missionMaster3": {
+            "description": "Clear with Ayame Mikuri"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3302833,
+        "sectionId": 330283,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "330283-3",
+        "endStory": "330283-4",
+        "storyWaveIndex": 0,
+        "placeId": "47103",
+        "bgm": "bgm01_anime16",
+        "bossBgm": "bgm01_anime16",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 213,
+        "dropItem1": {
+            "dropItemId": 213,
+            "rewardCode1": "GIFT_213_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_3028",
+        "missionMaster3": {
+            "description": "Clear with Ayame Mikuri"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "FIRE",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400211,
+        "sectionId": 340021,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "340021-1",
+        "placeId": "47001",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 303,
+        "dropItem1": {
+            "dropItemId": 303,
+            "rewardCode1": "GIFT_303_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400212,
+        "sectionId": 340021,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "endStory": "340021-2",
+        "placeId": "47001",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 303,
+        "dropItem1": {
+            "dropItemId": 303,
+            "rewardCode1": "GIFT_303_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400213,
+        "sectionId": 340021,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "340021-3",
+        "endStory": "340021-4",
+        "placeId": "47001",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 251,
+        "dropItem1": {
+            "dropItemId": 251,
+            "rewardCode1": "GIFT_251_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400221,
+        "sectionId": 340022,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "340022-1",
+        "placeId": "47001",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 303,
+        "dropItem1": {
+            "dropItemId": 303,
+            "rewardCode1": "GIFT_303_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400222,
+        "sectionId": 340022,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "340022-2",
+        "placeId": "47001",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 303,
+        "dropItem1": {
+            "dropItemId": 303,
+            "rewardCode1": "GIFT_303_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400223,
+        "sectionId": 340022,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "340022-3",
+        "endStory": "340022-4",
+        "placeId": "46001",
+        "bgm": "bgm01_anime15",
+        "bossBgm": "bgm01_anime15",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 552,
+        "dropItem1": {
+            "dropItemId": 552,
+            "rewardCode1": "GIFT_552_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400231,
+        "sectionId": 340023,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "340023-1",
+        "placeId": "47001",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 303,
+        "dropItem1": {
+            "dropItemId": 303,
+            "rewardCode1": "GIFT_303_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400232,
+        "sectionId": 340023,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "endStory": "340023-2",
+        "placeId": "47001",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 303,
+        "dropItem1": {
+            "dropItemId": 303,
+            "rewardCode1": "GIFT_303_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400233,
+        "sectionId": 340023,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "340023-3",
+        "endStory": "340023-4",
+        "placeId": "47001",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 253,
+        "dropItem1": {
+            "dropItemId": 253,
+            "rewardCode1": "GIFT_253_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "WATER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400241,
+        "sectionId": 340024,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 303,
+        "dropItem1": {
+            "dropItemId": 303,
+            "rewardCode1": "GIFT_303_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400242,
+        "sectionId": 340024,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 303,
+        "dropItem1": {
+            "dropItemId": 303,
+            "rewardCode1": "GIFT_303_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3400243,
+        "sectionId": 340024,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 253,
+        "dropItem1": {
+            "dropItemId": 253,
+            "rewardCode1": "GIFT_253_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_4002",
+        "missionMaster3": {
+            "description": "Clear with Kirika Kure"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 4000511,
+        "sectionId": 400051,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "46201",
+        "bgm": "bgm01_battle03",
+        "bossBgm": "bgm01_battle03",
+        "consumeType": "NORMAL",
+        "ap": 5,
+        "difficulty": 5,
+        "exp": 30,
+        "cardExp": 20,
+        "baseBondsPt": 10,
+        "riche": 1000,
+        "firstClearRewardCodes": "RICHE_1000",
+        "defaultDropItemId": 102,
+        "defaultDropItem": {
+            "dropItemId": 102,
+            "rewardCode1": "RICHE_1000"
+        },
+        "dropItemId1": 1021,
+        "dropItem1": {
+            "dropItemId": 1021,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_WATER_1"
+        },
+        "dropItemId2": 1051,
+        "dropItem2": {
+            "dropItemId": 1051,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_DARK_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_10",
+        "missionMaster2": {
+            "description": "Clear within 10 Turn(s)"
+        },
+        "mission3": "COMBO_ACCELE_3",
+        "missionMaster3": {
+            "description": "Perform 3 Accele Combo(s)"
+        },
+        "missionRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "waveEnemyAttributeIdList": [
+            "WATER",
+            "DARK"
+        ],
+        "parameterMap": {}
+    },
+    {
+        "questBattleId": 4000512,
+        "sectionId": 400051,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "46201",
+        "bgm": "bgm01_battle03",
+        "bossBgm": "bgm01_battle03",
+        "consumeType": "NORMAL",
+        "ap": 10,
+        "difficulty": 15,
+        "exp": 45,
+        "cardExp": 30,
+        "baseBondsPt": 15,
+        "riche": 3000,
+        "firstClearRewardCodes": "RICHE_1000",
+        "defaultDropItemId": 102,
+        "defaultDropItem": {
+            "dropItemId": 102,
+            "rewardCode1": "RICHE_1000"
+        },
+        "dropItemId1": 1021,
+        "dropItem1": {
+            "dropItemId": 1021,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_WATER_1"
+        },
+        "dropItemId2": 1051,
+        "dropItem2": {
+            "dropItemId": 1051,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_DARK_1"
+        },
+        "dropItemId3": 1052,
+        "dropItem3": {
+            "dropItemId": 1052,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_DARK_P_1"
+        },
+        "dropItemId4": 1022,
+        "dropItem4": {
+            "dropItemId": 1022,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_WATER_P_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_10",
+        "missionMaster2": {
+            "description": "Clear within 10 Turn(s)"
+        },
+        "mission3": "COMBO_ACCELE_3",
+        "missionMaster3": {
+            "description": "Perform 3 Accele Combo(s)"
+        },
+        "missionRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "waveEnemyAttributeIdList": [
+            "DARK",
+            "WATER"
+        ],
+        "parameterMap": {}
+    },
+    {
+        "questBattleId": 4000513,
+        "sectionId": 400051,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "46201",
+        "bgm": "bgm01_battle03",
+        "bossBgm": "bgm01_battle03",
+        "consumeType": "NORMAL",
+        "ap": 15,
+        "difficulty": 20,
+        "exp": 60,
+        "cardExp": 40,
+        "baseBondsPt": 20,
+        "riche": 5000,
+        "firstClearRewardCodes": "RICHE_1000",
+        "defaultDropItemId": 102,
+        "defaultDropItem": {
+            "dropItemId": 102,
+            "rewardCode1": "RICHE_1000"
+        },
+        "dropItemId1": 1052,
+        "dropItem1": {
+            "dropItemId": 1052,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_DARK_P_1"
+        },
+        "dropItemId2": 1022,
+        "dropItem2": {
+            "dropItemId": 1022,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_WATER_P_1"
+        },
+        "dropItemId3": 1053,
+        "dropItem3": {
+            "dropItemId": 1053,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_DARK_PP_1"
+        },
+        "dropItemId4": 1023,
+        "dropItem4": {
+            "dropItemId": 1023,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_WATER_PP_1"
+        },
+        "dropItemId5": 9010,
+        "dropItem5": {
+            "dropItemId": 9010,
+            "rewardCode1": "RICHE_10000"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_10",
+        "missionMaster2": {
+            "description": "Clear within 10 Turn(s)"
+        },
+        "mission3": "COMBO_ACCELE_3",
+        "missionMaster3": {
+            "description": "Perform 3 Accele Combo(s)"
+        },
+        "missionRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "waveEnemyAttributeIdList": [
+            "DARK",
+            "WATER",
+            "LIGHT"
+        ],
+        "parameterMap": {}
+    },
+    {
+        "questBattleId": 4000514,
+        "sectionId": 400051,
+        "sectionIndex": 4,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "46201",
+        "bgm": "bgm01_battle03",
+        "bossBgm": "bgm01_battle03",
+        "consumeType": "NORMAL",
+        "ap": 25,
+        "difficulty": 40,
+        "exp": 90,
+        "cardExp": 60,
+        "baseBondsPt": 30,
+        "riche": 10000,
+        "firstClearRewardCodes": "RICHE_1000",
+        "defaultDropItemId": 102,
+        "defaultDropItem": {
+            "dropItemId": 102,
+            "rewardCode1": "RICHE_1000"
+        },
+        "dropItemId1": 1052,
+        "dropItem1": {
+            "dropItemId": 1052,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_DARK_P_1"
+        },
+        "dropItemId2": 1022,
+        "dropItem2": {
+            "dropItemId": 1022,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_WATER_P_1"
+        },
+        "dropItemId3": 1053,
+        "dropItem3": {
+            "dropItemId": 1053,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_DARK_PP_1"
+        },
+        "dropItemId4": 1023,
+        "dropItem4": {
+            "dropItemId": 1023,
+            "rewardCode1": "ITEM_COMPOSE_ITEM_WATER_PP_1"
+        },
+        "dropItemId5": 9010,
+        "dropItem5": {
+            "dropItemId": 9010,
+            "rewardCode1": "RICHE_10000"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_10",
+        "missionMaster2": {
+            "description": "Clear within 10 Turn(s)"
+        },
+        "mission3": "COMBO_ACCELE_3",
+        "missionMaster3": {
+            "description": "Perform 3 Accele Combo(s)"
+        },
+        "missionRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "waveEnemyAttributeIdList": [
+            "DARK",
+            "WATER",
+            "LIGHT"
+        ],
+        "parameterMap": {}
+    },
+    {
+        "questBattleId": 4000521,
+        "sectionId": 400052,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "46211",
+        "bgm": "bgm01_battle02",
+        "bossBgm": "bgm01_battle02",
+        "consumeType": "NORMAL",
+        "ap": 10,
+        "difficulty": 5,
+        "exp": 30,
+        "cardExp": 20,
+        "baseBondsPt": 10,
+        "riche": 1000,
+        "firstClearRewardCodes": "RICHE_1000",
+        "defaultDropItemId": 102,
+        "defaultDropItem": {
+            "dropItemId": 102,
+            "rewardCode1": "RICHE_1000"
+        },
+        "dropItemId1": 141,
+        "dropItem1": {
+            "dropItemId": 141,
+            "rewardCode1": "GIFT_141_1"
+        },
+        "dropItemId2": 241,
+        "dropItem2": {
+            "dropItemId": 241,
+            "rewardCode1": "GIFT_241_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_10",
+        "missionMaster2": {
+            "description": "Clear within 10 Turn(s)"
+        },
+        "mission3": "ONLY_DAMAGE_ATTRIBUTE_DARK",
+        "missionMaster3": {
+            "description": "Clear using only Dark DMG"
+        },
+        "missionRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "waveEnemyAttributeIdList": [
+            "LIGHT"
+        ],
+        "parameterMap": {}
+    },
+    {
+        "questBattleId": 4000522,
+        "sectionId": 400052,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "46211",
+        "bgm": "bgm01_battle02",
+        "bossBgm": "bgm01_battle02",
+        "consumeType": "NORMAL",
+        "ap": 15,
+        "difficulty": 15,
+        "exp": 45,
+        "cardExp": 30,
+        "baseBondsPt": 15,
+        "riche": 3000,
+        "firstClearRewardCodes": "RICHE_1000",
+        "defaultDropItemId": 102,
+        "defaultDropItem": {
+            "dropItemId": 102,
+            "rewardCode1": "RICHE_1000"
+        },
+        "dropItemId1": 141,
+        "dropItem1": {
+            "dropItemId": 141,
+            "rewardCode1": "GIFT_141_1"
+        },
+        "dropItemId2": 142,
+        "dropItem2": {
+            "dropItemId": 142,
+            "rewardCode1": "GIFT_142_1"
+        },
+        "dropItemId3": 241,
+        "dropItem3": {
+            "dropItemId": 241,
+            "rewardCode1": "GIFT_241_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_10",
+        "missionMaster2": {
+            "description": "Clear within 10 Turn(s)"
+        },
+        "mission3": "ONLY_DAMAGE_ATTRIBUTE_DARK",
+        "missionMaster3": {
+            "description": "Clear using only Dark DMG"
+        },
+        "missionRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "waveEnemyAttributeIdList": [
+            "LIGHT"
+        ],
+        "parameterMap": {}
+    },
+    {
+        "questBattleId": 4000523,
+        "sectionId": 400052,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "46211",
+        "bgm": "bgm01_battle02",
+        "bossBgm": "bgm01_battle02",
+        "consumeType": "NORMAL",
+        "ap": 20,
+        "difficulty": 20,
+        "exp": 60,
+        "cardExp": 40,
+        "baseBondsPt": 20,
+        "riche": 5000,
+        "firstClearRewardCodes": "RICHE_1000",
+        "defaultDropItemId": 102,
+        "defaultDropItem": {
+            "dropItemId": 102,
+            "rewardCode1": "RICHE_1000"
+        },
+        "dropItemId1": 142,
+        "dropItem1": {
+            "dropItemId": 142,
+            "rewardCode1": "GIFT_142_1"
+        },
+        "dropItemId2": 143,
+        "dropItem2": {
+            "dropItemId": 143,
+            "rewardCode1": "GIFT_143_1"
+        },
+        "dropItemId3": 241,
+        "dropItem3": {
+            "dropItemId": 241,
+            "rewardCode1": "GIFT_241_1"
+        },
+        "dropItemId4": 242,
+        "dropItem4": {
+            "dropItemId": 242,
+            "rewardCode1": "GIFT_242_1"
+        },
+        "dropItemId5": 551,
+        "dropItem5": {
+            "dropItemId": 551,
+            "rewardCode1": "GIFT_551_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_10",
+        "missionMaster2": {
+            "description": "Clear within 10 Turn(s)"
+        },
+        "mission3": "ONLY_DAMAGE_ATTRIBUTE_DARK",
+        "missionMaster3": {
+            "description": "Clear using only Dark DMG"
+        },
+        "missionRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "waveEnemyAttributeIdList": [
+            "LIGHT"
+        ],
+        "parameterMap": {}
+    },
+    {
+        "questBattleId": 4000524,
+        "sectionId": 400052,
+        "sectionIndex": 4,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "46211",
+        "bgm": "bgm01_battle02",
+        "bossBgm": "bgm01_battle02",
+        "consumeType": "NORMAL",
+        "ap": 30,
+        "difficulty": 40,
+        "exp": 90,
+        "cardExp": 60,
+        "baseBondsPt": 30,
+        "riche": 10000,
+        "firstClearRewardCodes": "RICHE_1000",
+        "defaultDropItemId": 102,
+        "defaultDropItem": {
+            "dropItemId": 102,
+            "rewardCode1": "RICHE_1000"
+        },
+        "dropItemId1": 142,
+        "dropItem1": {
+            "dropItemId": 142,
+            "rewardCode1": "GIFT_142_1"
+        },
+        "dropItemId2": 143,
+        "dropItem2": {
+            "dropItemId": 143,
+            "rewardCode1": "GIFT_143_1"
+        },
+        "dropItemId3": 242,
+        "dropItem3": {
+            "dropItemId": 242,
+            "rewardCode1": "GIFT_242_1"
+        },
+        "dropItemId4": 243,
+        "dropItem4": {
+            "dropItemId": 243,
+            "rewardCode1": "GIFT_243_1"
+        },
+        "dropItemId5": 551,
+        "dropItem5": {
+            "dropItemId": 551,
+            "rewardCode1": "GIFT_551_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_10",
+        "missionMaster2": {
+            "description": "Clear within 10 Turn(s)"
+        },
+        "mission3": "ONLY_DAMAGE_ATTRIBUTE_DARK",
+        "missionMaster3": {
+            "description": "Clear using only Dark DMG"
+        },
+        "missionRewardCode": "ITEM_PRESENTED_MONEY_5",
+        "waveEnemyAttributeIdList": [
+            "LIGHT"
+        ],
+        "parameterMap": {}
+    },
+    {
+        "questBattleId": 3111813,
+        "sectionId": 311181,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "311181-3",
+        "endStory": "311181-4",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 221,
+        "dropItem1": {
+            "dropItemId": 221,
+            "rewardCode1": "GIFT_221_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111812,
+        "sectionId": 311181,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "311181-2",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111811,
+        "sectionId": 311181,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "311181-1",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 40,
+        "cardExp": 40,
+        "baseBondsPt": 96,
+        "riche": 552,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111833,
+        "sectionId": 311183,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "311183-3",
+        "endStory": "311183-4",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 223,
+        "dropItem1": {
+            "dropItemId": 223,
+            "rewardCode1": "GIFT_223_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111832,
+        "sectionId": 311183,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "311183-2",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111831,
+        "sectionId": 311183,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "311183-1",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 96,
+        "cardExp": 80,
+        "baseBondsPt": 240,
+        "riche": 1312,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111822,
+        "sectionId": 311182,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "311182-2",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111821,
+        "sectionId": 311182,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "311182-1",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111823,
+        "sectionId": 311182,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "startStory": "311182-3",
+        "endStory": "311182-4",
+        "placeId": "47106",
+        "bgm": "bgm01_anime12",
+        "bossBgm": "bgm01_anime12",
+        "consumeType": "NORMAL",
+        "exp": 72,
+        "cardExp": 60,
+        "baseBondsPt": 162,
+        "riche": 912,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 222,
+        "dropItem1": {
+            "dropItemId": 222,
+            "rewardCode1": "GIFT_222_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER",
+            "DARK"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111842,
+        "sectionId": 311184,
+        "sectionIndex": 2,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111841,
+        "sectionId": 311184,
+        "sectionIndex": 1,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 307,
+        "dropItem1": {
+            "dropItemId": 307,
+            "rewardCode1": "GIFT_307_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "TIMBER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
+    },
+    {
+        "questBattleId": 3111843,
+        "sectionId": 311184,
+        "sectionIndex": 3,
+        "questBattleType": "NORMAL",
+        "bossFlag": false,
+        "placeId": "21251",
+        "bgm": "bgm02_anime07",
+        "bossBgm": "bgm02_anime07",
+        "consumeType": "NORMAL",
+        "exp": 120,
+        "cardExp": 100,
+        "baseBondsPt": 300,
+        "riche": 1760,
+        "firstClearRewardCodes": "ITEM_CURE_AP_50_1",
+        "defaultDropItemId": 101,
+        "defaultDropItem": {
+            "dropItemId": 101,
+            "rewardCode1": "RICHE_300"
+        },
+        "dropItemId1": 223,
+        "dropItem1": {
+            "dropItemId": 223,
+            "rewardCode1": "GIFT_223_1"
+        },
+        "mission1": "NOT_DEAD",
+        "missionMaster1": {
+            "description": "Clear without losing any Magical Girls"
+        },
+        "mission2": "ACTION_15",
+        "missionMaster2": {
+            "description": "Clear within 15 Turn(s)"
+        },
+        "mission3": "MEMBER_CHARA_1118",
+        "missionMaster3": {
+            "description": "Clear with Amane Sisters(Swimsuit)"
+        },
+        "missionRewardCode": "ITEM_PRISM_1",
+        "waveEnemyAttributeIdList": [
+            "WATER"
+        ],
+        "parameterMap": {},
+        "automationPossibleAtFirst": true
     }
 ]
