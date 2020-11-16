@@ -152,5 +152,55 @@
         "questType": "SUB",
         "sectionCount": 3,
         "title": "A Fascinating Secret"
+    },
+    {
+        "chapterId": 60,
+        "chapterNo": 10,
+        "chapterNoForView": "10",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "SUB",
+        "sectionCount": 2,
+        "title": "The Place We Finally Reached"
+    },
+    {
+        "chapterId": 59,
+        "chapterNo": 9,
+        "chapterNoForView": "9",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "SUB",
+        "sectionCount": 4,
+        "title": "Take My Hand"
+    },
+    {
+        "chapterId": 58,
+        "chapterNo": 8,
+        "chapterNoForView": "8",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "SUB",
+        "sectionCount": 4,
+        "title": "Once More From Here"
+    },
+    {
+        "chapterId": 57,
+        "chapterNo": 7,
+        "chapterNoForView": "7",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "SUB",
+        "sectionCount": 5,
+        "title": "Eve of the Awakening"
+    },
+    {
+        "chapterId": 56,
+        "chapterNo": 6,
+        "chapterNoForView": "6",
+        "chapterType": "NORMAL",
+        "partNo": 1,
+        "questType": "SUB",
+        "sectionCount": 4,
+        "title": "A Stand-Off With Fate"
     }
 ]

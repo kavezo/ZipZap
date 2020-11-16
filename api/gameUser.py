@@ -36,6 +36,15 @@ def setBackground():
         'gameUser': gameUser
     }
     return flask.jsonify(response)
+
+def skipAdventure():
+    body = flask.request.json
+    gameUser = dataUtil.setGameUserValue('skipAdventure', body['skipAdventure'])
+    response = {
+        "resultCode": "success",
+        'gameUser': gameUser
+    }
+    return flask.jsonify(response)
     
 def handleGameUser(endpoint):
     if endpoint.endswith('changeLeader'):
@@ -44,6 +53,8 @@ def handleGameUser(endpoint):
         return editComment()
     elif endpoint.endswith('setBackground'):
         return setBackground()
+    elif endpoint.endswith('skipAdventure'):
+        return skipAdventure()
     else:
         print('gameUser' + endpoint)
         flask.abort(501, description="Not implemented")

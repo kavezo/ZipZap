@@ -23,6 +23,7 @@ def createIndexFromList(xs, idFunc=idxFunc('id'), valFunc=INDEX_VALFUNC):
     return {idFunc(x): valFunc(i, x) for i, x in enumerate(xs)}
 
 masterCards = createIndex('data/cards.json', idxFunc('charaId'), ITEM_VALFUNC)
+masterDoppels = createIndex('data/doppelList.json', valFunc=ITEM_VALFUNC)
 masterPieces = createIndex('data/pieces.json', idxFunc('pieceId'), ITEM_VALFUNC)
 masterSections = createIndex('data/sectionList.json', idxFunc('sectionId'), ITEM_VALFUNC)
 masterChapters = createIndex('data/chapterList.json', idxFunc('chapterId'), ITEM_VALFUNC)
