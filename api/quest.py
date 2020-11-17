@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from uuid import uuid1
 import numpy as np
+
 from api import userCard
 from util import dataUtil
 
@@ -351,6 +352,63 @@ def battleTranslate(battleData, userCard = None, userPieces = []):
         battleData['memoria'] += currMemoriae
         return currMemoriae
 
+def separateEnemyInfo(enemy):
+    response = {key: [] for key in ['artList', 'magiaList', 'doppelList', 'memoria']}
+
+    if 'magia' in enemy:
+        response['artList'] += enemy['magia']['artList']
+        enemy['magia']['artList'] = [art['artId'] for art in enemy['magia']['artList']]
+        response['magiaList'].append(enemy['magia'])
+        del enemy['magia']
+
+    if 'doppel' in enemy:
+        response['artList'] += enemy['doppel']['artList']
+        enemy['doppel']['artList'] = [art['artId'] for art in enemy['doppel']['artList']]
+        response['doppelList'].append(enemy['doppel'])
+        del enemy['doppel']
+
+    for i in range(len(enemy['memoriaList'])):
+        response['artList'].append(enemy['memoriaList'][i]['artList'])
+        enemy['memoriaList'][i]['artList'] = [art['artId'] for art in enemy['memoriaList'][i]['artList']]
+    response['memoria'] += enemy['memoriaList']
+    enemy['memoriaList'] = [mem['memoriaId'] for mem in enemy['memoriaList']]
+
+    return enemy, response
+
+def getQuestData(battleId, args):
+    waveList = dataUtil.masterWaves[battleId]
+    allQuestEnemies = dataUtil.readJson('data/uniqueQuestEnemies.json')
+    for i, wave in enumerate(waveList):
+        if not wave['boss']:
+            enemyPool = []
+            for enemyInfo in wave['enemyList']:
+                charId, idx = enemyInfo.split('-')
+                enemy, response = separateEnemyInfo(allQuestEnemies[charId][idx])
+                enemyPool.append(enemy)
+                for key in response.keys():
+                    args[key] = list(set(args.get(key, []) + response[key]))
+
+            # randomize
+            numEnemies = min(3, np.random.binomial(9, 0.5))
+            enemyPositions = np.random.choice(list(range(1, 10)), (numEnemies,), replace=False)
+            finalEnemies = []
+
+            for pos in enemyPositions:
+                finalEnemy = np.random.choice(enemyPool)
+                finalEnemy['pos'] = pos
+                finalEnemies.append(finalEnemy)
+
+            waveList[i]['enemyList'] = finalEnemies
+        else:
+            for j, enemyInfo in enumerate(wave['enemyList']):
+                charId, idx = enemyInfo['id'].split('-')
+                enemy, response = separateEnemyInfo(allQuestEnemies[charId][idx])
+                for key in response.keys():
+                    args[key] = list(set(args.get(key, []) + response[key]))
+                enemy['pos'] = enemyInfo['pos']
+                waveList[i]['enemyList'][j] = enemy
+    return waveList
+
 def get():
     body = flask.request.json
     battle = dataUtil.readJson('data/user/userQuestBattleResult.json')
@@ -463,7 +521,10 @@ def get():
     # add opponent stuff
     # TODO: instead of checking if it's mirrors, we need to go through all enemies at all times and check for HUMANs
     if not isMirrors:
-        waves = [dataUtil.readJson('data/hardCodedWave.json')]
+        if str(battle['questBattleId']) in dataUtil.masterWaves:
+            waves = getQuestData(str(battle['questBattleId']), battleData)
+        else:
+            waves = [dataUtil.readJson('data/hardCodedWave.json')]
     else:
         opponent = dataUtil.readJson('data/arenaEnemies/'+arenaBattle['opponentUserId']+'.json')
         waves = [{
