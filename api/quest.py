@@ -368,7 +368,7 @@ def separateEnemyInfo(enemy):
         del enemy['doppel']
 
     for i in range(len(enemy['memoriaList'])):
-        response['artList'].append(enemy['memoriaList'][i]['artList'])
+        response['artList'] += enemy['memoriaList'][i]['artList']
         enemy['memoriaList'][i]['artList'] = [art['artId'] for art in enemy['memoriaList'][i]['artList']]
     response['memoria'] += enemy['memoriaList']
     enemy['memoriaList'] = [mem['memoriaId'] for mem in enemy['memoriaList']]
@@ -383,31 +383,40 @@ def getQuestData(battleId, args):
             enemyPool = []
             for enemyInfo in wave['enemyList']:
                 charId, idx = enemyInfo.split('-')
-                enemy, response = separateEnemyInfo(allQuestEnemies[charId][idx])
+                enemy, response = separateEnemyInfo(allQuestEnemies[charId][int(idx)])
                 enemyPool.append(enemy)
                 for key in response.keys():
-                    args[key] = list(set(args.get(key, []) + response[key]))
+                    args[key] = args.get(key, []) + response[key]
 
             # randomize
-            numEnemies = min(3, np.random.binomial(9, 0.5))
+            numEnemies = max(3, np.random.binomial(9, 0.5))
             enemyPositions = np.random.choice(list(range(1, 10)), (numEnemies,), replace=False)
             finalEnemies = []
 
             for pos in enemyPositions:
                 finalEnemy = np.random.choice(enemyPool)
-                finalEnemy['pos'] = pos
-                finalEnemies.append(finalEnemy)
+                finalEnemy['pos'] = int(pos) # oBjEcT oF tYpE iNt32 iS NoT JsOn sErIaLiZaBLe
+                finalEnemies.append({k: v for k, v in finalEnemy.items()}) # not sure why memory gets overwritten but...
 
             waveList[i]['enemyList'] = finalEnemies
         else:
             for j, enemyInfo in enumerate(wave['enemyList']):
                 charId, idx = enemyInfo['id'].split('-')
-                enemy, response = separateEnemyInfo(allQuestEnemies[charId][idx])
+                enemy, response = separateEnemyInfo(allQuestEnemies[charId][int(idx)])
                 for key in response.keys():
-                    args[key] = list(set(args.get(key, []) + response[key]))
+                    args[key] = args.get(key, []) + response[key]
                 enemy['pos'] = enemyInfo['pos']
-                waveList[i]['enemyList'][j] = enemy
+                waveList[i]['enemyList'][j] = {k: v for k, v in enemy.items()}
     return waveList
+
+def dedupeDictList(dictlist, idx):
+    idxs = set({})
+    finalList = []
+    for item in dictlist:
+        if not item[idx] in idxs:
+            finalList.append(item)
+            idxs.add(item[idx])
+    return finalList
 
 def get():
     body = flask.request.json
@@ -519,10 +528,9 @@ def get():
         webData["userItemList"] = [supportPoints]
 
     # add opponent stuff
-    # TODO: instead of checking if it's mirrors, we need to go through all enemies at all times and check for HUMANs
     if not isMirrors:
-        if str(battle['questBattleId']) in dataUtil.masterWaves:
-            waves = getQuestData(str(battle['questBattleId']), battleData)
+        if battle['questBattleId'] in dataUtil.masterWaves:
+            waves = getQuestData(battle['questBattleId'], battleData)
         else:
             waves = [dataUtil.readJson('data/hardCodedWave.json')]
     else:
@@ -540,14 +548,6 @@ def get():
         # the rest have to be extracted from the cards
         for enemyCard in opponent['opponentUserArenaBattleInfo']['userCardList']:
             battleTranslate(battleData, enemyCard, [])
-        
-    # dedupe
-    artIds = set({})
-    finalArtList = []
-    for art in battleData['artList']:
-        if not art['artId'] in artIds:
-            finalArtList.append(art)
-            artIds.add(art['artId'])
 
     if isMirrors:
         scenario = {
@@ -567,11 +567,11 @@ def get():
         'scenario': scenario,
         'waveList': waves,
         'playerList': battleData['playerList'],
-        'doppelList': battleData['doppelList'],
-        'artList': finalArtList,
-        'memoriaList': battleData['memoria'],
-        'connectList': battleData['connectList'],
-        'magiaList': battleData['magiaList'],
+        'doppelList': dedupeDictList(battleData['doppelList'], 'doppelId'),
+        'artList': dedupeDictList(battleData['artList'], 'artId'),
+        'memoriaList': dedupeDictList(battleData['memoria'], 'memoriaId'),
+        'connectList': dedupeDictList(battleData['connectList'], 'connectId'),
+        'magiaList': dedupeDictList(battleData['magiaList'], 'magiaId'),
         'continuable': True,
         'isHalfSkill': False,
         'webData': webData

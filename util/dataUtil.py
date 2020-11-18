@@ -30,7 +30,7 @@ masterChapters = createIndex('data/chapterList.json', idxFunc('chapterId'), ITEM
 masterItems = createIndex('data/itemList.json', idxFunc('itemCode'), ITEM_VALFUNC)
 masterGifts = createIndex('data/giftList.json', valFunc=ITEM_VALFUNC)
 masterFormations = createIndex('data/formationSheetList.json', valFunc=ITEM_VALFUNC)
-masterWaves = createIndex('data/waveLists.json', valFunc=ITEM_VALFUNC)
+masterWaves = {int(k): v for k, v in readJson('data/waveLists.json').items()}
 
 userIndices = {
     'userCardList': createIndex('data/user/userCardList.json'),

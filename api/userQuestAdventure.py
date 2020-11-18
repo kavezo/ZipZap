@@ -16,6 +16,8 @@ def regist():
 def handleUserQuestAdventure(endpoint):
     if endpoint.endswith('skip'):
         return '{}'
+    elif endpoint.endswith('regist'):
+        return regist()
     else:
         print('userQuestAdventure' + endpoint)
         flask.abort(501, description="Not implemented")
