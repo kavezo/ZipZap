@@ -55,6 +55,8 @@ def handleGameUser(endpoint):
         return setBackground()
     elif endpoint.endswith('skipAdventure'):
         return skipAdventure()
+    elif endpoint.endswith('cacheClear'):
+        return '{}' # TODO: set the cacheCleared variable. actually idk why you even want this but
     else:
         print('gameUser' + endpoint)
         flask.abort(501, description="Not implemented")
