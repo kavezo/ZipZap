@@ -1,5 +1,6 @@
 import flask
 import json
+import copy
 from datetime import datetime
 from uuid import uuid1
 import numpy as np
@@ -276,24 +277,23 @@ def cardSkillToConnect(userCard):
         "artList": [cardSkill[key] for key in cardSkill if key.startswith('artId')]
     }
 
-def piecesToMemoriae(memoriaIds):
+def piecesToMemoriae(userPieces):
     memoria = []
-    with open('data/user/userPieceList.json', encoding='utf-8') as f:
-        userPieceList = json.load(f)
-    for userPiece in userPieceList:
-        if userPiece['id'] in memoriaIds:
-            memoria.append({
-                "memoriaId": str(userPiece['piece']['pieceId'])+'00', # TODO: replace 00 with something else?
-                "name": userPiece['piece']['name'],
-                "icon": userPiece['piece']['pieceSkill']['groupId'],
-                "level": userPiece['level'],
-                "cost": 0,
-                "description": userPiece['piece']['description'],
-                "voice": 0,
-                "artList": extractArts(None, [userPiece['piece']]),
-                "type": userPiece['piece']['pieceType'],
-                "displayType": "MEMORIA"
-            })
+    for userPiece in userPieces:
+        piece = userPiece['piece']
+        skill = piece['pieceSkill']
+        memoria.append({
+            "memoriaId": int(str(piece['pieceId'])+'00'), # TODO: what does this 00 actually mean?
+            "name": piece['pieceName'],
+            "icon": skill['groupId'],
+            "level": userPiece['level'],
+            "cost": skill['intervalTurn'] if 'intervalTurn' in skill else 0,
+            "description": skill['shortDescription'],
+            "voice": 0, # TODO: how is this actually set?
+            "artList": [skill[key] for key in skill.keys() if key.startswith('artId')],
+            "type": piece['pieceType'],
+            "displayType": "MEMORIA"
+        })
     return memoria
 
 def cardToPlayer(userCard, userChara, battleInfo):
@@ -336,7 +336,7 @@ def cardToPlayer(userCard, userChara, battleInfo):
         "rateGainMpDef": userCard['card']['rateGainMpDef'],
         "leader": battleInfo['leader'],
         "ai": 3 if userChara['charaId']==1001 else 1, # TODO: figure out how this actually works
-        "memoriaList": battleInfo['memoriaList']
+        "memoriaList": [memoria['memoriaId'] for memoria in battleInfo['memoriaList']]
     }
 
 def battleTranslate(battleData, userCard = None, userPieces = []):
@@ -354,29 +354,30 @@ def battleTranslate(battleData, userCard = None, userPieces = []):
 
 def separateEnemyInfo(enemy):
     response = {key: [] for key in ['artList', 'magiaList', 'doppelList', 'memoria']}
+    newEnemy = copy.deepcopy(enemy)
 
-    if 'magia' in enemy:
-        response['artList'] += enemy['magia']['artList']
-        enemy['magia']['artList'] = [art['artId'] for art in enemy['magia']['artList']]
-        response['magiaList'].append(enemy['magia'])
-        del enemy['magia']
+    if 'magia' in newEnemy:
+        response['artList'] += newEnemy['magia']['artList']
+        newEnemy['magia']['artList'] = [art['artId'] for art in newEnemy['magia']['artList']]
+        response['magiaList'].append(newEnemy['magia'])
+        del newEnemy['magia']
 
-    if 'doppel' in enemy:
-        response['artList'] += enemy['doppel']['artList']
-        enemy['doppel']['artList'] = [art['artId'] for art in enemy['doppel']['artList']]
-        response['doppelList'].append(enemy['doppel'])
-        del enemy['doppel']
+    if 'doppel' in newEnemy:
+        response['artList'] += newEnemy['doppel']['artList']
+        newEnemy['doppel']['artList'] = [art['artId'] for art in newEnemy['doppel']['artList']]
+        response['doppelList'].append(newEnemy['doppel'])
+        del newEnemy['doppel']
 
-    for i in range(len(enemy['memoriaList'])):
-        response['artList'] += enemy['memoriaList'][i]['artList']
-        enemy['memoriaList'][i]['artList'] = [art['artId'] for art in enemy['memoriaList'][i]['artList']]
-    response['memoria'] += enemy['memoriaList']
-    enemy['memoriaList'] = [mem['memoriaId'] for mem in enemy['memoriaList']]
+    for i in range(len(newEnemy['memoriaList'])):
+        response['artList'] += newEnemy['memoriaList'][i]['artList']
+        newEnemy['memoriaList'][i]['artList'] = [art['artId'] for art in newEnemy['memoriaList'][i]['artList']]
+    response['memoria'] += newEnemy['memoriaList']
+    newEnemy['memoriaList'] = [mem['memoriaId'] for mem in newEnemy['memoriaList']]
 
-    return enemy, response
+    return newEnemy, response
 
 def getQuestData(battleId, args):
-    waveList = dataUtil.masterWaves[battleId]
+    waveList = [x for x in dataUtil.masterWaves[battleId]]
     allQuestEnemies = dataUtil.readJson('data/uniqueQuestEnemies.json')
     for i, wave in enumerate(waveList):
         if not wave['boss']:
@@ -396,17 +397,22 @@ def getQuestData(battleId, args):
             for pos in enemyPositions:
                 finalEnemy = np.random.choice(enemyPool)
                 finalEnemy['pos'] = int(pos) # oBjEcT oF tYpE iNt32 iS NoT JsOn sErIaLiZaBLe
-                finalEnemies.append({k: v for k, v in finalEnemy.items()}) # not sure why memory gets overwritten but...
+                finalEnemies.append(copy.deepcopy(finalEnemy)) # not sure why memory gets overwritten but...
 
             waveList[i]['enemyList'] = finalEnemies
         else:
             for j, enemyInfo in enumerate(wave['enemyList']):
+                if not 'id' in enemyInfo:
+                    # no idea why, but it's filled out already sometimes?
+                    continue
                 charId, idx = enemyInfo['id'].split('-')
                 enemy, response = separateEnemyInfo(allQuestEnemies[charId][int(idx)])
                 for key in response.keys():
                     args[key] = args.get(key, []) + response[key]
                 enemy['pos'] = enemyInfo['pos']
-                waveList[i]['enemyList'][j] = {k: v for k, v in enemy.items()}
+                if 'cutinId' in enemyInfo:
+                    enemy['cutinId'] = enemyInfo['cutinId']
+                waveList[i]['enemyList'][j] = copy.deepcopy(enemy)
     return waveList
 
 def dedupeDictList(dictlist, idx):
@@ -576,6 +582,7 @@ def get():
         'isHalfSkill': False,
         'webData': webData
     }
+    print(json.dumps(response))
     return flask.jsonify(response)
 
 def start():    
@@ -663,7 +670,6 @@ def start():
             "follower": True,
             "formationSheetId": chosenTeam['formationSheetId'],
             "formationSheet": chosenFormation,
-            "helpAttributeId": body['helpAttributeId'],
             "helpBondsPt": 0,
             "helpPosition": chosenTeam['questPositionHelper'],
             "id": str(uuid1()),
@@ -681,8 +687,9 @@ def start():
         }
 
     if 'helpUserCardId' in body:
-        userQuestBattleResult["helpUserCardId"] = body['helperUserCardId'],
-        userQuestBattleResult["helpUserId"] = body['helperUserId'],
+        userQuestBattleResult["helpUserCardId"] = body['helperUserCardId']
+        userQuestBattleResult["helpUserId"] = body['helperUserId']
+        userQuestBattleResult["helpAttributeId"] = body['helpAttributeId']
 
     for i in range(4):
         numberedId = 'userCardId'+str(i+1)
