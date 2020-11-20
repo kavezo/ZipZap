@@ -4,171 +4,75 @@ from datetime import datetime
 from api import userPiece, gacha
 from uuid import uuid1
 
+from util import dataUtil, newUserObjectUtil
+
 # This will only get you the lowest rarity card, but that's what all shop megucas have been...
 def getCard(charaNo):
     userCard, userChara, userLive2d, _ = gacha.addMeguca(charaNo)
     return {'userCardList': [userCard], 'userCharaList': [userChara], 'userLive2dList': [userLive2d]}
 
 def getFormation(formationId):
-    with open('data/formationSheetList.json', encoding='utf-8') as f:
-        formationSheetList = json.load(f)
-    with open('data/user/userFormationSheetList.json', encoding='utf-8') as f:
-        userFormations = json.load(f)
-    with open('data/user/user.json', encoding='utf-8') as f:
-        userId = json.load(f)['id']
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
-
-    for formation in userFormations:
-        if formation['formationSheetId'] == formationId: # if already exists, do nothing
-            return {}
-    
-    chosenFormation = {}
-    for formation in formationSheetList:
-        if formation['id'] == formationId:
-            chosenFormation = formation
-    
-    userFormation = {
-        "userId": userId,
-        "formationSheetId": formationId,
-        "createdAt": nowstr,
-        "formationSheet": chosenFormation
-    }
-    with open('data/user/userFormationSheetList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userFormations+[userFormation], f, ensure_ascii=False)
+    userFormation, exists = newUserObjectUtil.createUserFormation(formationId)
+    if exists: return {}
     return {'userFormationSheetList': [userFormation]}
 
 def getGift(giftId, amount):
-    with open('data/user/userGiftList.json', encoding='utf-8') as f:
-        gifts = json.load(f)
-    with open('data/user/user.json', encoding='utf-8') as f:
-        userId = json.load(f)['id']
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
-
-    foundGift = False
-    responseGift = None
-    for i in range(len(gifts)):
-        if gifts[i]['giftId'] == giftId:
-            gifts[i]['quantity'] += amount
-            responseGift = gifts[i]
-            foundGift = True
-    if not foundGift:
-        with open('data/giftList.json', encoding='utf-8') as f:
-            allGifts = json.load(f)
-        for exampleGift in allGifts:
-            if exampleGift['id'] == giftId:
-                responseGift = exampleGift
-                responseGift['rankGift'] = 'RANK_'+str(responseGift['rank'])
-        responseGift = {
-            "userId": userId,
+    userGift = dataUtil.getUserObject('userGiftList', giftId)
+    if userGift is None:
+        newGift = dataUtil.masterGifts[giftId]
+        newGift['rankGift'] = 'RANK_'+str(newGift['rank'])
+        userGift = {
+            "userId": dataUtil.userId,
             "giftId": giftId,
             "quantity": amount,
-            "createdAt": nowstr,
-            "gift": responseGift
+            "createdAt": newUserObjectUtil.nowstr(),
+            "gift": newGift
         }
-        gifts.append(responseGift)
+    userGift['quantity'] += amount
+    dataUtil.setUserObject('userGiftList', giftId, userGift)
+    return {'userGiftList': [userGift]}
 
-    with open('data/user/userGiftList.json', 'w+', encoding='utf-8') as f:
-        json.dump(gifts, f, ensure_ascii=False)
-    return {'userGiftList': [responseGift]}
+def getGems(charaNo, amount):
+    userChara = dataUtil.getUserObject('userCharaList', charaNo)
+    userChara['lbItemNum'] += amount
+    dataUtil.setUserObject('userCharaList', charaNo, userChara)
+    return {'userCharaList': [userChara]}
 
 def getItem(itemCode, amount, item=None):
-    with open('data/user/userItemList.json', encoding='utf-8') as f:
-        items = json.load(f)
-    with open('data/user/user.json', encoding='utf-8') as f:
-        userId = json.load(f)['id']
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
-    
-    foundItem = False
-    responseItem = None
-    for i in range(len(items)):
-        if items[i]['itemId'] == itemCode:
-            items[i]['quantity'] += amount
-            responseItem = items[i]
-            foundItem = True
-    if not foundItem: # assumes only backgrounds and stuff
-        items.append({
-            "userId": userId,
-            "itemId": itemCode,
-            "environmentId": "COMMON",
-            "quantity": 1,
-            "total": 0,
-            "item": item,
-            "createdAt": nowstr
-        })
-
-    with open('data/user/userItemList.json', 'w+', encoding='utf-8') as f:
-        json.dump(items, f, ensure_ascii=False)
-    return {'userItemList': [responseItem]}
+    userItem = dataUtil.getUserObject('userItemList', itemCode)
+    if userItem is None: # assumes only backgrounds and stuff
+        if item is None:
+            flask.abort(500, description='Item is None, but userItem doesn\'t already exist...')
+        userItem, _ = newUserObjectUtil.createUserItem(item)
+    userItem['quantity'] += amount
+    dataUtil.setUserObject('userItemList', itemCode, userItem)
+    return {'userItemList': [userItem]}
 
 def getLive2d(charaId, live2dId, live2dItem):
-    with open('data/user/userLive2dList.json', encoding='utf-8') as f:
-        live2dList = json.load(f)
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
-    with open('data/user/user.json', encoding='utf-8') as f:
-        userId = json.load(f)['id']
-    
-    alreadyHas = False
-    for live2d in live2dList:
-        if live2d['charaId'] == charaId and live2d['live2dId'] == live2dId:
-            alreadyHas = True
-
-    args = {}
-    if not alreadyHas:
-        userLive2d = {
-            "userId": userId,
-            "charaId": charaId,
-            "live2dId": live2dId,
-            "live2d": live2dItem,
-            "createdAt": nowstr
-        }
-        live2dList.append(userLive2d)
-        with open('data/user/userLive2dList.json', 'w+', encoding='utf-8') as f:
-            json.dump(live2dList, f, ensure_ascii=False)
-        args['userLive2dList'] = [userLive2d]
-    return args
+    idx = int(str(charaId)+str(live2dId))
+    userLive2d = dataUtil.getUserObject('userLive2dList', idx)
+    if userLive2d is None:
+        userLive2d, _ = newUserObjectUtil.createUserLive2d(charaId, live2dId, live2dItem['description'])
+        dataUtil.setUserObject('userLive2dList', idx, userLive2d)
+        return {'userLive2dList': [userLive2d]}
+    return {} 
 
 def getPiece(piece, isMax, num):
-    with open('data/user/userPieceList.json', encoding='utf-8') as f:
-        userPieceList = json.load(f)
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
-    with open('data/user/user.json', encoding='utf-8') as f:
-        userId = json.load(f)['id']
-    
     newPieces = []
     for _ in range(num):
-        userPieceList.append({
-            "id": str(uuid1()),
-            "userId": userId,
-            "pieceId": piece['pieceId'],
-            "piece": piece,
-            "level": 1,
-            "experience": 0,
-            "lbCount": 0,
-            "attack": piece['attack'],
-            "defense": piece['defense'],
-            "hp": piece['hp'],
-            "protect": False,
-            "archive": False,
-            "createdAt": nowstr
-        })
+        newUserPiece, _ = newUserObjectUtil.createUserPiece(piece['pieceId'])
         if isMax:
-            userPieceList[-1]['level'] = userPiece.getMaxLevel(piece['rank'], 4)
-            userPieceList[-1]['lbcount'] = 4
-            stats = userPiece.getStats(userPieceList[-1], userPieceList[-1]['level'])
+            newUserPiece['level'] = userPiece.getMaxLevel(piece['rank'], 4)
+            newUserPiece['lbcount'] = 4
+            stats = userPiece.getStats(newUserPiece, newUserPiece['level'])
             for key in stats.keys():
-                userPieceList[-1][key] = stats[key]
-        newPieces.append(userPieceList[-1])
-    
-    with open('data/user/userPieceList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userPieceList, f, ensure_ascii=False)
+                newUserPiece[key] = stats[key]
+        newPieces.append(newUserPiece)
+        dataUtil.setUserObject('userPieceList', newUserPiece['id'], newUserPiece)
     return {'userPieceList': newPieces}
 
 def getCC(amount):
-    with open('data/user/gameUser.json', encoding='utf-8') as f:
-        gameUser = json.load(f)
-    with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
-        gameUser['riche'] += amount
-        json.dump(gameUser, f, ensure_ascii=False)
+    gameUser = dataUtil.setGameUserValue('riche', dataUtil.getGameUserValue('riche')+amount)
     return {'gameUser': gameUser}
 
 def obtainSet(item, body, args):
@@ -186,10 +90,12 @@ def obtain(item, body, args):
         args.update(getCard(item['card']['charaNo']))
     elif item['shopItemType'] == 'FORMATION_SHEET':
         args.update(getFormation(item['formationSheet']['id']))
+    elif item['shopItemType'] == 'GEM':
+        args.update(getGems(item['genericId'], body['num']))
     elif item['shopItemType'] == 'GIFT':
         args.update(getGift(int(item['gift']['rewardCode'].split('_')[1]), body['num']*int(item['rewardCode'].split('_')[-1])))
     elif item['shopItemType'] == 'ITEM':
-        args.update(getItem(item['item']['itemCode'], body['num']*int(item['rewardCode'].split('_')[-1], item['item'])))
+        args.update(getItem(item['item']['itemCode'], body['num']*int(item['rewardCode'].split('_')[-1]) if 'rewardCode' in item else 1, item['item']))
     elif item['shopItemType'] == 'LIVE2D':
         args.update(getLive2d(item['chara']['id'], item['live2d']['live2dId'], item['live2d']))
     elif item['shopItemType'] in ['MAXPIECE', 'PIECE']:
@@ -199,8 +105,7 @@ def obtain(item, body, args):
 # TODO: handle cases where it's a meguca sent to the present box
 def buy():
     body = flask.request.json
-    with open('data/shopList.json', encoding='utf-8') as f:
-        shopList = json.load(f)
+    shopList = dataUtil.readJson('data/shopList.json')
 
     currShop = {}
     for shop in shopList:
@@ -238,21 +143,17 @@ def buy():
             args['userItemList'] += itemList
         else:
             args['userItemList'] = itemList
-    
-    with open('data/user/user.json', encoding='utf-8') as f:
-        userId = json.load(f)['id']
+
     nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     userShopItem = {
             "createdAt": nowstr,
             "num": body['num'],
             "shopItemId": body['shopItemId'],
-            "userId": userId
+            "userId": dataUtil.userId
         }
     args['userShopItemList'] = [userShopItem]
-    with open('data/user/userShopItemList.json', encoding='utf-8') as f:
-        userShopItemList = json.load(f)
-    with open('data/user/userShopItemList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userShopItemList+[userShopItem], f, ensure_ascii=False)
+    path = 'data/user/userShopItemList.json'
+    dataUtil.saveJson(path, dataUtil.readJson(path) + [userShopItem])
 
     return flask.jsonify(args)
     

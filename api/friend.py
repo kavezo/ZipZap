@@ -1,6 +1,8 @@
 import json
 import flask
 
+from util import dataUtil
+
 def user(endpoint):
     response = {
         "followCount": 0,
@@ -11,25 +13,21 @@ def user(endpoint):
     }
     with open('data/user/user.json', encoding='utf-8') as f:
         user = json.load(f)
-    response['userName'] = user['loginName']
-    response['lastAccessDate'] = user['lastLoginDate']
+    response['userName'] = dataUtil.getUserValue('loginName')
+    response['lastAccessDate'] = dataUtil.getUserValue('lastLoginDate')
 
     if endpoint.split('/')[-1] != user['id']:
         flask.abort(501, description='User does not exist')
 
-    with open('data/user/gameUser.json', encoding='utf-8') as f:
-        gameUser = json.load(f)
-    response['gameUser'] = gameUser
-    response['userRank'] = gameUser['level']
-    response['comment'] = gameUser['comment']
-    response['inviteCode'] = gameUser['inviteCode']
+    response['gameUser'] = dataUtil.readJson('data/user/gameUser.json')
+    response['userRank'] = dataUtil.getGameUserValue('level')
+    response['comment'] = dataUtil.getGameUserValue('comment')
+    response['inviteCode'] = dataUtil.getGameUserValue('inviteCode')
 
-    with open('data/user/userCardList.json', encoding='utf-8') as f:
-        userCardList = json.load(f)
-    response['userCardList'] = userCardList
-
-    for userCard in userCardList:
-        if userCard['id'] == gameUser['leaderId']:
+    response['userCardList'] = dataUtil.readJson('data/user/userCardList.json')
+    leaderId = dataUtil.getGameUserValue('leaderId')
+    for userCard in response['userCardList']:
+        if userCard['id'] == leaderId:
             response['leaderUserCard'] = userCard
             response['cardId'] = userCard['cardId']
             response['charaName'] = userCard['card']['cardName']
@@ -40,18 +38,10 @@ def user(endpoint):
             response['revision'] = userCard['revision']
             break
     
-    userDeck = {}
-    with open('data/user/userDeckList.json', encoding='utf-8') as f:
-        userDeckList = json.load(f)
-    for deck in userDeckList:
-        if deck['deckType'] == 20:
-            userDeck = deck
-    response['userDeck'] = userDeck
+    response['userDeck'] = dataUtil.getUserObject('userDeckList', 20)
 
     for key in ['userCharaList', 'userPieceList', 'userDoppelList', 'userArenaBattle']:
-        with open('data/user/' + key + '.json', encoding='utf-8') as f:
-            value = json.load(f)
-        response[key] = value
+        response[key] = dataUtil.readJson('data/user/'+ key + '.json')
 
     return flask.jsonify(response)
 

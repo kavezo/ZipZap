@@ -367,7 +367,7 @@ def draw():
         "gachaSchedule": chosenGacha,
         "gachaBeanKind": body['gachaBeanKind'],
         "bonusTimeFlg": False,
-        "createdAt": (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
+        "createdAt": newUserObjectUtil.nowstr()
     }
     print(gachaAnimation)
     dataUtil.setUserObject('gachaHistoryList', pullId, newHistory)

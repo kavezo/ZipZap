@@ -22,6 +22,7 @@ def createIndex(jsonpath, idFunc=idxFunc('id'), valFunc=INDEX_VALFUNC):
 def createIndexFromList(xs, idFunc=idxFunc('id'), valFunc=INDEX_VALFUNC):
     return {idFunc(x): valFunc(i, x) for i, x in enumerate(xs)}
 
+masterBattles = createIndex('data/questBattleList.json', idxFunc('questBattleId'), ITEM_VALFUNC)
 masterCards = createIndex('data/cards.json', idxFunc('charaId'), ITEM_VALFUNC)
 masterDoppels = createIndex('data/doppelList.json', valFunc=ITEM_VALFUNC)
 masterPieces = createIndex('data/pieces.json', idxFunc('pieceId'), ITEM_VALFUNC)
@@ -54,9 +55,7 @@ userIndices = {
     'userQuestAdventureList': createIndex('data/user/userQuestAdventureList.json', idxFunc('adventureId')),
     'userQuestBattleList': createIndex('data/user/userQuestBattleList.json', idxFunc('questBattleId')),
     'userSectionList': createIndex('data/user/userSectionList.json', idxFunc('sectionId')),
-    'userShopList': createIndex('data/user/userShopItemList.json', idxFunc('shopId')),
-    # [{itemId: index}, {itemId: index}]
-    'userShopItems': [createIndexFromList(shop['shopList']) for shop in createIndex('data/user/userShopItemList.json', idxFunc('shopId'), ITEM_VALFUNC)],
+    'userShopList': createIndex('data/user/userShopItemList.json', idxFunc('shopItemId')),
     'userStatusList': createIndex('data/user/userStatusList.json', idxFunc('statusId')),
     'userTotalChallengeList': createIndex('data/user/userTotalChallengeList.json', idxFunc('challengeId'))
 }
@@ -86,18 +85,6 @@ def getUserObject(listName, objectId):
     data = readJson(userPaths[listName])
     return data[idx]
 
-def getUserShopItem(shopId, itemId):
-    if not shopId in userIndices['userShopList']:
-        return None
-    shopIdx = userIndices['userShopList'][shopId]
-
-    if not itemId in userIndices['userShopItems'][shopIdx]:
-        return None
-    itemIdx = userIndices['userShopItems'][shopIdx][itemId]
-
-    data = readJson('data/user/userShopItemList.json')
-    return data[shopIdx][itemIdx]
-
 # Doesn't work for userLive2dList...we have to just avoid setting it using this
 def setUserObject(listName, objectId, objectData):
     path = userPaths[listName]
@@ -109,30 +96,6 @@ def setUserObject(listName, objectId, objectData):
     else:
         userIndices[listName][objectId] = len(data)
         data.append(objectData)
-
-    saveJson(path, data)
-    return data
-
-def setUserShopItem(shopId, itemId, itemData, shopData = None):
-    path = 'data/user/userShopItemList.json'
-    data = readJson(path)
-
-    shopIdToIdx = userIndices['userShopList']
-    if not shopId in shopIdToIdx or shopData is not None:
-        if shopData is None:
-            raise ValueError('Tried to set an item value in a nonexistent shop')
-        userIndices['userShopList'][shopId] = len(shopIdToIdx)
-        data.append(shopData)
-
-    shopIdx = userIndices['userShopList'][shopId]
-    itemIdToIdx = userIndices['userShopItems'][shopIdx]
-
-    if itemId in itemIdToIdx:
-        itemIdx = itemIdToIdx[itemId]
-        data[shopIdx][itemIdx] = itemData
-    else:
-        userIndices['userShopItems'][shopIdx][itemId] = len(itemIdToIdx)
-        data[shopIdx].append(itemData)
 
     saveJson(path, data)
     return data

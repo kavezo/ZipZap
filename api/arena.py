@@ -3,34 +3,18 @@ import flask
 from datetime import datetime
 from uuid import uuid1
 
+from util import dataUtil, newUserObjectUtil
+
 def arenaStart(response):
     body = flask.request.json
-    # with open('data/arenaStartDummy.json') as f:
-    #     dummyResponse=json.load(f)
-    # response["resultCode"]="success"
-    #response["userArenaBattleMatch"]=dummyResponse["userArenaBattleMatch"]
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
-
-    with open('data/user/gameUser.json', encoding='utf-8') as f:
-        userInfo = json.load(f)
-
-    with open('data/user/userDeckList.json', encoding='utf-8') as f:
-        userDeckList = json.load(f)
-    chosenTeam = None
-    for userDeck in userDeckList:
-        if userDeck['deckType'] == 21:
-                chosenTeam = userDeck
+    
+    chosenTeam = dataUtil.getUserObject('userDeckList', 21)
     if chosenTeam is None:
         flask.abort(400, '{"errorTxt": "You don\'t have a mirrors team...","resultCode": "error","title": "Error"}')
 
-    with open('data/user/userFormationSheetList.json', encoding='utf-8') as f:
-        formations = json.load(f)
-    chosenFormation = None
-    for formation in formations:
-        if formation['formationSheetId'] == chosenTeam['formationSheetId']:
-            chosenFormation = formation
+    chosenFormation = dataUtil.getUserObject('userFormationSheetList', chosenTeam['formationSheetId'])
     if chosenFormation is None:
-        flask.abort(500, '{"errorTxt": "You don\'t have that formation.","resultCode": "error","title": "Error"}')
+        flask.abort(400, '{"errorTxt": "You don\'t have that formation.","resultCode": "error","title": "Error"}')
 
     battleId = str(uuid1())
     userQuestBattleResult = {
@@ -49,7 +33,7 @@ def arenaStart(response):
             "clearedMission3": False,
             "connectNum": 0,
             "continuedNum": 0,
-            "createdAt": nowstr,
+            "createdAt": newUserObjectUtil.nowstr(),
             "deadNum": 0,
             "deckType": 21,
             "diskAcceleNum": 0,
@@ -64,7 +48,7 @@ def arenaStart(response):
             "formationSheetId": chosenTeam['formationSheetId'],
             "formationSheet": chosenFormation,
             "id": battleId,
-            "level": userInfo['level'],
+            "level": dataUtil.getUserValue('level'),
             "magiaNum": 0,
             "nativeClearTime": 0,
             "questBattleStatus": "CREATED",
@@ -72,7 +56,7 @@ def arenaStart(response):
             "serverClearTime": 0,
             "skillNum": 0,
             "turns": 0,
-            "userId": userInfo['userId']
+            "userId": dataUtil.userId
         }
 
     for i in range(5):
@@ -82,14 +66,14 @@ def arenaStart(response):
     
     userArenaBattleResult = {
         "userQuestBattleResultId": battleId,
-        "userId": userInfo['userId'],
+        "userId": dataUtil.userId,
         "opponentUserId": body['opponentUserId'],
         "arenaBattleType": "FREE_RANK",
         "arenaBattleStatus": "CREATED",
         "arenaBattleOpponentType": "SAME",
         "numberOfConsecutiveWins": 0,
         "point": 0,
-        "createdAt": nowstr
+        "createdAt": newUserObjectUtil.nowstr()
     }
 
     response.update({
@@ -98,23 +82,8 @@ def arenaStart(response):
         'userArenaBattleResult': [userArenaBattleResult]
     })
 
-    with open('data/user/userQuestBattleResult.json', 'w+', encoding='utf-8') as f:
-        json.dump(userQuestBattleResult, f, ensure_ascii=False)
-    
-    with open('data/user/userArenaBattleResult.json', 'w+', encoding='utf-8') as f:
-        json.dump(userArenaBattleResult, f, ensure_ascii=False)
-
-    # response["userArenaBattleResultList"]=dummyResponse["userArenaBattleResultList"]
-    # response["userArenaBattleResultList"][0]["createdAt"]=nowstr
-    # response["userQuestBattleResultList"]=dummyResponse["userQuestBattleResultList"]
-    # response["userQuestBattleResultList"][0]["createdAt"]=nowstr
-    # print(response)
-    # with open('data/user/userQuestBattleResult.json', 'w+', encoding='utf-8') as f:
-    #     json.dump(response["userQuestBattleResultList"][0], f, ensure_ascii=False)
-    
-    # #This actually matches with UserArenaBattle in /native/send/result
-    # with open('data/user/userArenaBattleResult.json', 'w+', encoding='utf-8') as f:
-    #     json.dump(response["userArenaBattleResultList"][0], f, ensure_ascii=False)
+    dataUtil.saveJson('data/user/userQuestBattleResult.json', userQuestBattleResult)
+    dataUtil.saveJson('data/user/userArenaBattleResult.json', userArenaBattleResult)
 
 def arenaReload(response):
 #same as page/ArenaFreeRank?

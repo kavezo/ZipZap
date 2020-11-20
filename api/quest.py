@@ -6,7 +6,7 @@ from uuid import uuid1
 import numpy as np
 
 from api import userCard
-from util import dataUtil
+from util import dataUtil, newUserObjectUtil
 
 def sendArena(request,response):
     """
@@ -20,14 +20,10 @@ def sendArena(request,response):
         userQuestBattleResultList (should be in response),
 
     """
-    with open('data/user/userArenaBattle.json', encoding='utf-8') as f:
-        userArenaBattle=json.load(f)
+    userArenaBattle=dataUtil.readJson('data/user/userArenaBattle.json')
 
     #only mirror coins please
-    with open('data/user/userItemList.json', encoding='utf-8') as f:
-        allItems = json.load(f)
-
-    coins=next(filter(lambda item: item['itemId']=='ARENA_COIN',allItems))
+    coins = dataUtil.getUserObject('userItemList', 'ARENA_COIN')
 
     if (request['result']=='SUCCESSFUL'):
         arenaBattleStatus='WIN'
@@ -37,9 +33,7 @@ def sendArena(request,response):
         coins['quantity']+=1
 
     #updating coins
-    with open('data/user/userItemList.json', 'w+', encoding='utf-8') as f:
-        json.dump(allItems, f, ensure_ascii=False)
-
+    dataUtil.setUserObject('userItemList', 'ARENA_COIN', coins)
     userItemList=[coins]
 
     userDailyChallengeList=[] #TODO
@@ -60,7 +54,7 @@ def sendArena(request,response):
         'resultCode': resultCode,
         'userDailyChallengeList': userDailyChallengeList,
     })
-
+    print(json.dumps(response))
     return flask.jsonify(response)
 
 def giveUserExp(battle):
@@ -143,7 +137,7 @@ def giveMegucaExp(body, battle):
 
 def send():
     body = flask.request.json
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
+    nowstr = newUserObjectUtil.nowstr()
 
     battle = dataUtil.readJson('data/user/userQuestBattleResult.json')
 
@@ -351,6 +345,7 @@ def battleTranslate(battleData, userCard = None, userPieces = []):
         currMemoriae = piecesToMemoriae(userPieces)
         battleData['memoria'] += currMemoriae
         return currMemoriae
+    return []
 
 def separateEnemyInfo(enemy):
     response = {key: [] for key in ['artList', 'magiaList', 'doppelList', 'memoria']}
@@ -379,7 +374,8 @@ def separateEnemyInfo(enemy):
 def getQuestData(battleId, args):
     waveList = [x for x in dataUtil.masterWaves[battleId]]
     allQuestEnemies = dataUtil.readJson('data/uniqueQuestEnemies.json')
-    for i, wave in enumerate(waveList):
+    for i, mutableWave in enumerate(waveList):
+        wave = copy.deepcopy(mutableWave)
         if not wave['boss']:
             enemyPool = []
             for enemyInfo in wave['enemyList']:
@@ -402,9 +398,6 @@ def getQuestData(battleId, args):
             waveList[i]['enemyList'] = finalEnemies
         else:
             for j, enemyInfo in enumerate(wave['enemyList']):
-                if not 'id' in enemyInfo:
-                    # no idea why, but it's filled out already sometimes?
-                    continue
                 charId, idx = enemyInfo['id'].split('-')
                 enemy, response = separateEnemyInfo(allQuestEnemies[charId][int(idx)])
                 for key in response.keys():
@@ -582,61 +575,36 @@ def get():
         'isHalfSkill': False,
         'webData': webData
     }
-    print(json.dumps(response))
     return flask.jsonify(response)
 
 def start():    
     body = flask.request.json
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
+    nowstr = newUserObjectUtil.nowstr()
 
-    with open('data/user/gameUser.json', encoding='utf-8') as f:
-        userInfo = json.load(f)
+    userQuestInfo = dataUtil.getUserObject('userQuestBattleList', body['questBattleId'])
 
-    with open('data/user/userQuestBattleList.json', encoding='utf-8') as f:
-        userQuestBattleList = json.load(f)
+    if userQuestInfo is None:
+        battle = dataUtil.masterBattles[body['questBattleId']]
+        userQuestInfo = {
+            "userId": dataUtil.userId,
+            "questBattleId": battle['questBattleId'],
+            "questBattle": battle,
+            "cleared": True,
+            "missionStatus1": "NON_CLEAR",
+            "missionStatus2": "NON_CLEAR",
+            "missionStatus3": "NON_CLEAR",
+            "rewardDone": False,
+            "clearCount": 0,
+            "maxDamage": 0,
+            "createdAt": nowstr
+        }
+        dataUtil.setUserObject('userQuestBattleList', body['questBattleId'], userQuestInfo)
 
-    userQuestInfo = {}
-    for userQuestBattle in userQuestBattleList:
-        if userQuestBattle['questBattleId'] == body['questBattleId']:
-            userQuestInfo = userQuestBattle
-
-    if userQuestInfo == {}:
-        with open('data/questBattleList.json', encoding='utf-8') as f:
-            allBattles = json.load(f)
-        for battle in allBattles: 
-            if battle['questBattleId'] == body['questBattleId']:
-                userQuestInfo = {
-                    "userId": dataUtil.userId,
-                    "questBattleId": battle['questBattleId'],
-                    "questBattle": battle,
-                    "cleared": True,
-                    "missionStatus1": "NON_CLEAR",
-                    "missionStatus2": "NON_CLEAR",
-                    "missionStatus3": "NON_CLEAR",
-                    "rewardDone": False,
-                    "clearCount": 0,
-                    "maxDamage": 0,
-                    "createdAt": nowstr
-                }
-        userQuestBattleList.append(userQuestInfo)
-        with open('data/user/userQuestBattleList.json', 'w+', encoding='utf-8') as f:
-            json.dump(userQuestBattleList, f, ensure_ascii=False)
-
-    with open('data/user/userDeckList.json', encoding='utf-8') as f:
-        userDeckList = json.load(f)
-    chosenTeam = None
-    for userDeck in userDeckList:
-        if userDeck['deckType'] == body['deckType']:
-                chosenTeam = userDeck
+    chosenTeam = dataUtil.getUserObject('userDeckList', body['deckType'])
     if chosenTeam is None:
         flask.abort(400, '{"errorTxt": "The team doesn\'t exist...","resultCode": "error","title": "Error"}')
 
-    with open('data/user/userFormationSheetList.json', encoding='utf-8') as f:
-        formations = json.load(f)
-    chosenFormation = None
-    for formation in formations:
-        if formation['formationSheetId'] == chosenTeam['formationSheetId']:
-            chosenFormation = formation
+    chosenFormation = dataUtil.getUserObject('userFormationSheetList', chosenTeam['formationSheetId'])
     if chosenFormation is None:
         flask.abort(500, '{"errorTxt": "You don\'t have that formation.","resultCode": "error","title": "Error"}')
 
@@ -673,7 +641,7 @@ def start():
             "helpBondsPt": 0,
             "helpPosition": chosenTeam['questPositionHelper'],
             "id": str(uuid1()),
-            "level": userInfo['level'],
+            "level": dataUtil.getUserValue('level'),
             "magiaNum": 0,
             "nativeClearTime": 0,
             "questBattle": userQuestInfo['questBattle'],
@@ -701,8 +669,7 @@ def start():
         "userQuestBattleResultList": [userQuestBattleResult]
     }
 
-    with open('data/user/userQuestBattleResult.json', 'w+', encoding='utf-8') as f:
-        json.dump(userQuestBattleResult, f, ensure_ascii=False)
+    dataUtil.saveJson('data/user/userQuestBattleResult.json', userQuestBattleResult)
 
     return flask.jsonify(resultdict)
 
