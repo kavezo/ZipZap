@@ -123,3 +123,34 @@ def createUserDoppel(doppelId):
         "doppel": doppel,
         "createdAt": nowstr()
     }, dataUtil.getUserObject('userDoppelList', doppelId) is not None
+
+def createUserFormation(formationId):
+    formation = dataUtil.masterFormations[formationId]
+    return {
+        "userId": dataUtil.userId,
+        "formationSheetId": formationId,
+        "createdAt": nowstr(),
+        "formationSheet": formation
+    }, dataUtil.getUserObject('userFormationSheetList', formationId) is not None
+
+def createUserPiece(pieceId):
+    found = False
+    for userPiece in dataUtil.readJson('data/user/userPieceList.json'):
+        if userPiece['pieceId'] == pieceId:
+            found = True
+    piece = dataUtil.masterPieces[pieceId]
+    return {
+        "id": str(uuid1()),
+        "userId": dataUtil.userId,
+        "pieceId": piece['pieceId'],
+        "piece": piece,
+        "level": 1,
+        "experience": 0,
+        "lbCount": 0,
+        "attack": piece['attack'],
+        "defense": piece['defense'],
+        "hp": piece['hp'],
+        "protect": False,
+        "archive": False,
+        "createdAt": nowstr()
+    }, found
