@@ -71,6 +71,7 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
+    [ -f /ZipZap/.no_provision ] && exit 0
     /ZipZap/setupServer.sh
   SHELL
 end
