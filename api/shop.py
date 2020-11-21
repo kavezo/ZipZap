@@ -14,6 +14,7 @@ def getCard(charaNo):
 def getFormation(formationId):
     userFormation, exists = newUserObjectUtil.createUserFormation(formationId)
     if exists: return {}
+    dataUtil.setUserObject('userFormationSheetList', formationId, userFormation)
     return {'userFormationSheetList': [userFormation]}
 
 def getGift(giftId, amount):
@@ -93,9 +94,11 @@ def obtain(item, body, args):
     elif item['shopItemType'] == 'GEM':
         args.update(getGems(item['genericId'], body['num']))
     elif item['shopItemType'] == 'GIFT':
-        args.update(getGift(int(item['gift']['rewardCode'].split('_')[1]), body['num']*int(item['rewardCode'].split('_')[-1])))
+        newGifts = getGift(int(item['gift']['rewardCode'].split('_')[1]), body['num']*int(item['rewardCode'].split('_')[-1]))
+        args['userGiftList'] = args.get('userGiftList', []) + newGifts['userGiftList']
     elif item['shopItemType'] == 'ITEM':
-        args.update(getItem(item['item']['itemCode'], body['num']*int(item['rewardCode'].split('_')[-1]) if 'rewardCode' in item else 1, item['item']))
+        newItems = getItem(item['item']['itemCode'], body['num']*int(item['rewardCode'].split('_')[-1]) if 'rewardCode' in item else 1, item['item'])
+        args['userItemList'] = args.get('userItemList', []) + newItems['userItemList']
     elif item['shopItemType'] == 'LIVE2D':
         args.update(getLive2d(item['chara']['id'], item['live2d']['live2dId'], item['live2d']))
     elif item['shopItemType'] in ['MAXPIECE', 'PIECE']:

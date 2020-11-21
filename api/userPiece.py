@@ -3,6 +3,8 @@ import json
 import math
 import numpy as np
 
+from util import dataUtil, newUserObjectUtil
+
 expByLevel = [0, 100, 210, 330, 460, 600, 760, 950, 1180, 1460, 1800, 2210, 2690, 3240, 3860, 4550, 5310, 6140, 7040, 8010, 9050, 10160, 11340, 12590, 13910, 15300, 16760, 18290, 19890, 21560, 23300, 25110, 26990, 28940, 30960, 33050, 35210, 37440, 39740, 42110, 44550, 47060, 49640, 52290, 55010, 57800, 60660, 63590, 66590, 69660]
 dExpdLevel = [0] + [b-a for a,b in zip(expByLevel[:-1], expByLevel[1:])]
 
@@ -40,7 +42,7 @@ def getStats(userPiece, level):
 
 priceArr = [100, 300, 1E3, 5E3, 2E3]
 def priceCalc(rank, lbNum):
-    return priceArr[int(rank.split("_")[-1])] * min(lbNum, 4)
+    return priceArr[int(rank.split("_")[-1])-1] * (min(lbNum, 4)+1)
 
 maxLvlByRank = {"RANK_1": 10, "RANK_2": 15, "RANK_3": 20, "RANK_4": 30, "RANK_5": 50}
 
@@ -82,21 +84,11 @@ def compose():
     body = flask.request.json
     targetUserPieceId = body['baseUserPieceId']
 
-    with open('data/user/userPieceList.json', encoding='utf-8') as f:
-        userPieceList = json.load(f)
-
-    targetUserPiece = {}
-    targetUserPieceIdx = None
+    targetUserPiece = dataUtil.getUserObject('userPieceList', targetUserPieceId)
     memoriaToSpend = []
-    removeUserPieceIdxs = []
-    for i, userPiece in enumerate(userPieceList):
-        if userPiece['id'] == targetUserPieceId:
-            targetUserPiece = userPiece
-            targetUserPieceIdx = i
-        for materialPieceId in body['materialUserPieceIdList']:
-            if userPiece['id'] == materialPieceId:
-                memoriaToSpend.append(userPiece)
-                removeUserPieceIdxs.append(i)
+    
+    for materialPieceId in body['materialUserPieceIdList']:
+        memoriaToSpend.append(dataUtil.getUserObject('userPieceList', materialPieceId))
 
     if targetUserPiece == {}:
         flask.abort(400, description='Tried to level up a memoria you don\'t have...')
@@ -108,42 +100,35 @@ def compose():
     isLimitBreak = False
     for memoria in memoriaToSpend:
         if memoria['pieceId'] == targetUserPiece['pieceId'] or \
-        ('pieceKind' in userPiece['piece'] and userPiece['piece']['pieceKind']=='LIMIT_BREAK'):
+        ('pieceKind' in memoria['piece'] and memoria['piece']['pieceKind']=='LIMIT_BREAK'):
             isLimitBreak = True
     if isLimitBreak:
         targetUserPiece['lbCount'] += len(memoriaToSpend)
 
-    userPieceList[targetUserPieceIdx] = targetUserPiece
+    dataUtil.setUserObject('userPieceList', targetUserPieceId, targetUserPiece)
 
     # modify CC
     totalCC = 0
-    for i in reversed(removeUserPieceIdxs):
-        totalCC += priceCalc(userPieceList[i]['piece']['rank'], userPieceList[i]['lbCount'])
-        del userPieceList[i]
+    for memoria in memoriaToSpend:
+        totalCC += priceCalc(memoria['piece']['rank'], memoria['lbCount'])
+        dataUtil.deleteUserObject('userPieceList', memoria['id'])
 
-    with open('data/user/gameUser.json', encoding='utf-8') as f:
-        gameUser = json.load(f)
-    gameUser['riche'] -= totalCC
-    if gameUser['riche'] < 0:
+    currCC = dataUtil.getGameUserValue('riche')
+    if currCC < totalCC:
         raise ValueError("Tried to use more cc than you have...")
+    gameUser = dataUtil.setGameUserValue('riche', currCC-totalCC)
 
-    with open('data/user/gameUser.json', 'w+', encoding='utf-8') as f:
-        json.dump(gameUser, f, ensure_ascii=False)
-
-    # save meme info
-    with open('data/user/userPieceList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userPieceList, f, ensure_ascii=False)
-
-    with open('data/user/userPieceCollectionList.json', encoding='utf-8') as f:
-        pieceCollection = json.load(f)
-    for i, piece in enumerate(pieceCollection):
-        if piece['pieceId'] == targetUserPiece['pieceId']:
-            if targetUserPiece['level'] > piece['maxLevel']:
-                pieceCollection[i]['maxLevel'] = targetUserPiece['level']
-            if targetUserPiece['lbCount'] > piece['maxLbCount']:
-                pieceCollection[i]['maxLbCount'] = targetUserPiece['lbCount']
-    with open('data/user/userPieceCollectionList.json', 'w+', encoding='utf-8') as f:
-        json.dump(pieceCollection, f, ensure_ascii=False)
+    # It looks like the archive ignores this information and shows everything max leveld and mlb'd...
+    # with open('data/user/userPieceCollectionList.json', encoding='utf-8') as f:
+    #     pieceCollection = json.load(f)
+    # for i, piece in enumerate(pieceCollection):
+    #     if piece['pieceId'] == targetUserPiece['pieceId']:
+    #         if targetUserPiece['level'] > piece['maxLevel']:
+    #             pieceCollection[i]['maxLevel'] = targetUserPiece['level']
+    #         if targetUserPiece['lbCount'] > piece['maxLbCount']:
+    #             pieceCollection[i]['maxLbCount'] = targetUserPiece['lbCount']
+    # with open('data/user/userPieceCollectionList.json', 'w+', encoding='utf-8') as f:
+    #     json.dump(pieceCollection, f, ensure_ascii=False)
 
     response = {
         'resultCode': 'success',
@@ -184,28 +169,33 @@ def compose():
 def setArchive(isArchive):
     body = flask.request.json
 
-    with open('data/user/userPieceList.json', encoding='utf-8') as f:
-        userPieceList = json.load(f)
+    for pieceId in body['archiveUserPieceIdList']:
+        targetUserPiece = dataUtil.getUserObject('userPieceList', pieceId)
+        if targetUserPiece is None:
+            flask.abort(400, description='Tried to ' + ('' if isArchive else 'un') +
+                                                                        'archive a memoria you don\'t have...')
 
-    targetUserPiece = {}
-    targetUserPieceIdx = 0
-    for i, userPiece in enumerate(userPieceList):
-        if userPiece['id'] == body['archiveUserPieceIdList'][0]:
-            targetUserPiece = userPiece
-            targetUserPieceIdx = i
-
-    if targetUserPiece == {}:
-        flask.abort(400, description='Tried to ' + ('' if isArchive else 'un') +
-                                                                    'archive a memoria you don\'t have...')
-
-    targetUserPiece['archive'] = isArchive
-    userPieceList[targetUserPieceIdx] = targetUserPiece
-    with open('data/user/userPieceList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userPieceList, f, ensure_ascii=False)
+        targetUserPiece['archive'] = isArchive
+        dataUtil.setUserObject('userPieceList', pieceId, targetUserPiece)
 
     response = {
         'resultCode': 'success',
         'userPieceList': [targetUserPiece]
+    }
+    return flask.jsonify(response)
+
+def sale():
+    body = flask.request.json
+    totalCC = 0
+    for userPieceId in body['saleUserPieceIdList']:
+        soldMemoria = dataUtil.getUserObject('userPieceList', userPieceId)
+        totalCC += priceCalc(soldMemoria['piece']['rank'], soldMemoria['lbCount'])
+        dataUtil.deleteUserObject('userPieceList', soldMemoria['id'])
+    
+    gameUser = dataUtil.setGameUserValue('riche', dataUtil.getGameUserValue('riche')+totalCC)
+    response = {
+        'resultCode': 'success',
+        'gameUser': gameUser
     }
     return flask.jsonify(response)
 
@@ -216,6 +206,8 @@ def handleUserPiece(endpoint):
         return setArchive(True)
     elif endpoint.endswith('unarchive'):
         return setArchive(False)
+    elif endpoint.endswith('sale'):
+        return sale()
     else:
         print('userPiece/'+endpoint)
         flask.abort(501, description="Not implemented")

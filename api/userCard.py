@@ -239,7 +239,6 @@ def customize():
 
     # set info about chara
     targetUserCard['customized'+str(targetMatPos)] = True
-    cardInfo = {'customized'+str(targetMatPos): True}
     dataUtil.setUserObject('userCardList', targetUserCardId, targetUserCard)
 
     # spend mats
