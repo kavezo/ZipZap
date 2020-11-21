@@ -1,21 +1,18 @@
 import json
 import flask
 
+from util import dataUtil
+
 def setLive2d():
     body = flask.request.json
-    with open('data/user/userCharaList.json', encoding='utf-8') as f:
-        userCharaList = json.load(f)
 
     response = {
         "resultCode": "success"
     }
-    for i in range(len(userCharaList)):
-        if userCharaList[i]['charaId'] == body['charaId']:
-            userCharaList[i]['live2dId'] = body['live2dId']
-            response['userCharaList'] = [userCharaList[i]]
-
-    with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userCharaList, f, ensure_ascii=False)
+    userChara = dataUtil.getUserObject('userCharaList', body['charaId'])
+    userChara['live2dId'] = body['live2dId']
+    response['userCharaList'] = [userChara]
+    dataUtil.setUserObject('userCharaList', body['charaId'], userChara)
 
     return flask.jsonify(response)
 

@@ -1,47 +1,40 @@
 import json
 import flask
 
+from util import dataUtil
+
 def sale():
     body = flask.request.json
     charaId = body['charaId']
     amount = body['num']
 
-    with open('data/user/userCharaList.json', encoding='utf-8') as f:
-        userCharaList = json.load(f)
-
     rarity = 0
-    saleItemId = None
     responseCharaList = []
-    for i in range(len(userCharaList)):
-        if userCharaList[i]['charaId'] == charaId:
-            userCharaList[i]['lbItemNum'] -= amount
-            rarity = int(userCharaList[i]['chara']['defaultCard']['rank'][-1])
-            saleItemId = userCharaList[i]['chara']['maxSaleItemId'] if 'maxSaleItemId' in userCharaList[i]['chara'] \
-                else userCharaList[i]['chara']['saleItemId']
-            responseCharaList.append(userCharaList[i])
-            break
-        if userCharaList[i]['lbItemNum'] < 0:
-            flask.abort(400, description='{"errorTxt": "You don\'t have that many gems to sell >:(","resultCode": "error","title": "Error"}')
-            return
-
+    userChara = dataUtil.getUserObject('userCharaList', charaId)
+    userChara['lbItemNum'] -= amount
+    rarity = int(userChara['chara']['defaultCard']['rank'][-1])
+    responseCharaList.append(userChara)
+    if userChara['lbItemNum'] < 0:
+        flask.abort(400, description='{"errorTxt": "You don\'t have that many gems to sell >:(","resultCode": "error","title": "Error"}')
+        return
+    
+    dataUtil.setUserObject('userCharaList', charaId, userChara)
+    
     gemsReceived = [1, 1, 3, 10]
     responseItemList = []
-    with open('data/user/userItemList.json', encoding='utf-8') as f:
-        itemList = json.load(f)
-    for i in range(len(itemList)):
-        if itemList[i]['itemId'] == 'PRISM':
-            itemList[i]['quantity'] += amount * gemsReceived[rarity-1]
-            responseItemList.append(itemList[i])
-    if rarity == 4:
-        for i in range(len(itemList)):
-            if itemList[i]['itemId'] == 'DESTINY_CRYSTAL':
-                itemList[i]['quantity'] += amount
-                responseItemList.append(itemList[i])
+    userItem = dataUtil.getUserObject('userItemList', 'PRISM')
+    userItem['quantity'] += amount * gemsReceived[rarity-1]
+    responseItemList.append(userItem)
 
-    with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userCharaList, f, ensure_ascii=False)
-    with open('data/user/userItemList.json', 'w+', encoding='utf-8') as f:
-        json.dump(itemList, f, ensure_ascii=False)
+    dataUtil.setUserObject('userItemList', 'PRISM', userItem)
+
+    if rarity == 4:
+        print('selling for crystal')
+        userCrystal = dataUtil.getUserObject('userItemList', 'DESTINY_CRYSTAL')
+        userCrystal['quantity'] += amount
+        responseItemList.append(userCrystal)
+
+        dataUtil.setUserObject('userItemList', 'DESTINY_CRYSTAL', userCrystal)
     
     response = {
         "resultCode": "success",
@@ -62,22 +55,16 @@ def visualize():
     for i in range(len(userCardList)):
         if userCardList[i]['card']['charaNo'] == body['charaId']:
             userCardList[i]['displayCardId'] = body['displayCardId']
-            response['userCardList'] = userCardList
+            response['userCardList'] = [userCardList[i]]
 
     with open('data/user/userCardList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCardList, f, ensure_ascii=False)
 
-    with open('data/user/userCharaList.json', encoding='utf-8') as f:
-        userCharaList = json.load(f)
-
-    for i in range(len(userCharaList)):
-        if userCharaList[i]['charaId'] == body['charaId']:
-            userCharaList[i]['commandVisualId'] = body['commandVisualId']
-            userCharaList[i]['commandVisualType'] = body['commandVisualType']
-            response['userCharaList'] = [userCharaList[i]]
-
-    with open('data/user/userCharaList.json', 'w+', encoding='utf-8') as f:
-        json.dump(userCharaList, f, ensure_ascii=False)
+    userChara = dataUtil.getUserObject('userCharaList', body['charaId'])
+    userChara['commandVisualId'] = body['commandVisualId']
+    userChara['commandVisualType'] = body['commandVisualType']
+    response['userCharaList'] = [userChara]
+    dataUtil.setUserObject('userCharaList', body['charaId'], userChara)
 
     return flask.jsonify(response)
     
