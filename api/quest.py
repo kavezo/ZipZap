@@ -580,7 +580,7 @@ def get():
 def start():    
     body = flask.request.json
     nowstr = newUserObjectUtil.nowstr()
-
+    
     userQuestInfo = dataUtil.getUserObject('userQuestBattleList', body['questBattleId'])
 
     if userQuestInfo is None:
