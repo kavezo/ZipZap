@@ -51,8 +51,10 @@ def arenaFreeRank(response):
 	}
 
 def arenaResult(response):
-    dummyResponse=dataUtil.readJson('data/arenaResultDummy.json')
-    response.update(dummyResponse)
+    body = flask.request.json
+    opponentId = body['strUserId']
+    opponentInfo = dataUtil.readJson('data/arenaEnemies/' + opponentId + '.json')
+    response.update({'userProfile': opponentInfo['opponentUserArenaBattleInfo']})
 
 def charaCollection(response):
     response['userSectionList'] = dataUtil.readJson('data/user/userSectionList.json')

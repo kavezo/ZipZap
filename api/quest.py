@@ -673,6 +673,20 @@ def start():
 
     return flask.jsonify(resultdict)
 
+def check():
+    userQuestBattleResult = dataUtil.readJson('data/user/userQuestBattleResult.json')
+    userSection = dataUtil.getUserObject('userSectionList', userQuestBattleResult['questBattle']['sectionId'])
+    response = {
+        'resultCode': 'success',
+        'gameUser': dataUtil.readJson('data/user/gameUser.json'), 
+        'user': dataUtil.readJson('data/user/user.json'),
+        'userQuestBattleResultList': [userQuestBattleResult],
+        'userQuestBattleList': [dataUtil.getUserObject('userQuestBattleList', userQuestBattleResult['questBattleId'])],
+        'userSectionList': [userSection],
+        'userChapterList': [dataUtil.getUserObject('userChapterList', userSection['section']['genericId'])]
+    }
+    return flask.jsonify(response)
+
 def handleQuest(endpoint):
     if endpoint.startswith('start'):
         return start()
@@ -680,6 +694,8 @@ def handleQuest(endpoint):
         return get()
     elif endpoint.startswith('native/result/send'):
         return send()
+    elif endpoint.startswith('native/resume/check'):
+        return check()
     else:
         print('quest/'+endpoint)
         flask.abort(501, description="Not implemented")
