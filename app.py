@@ -4,6 +4,8 @@ app.config['JSON_AS_ASCII'] = False
 
 import os
 import shutil
+import webcache
+
 if not os.path.exists('./data/user/'):
     print('Copying over default user...')
     shutil.copytree('data/default_user', 'data/user')
@@ -46,6 +48,10 @@ def dummysearch(endpoint):
         "timed_out": False,
         "took": 2
     })
+
+@app.route('/file/<path:path>')
+def getFile(path):
+    return webcache.getFile(path)
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1')
