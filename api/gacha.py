@@ -151,6 +151,47 @@ def addGem(gem):
     dataUtil.setUserObject('userItemList', gem['itemCode'], item)
     return item
 
+def addStory(charaId):
+    existingSections = dataUtil.listUserObjectKeys('userSectionList')
+    validSections = dataUtil.masterSections.keys()
+    userSectionDict = {}
+    for i in range(4):
+        sectionId = '3{0}{1}'.format(charaId, i+1)
+        if sectionId in existingSections: continue
+        if sectionId in validSections:
+            userSectionDict[sectionId] = {
+                "userId": dataUtil.userId,
+                "sectionId": sectionId,
+                "section": dataUtil.masterSections[sectionId],
+                "canPlay": True, #str(sectionId).endswith('1'),
+                "cleared": False,
+                "createdAt": newUserObjectUtil.nowstr()
+            }
+
+    existingBattles = dataUtil.listUserObjectKeys('userQuestBattleList')
+    validBattles = dataUtil.masterBattles.keys()
+    userQuestBattleDict = {}
+    for i in range(4):
+        for j in range(3):
+            battleId = '3{0}{1}{2}'.format(charaId, i+1, j+1)
+            if battleId in existingBattles: continue
+            if battleId in validBattles:
+                userQuestBattleDict[battleId] = {
+                    "userId": dataUtil.userId,
+                    "questBattleId": battleId,
+                    "questBattle": dataUtil.masterBattles[battleId],
+                    "cleared": True,
+                    "missionStatus1": "CLEARED",
+                    "missionStatus2": "CLEARED",
+                    "missionStatus3": "CLEARED",
+                    "rewardDone": True,
+                    "createdAt": newUserObjectUtil.nowstr()
+                }
+    
+    dataUtil.batchSetUserObject('userSectionList', userSectionDict)
+    dataUtil.batchSetUserObject('userQuestBattleList', userQuestBattleDict)
+    return list(userSectionDict.values()), list(userQuestBattleDict.values())
+
 def addMeguca(charaId):
     # TODO: get the story of the meguca
     userChara = dataUtil.getUserObject('userCharaList', charaId)
@@ -165,7 +206,7 @@ def addMeguca(charaId):
         dataUtil.saveJson('data/user/userLive2dList.json', dataUtil.readJson(live2dPath) + [userLive2d])
     else:
         userChara['lbItemNum'] += 1
-        dataUtil.setUserObject('userCharaList', userChara['userCardId'], userChara)
+        dataUtil.setUserObject('userCharaList', charaId, userChara)
 
         userCard = dataUtil.getUserObject('userCardList', userChara['userCardId'])
         userLive2d = dataUtil.getUserObject('userLive2dList', int(str(charaId)+'00'))
@@ -189,7 +230,6 @@ def addPiece(pieceId):
     
 def draw():
     # TODO: give a destiny gem if there's a dupe in the same multi-pull
-    # TODO: get stories
 
     # handle different types of gachas
     body = flask.request.json
@@ -233,6 +273,8 @@ def draw():
     userPieceList = []
     userLive2dList = []
     userItemList = []
+    userSectionList = None
+    userQuestBattleList = None
 
     responseList = []
 
@@ -252,6 +294,7 @@ def draw():
             if not foundExisting:
                 userCardList.append(card)
                 userLive2dList.append(live2d)
+                userSectionList, userQuestBattleList = addStory(result['charaId'])
             userCharaList.append(chara)
             directionType = 3
             if result['cardList'][0]['card']['rank'][-1] == "4":
@@ -354,6 +397,9 @@ def draw():
         "userItemList": userItemList,
         "userPieceList": userPieceList
     }
+
+    if userSectionList is not None: response['userSectionList'] = userSectionList
+    if userQuestBattleList is not None: response['userQuestBattleList'] = userQuestBattleList
 
     # add to user history
     pullId = str(uuid1())

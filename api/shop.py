@@ -8,8 +8,15 @@ from util import dataUtil, newUserObjectUtil
 
 # This will only get you the lowest rarity card, but that's what all shop megucas have been...
 def getCard(charaNo):
-    userCard, userChara, userLive2d, _ = gacha.addMeguca(charaNo)
-    return {'userCardList': [userCard], 'userCharaList': [userChara], 'userLive2dList': [userLive2d]}
+    userCard, userChara, userLive2d, foundExisting = gacha.addMeguca(charaNo)
+    response = {'userCardList': [userCard], 'userCharaList': [userChara], 'userLive2dList': [userLive2d]}
+
+    if not foundExisting:
+        userSectionList, userQuestBattleList = gacha.addStory(charaNo)
+        response['userSectionList'] = userSectionList
+        response['userQuestBattleList'] = userQuestBattleList
+        
+    return response
 
 def getFormation(formationId):
     userFormation, exists = newUserObjectUtil.createUserFormation(formationId)
@@ -92,7 +99,7 @@ def obtain(item, body, args):
     elif item['shopItemType'] == 'FORMATION_SHEET':
         args.update(getFormation(item['formationSheet']['id']))
     elif item['shopItemType'] == 'GEM':
-        args.update(getGems(item['genericId'], body['num']))
+        args.update(getGems(int(item['genericId']), body['num']))
     elif item['shopItemType'] == 'GIFT':
         newGifts = getGift(int(item['gift']['rewardCode'].split('_')[1]), body['num']*int(item['rewardCode'].split('_')[-1]))
         args['userGiftList'] = args.get('userGiftList', []) + newGifts['userGiftList']

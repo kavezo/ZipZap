@@ -46,9 +46,9 @@ userIndices = {
     'userGiftList': createIndex('data/user/userGiftList.json', idxFunc('giftId')),
     'userItemList': createIndex('data/user/userItemList.json', idxFunc('itemId')),
     'userLimitedChallengeList': createIndex('data/user/userLimitedChallengeList.json', idxFunc('challengeId')),
-    'userLive2dList': createIndex('data/user/userLimitedChallengeList.json', 
+    'userLive2dList': createIndex('data/user/userLive2dList.json', 
                 lambda x: int(str(x['charaId'])+x['live2dId']), 
-                valFunc=ITEM_VALFUNC),
+                valFunc=INDEX_VALFUNC),
     'userPieceList': createIndex('data/user/userPieceList.json'),
     'userPieceCollectionList': createIndex('data/user/userPieceCollectionList.json', idxFunc('pieceId')),
     'userPieceSetList': createIndex('data/user/userPieceSetList.json', idxFunc('setNum')),
@@ -62,6 +62,9 @@ userIndices = {
 
 # Doesn't work for userShopItemList, but we're having separate cases for that anyways
 userPaths = {key: 'data/user/'+key+'.json' for key in userIndices.keys()}
+
+def listUserObjectKeys(listName):
+    return set(userIndices[listName].keys())
 
 def deleteUserObject(listName, objectId):
     path = userPaths[listName]
@@ -97,6 +100,21 @@ def setUserObject(listName, objectId, objectData):
         userIndices[listName][objectId] = len(data)
         data.append(objectData)
 
+    saveJson(path, data)
+    return data
+
+def batchSetUserObject(listName, objectDict):
+    path = userPaths[listName]
+    data = readJson(path)
+    
+    for objectId, objectData in objectDict.items():
+        if objectId in userIndices[listName]:
+            idx = userIndices[listName][objectId]
+            data[idx] = objectData
+        else:
+            userIndices[listName][objectId] = len(data)
+            data.append(objectData)
+    
     saveJson(path, data)
     return data
 
