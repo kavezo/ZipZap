@@ -38,9 +38,10 @@ def getFile(path):
     print('getting file ' + path)
 
     RsH = {'Content-Type': 'application/json'}
+    RqH = {}
     if path in versions:
         RsH['ETag'] = versions[path][1]
-        RqH = {'If-None-Match': versions[path][1]}
+        RqH['If-None-Match'] = versions[path][1]
         cachefile = cacheFilePath(versions[path][1])
         if datetime.now() < datetime.fromisoformat(versions[path][0]):
             if os.path.exists(cachefile):
@@ -48,8 +49,6 @@ def getFile(path):
                     snaa_file = f.read()
                 return flask.make_response(snaa_file, RsH) # cached response
             flask.abort(500)
-    else:
-        RqH = {}
 
     snaa_response = requests.get(getRemoteUrl(path), headers=RqH, verify=False)
 
