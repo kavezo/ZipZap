@@ -15,7 +15,7 @@ if os.path.exists('cache/versions.json'):
 else:
     versions = {}
 
-EXPIRATION_TIME = timedelta(days=7)
+EXPIRATION_TIME = timedelta(hours=8)
 
 # doing this in a separate thread to speed things up
 def saveVersions():
@@ -23,49 +23,56 @@ def saveVersions():
     with open('cache/versions.json', 'w+') as f:
         json.dump(versions, f)
 
+def cacheFilePath(etag):
+    return 'cache/'+etag.strip('"')+'.snaa'
+
+def getRemoteUrl(path):
+    asset_type = 'snaa'
+    return 'https://endless.snaa.services'+re.sub(r"^(.*)\.json\.gz", r"/magica/resource/download/asset/"+asset_type+r"/\1.json.xz", path)
+
+def decodeFile(body):
+    return lzma.decompress(body)
+
 def getFile(path):
     global versions
     print('getting file ' + path)
 
+    RsH = {'Content-Type': 'application/json'}
+    RqH = {}
     if path in versions:
+        RsH['ETag'] = RqH['If-None-Match'] = versions[path][1]
+        cachefile = cacheFilePath(RsH['ETag'])
         if datetime.now() < datetime.fromisoformat(versions[path][0]):
-            if os.path.exists('cache/'+path):
-                return flask.send_from_directory('cache', path) 
+            if os.path.exists(cachefile):
+                with open(cachefile, 'rb') as f:
+                    snaa_file = f.read()
+                return flask.make_response(snaa_file, RsH) # cached response
             flask.abort(500)
-        headers = {'Etag': versions[path][1]}
-    else:
-        headers = {}
 
-    fullpath = 'https://endless.snaa.services/'+re.sub(r"^magica/resource/download/asset/master/(.*)\.json\.gz", r"magica/resource/download/asset/snaa/\1.json.xz", path)
-    snaa_response = requests.get(fullpath, headers=headers, verify=False)
+    snaa_response = requests.get(getRemoteUrl(path), headers=RqH, verify=False)
 
-    if snaa_response.status_code == 304 or ('Etag' in headers and snaa_response.headers['Etag'] == headers['Etag']):
-        if os.path.exists('cache/'+path):
-            with open('cache/'+path, 'rb') as f:
+    if snaa_response.status_code == 304 or ('If-None-Match' in RqH and snaa_response.headers['ETag'] == RqH['If-None-Match']):
+        RsH['ETag'] = snaa_response.headers['ETag']
+        cachefile = cacheFilePath(RsH['ETag'])
+        if os.path.exists(cachefile):
+            versions[path] = ((datetime.now() + EXPIRATION_TIME).isoformat(), RsH['ETag'])
+            Thread(target=saveVersions).start()
+            with open(cachefile, 'rb') as f:
                 snaa_file = f.read()
-            return flask.make_response(snaa_file, headers)
+            return flask.make_response(snaa_file, RsH) # cache renew
         flask.abort(500) # internal error, as we're supposed to have it, but we don't for some odd reason
 
     if snaa_response.status_code != 200:
-        flask.abort(snaa_response.status_code, headers=snaa_response.headers)
+        flask.abort(snaa_response.status_code) # 403/404 or something
 
-    # we don't do that here
-    #if 'Content-Encoding' in snaa_response.headers: headers['Content-Encoding'] = snaa_response.headers['Content-Encoding']
-    #if 'Content-Length' in snaa_response.headers: headers['Content-Length'] = snaa_response.headers['Content-Length']
+    snaa_file = decodeFile(snaa_response.content)
+    RsH['ETag'] = snaa_response.headers['Etag']
+    cachefile = cacheFilePath(RsH['ETag'])
 
-    snaa_file = lzma.decompress(snaa_response.content)
-
-    headers['Content-Type'] = 'application/json'
-    headers['Content-Length'] = len(snaa_file)
-    headers['Etag'] = snaa_response.headers['Etag']
-
-    dirs = 'cache/'+os.path.split(path)[0]
-    if not os.path.exists(dirs):
-        os.makedirs(dirs)
-    with open('cache/'+path, 'wb+') as f:
+    with open(cachefile, 'wb+') as f:
         f.write(snaa_file)
 
-    versions[path] = ((datetime.now() + EXPIRATION_TIME).isoformat(), snaa_response.headers['Etag'])
+    versions[path] = ((datetime.now() + EXPIRATION_TIME).isoformat(), RsH['ETag'])
     Thread(target=saveVersions).start()
 
-    return flask.make_response(snaa_file, headers)
+    return flask.make_response(snaa_file, RsH) # fresh file
