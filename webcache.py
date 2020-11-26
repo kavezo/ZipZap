@@ -4,7 +4,7 @@ import os
 import json
 import re
 import lzma
-from multiprocessing import Process
+from threading import Thread
 from datetime import datetime, timedelta
 
 if not os.path.exists('cache'):
@@ -41,7 +41,9 @@ def getFile(path):
 
     if snaa_response.status_code == 304 or ('Etag' in headers and snaa_response.headers['Etag'] == headers['Etag']):
         if os.path.exists('cache/'+path):
-            return flask.send_from_directory('cache', path) # TODO: headers
+            with open('cache/'+path, 'rb') as f:
+                snaa_file = f.read()
+            return flask.make_response(snaa_file, headers)
         flask.abort(500) # internal error, as we're supposed to have it, but we don't for some odd reason
 
     if snaa_response.status_code != 200:
@@ -64,8 +66,6 @@ def getFile(path):
         f.write(snaa_file)
 
     versions[path] = ((datetime.now() + EXPIRATION_TIME).isoformat(), snaa_response.headers['Etag'])
-    Process(target=saveVersions).start()
+    Thread(target=saveVersions).start()
 
     return flask.make_response(snaa_file, headers)
-
-
