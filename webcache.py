@@ -40,9 +40,8 @@ def getFile(path):
     RsH = {'Content-Type': 'application/json'}
     RqH = {}
     if path in versions:
-        RsH['ETag'] = versions[path][1]
-        RqH['If-None-Match'] = versions[path][1]
-        cachefile = cacheFilePath(versions[path][1])
+        RsH['ETag'] = RqH['If-None-Match'] = versions[path][1]
+        cachefile = cacheFilePath(RsH['ETag'])
         if datetime.now() < datetime.fromisoformat(versions[path][0]):
             if os.path.exists(cachefile):
                 with open(cachefile, 'rb') as f:
@@ -56,7 +55,7 @@ def getFile(path):
         RsH['ETag'] = snaa_response.headers['ETag']
         cachefile = cacheFilePath(RsH['ETag'])
         if os.path.exists(cachefile):
-            versions[path] = ((datetime.now() + EXPIRATION_TIME).isoformat(), snaa_response.headers['ETag'])
+            versions[path] = ((datetime.now() + EXPIRATION_TIME).isoformat(), RsH['ETag'])
             Thread(target=saveVersions).start()
             with open(cachefile, 'rb') as f:
                 snaa_file = f.read()
@@ -73,7 +72,7 @@ def getFile(path):
     with open(cachefile, 'wb+') as f:
         f.write(snaa_file)
 
-    versions[path] = ((datetime.now() + EXPIRATION_TIME).isoformat(), snaa_response.headers['ETag'])
+    versions[path] = ((datetime.now() + EXPIRATION_TIME).isoformat(), RsH['ETag'])
     Thread(target=saveVersions).start()
 
     return flask.make_response(snaa_file, RsH) # fresh file
