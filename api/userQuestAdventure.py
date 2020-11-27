@@ -1,5 +1,5 @@
 import flask
-from util import dataUtil
+from util import dataUtil as dt
 
 def regist():
     return flask.jsonify({
@@ -8,7 +8,7 @@ def regist():
                 "adventureId": flask.request.json['adventureId'],
                 "createdAt": "",
                 "skipped": False,
-                "userId": dataUtil.userId
+                "userId": dt.userId
             }
         ]
     })

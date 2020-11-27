@@ -4,7 +4,8 @@ import math
 import numpy as np
 from uuid import uuid1
 from datetime import datetime
-from util import dataUtil, newUserObjectUtil
+from util import dataUtil as dt
+from util import newUserObjectUtil as newtil
 
 # stolen from CardUtil.js
 expByLvl = [0, 110, 250, 430, 660, 950, 1310, 1750, 2280, 2910, 3640, 4470, 5400, 6430, 7560, 8790, 10120, 11550, 13080, 14710, 16440, 18270, 20200, 22230, 24360, 26590, 28920, 31350, 33880, 36510, 39240, 42070, 45E3, 48030, 51160, 54390, 57720, 61150, 64680, 68310, 72040, 75870, 79800, 83830, 87960, 92190, 96520, 100950, 105480, 110110, 114840, 119670, 124600, 129630, 134760, 139990, 145320, 150750, 156280, 161910, 167640, 173470, 179400, 185430, 191560, 197790, 204120, 210550, 217080, 223710, 230440, 237270, 244200, 251230, 258360, 265590, 272920, 280350, 287880, 295510,
@@ -132,11 +133,11 @@ def spend(items):
     for itemId, amount in items.items():
         if amount < 0:
             raise ValueError('Tried to spend a negative amount of mats >:(')
-        currItem = dataUtil.getUserObject('userItemList', itemId)
+        currItem = dt.getUserObject('userItemList', itemId)
         currItem['quantity'] -= amount
         if currItem['quantity'] < 0:
             raise ValueError('Tried to spend more mats than they have D:')
-        dataUtil.setUserObject('userItemList', itemId, currItem)
+        dt.setUserObject('userItemList', itemId, currItem)
         revisedItemList.append(currItem)
 
     return revisedItemList
@@ -147,20 +148,20 @@ def spendGift(gifts):
     for giftId, giftNum in gifts.items():
         if giftNum < 0:
             raise ValueError('Tried to spend a negative amount of mats >:(')
-        currGift = dataUtil.getUserObject('userGiftList', giftId)
+        currGift = dt.getUserObject('userGiftList', giftId)
         currGift['quantity'] -= giftNum
         if currGift['quantity'] < 0:
             raise ValueError('Tried to spend more mats than they have D:')
         revisedGiftList.append(currGift)
-        dataUtil.setUserObject('userGiftList', giftId, currGift)
+        dt.setUserObject('userGiftList', giftId, currGift)
 
     return revisedGiftList
 
 def getUserCard(cardId):
     charaId = int(str(cardId)[:-1])
-    userChara = dataUtil.getUserObject('userCharaList', charaId)
+    userChara = dt.getUserObject('userCharaList', charaId)
     userCardId = userChara['cardId']
-    return dataUtil.getUserObject('userCardList', userCardId)
+    return dt.getUserObject('userCardList', userCardId)
 
 def getFinalLevel(targetUserCard, exp):
     origLevel = targetUserCard['level']
@@ -178,7 +179,7 @@ def compose():
     body = flask.request.json
     targetUserCardId = body['userCardId']
     
-    targetUserCard = dataUtil.getUserObject('userCardList', targetUserCardId)
+    targetUserCard = dt.getUserObject('userCardList', targetUserCardId)
     if targetUserCard is None:
         flask.abort(400, description='Tried to level up a card you don\'t have...')
     
@@ -202,7 +203,7 @@ def compose():
     for key in stats.keys():
         targetUserCard[key] = stats[key]
 
-    dataUtil.setUserObject('userCardList', targetUserCardId, targetUserCard)
+    dt.setUserObject('userCardList', targetUserCardId, targetUserCard)
 
     # spend items
     try:
@@ -212,10 +213,10 @@ def compose():
 
     # modify CC
     cc = getCCAmount(rank, origLevel, body['useItem'])
-    currCC = dataUtil.getGameUserValue('riche')
+    currCC = dt.getGameUserValue('riche')
     if currCC < cc:
         flask.abort(400, description='{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}')
-    gameUser = dataUtil.setGameUserValue('riche', currCC-cc)
+    gameUser = dt.setGameUserValue('riche', currCC-cc)
     
     # make response
     response = {
@@ -231,7 +232,7 @@ def customize():
     body = flask.request.json
     targetUserCardId = body['userCardId']
     
-    targetUserCard = dataUtil.getUserObject('userCardList', targetUserCardId)
+    targetUserCard = dt.getUserObject('userCardList', targetUserCardId)
     if targetUserCard is None:
         flask.abort(400, description='Tried to level up a card you don\'t have...')
 
@@ -239,7 +240,7 @@ def customize():
 
     # set info about chara
     targetUserCard['customized'+str(targetMatPos)] = True
-    dataUtil.setUserObject('userCardList', targetUserCardId, targetUserCard)
+    dt.setUserObject('userCardList', targetUserCardId, targetUserCard)
 
     # spend mats
     matId = targetUserCard['card']['cardCustomize']['giftId'+str(targetMatPos)]
@@ -262,14 +263,14 @@ def evolve():
     body = flask.request.json
     targetUserCardId = body['userCardId']
     
-    targetUserCard = dataUtil.getUserObject('userCardList', targetUserCardId)
+    targetUserCard = dt.getUserObject('userCardList', targetUserCardId)
     if targetUserCard is None:
         print(targetUserCardId)
         flask.abort(400, description='{"errorTxt": "Tried to awaken a card you don\'t have...","resultCode": "error","title": "Error"}')
     charaId = targetUserCard['card']['charaNo']
 
     # get next card
-    masterCard = dataUtil.masterCards[charaId]
+    masterCard = dt.masterCards[charaId]
     if masterCard is None:
         flask.abort(400, description='{"errorTxt": "Tried to awaken a character that doesn\'t exist...","resultCode": "error","title": "Error"}')
     cardList = masterCard['cardList']
@@ -288,11 +289,11 @@ def evolve():
         flask.abort(400, description='{"errorTxt": "This character can\'t be awakened anymore...","resultCode": "error","title": "Error"}')
     
     # make new userCard and userChara
-    newUserCard, _, _ = newUserObjectUtil.createUserMeguca(charaId, newCard)
+    newUserCard, _, _ = newtil.createUserMeguca(charaId, newCard)
     newUserCard['revision'] = targetUserCard['revision']
     newUserCard['magiaLevel'] = targetUserCard['magiaLevel']
 
-    revisedUserChara = dataUtil.getUserObject('userCharaList', charaId)
+    revisedUserChara = dt.getUserObject('userCharaList', charaId)
     if revisedUserChara is None:
         flask.abort(400, description='Tried to awaken a character you don\'t have...')
     revisedUserChara['userCardId'] = newUserCard['id']
@@ -300,9 +301,9 @@ def evolve():
 
     # save user info
     targetUserCard['enabled'] = False
-    dataUtil.setUserObject('userCardList', targetUserCardId, targetUserCard)
-    dataUtil.setUserObject('userCardList', newUserCard['id'], newUserCard)
-    dataUtil.setUserObject('userCharaList', charaId, revisedUserChara)
+    dt.setUserObject('userCardList', targetUserCardId, targetUserCard)
+    dt.setUserObject('userCardList', newUserCard['id'], newUserCard)
+    dt.setUserObject('userCharaList', charaId, revisedUserChara)
     
     with open('data/user/userDeckList.json', encoding='utf-8') as f:
         decks = f.read()
@@ -312,10 +313,10 @@ def evolve():
 
     # spend CC
     ccByLevel = {'RANK_2': 10000, 'RANK_3': 100000, 'RANK_4': 300000, 'RANK_5': 1000000} # not sure about how much CC it takes to go from 2* to 3*
-    currCC = dataUtil.getGameUserValue('riche')
+    currCC = dt.getGameUserValue('riche')
     if currCC - ccByLevel[newCard['rank']] < 0:
         flask.abort(400, description='{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}')
-    gameUser = dataUtil.setGameUserValue('riche', currCC - ccByLevel[newCard['rank']])
+    gameUser = dt.setGameUserValue('riche', currCC - ccByLevel[newCard['rank']])
 
     # make response
     response = {
@@ -344,30 +345,30 @@ def limitBreak():
     targetUserCardId = body['userCardId']
     
     # edit userCard
-    targetUserCard = dataUtil.getUserObject('userCardList', targetUserCardId)
+    targetUserCard = dt.getUserObject('userCardList', targetUserCardId)
     if targetUserCard is None:
         print(targetUserCardId)
         flask.abort(400, description='{"errorTxt": "Tried to limit break a card you don\'t have...","resultCode": "error","title": "Error"}')
     targetUserCard['revision'] += 1
-    dataUtil.setUserObject('userCardList', targetUserCardId, targetUserCard)
+    dt.setUserObject('userCardList', targetUserCardId, targetUserCard)
     
     # edit userChara
     neededGems = {'RANK_1': 10, 'RANK_2': 10, 'RANK_3': 3, 'RANK_4': 1}
     charaNo = targetUserCard['card']['charaNo']
 
-    targetUserChara = dataUtil.getUserObject('userCharaList', targetUserCard['card']['charaNo'])
+    targetUserChara = dt.getUserObject('userCharaList', targetUserCard['card']['charaNo'])
     if targetUserChara is None:
         print(targetUserCard['card']['charaNo'])
         flask.abort(400, description='{"errorTxt": "Tried to limit break a card you don\'t have...","resultCode": "error","title": "Error"}')
     targetUserChara['lbItemNum'] -= neededGems[targetUserChara['chara']['defaultCard']['rank']]
-    dataUtil.setUserObject('userCharaList', charaNo, targetUserChara)
+    dt.setUserObject('userCharaList', charaNo, targetUserChara)
 
     # spend cc
     ccBySlotNum = [0, 0, 0, 0] # no idea how much it actually takes lol
-    currCC = dataUtil.getGameUserValue('riche')
+    currCC = dt.getGameUserValue('riche')
     if currCC - ccBySlotNum[targetUserCard['revision']-1] < 0:
         flask.abort(400, description='{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}')
-    gameUser = dataUtil.setGameUserValue('riche', currCC - ccBySlotNum[targetUserCard['revision']-1])
+    gameUser = dt.setGameUserValue('riche', currCC - ccBySlotNum[targetUserCard['revision']-1])
 
     # make response
     response = {
@@ -383,19 +384,19 @@ def composeMagia():
     targetUserCardId = body['userCardId']
 
     # change userCard magia level
-    targetUserCard = dataUtil.getUserObject('userCardList', targetUserCardId)
+    targetUserCard = dt.getUserObject('userCardList', targetUserCardId)
     targetUserCard['magiaLevel'] += 1
     if targetUserCard is None:
         print(targetUserCardId)
         flask.abort(400, description='{"errorTxt": "Tried to level magia of a card you don\'t have...","resultCode": "error","title": "Error"}')
-    dataUtil.setUserObject('userCardList', targetUserCardId, targetUserCard)
+    dt.setUserObject('userCardList', targetUserCardId, targetUserCard)
 
     # spend items
     charaId = targetUserCard['card']['charaNo']
     giftsToSpend = {}
     magiaLevel = {2: 'first', 3: 'second', 4: 'third', 5: 'fourth'}
     magiaPrefix = magiaLevel[targetUserCard['magiaLevel']]
-    targetChara = dataUtil.getUserObject('userCharaList', charaId)['chara']
+    targetChara = dt.getUserObject('userCharaList', charaId)['chara']
     for i in range(6):
         if magiaPrefix+'MagiaGiftId'+str(i+1) in targetChara \
         and magiaPrefix+'MagiaGiftNum'+str(i+1) in targetChara:
@@ -405,10 +406,10 @@ def composeMagia():
 
     # spend CC
     ccByLevel = {2: 10000, 3: 100000, 4: 300000, 5: 1000000} # not sure about how much CC this actually takes
-    currCC = dataUtil.getGameUserValue('riche')
+    currCC = dt.getGameUserValue('riche')
     if currCC - ccByLevel[targetUserCard['magiaLevel']] < 0:
         flask.abort(400, description='{"errorTxt": "Tried to use more cc than you have...","resultCode": "error","title": "Error"}')
-    gameUser = dataUtil.setGameUserValue('riche', currCC - ccByLevel[targetUserCard['magiaLevel']])
+    gameUser = dt.setGameUserValue('riche', currCC - ccByLevel[targetUserCard['magiaLevel']])
 
     # make response
     response = {

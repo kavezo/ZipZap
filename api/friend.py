@@ -1,7 +1,7 @@
 import json
 import flask
 
-from util import dataUtil
+from util import dataUtil as dt
 
 def user(endpoint):
     response = {
@@ -13,19 +13,19 @@ def user(endpoint):
     }
     with open('data/user/user.json', encoding='utf-8') as f:
         user = json.load(f)
-    response['userName'] = dataUtil.getUserValue('loginName')
-    response['lastAccessDate'] = dataUtil.getUserValue('lastLoginDate')
+    response['userName'] = dt.getUserValue('loginName')
+    response['lastAccessDate'] = dt.getUserValue('lastLoginDate')
 
     if endpoint.split('/')[-1] != user['id']:
         flask.abort(501, description='User does not exist')
 
-    response['gameUser'] = dataUtil.readJson('data/user/gameUser.json')
-    response['userRank'] = dataUtil.getGameUserValue('level')
-    response['comment'] = dataUtil.getGameUserValue('comment')
-    response['inviteCode'] = dataUtil.getGameUserValue('inviteCode')
+    response['gameUser'] = dt.readJson('data/user/gameUser.json')
+    response['userRank'] = dt.getGameUserValue('level')
+    response['comment'] = dt.getGameUserValue('comment')
+    response['inviteCode'] = dt.getGameUserValue('inviteCode')
 
-    response['userCardList'] = dataUtil.readJson('data/user/userCardList.json')
-    leaderId = dataUtil.getGameUserValue('leaderId')
+    response['userCardList'] = dt.readJson('data/user/userCardList.json')
+    leaderId = dt.getGameUserValue('leaderId')
     for userCard in response['userCardList']:
         if userCard['id'] == leaderId:
             response['leaderUserCard'] = userCard
@@ -38,10 +38,10 @@ def user(endpoint):
             response['revision'] = userCard['revision']
             break
     
-    response['userDeck'] = dataUtil.getUserObject('userDeckList', 20)
+    response['userDeck'] = dt.getUserObject('userDeckList', 20)
 
     for key in ['userCharaList', 'userPieceList', 'userDoppelList', 'userArenaBattle']:
-        response[key] = dataUtil.readJson('data/user/'+ key + '.json')
+        response[key] = dt.readJson('data/user/'+ key + '.json')
 
     return flask.jsonify(response)
 

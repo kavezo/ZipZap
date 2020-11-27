@@ -3,7 +3,7 @@ import transferUserData
 import flask
 from uuid import uuid1
 
-from util import dataUtil
+from util import dataUtil as dt
 
 # TODO: actually figure out what this does
 def isAnswered():
@@ -15,7 +15,7 @@ def isAnswered():
 
 # TODO: actually set password
 def setPassword():
-    gameUser = dataUtil.setGameUserValue('passwordNotice', False)
+    gameUser = dt.setGameUserValue('passwordNotice', False)
     response = {
         "resultCode": "success",
         'gameUser': gameUser

@@ -4,7 +4,8 @@ from datetime import datetime
 from api import userPiece, gacha
 from uuid import uuid1
 
-from util import dataUtil, newUserObjectUtil
+from util import dataUtil as dt
+from util.homuUtil import nowstr
 
 # This will only get you the lowest rarity card, but that's what all shop megucas have been...
 def getCard(charaNo):
@@ -21,47 +22,47 @@ def getCard(charaNo):
 def getFormation(formationId):
     userFormation, exists = newUserObjectUtil.createUserFormation(formationId)
     if exists: return {}
-    dataUtil.setUserObject('userFormationSheetList', formationId, userFormation)
+    dt.setUserObject('userFormationSheetList', formationId, userFormation)
     return {'userFormationSheetList': [userFormation]}
 
 def getGift(giftId, amount):
-    userGift = dataUtil.getUserObject('userGiftList', giftId)
+    userGift = dt.getUserObject('userGiftList', giftId)
     if userGift is None:
-        newGift = dataUtil.masterGifts[giftId]
+        newGift = dt.masterGifts[giftId]
         newGift['rankGift'] = 'RANK_'+str(newGift['rank'])
         userGift = {
-            "userId": dataUtil.userId,
+            "userId": dt.userId,
             "giftId": giftId,
             "quantity": amount,
-            "createdAt": newUserObjectUtil.nowstr(),
+            "createdAt": nowstr(),
             "gift": newGift
         }
     userGift['quantity'] += amount
-    dataUtil.setUserObject('userGiftList', giftId, userGift)
+    dt.setUserObject('userGiftList', giftId, userGift)
     return {'userGiftList': [userGift]}
 
 def getGems(charaNo, amount):
-    userChara = dataUtil.getUserObject('userCharaList', charaNo)
+    userChara = dt.getUserObject('userCharaList', charaNo)
     userChara['lbItemNum'] += amount
-    dataUtil.setUserObject('userCharaList', charaNo, userChara)
+    dt.setUserObject('userCharaList', charaNo, userChara)
     return {'userCharaList': [userChara]}
 
 def getItem(itemCode, amount, item=None):
-    userItem = dataUtil.getUserObject('userItemList', itemCode)
+    userItem = dt.getUserObject('userItemList', itemCode)
     if userItem is None: # assumes only backgrounds and stuff
         if item is None:
             flask.abort(500, description='Item is None, but userItem doesn\'t already exist...')
         userItem, _ = newUserObjectUtil.createUserItem(item)
     userItem['quantity'] += amount
-    dataUtil.setUserObject('userItemList', itemCode, userItem)
+    dt.setUserObject('userItemList', itemCode, userItem)
     return {'userItemList': [userItem]}
 
 def getLive2d(charaId, live2dId, live2dItem):
     idx = int(str(charaId)+str(live2dId))
-    userLive2d = dataUtil.getUserObject('userLive2dList', idx)
+    userLive2d = dt.getUserObject('userLive2dList', idx)
     if userLive2d is None:
         userLive2d, _ = newUserObjectUtil.createUserLive2d(charaId, live2dId, live2dItem['description'])
-        dataUtil.setUserObject('userLive2dList', idx, userLive2d)
+        dt.setUserObject('userLive2dList', idx, userLive2d)
         return {'userLive2dList': [userLive2d]}
     return {} 
 
@@ -76,11 +77,11 @@ def getPiece(piece, isMax, num):
             for key in stats.keys():
                 newUserPiece[key] = stats[key]
         newPieces.append(newUserPiece)
-        dataUtil.setUserObject('userPieceList', newUserPiece['id'], newUserPiece)
+        dt.setUserObject('userPieceList', newUserPiece['id'], newUserPiece)
     return {'userPieceList': newPieces}
 
 def getCC(amount):
-    gameUser = dataUtil.setGameUserValue('riche', dataUtil.getGameUserValue('riche')+amount)
+    gameUser = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+amount)
     return {'gameUser': gameUser}
 
 def obtainSet(item, body, args):
@@ -115,7 +116,7 @@ def obtain(item, body, args):
 # TODO: handle cases where it's a meguca sent to the present box
 def buy():
     body = flask.request.json
-    shopList = dataUtil.readJson('data/shopList.json')
+    shopList = dt.readJson('data/shopList.json')
 
     currShop = {}
     for shop in shopList:
@@ -154,16 +155,15 @@ def buy():
         else:
             args['userItemList'] = itemList
 
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     userShopItem = {
-            "createdAt": nowstr,
+            "createdAt": nowstr(),
             "num": body['num'],
             "shopItemId": body['shopItemId'],
-            "userId": dataUtil.userId
+            "userId": dt.userId
         }
     args['userShopItemList'] = [userShopItem]
     path = 'data/user/userShopItemList.json'
-    dataUtil.saveJson(path, dataUtil.readJson(path) + [userShopItem])
+    dt.saveJson(path, dt.readJson(path) + [userShopItem])
 
     return flask.jsonify(args)
     

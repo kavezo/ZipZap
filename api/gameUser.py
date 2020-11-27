@@ -1,35 +1,35 @@
 import json
 import flask
 
-from util import dataUtil
+from util import dataUtil as dt
 
 def changeLeader():
     body = flask.request.json
-    gameUser = dataUtil.setGameUserValue('leaderId', body['userCardId'])
+    gameUser = dt.setGameUserValue('leaderId', body['userCardId'])
     response = {
         "resultCode": "success",
         'gameUser': gameUser,
-        'user': dataUtil.readJson('data/user/user.json')
+        'user': dt.readJson('data/user/user.json')
     }
     return flask.jsonify(response)
 
 def editComment():
     body = flask.request.json
-    gameUser = dataUtil.setGameUserValue('comment', body['comment'])
+    gameUser = dt.setGameUserValue('comment', body['comment'])
     response = {
         "resultCode": "success",
         'gameUser': gameUser,
-        'user': dataUtil.readJson('data/user/user.json')
+        'user': dt.readJson('data/user/user.json')
     }
     return flask.jsonify(response)
 
 def setBackground():
     body = flask.request.json
-    bgItem = dataUtil.getUserObject('userItemList', body['itemId'])
+    bgItem = dt.getUserObject('userItemList', body['itemId'])
 
-    gameUser = dataUtil.setGameUserValue('bgItemId', body['itemId'])
+    gameUser = dt.setGameUserValue('bgItemId', body['itemId'])
     if bgItem is not None:
-        gameUser = dataUtil.setGameUserValue('bgItem', bgItem['item'])
+        gameUser = dt.setGameUserValue('bgItem', bgItem['item'])
     
     response = {
         "resultCode": "success",
@@ -39,7 +39,7 @@ def setBackground():
 
 def skipAdventure():
     body = flask.request.json
-    gameUser = dataUtil.setGameUserValue('skipAdventure', body['skipAdventure'])
+    gameUser = dt.setGameUserValue('skipAdventure', body['skipAdventure'])
     response = {
         "resultCode": "success",
         'gameUser': gameUser
