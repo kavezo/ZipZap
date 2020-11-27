@@ -57,7 +57,7 @@ def sendArena(request,response):
     return flask.jsonify(response)
 
 def giveUserExp(battle):
-    userExp = 0 # battle['questBattle']['exp']
+    userExp = 0 #battle['questBattle']['exp'] # not uncommenting this until we know how to level up
     gameUser = dt.setGameUserValue('exp', dt.getGameUserValue('exp')+userExp)
     newStatus = []
     if gameUser['exp'] >= gameUser['totalExpForNextLevel']:
@@ -159,7 +159,11 @@ def send():
         # level up/episode up megucas
         resultUserCardList, resultUserCharaList = giveMegucaExp(body, battle)
         # clear
-        resultUserQuestBattle = storyUtil.clearBattle(battle)
+        if 'cleared' not in battle or not battle['cleared']:
+            resultUserQuestBattle = storyUtil.clearBattle(battle)
+        else:
+            battle['lastClearedAt'] = homu.nowstr()
+            battle['clearCount'] = battle.get('clearCount', 0) + 1
         # add to stories
         storyResponse = storyUtil.progressStory(battle)
     

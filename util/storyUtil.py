@@ -9,11 +9,11 @@ questBattles = dt.readJson('data/questBattleList.json')
 # TODO: need to fix for branch quests like chapter 9
 nextSection = {sorted([b['questBattleId'] for b in questBattles if b['sectionId']==s])[-1]: s+1
                     for s in dt.masterSections.keys() if s+1 in dt.masterSections.keys()}
-firstBattle = {s: sorted([b['questBattleId'] for b in questBattles if b['sectionId']==s])[0]
+sectionBattles = {s: [b['questBattleId'] for b in questBattles if b['sectionId']==s]
                     for s in dt.masterSections.keys()}
 
 nextChapter = {}
-firstSection = {}
+chapterSections = {}
 for chapterId in dt.masterChapters.keys():
     chapterBattles = []
     for battle in questBattles:
@@ -23,7 +23,7 @@ for chapterId in dt.masterChapters.keys():
             and battleChapter == chapterId:
             chapterBattles.append(battle)
     chapterBattles = sorted(chapterBattles, key=lambda x: x['questBattleId'])
-    firstSection[chapterId] = chapterBattles[0]['sectionId']
+    chapterSections[chapterId] = list({battle['sectionId'] for battle in chapterBattles})
     if chapterId + 1 in dt.masterChapters.keys():
         nextChapter[chapterBattles[-1]['questBattleId']] = chapterId + 1
 
@@ -62,11 +62,11 @@ def startNewSection(newSectionId, response):
         response['userSectionList'] = response.get('userSectionList', []) + [newSection]
         dt.setUserObject('userSectionList', newSectionId, newSection)
 
-    newBattleId = firstBattle[newSectionId]
-    newBattle, exists = newtil.createUserQuestBattle(newBattleId)
-    if not exists:
-        response['userQuestBattleList'] = response.get('userQuestBattleList', []) + [newBattle]
-        dt.setUserObject('userQuestBattleList', newBattleId, newBattle)
+    for newBattleId in sectionBattles[newSectionId]:
+        newBattle, exists = newtil.createUserQuestBattle(newBattleId)
+        if not exists:
+            response['userQuestBattleList'] = response.get('userQuestBattleList', []) + [newBattle]
+            dt.setUserObject('userQuestBattleList', newBattleId, newBattle)
 
 def startNewChapter(newChapterId, response):
     newChapter, exists = newtil.createUserChapter(newChapterId)
@@ -74,7 +74,8 @@ def startNewChapter(newChapterId, response):
         response['userChapterList'] = response.get('userChapterList', []) + [newChapter]
         dt.setUserObject('userChapterList', newChapterId, newChapter)
 
-    startNewSection(firstSection[newChapterId], response)
+    for sectionId in chapterSections[newChapterId]:
+        startNewSection(sectionId, response)
 
 # TODO: integrate this and see if it works
 def progressStory(battle):

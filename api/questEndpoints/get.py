@@ -380,7 +380,7 @@ def get():
 
     response = {
         'battleType': 'QUEST' if not isMirrors else 'ARENA', # TODO: change for tutorials, challenge quests
-        'scenario': battle['scenario'],
+        'scenario': mirrorScenario if isMirrors else battle['scenario'],
         'waveList': waves,
         'playerList': battleData['playerList'],
         'doppelList': dedupeDictList(battleData['doppelList'], 'doppelId'),
