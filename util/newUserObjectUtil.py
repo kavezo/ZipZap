@@ -1,13 +1,12 @@
-from util import dataUtil
+from util import dataUtil as dt
+from util.homuUtil import nowstr
+
 from uuid import uuid1
 from datetime import datetime
 
-def nowstr():
-    return (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
-
 def createUserLive2d(charaId, live2dId, description):
     return {
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "charaId": charaId,
         "live2dId": live2dId,
         "live2d": {
@@ -18,18 +17,18 @@ def createUserLive2d(charaId, live2dId, description):
             "voicePrefixNo": live2dId
         },
         "createdAt": nowstr()
-    }, dataUtil.getUserObject('userLive2dList', str(charaId)+str(live2dId)) is not None
+    }, dt.getUserObject('userLive2dList', str(charaId)+str(live2dId)) is not None
 
 def createUserMeguca(charaId, card=None):
     userCardId = str(uuid1())
-    masterCard = dataUtil.masterCards[charaId]
+    masterCard = dt.masterCards[charaId]
     chara = masterCard['chara']
 
     if card is None:
         card = masterCard['cardList'][0]['card']
     userCard = {
         "id": userCardId,
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "cardId": card['cardId'],
         "displayCardId": card['cardId'],
         "revision": 0,
@@ -50,7 +49,7 @@ def createUserMeguca(charaId, card=None):
         "card": card
     }
     userChara = {
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "charaId": charaId,
         "chara": chara,
         "bondsTotalPt": 0,
@@ -67,13 +66,12 @@ def createUserMeguca(charaId, card=None):
     return userCard, userChara, userLive2d
 
 def createUserMemoria(pieceId):
-    piece = dataUtil.masterPieces[pieceId]
-    foundExisting = pieceId in dataUtil.userIndices['userPieceList']
-
+    piece = dt.masterPieces[pieceId]
+    
     userPieceId = str(uuid1())
     userPiece = {
         "id": userPieceId,
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "pieceId": piece['pieceId'],
         "piece": piece,
         "level": 1,
@@ -86,12 +84,12 @@ def createUserMemoria(pieceId):
         "archive": False,
         "createdAt": nowstr()
     }
-    dataUtil.setUserObject('userPieceList', userPieceId, userPiece)
-    return userPiece, foundExisting
+    dt.setUserObject('userPieceList', userPieceId, userPiece)
+    return userPiece
 
 def createUserGachaGroup(groupId):
     return {
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "gachaGroupId": groupId,
         "count": 0,
         "paid": 0,
@@ -106,7 +104,7 @@ def createUserGachaGroup(groupId):
 
 def createUserItem(item):
     return {
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "itemId": item['itemCode'],
         "environmentId": "COMMON",
         "quantity": 0,
@@ -116,32 +114,32 @@ def createUserItem(item):
     }
 
 def createUserDoppel(doppelId):
-    doppel = dataUtil.masterDoppels[doppelId]
+    doppel = dt.masterDoppels[doppelId]
     return {
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "doppelId": doppelId,
         "doppel": doppel,
         "createdAt": nowstr()
-    }, dataUtil.getUserObject('userDoppelList', doppelId) is not None
+    }, dt.getUserObject('userDoppelList', doppelId) is not None
 
 def createUserFormation(formationId):
-    formation = dataUtil.masterFormations[formationId]
+    formation = dt.masterFormations[formationId]
     return {
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "formationSheetId": formationId,
         "createdAt": nowstr(),
         "formationSheet": formation
-    }, dataUtil.getUserObject('userFormationSheetList', formationId) is not None
+    }, dt.getUserObject('userFormationSheetList', formationId) is not None
 
 def createUserPiece(pieceId):
     found = False
-    for userPiece in dataUtil.readJson('data/user/userPieceList.json'):
+    for userPiece in dt.readJson('data/user/userPieceList.json'):
         if userPiece['pieceId'] == pieceId:
             found = True
-    piece = dataUtil.masterPieces[pieceId]
+    piece = dt.masterPieces[pieceId]
     return {
         "id": str(uuid1()),
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "pieceId": piece['pieceId'],
         "piece": piece,
         "level": 1,
@@ -154,3 +152,35 @@ def createUserPiece(pieceId):
         "archive": False,
         "createdAt": nowstr()
     }, found
+
+def createUserSection(sectionId):
+    return {
+        "userId": dt.userId,
+        "sectionId": sectionId,
+        "section": dt.masterSections[sectionId],
+        "canPlay": True,
+        "cleared": False,
+        "createdAt": nowstr()
+    }, dt.getUserObject('userSectionList', sectionId) is not None
+
+def createUserChapter(chapterId):
+    return {
+        "chapter": dt.masterChapters[chapterId],
+        "chapterId": chapterId,
+        "cleared": False,
+        "createdAt": nowstr(),
+        "userId": dt.userId
+    }, dt.getUserObject('userChapterList', chapterId) is not None
+
+def createUserQuestBattle(battleId):
+    return {
+        "userId": dt.userId,
+        "questBattleId": battleId,
+        "questBattle": dt.masterBattles[battleId],
+        "cleared": False,
+        "missionStatus1": "NON_CLEAR",
+        "missionStatus2": "NON_CLEAR",
+        "missionStatus3": "NON_CLEAR",
+        "rewardDone": False,
+        "createdAt": nowstr()
+    }, dt.getUserObject('userQuestBattleList', battleId) is not None

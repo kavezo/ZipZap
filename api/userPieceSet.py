@@ -1,16 +1,17 @@
 import flask
 from datetime import datetime
 
-from util import dataUtil, newUserObjectUtil
+from util import dataUtil as dt
+from util.homuUtil import nowstr
 
 def save():
     body = flask.request.json
 
-    targetUserPieceSet = dataUtil.getUserObject('userPieceSetList', body['setNum'])
+    targetUserPieceSet = dt.getUserObject('userPieceSetList', body['setNum'])
     if targetUserPieceSet is None:
         targetUserPieceSet = {
-            "createdAt": newUserObjectUtil.nowstr(),
-            'userId': dataUtil.userId,
+            "createdAt": nowstr(),
+            'userId': dt.userId,
             'setNum': body['setNum']
         }
 
@@ -18,7 +19,7 @@ def save():
     for i, id in enumerate(body['userPieceIdList']):
         targetUserPieceSet['userPieceId'+str(i+1)] = id
 
-    dataUtil.setUserObject('userPieceSetList', body['setNum'], targetUserPieceSet)
+    dt.setUserObject('userPieceSetList', body['setNum'], targetUserPieceSet)
 
     response = {
         'resultCode': 'success',

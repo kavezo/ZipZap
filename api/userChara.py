@@ -1,7 +1,7 @@
 import json
 import flask
 
-from util import dataUtil
+from util import dataUtil as dt
 
 def sale():
     body = flask.request.json
@@ -10,7 +10,7 @@ def sale():
 
     rarity = 0
     responseCharaList = []
-    userChara = dataUtil.getUserObject('userCharaList', charaId)
+    userChara = newtil.getUserObject('userCharaList', charaId)
     userChara['lbItemNum'] -= amount
     rarity = int(userChara['chara']['defaultCard']['rank'][-1])
     responseCharaList.append(userChara)
@@ -18,23 +18,23 @@ def sale():
         flask.abort(400, description='{"errorTxt": "You don\'t have that many gems to sell >:(","resultCode": "error","title": "Error"}')
         return
     
-    dataUtil.setUserObject('userCharaList', charaId, userChara)
+    newtil.setUserObject('userCharaList', charaId, userChara)
     
     gemsReceived = [1, 1, 3, 10]
     responseItemList = []
-    userItem = dataUtil.getUserObject('userItemList', 'PRISM')
+    userItem = newtil.getUserObject('userItemList', 'PRISM')
     userItem['quantity'] += amount * gemsReceived[rarity-1]
     responseItemList.append(userItem)
 
-    dataUtil.setUserObject('userItemList', 'PRISM', userItem)
+    newtil.setUserObject('userItemList', 'PRISM', userItem)
 
     if rarity == 4:
         print('selling for crystal')
-        userCrystal = dataUtil.getUserObject('userItemList', 'DESTINY_CRYSTAL')
+        userCrystal = newtil.getUserObject('userItemList', 'DESTINY_CRYSTAL')
         userCrystal['quantity'] += amount
         responseItemList.append(userCrystal)
 
-        dataUtil.setUserObject('userItemList', 'DESTINY_CRYSTAL', userCrystal)
+        newtil.setUserObject('userItemList', 'DESTINY_CRYSTAL', userCrystal)
     
     response = {
         "resultCode": "success",
@@ -60,11 +60,11 @@ def visualize():
     with open('data/user/userCardList.json', 'w+', encoding='utf-8') as f:
         json.dump(userCardList, f, ensure_ascii=False)
 
-    userChara = dataUtil.getUserObject('userCharaList', body['charaId'])
+    userChara = newtil.getUserObject('userCharaList', body['charaId'])
     userChara['commandVisualId'] = body['commandVisualId']
     userChara['commandVisualType'] = body['commandVisualType']
     response['userCharaList'] = [userChara]
-    dataUtil.setUserObject('userCharaList', body['charaId'], userChara)
+    newtil.setUserObject('userCharaList', body['charaId'], userChara)
 
     return flask.jsonify(response)
     

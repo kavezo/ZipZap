@@ -1,89 +1,125 @@
-from util import dataUtil, newUserObjectUtil
 from datetime import datetime
 
-questBattles = dataUtil.readJson('data/questBattleList.json')
+from util import dataUtil as dt
+from util import newUserObjectUtil as newtil
+from util.homuUtil import nowstr
 
+questBattles = dt.readJson('data/questBattleList.json')
+
+# TODO: need to fix for branch quests like chapter 9
 nextSection = {sorted([b['questBattleId'] for b in questBattles if b['sectionId']==s])[-1]: s+1
-                    for s in dataUtil.masterSections.keys() if s+1 in dataUtil.masterSections.keys()}
+                    for s in dt.masterSections.keys() if s+1 in dt.masterSections.keys()}
+firstBattle = {s: sorted([b['questBattleId'] for b in questBattles if b['sectionId']==s])[0]
+                    for s in dt.masterSections.keys()}
+
 nextChapter = {}
-for chapterId in dataUtil.masterChapters.keys():
-    if chapterId + 1 in dataUtil.masterChapters.keys():
-        chapterBattles = []
-        for battle in questBattles:
-            strBattleId = str(battle['questBattleId'])
-            battleChapter = int(strBattleId[2:4])
-            if (strBattleId.startswith('1') or strBattleId.startswith('2')) \
-                and battleChapter == chapterId:
-                chapterBattles.append(battle)
-        chapterBattles = sorted(chapterBattles)
+firstSection = {}
+for chapterId in dt.masterChapters.keys():
+    chapterBattles = []
+    for battle in questBattles:
+        strBattleId = str(battle['questBattleId'])
+        battleChapter = int(strBattleId[2:4])
+        if (strBattleId.startswith('1') or strBattleId.startswith('2')) \
+            and battleChapter == chapterId:
+            chapterBattles.append(battle)
+    chapterBattles = sorted(chapterBattles, key=lambda x: x['questBattleId'])
+    firstSection[chapterId] = chapterBattles[0]['sectionId']
+    if chapterId + 1 in dt.masterChapters.keys():
         nextChapter[chapterBattles[-1]['questBattleId']] = chapterId + 1
 
 def obtainReward(clearReward, args):
     presentType = clearReward['presentType']
     quantity = clearReward['quantity']
     if presentType == 'DOPPEL':
-        userDoppel, exists = newUserObjectUtil.createUserDoppel(clearReward['genericId'])
-        if not exists: dataUtil.setUserObject('userDoppelList', clearReward['genericId'], userDoppel)
+        userDoppel, exists = newtil.createUserDoppel(clearReward['genericId'])
+        if not exists: dt.setUserObject('userDoppelList', clearReward['genericId'], userDoppel)
     elif presentType == 'GEM': # only Iroha's gems are rewards, so no need to check missing chara
-        userChara = dataUtil.getUserObject('userCharaList', clearReward['genericId'])
+        userChara = dt.getUserObject('userCharaList', clearReward['genericId'])
         userChara['lbItemNum'] += quantity
-        dataUtil.setUserObject('userCharaList', clearReward['genericId'], userChara)
+        dt.setUserObject('userCharaList', clearReward['genericId'], userChara)
     elif presentType == 'ITEM':
-        userItem = dataUtil.getUserObject('userItemList', clearReward['itemId'])
+        userItem = dt.getUserObject('userItemList', clearReward['itemId'])
         userItem['quantity'] += quantity
-        dataUtil.setUserObject('userItemList', clearReward['itemId'], userItem)
+        dt.setUserObject('userItemList', clearReward['itemId'], userItem)
     elif presentType == 'LIVE2D':
-        newLive2d, exists = newUserObjectUtil.createUserLive2d(clearReward['genericId'], 
+        newLive2d, exists = newtil.createUserLive2d(clearReward['genericId'], 
                                                 clearReward['genericCode'], clearReward['displayName'])
         if not exists:
-            userLive2dList = dataUtil.readJson('data/user/userLive2dList')
-            dataUtil.saveJson('data/user/userLive2dList', userLive2dList + [newLive2d])
+            userLive2dList = dt.readJson('data/user/userLive2dList')
+            dt.saveJson('data/user/userLive2dList', userLive2dList + [newLive2d])
         args['userLive2dList'] = args.get('userLive2dList', []) + [newLive2d]
     elif presentType == 'PIECE':
         args['userPieceList'] = args.get('userPieceList', [])
         for _ in range(quantity):
-            newPiece, _ = newUserObjectUtil.createUserMemoria(clearReward)
+            newPiece = newtil.createUserMemoria(clearReward)
             args['userPieceList'].append(newPiece)
-            dataUtil.setUserObject('userPieceList', newPiece['id'], newPiece)
+            dt.setUserObject('userPieceList', newPiece['id'], newPiece)
     return args
+
+def startNewSection(newSectionId, response):
+    newSection, exists = newtil.createUserSection(newSectionId)
+    if not exists:
+        response['userSectionList'] = response.get('userSectionList', []) + [newSection]
+        dt.setUserObject('userSectionList', newSectionId, newSection)
+
+    newBattleId = firstBattle[newSectionId]
+    newBattle, exists = newtil.createUserQuestBattle(newBattleId)
+    if not exists:
+        response['userQuestBattleList'] = response.get('userQuestBattleList', []) + [newBattle]
+        dt.setUserObject('userQuestBattleList', newBattleId, newBattle)
+
+def startNewChapter(newChapterId, response):
+    newChapter, exists = newtil.createUserChapter(newChapterId)
+    if not exists:
+        response['userChapterList'] = response.get('userChapterList', []) + [newChapter]
+        dt.setUserObject('userChapterList', newChapterId, newChapter)
+
+    startNewSection(firstSection[newChapterId], response)
 
 # TODO: integrate this and see if it works
 def progressStory(battle):
     battleId = battle['questBattleId']
-    nowstr = (datetime.now()).strftime('%Y/%m/%d %H:%M:%S')
     response = {}
     if battleId in nextChapter:
-        response['userChapterList'] = [
-            {
-                "chapter": dataUtil.masterChapters[nextChapter[battleId]],
-                "chapterId": nextChapter[battleId],
-                "cleared": False,
-                "createdAt": nowstr,
-                "userId": dataUtil.userId
-            }
-        ]
-        currChapterId = int(str(battle['questBattleId'])[2:4])
-        clearedChapter = dataUtil.getUserObject('userChapterList', currChapterId)
+        startNewChapter(nextChapter[battleId], response)
+
+        clearedChapterId = int(str(battle['questBattleId'])[2:4])
+        clearedChapter = dt.getUserObject('userChapterList', clearedChapterId)
         clearedChapter['cleared'] = True
-        clearedChapter['clearedAt'] = nowstr
+        clearedChapter['clearedAt'] = nowstr()
         response['userChapterList'].append(clearedChapter)
-        dataUtil.setUserObject('userChapterList', currChapterId, clearedChapter)
+        dt.setUserObject('userChapterList', clearedChapterId, clearedChapter)
+
     if battleId in nextSection:
-        sectionId = nextSection[battleId]
-        response['userSectionList'] = [
-            {
-                "userId": dataUtil.userId,
-                "sectionId": sectionId,
-                "section": dataUtil.masterSections[sectionId],
-                "canPlay": True,
-                "cleared": False,
-                "createdAt": nowstr
-            }
-        ]
-        clearedSection = dataUtil.getUserObject('userSectionList', battle['sectionId'])
+        startNewSection(nextSection[battleId], response)
+
+        clearedSectionId = battle['questBattle']['sectionId']
+        clearedSection = dt.getUserObject('userSectionList', clearedSectionId)
         clearedSection['cleared'] = True
-        clearedSection['clearedAt'] = nowstr
-        response['userSectionList'].append(clearedSection)
+        clearedSection['clearedAt'] = nowstr()
         obtainReward(clearedSection['clearReward'], response)
-        dataUtil.setUserObject('userSectionList', sectionId, clearedSection)
+        response['userSectionList'].append(clearedSection)
+        dt.setUserObject('userSectionList', clearedSectionId, clearedSection)
+
+    if battleId+1 in dt.masterBattles:
+        newBattle, exists = newtil.createUserQuestBattle(battleId+1)
+        if not exists:
+            response['userQuestBattleList'] = response.get('userQuestBattleList', []) + [newBattle]
+            dt.setUserObject('userQuestBattleList', battleId+1, newBattle)
+
     return response
+
+def clearBattle(battle):
+    userBattle = dt.getUserObject('userQuestBattleList', battle['questBattleId'])
+    if userBattle is None: return None
+
+    now = nowstr()
+    userBattle['cleared'] = True
+    if 'firstClearedAt' not in userBattle:
+        userBattle['firstClearedAt'] = now
+    userBattle['lastClearedAt'] = now
+    userBattle['clearCount'] = userBattle.get('clearCount', 0) + 1
+
+    dt.setUserObject('userQuestBattleList', battle['questBattleId'], userBattle)
+    return userBattle
+

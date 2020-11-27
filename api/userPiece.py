@@ -3,7 +3,7 @@ import json
 import math
 import numpy as np
 
-from util import dataUtil, newUserObjectUtil
+from util import dataUtil as dt
 
 expByLevel = [0, 100, 210, 330, 460, 600, 760, 950, 1180, 1460, 1800, 2210, 2690, 3240, 3860, 4550, 5310, 6140, 7040, 8010, 9050, 10160, 11340, 12590, 13910, 15300, 16760, 18290, 19890, 21560, 23300, 25110, 26990, 28940, 30960, 33050, 35210, 37440, 39740, 42110, 44550, 47060, 49640, 52290, 55010, 57800, 60660, 63590, 66590, 69660]
 dExpdLevel = [0] + [b-a for a,b in zip(expByLevel[:-1], expByLevel[1:])]
@@ -83,12 +83,11 @@ def levelUp(targetUserPiece, memoriaToSpend):
 def compose():
     body = flask.request.json
     targetUserPieceId = body['baseUserPieceId']
-
-    targetUserPiece = dataUtil.getUserObject('userPieceList', targetUserPieceId)
+    targetUserPiece = dt.getUserObject('userPieceList', targetUserPieceId)
     memoriaToSpend = []
     
     for materialPieceId in body['materialUserPieceIdList']:
-        memoriaToSpend.append(dataUtil.getUserObject('userPieceList', materialPieceId))
+        memoriaToSpend.append(dt.getUserObject('userPieceList', materialPieceId))
 
     if targetUserPiece == {}:
         flask.abort(400, description='Tried to level up a memoria you don\'t have...')
@@ -105,18 +104,18 @@ def compose():
     if isLimitBreak:
         targetUserPiece['lbCount'] += len(memoriaToSpend)
 
-    dataUtil.setUserObject('userPieceList', targetUserPieceId, targetUserPiece)
+    dt.setUserObject('userPieceList', targetUserPieceId, targetUserPiece)
 
     # modify CC
     totalCC = 0
     for memoria in memoriaToSpend:
         totalCC += priceCalc(memoria['piece']['rank'], memoria['lbCount'])
-        dataUtil.deleteUserObject('userPieceList', memoria['id'])
+        dt.deleteUserObject('userPieceList', memoria['id'])
 
-    currCC = dataUtil.getGameUserValue('riche')
+    currCC = dt.getGameUserValue('riche')
     if currCC < totalCC:
         raise ValueError("Tried to use more cc than you have...")
-    gameUser = dataUtil.setGameUserValue('riche', currCC-totalCC)
+    gameUser = dt.setGameUserValue('riche', currCC-totalCC)
 
     # It looks like the archive ignores this information and shows everything max leveld and mlb'd...
     # with open('data/user/userPieceCollectionList.json', encoding='utf-8') as f:
@@ -170,13 +169,13 @@ def setArchive(isArchive):
     body = flask.request.json
 
     for pieceId in body['archiveUserPieceIdList']:
-        targetUserPiece = dataUtil.getUserObject('userPieceList', pieceId)
+        targetUserPiece = dt.getUserObject('userPieceList', pieceId)
         if targetUserPiece is None:
             flask.abort(400, description='Tried to ' + ('' if isArchive else 'un') +
                                                                         'archive a memoria you don\'t have...')
 
         targetUserPiece['archive'] = isArchive
-        dataUtil.setUserObject('userPieceList', pieceId, targetUserPiece)
+        dt.setUserObject('userPieceList', pieceId, targetUserPiece)
 
     response = {
         'resultCode': 'success',
@@ -188,11 +187,11 @@ def sale():
     body = flask.request.json
     totalCC = 0
     for userPieceId in body['saleUserPieceIdList']:
-        soldMemoria = dataUtil.getUserObject('userPieceList', userPieceId)
+        soldMemoria = dt.getUserObject('userPieceList', userPieceId)
         totalCC += priceCalc(soldMemoria['piece']['rank'], soldMemoria['lbCount'])
-        dataUtil.deleteUserObject('userPieceList', soldMemoria['id'])
+        dt.deleteUserObject('userPieceList', soldMemoria['id'])
     
-    gameUser = dataUtil.setGameUserValue('riche', dataUtil.getGameUserValue('riche')+totalCC)
+    gameUser = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+totalCC)
     response = {
         'resultCode': 'success',
         'gameUser': gameUser

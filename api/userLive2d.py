@@ -1,7 +1,7 @@
 import json
 import flask
 
-from util import dataUtil
+from util import dataUtil as dt
 
 def setLive2d():
     body = flask.request.json
@@ -9,10 +9,10 @@ def setLive2d():
     response = {
         "resultCode": "success"
     }
-    userChara = dataUtil.getUserObject('userCharaList', body['charaId'])
+    userChara = dt.getUserObject('userCharaList', body['charaId'])
     userChara['live2dId'] = body['live2dId']
     response['userCharaList'] = [userChara]
-    dataUtil.setUserObject('userCharaList', body['charaId'], userChara)
+    dt.setUserObject('userCharaList', body['charaId'], userChara)
 
     return flask.jsonify(response)
 

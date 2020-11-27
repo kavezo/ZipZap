@@ -6,16 +6,17 @@ import flask
 import random
 import copy
 
-from util import dataUtil, newUserObjectUtil
+from util import dataUtil as dt
+from util import homuUtil as homu
 
 def arenaTop(response):
-    response['userArenaBattle']=dataUtil.readJson('data/user/userArenaBattle.json')
+    response['userArenaBattle']=dt.readJson('data/user/userArenaBattle.json')
     response['rankingClosing'] = True
 
 def calculateArenaRating():
-    arenaDeck = dataUtil.getUserObject('userDeckList', 21)
-    cards = [dataUtil.getUserObject('userCardList', v) for k, v in arenaDeck.items() if k.startswith('userCardId')]
-    pieces = [dataUtil.getUserObject('userPieceList', v) for k, v in arenaDeck.items() if k.startswith('userPieceId')]
+    arenaDeck = dt.getUserObject('userDeckList', 21)
+    cards = [dt.getUserObject('userCardList', v) for k, v in arenaDeck.items() if k.startswith('userCardId')]
+    pieces = [dt.getUserObject('userPieceList', v) for k, v in arenaDeck.items() if k.startswith('userPieceId')]
     
     rating = 0
     for userCard in cards:
@@ -31,7 +32,7 @@ def calculateArenaRating():
 def arenaFreeRank(response):
     # Assumes there are at least three enemies possible, no error checking
     enemies = random.sample(os.listdir('data/arenaEnemies'), k=3)
-    enemyInfo = [dataUtil.readJson('data/arenaEnemies/'+enemy)['opponentUserArenaBattleInfo'] for enemy in enemies]
+    enemyInfo = [dt.readJson('data/arenaEnemies/'+enemy)['opponentUserArenaBattleInfo'] for enemy in enemies]
 
     response['userArenaBattleMatch'] = {
 		"userId": "0571792e-f615-11ea-bdf5-024ec58565ab",
@@ -44,7 +45,7 @@ def arenaFreeRank(response):
 		"opponentUserId3": enemyInfo[2]['userId'],
 		"opponentUserArenaBattleInfo3": enemyInfo[2],
 		"opponentUserIdList": [],
-		"matchedAt": newUserObjectUtil.nowstr(),
+		"matchedAt": homu.nowstr(),
 		"expiredAt": (datetime.now()+timedelta(minutes=15)).strftime('%Y/%m/%d %H:%M:%S'),
 		"enable": True,
 		"isNew": False
@@ -53,16 +54,16 @@ def arenaFreeRank(response):
 def arenaResult(response):
     body = flask.request.json
     opponentId = body['strUserId']
-    opponentInfo = dataUtil.readJson('data/arenaEnemies/' + opponentId + '.json')
+    opponentInfo = dt.readJson('data/arenaEnemies/' + opponentId + '.json')
     response.update({'userProfile': opponentInfo['opponentUserArenaBattleInfo']})
 
 def charaCollection(response):
-    response['userSectionList'] = dataUtil.readJson('data/user/userSectionList.json')
-    allCards = dataUtil.readJson('data/cards.json') # this could proably use a better refactor
+    response['userSectionList'] = dt.readJson('data/user/userSectionList.json')
+    allCards = dt.readJson('data/cards.json') # this could proably use a better refactor
 
-    userCharas = dataUtil.readJson('data/user/userCharaList.json')
+    userCharas = dt.readJson('data/user/userCharaList.json')
     userCharaIds = [chara['charaId'] for chara in userCharas]
-    userCards = dataUtil.readJson('data/user/userCardList.json')
+    userCards = dt.readJson('data/user/userCardList.json')
     cardIds = {card['cardId']: card['id'] for card in userCards}
         
     for i in range(len(allCards)):
@@ -76,89 +77,89 @@ def charaCollection(response):
     response['charaList'] = allCards
 
 def charaListCompose(response):
-    response['charaList'] = dataUtil.readJson('data/user/userCharaList.json')
-    response['cardList'] = dataUtil.readJson('data/user/userCardList.json')
+    response['charaList'] = dt.readJson('data/user/userCharaList.json')
+    response['cardList'] = dt.readJson('data/user/userCardList.json')
 
 def charaTop(response):
-    response['gameUser'] = dataUtil.readJson('data/user/gameUser.json')
+    response['gameUser'] = dt.readJson('data/user/gameUser.json')
 
 def configTop(response):
-    gameUser = dataUtil.readJson('data/user/gameUser.json')
+    gameUser = dt.readJson('data/user/gameUser.json')
     response['canChangeLoginName'] = True
     response['setPassword'] = 'passwordNotice' in gameUser and gameUser['passwordNotice']
 
 def followTop(response):
-    response['userFollowList'] = dataUtil.readJson('data/user/userFollowList.json')
-    response['followers'] = dataUtil.getUserValue('followCount')
+    response['userFollowList'] = dt.readJson('data/user/userFollowList.json')
+    response['followers'] = dt.getUserValue('followCount')
     response['blocked'] = 0
 
 def gachaHistory(response):
-    response['gachaHistoryList'] = dataUtil.readJson('data/user/gachaHistoryList.json')
+    response['gachaHistoryList'] = dt.readJson('data/user/gachaHistoryList.json')
     response['gachaHistoryCount'] = len(response['gachaHistoryList'])
 
 def gachaTop(response):
-    response['userGachaGroupList'] = dataUtil.readJson('data/user/userGachaGroupList.json')
-    response['gachaScheduleList'] = dataUtil.readJson('data/gachaScheduleList.json')
+    response['userGachaGroupList'] = dt.readJson('data/user/userGachaGroupList.json')
+    response['gachaScheduleList'] = dt.readJson('data/gachaScheduleList.json')
 
 def magiRepo(response):
-    response['magiRepoList'] = dataUtil.readJson('data/magiRepoList.json')
+    response['magiRepoList'] = dt.readJson('data/magiRepoList.json')
 
 def pieceArchive(response):
-    userPieceList = dataUtil.readJson('data/user/userPieceList.json')
+    userPieceList = dt.readJson('data/user/userPieceList.json')
     response['userPieceArchiveList'] = [userPiece for userPiece in userPieceList if userPiece['archive']]
 
 def pieceCollection(response):
-    response['userPieceCollectionList'] = dataUtil.readJson('data/user/userPieceCollectionList.json')
+    response['userPieceCollectionList'] = dt.readJson('data/user/userPieceCollectionList.json')
 
 def presentList(response):
     response['presentList'] = []
 
 def shopTop(response):
-    response['shopList'] = dataUtil.readJson('data/shopList.json')
-    response['userShopItemList'] = dataUtil.readJson('data/user/userShopItemList.json')
+    response['shopList'] = dt.readJson('data/shopList.json')
+    response['userShopItemList'] = dt.readJson('data/user/userShopItemList.json')
 
     shopItemIds = set([item['shopItemId'] for item in response['userShopItemList']])
     backgrounds = {'HOME_EV_1003_21028': 381, 'HOME_MAP_11011': 1720, 'HOME_MAP_11012': 1721, 
                     'HOME_MAP_11013': 1722, 'HOME_EV_1033_13101': 2388}
     addBackgrounds = [itemId for itemId in backgrounds.keys() 
-                        if dataUtil.getUserObject('userItemList', itemId) is not None
+                        if dt.getUserObject('userItemList', itemId) is not None
                         and backgrounds[itemId] not in shopItemIds]
     for itemId in addBackgrounds:
         response['userShopItemList'].append({
-            "createdAt": newUserObjectUtil.nowstr(),
+            "createdAt": homu.nowstr(),
             "num": 1,
             "shopItemId": backgrounds[itemId],
-            "userId": dataUtil.userId
+            "userId": dt.userId
         })
 
     formations = {'911': 999431, '912': 999432, '913': 999433, '921': 999434, '922': 999435, '923': 999436, 
                 '131': 5, '141': 424, '151': 425, '161': 426, '171': 427, '181': 428, '711': 999428, '611': 999430}
     addFormations = [itemId for itemId in formations.keys() 
-                        if dataUtil.getUserObject('userItemList', itemId) is not None
+                        if dt.getUserObject('userItemList', itemId) is not None
                         and formations[itemId] not in shopItemIds]
     for itemId in addFormations:
         response['userShopItemList'].append({
-            "createdAt": newUserObjectUtil.nowstr(),
+            "createdAt": homu.nowstr(),
             "num": 1,
             "shopItemId": formations[itemId],
-            "userId": dataUtil.userId
+            "userId": dt.userId
         })
 
 def storyCollection(response):
-    response['eventStoryList'] = dataUtil.readJson('data/eventStoryList.json')
-    response['arenaBattleFreeRankClassList'] = dataUtil.readJson('data/arenaBattleFreeRankClassList.json')
-    response['userArenaBattle'] = dataUtil.readJson('data/user/userArenaBattle.json')
-    response['campaignStoryList'] = dataUtil.readJson('data/campaignStoryList.json')
+    response['eventStoryList'] = dt.readJson('data/eventStoryList.json')
+    response['arenaBattleFreeRankClassList'] = dt.readJson('data/arenaBattleFreeRankClassList.json')
+    response['userArenaBattle'] = dt.readJson('data/user/userArenaBattle.json')
+    response['campaignStoryList'] = dt.readJson('data/campaignStoryList.json')
 
 def supportSelect(response):
-    response['npcHelpList'] = [dataUtil.readJson('data/npc.json')]
+    response['npcHelpList'] = [dt.readJson('data/npc.json')]
 
 def doppelCollection(response):
-    response['doppelList'] = dataUtil.masterDoppels
+    response['doppelList'] = dt.masterDoppels
 
 def enemyCollection(response):
-    response['enemyList'] = dataUtil.readJson('data/enemyList.json')
-    response['userEnemyList'] = dataUtil.readJson('data/user/userEnemyList.json')
+    response['enemyList'] = dt.readJson('data/enemyList.json')
+    response['userEnemyList'] = dt.readJson('data/user/userEnemyList.json')
 
 specialCases = {
     "ArenaFreeRank": arenaFreeRank,
@@ -185,7 +186,7 @@ specialCases = {
 # TODO: clear history on first login of the day
 def login(user):
     print('logging in')
-    nowstr = newUserObjectUtil.nowstr()
+    nowstr = homu.nowstr()
     lastLogin = datetime.strptime(user['lastLoginDate'], '%Y/%m/%d %H:%M:%S')
     if (lastLogin.date()-datetime.today().date()).days == 1:
         user['loginDaysInRow'] += 1
@@ -198,20 +199,20 @@ def login(user):
     user['lastAccessDate'] = nowstr
     user['indexingTargetDate'] = nowstr
 
-    dataUtil.setGameUserValue('announcementViewAt', nowstr)
+    dt.setGameUserValue('announcementViewAt', nowstr)
     return user
 
 def addArgs(response, args, isLogin):
-    user = dataUtil.readJson('data/user/user.json')
+    user = dt.readJson('data/user/user.json')
 
     lastLogin = datetime.strptime(user['lastLoginDate'], '%Y/%m/%d %H:%M:%S')
     # checking if midnight passed; logins have to happen then too
     if isLogin or (lastLogin.date()-datetime.today().date()).days > 0:
         user = login(user)
-        dataUtil.saveJson('data/user/user.json', user)
+        dt.saveJson('data/user/user.json', user)
 
     for arg in args:
-        if arg in ['user', 'gameUser', 'userStatusList',
+        if arg in ['user', 'gameUser',
         'userLive2dList', 'userCardList', 'userCharaList', 'userDeckList', 'userFormationSheetList',
         'userPieceList', 'userPieceSetList', 'userItemList', 'userSectionList', 'userGiftList',
         'userQuestAdventureList', 'userQuestBattleList', 'userChapterList', 'userDoppelList',
@@ -219,28 +220,31 @@ def addArgs(response, args, isLogin):
             print('loading ' + arg + ' from json')
             fpath = 'data/user/'+arg+'.json'
             if os.path.exists(fpath):
-                response[arg] = dataUtil.readJson(fpath)
+                response[arg] = dt.readJson(fpath)
                 if arg == 'userPieceList':
                     response[arg] = [userPiece for userPiece in response[arg] if not userPiece['archive']]
             else:
                 print(f'{fpath} not found')
+        elif arg == 'userStatusList':
+            response[arg] = homu.getAllStatuses()
         elif arg in ['itemList', 'giftList', 'pieceList']:
             print('loading ' + arg + ' from json')
             fpath = 'data/'+arg+'.json'
             if os.path.exists(fpath):
-                response[arg] = dataUtil.readJson(fpath)
+                response[arg] = dt.readJson(fpath)
             else:
                 print(f'{fpath} not found')
         elif arg.endswith('BattleResultList'):
             print('loading ' + arg[:-4] + ' from json')
             fpath = 'data/user/'+arg[:-4]+'.json'
             if os.path.exists(fpath):
-                response[arg] = dataUtil.readJson(fpath)
+                response[arg] = dt.readJson(fpath)
         elif arg.lower().endswith('list'):
             response[arg] = []
 
 def handlePage(endpoint):
-    response = dataUtil.readJson('data/events.json')
+    response = dt.readJson('data/events.json')
+    response['currentTime'] = homu.nowstr()
 
     args = flask.request.args.get('value')
     if args is not None:

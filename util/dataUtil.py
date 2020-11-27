@@ -76,6 +76,9 @@ def deleteUserObject(listName, objectId):
     idx = userIndices[listName][objectId]
     del userIndices[listName][objectId]
     del data[idx]
+    for otherObjectId, otherIdx in userIndices[listName].items():
+        if otherIdx > idx:
+            userIndices[listName][otherObjectId] -= 1
 
     saveJson(path, data)
     return data
@@ -141,5 +144,15 @@ def setUserValue(key, value):
     user[key] = value
     saveJson('data/user/user.json', user)
     return user
+
+def updateJson(r1, r2):
+    for key in r2.keys():
+        if key in r1:
+            if type(r2[key])==list or type(r2[key])==tuple:
+                r1[key] += r2[key]
+            elif type(r2[key])==dict:
+                r1[key].update(r2[key])
+            else:
+                r1[key] = r2[key]
 
 userId = getUserValue('id')

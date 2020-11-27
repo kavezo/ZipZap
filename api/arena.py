@@ -3,16 +3,17 @@ import flask
 from datetime import datetime
 from uuid import uuid1
 
-from util import dataUtil, newUserObjectUtil
+from util import dataUtil as dt
+from util.homuUtil import nowstr
 
 def arenaStart(response):
     body = flask.request.json
     
-    chosenTeam = dataUtil.getUserObject('userDeckList', 21)
+    chosenTeam = dt.getUserObject('userDeckList', 21)
     if chosenTeam is None:
         flask.abort(400, '{"errorTxt": "You don\'t have a mirrors team...","resultCode": "error","title": "Error"}')
 
-    chosenFormation = dataUtil.getUserObject('userFormationSheetList', chosenTeam['formationSheetId'])
+    chosenFormation = dt.getUserObject('userFormationSheetList', chosenTeam['formationSheetId'])
     if chosenFormation is None:
         flask.abort(400, '{"errorTxt": "You don\'t have that formation.","resultCode": "error","title": "Error"}')
 
@@ -33,7 +34,7 @@ def arenaStart(response):
             "clearedMission3": False,
             "connectNum": 0,
             "continuedNum": 0,
-            "createdAt": newUserObjectUtil.nowstr(),
+            "createdAt": nowstr(),
             "deadNum": 0,
             "deckType": 21,
             "diskAcceleNum": 0,
@@ -48,7 +49,7 @@ def arenaStart(response):
             "formationSheetId": chosenTeam['formationSheetId'],
             "formationSheet": chosenFormation,
             "id": battleId,
-            "level": dataUtil.getUserValue('level'),
+            "level": dt.getUserValue('level'),
             "magiaNum": 0,
             "nativeClearTime": 0,
             "questBattleStatus": "CREATED",
@@ -56,7 +57,7 @@ def arenaStart(response):
             "serverClearTime": 0,
             "skillNum": 0,
             "turns": 0,
-            "userId": dataUtil.userId
+            "userId": dt.userId
         }
 
     for i in range(5):
@@ -66,14 +67,14 @@ def arenaStart(response):
     
     userArenaBattleResult = {
         "userQuestBattleResultId": battleId,
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "opponentUserId": body['opponentUserId'],
         "arenaBattleType": "FREE_RANK",
         "arenaBattleStatus": "CREATED",
         "arenaBattleOpponentType": "SAME",
         "numberOfConsecutiveWins": 0,
         "point": 0,
-        "createdAt": newUserObjectUtil.nowstr()
+        "createdAt": nowstr()
     }
 
     response.update({
@@ -82,8 +83,8 @@ def arenaStart(response):
         'userArenaBattleResult': [userArenaBattleResult]
     })
 
-    dataUtil.saveJson('data/user/userQuestBattleResult.json', userQuestBattleResult)
-    dataUtil.saveJson('data/user/userArenaBattleResult.json', userArenaBattleResult)
+    dt.saveJson('data/user/userQuestBattleResult.json', userQuestBattleResult)
+    dt.saveJson('data/user/userArenaBattleResult.json', userArenaBattleResult)
 
 def arenaReload(response):
 #same as page/ArenaFreeRank?

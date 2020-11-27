@@ -5,19 +5,21 @@ import random
 from datetime import datetime
 from uuid import uuid1
 
-from util import dataUtil, newUserObjectUtil
+from util import dataUtil as dt
+from util import newUserObjectUtil as newtil
+from util.homuUtil import nowstr
 
 cardsByRarity = [[],[],[],[],[]]
-for chara in dataUtil.masterCards.values():
+for chara in dt.masterCards.values():
     idx = int(chara['cardList'][0]['card']['rank'][-1])-1
     cardsByRarity[idx].append(chara)
 
 piecesByRarity = [[],[],[],[],[]]
-for piece in dataUtil.masterPieces.values():
+for piece in dt.masterPieces.values():
     idx = int(piece['rank'][-1])-1
     piecesByRarity[idx].append(piece)
 
-enhanceGems = [item for item in dataUtil.masterItems.values() if item['itemCode'].startswith('COMPOSE')]
+enhanceGems = [item for item in dt.masterItems.values() if item['itemCode'].startswith('COMPOSE')]
 
 def drawOneNormal():
     itemType = np.random.choice(['g', 'm3', 'm2', 'm1', 'm0'], p=[0.5, 0.05, 0.1, 0.15, 0.2])
@@ -38,7 +40,7 @@ def drawTenNormal():
     return results, itemTypes
 
 def getGachaRates():
-    return dataUtil.readJson('data/gacha_rates.json')
+    return dt.readJson('data/gacha_rates.json')
 
 def drawOnePremium(pity, probs=None):
     allRates = getGachaRates()
@@ -91,23 +93,23 @@ def drawTenPremium(pity):
     return results, resultItemTypes, pity
 
 def setUpPity(groupId, pity=None):
-    pityGroup = dataUtil.getUserObject('userGachaGroupList', groupId)
+    pityGroup = dt.getUserObject('userGachaGroupList', groupId)
     if pityGroup is not None:
         if pity is None:
             return pityGroup, pityGroup['count']
         else:
             pityGroup['count'] = pity
-            dataUtil.setUserObject('userGachaGroupList', groupId, pityGroup)
+            dt.setUserObject('userGachaGroupList', groupId, pityGroup)
             return pityGroup, None
 
     # didn't find matching group
-    newPity = newUserObjectUtil.createUserGachaGroup(groupId)
-    dataUtil.setUserObject('userGachaGroupList', groupId, newPity)
+    newPity = newtil.createUserGachaGroup(groupId)
+    dt.setUserObject('userGachaGroupList', groupId, newPity)
     return newPity, 0
 
 def spend(itemId, amount, preferredItemId = None, preferredItemAmount = 1):
-    getItem = lambda x: dataUtil.getUserObject('userItemList', x)
-    setItem = lambda x, y: dataUtil.setUserObject('userItemList', x, y)
+    getItem = lambda x: dt.getUserObject('userItemList', x)
+    setItem = lambda x, y: dt.setUserObject('userItemList', x, y)
     
     updatedItems = []
     foundPreferred = False
@@ -146,30 +148,30 @@ def spend(itemId, amount, preferredItemId = None, preferredItemAmount = 1):
     return updatedItems
 
 def addGem(gem):
-    item = dataUtil.getUserObject('userItemList', gem['itemCode'])
+    item = dt.getUserObject('userItemList', gem['itemCode'])
     item['quantity'] += 1
-    dataUtil.setUserObject('userItemList', gem['itemCode'], item)
+    dt.setUserObject('userItemList', gem['itemCode'], item)
     return item
 
 def addStory(charaId):
-    existingSections = dataUtil.listUserObjectKeys('userSectionList')
-    validSections = dataUtil.masterSections.keys()
+    existingSections = dt.listUserObjectKeys('userSectionList')
+    validSections = dt.masterSections.keys()
     userSectionDict = {}
     for i in range(4):
         sectionId = '3{0}{1}'.format(charaId, i+1)
         if sectionId in existingSections: continue
         if sectionId in validSections:
             userSectionDict[sectionId] = {
-                "userId": dataUtil.userId,
+                "userId": dt.userId,
                 "sectionId": sectionId,
-                "section": dataUtil.masterSections[sectionId],
+                "section": dt.masterSections[sectionId],
                 "canPlay": True, #str(sectionId).endswith('1'),
                 "cleared": False,
-                "createdAt": newUserObjectUtil.nowstr()
+                "createdAt": nowstr()
             }
 
-    existingBattles = dataUtil.listUserObjectKeys('userQuestBattleList')
-    validBattles = dataUtil.masterBattles.keys()
+    existingBattles = dt.listUserObjectKeys('userQuestBattleList')
+    validBattles = dt.masterBattles.keys()
     userQuestBattleDict = {}
     for i in range(4):
         for j in range(3):
@@ -177,44 +179,48 @@ def addStory(charaId):
             if battleId in existingBattles: continue
             if battleId in validBattles:
                 userQuestBattleDict[battleId] = {
-                    "userId": dataUtil.userId,
+                    "userId": dt.userId,
                     "questBattleId": battleId,
-                    "questBattle": dataUtil.masterBattles[battleId],
+                    "questBattle": dt.masterBattles[battleId],
                     "cleared": True,
                     "missionStatus1": "CLEARED",
                     "missionStatus2": "CLEARED",
                     "missionStatus3": "CLEARED",
                     "rewardDone": True,
-                    "createdAt": newUserObjectUtil.nowstr()
+                    "createdAt": nowstr()
                 }
     
-    dataUtil.batchSetUserObject('userSectionList', userSectionDict)
-    dataUtil.batchSetUserObject('userQuestBattleList', userQuestBattleDict)
+    dt.batchSetUserObject('userSectionList', userSectionDict)
+    dt.batchSetUserObject('userQuestBattleList', userQuestBattleDict)
     return list(userSectionDict.values()), list(userQuestBattleDict.values())
 
 def addMeguca(charaId):
     # TODO: get the story of the meguca
-    userChara = dataUtil.getUserObject('userCharaList', charaId)
+    userChara = dt.getUserObject('userCharaList', charaId)
     foundExisting = userChara is not None
 
     if not foundExisting:
-        userCard, userChara, userLive2d = newUserObjectUtil.createUserMeguca(charaId)
-        dataUtil.setUserObject('userCardList', userCard['id'], userCard)
-        dataUtil.setUserObject('userCharaList', charaId, userChara)
+        userCard, userChara, userLive2d = newtil.createUserMeguca(charaId)
+        dt.setUserObject('userCardList', userCard['id'], userCard)
+        dt.setUserObject('userCharaList', charaId, userChara)
 
         live2dPath = 'data/user/userLive2dList.json'
-        dataUtil.saveJson('data/user/userLive2dList.json', dataUtil.readJson(live2dPath) + [userLive2d])
+        dt.saveJson('data/user/userLive2dList.json', dt.readJson(live2dPath) + [userLive2d])
     else:
         userChara['lbItemNum'] += 1
-        dataUtil.setUserObject('userCharaList', charaId, userChara)
+        dt.setUserObject('userCharaList', charaId, userChara)
 
-        userCard = dataUtil.getUserObject('userCardList', userChara['userCardId'])
-        userLive2d = dataUtil.getUserObject('userLive2dList', int(str(charaId)+'00'))
+        userCard = dt.getUserObject('userCardList', userChara['userCardId'])
+        userLive2d = dt.getUserObject('userLive2dList', int(str(charaId)+'00'))
 
     return userCard, userChara, userLive2d, foundExisting
 
 def addPiece(pieceId):
-    userPiece, foundExisting = newUserObjectUtil.createUserMemoria(pieceId)
+    userPiece = newtil.createUserMemoria(pieceId)
+
+    foundExisting = False
+    for userPiece in dt.readJson('data/user/userPieceList.json'):
+        foundExisting = foundExisting or (userPiece['pieceId'] == pieceId)
     
     if not foundExisting:
         newPieceColle = {
@@ -223,9 +229,9 @@ def addPiece(pieceId):
             "maxLevel": 1,
             "piece": piece,
             "pieceId": pieceId,
-            "userId": dataUtil.userId
+            "userId": dt.userId
         }
-        dataUtil.setUserObject('userPieceCollectionList', pieceId, newPieceColle)
+        dt.setUserObject('userPieceCollectionList', pieceId, newPieceColle)
     return userPiece, foundExisting
     
 def draw():
@@ -235,7 +241,7 @@ def draw():
     body = flask.request.json
 
     chosenGacha = None
-    for gacha in dataUtil.readJson('data/gachaScheduleList.json'):
+    for gacha in dt.readJson('data/gachaScheduleList.json'):
         if gacha['id'] == body['gachaScheduleId']:
             chosenGacha = gacha
             break
@@ -405,31 +411,31 @@ def draw():
     pullId = str(uuid1())
     if not os.path.exists('data/user/gachaHistory'):
         os.mkdir('data/user/gachaHistory')
-    dataUtil.saveJson('data/user/gachaHistory/'+pullId+'.json', {'gachaAnimation': gachaAnimation})
+    dt.saveJson('data/user/gachaHistory/'+pullId+'.json', {'gachaAnimation': gachaAnimation})
     newHistory = {
         "id": pullId,
-        "userId": dataUtil.userId,
+        "userId": dt.userId,
         "gachaScheduleId": body['gachaScheduleId'],
         "gachaSchedule": chosenGacha,
         "gachaBeanKind": body['gachaBeanKind'],
         "bonusTimeFlg": False,
-        "createdAt": newUserObjectUtil.nowstr()
+        "createdAt": nowstr()
     }
     print(gachaAnimation)
-    dataUtil.setUserObject('gachaHistoryList', pullId, newHistory)
+    dt.setUserObject('gachaHistoryList', pullId, newHistory)
     return flask.jsonify(response)
 
 def getHistory(endpoint):
     pullId = endpoint.split('/')[-1]
     if os.path.exists('data/user/gachaHistory/'+pullId+'.json'):
-        response = dataUtil.readJson('data/user/gachaHistory/'+pullId+'.json')
+        response = dt.readJson('data/user/gachaHistory/'+pullId+'.json')
         response['resultCode'] = 'success'
         return flask.jsonify(response)
     else:
         flask.abort(404, description='Could not find specified history.')
 
 def getProbability():
-    return dataUtil.readJson('data/gachaProbability.json')
+    return dt.readJson('data/gachaProbability.json')
 
 def handleGacha(endpoint):
     if endpoint.startswith('draw'):

@@ -1,44 +1,45 @@
-from util import dataUtil, newUserObjectUtil
+from util import dataUtil as dt
+from util.homuUtil import nowstr
 import json
 
 def addMissingMss():
-    allSectionIds = dataUtil.masterSections.keys()
-    userSectionIds = dataUtil.userIndices['userSectionList'].keys()
-    userCharaIds = dataUtil.userIndices['userCharaList'].keys() # don't need to dedupe because this already is a set
+    allSectionIds = dt.masterSections.keys()
+    userSectionIds = dt.userIndices['userSectionList'].keys()
+    userCharaIds = dt.userIndices['userCharaList'].keys() # don't need to dedupe because this already is a set
     missingMSSections = [sectionId for sectionId in allSectionIds if not sectionId in userSectionIds and str(sectionId).startswith('3')]
     addSections = [sectionId for sectionId in missingMSSections if int(str(sectionId)[1:5]) in userCharaIds]
-    userSectionList = dataUtil.readJson('data/user/userSectionList.json')
+    userSectionList = dt.readJson('data/user/userSectionList.json')
     for sectionId in addSections:
         userSection = {
-            "userId": dataUtil.userId,
+            "userId": dt.userId,
             "sectionId": sectionId,
-            "section": dataUtil.masterSections[sectionId],
+            "section": dt.masterSections[sectionId],
             "canPlay": True, #str(sectionId).endswith('1'),
             "cleared": False,
-            "createdAt": newUserObjectUtil.nowstr()
+            "createdAt": nowstr()
         }
         userSectionList.append(userSection)
-    dataUtil.saveJson('data/user/userSectionList.json', userSectionList)
+    dt.saveJson('data/user/userSectionList.json', userSectionList)
 
-    allBattleIds = dataUtil.masterBattles.keys()
-    userBattleIds = dataUtil.userIndices['userQuestBattleList'].keys()
+    allBattleIds = dt.masterBattles.keys()
+    userBattleIds = dt.userIndices['userQuestBattleList'].keys()
     missingMSSBattles = [battleId for battleId in allBattleIds if not battleId in userBattleIds and str(battleId).startswith('3')]
     addBattles = [battleId for battleId in missingMSSBattles if int(str(battleId)[1:5]) in userCharaIds]
-    userQuestBattleList = dataUtil.readJson('data/user/userQuestBattleList.json')
+    userQuestBattleList = dt.readJson('data/user/userQuestBattleList.json')
     for battleId in addBattles:
         userBattle = {
-            "userId": dataUtil.userId,
+            "userId": dt.userId,
             "questBattleId": battleId,
-            "questBattle": dataUtil.masterBattles[battleId],
+            "questBattle": dt.masterBattles[battleId],
             "cleared": True,
             "missionStatus1": "CLEARED",
             "missionStatus2": "CLEARED",
             "missionStatus3": "CLEARED",
             "rewardDone": True,
-            "createdAt": newUserObjectUtil.nowstr()
+            "createdAt": nowstr()
         }
         userQuestBattleList.append(userBattle)
-    dataUtil.saveJson('data/user/userQuestBattleList.json', userQuestBattleList)
+    dt.saveJson('data/user/userQuestBattleList.json', userQuestBattleList)
 
 def dedupeCharas():
     # the problem is, every time you pull a new copy, you get a new chara
