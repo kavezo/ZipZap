@@ -182,11 +182,11 @@ def addStory(charaId):
                     "userId": dt.userId,
                     "questBattleId": battleId,
                     "questBattle": dt.masterBattles[battleId],
-                    "cleared": True,
-                    "missionStatus1": "CLEARED",
-                    "missionStatus2": "CLEARED",
-                    "missionStatus3": "CLEARED",
-                    "rewardDone": True,
+                    "cleared": False,
+                    "missionStatus1": "NON_CLEAR",
+                    "missionStatus2": "NON_CLEAR",
+                    "missionStatus3": "NON_CLEAR",
+                    "rewardDone": False,
                     "createdAt": nowstr()
                 }
     

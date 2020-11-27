@@ -13,7 +13,6 @@ def createScenario(userQuestBattle):
         "bgm": questBattle['bgm'],
         "bgmBoss": questBattle['bossBgm'],
         "title": section['title'],
-        "difficulty": section['difficulty'],
         "cost": questBattle['ap'] if 'ap' in questBattle else section['ap'],
         "missionList": [],
         #"sheetType": 6, # what is this?
@@ -27,11 +26,14 @@ def createScenario(userQuestBattle):
         })
 
     battleType = int(str(questBattle['sectionId'])[0])
-    titleExtendFormat = "Ch.{0} Ep." + str(section['genericIndex'])
+    titleExtendFormat = "Ch.{0} Ep." # not moving the genericIndex out here because lab sections don't have it
     if battleType <= 2:
-        scenario["titleExtend"] = titleExtendFormat.format(section['genericId'])
+        scenario["titleExtend"] = titleExtendFormat.format(section['genericId']) + str(section['genericIndex'])
     elif battleType == 3:
-        scenario["titleExtend"] = titleExtendFormat.format(str(questBattle['sectionId'])[-1])
+        scenario["titleExtend"] = titleExtendFormat.format(str(questBattle['sectionId'])[-1]) + str(section['genericIndex'])
+
+    if 'difficulty' in section:
+        scenario["difficulty"] = section['difficulty']
         
     return scenario
 
