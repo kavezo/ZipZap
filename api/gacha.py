@@ -158,14 +158,14 @@ def addStory(charaId):
     validSections = dt.masterSections.keys()
     userSectionDict = {}
     for i in range(4):
-        sectionId = '3{0}{1}'.format(charaId, i+1)
+        sectionId = int('3{0}{1}'.format(charaId, i+1))
         if sectionId in existingSections: continue
         if sectionId in validSections:
             userSectionDict[sectionId] = {
                 "userId": dt.userId,
                 "sectionId": sectionId,
                 "section": dt.masterSections[sectionId],
-                "canPlay": True, #str(sectionId).endswith('1'),
+                "canPlay": str(sectionId).endswith('1'),
                 "cleared": False,
                 "createdAt": nowstr()
             }
@@ -175,7 +175,7 @@ def addStory(charaId):
     userQuestBattleDict = {}
     for i in range(4):
         for j in range(3):
-            battleId = '3{0}{1}{2}'.format(charaId, i+1, j+1)
+            battleId = int('3{0}{1}{2}'.format(charaId, i+1, j+1))
             if battleId in existingBattles: continue
             if battleId in validBattles:
                 userQuestBattleDict[battleId] = {
@@ -195,7 +195,6 @@ def addStory(charaId):
     return list(userSectionDict.values()), list(userQuestBattleDict.values())
 
 def addMeguca(charaId):
-    # TODO: get the story of the meguca
     userChara = dt.getUserObject('userCharaList', charaId)
     foundExisting = userChara is not None
 
@@ -216,11 +215,11 @@ def addMeguca(charaId):
     return userCard, userChara, userLive2d, foundExisting
 
 def addPiece(pieceId):
-    userPiece = newtil.createUserMemoria(pieceId)
-
     foundExisting = False
     for userPiece in dt.readJson('data/user/userPieceList.json'):
         foundExisting = foundExisting or (userPiece['pieceId'] == pieceId)
+    
+    userPiece = newtil.createUserMemoria(pieceId)
     
     if not foundExisting:
         newPieceColle = {
@@ -279,8 +278,8 @@ def draw():
     userPieceList = []
     userLive2dList = []
     userItemList = []
-    userSectionList = None
-    userQuestBattleList = None
+    userSectionList = []
+    userQuestBattleList = []
 
     responseList = []
 
@@ -300,7 +299,9 @@ def draw():
             if not foundExisting:
                 userCardList.append(card)
                 userLive2dList.append(live2d)
-                userSectionList, userQuestBattleList = addStory(result['charaId'])
+                newSectionList, newQuestBattleList = addStory(result['charaId'])
+                userSectionList += newSectionList
+                userQuestBattleList += newQuestBattleList
             userCharaList.append(chara)
             directionType = 3
             if result['cardList'][0]['card']['rank'][-1] == "4":
@@ -404,8 +405,8 @@ def draw():
         "userPieceList": userPieceList
     }
 
-    if userSectionList is not None: response['userSectionList'] = userSectionList
-    if userQuestBattleList is not None: response['userQuestBattleList'] = userQuestBattleList
+    if len(userSectionList) > 0: response['userSectionList'] = userSectionList
+    if len(userQuestBattleList) > 0: response['userQuestBattleList'] = userQuestBattleList
 
     # add to user history
     pullId = str(uuid1())

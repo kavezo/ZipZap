@@ -45,8 +45,8 @@ def obtainReward(clearReward, args):
         newLive2d, exists = newtil.createUserLive2d(clearReward['genericId'], 
                                                 clearReward['genericCode'], clearReward['displayName'])
         if not exists:
-            userLive2dList = dt.readJson('data/user/userLive2dList')
-            dt.saveJson('data/user/userLive2dList', userLive2dList + [newLive2d])
+            userLive2dList = dt.readJson('data/user/userLive2dList.json')
+            dt.saveJson('data/user/userLive2dList.json', userLive2dList + [newLive2d])
         args['userLive2dList'] = args.get('userLive2dList', []) + [newLive2d]
     elif presentType == 'PIECE':
         args['userPieceList'] = args.get('userPieceList', [])
@@ -56,11 +56,15 @@ def obtainReward(clearReward, args):
             dt.setUserObject('userPieceList', newPiece['id'], newPiece)
     return args
 
-def startNewSection(newSectionId, response):
+def startNewSection(newSectionId, response, canStart=True):
     newSection, exists = newtil.createUserSection(newSectionId)
     if not exists:
         response['userSectionList'] = response.get('userSectionList', []) + [newSection]
         dt.setUserObject('userSectionList', newSectionId, newSection)
+    else:
+        existingSection = dt.getUserObject('userSectionList', newSectionId)
+        existingSection['canPlay'] = canStart
+        response['userSectionList'] = response.get('userSectionList', []) + [existingSection]
 
     for newBattleId in sectionBattles[newSectionId]:
         newBattle, exists = newtil.createUserQuestBattle(newBattleId)
@@ -74,8 +78,10 @@ def startNewChapter(newChapterId, response):
         response['userChapterList'] = response.get('userChapterList', []) + [newChapter]
         dt.setUserObject('userChapterList', newChapterId, newChapter)
 
-    for sectionId in chapterSections[newChapterId]:
-        startNewSection(sectionId, response)
+    canStart = True # only for the first one
+    for sectionId in sorted(chapterSections[newChapterId], key=lambda x: x['sectionId']):
+        startNewSection(sectionId, response, canStart)
+        canStart = False
 
 def progressStory(battle):
     battleId = battle['questBattleId']
@@ -99,7 +105,7 @@ def progressStory(battle):
         clearedSection = dt.getUserObject('userSectionList', clearedSectionId)
         clearedSection['cleared'] = True
         clearedSection['clearedAt'] = nowstr()
-        obtainReward(clearedSection['clearReward'], response)
+        obtainReward(clearedSection['section']['clearReward'], response)
         response['userSectionList'].append(clearedSection)
         dt.setUserObject('userSectionList', clearedSectionId, clearedSection)
 

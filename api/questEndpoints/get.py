@@ -238,6 +238,8 @@ def dropItems(battleId, waveList):
     availableIdxs = [enemyIdx for _, enemyIdxList in enemyIdxs.items() for enemyIdx in enemyIdxList]
     for dropId, enemyIds in possibleDropToEnemyIds.items():
         numDroppers = sum([enemyCounts[enemyId] for enemyId in enemyIds])
+        if numDroppers == 0: continue 
+
         conditionalRate = dropRates[dropId]/numDroppers
         for enemyId in enemyIds:
             numDrops = np.random.binomial(enemyCounts[enemyId], conditionalRate)
@@ -258,6 +260,8 @@ def dropItems(battleId, waveList):
     # handle drops that can be dropped by anyone
     for dropItemId, codes in possibleDropCodes.items():
         numEnemies = len(availableIdxs)
+        if numEnemies == 0: continue
+
         conditionalRate = dropRates[dropItemId]/numEnemies
         numDrops = np.random.binomial(numEnemies, conditionalRate)
         idxs = np.random.choice(len(availableIdxs), numDrops, replace=False)
@@ -280,15 +284,31 @@ def dropItems(battleId, waveList):
             promisedDrops[code] = promisedDrops.get(code, 0) + 1
             removeIdxs.append((waveNo, enemyIdx))
         for removeIdx in removeIdxs: availableIdxs.remove(removeIdx)
+
+    # first clear reward
+    userQuestBattle = dt.getUserObject('userQuestBattleList', battleId)
+    if 'cleared' not in userQuestBattle or not userQuestBattle['cleared'] and 'firstClearRewardCodes' in battle:
+        waveNo, enemyIdx = availableIdxs[np.random.choice(len(availableIdxs), 1)[0]]
+        code = battle['firstClearRewardCodes']
+        if code.startswith('RICHE'):
+            rarityBox = 'BOX_BRONZE'
+        elif code.startswith('ITEM'):
+            itemId = '_'.join(code.split('_')[1:-1])
+            rarityBox = 'BOX_'+dt.masterItems[itemId]['treasureChestColor']
+        elif code.startswith('GIFT'):
+            giftId = extractGiftCode(code)
+            rarityBox = 'BOX_'+boxTypes[dt.masterGifts[giftId]['rank']]
+
+        waveList[waveNo]['enemyList'][enemyIdx]['dropItemType'] = rarityBox
+        promisedDrops[code] = promisedDrops.get(code, 0) + 1
     
     dt.saveJson('data/user/promisedDrops.json', promisedDrops)
     return waveList
 
 def getQuestData(battleId, args):
-    waveList = [x for x in dt.masterWaves[battleId]]
+    waveList = copy.deepcopy(dt.masterWaves[battleId])
     allQuestEnemies = dt.readJson('data/uniqueQuestEnemies.json')
-    for i, mutableWave in enumerate(waveList):
-        wave = copy.deepcopy(mutableWave)
+    for i, wave in enumerate(waveList):
         if not wave['boss']:
             enemyPool = []
             for enemyInfo in wave['enemyList']:
