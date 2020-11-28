@@ -1,6 +1,7 @@
 import flask
 import copy
 import numpy as np
+import re
 import json
 
 from util import dataUtil as dt
@@ -190,6 +191,99 @@ def separateEnemyInfo(enemy):
 
     return newEnemy, response
 
+dropItemPattern = re.compile(r'dropItem\d')
+# TODO: is there a way to ensure a certain number of event drops?
+# TODO: memoria that increase drops
+def dropItems(battleId, waveList):
+    # get list of enemyLists in waveList, then flatten
+    flatEnemies = [enemy for enemyList in [wave['enemyList'] for wave in waveList] for enemy in enemyList]
+    uniqueEnemyIds = {enemy['charId'] for enemy in flatEnemies}
+    enemyCounts = {enemyId: len([enemy for enemy in flatEnemies if enemy['charId']==enemyId]) for enemyId in uniqueEnemyIds}
+    enemyIdxs = {}
+    for i, wave in enumerate(waveList):
+        enemyList = wave['enemyList']
+        for j, enemy in enumerate(enemyList):
+            enemyId = enemy['charId']
+            enemyIdxs[enemyId] = enemyIdxs.get(enemyId, []) + [(i, j)]
+    
+    battle = dt.masterBattles[battleId]
+    possibleDropCodes = {}
+    for key in battle.keys():
+        if dropItemPattern.fullmatch(key):
+            possibleDropCodes[battle[key]['dropItemId']] = [v for k, v in battle[key].items() if k.startswith('rewardCode')]
+
+    # TODO: change rates to what they really are...
+    dropRates = {drop: 2 for drop in possibleDropCodes}
+    promisedDrops = {'questBattleId': battleId}
+
+    # handle items that can only be dropped by particular enemies
+    # get list of who can drop
+    dropsToEnemies = {int(k): v for k, v in dt.readJson('data/enemyDrops.json').items()}
+    extractGiftCode = lambda x: int(x.split('_')[1])
+    # this can't handle dropItemIds that have both gifts and items as dropCodes, but maybe we don't need to
+    possibleDropToEnemyIds = {}
+    for dropItemId, dropCodes in possibleDropCodes.items():
+        enemies = []
+        for dropCode in dropCodes:
+            if not dropCode.startswith('GIFT') or not extractGiftCode(dropCode) in dropsToEnemies:
+                enemies = []
+                break
+            for enemyId in dropsToEnemies[extractGiftCode(dropCode)]:
+                if enemyId in uniqueEnemyIds:
+                    enemies.append(enemyId)
+        if not len(enemies) == 0:
+            possibleDropToEnemyIds[dropItemId] = enemies
+
+    boxTypes = [None, 'BRONZE', 'SILVER', 'GOLD']
+    availableIdxs = [enemyIdx for _, enemyIdxList in enemyIdxs.items() for enemyIdx in enemyIdxList]
+    for dropId, enemyIds in possibleDropToEnemyIds.items():
+        numDroppers = sum([enemyCounts[enemyId] for enemyId in enemyIds])
+        conditionalRate = dropRates[dropId]/numDroppers
+        for enemyId in enemyIds:
+            numDrops = np.random.binomial(enemyCounts[enemyId], conditionalRate)
+            idxs = np.random.choice(len(enemyIdxs[enemyId]), numDrops, replace=False)
+            removeIdxs = []
+            for enemyIdx in idxs:
+                giftId = extractGiftCode(np.random.choice(possibleDropCodes[dropId], 1)[0])
+                rarity = dt.masterGifts[giftId]['rank']
+
+                waveNo, idx = enemyIdxs[enemyId][enemyIdx]
+                # this is going to change waveList, actually, because this list was created using references
+                waveList[waveNo]['enemyList'][idx]['dropItemType'] = 'BOX_' + boxTypes[rarity]
+                promisedDrops['GIFT_' + str(giftId) + '_1'] = promisedDrops.get('GIFT_' + str(giftId) + '_1', 0) + 1
+                removeIdxs.append((waveNo, idx))
+                availableIdxs.remove((waveNo, idx))
+            for removeIdx in removeIdxs: enemyIdxs[enemyId].remove(removeIdx)
+
+    # handle drops that can be dropped by anyone
+    for dropItemId, codes in possibleDropCodes.items():
+        numEnemies = len(availableIdxs)
+        conditionalRate = dropRates[dropItemId]/numEnemies
+        numDrops = np.random.binomial(numEnemies, conditionalRate)
+        idxs = np.random.choice(len(availableIdxs), numDrops, replace=False)
+        removeIdxs = []
+        for availableIdx in idxs:
+            code = np.random.choice(codes, 1)[0]
+            if code.startswith('RICHE'):
+                rarityBox = 'BOX_BRONZE'
+            elif code.startswith('ITEM'):
+                itemId = '_'.join(code.split('_')[1:-1])
+                rarityBox = 'BOX_'+dt.masterItems[itemId]['treasureChestColor']
+            elif code.startswith('GIFT'):
+                giftId = extractGiftCode(code)
+                rarityBox = 'BOX_'+boxTypes[dt.masterGifts[giftId]['rank']]
+                if extractGiftCode(code) in possibleDropToEnemyIds:
+                    continue
+
+            waveNo, enemyIdx = availableIdxs[availableIdx]
+            waveList[waveNo]['enemyList'][enemyIdx]['dropItemType'] = rarityBox
+            promisedDrops[code] = promisedDrops.get(code, 0) + 1
+            removeIdxs.append((waveNo, enemyIdx))
+        for removeIdx in removeIdxs: availableIdxs.remove(removeIdx)
+    
+    dt.saveJson('data/user/promisedDrops.json', promisedDrops)
+    return waveList
+
 def getQuestData(battleId, args):
     waveList = [x for x in dt.masterWaves[battleId]]
     allQuestEnemies = dt.readJson('data/uniqueQuestEnemies.json')
@@ -206,7 +300,7 @@ def getQuestData(battleId, args):
 
             # randomize
             numEnemies = max(3, np.random.binomial(9, 0.5))
-            enemyPositions = np.random.choice(list(range(1, 10)), (numEnemies,), replace=False)
+            enemyPositions = np.random.choice(list(range(1, 10)), numEnemies, replace=False)
             finalEnemies = []
 
             for pos in enemyPositions:
@@ -225,6 +319,7 @@ def getQuestData(battleId, args):
                 if 'cutinId' in enemyInfo:
                     enemy['cutinId'] = enemyInfo['cutinId']
                 waveList[i]['enemyList'][j] = copy.deepcopy(enemy)
+    waveList = dropItems(battleId, waveList)
     return waveList
 
 def dedupeDictList(dictlist, idx):

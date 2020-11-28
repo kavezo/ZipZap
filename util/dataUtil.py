@@ -154,5 +154,6 @@ def updateJson(r1, r2):
                 r1[key].update(r2[key])
             else:
                 r1[key] = r2[key]
+    return r1
 
 userId = getUserValue('id')
