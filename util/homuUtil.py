@@ -33,3 +33,28 @@ def getAllStatuses():
     allStatuses = dt.readJson('data/user/userStatusList.json')
     now = datetime.now().replace(microsecond=0)
     return [updateStatus(status, now) for status in allStatuses]
+
+# currently unused, but will be great for events
+def filterCurrValid(objectList, startKey=None, endKey=None):
+    validObjects = []
+    now = datetime.now().replace(microsecond=0)
+
+    for objectDict in objectList:
+        afterStart = True
+        if startKey is not None:
+            if type(startKey) == str: start = objectDict[startKey]
+            if callable(startKey): start = startKey(objectDict)
+            if type(start) == str: start = datetime.strptime(start, DATE_FORMAT)
+            afterStart = now >= start
+
+        beforeEnd = True
+        if endKey is not None:
+            if type(endKey) == str: end = objectDict[endKey]
+            if callable(endKey): end = endKey(objectDict)
+            if type(end) == str: end = datetime.strptime(end, DATE_FORMAT)
+            afterend = now <= end
+        
+        if afterStart and beforeEnd:
+            validObjects.append(objectDict)
+    
+    return validObjects

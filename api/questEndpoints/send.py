@@ -56,16 +56,23 @@ def sendArena(request,response):
     print(json.dumps(response))
     return flask.jsonify(response)
 
+# courtesy of magireco discord data mining
+expForNextLevel = [0, 40, 40, 40, 90, 90, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 
+    33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 
+    61, 62, 63, 64, 65, 80, 97, 115, 134, 154, 175, 197, 220, 244, 269, 295, 322, 350, 379, 409, 444, 484, 529, 579, 
+    634, 694, 759, 829, 904, 984, 1069, 1159, 1254, 1354, 1504, 1704, 1954, 2254, 2604, 3004, 3454, 3954, 4504, 5104, 
+    5754, 6454, 7204, 8004, 8854, 9754, 10704, 11704, 12704, 13704, 14704, 15704, 16704, 17704, 18704, 19704, 20704, 
+    21704, 22704, 23704, 24704, 25704, 26704, 27704, 28704, 29704]
 def giveUserExp(battle):
-    userExp = 0 #battle['questBattle']['exp'] # not uncommenting this until we know how to level up
+    userExp = battle['questBattle']['exp']
     gameUser = dt.setGameUserValue('exp', dt.getGameUserValue('exp')+userExp)
     newStatus = []
     if gameUser['exp'] >= gameUser['totalExpForNextLevel']:
+        newLevel = gameUser['level'] + 1
         dt.setGameUserValue('exp', gameUser['exp'] - gameUser['totalExpForNextLevel'])
-        dt.setGameUserValue('level', gameUser['level'] + 1)
+        dt.setGameUserValue('level', newLevel)
         dt.setGameUserValue('totalExpForCurrentLevel', gameUser['totalExpForNextLevel'])
-        # TODO: how does this actually work lol
-        gameUser = dt.setGameUserValue('totalExpForNextLevel', gameUser['totalExpForNextLevel'] + 10)
+        gameUser = dt.setGameUserValue('totalExpForNextLevel', expForNextLevel[newLevel] if newLevel < len(expForNextLevel) else 30704)
 
         maxAP = dt.getUserObject('userStatusList', 'MAX_ACP')
         currAP = dt.getUserObject('userStatusList', 'ACP')
@@ -128,11 +135,51 @@ def giveMegucaExp(body, battle):
         strBattleId = str(battle['questBattle']['questBattleId'])
         if strBattleId.startswith('3') and strBattleId[1:5] == str(charaNo):
             eps *= 2
-        userChara['bondsTotalPt'] += eps
+        userChara['bondsTotalPt'] += round(eps)
 
         resultUserCharaList.append(userChara)
         dt.setUserObject('userCharaList', charaNo, userChara)
     return resultUserCardList, resultUserCharaList
+
+# TODO: memoria that increase CC amount
+def giveDrops(battle):
+    resultDict = {}
+    dropRewardCodes = []
+    # default drop seems to always be CC...
+    if 'defaultDropItem' in battle['questBattle']:
+        cc = int(battle['questBattle']['defaultDropItem']['rewardCode1'].split('_')[-1])
+        resultDict['gameUser'] = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+cc)
+        dropRewardCodes.append(battle['questBattle']['defaultDropItem']['rewardCode1'])
+
+    dropCodes = dt.readJson('data/user/promisedDrops.json')
+    if dropCodes['questBattleId'] != battle['questBattleId']: # weird error that should never happen...
+        print('questBattleId mismatch when sending drops')
+        return resultDict
+
+    for dropCode, amount in dropCodes.items():
+        if dropCode == 'questBattleId': continue
+        
+        if dropCode.startswith('GIFT'):
+            giftId = int(dropCode.split('_')[1])
+            dropNum = amount*int(dropCode.split('_')[-1]) # seems to be always 1, but whatever
+            userGift = dt.getUserObject('userGiftList', giftId)
+            userGift['quantity'] += dropNum
+            resultDict['userGiftList'] = resultDict.get('userGiftList', []) + [userGift]
+            dt.setUserObject('userGiftList', giftId, userGift)
+        elif dropCode.startswith('ITEM'):
+            itemId = '_'.join(dropCode.split('_')[1])
+            dropNum = amount*int(dropCode.split('_')[-1]) # seems to be always 1, but whatever
+            userItem = dt.getUserObject('userItemList', itemId)
+            userItem['quantity'] += dropNum
+            resultDict['userItemList'] = resultDict.get('userItemList', []) + [userItem]
+            dt.setUserObject('userItemList', itemId, userGift)
+        elif dropCode.startswith('RICHE'):
+            cc = amount*int(dropCode.split('_')[-1])
+            resultDict['gameUser'] = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+cc)
+        dropRewardCodes += [dropCode]*amount
+
+    battle['dropRewardCodes'] = ','.join(dropRewardCodes)
+    return resultDict
 
 def send():
     body = flask.request.json
@@ -146,6 +193,7 @@ def send():
 
     # change userQuestBattleResult status
     storyResponse = None
+    dropResponse = None
     if body['result'] == 'FAILED':
         battle['questBattleStatus'] = 'FAILED'
         resultUserQuestBattle = dt.getUserObject('userQuestBattleList', battle['questBattleId'])
@@ -166,11 +214,10 @@ def send():
             battle['clearCount'] = battle.get('clearCount', 0) + 1
         # add to stories
         storyResponse = storyUtil.progressStory(battle)
+        # add drops
+        dropResponse = giveDrops(battle)
     
     # TODO: clear missions
-
-    # TODO: calculate drops and add to items
-    resultUserItemList = []
 
     # make response
     response = {
@@ -178,12 +225,14 @@ def send():
         'gameUser': gameUser,
         'userCardList': resultUserCardList,
         'userCharaList': resultUserCharaList,
-        'userItemList': resultUserItemList,
         'userQuestBattleResultList': [battle],
         'userQuestBattleList': [resultUserQuestBattle]
     }
+
     if storyResponse is not None:
-        dt.updateJson(response, storyResponse)
+        response = dt.updateJson(response, storyResponse)
+    if dropResponse is not None:
+        response = dt.updateJson(response, dropResponse)
     if newStatus != []:
         response['userStatusList'] = newStatus
 

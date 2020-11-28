@@ -77,7 +77,6 @@ def startNewChapter(newChapterId, response):
     for sectionId in chapterSections[newChapterId]:
         startNewSection(sectionId, response)
 
-# TODO: integrate this and see if it works
 def progressStory(battle):
     battleId = battle['questBattleId']
     response = {}
@@ -91,6 +90,8 @@ def progressStory(battle):
         response['userChapterList'].append(clearedChapter)
         dt.setUserObject('userChapterList', clearedChapterId, clearedChapter)
 
+    # this isn't *really* necessary because we're supposed to give the user all the sections as we give them chapters
+    # but it might be useful to catch the circumstances where for some reason, we haven't
     if battleId in nextSection:
         startNewSection(nextSection[battleId], response)
 
