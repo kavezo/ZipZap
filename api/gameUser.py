@@ -44,6 +44,7 @@ def skipAdventure():
         "resultCode": "success",
         'gameUser': gameUser
     }
+    print(json.dumps(response))
     return flask.jsonify(response)
     
 def handleGameUser(endpoint):

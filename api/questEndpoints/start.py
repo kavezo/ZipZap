@@ -27,9 +27,7 @@ def createScenario(userQuestBattle):
 
     battleType = int(str(questBattle['sectionId'])[0])
     titleExtendFormat = "Ch.{0} Ep." # not moving the genericIndex out here because lab sections don't have it
-    if battleType <= 2:
-        scenario["titleExtend"] = titleExtendFormat.format(section['genericId']) + str(section['genericIndex'])
-    elif battleType == 3:
+    if battleType <= 3:
         scenario["titleExtend"] = titleExtendFormat.format(str(questBattle['sectionId'])[-1]) + str(section['genericIndex'])
 
     if 'difficulty' in section:

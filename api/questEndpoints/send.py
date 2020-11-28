@@ -65,6 +65,7 @@ expForNextLevel = [0, 40, 40, 40, 90, 90, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
     21704, 22704, 23704, 24704, 25704, 26704, 27704, 28704, 29704]
 def giveUserExp(battle):
     userExp = battle['questBattle']['exp']
+    battle['exp'] = battle['questBattle']['exp']
     gameUser = dt.setGameUserValue('exp', dt.getGameUserValue('exp')+userExp)
     newStatus = []
     if gameUser['exp'] >= gameUser['totalExpForNextLevel']:
@@ -142,21 +143,26 @@ def giveMegucaExp(body, battle):
     return resultUserCardList, resultUserCharaList
 
 # TODO: memoria that increase CC amount
-def giveDrops(battle):
+def giveDrops(battle, cleared):
     resultDict = {}
-    dropRewardCodes = []
     # default drop seems to always be CC...
     if 'defaultDropItem' in battle['questBattle']:
         cc = int(battle['questBattle']['defaultDropItem']['rewardCode1'].split('_')[-1])
         resultDict['gameUser'] = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+cc)
-        dropRewardCodes.append(battle['questBattle']['defaultDropItem']['rewardCode1'])
+        battle['riche'] = cc
 
+    dropRewardCodes = []
     dropCodes = dt.readJson('data/user/promisedDrops.json')
     if dropCodes['questBattleId'] != battle['questBattleId']: # weird error that should never happen...
         print('questBattleId mismatch when sending drops')
         return resultDict
 
-    for dropCode, amount in dropCodes.items():
+    # first clear
+    dropCodes = list(dropCodes.items()) # unordered dict -> ordered list bc we want the first clear reward to be the first one
+    if not cleared:
+        dropCodes = [(battle['questBattle']['firstClearRewardCodes'], 1)] + dropCodes
+
+    for dropCode, amount in dropCodes:
         if dropCode == 'questBattleId': continue
         
         if dropCode.startswith('GIFT'):
@@ -167,12 +173,12 @@ def giveDrops(battle):
             resultDict['userGiftList'] = resultDict.get('userGiftList', []) + [userGift]
             dt.setUserObject('userGiftList', giftId, userGift)
         elif dropCode.startswith('ITEM'):
-            itemId = '_'.join(dropCode.split('_')[1])
+            itemId = '_'.join(dropCode.split('_')[1:-1])
             dropNum = amount*int(dropCode.split('_')[-1]) # seems to be always 1, but whatever
             userItem = dt.getUserObject('userItemList', itemId)
             userItem['quantity'] += dropNum
             resultDict['userItemList'] = resultDict.get('userItemList', []) + [userItem]
-            dt.setUserObject('userItemList', itemId, userGift)
+            dt.setUserObject('userItemList', itemId, userItem)
         elif dropCode.startswith('RICHE'):
             cc = amount*int(dropCode.split('_')[-1])
             resultDict['gameUser'] = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+cc)
@@ -191,9 +197,15 @@ def send():
     if not battle['id'] == body['userQuestBattleResultId']:
         flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
 
-    # change userQuestBattleResult status
+    # really gross, but cbf'd rn to refactor
     storyResponse = None
     dropResponse = None
+    resultUserCardList = None
+    resultUserCharaList = None
+    gameUser = dt.readJson('data/user/gameUser.json')
+    newStatus = []
+
+    # change userQuestBattleResult status
     if body['result'] == 'FAILED':
         battle['questBattleStatus'] = 'FAILED'
         resultUserQuestBattle = dt.getUserObject('userQuestBattleList', battle['questBattleId'])
@@ -202,20 +214,22 @@ def send():
             dt.setUserObject('userQuestBattleList', battle['questBattleId'], resultUserQuestBattle)
     else:
         battle['questBattleStatus'] = 'SUCCESSFUL'
+        resultUserQuestBattle = dt.getUserObject('userQuestBattleList', battle['questBattleId'])
         # add exp to user and level up, maybe
         gameUser, newStatus = giveUserExp(battle)
         # level up/episode up megucas
         resultUserCardList, resultUserCharaList = giveMegucaExp(body, battle)
+        cleared = 'cleared' in resultUserQuestBattle and resultUserQuestBattle['cleared']
+        # add drops -- required before clearing
+        dropResponse = giveDrops(battle, cleared)
         # clear
-        if 'cleared' not in battle or not battle['cleared']:
+        if not cleared:
             resultUserQuestBattle = storyUtil.clearBattle(battle)
         else:
-            battle['lastClearedAt'] = homu.nowstr()
-            battle['clearCount'] = battle.get('clearCount', 0) + 1
+            resultUserQuestBattle['lastClearedAt'] = homu.nowstr()
+            resultUserQuestBattle['clearCount'] = resultUserQuestBattle.get('clearCount', 0) + 1
         # add to stories
         storyResponse = storyUtil.progressStory(battle)
-        # add drops
-        dropResponse = giveDrops(battle)
     
     # TODO: clear missions
 
@@ -233,6 +247,12 @@ def send():
         response = dt.updateJson(response, storyResponse)
     if dropResponse is not None:
         response = dt.updateJson(response, dropResponse)
+
+    if resultUserCardList is not None:
+        response['userCardList'] = resultUserCardList
+    if resultUserCharaList is not None:
+        response['userCharaList'] = resultUserCharaList
+
     if newStatus != []:
         response['userStatusList'] = newStatus
 
