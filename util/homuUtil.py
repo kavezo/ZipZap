@@ -16,7 +16,7 @@ def updateStatus(status, now):
     if maxstatus is not None and status['point'] < maxstatus['point']:
         minutesPassed = (now-datetime.strptime(status['checkedAt'], DATE_FORMAT)) / timedelta(minutes=1)
         recoverPoints = math.floor(status['periodicPoint'] * (minutesPassed/status['checkPeriod']))
-        status['point'] += recoverPoints # yum mutability
+        status['point'] = min(status['point'] + recoverPoints, maxstatus['point'])
 
     status['checkedAt'] = now.strftime(DATE_FORMAT)
     status['createdAt'] = now.strftime(DATE_FORMAT)

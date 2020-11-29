@@ -184,3 +184,11 @@ def createUserQuestBattle(battleId):
         "rewardDone": False,
         "createdAt": nowstr()
     }, dt.getUserObject('userQuestBattleList', battleId) is not None
+
+def createUserEnemy(enemyId):
+    return {
+        'userId': dt.userId,
+        'createdAt': nowstr(),
+        'enemyId': enemyId,
+        'enemy': dt.masterEnemies[enemyId]
+    }, dt.getUserObject('userEnemyList', enemyId) is not None

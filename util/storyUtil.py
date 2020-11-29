@@ -51,7 +51,7 @@ def obtainReward(clearReward, args):
     elif presentType == 'PIECE':
         args['userPieceList'] = args.get('userPieceList', [])
         for _ in range(quantity):
-            newPiece = newtil.createUserMemoria(clearReward)
+            newPiece = newtil.createUserMemoria(clearReward['genericId'])
             args['userPieceList'].append(newPiece)
             dt.setUserObject('userPieceList', newPiece['id'], newPiece)
     return args
@@ -61,6 +61,11 @@ def startNewSection(newSectionId, response, canStart=True):
     if not exists:
         response['userSectionList'] = response.get('userSectionList', []) + [newSection]
         dt.setUserObject('userSectionList', newSectionId, newSection)
+        # open enemies
+        openEnemyList = newSection['section']['openEnemyList']
+        for enemy in openEnemyList:
+            newEnemy, exists = newtil.createUserEnemy(enemy['enemyId'])
+            if not exists: dt.setUserObject('userEnemyList', enemy['enemyId'], newEnemy)
     else:
         existingSection = dt.getUserObject('userSectionList', newSectionId)
         existingSection['canPlay'] = canStart
