@@ -150,10 +150,11 @@ def updateJson(r1, r2):
         if key in r1:
             if type(r2[key])==list or type(r2[key])==tuple:
                 r1[key] += r2[key]
-            elif type(r2[key])==dict:
+                continue
+            if type(r2[key])==dict:
                 r1[key].update(r2[key])
-            else:
-                r1[key] = r2[key]
+                continue
+        r1[key] = r2[key]
     return r1
 
 userId = getUserValue('id')

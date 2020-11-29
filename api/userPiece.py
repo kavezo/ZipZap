@@ -165,6 +165,17 @@ def compose():
     }
     return flask.jsonify(response)
 
+def setProtect(isProtected):
+    body = flask.request.json
+    userPiece = dt.getUserObject('userPieceList', body['userPieceId'])
+    userPiece['protect'] = isProtected
+    dt.setUserObject('userPieceList', body['userPieceId'], userPiece)
+    response = {
+        'resultCode': 'success',
+        'userPieceList': [userPiece]
+    }
+    return flask.jsonify(response)
+
 def setArchive(isArchive):
     body = flask.request.json
 
@@ -201,10 +212,14 @@ def sale():
 def handleUserPiece(endpoint):
     if endpoint.endswith('compose'):
         return compose()
-    elif endpoint.endswith('archive'):
-        return setArchive(True)
     elif endpoint.endswith('unarchive'):
         return setArchive(False)
+    elif endpoint.endswith('archive'):
+        return setArchive(True)
+    elif endpoint.endswith('unprotect'):
+        return setProtect(False)
+    elif endpoint.endswith('protect'):
+        return setProtect(True)
     elif endpoint.endswith('sale'):
         return sale()
     else:

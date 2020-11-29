@@ -7,10 +7,10 @@ from util.homuUtil import nowstr
 questBattles = dt.readJson('data/questBattleList.json')
 
 # TODO: need to fix for branch quests like chapter 9
-nextSection = {sorted([b['questBattleId'] for b in questBattles if b['sectionId']==s])[-1]: s+1
-                    for s in dt.masterSections.keys() if s+1 in dt.masterSections.keys()}
 sectionBattles = {s: [b['questBattleId'] for b in questBattles if b['sectionId']==s]
                     for s in dt.masterSections.keys()}
+nextSection = {sorted(battles)[-1]: sectionId+1
+                    for sectionId, battles in sectionBattles.items() if sectionId+1 in dt.masterSections.keys()}
 
 nextChapter = {}
 chapterSections = {}
@@ -64,6 +64,7 @@ def startNewSection(newSectionId, response, canStart=True):
     else:
         existingSection = dt.getUserObject('userSectionList', newSectionId)
         existingSection['canPlay'] = canStart
+        dt.setUserObject('userSectionList', newSectionId, existingSection)
         response['userSectionList'] = response.get('userSectionList', []) + [existingSection]
 
     for newBattleId in sectionBattles[newSectionId]:
@@ -84,6 +85,7 @@ def startNewChapter(newChapterId, response):
         canStart = False
 
 def progressStory(battle):
+    print('progressing story')
     battleId = battle['questBattleId']
     response = {}
     if battleId in nextChapter:
@@ -99,13 +101,14 @@ def progressStory(battle):
     # this isn't *really* necessary because we're supposed to give the user all the sections as we give them chapters
     # but it might be useful to catch the circumstances where for some reason, we haven't
     if battleId in nextSection:
+        print('battleId in nextSection')
         startNewSection(nextSection[battleId], response)
 
         clearedSectionId = battle['questBattle']['sectionId']
         clearedSection = dt.getUserObject('userSectionList', clearedSectionId)
         clearedSection['cleared'] = True
         clearedSection['clearedAt'] = nowstr()
-        obtainReward(clearedSection['section']['clearReward'], response)
+        response = obtainReward(clearedSection['section']['clearReward'], response)
         response['userSectionList'].append(clearedSection)
         dt.setUserObject('userSectionList', clearedSectionId, clearedSection)
 

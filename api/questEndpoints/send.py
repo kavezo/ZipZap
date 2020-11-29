@@ -1,5 +1,6 @@
 import flask
 import json
+import re
 
 from api import userCard
 from util import dataUtil as dt
@@ -142,8 +143,29 @@ def giveMegucaExp(body, battle):
         dt.setUserObject('userCharaList', charaNo, userChara)
     return resultUserCardList, resultUserCharaList
 
+def obtainItem(itemCode, amount=1):
+    resultDict = {}
+    if itemCode.startswith('GIFT'):
+        giftId = int(itemCode.split('_')[1])
+        dropNum = amount*int(itemCode.split('_')[-1]) # seems to be always 1, but whatever
+        userGift = dt.getUserObject('userGiftList', giftId)
+        userGift['quantity'] += dropNum
+        resultDict['userGiftList'] = resultDict.get('userGiftList', []) + [userGift]
+        dt.setUserObject('userGiftList', giftId, userGift)
+    elif itemCode.startswith('ITEM'):
+        itemId = '_'.join(itemCode.split('_')[1:-1])
+        dropNum = amount*int(itemCode.split('_')[-1]) # seems to be always 1, but whatever
+        userItem = dt.getUserObject('userItemList', itemId)
+        userItem['quantity'] += dropNum
+        resultDict['userItemList'] = resultDict.get('userItemList', []) + [userItem]
+        dt.setUserObject('userItemList', itemId, userItem)
+    elif itemCode.startswith('RICHE'):
+        cc = amount*int(itemCode.split('_')[-1])
+        resultDict['gameUser'] = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+cc)
+    return resultDict
+
 # TODO: memoria that increase CC amount
-def giveDrops(battle, cleared):
+def giveDrops(battle):
     resultDict = {}
     # default drop seems to always be CC...
     if 'defaultDropItem' in battle['questBattle']:
@@ -156,36 +178,69 @@ def giveDrops(battle, cleared):
     if dropCodes['questBattleId'] != battle['questBattleId']: # weird error that should never happen...
         print('questBattleId mismatch when sending drops')
         return resultDict
-
-    # first clear
-    dropCodes = list(dropCodes.items()) # unordered dict -> ordered list bc we want the first clear reward to be the first one
-    if not cleared:
-        dropCodes = [(battle['questBattle']['firstClearRewardCodes'], 1)] + dropCodes
-
-    for dropCode, amount in dropCodes:
+    for dropCode, amount in dropCodes.items():
         if dropCode == 'questBattleId': continue
-        
-        if dropCode.startswith('GIFT'):
-            giftId = int(dropCode.split('_')[1])
-            dropNum = amount*int(dropCode.split('_')[-1]) # seems to be always 1, but whatever
-            userGift = dt.getUserObject('userGiftList', giftId)
-            userGift['quantity'] += dropNum
-            resultDict['userGiftList'] = resultDict.get('userGiftList', []) + [userGift]
-            dt.setUserObject('userGiftList', giftId, userGift)
-        elif dropCode.startswith('ITEM'):
-            itemId = '_'.join(dropCode.split('_')[1:-1])
-            dropNum = amount*int(dropCode.split('_')[-1]) # seems to be always 1, but whatever
-            userItem = dt.getUserObject('userItemList', itemId)
-            userItem['quantity'] += dropNum
-            resultDict['userItemList'] = resultDict.get('userItemList', []) + [userItem]
-            dt.setUserObject('userItemList', itemId, userItem)
-        elif dropCode.startswith('RICHE'):
-            cc = amount*int(dropCode.split('_')[-1])
-            resultDict['gameUser'] = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+cc)
+        resultDict = dt.updateJson(resultDict, obtainItem(dropCode, amount))        
         dropRewardCodes += [dropCode]*amount
 
     battle['dropRewardCodes'] = ','.join(dropRewardCodes)
     return resultDict
+
+def clearMissions(body, battle):
+    questBattle = battle['questBattle']
+    missionCodes = [questBattle['mission1'], questBattle['mission2'], questBattle['mission3']]
+
+    userQuestBattle = dt.getUserObject('userQuestBattleList', battle['questBattleId'])
+    if all([battle['clearedMission1'], battle['clearedMission2'], battle['clearedMission3']]):
+        return battle, userQuestBattle, {}
+
+    def clearMission(missionNum, battle, userQuestBattle):
+        userQuestBattle['missionStatus'+missionNum] = 'CLEARED'
+        battle['clearedMission'+missionNum] = True
+
+    for i, missionCode in enumerate(missionCodes):
+        missionNum = str(i+1)
+        count = int(missionCode.split('_')[-1]) if re.fullmatch(r'\d+', missionCode.split('_')[-1]) else None
+        if missionCode == 'NOT_DEAD':
+            if body['deadNum'] == 0: clearMission(missionNum, battle, userQuestBattle)
+        if missionCode == 'NOT_CONTINUE':
+            if body['continueNum'] == 0: clearMission(missionNum, battle, userQuestBattle)
+        if missionCode.startswith('ACTION'):
+            if body['totalTurn'] <= count: clearMission(missionNum, battle, userQuestBattle)
+        if missionCode.startswith('HP'):
+            if body['rateHp'] >= count: clearMission(missionNum, battle, userQuestBattle)
+        if missionCode.startswith('COUNT_CONNECT'):
+            if body['connectNum'] >= count: clearMission(missionNum, battle, userQuestBattle)
+        if missionCode.startswith('ONLY_DAMAGE_ATTRIBUTE'):
+            attributeDamage = {
+                'DARK': body['totalDamageByDark'],
+                'FIRE': body['totalDamageByFire'],
+                'LIGHT': body['totalDamageByLight'],
+                'TIMBER': body['totalDamageByTimber'],
+                'VOID': body['totalDamageByVoid'],
+                'WATER': body['totalDamageByWater']
+            }
+            attribute = missionCode.split('_')[-1]
+            del attributeDamage[attribute]
+            if sum(attributeDamage.values()) == 0: clearMission(missionNum, battle, userQuestBattle)
+        if missionCode.startswith('COMBO'):
+            comboType = missionCode.split('_')[1].lower().capitalize()
+            if body['combo'+comboType+'Num'] >= count: clearMission(missionNum, battle, userQuestBattle)
+        if missionCode.startswith('MEMBER_CHARA'):
+            userCardIds = [v for k, v in battle.items() if k.startswith('userCardId')]
+            charaNos = [dt.getUserObject('userCardList', userCardId)['card']['charaNo'] for userCardId in userCardIds]
+            if count in charaNos: clearMission(missionNum, battle, userQuestBattle)
+        if missionCode in ['CLEAR', 'WAVE_1', 'ONLY_MEMBER_COUNT_5']: # automatic mission clear
+            clearMission(missionNum, battle, userQuestBattle)
+    
+    rewards = {}
+    if all([battle['clearedMission1'], battle['clearedMission2'], battle['clearedMission3']]):
+        missionRewardCode = questBattle['missionRewardCode']
+        rewards = obtainItem(missionRewardCode)
+        userQuestBattle['rewardDone'] = True
+
+    dt.setUserObject('userQuestBattleList', userQuestBattle['questBattleId'], userQuestBattle)
+    return battle, userQuestBattle, rewards
 
 def send():
     body = flask.request.json
@@ -200,6 +255,7 @@ def send():
     # really gross, but cbf'd rn to refactor
     storyResponse = None
     dropResponse = None
+    rewardResponse = None
     resultUserCardList = None
     resultUserCharaList = None
     gameUser = dt.readJson('data/user/gameUser.json')
@@ -221,17 +277,17 @@ def send():
         resultUserCardList, resultUserCharaList = giveMegucaExp(body, battle)
         cleared = 'cleared' in resultUserQuestBattle and resultUserQuestBattle['cleared']
         # add drops -- required before clearing
-        dropResponse = giveDrops(battle, cleared)
+        dropResponse = giveDrops(battle)
         # clear
         if not cleared:
             resultUserQuestBattle = storyUtil.clearBattle(battle)
         else:
             resultUserQuestBattle['lastClearedAt'] = homu.nowstr()
             resultUserQuestBattle['clearCount'] = resultUserQuestBattle.get('clearCount', 0) + 1
-        # add to stories
+        # add to stories TODO: move to only happen when first clear
         storyResponse = storyUtil.progressStory(battle)
-    
-    # TODO: clear missions
+        # missions
+        battle, resultUserQuestBattle, rewardResponse = clearMissions(body, battle)
 
     # make response
     response = {
@@ -243,10 +299,9 @@ def send():
         'userQuestBattleList': [resultUserQuestBattle]
     }
 
-    if storyResponse is not None:
-        response = dt.updateJson(response, storyResponse)
-    if dropResponse is not None:
-        response = dt.updateJson(response, dropResponse)
+    for partResponse in [storyResponse, dropResponse, rewardResponse]:
+        if partResponse is not None:
+            response = dt.updateJson(response, partResponse)
 
     if resultUserCardList is not None:
         response['userCardList'] = resultUserCardList
