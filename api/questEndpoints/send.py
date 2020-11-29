@@ -78,7 +78,7 @@ def giveUserExp(battle):
 
         maxAP = dt.getUserObject('userStatusList', 'MAX_ACP')
         currAP = dt.getUserObject('userStatusList', 'ACP')
-        maxAP['point'] += 10
+        maxAP['point'] += 1
         currAP['point'] += maxAP['point']
 
         newStatus.append(maxAP)

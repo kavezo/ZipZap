@@ -25,6 +25,7 @@ def createIndexFromList(xs, idFunc=idxFunc('id'), valFunc=INDEX_VALFUNC):
 masterBattles = createIndex('data/questBattleList.json', idxFunc('questBattleId'), ITEM_VALFUNC)
 masterCards = createIndex('data/cards.json', idxFunc('charaId'), ITEM_VALFUNC)
 masterDoppels = createIndex('data/doppelList.json', valFunc=ITEM_VALFUNC)
+masterEnemies = createIndex('data/enemyList.json', idxFunc('enemyId'), valFunc=ITEM_VALFUNC)
 masterPieces = createIndex('data/pieces.json', idxFunc('pieceId'), ITEM_VALFUNC)
 masterSections = createIndex('data/sectionList.json', idxFunc('sectionId'), ITEM_VALFUNC)
 masterChapters = createIndex('data/chapterList.json', idxFunc('chapterId'), ITEM_VALFUNC)
