@@ -9,7 +9,7 @@ from util import dataUtil as dt
 DATE_FORMAT = '%Y/%m/%d %H:%M:%S'
 
 def nowstr():
-    return (datetime.now()).strftime(DATE_FORMAT)
+    return datetime.now().strftime(DATE_FORMAT)
 
 def updateStatus(status, now):
     maxstatus = dt.getUserObject('userStatusList', 'MAX_' + status['statusId'])
@@ -52,7 +52,7 @@ def filterCurrValid(objectList, startKey=None, endKey=None):
             if type(endKey) == str: end = objectDict[endKey]
             if callable(endKey): end = endKey(objectDict)
             if type(end) == str: end = datetime.strptime(end, DATE_FORMAT)
-            afterend = now <= end
+            beforeEnd = now <= end
         
         if afterStart and beforeEnd:
             validObjects.append(objectDict)

@@ -6,6 +6,9 @@ import re
 import lzma
 from threading import Thread
 from datetime import datetime, timedelta
+import logging
+
+logger = logging.getLogger('app.webcache')
 
 if not os.path.exists('cache'):
     os.mkdir('cache')
@@ -35,7 +38,7 @@ def decodeFile(body):
 
 def getFile(path):
     global versions
-    print('getting file ' + path)
+    logger.info('getting file ' + path)
 
     RsH = {'Content-Type': 'application/json'}
     RqH = {}

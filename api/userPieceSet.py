@@ -1,8 +1,11 @@
 import flask
 from datetime import datetime
+import logging
 
 from util import dataUtil as dt
 from util.homuUtil import nowstr
+
+logger = logging.getLogger('app.userPieceSet')
 
 def save():
     body = flask.request.json
@@ -31,5 +34,5 @@ def handleUserPieceSet(endpoint):
     if endpoint.startswith('save'):
         return save()
     else:
-        print('userPieceSet/'+endpoint)
+        logger.error('Missing implementation: userPieceSet/'+endpoint)
         flask.abort(501, description="Not implemented")

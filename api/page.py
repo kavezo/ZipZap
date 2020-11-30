@@ -5,9 +5,12 @@ import os
 import flask
 import random
 import copy
+import logging
 
 from util import dataUtil as dt
 from util import homuUtil as homu
+
+logger = logging.getLogger('app.page')
 
 def arenaTop(response):
     response['userArenaBattle']=dt.readJson('data/user/userArenaBattle.json')
@@ -185,7 +188,7 @@ specialCases = {
 
 # TODO: clear history on first login of the day
 def login(user):
-    print('logging in')
+    logger.info('logging in')
     nowstr = homu.nowstr()
     lastLogin = datetime.strptime(user['lastLoginDate'], '%Y/%m/%d %H:%M:%S')
     if (lastLogin.date()-datetime.today().date()).days == 1:
@@ -217,25 +220,25 @@ def addArgs(response, args, isLogin):
         'userPieceList', 'userPieceSetList', 'userItemList', 'userSectionList', 'userGiftList',
         'userQuestAdventureList', 'userQuestBattleList', 'userChapterList', 'userDoppelList',
         'userDailyChallengeList', 'userLimitedChallengeList', 'userTotalChallengeList',]:
-            print('loading ' + arg + ' from json')
+            logger.info('loading ' + arg + ' from json')
             fpath = 'data/user/'+arg+'.json'
             if os.path.exists(fpath):
                 response[arg] = dt.readJson(fpath)
                 if arg == 'userPieceList':
                     response[arg] = [userPiece for userPiece in response[arg] if not userPiece['archive']]
             else:
-                print(f'{fpath} not found')
+                logger.warning(f'{fpath} not found')
         elif arg == 'userStatusList':
             response[arg] = homu.getAllStatuses()
         elif arg in ['itemList', 'giftList', 'pieceList']:
-            print('loading ' + arg + ' from json')
+            logger.info('loading ' + arg + ' from json')
             fpath = 'data/'+arg+'.json'
             if os.path.exists(fpath):
                 response[arg] = dt.readJson(fpath)
             else:
-                print(f'{fpath} not found')
+                logger.warning(f'{fpath} not found')
         elif arg.endswith('BattleResultList'):
-            print('loading ' + arg[:-4] + ' from json')
+            logger.info('loading ' + arg[:-4] + ' from json')
             fpath = 'data/user/'+arg[:-4]+'.json'
             if os.path.exists(fpath):
                 response[arg] = dt.readJson(fpath)
@@ -257,8 +260,7 @@ def handlePage(endpoint):
         specialCases[endpoint](response)
     
     if endpoint=='ResumeBackground':
-        print('resuming')
+        logger.info('resuming')
 
     addArgs(response, args, 'TopPage' in endpoint) # login if it's TopPage
-    #print(response) 
     return flask.jsonify(response)

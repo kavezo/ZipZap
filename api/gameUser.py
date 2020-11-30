@@ -1,7 +1,10 @@
 import json
 import flask
+import logging
 
 from util import dataUtil as dt
+
+logger = logging.getLogger('app.gameUser')
 
 def changeLeader():
     body = flask.request.json
@@ -44,7 +47,6 @@ def skipAdventure():
         "resultCode": "success",
         'gameUser': gameUser
     }
-    print(json.dumps(response))
     return flask.jsonify(response)
     
 def handleGameUser(endpoint):
@@ -59,5 +61,5 @@ def handleGameUser(endpoint):
     elif endpoint.endswith('cacheClear'):
         return '{}' # TODO: set the cacheCleared variable. actually idk why you even want this but
     else:
-        print('gameUser' + endpoint)
+        logger.error('Missing implementation: gameUser' + endpoint)
         flask.abort(501, description="Not implemented")

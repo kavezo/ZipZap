@@ -4,10 +4,24 @@ app.config['JSON_AS_ASCII'] = False
 
 import os
 import shutil
+import json
 import webcache
 
+import logging 
+from util.homuUtil import nowstr
+
+formatter = logging.Formatter('%(asctime)s %(levelname)s %(name)s : %(message)s')
+app.logger = flask.logging.create_logger(app)
+app.logger.setLevel(logging.DEBUG)
+app.logger.propagate = False
+
+fileLogging = logging.FileHandler('logs/{}.log'.format(nowstr().split(' ')[0].replace('/', '_')))
+fileLogging.setLevel(logging.INFO)
+fileLogging.setFormatter(formatter)
+app.logger.addHandler(fileLogging)
+
 if not os.path.exists('./data/user/'):
-    print('Copying over default user...')
+    app.logger.info('Copying over default user...')
     shutil.copytree('data/default_user', 'data/user')
 
 from api import arena, friend, gacha, gameUser, logger, money, page, quest, shop, \
@@ -53,6 +67,21 @@ def dummysearch(endpoint):
 @app.route('/file/<path:path>')
 def getFile(path):
     return webcache.getFile(path)
+
+@app.before_request
+def before():
+    # no idea why, but flask request is json even for file
+    if not 'file' in flask.request.path and flask.request.is_json:
+        app.logger.info(flask.request.json)
+
+@app.after_request
+def after(response):
+    if not 'file' in flask.request.path:
+        if type(response) == dict:
+            app.logger.info(json.dumps(response))
+        else:
+            app.logger.info(response.json)
+    return response
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1')

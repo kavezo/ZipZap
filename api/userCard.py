@@ -265,8 +265,7 @@ def evolve():
     
     targetUserCard = dt.getUserObject('userCardList', targetUserCardId)
     if targetUserCard is None:
-        print(targetUserCardId)
-        flask.abort(400, description='{"errorTxt": "Tried to awaken a card you don\'t have...","resultCode": "error","title": "Error"}')
+        flask.abort(400, description='{"errorTxt": "Tried to awaken a card you don\'t have: ' + targetUserCardId  + '","resultCode": "error","title": "Error"}')
     charaId = targetUserCard['card']['charaNo']
 
     # get next card
@@ -347,8 +346,7 @@ def limitBreak():
     # edit userCard
     targetUserCard = dt.getUserObject('userCardList', targetUserCardId)
     if targetUserCard is None:
-        print(targetUserCardId)
-        flask.abort(400, description='{"errorTxt": "Tried to limit break a card you don\'t have...","resultCode": "error","title": "Error"}')
+        flask.abort(400, description='{"errorTxt": "Tried to limit break a card you don\'t have...' + targetUserCardId + '","resultCode": "error","title": "Error"}')
     targetUserCard['revision'] += 1
     dt.setUserObject('userCardList', targetUserCardId, targetUserCard)
     
@@ -358,8 +356,8 @@ def limitBreak():
 
     targetUserChara = dt.getUserObject('userCharaList', targetUserCard['card']['charaNo'])
     if targetUserChara is None:
-        print(targetUserCard['card']['charaNo'])
-        flask.abort(400, description='{"errorTxt": "Tried to limit break a card you don\'t have...","resultCode": "error","title": "Error"}')
+        flask.abort(400, description='{"errorTxt": "Tried to limit break a card you don\'t have...' + 
+                                targetUserCard['card']['charaNo'] + '","resultCode": "error","title": "Error"}')
     targetUserChara['lbItemNum'] -= neededGems[targetUserChara['chara']['defaultCard']['rank']]
     dt.setUserObject('userCharaList', charaNo, targetUserChara)
 
@@ -387,8 +385,7 @@ def composeMagia():
     targetUserCard = dt.getUserObject('userCardList', targetUserCardId)
     targetUserCard['magiaLevel'] += 1
     if targetUserCard is None:
-        print(targetUserCardId)
-        flask.abort(400, description='{"errorTxt": "Tried to level magia of a card you don\'t have...","resultCode": "error","title": "Error"}')
+        flask.abort(400, description='{"errorTxt": "Tried to level magia of a card you don\'t have...' + targetUserCardId  + '","resultCode": "error","title": "Error"}')
     dt.setUserObject('userCardList', targetUserCardId, targetUserCard)
 
     # spend items
@@ -432,5 +429,5 @@ def handleUserCard(endpoint):
     elif endpoint.endswith('evolve'):
         return evolve()
     else:
-        print('userCard/'+endpoint)
+        logger.error('Missing implementation: userCard/'+endpoint)
         flask.abort(501, description="Not implemented")

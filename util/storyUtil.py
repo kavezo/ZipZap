@@ -1,9 +1,11 @@
 from datetime import datetime
+import logging
 
 from util import dataUtil as dt
 from util import newUserObjectUtil as newtil
 from util.homuUtil import nowstr
 
+logger = logging.getLogger('app.storyUtil')
 questBattles = dt.readJson('data/questBattleList.json')
 
 # TODO: need to fix for branch quests like chapter 9
@@ -90,10 +92,11 @@ def startNewChapter(newChapterId, response):
         canStart = False
 
 def progressStory(battle):
-    print('progressing story')
+    logger.info('progressing story')
     battleId = battle['questBattleId']
     response = {}
     if battleId in nextChapter:
+        logger.info('battleId in nextChapter')
         startNewChapter(nextChapter[battleId], response)
 
         clearedChapterId = int(str(battle['questBattleId'])[2:4])
@@ -106,7 +109,7 @@ def progressStory(battle):
     # this isn't *really* necessary because we're supposed to give the user all the sections as we give them chapters
     # but it might be useful to catch the circumstances where for some reason, we haven't
     if battleId in nextSection:
-        print('battleId in nextSection')
+        logger.info('battleId in nextSection')
         startNewSection(nextSection[battleId], response)
 
         clearedSectionId = battle['questBattle']['sectionId']
