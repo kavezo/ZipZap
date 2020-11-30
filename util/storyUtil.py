@@ -11,8 +11,8 @@ questBattles = dt.readJson('data/questBattleList.json')
 # TODO: need to fix for branch quests like chapter 9
 sectionBattles = {s: [b['questBattleId'] for b in questBattles if b['sectionId']==s]
                     for s in dt.masterSections.keys()}
-nextSection = {sorted(battles)[-1]: sectionId+1
-                    for sectionId, battles in sectionBattles.items() if sectionId+1 in dt.masterSections.keys()}
+nextSection = {sorted(battles)[-1]: (sectionId+1) if sectionId+1 in dt.masterSections.keys() else None
+                    for sectionId, battles in sectionBattles.items()}
 
 nextChapter = {}
 chapterSections = {}
@@ -28,6 +28,8 @@ for chapterId in dt.masterChapters.keys():
     chapterSections[chapterId] = list({battle['sectionId'] for battle in chapterBattles})
     if chapterId + 1 in dt.masterChapters.keys():
         nextChapter[chapterBattles[-1]['questBattleId']] = chapterId + 1
+    else:
+        nextChapter[chapterBattles[-1]['questBattleId']] = None
 
 def obtainReward(clearReward, args):
     presentType = clearReward['presentType']
@@ -96,28 +98,31 @@ def progressStory(battle):
     battleId = battle['questBattleId']
     response = {}
     if battleId in nextChapter:
-        logger.info('battleId in nextChapter')
-        startNewChapter(nextChapter[battleId], response)
-
         clearedChapterId = int(str(battle['questBattleId'])[2:4])
         clearedChapter = dt.getUserObject('userChapterList', clearedChapterId)
         clearedChapter['cleared'] = True
         clearedChapter['clearedAt'] = nowstr()
-        response['userChapterList'].append(clearedChapter)
+
+        if nextChapter[battleId] is not None:
+            logger.info('battleId in nextChapter')
+            startNewChapter(nextChapter[battleId], response)
+        
+        response['userChapterList'] = response.get('userChapterList', []) + [clearedChapter]
         dt.setUserObject('userChapterList', clearedChapterId, clearedChapter)
 
-    # this isn't *really* necessary because we're supposed to give the user all the sections as we give them chapters
-    # but it might be useful to catch the circumstances where for some reason, we haven't
     if battleId in nextSection:
-        logger.info('battleId in nextSection')
-        startNewSection(nextSection[battleId], response)
-
         clearedSectionId = battle['questBattle']['sectionId']
         clearedSection = dt.getUserObject('userSectionList', clearedSectionId)
         clearedSection['cleared'] = True
         clearedSection['clearedAt'] = nowstr()
+
         response = obtainReward(clearedSection['section']['clearReward'], response)
-        response['userSectionList'].append(clearedSection)
+    
+        if nextSection[battleId] is not None:
+            logger.info('battleId in nextSection')
+            startNewSection(nextSection[battleId], response)           
+            
+        response['userSectionList'] = response.get('userSectionList', []) + [clearedSection]
         dt.setUserObject('userSectionList', clearedSectionId, clearedSection)
 
     if battleId+1 in dt.masterBattles:

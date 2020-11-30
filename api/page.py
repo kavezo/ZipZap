@@ -9,6 +9,8 @@ import logging
 
 from util import dataUtil as dt
 from util import homuUtil as homu
+from util import tsurunoUtil as yuitil
+from api.questEndpoints.send import obtainItem
 
 logger = logging.getLogger('app.page')
 
@@ -187,32 +189,53 @@ specialCases = {
 }
 
 # TODO: clear history on first login of the day
-def login(user):
+def login():
     logger.info('logging in')
+    response = {}
+
+    user = dt.readJson('data/user/user.json')
+    gameUser = dt.readJson('data/user/gameUser.json')
+
     nowstr = homu.nowstr()
-    lastLogin = datetime.strptime(user['lastLoginDate'], '%Y/%m/%d %H:%M:%S')
-    if (lastLogin.date()-datetime.today().date()).days == 1:
-        user['loginDaysInRow'] += 1
-        user['todayFirstAccessDate'] = nowstr
-        user['dataPatchedAt'] = nowstr
+    if datetime.now().date() > datetime.strptime(user['todayFirstAccessDate'], homu.DATE_FORMAT).date():
+        logger.info('new day')
+
+        dt.setUserValue('loginDaysInRow', user['loginDaysInRow'])
+        dt.setUserValue('todayFirstAccessDate', nowstr)
+        dt.setUserValue('dataPatchedAt', nowstr)
+
+        yuitil.resetDaily()
+
+        loginBonusCount = (gameUser['loginBonusCount'] % 7) + 1
+        dt.setGameUserValue('loginBonusGetAt', nowstr)
+        dt.setGameUserValue('loginBonusPattern', 'S1') # no clue how to get the other patterns, even from JP...
+        dt.setGameUserValue('loginBonusCount', loginBonusCount)
+
+        bonuses = dt.readJson('data/loginBonusList.json')
+        currBonus = bonuses[loginBonusCount-1]
+        for rewardCode in currBonus['rewardCodes'].split(','):
+            obtainItem(rewardCode)
+        response['loginBonusList'] = bonuses
+
+        lastMonday, nextMonday = homu.thisWeek()
+        response['loginBonusPeriod'] = lastMonday.strftime('%m/%d') + '〜' + nextMonday.strftime('%m/%d')
     
-    user['loginCount'] += 1
-    user['penultimateLoginDate'] = user['lastLoginDate']
-    user['lastLoginDate'] = nowstr
-    user['lastAccessDate'] = nowstr
-    user['indexingTargetDate'] = nowstr
+    dt.setUserValue('loginCount', user['loginCount'] + 1)
+    dt.setUserValue('penultimateLoginDate', user['lastLoginDate'])
+    dt.setUserValue('lastLoginDate', nowstr)
+    dt.setUserValue('lastAccessDate', nowstr)
+    dt.setUserValue('indexingTargetDate', nowstr)
 
     dt.setGameUserValue('announcementViewAt', nowstr)
-    return user
+    return response
 
 def addArgs(response, args, isLogin):
     user = dt.readJson('data/user/user.json')
 
-    lastLogin = datetime.strptime(user['lastLoginDate'], '%Y/%m/%d %H:%M:%S')
     # checking if midnight passed; logins have to happen then too
-    if isLogin or (lastLogin.date()-datetime.today().date()).days > 0:
-        user = login(user)
-        dt.saveJson('data/user/user.json', user)
+    if isLogin or datetime.now().date() > datetime.strptime(user['todayFirstAccessDate'], homu.DATE_FORMAT).date():
+        response = dt.updateJson(response, login())
+        print(response)
 
     for arg in args:
         if arg in ['user', 'gameUser',

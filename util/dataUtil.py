@@ -38,6 +38,7 @@ userIndices = {
     'userCardList': createIndex('data/user/userCardList.json'),
     'userChapterList': createIndex('data/user/userChapterList.json', idxFunc('chapterId')),
     'userCharaList': createIndex('data/user/userCharaList.json', idxFunc('charaId')),
+    'userDailyChallengeList': createIndex('data/user/userDailyChallengeList.json', idxFunc('challengeId')),
     'userDeckList': createIndex('data/user/userDeckList.json', idxFunc('deckType')),
     'userDoppelList': createIndex('data/user/userDoppelList.json', idxFunc('doppelId')),
     'userFollowList': createIndex('data/user/userFollowList.json', idxFunc('followUserId')),
