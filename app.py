@@ -9,6 +9,7 @@ import webcache
 
 import logging 
 from util.homuUtil import nowstr
+from util import tsurunoUtil as yuitil
 
 formatter = logging.Formatter('%(asctime)s %(levelname)s %(name)s : %(message)s')
 app.logger = flask.logging.create_logger(app)
@@ -25,7 +26,8 @@ if not os.path.exists('./data/user/'):
     shutil.copytree('data/default_user', 'data/user')
 
 from api import arena, friend, gacha, gameUser, logger, money, page, quest, shop, \
-    user, userCard, userChara, userDeck, userItem, userLive2d, userPiece, userPieceSet, userQuestAdventure
+    user, userCard, userChara, userDeck, userItem, userLive2d, userPiece, userPieceSet, userQuestAdventure, \
+    userDailyChallenge
     
 app.add_url_rule('/page/<path:endpoint>', view_func=page.handlePage, methods=['GET', 'POST'])
 app.add_url_rule('/friend/<path:endpoint>', view_func=friend.handleFriend, methods=['GET', 'POST'])
@@ -39,6 +41,7 @@ app.add_url_rule('/arena/<path:endpoint>', view_func=arena.handleArena, methods=
 app.add_url_rule('/user/<path:endpoint>', view_func=user.handleUser, methods=['GET', 'POST'])
 app.add_url_rule('/userCard/<path:endpoint>', view_func=userCard.handleUserCard, methods=['GET', 'POST'])
 app.add_url_rule('/userChara/<path:endpoint>', view_func=userChara.handleUserChara, methods=['GET', 'POST'])
+app.add_url_rule('/userDailyChallenge/<path:endpoint>', view_func=userDailyChallenge.handleDaily, methods=['GET', 'POST'])
 app.add_url_rule('/userDeck/<path:endpoint>', view_func=userDeck.handleUserDeck, methods=['GET', 'POST'])
 app.add_url_rule('/userItem/<path:endpoint>', view_func=userItem.handleUserItem, methods=['GET', 'POST'])
 app.add_url_rule('/userLive2d/<path:endpoint>', view_func=userLive2d.handleUserLive2d, methods=['GET', 'POST'])
@@ -76,11 +79,14 @@ def before():
 
 @app.after_request
 def after(response):
-    if not 'file' in flask.request.path:
-        if type(response) == dict:
-            app.logger.info(json.dumps(response))
-        else:
-            app.logger.info(response.json)
+    if response is None: return
+    
+    # binary files, don't log
+    if not 'file' in flask.request.path \
+        and not 'page' in flask.request.path: # too long, slows it down a lot with logging
+        app.logger.info(response.json)
+        if not 'search' in flask.request.path:
+            response = yuitil.handleChallenge(response)
     return response
 
 if __name__ == "__main__":

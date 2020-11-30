@@ -1,0 +1,179 @@
+[
+    {
+        "pattern": "S1",
+        "day": 1,
+        "rewardCodes": "RICHE_100000",
+        "rewardList": [
+            {
+                "presentType": "RICHE",
+                "quantity": 100000,
+                "originType": "LOGIN_BONUS",
+                "displayName": "Curse Chip",
+                "isNew": false
+            }
+        ]
+    },
+    {
+        "pattern": "S1",
+        "day": 2,
+        "rewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "rewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "name": "Magia Stone",
+                    "shortDescription": "In-Game Currency",
+                    "description": "In-Game Currency",
+                    "canUse": false,
+                    "isSellable": false,
+                    "itemType": "MONEY",
+                    "treasureChestColor": "GOLD",
+                    "price": 0,
+                    "sortKey": 0
+                },
+                "originType": "LOGIN_BONUS",
+                "displayName": "Magia Stone",
+                "isNew": false
+            }
+        ]
+    },
+    {
+        "pattern": "S1",
+        "day": 3,
+        "rewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "rewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "name": "Magia Stone",
+                    "shortDescription": "In-Game Currency",
+                    "description": "In-Game Currency",
+                    "canUse": false,
+                    "isSellable": false,
+                    "itemType": "MONEY",
+                    "treasureChestColor": "GOLD",
+                    "price": 0,
+                    "sortKey": 0
+                },
+                "originType": "LOGIN_BONUS",
+                "displayName": "Magia Stone",
+                "isNew": false
+            }
+        ]
+    },
+    {
+        "pattern": "S1",
+        "day": 4,
+        "rewardCodes": "ITEM_COMPOSE_ITEM_ALL_PP_3",
+        "rewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 3,
+                "itemId": "COMPOSE_ITEM_ALL_PP",
+                "item": {
+                    "itemCode": "COMPOSE_ITEM_ALL_PP",
+                    "name": "Master Gem ++",
+                    "shortDescription": "Master Gem ++",
+                    "description": "Used to Enhance a Magical Girl",
+                    "canUse": false,
+                    "isSellable": false,
+                    "itemType": "COMPOSE",
+                    "treasureChestColor": "GOLD",
+                    "rank": "RANK_3",
+                    "price": 0,
+                    "sortKey": 0
+                },
+                "originType": "LOGIN_BONUS",
+                "displayName": "Master Gem ++",
+                "isNew": false
+            }
+        ]
+    },
+    {
+        "pattern": "S1",
+        "day": 5,
+        "rewardCodes": "ITEM_PRESENTED_MONEY_25",
+        "rewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "name": "Magia Stone",
+                    "shortDescription": "In-Game Currency",
+                    "description": "In-Game Currency",
+                    "canUse": false,
+                    "isSellable": false,
+                    "itemType": "MONEY",
+                    "treasureChestColor": "GOLD",
+                    "price": 0,
+                    "sortKey": 0
+                },
+                "originType": "LOGIN_BONUS",
+                "displayName": "Magia Stone",
+                "isNew": false
+            }
+        ]
+    },
+    {
+        "pattern": "S1",
+        "day": 6,
+        "rewardCodes": "ITEM_CURE_AP_3",
+        "rewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 3,
+                "itemId": "CURE_AP",
+                "item": {
+                    "itemCode": "CURE_AP",
+                    "name": "AP Potion",
+                    "shortDescription": "Restores some AP at time of use",
+                    "description": "Restores your max AP",
+                    "canUse": true,
+                    "isSellable": false,
+                    "treasureChestColor": "SILVER",
+                    "price": 0,
+                    "sortKey": 2,
+                    "eventId": 0
+                },
+                "originType": "LOGIN_BONUS",
+                "displayName": "AP Potion",
+                "isNew": false
+            }
+        ]
+    },
+    {
+        "pattern": "S1",
+        "day": 7,
+        "rewardCodes": "ITEM_PRESENTED_MONEY_50",
+        "rewardList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 50,
+                "itemId": "PRESENTED_MONEY",
+                "item": {
+                    "itemCode": "PRESENTED_MONEY",
+                    "name": "Magia Stone",
+                    "shortDescription": "In-Game Currency",
+                    "description": "In-Game Currency",
+                    "canUse": false,
+                    "isSellable": false,
+                    "itemType": "MONEY",
+                    "treasureChestColor": "GOLD",
+                    "price": 0,
+                    "sortKey": 0
+                },
+                "originType": "LOGIN_BONUS",
+                "displayName": "Magia Stone",
+                "isNew": false
+            }
+        ]
+    }
+]

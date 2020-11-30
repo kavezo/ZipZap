@@ -36,6 +36,15 @@
 		"openDate": "2020/06/05 00:10:00"
 	},
 	{
+		"id": 100401,
+		"name": "Doppel of Transparency",
+		"title": "Feature: Interrogation Chair",
+		"description": "The master of this emotion feels both pain and satisfaction from her Doppel's form. The main body of this Doppel is not the chair, but an invisible entity that is tortured endlessly while sitting atop it. This transparent Doppel uses its own blood to attack its enemies; however, it is not so easily controlled, and should the visible Doppel emerge from its master's right ear instead of the invisible one that typically appears from her left ear, it will scream and go on a rampage, swinging its guillotine at allies and enemies alike.",
+		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
+		"archive": false,
+		"openDate": "2020/06/05 00:10:00"
+	},
+	{
 		"id": 100500,
 		"name": "Doppel of Tumult",
 		"title": "Feature: Eyelids",
@@ -214,6 +223,15 @@
 		"openDate": "2020/07/15 00:10:00"
 	},
 	{
+		"id": 130100,
+		"name": "Grief-Filled Farewell",
+		"title": "ー",
+		"description": "ー",
+		"designer": "ー",
+		"archive": false,
+		"openDate": "2020/08/12 00:10:00"
+	},
+	{
 		"id": 200100,
 		"name": "Doppel of Mercy",
 		"title": "Feature: Salvation",
@@ -282,6 +300,15 @@
 		"designer": "Idea/Supervision: Gekidan InuCurry (Doroinu)",
 		"archive": true,
 		"openDate": "2020/01/01 00:00:00"
+	},
+	{
+		"id": 210100,
+		"name": "I'm With You All, Always",
+		"title": "ー",
+		"description": "ー",
+		"designer": "ー",
+		"archive": false,
+		"openDate": "2020/02/25 00:10:00"
 	},
 	{
 		"id": 230000,
@@ -410,6 +437,15 @@
 		"openDate": "2020/03/19 00:10:00"
 	},
 	{
+		"id": 304300,
+		"name": "｜The Sakura Story Consumes All｜",
+		"title": "ー",
+		"description": "ー",
+		"designer": "ー",
+		"archive": false,
+		"openDate": "2020/06/29 00:10:00"
+	},
+	{
 		"id": 304900,
 		"name": "Doppel of Resonance",
 		"title": "Feature: Hummingbird",
@@ -506,5 +542,23 @@
 		"designer": "Idea/Supervision: GAN",
 		"archive": true,
 		"openDate": "2018/05/01 15:10:00"
+	},
+	{
+		"id": 405100,
+		"name": "Accelerator",
+		"title": "ー",
+		"description": "ー",
+		"designer": "ー",
+		"archive": false,
+		"openDate": "2019/11/13 00:10:00"
+	},
+	{
+		"id": 405200,
+		"name": "Hornet Javelin",
+		"title": "ー",
+		"description": "ー",
+		"designer": "ー",
+		"archive": false,
+		"openDate": "2019/11/19 00:10:00"
 	}
 ]

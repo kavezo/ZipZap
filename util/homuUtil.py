@@ -1,12 +1,18 @@
 # welcome to microservice naming 101
 # homuUtil is homuUtil because homuhomu controls time
 
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 import math
 
 from util import dataUtil as dt
 
 DATE_FORMAT = '%Y/%m/%d %H:%M:%S'
+
+def thisWeek():
+    today = date.today()
+    lastMonday = today - timedelta(days=today.weekday())
+    nextMonday = lastMonday + timedelta(weeks=1)
+    return lastMonday, nextMonday
 
 def nowstr():
     return datetime.now().strftime(DATE_FORMAT)
