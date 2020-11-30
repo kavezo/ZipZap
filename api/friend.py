@@ -1,7 +1,10 @@
 import json
 import flask
+import logging
 
 from util import dataUtil as dt
+
+logger = logging.getLogger('app.friend')
 
 def user(endpoint):
     response = {
@@ -46,9 +49,8 @@ def user(endpoint):
     return flask.jsonify(response)
 
 def handleFriend(endpoint):
-    print(endpoint)
     if endpoint.startswith('user'):
         return user(endpoint)
     else:
-        print(flask.request.path)
+        logger.error('Missing implementation: ' + flask.request.path)
         flask.abort(501, description='Not implemented')

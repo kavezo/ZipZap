@@ -1,5 +1,8 @@
 import flask
 from util import dataUtil as dt
+import logging
+
+logger = logging.getLogger('app.userQuestAdventure')
 
 def regist():
     return flask.jsonify({
@@ -19,5 +22,5 @@ def handleUserQuestAdventure(endpoint):
     elif endpoint.endswith('regist'):
         return regist()
     else:
-        print('userQuestAdventure' + endpoint)
+        logger.error('Missing implementation: userQuestAdventure/' + endpoint)
         flask.abort(501, description="Not implemented")

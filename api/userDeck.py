@@ -2,10 +2,12 @@ import flask
 import json
 from datetime import datetime
 from api import userPiece, gacha
-from uuid import uuid1
+import logging
 
 from util import dataUtil as dt
 from util.homuUtil import nowstr
+
+logger = logging.getLogger('app.userDeck')
 
 def save():
     body = flask.request.json
@@ -58,7 +60,6 @@ def save():
 
     dt.setUserObject('userDeckList', deckType, userDeck)
     
-    print(userDeck)
     return flask.jsonify({
         'resultCode': 'success',
         'userDeckList': [userDeck]
@@ -69,5 +70,5 @@ def handleUserDeck(endpoint):
     if endpoint.startswith('save'):
         return save()
     else:
-        print('userDeck/'+endpoint)
+        logger.error('Missing implementation: userDeck/'+endpoint)
         flask.abort(501, description="Not implemented")

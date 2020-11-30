@@ -121,5 +121,4 @@ def start():
     }
 
     dt.saveJson('data/user/userQuestBattleResult.json', userQuestBattleResult)
-    print(resultdict)
     return flask.jsonify(resultdict)

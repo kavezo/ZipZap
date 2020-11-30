@@ -1,9 +1,12 @@
 import flask
+import logging
 
 from api.questEndpoints.start import start
 from api.questEndpoints.get import get
 from api.questEndpoints.send import send
 from util import dataUtil as dt
+
+logger = logging.getLogger('app.quest')
 
 def check():
     userQuestBattleResult = dt.readJson('data/user/userQuestBattleResult.json')
@@ -29,5 +32,5 @@ def handleQuest(endpoint):
     elif endpoint.startswith('native/resume/check'):
         return check()
     else:
-        print('quest/'+endpoint)
+        logger.error('Missing implementation: quest/'+endpoint)
         flask.abort(501, description="Not implemented")

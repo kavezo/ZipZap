@@ -1,7 +1,10 @@
 import json
 import flask
+import logging
 
 from util import dataUtil as dt
+
+logger = logging.getLogger('app.userLive2d')
 
 def setLive2d():
     body = flask.request.json
@@ -20,5 +23,5 @@ def handleUserLive2d(endpoint):
     if endpoint.endswith('set'):
         return setLive2d()
     else:
-        print('userLive2d/'+endpoint)
+        logger.error('Missing implementation: userLive2d/'+endpoint)
         flask.abort(501, description="Not implemented")

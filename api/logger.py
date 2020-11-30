@@ -1,8 +1,10 @@
 import flask
 import json
 from datetime import datetime
+import logging
 
+log = logging.getLogger('app.logger')
 
 def handleError():
-    print(f"App logged error: {str(flask.request.data)}")
+    log.error(f"App logged error: {str(flask.request.data)}")
     return {}

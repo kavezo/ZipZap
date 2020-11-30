@@ -1,7 +1,10 @@
 import flask
+import logging
 
 from util import dataUtil as dt
 from util import homuUtil as homu
+
+logger = logging.getLogger('app.userItem')
 
 def use():
     body = flask.request.json
@@ -40,9 +43,8 @@ def use():
     return flask.jsonify(response)
 
 def handleUserItem(endpoint):
-    print(endpoint)
     if endpoint.startswith('use'):
         return use()
     else:
-        print(flask.request.path)
+        logger.error("Missing implementation: userItem/" + flask.request.path)
         flask.abort(501, description='Not implemented')

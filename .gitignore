@@ -21,3 +21,4 @@ dist
 ssl
 data/user
 cache
+logs

@@ -2,8 +2,11 @@ import json
 import transferUserData
 import flask
 from uuid import uuid1
+import logging
 
 from util import dataUtil as dt
+
+logger = logging.getLogger('app.user')
 
 # TODO: actually figure out what this does
 def isAnswered():
@@ -38,5 +41,5 @@ def handleUser(endpoint):
     elif endpoint.endswith('transfer'):
         return transfer()
     else:
-        print('user/'+endpoint)
+        logging.error('Missing implementation: user/'+endpoint)
         flask.abort(501, description="Not implemented")

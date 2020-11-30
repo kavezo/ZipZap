@@ -361,8 +361,7 @@ def addUserToBattle(battleData, position, deck):
     userCardId = deck['userCardId'+str(currCardIdx)]
     userCard = dt.getUserObject('userCardList', userCardId)
     if userCard is None:
-        print('can\'t find card with id ' + userCardId)
-        flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}')
+        flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have: ' + userCardId + '","resultCode": "error","title": "Error"}')
     
     pieceIds = [deck[key] for key in deck.keys() if key.startswith('userPieceId0'+str(currCardIdx))]
     pieces = [dt.getUserObject('userPieceList', pieceId) for pieceId in pieceIds]
@@ -371,8 +370,7 @@ def addUserToBattle(battleData, position, deck):
     userCharaId = userCard['card']['charaNo']
     userChara = dt.getUserObject('userCharaList', userCharaId)
     if userChara is None:
-        print('can\'t find chara with id ' + str(userCharaId))
-        flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have...","resultCode": "error","title": "Error"}')
+        flask.abort(400, description='{"errorTxt": "Tried to start quest with a meguca you don\'t have: ' + userCharaId + '","resultCode": "error","title": "Error"}')
 
     battleInfo = {
         'helper': False,
@@ -409,7 +407,6 @@ def get():
             flask.abort(500, description='{"errorTxt": "Something weird happened with order of battles","resultCode": "error","title": "Error"}')
 
     if not battle['id'] == body['userQuestBattleResultId']:
-        print('battle ID mismatch')
         flask.abort(400, description='{"errorTxt": "You didn\'t really start this quest, or something...","resultCode": "error","title": "Error"}')
 
     # grab team info
@@ -507,5 +504,4 @@ def get():
         'isHalfSkill': False,
         'webData': webData
     }
-    print(json.dumps(response))
     return flask.jsonify(response)

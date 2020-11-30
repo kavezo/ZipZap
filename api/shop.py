@@ -3,9 +3,13 @@ import json
 from datetime import datetime
 from api import userPiece, gacha
 from uuid import uuid1
+import logging
 
 from util import dataUtil as dt
+from util import newUserObjectUtil as newtil
 from util.homuUtil import nowstr
+
+logger = logging.getLogger('app.shop')
 
 # This will only get you the lowest rarity card, but that's what all shop megucas have been...
 def getCard(charaNo):
@@ -20,7 +24,7 @@ def getCard(charaNo):
     return response
 
 def getFormation(formationId):
-    userFormation, exists = newUserObjectUtil.createUserFormation(formationId)
+    userFormation, exists = newtil.createUserFormation(formationId)
     if exists: return {}
     dt.setUserObject('userFormationSheetList', formationId, userFormation)
     return {'userFormationSheetList': [userFormation]}
@@ -52,7 +56,7 @@ def getItem(itemCode, amount, item=None):
     if userItem is None: # assumes only backgrounds and stuff
         if item is None:
             flask.abort(500, description='Item is None, but userItem doesn\'t already exist...')
-        userItem, _ = newUserObjectUtil.createUserItem(item)
+        userItem, _ = newtil.createUserItem(item)
     userItem['quantity'] += amount
     dt.setUserObject('userItemList', itemCode, userItem)
     return {'userItemList': [userItem]}
@@ -61,7 +65,7 @@ def getLive2d(charaId, live2dId, live2dItem):
     idx = int(str(charaId)+str(live2dId))
     userLive2d = dt.getUserObject('userLive2dList', idx)
     if userLive2d is None:
-        userLive2d, _ = newUserObjectUtil.createUserLive2d(charaId, live2dId, live2dItem['description'])
+        userLive2d, _ = newtil.createUserLive2d(charaId, live2dId, live2dItem['description'])
         dt.setUserObject('userLive2dList', idx, userLive2d)
         return {'userLive2dList': [userLive2d]}
     return {} 
@@ -69,7 +73,7 @@ def getLive2d(charaId, live2dId, live2dItem):
 def getPiece(piece, isMax, num):
     newPieces = []
     for _ in range(num):
-        newUserPiece, _ = newUserObjectUtil.createUserPiece(piece['pieceId'])
+        newUserPiece, _ = newtil.createUserPiece(piece['pieceId'])
         if isMax:
             newUserPiece['level'] = userPiece.getMaxLevel(piece['rank'], 4)
             newUserPiece['lbcount'] = 4
@@ -172,4 +176,5 @@ def handleShop(endpoint):
     if endpoint.startswith('buy'):
         return buy()
     else:
+        logger.error('Missing implementation: shop/'+endpoint)
         flask.abort(501, description="Not implemented")

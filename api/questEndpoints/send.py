@@ -1,12 +1,15 @@
 import flask
 import json
 import re
+import logging
 
 from api import userCard
 from util import dataUtil as dt
 from util import newUserObjectUtil as newtil
 from util import storyUtil
 from util import homuUtil as homu
+
+logger = logging.getLogger('app.quest.send')
 
 def sendArena(request,response):
     """
@@ -54,7 +57,6 @@ def sendArena(request,response):
         'resultCode': resultCode,
         'userDailyChallengeList': userDailyChallengeList,
     })
-    print(json.dumps(response))
     return flask.jsonify(response)
 
 # courtesy of magireco discord data mining
@@ -176,7 +178,7 @@ def giveDrops(battle):
     dropRewardCodes = []
     dropCodes = dt.readJson('data/user/promisedDrops.json')
     if dropCodes['questBattleId'] != battle['questBattleId']: # weird error that should never happen...
-        print('questBattleId mismatch when sending drops')
+        logger.error('questBattleId mismatch when sending drops')
         return resultDict
     for dropCode, amount in dropCodes.items():
         if dropCode == 'questBattleId': continue
@@ -311,5 +313,4 @@ def send():
     if newStatus != []:
         response['userStatusList'] = newStatus
 
-    print(response)
     return flask.jsonify(response)

@@ -1,7 +1,10 @@
 import json
 import flask
+import logging
 
 from util import dataUtil as dt
+
+logger = logging.getLogger('app.userChara')
 
 def sale():
     body = flask.request.json
@@ -29,7 +32,7 @@ def sale():
     dt.setUserObject('userItemList', 'PRISM', userItem)
 
     if rarity == 4:
-        print('selling for crystal')
+        logger.info('selling for crystal')
         userCrystal = dt.getUserObject('userItemList', 'DESTINY_CRYSTAL')
         userCrystal['quantity'] += amount
         responseItemList.append(userCrystal)
@@ -74,5 +77,5 @@ def handleUserChara(endpoint):
     elif endpoint.startswith('visualize'):
         return visualize()
     else:
-        print('userChara/'+endpoint)
+        logger.error('Missing implementation: userChara/'+endpoint)
         flask.abort(501, description="Not implemented")

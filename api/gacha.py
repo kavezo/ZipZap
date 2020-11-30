@@ -4,10 +4,13 @@ import numpy as np
 import random
 from datetime import datetime
 from uuid import uuid1
+import logging
 
 from util import dataUtil as dt
 from util import newUserObjectUtil as newtil
 from util.homuUtil import nowstr
+
+logger = logging.getLogger('app.gacha')
 
 cardsByRarity = [[],[],[],[],[]]
 for chara in dt.masterCards.values():
@@ -116,7 +119,7 @@ def spend(itemId, amount, preferredItemId = None, preferredItemAmount = 1):
     if preferredItemId is not None:
         item = getItem(preferredItemId)
         if item['quantity'] >= preferredItemAmount:
-            print("Spending " + str(preferredItemAmount) + " " + preferredItemId)
+            logger.info("Spending " + str(preferredItemAmount) + " " + preferredItemId)
             item['quantity'] -= preferredItemAmount
             foundPreferred = True
             updatedItems.append(item)
@@ -125,13 +128,13 @@ def spend(itemId, amount, preferredItemId = None, preferredItemAmount = 1):
     if not foundPreferred:
         if itemId != 'MONEY':
             item = getItem(itemId)
-            print("Spending " + str(amount) + " " + itemId)
+            logger.info("Spending " + str(amount) + " " + itemId)
             item['quantity'] -= amount
             updatedItems.append(item)
             setItem(itemId, item)
 
         else: # spend paid gems after free gems, and also the ID is different
-            print("Spending " + str(amount) + " " + itemId)
+            logger.info("Spending " + str(amount) + " " + itemId)
             freeItem = getItem('PRESENTED_MONEY')
             paidItem = getItem('MONEY')
 
@@ -422,7 +425,7 @@ def draw():
         "bonusTimeFlg": False,
         "createdAt": nowstr()
     }
-    print(gachaAnimation)
+    logger.info('gachaAnimation: ' + gachaAnimation)
     dt.setUserObject('gachaHistoryList', pullId, newHistory)
     return flask.jsonify(response)
 
@@ -446,5 +449,5 @@ def handleGacha(endpoint):
     elif endpoint.startswith('probability'):
         return getProbability()
     else:
-        print('gacha/'+endpoint)
+        logger.error('Missing implementation: gacha/'+endpoint)
         flask.abort(501, description='Not implemented')

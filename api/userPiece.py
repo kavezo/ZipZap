@@ -1,9 +1,11 @@
 import flask
-import json
 import math
 import numpy as np
+import logging
 
 from util import dataUtil as dt
+
+logger = logging.getLogger('data/userPiece')
 
 expByLevel = [0, 100, 210, 330, 460, 600, 760, 950, 1180, 1460, 1800, 2210, 2690, 3240, 3860, 4550, 5310, 6140, 7040, 8010, 9050, 10160, 11340, 12590, 13910, 15300, 16760, 18290, 19890, 21560, 23300, 25110, 26990, 28940, 30960, 33050, 35210, 37440, 39740, 42110, 44550, 47060, 49640, 52290, 55010, 57800, 60660, 63590, 66590, 69660]
 dExpdLevel = [0] + [b-a for a,b in zip(expByLevel[:-1], expByLevel[1:])]
@@ -223,5 +225,5 @@ def handleUserPiece(endpoint):
     elif endpoint.endswith('sale'):
         return sale()
     else:
-        print('userPiece/'+endpoint)
+        logging.error('Missing implementation: userPiece/'+endpoint)
         flask.abort(501, description="Not implemented")
