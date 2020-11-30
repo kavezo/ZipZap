@@ -64,9 +64,8 @@ different app. The one I use is just called DNS Changer, and its icon is a blue 
 
 Due to a change that Google made starting in Android 7 (Nougat)
 [user-installed CA certificates are no longer trusted by apps](https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html).
-In order to play on devices and/or emulators running Android 7 and above, you will need to be rooted, and will need to
-install the ZipZap CA certificate as a System (trusted) certificate. [This Magisk plugin](https://github.com/NVISO-BE/MagiskTrustUserCerts)
-will automatically take care of this for you.
+In order to play on devices and/or emulators running Android 7 and above, you will need to use the modded apk included
+in each release from 0.4.3 onwards.
 
 ---
 
@@ -86,6 +85,7 @@ will automatically take care of this for you.
     - limit break
     - making memoria sets
     - putting memoria into the vault and taking them out
+    - locking memoria
 - gacha (api/gacha.py)
     - pull premium, x1 and x10, using stones and tickets
         - this currently includes all limited megucas and memes, and welfare ones as well. no reason not to lol
@@ -100,12 +100,23 @@ will automatically take care of this for you.
     - spending items to get items
     - spending gems to get packs
     - you can get megucas too, but they won't show up in your present box and instead you'll just have them
+- playing and clearing quests (api/quest.py, api/questEndpoints)
+    - viewing the story before each quest
+    - spending and recovering AP
+    - leveling up user and magical girls at the end of a quest
+    - clearing quest missions and getting rewards
+    - dropping items -- currently droprate is set to 2 for each item
+    - Ashley will support you
+- playing mirrors battles (api/quest.py, api/arena.py, api/questEndpoints)
+    - play against one of three giant megucas who will kill you
+    - earn Mirrors coins for wins and losses
+    - spending and recovering AP
+- daily missions (api/userDailyChallenge.py)
 
 ### Currently missing functions:
-- can't recover AP
-- can't lock or sell memoria
-- you can't clear any missions or accept their rewards
-- mirrors and quests are entirely nonfunctional
+- can't clear/accept non-daily challenges
+- can't earn mirrors points or go to the next level
+- some quests are missing story and enemy data
 
 ### What's next?
 I coded very fast, and very not well, because I wanted to get as many features out before the 30th. Code quality is still
@@ -118,22 +129,15 @@ The features are in order of the most overlap with the knowledge I have currentl
 implement a new feature I don't know much about at least half of the time is spent researching how it fits in with all 
 the user's data.
 
-- implement quests
-- implement mirrors
 - implement missions
 - implement tutorial 
-- implement random things I left off, like AP recovering, login bonuses, and announcements
+- implement announcements
 - add unit tests
-- refactor
-    - put all the data reading and writing into a util module to avoid race conditions with 50 different functions 
-    writing/reading to a file at the same time
-    - improve response headers, perhaps add compression
-    - maybe make a class each API has to extend that removes repeated code?
-    - maybe make classes that represent each type of object used in the game (e.g. item, card, userCard)?
+- refactor for online server
+    - compress user data, so it's not huge jsons with info we don't need
 - add support for events
-- add support for multiple users (using a database like S3)
+- add support for multiple users
 - add support for finding other users, following and using supports
-- move server to the cloud
 - hack app to call the server's address rather than having to rely on mitmproxy
 
 ----
