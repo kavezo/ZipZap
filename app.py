@@ -7,6 +7,10 @@ import shutil
 import json
 import webcache
 
+if not os.path.exists('data/user'):
+    print('Copying over default user...') # logging isn't set up yet, and also it's not too important to have in logs
+    shutil.copytree('data/default_user', 'data/user')
+
 import logging 
 from util.homuUtil import nowstr
 from util import tsurunoUtil as yuitil
@@ -20,10 +24,6 @@ fileLogging = logging.FileHandler('logs/{}.log'.format(nowstr().split(' ')[0].re
 fileLogging.setLevel(logging.INFO)
 fileLogging.setFormatter(formatter)
 app.logger.addHandler(fileLogging)
-
-if not os.path.exists('./data/user/'):
-    app.logger.info('Copying over default user...')
-    shutil.copytree('data/default_user', 'data/user')
 
 from api import arena, friend, gacha, gameUser, logger, money, page, quest, shop, \
     user, userCard, userChara, userDeck, userItem, userLive2d, userPiece, userPieceSet, userQuestAdventure, \
