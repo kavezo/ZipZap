@@ -46,6 +46,9 @@ def sendArena(request,response):
         coins['quantity']+=1
         userArenaBattleResult['numberOfConsecutiveWins'] = 0
 
+        userArenaBattle['freeRankArenaPoint'] += 3
+        userArenaBattleResult['point'] = userArenaBattle['freeRankArenaPoint']
+
     dt.saveJson('data/user/userArenaBattle.json', userArenaBattle)
     dt.saveJson('data/user/userArenaBattleResult.json', userArenaBattleResult)
 
