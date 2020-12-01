@@ -113,6 +113,9 @@ def setUpPity(groupId, pity=None):
 def spend(itemId, amount, preferredItemId = None, preferredItemAmount = 1):
     getItem = lambda x: dt.getUserObject('userItemList', x)
     setItem = lambda x, y: dt.setUserObject('userItemList', x, y)
+
+    if itemId == 'PURCHASED_MONEY': itemId = 'MONEY'
+    if preferredItemId == 'PURCHASED_MONEY': preferredItemId = 'MONEY'
     
     updatedItems = []
     foundPreferred = False
@@ -425,7 +428,6 @@ def draw():
         "bonusTimeFlg": False,
         "createdAt": nowstr()
     }
-    logger.info('gachaAnimation: ' + gachaAnimation)
     dt.setUserObject('gachaHistoryList', pullId, newHistory)
     return flask.jsonify(response)
 

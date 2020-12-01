@@ -37,14 +37,17 @@ def obtainReward(clearReward, args):
     if presentType == 'DOPPEL':
         userDoppel, exists = newtil.createUserDoppel(clearReward['genericId'])
         if not exists: dt.setUserObject('userDoppelList', clearReward['genericId'], userDoppel)
+        args['userDoppelList'] = args.get('userDoppelList', []) + [userDoppel]
     elif presentType == 'GEM': # only Iroha's gems are rewards, so no need to check missing chara
         userChara = dt.getUserObject('userCharaList', clearReward['genericId'])
         userChara['lbItemNum'] += quantity
         dt.setUserObject('userCharaList', clearReward['genericId'], userChara)
+        args['userCharaList'] = args.get('userCharaList', []) + [userChara]
     elif presentType == 'ITEM':
         userItem = dt.getUserObject('userItemList', clearReward['itemId'])
         userItem['quantity'] += quantity
         dt.setUserObject('userItemList', clearReward['itemId'], userItem)
+        args['userItemList'] = args.get('userItemList', []) + [userItem]
     elif presentType == 'LIVE2D':
         newLive2d, exists = newtil.createUserLive2d(clearReward['genericId'], 
                                                 clearReward['genericCode'], clearReward['displayName'])
@@ -147,3 +150,28 @@ def clearBattle(battle):
     dt.setUserObject('userQuestBattleList', battle['questBattleId'], userBattle)
     return userBattle
 
+# TODO: first story
+def progressMirrors(response):
+    currPoints = response['userArenaBattle']['freeRankArenaPoint']
+    if currPoints >= dt.arenaClassList[1]['requiredPoint']:
+        response['userArenaBattle']['freeRankArenaPoint'] = dt.arenaClassList[1]['requiredPoint']
+        dt.saveJson('data/user/userArenaBattle.json', response['userArenaBattle'])
+        return response
+    arenaClassIdx = -1
+    for i, arenaClass in enumerate(dt.arenaClassList[1:]):
+        if currPoints >= arenaClass['requiredPoint']:
+            arenaClassIdx = i
+    if arenaClassIdx == -1:
+        arenaClassIdx = len(dt.arenaClassList)-1
+    
+    if dt.arenaClassList[arenaClassIdx]['arenaBattleFreeRankClass'] != response['userArenaBattle']['currentFreeRankClassType']:
+        response['userArenaBattle']['currentFreeRankClassType'] = dt.arenaClassList[arenaClassIdx]['arenaBattleFreeRankClass']
+        response['userArenaBattle']['currentFreeRankClass'] = response['userArenaBattle']['nextFreeRankClass']
+        if 'nextClass' in dt.arenaClassList[arenaClassIdx]:
+            response['userArenaBattle']['nextFreeRankClass'] = dt.arenaClassList[arenaClassIdx]
+        elif 'nextFreeRankClass' in response['userArenaBattle']:
+            del response['userArenaBattle']['nextFreeRankClass']
+
+        response = obtainReward(dt.arenaClassList[arenaClassIdx]['bonusRewardList'][0], response)
+    dt.saveJson('data/user/userArenaBattle.json', response['userArenaBattle'])
+    return response

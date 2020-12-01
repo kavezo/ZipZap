@@ -64,18 +64,19 @@ def arenaStart(response):
         numberedId = 'userCardId'+str(i+1)
         if numberedId in chosenTeam:
             userQuestBattleResult['userCardId'+str(chosenTeam['questPositionId'+str(i+1)])] = chosenTeam[numberedId]
-    
-    userArenaBattleResult = {
+
+    userArenaBattle = dt.readJson('data/user/userArenaBattle.json')
+    userArenaBattleResult = dt.readJson('data/user/userArenaBattleResult.json')
+    userArenaBattleResult.update({
         "userQuestBattleResultId": battleId,
         "userId": dt.userId,
         "opponentUserId": body['opponentUserId'],
         "arenaBattleType": "FREE_RANK",
         "arenaBattleStatus": "CREATED",
         "arenaBattleOpponentType": "SAME",
-        "numberOfConsecutiveWins": 0,
-        "point": 0,
+        "point": userArenaBattle['freeRankArenaPoint'],
         "createdAt": nowstr()
-    }
+    })
 
     response.update({
         "resultCode": "success",

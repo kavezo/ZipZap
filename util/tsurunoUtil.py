@@ -43,13 +43,15 @@ def handleChallenge(response):
     if not path in challengeHandlers:
         return response
 
-    response = response.json
-    dailies, totals, limiteds = challengeHandlers[path](response)
+    responseDict = response.json
+    challengeLists = challengeHandlers[path](responseDict)
+    if challengeLists is None: return response
+    dailies, totals, limiteds = challengeLists
 
     if not len(dailies) == 0:
-        response['userDailyChallengeList'] = dailies
+        responseDict['userDailyChallengeList'] = dailies
     if not len(totals) == 0:
-        response['userTotalChallengeList'] = totals
+        responseDict['userTotalChallengeList'] = totals
     if not len(limiteds) == 0:
-        response['userLimitedChallengeList'] = limiteds
-    return flask.jsonify(response)
+        responseDict['userLimitedChallengeList'] = limiteds
+    return flask.jsonify(responseDict)

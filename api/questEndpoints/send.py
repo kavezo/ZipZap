@@ -24,39 +24,43 @@ def sendArena(request,response):
 
     """
     userArenaBattle=dt.readJson('data/user/userArenaBattle.json')
+    userArenaBattleResult = dt.readJson('data/user/userArenaBattleResult.json')
 
-    #only mirror coins please
     coins = dt.getUserObject('userItemList', 'ARENA_COIN')
 
     if (request['result']=='SUCCESSFUL'):
-        arenaBattleStatus='WIN'
         coins['quantity']+=3
-    else:
-        arenaBattleStatus='LOSE'
-        coins['quantity']+=1
 
-    #updating coins
+        numTurnsCapped = min(max(request['totalTurn'], 2), 7) # cap to 2 and 7
+        turnBonus = 1.0 + 0.1*(7-numTurnsCapped)
+        # TODO: find the other codes
+        opponentBonus = {'SAME': 1.0, 'HIGHER': 1.2, 'LOWER': 0.8}[userArenaBattleResult['arenaBattleOpponentType']]
+        consecBonus = [0,1,2,3,5,7,10][userArenaBattleResult['numberOfConsecutiveWins']]
+        userArenaBattle['freeRankArenaPoint'] += 10 * turnBonus * opponentBonus + consecBonus
+
+        userArenaBattleResult['arenaBattleStatus'] = 'WIN'
+        userArenaBattleResult['numberOfConsecutiveWins'] += 1
+        userArenaBattleResult['point'] = userArenaBattle['freeRankArenaPoint']
+    else:
+        userArenaBattleResult['arenaBattleStatus']='LOSE'
+        coins['quantity']+=1
+        userArenaBattleResult['numberOfConsecutiveWins'] = 0
+
+    dt.saveJson('data/user/userArenaBattle.json', userArenaBattle)
+    dt.saveJson('data/user/userArenaBattleResult.json', userArenaBattleResult)
+
+    # updating coins
     dt.setUserObject('userItemList', 'ARENA_COIN', coins)
     userItemList=[coins]
 
-    userDailyChallengeList=[] #TODO
     resultCode="success"
-    userArenaBattleResultList=[{
-        'arenaBattleStatus': arenaBattleStatus,
-        'arenaBattleType': 'FREE_RANK', #change for ranked
-        'numberOfConsecutiveWins': 1,
-        'userQuestBattleResultId':request['userQuestBattleResultId'],
-        'userId': dt.userId,
-        'opponentUserId':'',
-        'point':0
-    }]
     response.update({
         'userArenaBattle' : userArenaBattle,
         'userItemList': userItemList,
-        'userArenaBattleResultList': userArenaBattleResultList,
-        'resultCode': resultCode,
-        'userDailyChallengeList': userDailyChallengeList,
+        'userArenaBattleResultList': [userArenaBattleResult],
+        'resultCode': resultCode
     })
+    response = storyUtil.progressMirrors(response)
     return flask.jsonify(response)
 
 # courtesy of magireco discord data mining

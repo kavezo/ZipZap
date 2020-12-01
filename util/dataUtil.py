@@ -33,6 +33,8 @@ masterItems = createIndex('data/itemList.json', idxFunc('itemCode'), ITEM_VALFUN
 masterGifts = createIndex('data/giftList.json', valFunc=ITEM_VALFUNC)
 masterFormations = createIndex('data/formationSheetList.json', valFunc=ITEM_VALFUNC)
 masterWaves = {int(k): v for k, v in readJson('data/waveLists.json').items()}
+masterArenaClasses = createIndex('data/arenaBattleFreeRankClassList.json', idxFunc('arenaBattleFreeRankClass'), ITEM_VALFUNC)
+arenaClassList = sorted(readJson('data/arenaBattleFreeRankClassList.json'), key=idxFunc('sortKey'))
 
 userIndices = {
     'userCardList': createIndex('data/user/userCardList.json'),
