@@ -314,8 +314,12 @@ def send():
 
     if resultUserCardList is not None:
         response['userCardList'] = resultUserCardList
+    else:
+        response['userCardList'] = dt.readJson('data/user/userCardList.json')
     if resultUserCharaList is not None:
         response['userCharaList'] = resultUserCharaList
+    else:
+        response['userCharaList'] = dt.readJson('data/user/userCharaList.json')
 
     if newStatus != []:
         response['userStatusList'] = newStatus

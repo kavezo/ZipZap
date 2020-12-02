@@ -3,6 +3,7 @@ import copy
 import numpy as np
 import re
 import json
+from uuid import uuid1
 
 from util import dataUtil as dt
 from util import homuUtil as homu
@@ -326,6 +327,7 @@ def getQuestData(battleId, args):
             for pos in enemyPositions:
                 finalEnemy = np.random.choice(enemyPool)
                 finalEnemy['pos'] = int(pos) # oBjEcT oF tYpE iNt32 iS NoT JsOn sErIaLiZaBLe
+                finalEnemy['enemyKey'] = uuid1()
                 finalEnemies.append(copy.deepcopy(finalEnemy)) # not sure why memory gets overwritten but...
 
             waveList[i]['enemyList'] = finalEnemies
@@ -336,6 +338,7 @@ def getQuestData(battleId, args):
                 for key in response.keys():
                     args[key] = args.get(key, []) + response[key]
                 enemy['pos'] = enemyInfo['pos']
+                enemy['enemyKey'] = uuid1()
                 if 'cutinId' in enemyInfo:
                     enemy['cutinId'] = enemyInfo['cutinId']
                 waveList[i]['enemyList'][j] = copy.deepcopy(enemy)
