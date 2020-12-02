@@ -4,8 +4,12 @@ import math
 import numpy as np
 from uuid import uuid1
 from datetime import datetime
+import logging
+
 from util import dataUtil as dt
 from util import newUserObjectUtil as newtil
+
+logger = logging.getLogger('app.userCard')
 
 # stolen from CardUtil.js
 expByLvl = [0, 110, 250, 430, 660, 950, 1310, 1750, 2280, 2910, 3640, 4470, 5400, 6430, 7560, 8790, 10120, 11550, 13080, 14710, 16440, 18270, 20200, 22230, 24360, 26590, 28920, 31350, 33880, 36510, 39240, 42070, 45E3, 48030, 51160, 54390, 57720, 61150, 64680, 68310, 72040, 75870, 79800, 83830, 87960, 92190, 96520, 100950, 105480, 110110, 114840, 119670, 124600, 129630, 134760, 139990, 145320, 150750, 156280, 161910, 167640, 173470, 179400, 185430, 191560, 197790, 204120, 210550, 217080, 223710, 230440, 237270, 244200, 251230, 258360, 265590, 272920, 280350, 287880, 295510,
@@ -166,8 +170,8 @@ def getUserCard(cardId):
 def getFinalLevel(targetUserCard, exp):
     origLevel = targetUserCard['level']
     finalExp = expByLvl[origLevel-1] + targetUserCard['experience'] + exp
-    newLevel = 1
-    extraExp = 0
+    newLevel = origLevel
+    extraExp = exp
     for i in range(len(expByLvl)-1, 0, -1): # maybe implement a binary rather than a linear search?
         if expByLvl[i] <= finalExp:
             newLevel = i+1

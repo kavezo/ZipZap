@@ -166,6 +166,25 @@ def enemyCollection(response):
     response['enemyList'] = dt.readJson('data/enemyList.json')
     response['userEnemyList'] = dt.readJson('data/user/userEnemyList.json')
 
+def myPage(response):
+    if datetime.strptime(dt.getGameUserValue('loginBonusGetAt'), homu.DATE_FORMAT) < \
+        datetime.strptime(dt.getUserValue('todayFirstAccessDate'), homu.DATE_FORMAT):
+
+        loginBonusCount = (dt.getGameUserValue('loginBonusCount') % 7) + 1
+        dt.setGameUserValue('loginBonusGetAt', homu.nowstr())
+        dt.setGameUserValue('loginBonusPattern', 'S1') # no clue how to get the other patterns, even from JP...
+        dt.setGameUserValue('loginBonusCount', loginBonusCount)
+
+        bonuses = dt.readJson('data/loginBonusList.json')
+        currBonus = bonuses[loginBonusCount-1]
+        for rewardCode in currBonus['rewardCodes'].split(','):
+            loginItems = obtainItem(rewardCode)
+            response = dt.updateJson(response, loginItems)
+        response['loginBonusList'] = bonuses
+
+        lastMonday, nextMonday = homu.thisWeek()
+        response['loginBonusPeriod'] = lastMonday.strftime('%m/%d') + '〜' + nextMonday.strftime('%m/%d')
+
 specialCases = {
     "ArenaFreeRank": arenaFreeRank,
     "ArenaResult": arenaResult,
@@ -178,6 +197,7 @@ specialCases = {
     "GachaTop": gachaTop,
     "GachaResult": gachaTop,
     "MagiRepo": magiRepo,
+    "MyPage": myPage,
     "PieceArchive": pieceArchive,
     "PieceCollection": pieceCollection,
     "PresentList": presentList,
@@ -205,20 +225,6 @@ def login():
         dt.setUserValue('dataPatchedAt', nowstr)
 
         yuitil.resetDaily()
-
-        loginBonusCount = (gameUser['loginBonusCount'] % 7) + 1
-        dt.setGameUserValue('loginBonusGetAt', nowstr)
-        dt.setGameUserValue('loginBonusPattern', 'S1') # no clue how to get the other patterns, even from JP...
-        dt.setGameUserValue('loginBonusCount', loginBonusCount)
-
-        bonuses = dt.readJson('data/loginBonusList.json')
-        currBonus = bonuses[loginBonusCount-1]
-        for rewardCode in currBonus['rewardCodes'].split(','):
-            obtainItem(rewardCode)
-        response['loginBonusList'] = bonuses
-
-        lastMonday, nextMonday = homu.thisWeek()
-        response['loginBonusPeriod'] = lastMonday.strftime('%m/%d') + '〜' + nextMonday.strftime('%m/%d')
     
     dt.setUserValue('loginCount', user['loginCount'] + 1)
     dt.setUserValue('penultimateLoginDate', user['lastLoginDate'])
@@ -235,7 +241,6 @@ def addArgs(response, args, isLogin):
     # checking if midnight passed; logins have to happen then too
     if isLogin or datetime.now().date() > datetime.strptime(user['todayFirstAccessDate'], homu.DATE_FORMAT).date():
         response = dt.updateJson(response, login())
-        print(response)
 
     for arg in args:
         if arg in ['user', 'gameUser',

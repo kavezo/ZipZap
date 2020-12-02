@@ -2,16 +2,14 @@ import flask
 app = flask.Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
 
-import os
-import shutil
 import json
 import webcache
+import logging
 
-if not os.path.exists('data/user'):
-    print('Copying over default user...') # logging isn't set up yet, and also it's not too important to have in logs
-    shutil.copytree('data/default_user', 'data/user')
+from util import patchUserData
+patchUserData.createDefaultUser()
+patchUserData.addAllDailies()
 
-import logging 
 from util.homuUtil import nowstr
 from util import tsurunoUtil as yuitil
 
