@@ -167,12 +167,15 @@ def enemyCollection(response):
     response['userEnemyList'] = dt.readJson('data/user/userEnemyList.json')
 
 def myPage(response):
-    if datetime.strptime(dt.getGameUserValue('loginBonusGetAt'), homu.DATE_FORMAT) < \
-        datetime.strptime(dt.getUserValue('todayFirstAccessDate'), homu.DATE_FORMAT):
-
+    today = datetime.strptime(dt.getUserValue('todayFirstAccessDate'), homu.DATE_FORMAT).date()
+    lastLoginBonusDate = datetime.strptime(dt.getGameUserValue('loginBonusGetAt'), homu.DATE_FORMAT).date()
+    if lastLoginBonusDate < today:
         loginBonusCount = (dt.getGameUserValue('loginBonusCount') % 7) + 1
+        if today.weekday() == 0:
+            loginBonusCount = 1
+
         dt.setGameUserValue('loginBonusGetAt', homu.nowstr())
-        dt.setGameUserValue('loginBonusPattern', 'S1') # no clue how to get the other patterns, even from JP...
+        dt.setGameUserValue('loginBonusPattern', 'S1') # no clue how to get the other patterns, even from JP, or if this even matters...
         dt.setGameUserValue('loginBonusCount', loginBonusCount)
 
         bonuses = dt.readJson('data/loginBonusList.json')
@@ -214,7 +217,6 @@ def login():
     response = {}
 
     user = dt.readJson('data/user/user.json')
-    gameUser = dt.readJson('data/user/gameUser.json')
 
     nowstr = homu.nowstr()
     if datetime.now().date() > datetime.strptime(user['todayFirstAccessDate'], homu.DATE_FORMAT).date():

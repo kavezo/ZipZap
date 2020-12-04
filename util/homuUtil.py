@@ -3,6 +3,7 @@
 
 from datetime import datetime, timedelta, date
 import math
+import copy
 
 from util import dataUtil as dt
 
@@ -64,3 +65,45 @@ def filterCurrValid(objectList, startKey=None, endKey=None):
             validObjects.append(objectDict)
     
     return validObjects
+
+# not actually called anywhere yet, but should be run on a cronjob actually
+def resetShop():
+    today = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
+    if today.day != 1:
+        return
+    lastMonth = (today - timedelta(days=1)).month
+    skipTypes = ['PIECE', 'MAXPIECE', 'FORMATION_SHEET', 'CARD']
+
+    shopList = dt.readJson('data/shopList.json')
+    for shopIdx in range(4): # magia chips, mirrors coins, support pts, daily coins
+        shopItems = shopList[shopIdx]['shopItemList']
+        deleteIdxs = [i for i in range(len(shopItems)) 
+            if 'endAt' in shopItems[i] 
+                and (datetime.strptime(shopItems[i]['endAt'], DATE_FORMAT).month == lastMonth
+                    or datetime.strptime(shopItems[i]['endAt'], DATE_FORMAT).year < today.year)
+                and not shopItems[i]['shopItemType'] in skipTypes]
+        for i in reversed(deleteIdxs):
+            del shopItems[i]
+        
+        # from Stack Overflow
+        endOfMonth = today.replace(day=28) + timedelta(days=4)
+        endOfMonth = (endOfMonth - timedelta(days=endOfMonth.day)).strftime(DATE_FORMAT)
+        newItems = []
+
+        alreadyCopied = set([])
+        for item in shopItems:
+            if 'endAt' not in item \
+                or item['endAt']!= "2050/01/01 00:00:00" \
+                or item['shopItemType'] in skipTypes \
+                or item['genericId'] in alreadyCopied:
+                continue
+            alreadyCopied.add(item['genericId'])
+            newItem = copy.deepcopy(item)
+            newItem['startAt'] = today.strftime(DATE_FORMAT)
+            newItem['endAt'] = endOfMonth
+
+            newItems.append(newItem)
+        
+        shopList[shopIdx]['shopItemList'] += newItems
+    
+    dt.saveJson('data/shopList.json', shopList)
