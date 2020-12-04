@@ -87,7 +87,7 @@ def resetShop():
         
         # from Stack Overflow
         endOfMonth = today.replace(day=28) + timedelta(days=4)
-        endOfMonth = (endOfMonth - timedelta(days=endOfMonth.day)).strftime(DATE_FORMAT)
+        endOfMonth = (endOfMonth - timedelta(days=endOfMonth.day).replace(hour=23, minutes=59, seconds=59)).strftime(DATE_FORMAT)
         newItems = []
 
         alreadyCopied = set([])
