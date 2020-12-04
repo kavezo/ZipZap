@@ -25,10 +25,9 @@ def createScenario(userQuestBattle):
             'clear': userQuestBattle['missionStatus'+str(i)] == 'CLEARED'
         })
 
-    battleType = int(str(questBattle['sectionId'])[0])
-    titleExtendFormat = "Ch.{0} Ep." # not moving the genericIndex out here because lab sections don't have it
-    if battleType <= 3:
-        scenario["titleExtend"] = titleExtendFormat.format(str(questBattle['sectionId'])[-1]) + str(section['genericIndex'])
+    if str(section['sectionId']).startswith(1) or str(section['sectionId']).startswith(2):
+        chapterNo = dt.masterChapters[section['genericId']]['chapterNoForView']
+        scenario['titleExtend'] = 'Ch.' + chapterNo + ' Ep.' + str(section['genericIndex'])
 
     if 'difficulty' in section:
         scenario["difficulty"] = section['difficulty']
