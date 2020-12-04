@@ -137,7 +137,7 @@
                 "recommend": true,
                 "sortkey": 11,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5301,
@@ -153,7 +153,7 @@
                 "description": "Includes Fate Weave Ticket (1), AP Potion (1), BP Potion (1)",
                 "sortkey": 12,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5302,
@@ -169,7 +169,7 @@
                 "description": "Includes AP Potion (5), BP Potion (5), 50 AP Potion (5)",
                 "sortkey": 13,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5680,
@@ -185,7 +185,7 @@
                 "description": "Includes AP Potion (1), BP Potion (1), 50 AP Potion (1)",
                 "sortkey": 14,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             }
         ],
         "startAt": "2017/07/11 14:00:00"
@@ -7105,7 +7105,7 @@
                 "description": "100000 Curse Chips",
                 "sortkey": 101,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5684,
@@ -7131,7 +7131,7 @@
                 "description": "Fate Weave Ticket",
                 "sortkey": 101,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5305,
@@ -7157,7 +7157,7 @@
                 "description": "Can be exchanged for Destiny Gems",
                 "sortkey": 110,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5307,
@@ -7180,7 +7180,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 130,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5308,
@@ -7203,7 +7203,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 140,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5309,
@@ -7226,7 +7226,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 150,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5310,
@@ -7249,7 +7249,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 160,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5311,
@@ -7272,7 +7272,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 170,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5312,
@@ -7295,7 +7295,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 180,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5313,
@@ -7318,7 +7318,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 190,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5314,
@@ -7341,7 +7341,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 200,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5315,
@@ -7364,7 +7364,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 210,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5316,
@@ -7387,7 +7387,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 220,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5317,
@@ -7410,7 +7410,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 230,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5318,
@@ -7433,7 +7433,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 240,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5319,
@@ -7456,7 +7456,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 250,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5320,
@@ -7479,7 +7479,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 260,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5321,
@@ -7502,7 +7502,7 @@
                 "description": "Used to Awaken a Magical Girl",
                 "sortkey": 270,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5322,
@@ -7525,7 +7525,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 280,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5323,
@@ -7548,7 +7548,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 290,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5324,
@@ -7571,7 +7571,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 300,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5325,
@@ -7594,7 +7594,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 310,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5326,
@@ -7617,7 +7617,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 320,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5327,
@@ -7640,7 +7640,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 330,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5328,
@@ -7663,7 +7663,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 340,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5329,
@@ -7686,7 +7686,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 350,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5330,
@@ -7709,7 +7709,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 360,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5331,
@@ -7732,7 +7732,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 370,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5332,
@@ -7755,7 +7755,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 380,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5333,
@@ -7778,7 +7778,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 390,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5334,
@@ -7801,7 +7801,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 400,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5335,
@@ -7824,7 +7824,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 410,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5336,
@@ -7847,7 +7847,7 @@
                 "description": "Used to Enhance a Magical Girl's Magia",
                 "sortkey": 420,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5337,
@@ -7869,7 +7869,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 430,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5338,
@@ -7891,7 +7891,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 440,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5339,
@@ -7913,7 +7913,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 450,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5340,
@@ -7935,7 +7935,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 460,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5341,
@@ -7957,7 +7957,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 470,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5342,
@@ -7979,7 +7979,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 480,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5343,
@@ -8002,7 +8002,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 490,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5344,
@@ -8025,7 +8025,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 500,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5345,
@@ -8048,7 +8048,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 510,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5346,
@@ -8071,7 +8071,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 520,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5347,
@@ -8093,7 +8093,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 530,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5348,
@@ -8115,7 +8115,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 540,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5349,
@@ -8137,7 +8137,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 550,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5350,
@@ -8159,7 +8159,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 560,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5351,
@@ -8181,7 +8181,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 570,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5352,
@@ -8204,7 +8204,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 580,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5353,
@@ -8227,7 +8227,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 590,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5354,
@@ -8250,7 +8250,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 600,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5355,
@@ -8272,7 +8272,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 610,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5356,
@@ -8294,7 +8294,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 620,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5357,
@@ -8316,7 +8316,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 630,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5358,
@@ -8338,7 +8338,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 640,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5359,
@@ -8360,7 +8360,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 650,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5360,
@@ -8383,7 +8383,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 660,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5361,
@@ -8406,7 +8406,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 670,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5362,
@@ -8429,7 +8429,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 680,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5363,
@@ -8452,7 +8452,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 690,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5364,
@@ -8474,7 +8474,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 700,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5365,
@@ -8496,7 +8496,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 710,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5366,
@@ -8518,7 +8518,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 720,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5367,
@@ -8540,7 +8540,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 730,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5368,
@@ -8563,7 +8563,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 740,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5369,
@@ -8586,7 +8586,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 750,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5370,
@@ -8608,7 +8608,7 @@
                 "description": "Used to Awaken a Magical Girl or Enhance her Magia",
                 "sortkey": 760,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             }
         ],
         "startAt": "2017/07/01 14:00:00"
@@ -13960,7 +13960,7 @@
                 "description": "100000 Curse Chips",
                 "sortkey": 41,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5372,
@@ -13986,7 +13986,7 @@
                 "description": "Restores some BP",
                 "sortkey": 42,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5373,
@@ -14013,7 +14013,7 @@
                 "description": "Restores some AP at time of use",
                 "sortkey": 43,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5374,
@@ -14041,7 +14041,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 44,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5375,
@@ -14069,7 +14069,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 45,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5376,
@@ -14097,7 +14097,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 46,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5377,
@@ -14125,7 +14125,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 47,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5378,
@@ -14153,7 +14153,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 48,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5379,
@@ -14181,7 +14181,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 49,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5380,
@@ -14209,7 +14209,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 50,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5381,
@@ -14237,7 +14237,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 51,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5382,
@@ -14265,7 +14265,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 52,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5383,
@@ -14293,7 +14293,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 53,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5384,
@@ -14321,7 +14321,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 54,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5385,
@@ -14349,7 +14349,7 @@
                 "description": "Used to Enhance a Magical Girl",
                 "sortkey": 55,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             }
         ],
         "startAt": "2017/07/01 14:00:00"
@@ -15431,7 +15431,7 @@
                 "description": "Swallowtail Feather x3",
                 "sortkey": 301,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5976,
@@ -15447,7 +15447,7 @@
                 "description": "Mirrors Invitation x3",
                 "sortkey": 302,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5977,
@@ -15463,7 +15463,7 @@
                 "description": "Bunny Ear Wrapping Paper x3",
                 "sortkey": 303,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5978,
@@ -15479,7 +15479,7 @@
                 "description": "Sheep Warhorn x3",
                 "sortkey": 304,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5979,
@@ -15495,7 +15495,7 @@
                 "description": "Rooftop Key x3",
                 "sortkey": 305,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5980,
@@ -15511,7 +15511,7 @@
                 "description": "Pendulum Screw x3",
                 "sortkey": 306,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5981,
@@ -15527,7 +15527,7 @@
                 "description": "Babysitter's Pedestal x3",
                 "sortkey": 307,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5982,
@@ -15543,7 +15543,7 @@
                 "description": "Saintly Fuzzball x3",
                 "sortkey": 308,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5983,
@@ -15559,7 +15559,7 @@
                 "description": "Rubber Swim Tube x3",
                 "sortkey": 309,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5984,
@@ -15575,7 +15575,7 @@
                 "description": "Vagrant's Stake x3",
                 "sortkey": 310,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5985,
@@ -15591,7 +15591,7 @@
                 "description": "Sandbox Shell x2",
                 "sortkey": 401,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5986,
@@ -15607,7 +15607,7 @@
                 "description": "Padlock Chain x2",
                 "sortkey": 402,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5987,
@@ -15623,7 +15623,7 @@
                 "description": "Plaque Cord x2",
                 "sortkey": 403,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5988,
@@ -15639,7 +15639,7 @@
                 "description": "Owl Bucket x2",
                 "sortkey": 404,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5989,
@@ -15655,7 +15655,7 @@
                 "description": "Mail Goats' Glider x2",
                 "sortkey": 405,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5990,
@@ -15671,7 +15671,7 @@
                 "description": "Staff's Key Switch x2",
                 "sortkey": 406,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5991,
@@ -15687,7 +15687,7 @@
                 "description": "Mascot's Mane x2",
                 "sortkey": 407,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5992,
@@ -15703,7 +15703,7 @@
                 "description": "Bear's Scarf x2",
                 "sortkey": 408,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5993,
@@ -15719,7 +15719,7 @@
                 "description": "Sandbox Shovel",
                 "sortkey": 501,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5994,
@@ -15735,7 +15735,7 @@
                 "description": "Staircase Monument",
                 "sortkey": 502,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5995,
@@ -15751,7 +15751,7 @@
                 "description": "Commoner's Horse Wheel",
                 "sortkey": 503,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5996,
@@ -15767,7 +15767,7 @@
                 "description": "Rhyton's Ribbon",
                 "sortkey": 504,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5997,
@@ -15783,7 +15783,7 @@
                 "description": "AI Code",
                 "sortkey": 505,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5998,
@@ -15799,7 +15799,7 @@
                 "description": "Curator's Hood",
                 "sortkey": 506,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 5999,
@@ -15815,7 +15815,7 @@
                 "description": "Ferris Wheel Turbine",
                 "sortkey": 507,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 6000,
@@ -15831,7 +15831,7 @@
                 "description": "Speaker Bell",
                 "sortkey": 508,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 6001,
@@ -15847,7 +15847,7 @@
                 "description": "Bear's Bolt",
                 "sortkey": 509,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 6002,
@@ -15863,7 +15863,7 @@
                 "description": "Bunny Ear Cotton",
                 "sortkey": 510,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 6003,
@@ -15879,7 +15879,7 @@
                 "description": "Sheep Horn",
                 "sortkey": 511,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 6004,
@@ -15895,7 +15895,7 @@
                 "description": "Rooftop Balloon",
                 "sortkey": 512,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 6005,
@@ -15911,7 +15911,7 @@
                 "description": "Pendulum Bob",
                 "sortkey": 513,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 6006,
@@ -15927,7 +15927,7 @@
                 "description": "Babysitter's Handle",
                 "sortkey": 514,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             },
             {
                 "id": 6007,
@@ -15943,7 +15943,7 @@
                 "description": "Saintly Water Jar",
                 "sortkey": 515,
                 "startAt": "2020/12/03 00:00:00",
-                "endAt": "2020/12/31 00:00:00"
+                "endAt": "2020/12/31 23:59:59"
             }
         ],
         "startAt": "2018/09/25 15:10:00"
