@@ -30,7 +30,7 @@ def cacheFilePath(etag):
     return 'cache/'+etag.strip('"')+'.snaa'
 
 def getRemoteUrl(path):
-    asset_type = 'snaa'
+    asset_type = 'default'
     return 'https://endless.snaa.services'+re.sub(r"^(.*)\.json\.gz", r"/magica/resource/download/asset/"+asset_type+r"/\1.json.xz", path)
 
 def decodeFile(body):
