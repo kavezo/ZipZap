@@ -67,6 +67,8 @@ def arenaStart(response):
 
     userArenaBattle = dt.readJson('data/user/userArenaBattle.json')
     userArenaBattleResult = dt.readJson('data/user/userArenaBattleResult.json')
+    if userArenaBattleResult is None:
+        userArenaBattleResult = {"numberOfConsecutiveWins": 0}
     userArenaBattleResult.update({
         "userQuestBattleResultId": battleId,
         "userId": dt.userId,

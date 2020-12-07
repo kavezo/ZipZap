@@ -4,8 +4,12 @@
 from datetime import datetime, timedelta, date
 import math
 import copy
+import schedule
+import threading
+import time
 
 from util import dataUtil as dt
+import logging
 
 DATE_FORMAT = '%Y/%m/%d %H:%M:%S'
 
@@ -66,7 +70,8 @@ def filterCurrValid(objectList, startKey=None, endKey=None):
     
     return validObjects
 
-# not actually called anywhere yet, but should be run on a cronjob actually
+# ------ Cron jobs ------
+
 def resetShop():
     today = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
     if today.day != 1:
@@ -107,3 +112,34 @@ def resetShop():
         shopList[shopIdx]['shopItemList'] += newItems
     
     dt.saveJson('data/shopList.json', shopList)
+
+def changeLogName():
+    for handler in logging.root.handlers[:]:
+        handler.close()
+        logging.root.removeHandler(handler)
+    logLevel = dt.readJson('config.json')['logLevel']
+        
+    date = nowstr().split(' ')[0].replace('/', '_')
+    hour = datetime.now().hour
+    logging.basicConfig(
+        level=logLevel,
+        filename='logs/{0}-{1}.log'.format(date, hour), 
+        format='%(asctime)s %(levelname)s %(name)s : %(message)s')
+
+def cronThread():
+    while True:
+        try:
+            time.sleep(1)
+            schedule.run_pending()
+        except:
+            return
+
+def startCron():
+    changeLogName()
+    resetShop()
+
+    schedule.every().hour.at(':00').do(changeLogName)
+    schedule.every().day.at('00:00').do(resetShop) # can't make it happen only once a month, but at least we can check every day
+
+    thread = threading.Thread(target=cronThread)
+    thread.start()

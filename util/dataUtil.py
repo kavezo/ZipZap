@@ -1,4 +1,5 @@
 import json
+import os
 
 ITEM_VALFUNC = lambda i, x: x
 INDEX_VALFUNC = lambda i, x: i
@@ -8,6 +9,8 @@ def idxFunc(idx):
 
 # some nice abstractions
 def readJson(path):
+    if not os.path.exists(path):
+        return None
     with open(path, encoding='utf-8') as f:
         return json.load(f)
 
@@ -59,12 +62,11 @@ userIndices = {
     'userQuestAdventureList': createIndex('data/user/userQuestAdventureList.json', idxFunc('adventureId')),
     'userQuestBattleList': createIndex('data/user/userQuestBattleList.json', idxFunc('questBattleId')),
     'userSectionList': createIndex('data/user/userSectionList.json', idxFunc('sectionId')),
-    'userShopList': createIndex('data/user/userShopItemList.json', idxFunc('shopItemId')),
+    'userShopItemList': createIndex('data/user/userShopItemList.json', idxFunc('shopItemId')),
     'userStatusList': createIndex('data/user/userStatusList.json', idxFunc('statusId')),
     'userTotalChallengeList': createIndex('data/user/userTotalChallengeList.json', idxFunc('challengeId'))
 }
 
-# Doesn't work for userShopItemList, but we're having separate cases for that anyways
 userPaths = {key: 'data/user/'+key+'.json' for key in userIndices.keys()}
 
 def listUserObjectKeys(listName):
@@ -75,6 +77,8 @@ def deleteUserObject(listName, objectId):
     data = readJson(path)
 
     if not objectId in userIndices[listName]:
+        # waiting until refactor to cron to log
+        print("Couldn't find the object you're deleting")
         return data
     
     idx = userIndices[listName][objectId]

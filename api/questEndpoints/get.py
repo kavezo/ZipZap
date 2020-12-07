@@ -263,7 +263,7 @@ def dropItems(battleId, waveList):
         numEnemies = len(availableIdxs)
         if numEnemies == 0: continue
 
-        conditionalRate = dropRates[dropItemId]/numEnemies
+        conditionalRate = min(1, dropRates[dropItemId]/numEnemies)
         numDrops = np.random.binomial(numEnemies, conditionalRate)
         idxs = np.random.choice(len(availableIdxs), numDrops, replace=False)
         removeIdxs = []

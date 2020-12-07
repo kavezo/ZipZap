@@ -12,14 +12,21 @@ from util.homuUtil import nowstr
 logger = logging.getLogger('app.shop')
 
 # This will only get you the lowest rarity card, but that's what all shop megucas have been...
-def getCard(charaNo):
+def getCard(charaNo, amount):
     userCard, userChara, userLive2d, foundExisting = gacha.addMeguca(charaNo)
-    response = {'userCardList': [userCard], 'userCharaList': [userChara], 'userLive2dList': [userLive2d]}
+
+    if amount > 1:
+        userChara['lbItemNum'] += amount - 1
+        dt.setUserObject('userCharaList', charaNo, userChara)
+
+    response = {'userCharaList': [userChara]}
 
     if not foundExisting:
         userSectionList, userQuestBattleList = gacha.addStory(charaNo)
         response['userSectionList'] = userSectionList
         response['userQuestBattleList'] = userQuestBattleList
+        response['userLive2dList'] = [userLive2d]
+        response['userCardList'] = [userCard]
         
     return response
 
@@ -92,19 +99,19 @@ def obtainSet(item, body, args):
     for code in item['rewardCode'].split(','):
         itemType = code.split('_')[0]
         if itemType == 'ITEM':
-            args.update(getItem('_'.join(code.split('_')[1:-1]), int(code.split('_')[-1])*body['num']))
+            args = dt.updateJson(args, getItem('_'.join(code.split('_')[1:-1]), int(code.split('_')[-1])*body['num']))
         elif itemType == 'RICHE':
-            args.update(getCC(int(code.split('_')[-1])*body['num']))
+            args = dt.updateJson(args, getCC(int(code.split('_')[-1])*body['num']))
         elif itemType == 'GIFT':
-            args.update(getGift(int(code.split('_')[1]), int(code.split('_')[-1])*body['num']))
+            args = dt.updateJson(args, getGift(int(code.split('_')[1]), int(code.split('_')[-1])*body['num']))
 
 def obtain(item, body, args):
     if item['shopItemType'] == 'CARD':
-        args.update(getCard(item['card']['charaNo']))
+        args = dt.updateJson(args, getCard(item['card']['charaNo'], body['num']))
     elif item['shopItemType'] == 'FORMATION_SHEET':
-        args.update(getFormation(item['formationSheet']['id']))
+        args = dt.updateJson(args, getFormation(item['formationSheet']['id']))
     elif item['shopItemType'] == 'GEM':
-        args.update(getGems(int(item['genericId']), body['num']))
+        args = dt.updateJson(args, getGems(int(item['genericId']), body['num']))
     elif item['shopItemType'] == 'GIFT':
         newGifts = getGift(int(item['gift']['rewardCode'].split('_')[1]), body['num']*int(item['rewardCode'].split('_')[-1]))
         args['userGiftList'] = args.get('userGiftList', []) + newGifts['userGiftList']
@@ -112,9 +119,9 @@ def obtain(item, body, args):
         newItems = getItem(item['item']['itemCode'], body['num']*int(item['rewardCode'].split('_')[-1]) if 'rewardCode' in item else 1, item['item'])
         args['userItemList'] = args.get('userItemList', []) + newItems['userItemList']
     elif item['shopItemType'] == 'LIVE2D':
-        args.update(getLive2d(item['chara']['id'], item['live2d']['live2dId'], item['live2d']))
+        args = dt.updateJson(args, getLive2d(item['chara']['id'], item['live2d']['live2dId'], item['live2d']))
     elif item['shopItemType'] in ['MAXPIECE', 'PIECE']:
-        args.update(getPiece(item['piece'], item['shopItemType']=='MAXPIECE', body['num']))
+        args = dt.updateJson(args, getPiece(item['piece'], item['shopItemType']=='MAXPIECE', body['num']))
     return args
 
 # TODO: handle cases where it's a meguca sent to the present box
@@ -151,7 +158,7 @@ def buy():
         if 'userItemList' in args:
             args['userItemList'] += spendArgs['userItemList']
         else:
-            args.update(spendArgs)
+            args = dt.updateJson(args, spendArgs)
     elif item['consumeType'] == 'MONEY':
         itemList = gacha.spend('MONEY', item['needNumber']*body['num'])
         if 'userItemList' in args:

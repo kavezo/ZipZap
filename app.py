@@ -10,18 +10,11 @@ from util import patchUserData
 patchUserData.createDefaultUser()
 patchUserData.addAllDailies()
 
-from util.homuUtil import nowstr
+from util.homuUtil import startCron
 from util import tsurunoUtil as yuitil
 
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(name)s : %(message)s')
 app.logger = flask.logging.create_logger(app)
-app.logger.setLevel(logging.DEBUG)
-app.logger.propagate = False
-
-fileLogging = logging.FileHandler('logs/{}.log'.format(nowstr().split(' ')[0].replace('/', '_')))
-fileLogging.setLevel(logging.INFO)
-fileLogging.setFormatter(formatter)
-app.logger.addHandler(fileLogging)
+startCron()
 
 from api import arena, friend, gacha, gameUser, logger, money, page, quest, shop, \
     user, userCard, userChara, userDeck, userItem, userLive2d, userPiece, userPieceSet, userQuestAdventure, \

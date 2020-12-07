@@ -25,7 +25,7 @@ def createScenario(userQuestBattle):
             'clear': userQuestBattle['missionStatus'+str(i)] == 'CLEARED'
         })
 
-    if str(section['sectionId']).startswith(1) or str(section['sectionId']).startswith(2):
+    if str(section['sectionId']).startswith('1') or str(section['sectionId']).startswith('2'):
         chapterNo = dt.masterChapters[section['genericId']]['chapterNoForView']
         scenario['titleExtend'] = 'Ch.' + chapterNo + ' Ep.' + str(section['genericIndex'])
 
