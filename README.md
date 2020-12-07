@@ -17,10 +17,7 @@ For Windows, please download a release rather than the source code.
 The first time before you run the server on Windows, you need to do some setup:
 1. Run setupServer.bat.
 2. A cmd window should pop up. Wait until it closes by itself.
-3. There should now be a new file named "ca.crt" in the server directory. Install this certificate on your phone -- on 
-Android you can just move it on there and install it through settings/security, but on iOS you have to email it to 
-yourself or download it through Safari, then make sure you trust it through Certificate Trust Settings after it's 
-installed.
+3. Check to make sure there is a file named ca.crt in the ZipZap folder.
 
 You only need to do this once. (Although if you ever run setupServer.bat again, you'll have to repeat step 3.)
 
@@ -52,20 +49,20 @@ To start up the private server VM, run `vagrant up`; and to shut it down run `va
 ### On your phone/tablet/emulator: connecting to the private server
 
 0. Run the server on your computer, and keep it running.
-1. Make sure MagiReco is already installed on your device. I've only tested it on when it's past the tutorial, so no 
-guarantees it'll work for a fresh install. But it works even if you haven't updated.
-2. Find the IP address of the computer you're running the server on. I've only tested this with a local IP address (ones
+1. Find the IP address of the computer you're running the server on. I've only tested this with a local IP address (ones
 that start with 192.168) but external IP addresses should work.
-3. Change your DNS settings to point to your IP address. On iOS you can do this by editing the network settings as you
+2. Change your DNS settings to point to your IP address. On iOS you can do this by editing the network settings as you
 would with a proxy (just make sure to edit DNS, not proxy, settings), but on Android emulator I've had to use a 
 different app. The one I use is just called DNS Changer, and its icon is a blue circle with DNS in it.
+3. If this is the first time you're playing, go to https://android.magica-us.com. (The https is important.) Download the
+link labled ca.crt and install it using the information in the links provided.
 
 ### A note about Android 7 (Nougat) and above
 
 Due to a change that Google made starting in Android 7 (Nougat)
 [user-installed CA certificates are no longer trusted by apps](https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html).
-In order to play on devices and/or emulators running Android 7 and above, you will need to use the modded apk included
-in each release from 0.4.3 onwards.
+In order to play on devices and/or emulators running Android 7 and above, you'll either have to root, or play using the
+APK linked on https://android.magica-us.com.
 
 ---
 
@@ -109,14 +106,15 @@ in each release from 0.4.3 onwards.
     - Ashley will support you
 - playing mirrors battles (api/quest.py, api/arena.py, api/questEndpoints)
     - play against one of three giant megucas who will kill you
+    - earn Mirrors points, level up, and read the Mirrors story as you do
     - earn Mirrors coins for wins and losses
     - spending and recovering AP
 - daily missions (api/userDailyChallenge.py)
 
 ### Currently missing functions:
 - can't clear/accept non-daily challenges
-- can't earn mirrors points or go to the next level
 - some quests are missing story and enemy data
+    - especially labyrinths
 
 ### What's next?
 I coded very fast, and very not well, because I wanted to get as many features out before the 30th. Code quality is still
@@ -130,7 +128,6 @@ implement a new feature I don't know much about at least half of the time is spe
 the user's data.
 
 - implement missions
-- implement tutorial 
 - implement announcements
 - add unit tests
 - refactor for online server
@@ -138,7 +135,6 @@ the user's data.
 - add support for events
 - add support for multiple users
 - add support for finding other users, following and using supports
-- hack app to call the server's address rather than having to rely on mitmproxy
 
 ----
 If you have suggestions or want to help, please contact me at
