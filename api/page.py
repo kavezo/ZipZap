@@ -10,9 +10,11 @@ import logging
 from util import dataUtil as dt
 from util import homuUtil as homu
 from util import tsurunoUtil as yuitil
+from util import patchUserData
 from api.questEndpoints.send import obtainItem
 
 logger = logging.getLogger('app.page')
+patchUserData.addToShopItemList(dt)
 
 def arenaTop(response):
     response['userArenaBattle']=dt.readJson('data/user/userArenaBattle.json')
@@ -122,33 +124,6 @@ def presentList(response):
 def shopTop(response):
     response['shopList'] = dt.readJson('data/shopList.json')
     response['userShopItemList'] = dt.readJson('data/user/userShopItemList.json')
-
-    shopItemIds = set([item['shopItemId'] for item in response['userShopItemList']])
-    backgrounds = {'HOME_EV_1003_21028': 381, 'HOME_MAP_11011': 1720, 'HOME_MAP_11012': 1721, 
-                    'HOME_MAP_11013': 1722, 'HOME_EV_1033_13101': 2388}
-    addBackgrounds = [itemId for itemId in backgrounds.keys() 
-                        if dt.getUserObject('userItemList', itemId) is not None
-                        and backgrounds[itemId] not in shopItemIds]
-    for itemId in addBackgrounds:
-        response['userShopItemList'].append({
-            "createdAt": homu.nowstr(),
-            "num": 1,
-            "shopItemId": backgrounds[itemId],
-            "userId": dt.userId
-        })
-
-    formations = {'911': 999431, '912': 999432, '913': 999433, '921': 999434, '922': 999435, '923': 999436, 
-                '131': 5, '141': 424, '151': 425, '161': 426, '171': 427, '181': 428, '711': 999428, '611': 999430}
-    addFormations = [itemId for itemId in formations.keys() 
-                        if dt.getUserObject('userItemList', itemId) is not None
-                        and formations[itemId] not in shopItemIds]
-    for itemId in addFormations:
-        response['userShopItemList'].append({
-            "createdAt": homu.nowstr(),
-            "num": 1,
-            "shopItemId": formations[itemId],
-            "userId": dt.userId
-        })
 
 def storyCollection(response):
     response['eventStoryList'] = dt.readJson('data/eventStoryList.json')

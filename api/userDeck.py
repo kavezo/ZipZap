@@ -14,7 +14,7 @@ def save():
 
     # sometimes, when you continue to edit a team, the deckType isn't sent at all,
     # so we have to store it
-    # not sure if it ever doesn't have a deckType on the first time you edit a team
+    # not sure if the request ever doesn't have a deckType on the first time you edit a team
     if 'deckType' in body:
         deckType = body['deckType']
         dt.saveJson('data/deckType.json',{'deckType': body['deckType']})
@@ -26,11 +26,13 @@ def save():
         userDeck = {'createdAt': nowstr(), 'userId': dt.userId, 'deckType': deckType}
     
     userDeck['name'] = body['name']
-    userDeck['questEpisodeUserCardId'] = body['episodeUserCardId']
-    userDeck['formationSheetId'] = body['formationSheetId']
     
-    if 'questPositionHelper' in userDeck.keys():
+    if 'questPositionHelper' in body.keys():
         userDeck['questPositionHelper'] = body['questPositionHelper']
+    if 'episodeUserCardId' in body.keys():
+        userDeck['questEpisodeUserCardId'] = body['episodeUserCardId']
+    if 'formationSheetId' in body.keys():
+        userDeck['formationSheetId'] = body['formationSheetId']
         
     userFormation = dt.getUserObject('userFormationSheetList', body['formationSheetId'])
     if userFormation is None:
