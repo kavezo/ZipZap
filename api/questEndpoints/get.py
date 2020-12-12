@@ -262,7 +262,6 @@ def dropItems(battleId, waveList):
             for removeIdx in removeIdxs: enemyIdxs[enemyId].remove(removeIdx)
 
     # handle drops that can be dropped by anyone
-
     for dropItemId, codes in possibleDropCodes.items():
         numEnemies = len(availableIdxs)
         if numEnemies == 0: continue
@@ -286,6 +285,7 @@ def dropItems(battleId, waveList):
 
             waveNo, enemyIdx = availableIdxs[availableIdx]
             waveList[waveNo]['enemyList'][enemyIdx]['dropItemType'] = rarityBox
+            promisedDrops[code] = promisedDrops.get(code, 0) + 1
             removeIdxs.append((waveNo, enemyIdx))
         for removeIdx in removeIdxs: availableIdxs.remove(removeIdx)
 
