@@ -161,6 +161,7 @@ def progressMirrors(response):
     for i, arenaClass in enumerate(dt.arenaClassList[1:]):
         if currPoints >= arenaClass['requiredPoint']:
             arenaClassIdx = i
+            break
     if arenaClassIdx == -1:
         arenaClassIdx = len(dt.arenaClassList)-1
     
@@ -168,7 +169,7 @@ def progressMirrors(response):
         response['userArenaBattle']['currentFreeRankClassType'] = dt.arenaClassList[arenaClassIdx]['arenaBattleFreeRankClass']
         response['userArenaBattle']['currentFreeRankClass'] = response['userArenaBattle']['nextFreeRankClass']
         if 'nextClass' in dt.arenaClassList[arenaClassIdx]:
-            response['userArenaBattle']['nextFreeRankClass'] = dt.arenaClassList[arenaClassIdx]
+            response['userArenaBattle']['nextFreeRankClass'] = dt.arenaClassList[arenaClassIdx-1]
         elif 'nextFreeRankClass' in response['userArenaBattle']:
             del response['userArenaBattle']['nextFreeRankClass']
 

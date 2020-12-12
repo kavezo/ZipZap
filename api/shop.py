@@ -98,13 +98,14 @@ def getCC(amount):
 def obtainSet(item, body, args):
     for code in item['rewardCode'].split(','):
         itemType = code.split('_')[0]
+        amount = int(code.split('_')[-1])
         if itemType == 'ITEM':
-            args = dt.updateJson(args, getItem('_'.join(code.split('_')[1:-1]), int(code.split('_')[-1])*body['num']))
+            args = dt.updateJson(args, getItem('_'.join(code.split('_')[1:-1]), amount*body['num']))
         elif itemType == 'RICHE':
-            args = dt.updateJson(args, getCC(int(code.split('_')[-1])*body['num']))
+            args = dt.updateJson(args, getCC(amount*body['num']))
         elif itemType == 'GIFT':
-            args = dt.updateJson(args, getGift(int(code.split('_')[1]), int(code.split('_')[-1])*body['num']))
-
+            args = dt.updateJson(args, getGift(int(code.split('_')[1]), amount*body['num']))
+            
 def obtain(item, body, args):
     if item['shopItemType'] == 'CARD':
         args = dt.updateJson(args, getCard(item['card']['charaNo'], body['num']))
@@ -116,7 +117,10 @@ def obtain(item, body, args):
         newGifts = getGift(int(item['gift']['rewardCode'].split('_')[1]), body['num']*int(item['rewardCode'].split('_')[-1]))
         args['userGiftList'] = args.get('userGiftList', []) + newGifts['userGiftList']
     elif item['shopItemType'] == 'ITEM':
-        newItems = getItem(item['item']['itemCode'], body['num']*int(item['rewardCode'].split('_')[-1]) if 'rewardCode' in item else 1, item['item'])
+        amount = 1
+        if 'rewardCode' in item: 
+            amount = int(item['rewardCode'].split('_')[-1])
+        newItems = getItem(item['item']['itemCode'], body['num']*amount, item['item'])
         args['userItemList'] = args.get('userItemList', []) + newItems['userItemList']
     elif item['shopItemType'] == 'LIVE2D':
         args = dt.updateJson(args, getLive2d(item['chara']['id'], item['live2d']['live2dId'], item['live2d']))

@@ -33,14 +33,16 @@ def sendArena(request,response):
 
         numTurnsCapped = min(max(request['totalTurn'], 2), 7) # cap to 2 and 7
         turnBonus = 1.0 + 0.1*(7-numTurnsCapped)
-        # TODO: find the other codes
         opponentBonus = {'SAME': 1.0, 'HIGHER': 1.2, 'LOWER': 0.8}[userArenaBattleResult['arenaBattleOpponentType']]
-        consecBonus = [0,1,2,3,5,7,10][userArenaBattleResult['numberOfConsecutiveWins']]
-        userArenaBattle['freeRankArenaPoint'] += 10 * turnBonus * opponentBonus + consecBonus
+        consecBonus = [0,1,2,3,5,7,10][userArenaBattleResult['numberOfConsecutiveWins']-1]
+        getPoints = 10 * turnBonus * opponentBonus + consecBonus
+        userArenaBattle['freeRankArenaPoint'] += getPoints
 
         userArenaBattleResult['arenaBattleStatus'] = 'WIN'
-        userArenaBattleResult['numberOfConsecutiveWins'] += 1
-        userArenaBattleResult['point'] = userArenaBattle['freeRankArenaPoint']
+        userArenaBattleResult['numberOfConsecutiveWins'] = userArenaBattleResult['numberOfConsecutiveWins'] % 7 + 1
+        userArenaBattleResult['point'] = getPoints
+
+        dt.setGameUserValue('numberOfFreeRankTotalWins', dt.getGameUserValue('numberOfFreeRankTotalWins')+1)
     else:
         userArenaBattleResult['arenaBattleStatus']='LOSE'
         coins['quantity']+=1
@@ -48,6 +50,9 @@ def sendArena(request,response):
 
         userArenaBattle['freeRankArenaPoint'] += 3
         userArenaBattleResult['point'] = userArenaBattle['freeRankArenaPoint']
+
+    dt.setGameUserValue('freeRankArenaPoint', userArenaBattle['freeRankArenaPoint'])
+    gameUser = dt.setGameUserValue('numberOfFreeRankConsecutiveWins', userArenaBattleResult['numberOfConsecutiveWins'])
 
     dt.saveJson('data/user/userArenaBattle.json', userArenaBattle)
     dt.saveJson('data/user/userArenaBattleResult.json', userArenaBattleResult)
@@ -58,6 +63,7 @@ def sendArena(request,response):
 
     resultCode="success"
     response.update({
+        'gameUser': gameUser,
         'userArenaBattle' : userArenaBattle,
         'userItemList': userItemList,
         'userArenaBattleResultList': [userArenaBattleResult],
@@ -290,11 +296,10 @@ def send():
         # clear
         if not cleared:
             resultUserQuestBattle = storyUtil.clearBattle(battle)
+            storyResponse = storyUtil.progressStory(battle)
         else:
             resultUserQuestBattle['lastClearedAt'] = homu.nowstr()
-            resultUserQuestBattle['clearCount'] = resultUserQuestBattle.get('clearCount', 0) + 1
-        # add to stories TODO: move to only happen when first clear
-        storyResponse = storyUtil.progressStory(battle)
+            resultUserQuestBattle['clearCount'] = resultUserQuestBattle.get('clearCount', 0) + 1        
         # missions
         battle, resultUserQuestBattle, rewardResponse = clearMissions(body, battle)
 

@@ -17,9 +17,9 @@ def save():
     # not sure if the request ever doesn't have a deckType on the first time you edit a team
     if 'deckType' in body:
         deckType = body['deckType']
-        dt.saveJson('data/deckType.json',{'deckType': body['deckType']})
+        dt.saveJson('data/user/deckType.json',{'deckType': body['deckType']})
     else:
-        deckType = dt.readJson('data/deckType.json')['deckType']
+        deckType = dt.readJson('data/user/deckType.json')['deckType']
 
     userDeck = dt.getUserObject('userDeckList', deckType)
     if userDeck is None:

@@ -243,6 +243,9 @@ def dropItems(battleId, waveList):
 
         conditionalRate = min(1, dropRates[dropId]/numDroppers)
         for enemyId in enemyIds:
+            if len(enemyIdxs[enemyId])==0:
+                continue
+            
             numDrops = np.random.binomial(enemyCounts[enemyId], conditionalRate)
             idxs = np.random.choice(len(enemyIdxs[enemyId]), numDrops, replace=False)
             removeIdxs = []
@@ -259,6 +262,7 @@ def dropItems(battleId, waveList):
             for removeIdx in removeIdxs: enemyIdxs[enemyId].remove(removeIdx)
 
     # handle drops that can be dropped by anyone
+
     for dropItemId, codes in possibleDropCodes.items():
         numEnemies = len(availableIdxs)
         if numEnemies == 0: continue
@@ -282,14 +286,12 @@ def dropItems(battleId, waveList):
 
             waveNo, enemyIdx = availableIdxs[availableIdx]
             waveList[waveNo]['enemyList'][enemyIdx]['dropItemType'] = rarityBox
-            promisedDrops[code] = promisedDrops.get(code, 0) + 1
             removeIdxs.append((waveNo, enemyIdx))
         for removeIdx in removeIdxs: availableIdxs.remove(removeIdx)
 
     # first clear reward
     userQuestBattle = dt.getUserObject('userQuestBattleList', battleId)
     if 'cleared' not in userQuestBattle or not userQuestBattle['cleared'] and 'firstClearRewardCodes' in battle:
-        waveNo, enemyIdx = availableIdxs[np.random.choice(len(availableIdxs), 1)[0]]
         code = battle['firstClearRewardCodes']
         if code.startswith('RICHE'):
             rarityBox = 'BOX_BRONZE'
@@ -300,7 +302,9 @@ def dropItems(battleId, waveList):
             giftId = extractGiftCode(code)
             rarityBox = 'BOX_'+boxTypes[dt.masterGifts[giftId]['rank']]
 
-        waveList[waveNo]['enemyList'][enemyIdx]['dropItemType'] = rarityBox
+        if len(availableIdxs) != 0:
+            waveNo, enemyIdx = availableIdxs[np.random.choice(len(availableIdxs), 1)[0]]
+            waveList[waveNo]['enemyList'][enemyIdx]['dropItemType'] = rarityBox
         promisedDrops[code] = promisedDrops.get(code, 0) + 1
     
     dt.saveJson('data/user/promisedDrops.json', promisedDrops)

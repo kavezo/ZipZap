@@ -180,7 +180,8 @@ def setProtect(isProtected):
 
 def setArchive(isArchive):
     body = flask.request.json
-
+    
+    resultUserPieceList = []
     for pieceId in body['archiveUserPieceIdList']:
         targetUserPiece = dt.getUserObject('userPieceList', pieceId)
         if targetUserPiece is None:
@@ -189,10 +190,11 @@ def setArchive(isArchive):
 
         targetUserPiece['archive'] = isArchive
         dt.setUserObject('userPieceList', pieceId, targetUserPiece)
+        resultUserPieceList.append(targetUserPiece)
 
     response = {
         'resultCode': 'success',
-        'userPieceList': [targetUserPiece]
+        'userPieceList': resultUserPieceList
     }
     return flask.jsonify(response)
 
