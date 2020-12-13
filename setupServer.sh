@@ -2,6 +2,7 @@
 
 # get path to where this script (and the other ZipZap files) are located
 SRC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+cd $SRC
 
 # must be run as root
 if [ "$EUID" -ne 0 ]; then
@@ -51,7 +52,7 @@ else
   echo ""
   echo "# Generating SSL certificate..."
   mkdir -p $SRC/ssl
-  python3 ../generate_cert.py $SRC/ssl
+  python3 $SRC/generate_cert.py $SRC/ssl
 fi
 
 # install cert
