@@ -142,11 +142,9 @@ def enemyCollection(response):
     response['userEnemyList'] = dt.readJson('data/user/userEnemyList.json')
 
 def myPage(response):
-    today = datetime.strptime(dt.getUserValue('todayFirstAccessDate'), homu.DATE_FORMAT).date()
-    lastLoginBonusDate = datetime.strptime(dt.getGameUserValue('loginBonusGetAt'), homu.DATE_FORMAT).date()
-    if lastLoginBonusDate < today:
+    if homu.beforeToday(dt.getGameUserValue('loginBonusGetAt')):
         loginBonusCount = (dt.getGameUserValue('loginBonusCount') % 7) + 1
-        if today.weekday() == 0:
+        if datetime.now().date().weekday() == 0:
             loginBonusCount = 1
 
         dt.setGameUserValue('loginBonusGetAt', homu.nowstr())

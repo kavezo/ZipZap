@@ -94,9 +94,6 @@ def compose():
     if targetUserPiece == {}:
         flask.abort(400, description='Tried to level up a memoria you don\'t have...')
 
-    originalUserPiece = {k: v for k, v in targetUserPiece.items()}
-    targetUserPiece, success = levelUp(targetUserPiece, memoriaToSpend)
-
     # limit break
     isLimitBreak = False
     for memoria in memoriaToSpend:
@@ -105,6 +102,9 @@ def compose():
             isLimitBreak = True
     if isLimitBreak:
         targetUserPiece['lbCount'] += len(memoriaToSpend)
+
+    originalUserPiece = {k: v for k, v in targetUserPiece.items()}
+    targetUserPiece, success = levelUp(targetUserPiece, memoriaToSpend)
 
     dt.setUserObject('userPieceList', targetUserPieceId, targetUserPiece)
 

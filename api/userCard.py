@@ -195,6 +195,7 @@ def compose():
     rank = targetUserCard['card']['rank']
     exp = getComposeExp(targetUserCard['card']['attributeId'], body['useItem']) * success
     newLevel, extraExp = getFinalLevel(targetUserCard, exp)
+    newLevel = min(newLevel, maxLevels[rank])
 
     if newLevel == maxLevels[rank]:
         extraExp = 0
@@ -300,7 +301,6 @@ def evolve():
     if revisedUserChara is None:
         flask.abort(400, description='Tried to awaken a character you don\'t have...')
     revisedUserChara['userCardId'] = newUserCard['id']
-    revisedUserChara['card'] = newCard
 
     # save user info
     targetUserCard['enabled'] = False
