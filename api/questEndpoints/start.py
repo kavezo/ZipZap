@@ -68,7 +68,7 @@ def createResult(userQuestInfo, chosenTeam, chosenFormation):
         "helpBondsPt": 0,
         "helpPosition": chosenTeam['questPositionHelper'],
         "id": str(uuid1()),
-        "level": dt.getUserValue('level'),
+        "level": dt.getGameUserValue('level'),
         "magiaNum": 0,
         "nativeClearTime": 0,
         "questBattle": userQuestInfo['questBattle'],

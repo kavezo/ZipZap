@@ -131,11 +131,11 @@ def applyCustomizeBonuses(userCard, player):
         bonuses[bonusCode] = bonusNum
     
     if 'ATTACK' in bonuses:
-        player['attack'] *= bonuses['ATTACK']/1000
+        player['attack'] *= 1+bonuses['ATTACK']/1000
     if 'DEFENSE' in bonuses:
-        player['defence'] *= bonuses['DEFENSE']/1000
+        player['defence'] *= 1+bonuses['DEFENSE']/1000
     if 'HP' in bonuses:
-        player['hp'] *= bonuses['HP']/1000
+        player['hp'] *= 1+bonuses['HP']/1000
     if 'ACCEL' in bonuses:
         player['mpup'] = bonuses['ACCEL']/10
     if 'BLAST' in bonuses:

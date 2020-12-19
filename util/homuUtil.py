@@ -22,6 +22,8 @@ def thisWeek():
 def nowstr():
     return datetime.now().strftime(DATE_FORMAT)
 
+def strToDateTime(time): return datetime.strptime(time, DATE_FORMAT)
+
 def beforeToday(time):
     today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     return datetime.strptime(time, DATE_FORMAT) < today

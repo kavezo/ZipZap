@@ -18,8 +18,11 @@ def check():
         'userQuestBattleResultList': [userQuestBattleResult],
         'userQuestBattleList': [dt.getUserObject('userQuestBattleList', userQuestBattleResult['questBattleId'])],
         'userSectionList': [userSection],
-        'userChapterList': [dt.getUserObject('userChapterList', userSection['section']['genericId'])]
+        'userChapterList': []
     }
+    chapter = dt.getUserObject('userChapterList', userSection['section']['genericId'])
+    if chapter is not None:
+        response['userChapterList'] = [chapter]
     return flask.jsonify(response)
 
 def handleQuest(endpoint):
