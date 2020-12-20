@@ -7,7 +7,6 @@ from util import dataUtil as dt
 from util.homuUtil import nowstr
 
 def resetDaily():
-    print('resetting')
     path = 'data/user/userDailyChallengeList.json'
     userDailyChallenges = dt.readJson(path)
     for challenge in userDailyChallenges:

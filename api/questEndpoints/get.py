@@ -4,9 +4,12 @@ import numpy as np
 import re
 import json
 from uuid import uuid1
+import logging
 
 from util import dataUtil as dt
 from util import homuUtil as homu
+
+logger = logging.getLogger('app.quest.get')
 
 mirrorScenario = {
     "bgm": "bgm01_battle01",
@@ -68,14 +71,15 @@ def cardMagiaToMagia(userCard):
     }
 
 def cardDoppelToDoppel(userCard):
-    if 'doppelCardMagia' in userCard['card']:
+    if 'doppelCardMagia' in userCard['card'] \
+        and dt.getUserObject('userDoppelList', userCard['card']['doppelCharaNo']) is not None:
         cardDoppel = userCard['card']['doppelCardMagia']
     else:
         return None
     return {
             "artList": [cardDoppel[key] for key in cardDoppel if key.startswith('artId')],
             "description": cardDoppel['shortDescription'],
-            "doppelId": cardDoppel['id'],
+            "doppelId": userCard['card']['doppel']['id'],
             "icon": cardDoppel['groupId'],
             "level": 5,
             "name": cardDoppel['name'],
@@ -111,10 +115,39 @@ def piecesToMemoriae(userPieces):
         })
     return memoria
 
+def applyCustomizeBonuses(userCard, player):
+    cardCustomize = userCard['card']['cardCustomize']
+    bonuses = {}
+    for i in range(1,7):
+        stri = str(i)
+
+        if 'bonusCode'+stri not in cardCustomize:
+            continue
+        if not userCard['customized'+stri]:
+            continue
+
+        bonusCode = cardCustomize['bonusCode'+stri]
+        bonusNum = cardCustomize['bonusNum'+stri]
+        bonuses[bonusCode] = bonusNum
+    
+    if 'ATTACK' in bonuses:
+        player['attack'] *= 1+bonuses['ATTACK']/1000
+    if 'DEFENSE' in bonuses:
+        player['defence'] *= 1+bonuses['DEFENSE']/1000
+    if 'HP' in bonuses:
+        player['hp'] *= 1+bonuses['HP']/1000
+    if 'ACCEL' in bonuses:
+        player['mpup'] = bonuses['ACCEL']/10
+    if 'BLAST' in bonuses:
+        player['blast'] = bonuses['BLAST']/10
+    if 'CHARGE' in bonuses:
+        player['charge'] = bonuses['CHARGE']/10
+
 def cardToPlayer(userCard, userChara, battleInfo):
     charaMessages = [message for message in userChara['chara']['charaMessageList']if 40<=message['messageId']<50]
     charaMessage = np.random.choice(charaMessages)
-    return {
+
+    player = {
         "diskId": 0,
         "helper": battleInfo['helper'],
         "friend": battleInfo['friend'],
@@ -133,7 +166,7 @@ def cardToPlayer(userCard, userChara, battleInfo):
         "hpStart": userCard['hp'],
         "hp": userCard['hp'],
         "mpStart": 0,
-        "maxMp": 1000, # TODO: allow doppels
+        "maxMp": 1000,
         "attack": userCard['attack'],
         "defence": userCard['defense'],
         "speed": 0,
@@ -153,6 +186,17 @@ def cardToPlayer(userCard, userChara, battleInfo):
         "ai": 3 if userChara['charaId']==1001 else 1, # TODO: figure out how this actually works
         "memoriaList": [memoria['memoriaId'] for memoria in battleInfo['memoriaList']]
     }
+
+    if userCard['magiaLevel'] == 5:
+        player['maxMp'] = 2000
+        if 'doppel' in userCard['card']:
+            # crossing fingers that these are the same...
+            player['doppelId'] = userCard['card']['doppelCharaNo']
+            player['miniDoppelId'] = userCard['card']['doppelCharaNo']
+    
+    applyCustomizeBonuses(userCard, player)
+
+    return player
 
 def battleTranslate(battleData, userCard = None, userPieces = []):
     battleData['artList'] += extractArts(userCard, userPieces)
@@ -389,17 +433,20 @@ def addUserToBattle(battleData, position, deck):
     battleData['playerList'].append(cardToPlayer(userCard, userChara, battleInfo))
 
 def spendAP(battle):
+    apType, apDisplay = 'ACP', 'AP'
     if battle['battleType'] == 'ARENA':
-        apType, apAmount = 'BTP', 1
+        apType, apDisplay = 'BTP', 'BP'
+        apAmount = 1
     elif battle['questBattle']['consumeType'] == 'NORMAL':
-        apType, apAmount = 'ACP', battle['scenario']['cost']
+        apAmount = battle['scenario']['cost']
     elif battle['questBattle']['consumeType'] == 'FREE_AT_NOT_CLEAR':
-        apType, apAmount = 'ACP', battle['scenario']['cost'] if battle['cleared'] else 0
+        userQuestBattle = dt.getUserObject('userQuestBattleList', battle['questBattleId'])
+        apAmount = battle['scenario']['cost'] if ('cleared' in userQuestBattle and userQuestBattle['cleared']) else 0
 
     apStatus = homu.getStatus(apType)
     apStatus['point'] -= apAmount
     if apStatus['point'] < 0:
-        flask.abort(400, '{"errorTxt": "Not enough BP.","resultCode": "error","title": "Error"}')
+        flask.abort(400, '{"errorTxt": "Not enough ' + apDisplay + '.","resultCode": "error","title": "Error"}')
     dt.setUserObject('userStatusList', apType, apStatus)
     return apStatus
 

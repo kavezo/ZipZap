@@ -142,11 +142,14 @@ def enemyCollection(response):
     response['userEnemyList'] = dt.readJson('data/user/userEnemyList.json')
 
 def myPage(response):
-    today = datetime.strptime(dt.getUserValue('todayFirstAccessDate'), homu.DATE_FORMAT).date()
-    lastLoginBonusDate = datetime.strptime(dt.getGameUserValue('loginBonusGetAt'), homu.DATE_FORMAT).date()
-    if lastLoginBonusDate < today:
+    lastLoginBonusDate = dt.getGameUserValue('loginBonusGetAt')
+    if homu.beforeToday(lastLoginBonusDate):
         loginBonusCount = (dt.getGameUserValue('loginBonusCount') % 7) + 1
-        if today.weekday() == 0:
+        if datetime.now().date().weekday() == 0:
+            loginBonusCount = 1
+
+        lastMonday, nextMonday = homu.thisWeek()
+        if homu.strToDateTime(lastLoginBonusDate).date() < lastMonday:
             loginBonusCount = 1
 
         dt.setGameUserValue('loginBonusGetAt', homu.nowstr())
@@ -160,7 +163,6 @@ def myPage(response):
             response = dt.updateJson(response, loginItems)
         response['loginBonusList'] = bonuses
 
-        lastMonday, nextMonday = homu.thisWeek()
         response['loginBonusPeriod'] = lastMonday.strftime('%m/%d') + '〜' + nextMonday.strftime('%m/%d')
 
 specialCases = {

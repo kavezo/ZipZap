@@ -8,7 +8,7 @@ import logging
 
 from util import dataUtil as dt
 from util import newUserObjectUtil as newtil
-from util.homuUtil import nowstr
+from util.homuUtil import nowstr, beforeToday
 
 logger = logging.getLogger('app.gacha')
 
@@ -260,11 +260,13 @@ def draw():
 
     # draw
     draw10 = body['gachaBeanKind'].endswith('10') or body['gachaBeanKind'] == 'SELECTABLE_TUTORIAL'
+    isFreePull = False
     results = []
     itemTypes = []
     if body['gachaBeanKind'].startswith('NORMAL'):
         if draw10:
             results, itemTypes = drawTenNormal()
+            isFreePull = beforeToday(dt.getGameUserValue('freeGachaAt'))
         else:
             results, itemTypes = drawOneNormal()
     else:
@@ -348,8 +350,11 @@ def draw():
         if kind['beanKind'] == body['gachaBeanKind']:
             gachaKind = kind
 
-    userItemList += \
-        spend(gachaKind['needPointKind'], gachaKind['needQuantity'], gachaKind['substituteItemId'] if 'substituteItemId' in gachaKind else None)
+    if not isFreePull:
+        userItemList += \
+            spend(gachaKind['needPointKind'], 
+                gachaKind['needQuantity'], 
+                gachaKind['substituteItemId'] if 'substituteItemId' in gachaKind else None)
 
     # create response
     gachaAnimation = {
@@ -410,6 +415,9 @@ def draw():
         "userItemList": userItemList,
         "userPieceList": userPieceList
     }
+
+    if isFreePull:
+        response['gameUser'] = dt.setGameUserValue('freeGachaAt', nowstr())
 
     if len(userSectionList) > 0: response['userSectionList'] = userSectionList
     if len(userQuestBattleList) > 0: response['userQuestBattleList'] = userQuestBattleList

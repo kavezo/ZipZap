@@ -22,6 +22,12 @@ def thisWeek():
 def nowstr():
     return datetime.now().strftime(DATE_FORMAT)
 
+def strToDateTime(time): return datetime.strptime(time, DATE_FORMAT)
+
+def beforeToday(time):
+    today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
+    return datetime.strptime(time, DATE_FORMAT) < today
+
 def updateStatus(status, now):
     maxstatus = dt.getUserObject('userStatusList', 'MAX_' + status['statusId'])
     if maxstatus is not None and status['point'] < maxstatus['point']:

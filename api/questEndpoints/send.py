@@ -103,7 +103,7 @@ def giveUserExp(battle):
         dt.setUserObject('userStatusList', 'ACP', currAP)
     return gameUser, newStatus
 
-def giveMegucaExp(body, battle):
+def giveMegucaExp(battle):
     # add exp to cards
     charaNos = []
     leaderCardId = 0
@@ -137,11 +137,6 @@ def giveMegucaExp(body, battle):
         dt.setUserObject('userCardList', cardId, currUserCard)
 
     # add episode points to charas
-    for i in range(9):
-        numberedId = 'userCardId'+str(i+1)
-        if numberedId in body:
-            cardIds.append(body[numberedId])
-
     resultUserCharaList = []
     eps = battle['questBattle']['baseBondsPt']
     for charaNo in charaNos:
@@ -289,7 +284,7 @@ def send():
         # add exp to user and level up, maybe
         gameUser, newStatus = giveUserExp(battle)
         # level up/episode up megucas
-        resultUserCardList, resultUserCharaList = giveMegucaExp(body, battle)
+        resultUserCardList, resultUserCharaList = giveMegucaExp(battle)
         cleared = 'cleared' in resultUserQuestBattle and resultUserQuestBattle['cleared']
         # add drops -- required before clearing
         dropResponse = giveDrops(battle)
