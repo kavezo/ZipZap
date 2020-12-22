@@ -443,7 +443,7 @@ def spendAP(battle):
         userQuestBattle = dt.getUserObject('userQuestBattleList', battle['questBattleId'])
         apAmount = battle['scenario']['cost'] if ('cleared' in userQuestBattle and userQuestBattle['cleared']) else 0
     else:
-	apAmount = 1
+        apAmount = 1
 
     apStatus = homu.getStatus(apType)
     apStatus['point'] -= apAmount
