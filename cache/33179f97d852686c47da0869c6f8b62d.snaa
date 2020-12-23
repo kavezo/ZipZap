@@ -1,0 +1,112 @@
+[
+    {
+        "file_list": [
+            {
+                "size": 1902, 
+                "url": "image_native/scene/download/char_list.json"
+            }
+        ], 
+        "md5": "b9f38d37af8c6a2bdc369b57ad74754a", 
+        "path": "image_native/scene/download/char_list.json"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 55153, 
+                "url": "image_native/card/image/card_10011_m.png"
+            }
+        ], 
+        "md5": "06568c480fc18e612d3b8c46ad69e5cc", 
+        "path": "image_native/card/image/card_10011_m.png"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 87665, 
+                "url": "image_native/card/image/card_10011_l.png"
+            }
+        ], 
+        "md5": "75b7ffa2305ee9ad43dc47a3ce25e6b9", 
+        "path": "image_native/card/image/card_10011_l.png"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 67471, 
+                "url": "image_native/card/image/card_10022_m.png"
+            }
+        ], 
+        "md5": "16e64860abb1abf076f10dbfe5d4049f", 
+        "path": "image_native/card/image/card_10022_m.png"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 100852, 
+                "url": "image_native/card/image/card_10022_l.png"
+            }
+        ], 
+        "md5": "5a78a98a0090e976fbe1246b9b553061", 
+        "path": "image_native/card/image/card_10022_l.png"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 65903, 
+                "url": "image_native/card/image/card_10032_m.png"
+            }
+        ], 
+        "md5": "87c814b81676a9ec77d0d6069d1e857a", 
+        "path": "image_native/card/image/card_10032_m.png"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 106249, 
+                "url": "image_native/card/image/card_10032_l.png"
+            }
+        ], 
+        "md5": "ef59310457faaecdd5d4640d1b185beb", 
+        "path": "image_native/card/image/card_10032_l.png"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 72083, 
+                "url": "image_native/card/image/card_10052_m.png"
+            }
+        ], 
+        "md5": "dec797492b2dc6000791bb8f5d78ff08", 
+        "path": "image_native/card/image/card_10052_m.png"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 123837, 
+                "url": "image_native/card/image/card_10052_l.png"
+            }
+        ], 
+        "md5": "53d4116ca21242c887089fa1e02808b9", 
+        "path": "image_native/card/image/card_10052_l.png"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 76743, 
+                "url": "image_native/card/image/card_10042_m.png"
+            }
+        ], 
+        "md5": "a56f66e40613e9e6454114e9eb625aec", 
+        "path": "image_native/card/image/card_10042_m.png"
+    }, 
+    {
+        "file_list": [
+            {
+                "size": 113535, 
+                "url": "image_native/card/image/card_10042_l.png"
+            }
+        ], 
+        "md5": "5a12988281b29275e9ce5a3d742ef7fe", 
+        "path": "image_native/card/image/card_10042_l.png"
+    }
+]

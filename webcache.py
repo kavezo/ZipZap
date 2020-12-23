@@ -36,6 +36,19 @@ def getRemoteUrl(path):
 def decodeFile(body):
     return lzma.decompress(body)
 
+def getDiff(oldContents, newContents):
+    oldList = json.loads(oldContents)
+    newList = json.loads(newContents)
+
+    if type(newList) != list:
+        return newContents
+
+    oldMD5s = {oldFile['path']: oldFile['md5'] for oldFile in oldList}
+    diff = [newFile for newFile in newList 
+                if newFile['path'] not in oldMD5s or newFile['md5'] != oldMD5s[newFile['path']]]
+
+    return json.dumps(diff)
+
 def getFile(path):
     global versions
     logger.info('getting file ' + path)
@@ -77,5 +90,11 @@ def getFile(path):
 
     versions[path] = ((datetime.now() + EXPIRATION_TIME).isoformat(), RsH['ETag'])
     Thread(target=saveVersions).start()
+
+    if 'If-None-Match' in RqH:
+        oldfile = cacheFilePath(RqH['If-None-Match'])
+        with open(oldfile) as f:
+            oldContents = f.read()
+        snaa_file = getDiff(oldContents, snaa_file)
 
     return flask.make_response(snaa_file, RsH) # fresh file
