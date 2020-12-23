@@ -9,6 +9,7 @@ import logging
 from util import patchUserData
 patchUserData.createDefaultUser()
 patchUserData.addAllDailies()
+patchUserData.deleteExtraQuestAdventures()
 
 from util.homuUtil import startCron
 from util import tsurunoUtil as yuitil

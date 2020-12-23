@@ -60,3 +60,25 @@ def addToShopItemList(dt): # passing in dataUtil as a hacky workaround for how t
             "shopItemId": formations[itemId],
             "userId": dt.userId
         })
+
+def deleteExtraQuestAdventures():
+    with open('data/user/userQuestAdventureList.json', encoding='utf-8') as f:
+        adventures = json.load(f)
+    with open('data/user/userQuestBattleList.json', encoding='utf-8') as f:
+        userBattles = json.load(f)
+
+    adventuresIdx = {adventure['adventureId']: adventure for adventure in adventures}
+    
+    for userBattle in userBattles:
+        if 'cleared' in userBattle and userBattle['cleared']: continue
+
+        battle = userBattle['questBattle']
+        if 'startStory' in battle and battle['startStory'] in adventuresIdx:
+            del adventuresIdx[battle['startStory']]
+        if 'questStory' in battle and battle['questStory'] in adventuresIdx:
+            del adventuresIdx[battle['questStory']]
+        if 'endStory' in battle and battle['endStory'] in adventuresIdx:
+            del adventuresIdx[battle['endStory']]
+
+    with open('data/user/userQuestAdventureList.json', 'w+', encoding='utf-8') as f:
+        json.dump(list(adventuresIdx.values()), f, ensure_ascii=False)
