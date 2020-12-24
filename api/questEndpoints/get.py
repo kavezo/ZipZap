@@ -33,6 +33,10 @@ def extractArts(userCard, userPieceList):
         if 'doppelCardMagia' in userCard['card']:
             arts += [userCard['card']['doppelCardMagia'][key] for key in userCard['card']['doppelCardMagia'].keys() 
                     if key.startswith('art') and not key.startswith('artId')]
+        
+        exPiece = exSkillToPiece(userCard)
+        if exPiece is not None:
+            userPieceList.append(exPiece)
     for piece in userPieceList:
         skills = [piece['piece'][key] for key in piece['piece'].keys() if key.startswith('pieceSkill')]
         for skill in skills:
@@ -95,6 +99,27 @@ def cardSkillToConnect(userCard):
         "description": cardSkill['shortDescription'],
         "artList": [cardSkill[key] for key in cardSkill if key.startswith('artId')]
     }
+
+def exSkillToPiece(userCard):
+    exKey = 'pieceSkillList'
+    if userCard['revision'] == 4:
+        exKey = 'maxPieceSkillList'
+
+    if len(userCard['card'][exKey]) == 0:
+        return None
+    exSkill = userCard['card'][exKey][0]
+    
+    exPiece = {
+        'level': 0,
+        'piece': {
+            'pieceId': exSkill['id'],
+            'pieceName': exSkill['name'],
+            'pieceType': 'STARTUP',
+            'pieceSkill': exSkill
+        }
+    }
+
+    return exPiece
 
 def piecesToMemoriae(userPieces):
     memoria = []
@@ -200,17 +225,21 @@ def cardToPlayer(userCard, userChara, battleInfo):
 
 def battleTranslate(battleData, userCard = None, userPieces = []):
     battleData['artList'] += extractArts(userCard, userPieces)
+    currMemoriae = []
     if userCard is not None:
         battleData['magiaList'].append(cardMagiaToMagia(userCard))
         battleData['connectList'].append(cardSkillToConnect(userCard))
         currDoppel = cardDoppelToDoppel(userCard)
         if currDoppel is not None:
             battleData['doppelList'].append(currDoppel)
+        
+        exPiece = exSkillToPiece(userCard)
+        if exPiece is not None:
+            currMemoriae += piecesToMemoriae([exPiece])
     if len(userPieces) > 0:
-        currMemoriae = piecesToMemoriae(userPieces)
+        currMemoriae += piecesToMemoriae(userPieces)
         battleData['memoria'] += currMemoriae
-        return currMemoriae
-    return []
+    return currMemoriae
 
 def separateEnemyInfo(enemy):
     response = {key: [] for key in ['artList', 'magiaList', 'doppelList', 'memoria']}
