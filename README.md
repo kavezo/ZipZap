@@ -57,12 +57,23 @@ different app. The one I use is just called DNS Changer, and its icon is a blue 
 3. If this is the first time you're playing, go to https://android.magica-us.com. (The https is important.) Download the
 link labled ca.crt and install it using the information in the links provided.
 
+### But my network is really, really, really weird and DNS messes it up!
+
+2. Edit the config.json in the top level folder of the server so that the "useDNS" key is set to `false`
+3. Use a hosts editor on your phone/emulator to point android.magica-us.com or ios.magica-us.com (based on your OS) to
+the server computer's local IP address.
+4. Everything else is normal. If this is the first time you're playing, go to https://android.magica-us.com and install
+the cert.
+
+Note that this does not redirect other tracking websites. I honestly don't think it should be a huge problem for now,
+but sooner or later I'll have to stop being lazy and add them in this README oof
+
 ### A note about Android 7 (Nougat) and above
 
 Due to a change that Google made starting in Android 7 (Nougat)
 [user-installed CA certificates are no longer trusted by apps](https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html).
 In order to play on devices and/or emulators running Android 7 and above, you'll either have to root, or play using the
-APK linked on https://android.magica-us.com.
+APK linked on https://android.magica-us.com. (The APK only appears in Windows releases, unfortunately.)
 
 ---
 
@@ -115,6 +126,8 @@ APK linked on https://android.magica-us.com.
 - can't clear/accept non-daily challenges
 - some quests are missing story and enemy data
     - especially labyrinths
+- can't continue quests
+- real NPCs don't show up
 
 ### What's next?
 I coded very fast, and very not well, because I wanted to get as many features out before the 30th. Code quality is still
