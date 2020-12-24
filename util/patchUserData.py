@@ -61,24 +61,42 @@ def addToShopItemList(dt): # passing in dataUtil as a hacky workaround for how t
             "userId": dt.userId
         })
 
-def deleteExtraQuestAdventures():
+def fixQuestAdventures():
     with open('data/user/userQuestAdventureList.json', encoding='utf-8') as f:
         adventures = json.load(f)
     with open('data/user/userQuestBattleList.json', encoding='utf-8') as f:
         userBattles = json.load(f)
+    with open('data/user/user.json', encoding='utf-8') as f:
+        userId = json.load(f)['id']
 
     adventuresIdx = {adventure['adventureId']: adventure for adventure in adventures}
+    def makeAdventure(adventureId): 
+        return {
+            "userId": userId,
+            "adventureId": adventureId,
+            "skipped": False,
+            "createdAt": "2020/01/01 00:00:00"
+        }
     
     for userBattle in userBattles:
-        if 'cleared' in userBattle and userBattle['cleared']: continue
-
         battle = userBattle['questBattle']
-        if 'startStory' in battle and battle['startStory'] in adventuresIdx:
-            del adventuresIdx[battle['startStory']]
-        if 'questStory' in battle and battle['questStory'] in adventuresIdx:
-            del adventuresIdx[battle['questStory']]
-        if 'endStory' in battle and battle['endStory'] in adventuresIdx:
-            del adventuresIdx[battle['endStory']]
+        # add cleared adventure if it doesn't exist
+        if 'cleared' in userBattle and userBattle['cleared']:
+            if 'startStory' in battle and battle['startStory'] not in adventuresIdx:
+                adventuresIdx[battle['startStory']] = makeAdventure(battle['startStory'])
+            if 'questStory' in battle and battle['questStory'] not in adventuresIdx:
+                adventuresIdx[battle['questStory']] = makeAdventure(battle['questStory'])
+            if 'endStory' in battle and battle['endStory'] not in adventuresIdx:
+                adventuresIdx[battle['endStory']] = makeAdventure(battle['endStory'])
+
+        # get rid of extra adventures
+        else:
+            if 'startStory' in battle and battle['startStory'] in adventuresIdx:
+                del adventuresIdx[battle['startStory']]
+            if 'questStory' in battle and battle['questStory'] in adventuresIdx:
+                del adventuresIdx[battle['questStory']]
+            if 'endStory' in battle and battle['endStory'] in adventuresIdx:
+                del adventuresIdx[battle['endStory']]
 
     with open('data/user/userQuestAdventureList.json', 'w+', encoding='utf-8') as f:
         json.dump(list(adventuresIdx.values()), f, ensure_ascii=False)
