@@ -82,7 +82,7 @@ def createResult(userQuestInfo, chosenTeam, chosenFormation):
         "userId": dt.userId
     }
 
-def start():    
+def start():
     body = flask.request.json
 
     # get userQuestBattle

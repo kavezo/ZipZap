@@ -252,6 +252,24 @@ def clearMissions(body, battle):
     dt.setUserObject('userQuestBattleList', userQuestBattle['questBattleId'], userQuestBattle)
     return battle, userQuestBattle, rewards
 
+def getBattleCards(battle):
+    cardIds = [battle[key] for key in battle.keys() if key.startswith('userCardId')]
+    cards = []
+    charaIds = []
+    for cardId in cardIds:
+        userCard = dt.getUserObject('userCardList', cardId)
+        if userCard is not None:
+            cards.append(userCard)
+            charaIds.append(userCard['card']['charaNo'])
+
+    charas = []
+    for charaId in charaIds:
+        userChara = dt.getUserObject('userCharaList', charaId)
+        if userChara is not None:
+            charas.append(userChara)
+
+    return cards, charas
+
 def send():
     body = flask.request.json
     battle = dt.readJson('data/user/userQuestBattleResult.json')
@@ -312,14 +330,15 @@ def send():
         if partResponse is not None:
             response = dt.updateJson(response, partResponse)
 
+    userCards, userCharas = getBattleCards(battle)
     if resultUserCardList is not None:
         response['userCardList'] = resultUserCardList
     else:
-        response['userCardList'] = dt.readJson('data/user/userCardList.json')
+        response['userCardList'] = userCards
     if resultUserCharaList is not None:
         response['userCharaList'] = resultUserCharaList
     else:
-        response['userCharaList'] = dt.readJson('data/user/userCharaList.json')
+        response['userCharaList'] = userCharas
 
     if newStatus != []:
         response['userStatusList'] = newStatus

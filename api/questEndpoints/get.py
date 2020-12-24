@@ -437,13 +437,15 @@ def spendAP(battle):
     if battle['battleType'] == 'ARENA':
         apType, apDisplay = 'BTP', 'BP'
         apAmount = 1
-    elif battle['questBattle']['consumeType'] == 'NORMAL':
-        apAmount = battle['scenario']['cost']
     elif battle['questBattle']['consumeType'] == 'FREE_AT_NOT_CLEAR':
         userQuestBattle = dt.getUserObject('userQuestBattleList', battle['questBattleId'])
         apAmount = battle['scenario']['cost'] if ('cleared' in userQuestBattle and userQuestBattle['cleared']) else 0
-    else:
-        apAmount = 1
+    else: # TODO: this won't work for event stuff
+        apAmount = battle['scenario']['cost']
+        if 'consumeType' not in battle['questBattle'] or battle['questBattle']['consumeType'] != 'NORMAL':
+            # TODO: this is just an error log to help debug
+            logger.error('Unexpected consumeType; entire battle is ' + json.dumps(battle['questBattle']))
+            apAmount = 0
 
     apStatus = homu.getStatus(apType)
     apStatus['point'] -= apAmount

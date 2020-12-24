@@ -93,8 +93,9 @@ def getFile(path):
 
     if 'If-None-Match' in RqH:
         oldfile = cacheFilePath(RqH['If-None-Match'])
-        with open(oldfile) as f:
-            oldContents = f.read()
-        snaa_file = getDiff(oldContents, snaa_file)
+        if os.path.exists(oldfile):
+            with open(oldfile) as f:
+                oldContents = f.read()
+            snaa_file = getDiff(oldContents, snaa_file)
 
     return flask.make_response(snaa_file, RsH) # fresh file

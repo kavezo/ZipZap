@@ -146,7 +146,7 @@ def compose():
                     "hp": originalUserPiece['piece']['hp'],
                     "lbCount": originalUserPiece['lbCount'],
                     "level": originalUserPiece['level'],
-                    "limitExp": dExpdLevel[originalUserPiece['level']],
+                    "limitExp": dExpdLevel[originalUserPiece['level']-1],
                     "limitLevel": getMaxLevel(originalUserPiece['piece']['rank'], originalUserPiece['lbCount']),
                     "rarity": int(originalUserPiece['piece']['rank'][-1])
                 },
@@ -157,7 +157,7 @@ def compose():
                     "hp": targetUserPiece['piece']['hp'],
                     "lbCount": targetUserPiece['lbCount'],
                     "level": targetUserPiece['level'],
-                    "limitExp": dExpdLevel[targetUserPiece['level']],
+                    "limitExp": dExpdLevel[targetUserPiece['level']-1],
                     "limitLevel": getMaxLevel(targetUserPiece['piece']['rank'], targetUserPiece['lbCount']),
                     "rarity": int(targetUserPiece['piece']['rank'][-1])
                 }

@@ -114,7 +114,10 @@ def obtain(item, body, args):
     elif item['shopItemType'] == 'GEM':
         args = dt.updateJson(args, getGems(int(item['genericId']), body['num']))
     elif item['shopItemType'] == 'GIFT':
-        newGifts = getGift(int(item['gift']['rewardCode'].split('_')[1]), body['num']*int(item['rewardCode'].split('_')[-1]))
+        amount = 1
+        if 'rewardCode' in item: 
+            amount = int(item['rewardCode'].split('_')[-1])
+        newGifts = getGift(item['gift']['id'], body['num']*amount)
         args['userGiftList'] = args.get('userGiftList', []) + newGifts['userGiftList']
     elif item['shopItemType'] == 'ITEM':
         amount = 1
