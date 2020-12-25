@@ -60,6 +60,8 @@ def handleGameUser(endpoint):
         return skipAdventure()
     elif endpoint.endswith('cacheClear'):
         return '{}' # TODO: set the cacheCleared variable. actually idk why you even want this but
+    elif endpoint.endswith('read/announcement'):
+        return '{}' # TODO: figure out what this actually does
     else:
         logger.error('Missing implementation: gameUser' + endpoint)
         flask.abort(501, description="Not implemented")
