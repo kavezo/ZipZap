@@ -13,7 +13,7 @@ logger = logging.getLogger('app.shop')
 
 # This will only get you the lowest rarity card, but that's what all shop megucas have been...
 def getCard(charaNo, amount):
-    userCard, userChara, userLive2d, foundExisting = gacha.addMeguca(charaNo)
+    userCard, userChara, userLive2ds, foundExisting = gacha.addMeguca(charaNo)
 
     if amount > 1:
         userChara['lbItemNum'] += amount - 1
@@ -25,7 +25,7 @@ def getCard(charaNo, amount):
         userSectionList, userQuestBattleList = gacha.addStory(charaNo)
         response['userSectionList'] = userSectionList
         response['userQuestBattleList'] = userQuestBattleList
-        response['userLive2dList'] = [userLive2d]
+        response['userLive2dList'] = userLive2ds
         response['userCardList'] = [userCard]
         
     return response

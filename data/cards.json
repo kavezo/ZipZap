@@ -26959,7 +26959,7 @@
                 {
                     "charaNo": 2500,
                     "messageId": 46,
-                    "message": "My wish is sacred.@I will allow no one to disparage it."
+                    "message": "My wish is sacred.<br>I will allow no one to disparage it."
                 }
             ]
         },
@@ -62800,6 +62800,713 @@
                         "giftNum6": 1,
                         "bonusCode6": "CHARGE",
                         "bonusNum6": 60
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "charaId": 3501,
+        "chara": {
+            "id": 3501,
+            "name": "Rika & Ren",
+            "kana": "Rika & Ren",
+            "title": "Christmas",
+            "attributeId": "DARK",
+            "attackType": 2,
+            "initialType": "MAGIA",
+            "growthType": "ATTACK",
+            "enemyFlg": false,
+            "doubleUnitFlg": true,
+            "saleItemId": "PRISM",
+            "maxSaleItemId": "DESTINY_CRYSTAL",
+            "defaultCardId": 35014,
+            "defaultCard": {
+                "cardId": 35014,
+                "rank": "RANK_4",
+                "attributeId": "DARK",
+                "initialType": "MAGIA",
+                "growthType": "ATTACK",
+                "attack": 2140,
+                "defense": 1459,
+                "hp": 4730,
+                "miniCharaNo": 350100,
+                "charaNo": 3501,
+                "cardName": "Rika & Ren"
+            },
+            "evolutionCardId1": 10065,
+            "evolutionCard1": {
+                "cardId": 35014,
+                "rank": "RANK_5",
+                "attributeId": "DARK",
+                "initialType": "MAGIA",
+                "growthType": "ATTACK",
+                "attack": 2434,
+                "defense": 1651,
+                "hp": 5366,
+                "miniCharaNo": 350100,
+                "charaNo": 3501,
+                "cardName": "Rika & Ren"
+            },
+            "firstMagiaGiftId1": 251,
+            "firstMagiaGiftNum1": 5,
+            "firstMagiaGiftId2": 301,
+            "firstMagiaGiftNum2": 5,
+            "firstMagiaGiftId3": 252,
+            "firstMagiaGiftNum3": 3,
+            "firstMagiaGiftId4": 404,
+            "firstMagiaGiftNum4": 3,
+            "firstMagiaGiftId5": 253,
+            "firstMagiaGiftNum5": 1,
+            "firstMagiaGiftId6": 507,
+            "firstMagiaGiftNum6": 1,
+            "secondMagiaGiftId1": 251,
+            "secondMagiaGiftNum1": 7,
+            "secondMagiaGiftId2": 302,
+            "secondMagiaGiftNum2": 7,
+            "secondMagiaGiftId3": 252,
+            "secondMagiaGiftNum3": 5,
+            "secondMagiaGiftId4": 407,
+            "secondMagiaGiftNum4": 5,
+            "secondMagiaGiftId5": 253,
+            "secondMagiaGiftNum5": 3,
+            "secondMagiaGiftId6": 553,
+            "secondMagiaGiftNum6": 3,
+            "thirdMagiaGiftId1": 251,
+            "thirdMagiaGiftNum1": 9,
+            "thirdMagiaGiftId2": 303,
+            "thirdMagiaGiftNum2": 9,
+            "thirdMagiaGiftId3": 252,
+            "thirdMagiaGiftNum3": 7,
+            "thirdMagiaGiftId4": 406,
+            "thirdMagiaGiftNum4": 7,
+            "thirdMagiaGiftId5": 253,
+            "thirdMagiaGiftNum5": 5,
+            "thirdMagiaGiftId6": 501,
+            "thirdMagiaGiftNum6": 5,
+            "fourthMagiaGiftId1": 251,
+            "fourthMagiaGiftNum1": 11,
+            "fourthMagiaGiftId2": 305,
+            "fourthMagiaGiftNum2": 11,
+            "fourthMagiaGiftId3": 252,
+            "fourthMagiaGiftNum3": 9,
+            "fourthMagiaGiftId4": 407,
+            "fourthMagiaGiftNum4": 5,
+            "fourthMagiaGiftId5": 253,
+            "fourthMagiaGiftNum5": 7,
+            "fourthMagiaGiftId6": 504,
+            "fourthMagiaGiftNum6": 7,
+            "firstMagiaGift1": {
+                "id": 251,
+                "name": "Dark Book",
+                "rank": 1
+            },
+            "firstMagiaGift2": {
+                "id": 301,
+                "name": "Swallowtail Feather",
+                "rank": 1
+            },
+            "firstMagiaGift3": {
+                "id": 252,
+                "name": "Dark Book +",
+                "rank": 2
+            },
+            "firstMagiaGift4": {
+                "id": 404,
+                "name": "Owl Bucket",
+                "rank": 2
+            },
+            "firstMagiaGift5": {
+                "id": 253,
+                "name": "Dark Book ++",
+                "rank": 3
+            },
+            "firstMagiaGift6": {
+                "id": 507,
+                "name": "Ferris Wheel Turbine",
+                "rank": 3
+            },
+            "secondMagiaGift1": {
+                "id": 251,
+                "name": "Dark Book",
+                "rank": 1
+            },
+            "secondMagiaGift2": {
+                "id": 302,
+                "name": "Mirrors Invitation",
+                "rank": 1
+            },
+            "secondMagiaGift3": {
+                "id": 252,
+                "name": "Dark Book +",
+                "rank": 2
+            },
+            "secondMagiaGift4": {
+                "id": 407,
+                "name": "Mascot's Mane",
+                "rank": 2
+            },
+            "secondMagiaGift5": {
+                "id": 253,
+                "name": "Dark Book ++",
+                "rank": 3
+            },
+            "secondMagiaGift6": {
+                "id": 553,
+                "name": "Sheep Horn",
+                "rank": 3
+            },
+            "thirdMagiaGift1": {
+                "id": 251,
+                "name": "Dark Book",
+                "rank": 1
+            },
+            "thirdMagiaGift2": {
+                "id": 303,
+                "name": "Bunny Ear Wrapping Paper",
+                "rank": 1
+            },
+            "thirdMagiaGift3": {
+                "id": 252,
+                "name": "Dark Book +",
+                "rank": 2
+            },
+            "thirdMagiaGift4": {
+                "id": 406,
+                "name": "Staff's Key Switch",
+                "rank": 2
+            },
+            "thirdMagiaGift5": {
+                "id": 253,
+                "name": "Dark Book ++",
+                "rank": 3
+            },
+            "thirdMagiaGift6": {
+                "id": 501,
+                "name": "Sandbox Shovel",
+                "rank": 3
+            },
+            "fourthMagiaGift1": {
+                "id": 251,
+                "name": "Dark Book",
+                "rank": 1
+            },
+            "fourthMagiaGift2": {
+                "id": 305,
+                "name": "Rooftop Key",
+                "rank": 1
+            },
+            "fourthMagiaGift3": {
+                "id": 252,
+                "name": "Dark Book +",
+                "rank": 2
+            },
+            "fourthMagiaGift4": {
+                "id": 407,
+                "name": "Mascot's Mane",
+                "rank": 2
+            },
+            "fourthMagiaGift5": {
+                "id": 253,
+                "name": "Dark Book ++",
+                "rank": 3
+            },
+            "fourthMagiaGift6": {
+                "id": 504,
+                "name": "Rhyton's Ribbon",
+                "rank": 3
+            },
+            "description": "Magical girls that bring happiness to the town at Christmas. From a cake to an aurora, they can create anything as long as they share the same emotion. Their most favorite thing is a huge snow globe. At Christmas, magical girls gather inside and enjoy a party.",
+            "school": "―",
+            "designer": "Mashimasaki & Koharu Sakura",
+            "voiceActor": "Itou Kanae & Ozaki Yuka",
+            "openDate": "2020/01/30 00:10:00",
+            "charaMessageList": [
+                {
+                    "charaNo": 3501,
+                    "messageId": 6,
+                    "message": "I just love the atmosphere of Christmas!"
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 7,
+                    "message": "Hurry up and decide on a present, 'kay?"
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 8,
+                    "message": "Ren, I'm sorry, I..."
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 9,
+                    "message": "This world...isn't so dark..."
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 10,
+                    "message": "What should I do...about Rika's present?"
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 11,
+                    "message": "It's difficult to give shape to your feelings..."
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 12,
+                    "message": "Seriously, at a time like this!?"
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 43,
+                    "message": "This is the magic that creates Christmas miracles!"
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 44,
+                    "message": "Have we brought happiness to everyone...?"
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 45,
+                    "message": "\"Are you okay!?\"＠\"Yeah...thanks...\""
+                },
+                {
+                    "charaNo": 3501,
+                    "messageId": 46,
+                    "message": "\"Our breathing right now...!\"＠\"Yep! Perfectly in sync!\""
+                }
+            ]
+        },
+        "cardList": [
+            {
+                "cardId": 35014,
+                "card": {
+                    "cardId": 35014,
+                    "charaNo": 3501,
+                    "miniCharaNo": 350100,
+                    "magiaCharaNo": 350100,
+                    "cardName": "Rika & Ren",
+                    "rank": "RANK_4",
+                    "attributeId": "DARK",
+                    "initialType": "MAGIA",
+                    "growthType": "ATTACK",
+                    "attack": 2140,
+                    "defense": 1459,
+                    "hp": 4730,
+                    "rateGainMpAtk": 1200,
+                    "rateGainMpDef": 1000,
+                    "magiaId": 35014,
+                    "cardMagia": {
+                        "id": 35014,
+                        "groupId": 1014,
+                        "name": "Holy Spiral Hope",
+                        "shortDescription": "Deals Stronger Elemental Damage to All Enemies [VI] / ATK UP / HP Regen (Team/3 Turns) / Remove Debuffs (Team)",
+                        "artId1": 100300206,
+                        "art1": {
+                            "artId": 100300206,
+                            "verbCode": "ATTACK",
+                            "effectCode": "ALIGNMENT",
+                            "targetId": "ALL",
+                            "effectValue": 3250,
+                            "growPoint": 100
+                        },
+                        "artId2": 330301105,
+                        "art2": {
+                            "artId": 330301105,
+                            "verbCode": "BUFF",
+                            "effectCode": "ATTACK",
+                            "targetId": "ALL",
+                            "effectValue": 250,
+                            "enableTurn": 3,
+                            "growPoint": 25
+                        },
+                        "artId3": 630307705,
+                        "art3": {
+                            "artId": 630307705,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "AUTO_HEAL",
+                            "targetId": "ALL",
+                            "effectValue": 60,
+                            "enableTurn": 3,
+                            "growPoint": 10,
+                            "probability": 1000
+                        },
+                        "artId4": 200300800,
+                        "art4": {
+                            "artId": 200300800,
+                            "verbCode": "REVOKE",
+                            "effectCode": "DEBUFF",
+                            "targetId": "ALL",
+                            "growPoint": 0
+                        }
+                    },
+                    "skillId": 35014,
+                    "cardSkill": {
+                        "id": 35014,
+                        "groupId": 1085,
+                        "name": "How 'bout let's liven up Christmas!?",
+                        "shortDescription": "ATK UP [VII] & Accele MP UP[VII] & Guaranteed Evade",
+                        "artId1": 310401107,
+                        "art1": {
+                            "artId": 310401107,
+                            "verbCode": "BUFF",
+                            "effectCode": "ATTACK",
+                            "targetId": "CONNECT",
+                            "effectValue": 350,
+                            "enableTurn": 1,
+                            "growPoint": 25
+                        },
+                        "artId2": 310401607,
+                        "art2": {
+                            "artId": 310401607,
+                            "verbCode": "BUFF",
+                            "effectCode": "ACCEL",
+                            "targetId": "CONNECT",
+                            "effectValue": 400,
+                            "enableTurn": 1,
+                            "growPoint": 25
+                        },
+                        "artId3": 610406900,
+                        "art3": {
+                            "artId": 610406900,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "AVOID",
+                            "targetId": "CONNECT",
+                            "enableTurn": 1,
+                            "growPoint": 0,
+                            "probability": 1000
+                        }
+                    },
+                    "pieceSkillList": [],
+                    "maxPieceSkillList": [],
+                    "commandType1": "MPUP",
+                    "commandType2": "MPUP",
+                    "commandType3": "MPUP",
+                    "commandType4": "RANGE_H",
+                    "commandType5": "CHARGE",
+                    "illustrator": "Mashimasaki & Koharu Sakura",
+                    "cardCustomize": {
+                        "cardId": 35014,
+                        "giftId1": 551,
+                        "gift1": {
+                            "id": 551,
+                            "type": 1,
+                            "name": "Rainbow Orb",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 10000
+                        },
+                        "giftNum1": 3,
+                        "bonusCode1": "ATTACK",
+                        "bonusNum1": 70,
+                        "giftId2": 152,
+                        "gift2": {
+                            "id": 152,
+                            "type": 1,
+                            "name": "Dark Book +",
+                            "attributeId": "DARK",
+                            "rank": 2,
+                            "rankGift": "RANK_2",
+                            "price": 1000
+                        },
+                        "giftNum2": 12,
+                        "bonusCode2": "DEFENSE",
+                        "bonusNum2": 50,
+                        "giftId3": 153,
+                        "gift3": {
+                            "id": 153,
+                            "type": 1,
+                            "name": "Dark Orb ++",
+                            "attributeId": "DARK",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 2000
+                        },
+                        "giftNum3": 6,
+                        "bonusCode3": "HP",
+                        "bonusNum3": 60,
+                        "giftId4": 504,
+                        "gift4": {
+                            "id": 504,
+                            "type": 2,
+                            "name": "Rhyton's Ribbon",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000
+                        },
+                        "giftNum4": 6,
+                        "bonusCode4": "ACCEL",
+                        "bonusNum4": 80,
+                        "giftId5": 554,
+                        "gift5": {
+                            "id": 554,
+                            "type": 2,
+                            "name": "Rooftop Key",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000
+                        },
+                        "giftNum5": 8,
+                        "bonusCode5": "BLAST",
+                        "bonusNum5": 40,
+                        "giftId6": 401,
+                        "gift6": {
+                            "id": 401,
+                            "type": 2,
+                            "name": "Sandbox Shell",
+                            "rank": 2,
+                            "rankGift": "RANK_2",
+                            "price": 1000
+                        },
+                        "giftNum6": 12,
+                        "bonusCode6": "CHARGE",
+                        "bonusNum6": 40
+                    }
+                }
+            },
+            {
+                "cardId": 35015,
+                "card": {
+                    "cardId": 35015,
+                    "charaNo": 3501,
+                    "miniCharaNo": 350100,
+                    "magiaCharaNo": 350100,
+                    "cardName": "Rika & Ren",
+                    "rank": "RANK_5",
+                    "attributeId": "DARK",
+                    "initialType": "MAGIA",
+                    "growthType": "ATTACK",
+                    "attack": 2434,
+                    "defense": 1651,
+                    "hp": 5366,
+                    "rateGainMpAtk": 1200,
+                    "rateGainMpDef": 1200,
+                    "magiaId": 35015,
+                    "cardMagia": {
+                        "id": 35015,
+                        "groupId": 1014,
+                        "name": "Holy Spiral Hope",
+                        "shortDescription": "Deals Stronger Elemental Damage to All Enemies [VI] / ATK UP / HP Regen (Team/3 Turns) / Remove Debuffs (Team)",
+                        "artId1": 100300208,
+                        "art1": {
+                            "artId": 100300208,
+                            "verbCode": "ATTACK",
+                            "effectCode": "ALIGNMENT",
+                            "targetId": "ALL",
+                            "effectValue": 3450,
+                            "growPoint": 100
+                        },
+                        "artId2": 330301107,
+                        "art2": {
+                            "artId": 330301107,
+                            "verbCode": "BUFF",
+                            "effectCode": "ATTACK",
+                            "targetId": "ALL",
+                            "effectValue": 300,
+                            "enableTurn": 3,
+                            "growPoint": 25
+                        },
+                        "artId3": 630307707,
+                        "art3": {
+                            "artId": 630307707,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "AUTO_HEAL",
+                            "targetId": "ALL",
+                            "effectValue": 80,
+                            "enableTurn": 3,
+                            "growPoint": 10,
+                            "probability": 1000
+                        },
+                        "artId4": 200300800,
+                        "art4": {
+                            "artId": 200300800,
+                            "verbCode": "REVOKE",
+                            "effectCode": "DEBUFF",
+                            "targetId": "ALL",
+                            "growPoint": 0
+                        }
+                    },
+                    "doppelMagiaId": 35018,
+                    "doppelCardMagia": {
+                        "id": 35018,
+                        "groupId": 1014,
+                        "name": "Glittering Aurora Stream",
+                        "shortDescription": "Deals Stronger Elemental Damage to All Enemies [X] / ATK UP / HP Regen (Team/3 Turns) / Remove Debuffs (Team)",
+                        "artId1": 190350181,
+                        "art1": {
+                            "artId": 190350181,
+                            "verbCode": "ATTACK",
+                            "effectCode": "ALIGNMENT",
+                            "targetId": "ALL",
+                            "effectValue": 8140,
+                            "growPoint": 220
+                        },
+                        "artId2": 330301109,
+                        "art2": {
+                            "artId": 330301109,
+                            "verbCode": "BUFF",
+                            "effectCode": "ATTACK",
+                            "targetId": "ALL",
+                            "effectValue": 350,
+                            "enableTurn": 3,
+                            "growPoint": 25
+                        },
+                        "artId3": 630307709,
+                        "art3": {
+                            "artId": 630307709,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "AUTO_HEAL",
+                            "targetId": "ALL",
+                            "effectValue": 100,
+                            "enableTurn": 3,
+                            "growPoint": 10,
+                            "probability": 1000
+                        },
+                        "artId4": 200300800,
+                        "art4": {
+                            "artId": 200300800,
+                            "verbCode": "REVOKE",
+                            "effectCode": "DEBUFF",
+                            "targetId": "ALL",
+                            "growPoint": 0
+                        }
+                    },
+                    "doppelCharaNo": 350100,
+                    "doppel": {
+                        "id": 350100,
+                        "name": "Glittering Aurora Stream",
+                        "title": "ー",
+                        "description": "ー",
+                        "designer": "ー",
+                        "archive": false,
+                        "openDate": "2019/12/16 15:10:00"
+                    },
+                    "skillId": 35015,
+                    "cardSkill": {
+                        "id": 35015,
+                        "groupId": 1085,
+                        "name": "How 'bout let's liven up Christmas!?",
+                        "shortDescription": "ATK UP [IX] & Accele MP UP[IX] & Guaranteed Evade",
+                        "artId1": 310401109,
+                        "art1": {
+                            "artId": 310401109,
+                            "verbCode": "BUFF",
+                            "effectCode": "ATTACK",
+                            "targetId": "CONNECT",
+                            "effectValue": 400,
+                            "enableTurn": 1,
+                            "growPoint": 25
+                        },
+                        "artId2": 310401609,
+                        "art2": {
+                            "artId": 310401609,
+                            "verbCode": "BUFF",
+                            "effectCode": "ACCEL",
+                            "targetId": "CONNECT",
+                            "effectValue": 500,
+                            "enableTurn": 1,
+                            "growPoint": 25
+                        },
+                        "artId3": 610406900,
+                        "art3": {
+                            "artId": 610406900,
+                            "verbCode": "CONDITION_GOOD",
+                            "effectCode": "AVOID",
+                            "targetId": "CONNECT",
+                            "enableTurn": 1,
+                            "growPoint": 0,
+                            "probability": 1000
+                        }
+                    },
+                    "pieceSkillList": [],
+                    "maxPieceSkillList": [],
+                    "commandType1": "MPUP",
+                    "commandType2": "MPUP",
+                    "commandType3": "MPUP",
+                    "commandType4": "RANGE_H",
+                    "commandType5": "CHARGE",
+                    "illustrator": "Sasagi Kohshi",
+                    "cardCustomize": {
+                        "cardId": 35015,
+                        "giftId1": 551,
+                        "gift1": {
+                            "id": 551,
+                            "type": 1,
+                            "name": "Rainbow Orb",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 10000
+                        },
+                        "giftNum1": 3,
+                        "bonusCode1": "ATTACK",
+                        "bonusNum1": 80,
+                        "giftId2": 152,
+                        "gift2": {
+                            "id": 152,
+                            "type": 1,
+                            "name": "Dark Book +",
+                            "attributeId": "DARK",
+                            "rank": 2,
+                            "rankGift": "RANK_2",
+                            "price": 1000
+                        },
+                        "giftNum2": 15,
+                        "bonusCode2": "DEFENSE",
+                        "bonusNum2": 60,
+                        "giftId3": 153,
+                        "gift3": {
+                            "id": 153,
+                            "type": 1,
+                            "name": "Dark Orb ++",
+                            "attributeId": "DARK",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 2000
+                        },
+                        "giftNum3": 10,
+                        "bonusCode3": "HP",
+                        "bonusNum3": 70,
+                        "giftId4": 509,
+                        "gift4": {
+                            "id": 509,
+                            "type": 2,
+                            "name": "Bear's Bolt",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000,
+                            "openDate": "2018/10/22 15:10:00"
+                        },
+                        "giftNum4": 8,
+                        "bonusCode4": "ACCEL",
+                        "bonusNum4": 90,
+                        "giftId5": 557,
+                        "gift5": {
+                            "id": 557,
+                            "type": 2,
+                            "name": "Saintly Water Jar",
+                            "rank": 3,
+                            "rankGift": "RANK_3",
+                            "price": 5000,
+                            "openDate": "2019/12/09 15:10:00"
+                        },
+                        "giftNum5": 10,
+                        "bonusCode5": "BLAST",
+                        "bonusNum5": 50,
+                        "giftId6": 407,
+                        "gift6": {
+                            "id": 407,
+                            "type": 2,
+                            "name": "Mascot's Mane",
+                            "rank": 2,
+                            "rankGift": "RANK_2",
+                            "price": 3000,
+                            "openDate": "2018/05/14 15:10:00"
+                        },
+                        "giftNum6": 15,
+                        "bonusCode6": "CHARGE",
+                        "bonusNum6": 50
                     }
                 }
             }

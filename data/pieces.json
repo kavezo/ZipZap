@@ -22490,5 +22490,63 @@
         },
         "description": "I just put him in front of the camera in a kawaii pose, talk in a funny voice, aaand... \"Hiii, I'm Kumanosuke! Ashley's friend! Today I'll be taking over to show you all the cool kawaii stuff in Kamihama.\" Are you ready? Kumanosuke's Kawaii Kamihama show is about to begin!",
         "illustrator": "Benio"
+    },
+    {
+        "pieceId": 1436,
+        "pieceType": "SKILL",
+        "pieceName": "Light a Flame in your Chest",
+        "attributeId": "ALL",
+        "rank": "RANK_3",
+        "charaIds": "3501",
+        "charaList": [
+            {
+                "charaId": 3501,
+                "name": "Rika & Ren Christmas ver."
+            }
+        ],
+        "attack": 0,
+        "defense": 490,
+        "hp": 450,
+        "skillId": 143600,
+        "pieceSkill": {
+            "id": 143600,
+            "groupId": 1082,
+            "name": "Counteract",
+            "type": "SKILL",
+            "intervalTurn": 8,
+            "shortDescription": "Remove Debuffs (Self)",
+            "messageId": 70,
+            "artId1": 200200800,
+            "art1": {
+                "artId": 200200800,
+                "verbCode": "REVOKE",
+                "effectCode": "DEBUFF",
+                "targetId": "SELF",
+                "growPoint": 0
+            },
+            "skillEffectRange": "ALL"
+        },
+        "skillId2": 143601,
+        "pieceSkill2": {
+            "id": 143601,
+            "groupId": 1082,
+            "name": "Counteract",
+            "type": "SKILL",
+            "intervalTurn": 6,
+            "shortDescription": "Remove Debuffs (Self)",
+            "messageId": 70,
+            "artId1": 200200800,
+            "art1": {
+                "artId": 200200800,
+                "verbCode": "REVOKE",
+                "effectCode": "DEBUFF",
+                "targetId": "SELF",
+                "growPoint": 0
+            },
+            "skillEffectRange": "ALL"
+        },
+        "description": "It's small, but it's solid proof that our hearts communicate directly@A flame of hope that can warm a chilled soul@However cold the night may be, I can overcome it@as long as this flame keeps shining in my chest",
+        "illustrator": "Tsuzuki Neko",
+        "openDate": "2019/12/16 15:10:00"
     }
 ]

@@ -1,0 +1,60 @@
+[
+    {
+        "id": 317,
+        "campaignId": 1175,
+        "campaign": {
+            "id": 1175,
+            "campaignType": "LOGIN_BONUS",
+            "title": "merry christmas =w=",
+            "shortTitle": ":3",
+            "description": "it's christmas present",
+            "archive": true,
+            "startAt": "2020/12/25 00:00:00",
+            "endAt": "2020/12/27 23:59:59",
+            "parameterMap": {}
+        },
+        "loginBonusCampaignType": "NORMAL",
+        "dayCountType": "ADDITION",
+        "loginCount": 1,
+        "rewardCodes": "ITEM_GACHA10_TICKET_25,GIFT_551_12",
+        "loginBonusList": [
+            {
+                "presentType": "ITEM",
+                "quantity": 25,
+                "itemId": "GACHA10_TICKET",
+                "item": {
+                    "itemCode": "GACHA10_TICKET",
+                    "name": "10x Fate Weave Ticket",
+                    "shortDescription": "10x Fate Weave Ticket",
+                    "description": "Used to draw a 10x Fate Weave",
+                    "canUse": false,
+                    "isSellable": false,
+                    "treasureChestColor": "GOLD",
+                    "price": 0,
+                    "sortKey": 0
+                },
+                "originType": "LOGIN_BONUS",
+                "displayName": "10x Fate Weave Ticket",
+                "isNew": false
+            },
+            {
+                "presentType": "GIFT",
+                "quantity": 12,
+                "genericId": 551,
+                "gift": {
+                    "id": 551,
+                    "type": 1,
+                    "name": "Rainbow Orb",
+                    "rank": 3,
+                    "rankGift": "RANK_3",
+                    "price": 10000
+                },
+                "originType": "LOGIN_BONUS",
+                "displayName": "Rainbow Orb",
+                "isNew": false
+            }
+        ],
+        "storyIds": "617501-1",
+        "imagePath": "/magica/resource/image_web/campaign/story/1175/campaign_bg.png"
+    }
+]

@@ -50,6 +50,12 @@ def drawOnePremium(pity, probs=None):
     if probs is None:
         probs = allRates["normal"]
     if pity == 99:
+        if not beforeToday('2020/12/27 23:59:59'): 
+            if dt.getUserObject('userCharaList', 3501) is None:
+                card = [dt.masterCards[3501]]
+            else:
+                card = [np.random.choice(cardsByRarity[3])]
+            return card, 'p3', 60
         return [np.random.choice(cardsByRarity[3])], 'p3', 0
     else:
         itemType = np.random.choice(['p3', 'p2', 'p1', 'm3', 'm2', 'm1'], p=probs) # indices are one lower than rarity
@@ -200,25 +206,36 @@ def addStory(charaId):
     dt.batchSetUserObject('userQuestBattleList', userQuestBattleDict)
     return list(userSectionDict.values()), list(userQuestBattleDict.values())
 
+def addDuoLive2d(chara):
+    # TODO: not sure if this code is broken or if RikaRen's data is
+    charaId = chara['id']
+    name1, name2 = chara['name'].split(' & ')
+    userLive2d1, _ = newtil.createUserLive2d(charaId, '01', name1)
+    userLive2d2, _ = newtil.createUserLive2d(charaId, '02', name2)
+    return [userLive2d1, userLive2d2]
+
 def addMeguca(charaId):
     userChara = dt.getUserObject('userCharaList', charaId)
     foundExisting = userChara is not None
 
+    live2ds = []
     if not foundExisting:
         userCard, userChara, userLive2d = newtil.createUserMeguca(charaId)
         dt.setUserObject('userCardList', userCard['id'], userCard)
         dt.setUserObject('userCharaList', charaId, userChara)
 
+        live2ds = [userLive2d]
         live2dPath = 'data/user/userLive2dList.json'
-        dt.saveJson('data/user/userLive2dList.json', dt.readJson(live2dPath) + [userLive2d])
+        dt.saveJson(live2dPath, dt.readJson(live2dPath) + live2ds)
     else:
         userChara['lbItemNum'] += 1
         dt.setUserObject('userCharaList', charaId, userChara)
 
         userCard = dt.getUserObject('userCardList', userChara['userCardId'])
         userLive2d = dt.getUserObject('userLive2dList', int(str(charaId)+'00'))
+        live2ds = [userLive2d]
 
-    return userCard, userChara, userLive2d, foundExisting
+    return userCard, userChara, live2ds, foundExisting
 
 def addPiece(pieceId):
     foundExisting = False
@@ -303,10 +320,10 @@ def draw():
                 "type": "ITEM"
             })
         if itemType.startswith('p'):
-            card, chara, live2d, foundExisting = addMeguca(result['charaId'])
+            card, chara, live2ds, foundExisting = addMeguca(result['charaId'])
             if not foundExisting:
                 userCardList.append(card)
-                userLive2dList.append(live2d)
+                userLive2dList += live2ds
                 newSectionList, newQuestBattleList = addStory(result['charaId'])
                 userSectionList += newSectionList
                 userQuestBattleList += newQuestBattleList

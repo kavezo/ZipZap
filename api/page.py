@@ -141,29 +141,48 @@ def enemyCollection(response):
     response['enemyList'] = dt.readJson('data/enemyList.json')
     response['userEnemyList'] = dt.readJson('data/user/userEnemyList.json')
 
+def makeLoginBonus(lastLoginBonusDate, response):
+    loginBonusCount = (dt.getGameUserValue('loginBonusCount') % 7) + 1
+    if datetime.now().date().weekday() == 0:
+        loginBonusCount = 1
+
+    lastMonday, nextMonday = homu.thisWeek()
+    if homu.strToDateTime(lastLoginBonusDate).date() < lastMonday:
+        loginBonusCount = 1
+
+    dt.setGameUserValue('loginBonusGetAt', homu.nowstr())
+    dt.setGameUserValue('loginBonusPattern', 'S1') # no clue how to get the other patterns, even from JP, or if this even matters...
+    dt.setGameUserValue('loginBonusCount', loginBonusCount)
+
+    bonuses = dt.readJson('data/loginBonusList.json')
+    currBonus = bonuses[loginBonusCount-1]
+    for rewardCode in currBonus['rewardCodes'].split(','):
+        loginItems = obtainItem(rewardCode)
+        response = dt.updateJson(response, loginItems)
+    response['loginBonusList'] = bonuses
+
+    response['loginBonusPeriod'] = lastMonday.strftime('%m/%d') + '〜' + nextMonday.strftime('%m/%d')
+
+def makeCampaignLoginBonus(lastLoginBonusDate, response):
+    # assuming only one campaign at a time
+    campaignList = dt.readJson('data/loginBonusCampaignList.json')
+    campaign = campaignList[0]
+
+    if homu.strToDateTime(campaign['campaign']['startAt']) <= homu.strToDateTime(lastLoginBonusDate):
+        return
+
+    for rewardCode in campaign['rewardCodes'].split(','):
+        loginItems = obtainItem(rewardCode)
+        response = dt.updateJson(response, loginItems)
+
+    response['loginBonusCampaignList'] = campaignList
+    response['loginBonusCampaign'] = campaign
+
 def myPage(response):
     lastLoginBonusDate = dt.getGameUserValue('loginBonusGetAt')
     if homu.beforeToday(lastLoginBonusDate):
-        loginBonusCount = (dt.getGameUserValue('loginBonusCount') % 7) + 1
-        if datetime.now().date().weekday() == 0:
-            loginBonusCount = 1
-
-        lastMonday, nextMonday = homu.thisWeek()
-        if homu.strToDateTime(lastLoginBonusDate).date() < lastMonday:
-            loginBonusCount = 1
-
-        dt.setGameUserValue('loginBonusGetAt', homu.nowstr())
-        dt.setGameUserValue('loginBonusPattern', 'S1') # no clue how to get the other patterns, even from JP, or if this even matters...
-        dt.setGameUserValue('loginBonusCount', loginBonusCount)
-
-        bonuses = dt.readJson('data/loginBonusList.json')
-        currBonus = bonuses[loginBonusCount-1]
-        for rewardCode in currBonus['rewardCodes'].split(','):
-            loginItems = obtainItem(rewardCode)
-            response = dt.updateJson(response, loginItems)
-        response['loginBonusList'] = bonuses
-
-        response['loginBonusPeriod'] = lastMonday.strftime('%m/%d') + '〜' + nextMonday.strftime('%m/%d')
+        makeLoginBonus(lastLoginBonusDate, response)
+        makeCampaignLoginBonus(lastLoginBonusDate, response)
 
 specialCases = {
     "ArenaFreeRank": arenaFreeRank,
