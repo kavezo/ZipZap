@@ -53,10 +53,15 @@ def getFile(path):
     global versions
     logger.info('getting file ' + path)
 
+    appH = dict(flask.request.headers)
     RsH = {'Content-Type': 'application/json'}
     RqH = {}
+    if 'if-none-match' in appH:
+        # don't have time to test right now, but maybe we can just set RqH to appH
+        RqH['If-None-Match'] = appH['if-none-match']
+        
     if path in versions:
-        RsH['ETag'] = RqH['If-None-Match'] = versions[path][1]
+        RsH['ETag'] = versions[path][1]
         cachefile = cacheFilePath(RsH['ETag'])
         if datetime.now() < datetime.fromisoformat(versions[path][0]):
             if os.path.exists(cachefile):
