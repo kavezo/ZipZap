@@ -313,6 +313,9 @@ def evolve():
     decks = decks.replace(targetUserCardId, newUserCard['id'])
     with open('data/user/userDeckList.json', 'w+', encoding='utf-8') as f:
         f.write(decks)
+    
+    if dt.getGameUserValue('leaderId') == targetUserCardId:
+        dt.setGameUserValue('leaderId', newUserCard['id'])
 
     # spend CC
     ccByLevel = {'RANK_2': 10000, 'RANK_3': 100000, 'RANK_4': 300000, 'RANK_5': 1000000} # not sure about how much CC it takes to go from 2* to 3*
