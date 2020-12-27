@@ -170,6 +170,8 @@ def makeCampaignLoginBonus(lastLoginBonusDate, response):
 
     if homu.strToDateTime(campaign['campaign']['startAt']) <= homu.strToDateTime(lastLoginBonusDate):
         return
+    if homu.strToDateTime(campaign['campaign']['endAt']) <= homu.strToDateTime(homu.nowstr()):
+        return
 
     for rewardCode in campaign['rewardCodes'].split(','):
         loginItems = obtainItem(rewardCode)
