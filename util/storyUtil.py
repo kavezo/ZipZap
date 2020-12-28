@@ -8,14 +8,30 @@ from util.homuUtil import nowstr
 logger = logging.getLogger('app.storyUtil')
 questBattles = dt.readJson('data/questBattleList.json')
 
-# TODO: need to fix for branch quests like chapter 9
+# {sectionId: [questBattleId]}
 sectionBattles = {s: [b['questBattleId'] for b in questBattles if b['sectionId']==s]
                     for s in dt.masterSections.keys()}
-nextSection = {sorted(battles)[-1]: (sectionId+1) if sectionId+1 in dt.masterSections.keys() else None
-                    for sectionId, battles in sectionBattles.items()}
+# {sectionId: [challenge questBattleId]}
+sectionChallengeBattles = {s: [b for b in bs if len(str(b))==8] for s, bs in sectionBattles.items()}
+# {last questBattleId of a section: [next sectionIds]}
+nextSection = {}
+for sectionId, battles in sectionBattles.items():
+    nonChallenge = [battle for battle in battles if len(str(battle))==7]
+    if len(nonChallenge) == 0: 
+        logger.error('section ' + str(sectionId) + ' has no non-challenge battles')
+        continue
 
-nextChapter = {}
-chapterSections = {}
+    lastBattle = sorted(nonChallenge)[-1]
+
+    # branch quests
+    if 'connectPointIds' in dt.masterSections[sectionId]:
+        nextSection[lastBattle] = [int(connectPoint) 
+            for connectPoint in dt.masterSections[sectionId]['connectPointIds'].split(',')]
+    else:
+        nextSection[lastBattle] = [sectionId+1] if sectionId+1 in dt.masterSections.keys() else None
+
+nextChapter = {} # {last questBattleId of a chapter: next chapter ID}
+chapterSections = {} # {chapterId: [sectionIds]}
 for chapterId in dt.masterChapters.keys():
     chapterBattles = []
     for battle in questBattles:
@@ -64,11 +80,12 @@ def obtainReward(clearReward, args):
     return args
 
 def startNewSection(newSectionId, response, canStart=True):
+    # TODO: add challenge quests
     newSection, exists = newtil.createUserSection(newSectionId)
     if not exists:
         response['userSectionList'] = response.get('userSectionList', []) + [newSection]
         dt.setUserObject('userSectionList', newSectionId, newSection)
-        # open enemies
+        # add enemies to userEnemyList, I think this is necessary for unlocking stuff
         openEnemyList = newSection['section']['openEnemyList']
         for enemy in openEnemyList:
             newEnemy, exists = newtil.createUserEnemy(enemy['enemyId'])
@@ -79,6 +96,7 @@ def startNewSection(newSectionId, response, canStart=True):
         dt.setUserObject('userSectionList', newSectionId, existingSection)
         response['userSectionList'] = response.get('userSectionList', []) + [existingSection]
 
+    # create battles in section
     for newBattleId in sectionBattles[newSectionId]:
         newBattle, exists = newtil.createUserQuestBattle(newBattleId)
         if not exists:
@@ -91,15 +109,30 @@ def startNewChapter(newChapterId, response):
         response['userChapterList'] = response.get('userChapterList', []) + [newChapter]
         dt.setUserObject('userChapterList', newChapterId, newChapter)
 
+    # create sections (and also battles) in new chapter
     canStart = True # only for the first one
     for sectionId in sorted(chapterSections[newChapterId], key=lambda x: x['sectionId']):
         startNewSection(sectionId, response, canStart)
         canStart = False
 
+def addChallengeQuests(section, response):
+    challengeBattleIds = sectionChallengeBattles[section]
+    if len(challengeBattleIds) == 0: return
+
+    challengeBattles = []
+    for challengeBattleId in challengeBattleIds:
+        challengeBattle, exists = newtil.createUserQuestBattle(challengeBattleId)
+        if not exists:
+            challengeBattles.append(challengeBattle)
+            dt.setUserObject('userQuestBattleList', challengeBattleId, challengeBattle)
+    
+    response['userQuestBattleList'] = response.get('userQuestBattleList', []) + challengeBattles
+
 def progressStory(battle):
     logger.info('progressing story')
     battleId = battle['questBattleId']
     response = {}
+    # check if it's the last battle in a chapter
     if battleId in nextChapter:
         clearedChapterId = int(str(battle['questBattleId'])[2:4])
         clearedChapter = dt.getUserObject('userChapterList', clearedChapterId)
@@ -113,6 +146,7 @@ def progressStory(battle):
         response['userChapterList'] = response.get('userChapterList', []) + [clearedChapter]
         dt.setUserObject('userChapterList', clearedChapterId, clearedChapter)
 
+    # check if it's the last battle in a secton
     if battleId in nextSection:
         clearedSectionId = battle['questBattle']['sectionId']
         clearedSection = dt.getUserObject('userSectionList', clearedSectionId)
@@ -120,15 +154,18 @@ def progressStory(battle):
         clearedSection['clearedAt'] = nowstr()
 
         response = obtainReward(clearedSection['section']['clearReward'], response)
+        # TODO: make challenge quests work as well
     
         if nextSection[battleId] is not None:
             logger.info('battleId in nextSection')
-            startNewSection(nextSection[battleId], response)           
+            for nextSectionId in nextSection[battleId]:
+                startNewSection(nextSectionId, response)  
             
         response['userSectionList'] = response.get('userSectionList', []) + [clearedSection]
         dt.setUserObject('userSectionList', clearedSectionId, clearedSection)
 
-    if battleId+1 in dt.masterBattles:
+    # when it's not the last battle, get the next battle
+    if battleId+1 in dt.masterBattles: # not sure if this heuristic is always the case
         newBattle, exists = newtil.createUserQuestBattle(battleId+1)
         if not exists:
             response['userQuestBattleList'] = response.get('userQuestBattleList', []) + [newBattle]
@@ -150,13 +187,15 @@ def clearBattle(battle):
     dt.setUserObject('userQuestBattleList', battle['questBattleId'], userBattle)
     return userBattle
 
-# TODO: first story
 def progressMirrors(response):
     currPoints = response['userArenaBattle']['freeRankArenaPoint']
+    # if it's the last available layer
     if currPoints >= dt.arenaClassList[1]['requiredPoint']:
         response['userArenaBattle']['freeRankArenaPoint'] = dt.arenaClassList[1]['requiredPoint']
         dt.saveJson('data/user/userArenaBattle.json', response['userArenaBattle'])
         return response
+
+    # find which layer you're on with the given points
     arenaClassIdx = -1
     for i, arenaClass in enumerate(dt.arenaClassList[1:]):
         if currPoints >= arenaClass['requiredPoint']:
@@ -165,14 +204,18 @@ def progressMirrors(response):
     if arenaClassIdx == -1:
         arenaClassIdx = len(dt.arenaClassList)-1
     
+    # if it's not the same layer as what's in the user's data, go to the next layer
     if dt.arenaClassList[arenaClassIdx]['arenaBattleFreeRankClass'] != response['userArenaBattle']['currentFreeRankClassType']:
         response['userArenaBattle']['currentFreeRankClassType'] = dt.arenaClassList[arenaClassIdx]['arenaBattleFreeRankClass']
         response['userArenaBattle']['currentFreeRankClass'] = response['userArenaBattle']['nextFreeRankClass']
+
+        # set the 'nextClass' key if the new layer isn't the last, delete if it is
         if 'nextClass' in dt.arenaClassList[arenaClassIdx]:
             response['userArenaBattle']['nextFreeRankClass'] = dt.arenaClassList[arenaClassIdx-1]
         elif 'nextFreeRankClass' in response['userArenaBattle']:
             del response['userArenaBattle']['nextFreeRankClass']
 
         response = obtainReward(dt.arenaClassList[arenaClassIdx]['bonusRewardList'][0], response)
+
     dt.saveJson('data/user/userArenaBattle.json', response['userArenaBattle'])
     return response
