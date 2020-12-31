@@ -103,9 +103,25 @@ def giveUserExp(battle):
         dt.setUserObject('userStatusList', 'ACP', currAP)
     return gameUser, newStatus
 
+def getEpisodeUpCards(deckType):
+    # in order to do this we have to actually use the userDeck, there's no other record of which
+    # meguca has which memes on it
+    episodeUpCards = []
+
+    userDeck = dt.getUserObject('userDeckList', deckType)
+    for card in range(1, 5):
+        for piece in range(1, 5):
+            pieceKey = f'userPieceId0{card}{piece}'
+            if pieceKey in userDeck:
+                userPiece = dt.getUserObject('userPieceList', userDeck[pieceKey])
+                if '700216301' in json.dumps(userPiece): # this is so hacky I hate this but I'm too lazy to do more
+                    episodeUpCards.append(userDeck[f'userCardId{card}'])
+    
+    return episodeUpCards
+
 def giveMegucaExp(battle):
     # add exp to cards
-    charaNos = []
+    charaNos = {}
     leaderCardId = 0
     leaderCharaId = 0
     cardIds = []
@@ -119,7 +135,7 @@ def giveMegucaExp(battle):
 
     for cardId in cardIds:
         currUserCard = dt.getUserObject('userCardList', cardId)
-        charaNos.append(currUserCard['card']['charaNo'])
+        charaNos[cardId] = currUserCard['card']['charaNo']
         if currUserCard['id'] == leaderCardId:
             leaderCharaId = currUserCard['card']['charaNo']
 
@@ -137,12 +153,16 @@ def giveMegucaExp(battle):
         dt.setUserObject('userCardList', cardId, currUserCard)
 
     # add episode points to charas
+    episodeUpCards = getEpisodeUpCards(battle['deckType'])
+
     resultUserCharaList = []
     eps = battle['questBattle']['baseBondsPt']
-    for charaNo in charaNos:
+    for cardId, charaNo in charaNos.items():
         userChara = dt.getUserObject('userCharaList', charaNo)
         if charaNo == leaderCharaId:
             eps *= 1.5
+        if cardId in episodeUpCards:
+            eps *= 1.15
         # checking if this is the meguca's MSS
         strBattleId = str(battle['questBattle']['questBattleId'])
         if strBattleId.startswith('3') and strBattleId[1:5] == str(charaNo):
@@ -180,6 +200,7 @@ def giveDrops(battle):
     # default drop seems to always be CC...
     if 'defaultDropItem' in battle['questBattle']:
         cc = int(battle['questBattle']['defaultDropItem']['rewardCode1'].split('_')[-1])
+        if len(getEpisodeUpCards(battle['deckType'])) > 0: cc *= 1.05 # CC up memes
         resultDict['gameUser'] = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+cc)
         battle['riche'] = cc
 

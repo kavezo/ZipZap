@@ -125,7 +125,7 @@ def piecesToMemoriae(userPieces):
     memoria = []
     for userPiece in userPieces:
         piece = userPiece['piece']
-        skill = piece['pieceSkill']
+        skill = piece['pieceSkill'] if userPiece['lbCount'] < 4 else piece['pieceSkill2']
         memoria.append({
             "memoriaId": int(str(piece['pieceId'])+'00'),
             "name": piece['pieceName'],

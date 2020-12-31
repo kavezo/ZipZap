@@ -11,14 +11,7 @@ def addMissingMss():
     addSections = [sectionId for sectionId in missingMSSections if int(str(sectionId)[1:5]) in userCharaIds]
     userSectionList = dt.readJson('data/user/userSectionList.json')
     for sectionId in addSections:
-        userSection = {
-            "userId": dt.userId,
-            "sectionId": sectionId,
-            "section": dt.masterSections[sectionId],
-            "canPlay": True, #str(sectionId).endswith('1'),
-            "cleared": False,
-            "createdAt": nowstr()
-        }
+        userSection, _ = newtil.createUserSection(sectionId)
         userSectionList.append(userSection)
     dt.saveJson('data/user/userSectionList.json', userSectionList)
 
@@ -28,17 +21,7 @@ def addMissingMss():
     addBattles = [battleId for battleId in missingMSSBattles if int(str(battleId)[1:5]) in userCharaIds]
     userQuestBattleList = dt.readJson('data/user/userQuestBattleList.json')
     for battleId in addBattles:
-        userBattle = {
-            "userId": dt.userId,
-            "questBattleId": battleId,
-            "questBattle": dt.masterBattles[battleId],
-            "cleared": True,
-            "missionStatus1": "CLEARED",
-            "missionStatus2": "CLEARED",
-            "missionStatus3": "CLEARED",
-            "rewardDone": True,
-            "createdAt": nowstr()
-        }
+        userBattle, _ = newtil.createUserQuestBattle(battleId)
         userQuestBattleList.append(userBattle)
     dt.saveJson('data/user/userQuestBattleList.json', userQuestBattleList)
 
