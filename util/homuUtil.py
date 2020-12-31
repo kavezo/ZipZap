@@ -121,12 +121,20 @@ def filterCurrValid(objectList, startKey=None, endKey=None):
 
 def resetShop():
     today = datetime.today().replace(hour=0, minute=0, second=0, microsecond=0)
-    if today.day != 1:
-        return
-    lastMonth = (today - timedelta(days=1)).month
-    skipTypes = ['PIECE', 'MAXPIECE', 'FORMATION_SHEET', 'CARD']
+    lastMonth = today.month - 1
+    skipTypes = ['PIECE', 'MAXPIECE', 'FORMATION_SHEET', 'CARD'] # afaik these don't need to be reset...
 
     shopList = dt.readJson('data/shopList.json')
+
+    # figure out if it needs to be reset (reset date is not this month), then reset it
+    # kinda hacky way to get the last time the shop was reset
+    # finds the first limited (and available) item in the mirrors coins shop, then takes its end time
+    shopExpiryTime = [shopItem for shopItem in shopList[1]['shopItemList'] 
+            if 'endAt' in shopItem and shopItem['endAt'] != "2050/01/01 00:00:00"][0]['endAt']
+    print(lastMonth)
+    if datetime.strptime(shopExpiryTime, DATE_FORMAT).month == today.month:
+        return
+
     for shopIdx in range(4): # magia chips, mirrors coins, support pts, daily coins
         shopItems = shopList[shopIdx]['shopItemList']
         deleteIdxs = [i for i in range(len(shopItems)) 
@@ -139,7 +147,7 @@ def resetShop():
         
         # from Stack Overflow
         endOfMonth = today.replace(day=28) + timedelta(days=4)
-        endOfMonth = (endOfMonth - timedelta(days=endOfMonth.day).replace(hour=23, minutes=59, seconds=59)).strftime(DATE_FORMAT)
+        endOfMonth = ((endOfMonth - timedelta(days=endOfMonth.day)).replace(hour=23, minute=59, second=59)).strftime(DATE_FORMAT)
         newItems = []
 
         alreadyCopied = set([])
