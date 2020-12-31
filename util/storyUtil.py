@@ -79,6 +79,16 @@ def obtainReward(clearReward, args):
             dt.setUserObject('userPieceList', newPiece['id'], newPiece)
     return args
 
+def getEpisodeLevel(userChara):
+    episodePoints = [0, 1000, 4000, 14000, 64000]
+    bondsTotalPt = userChara['bondsTotalPt']
+
+    level = -1
+    for i in range(len(episodePoints)):
+        if bondsTotalPt >= episodePoints[i]:
+            level = i+1
+    return level
+
 def startNewSection(newSectionId, response, canStart=True):
     # TODO: add challenge quests
     newSection, exists = newtil.createUserSection(newSectionId)
@@ -92,6 +102,12 @@ def startNewSection(newSectionId, response, canStart=True):
             if not exists: dt.setUserObject('userEnemyList', enemy['enemyId'], newEnemy)
     else:
         existingSection = dt.getUserObject('userSectionList', newSectionId)
+
+        if existingSection['section']['questType'] == 'CHARA':
+            userChara = dt.getUserObject('userCharaList', existingSection['section']['charaId'])
+            episodeLevel = getEpisodeLevel(userChara)
+            canStart = canStart and episodeLevel >= int(str(existingSection['sectionId'])[-1])
+
         existingSection['canPlay'] = canStart
         dt.setUserObject('userSectionList', newSectionId, existingSection)
         response['userSectionList'] = response.get('userSectionList', []) + [existingSection]

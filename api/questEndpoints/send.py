@@ -122,22 +122,16 @@ def getEpisodeUpCards(deckType):
 def giveMegucaExp(battle):
     # add exp to cards
     charaNos = {}
-    leaderCardId = 0
-    leaderCharaId = 0
     cardIds = []
     resultUserCardList = []
     for i in range(9):
         numberedId = 'userCardId'+str(i+1)
         if numberedId in battle:
             cardIds.append(battle[numberedId])
-            if battle[numberedId] == battle['episodeUserCardId']:
-                leaderCardId = battle[numberedId]
 
     for cardId in cardIds:
         currUserCard = dt.getUserObject('userCardList', cardId)
         charaNos[cardId] = currUserCard['card']['charaNo']
-        if currUserCard['id'] == leaderCardId:
-            leaderCharaId = currUserCard['card']['charaNo']
 
         exp = battle['questBattle']['cardExp']
         newLevel, extraExp = userCard.getFinalLevel(currUserCard, exp)
@@ -156,13 +150,18 @@ def giveMegucaExp(battle):
     episodeUpCards = getEpisodeUpCards(battle['deckType'])
 
     resultUserCharaList = []
+    resultUserSectionList = []
     eps = battle['questBattle']['baseBondsPt']
     for cardId, charaNo in charaNos.items():
         userChara = dt.getUserObject('userCharaList', charaNo)
-        if charaNo == leaderCharaId:
+
+        episodeLevelBefore = storyUtil.getEpisodeLevel(userChara)
+
+        if cardId == battle['episodeUserCardId']:
             eps *= 1.5
         if cardId in episodeUpCards:
             eps *= 1.15
+
         # checking if this is the meguca's MSS
         strBattleId = str(battle['questBattle']['questBattleId'])
         if strBattleId.startswith('3') and strBattleId[1:5] == str(charaNo):
@@ -171,7 +170,21 @@ def giveMegucaExp(battle):
 
         resultUserCharaList.append(userChara)
         dt.setUserObject('userCharaList', charaNo, userChara)
-    return resultUserCardList, resultUserCharaList
+
+        # check to see if we need to unlock a section
+        episodeLevelAfter = storyUtil.getEpisodeLevel(userChara)
+        if episodeLevelAfter > episodeLevelBefore and episodeLevelAfter != 4:
+            unlockSectionId = int(f'3{charaNo}{episodeLevelAfter}')
+            if episodeLevelAfter == 5: # a quirk...doppel sections are always 3{charaNo}4 and only unlock with level 5
+                unlockSectionId = int(f'3{charaNo}4')
+            
+            unlockSection = dt.getUserObject('userSectionList', unlockSectionId)
+            if unlockSection is not None:
+                unlockSection['canPlay'] = True
+            dt.setUserObject('userSectionList', unlockSectionId, unlockSection)
+            resultUserSectionList.append(unlockSection)
+
+    return resultUserCardList, resultUserCharaList, resultUserSectionList
 
 def obtainItem(itemCode, amount=1):
     resultDict = {}
@@ -194,7 +207,6 @@ def obtainItem(itemCode, amount=1):
         resultDict['gameUser'] = dt.setGameUserValue('riche', dt.getGameUserValue('riche')+cc)
     return resultDict
 
-# TODO: memoria that increase CC amount
 def giveDrops(battle):
     resultDict = {}
     # default drop seems to always be CC...
@@ -307,6 +319,7 @@ def send():
     rewardResponse = None
     resultUserCardList = None
     resultUserCharaList = None
+    resultUserSectionList = None
     gameUser = dt.readJson('data/user/gameUser.json')
     newStatus = []
 
@@ -323,7 +336,7 @@ def send():
         # add exp to user and level up, maybe
         gameUser, newStatus = giveUserExp(battle)
         # level up/episode up megucas
-        resultUserCardList, resultUserCharaList = giveMegucaExp(battle)
+        resultUserCardList, resultUserCharaList, resultUserSectionList = giveMegucaExp(battle)
         cleared = 'cleared' in resultUserQuestBattle and resultUserQuestBattle['cleared']
         # add drops -- required before clearing
         dropResponse = giveDrops(battle)
@@ -347,6 +360,7 @@ def send():
         'userQuestBattleList': [resultUserQuestBattle]
     }
 
+    # a bunch of stuff that may or may not be necessary depending on which story and who's participating
     for partResponse in [storyResponse, dropResponse, rewardResponse]:
         if partResponse is not None:
             response = dt.updateJson(response, partResponse)
@@ -360,6 +374,8 @@ def send():
         response['userCharaList'] = resultUserCharaList
     else:
         response['userCharaList'] = userCharas
+    if resultUserSectionList is not None and len(resultUserSectionList) != 0:
+        response['userSectionList'] = resultUserSectionList
 
     if newStatus != []:
         response['userStatusList'] = newStatus
