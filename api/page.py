@@ -65,8 +65,8 @@ def arenaResult(response):
     response.update({'userProfile': opponentInfo['opponentUserArenaBattleInfo']})
 
 def charaCollection(response):
-    response['userSectionList'] = dt.readJson('data/user/userSectionList.json')
-    allCards = dt.readJson('data/cards.json') # this could proably use a better refactor
+    response['userSectionList'], _ = homu.pruneLabyrinths(userSectionList=dt.readJson('data/user/userSectionList.json'))
+    allCards = dt.readJson('data/cards.json')
 
     userCharas = dt.readJson('data/user/userCharaList.json')
     userCharaIds = [chara['charaId'] for chara in userCharas]
@@ -164,14 +164,13 @@ def makeLoginBonus(lastLoginBonusDate, response):
     response['loginBonusPeriod'] = lastMonday.strftime('%m/%d') + '〜' + nextMonday.strftime('%m/%d')
 
 def makeCampaignLoginBonus(lastLoginBonusDate, response):
-    # assuming only one campaign at a time
     campaignList = dt.readJson('data/loginBonusCampaignList.json')
-    campaign = campaignList[0]
+    campaignList = homu.filterCurrValid(campaignList, lambda x: x['campaign']['startAt'], lambda x: x['campaign']['endAt'])
+    if len(campaignList) == 0:
+        return
 
-    if homu.strToDateTime(campaign['campaign']['startAt']) <= homu.strToDateTime(lastLoginBonusDate):
-        return
-    if homu.strToDateTime(campaign['campaign']['endAt']) <= homu.strToDateTime(homu.nowstr()):
-        return
+    # only works when there's only one campaign at a time
+    campaign = campaignList[0]
 
     for rewardCode in campaign['rewardCodes'].split(','):
         loginItems = obtainItem(rewardCode)
@@ -209,7 +208,7 @@ specialCases = {
     "EnemyCollection": enemyCollection
 }
 
-# TODO: clear history on first login of the day
+# TODO: clear gacha, etc. history on first login of the day
 def login():
     logger.info('logging in')
     response = {}
@@ -254,6 +253,10 @@ def addArgs(response, args, isLogin):
                 response[arg] = dt.readJson(fpath)
                 if arg == 'userPieceList':
                     response[arg] = [userPiece for userPiece in response[arg] if not userPiece['archive']]
+                if arg == 'userSectionList':
+                    response[arg], _ = homu.pruneLabyrinths(userSectionList=response[arg])
+                if arg == 'userQuestBattleList':
+                    _, response[arg] = homu.pruneLabyrinths(userQuestBattleList=response[arg])
             else:
                 logger.warning(f'{fpath} not found')
         elif arg == 'userStatusList':

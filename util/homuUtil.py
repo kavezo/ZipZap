@@ -51,6 +51,47 @@ def getAllStatuses():
     now = datetime.now().replace(microsecond=0)
     return [updateStatus(status, now) for status in allStatuses]
 
+def pruneLabyrinths(userSectionList=[], userQuestBattleList=[]):
+    from util import newUserObjectUtil as newtil # importing here to avoid circular imports
+
+    todayIndex = min(6, date.today().weekday() + 1) # because Saturday and Sunday are both 6
+
+    # delete existing sections and battles for other days
+    for dayIndex in range(1, 7):
+        removeSections = [i for i in range(len(userSectionList)) 
+                    if str(userSectionList[i]['sectionId']).startswith(f'4000{dayIndex}')]
+
+        if dayIndex != todayIndex:
+            for i in reversed(sorted(removeSections)):
+                del userSectionList[i]
+
+        # if these are today's quests and they don't exist yet, make them
+        elif len(removeSections) == 0 and len(userSectionList)>0:
+            for labType in range(1, 3):
+                print('making section')
+                sectionId = int(f'4000{dayIndex}{labType}')
+                newSection, _ = newtil.createUserSection(sectionId)
+                dt.setUserObject('userSectionList', sectionId, newSection)
+                userSectionList.append(newSection)
+
+        removeBattles = [i for i in range(len(userQuestBattleList)) 
+                    if str(userQuestBattleList[i]['questBattleId']).startswith(f'4000{dayIndex}')]
+
+        if dayIndex != todayIndex:
+            for i in reversed(sorted(removeBattles)):
+                del userQuestBattleList[i]
+
+        elif len(removeBattles) == 0 and len(userQuestBattleList)>0:
+            print('making battle')
+            for labType in range(1, 3):
+                for j in range(1, 5): # for each level
+                    battleId = int(f'4000{dayIndex}{labType}{j}')
+                    newBattle, _ = newtil.createUserQuestBattle(battleId)
+                    dt.setUserObject('userQuestBattleList', battleId, newBattle)
+                    userQuestBattleList.append(newBattle)
+
+    return userSectionList, userQuestBattleList
+
 # currently unused, but will be great for events
 def filterCurrValid(objectList, startKey=None, endKey=None):
     validObjects = []

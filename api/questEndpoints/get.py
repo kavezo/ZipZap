@@ -127,7 +127,7 @@ def piecesToMemoriae(userPieces):
         piece = userPiece['piece']
         skill = piece['pieceSkill']
         memoria.append({
-            "memoriaId": int(str(piece['pieceId'])+'00'), # TODO: what does this 00 actually mean?
+            "memoriaId": int(str(piece['pieceId'])+'00'),
             "name": piece['pieceName'],
             "icon": skill['groupId'],
             "level": userPiece['level'],
@@ -208,7 +208,7 @@ def cardToPlayer(userCard, userChara, battleInfo):
         "rateGainMpAtk": userCard['card']['rateGainMpAtk'],
         "rateGainMpDef": userCard['card']['rateGainMpDef'],
         "leader": battleInfo['leader'],
-        "ai": 3 if userChara['charaId']==1001 else 1, # TODO: figure out how this actually works
+        "ai": 3 if userChara['charaId']==1001 else 1,
         "memoriaList": [memoria['memoriaId'] for memoria in battleInfo['memoriaList']]
     }
 
@@ -387,7 +387,14 @@ def getQuestData(battleId, args):
     waveList = copy.deepcopy(dt.masterWaves[battleId])
     allQuestEnemies = dt.readJson('data/uniqueQuestEnemies.json')
     for i, wave in enumerate(waveList):
-        if not wave['boss']:
+        # kinda hacky, wish there were a smarter way
+        # most enemies are stored as a list of strings to generate enemies from
+
+        # but for quests with waves that shouldn't be randomly generated, the enemy list is stored as a list of dictionaries
+        
+        # unfortunately, whether or not the wave is randomly generated is not in the quest data the client gets, so I used whether 
+        # or not the wave was a boss wave as a heuristic when consolidating the data, which makes things a bit odd sometimes
+        if len(wave['enemyList'])>0 and type(wave['enemyList'][0]) == str:
             enemyPool = []
             for enemyInfo in wave['enemyList']:
                 charId, idx = enemyInfo.split('-')
@@ -415,7 +422,7 @@ def getQuestData(battleId, args):
                 for key in response.keys():
                     args[key] = args.get(key, []) + response[key]
                 enemy['pos'] = enemyInfo['pos']
-                enemy['enemyKey'] = uuid1()
+                enemy['enemyKey'] = uuid1() # do we even need this?
                 if 'cutinId' in enemyInfo:
                     enemy['cutinId'] = enemyInfo['cutinId']
                 waveList[i]['enemyList'][j] = copy.deepcopy(enemy)

@@ -77,8 +77,6 @@ def deleteUserObject(listName, objectId):
     data = readJson(path)
 
     if not objectId in userIndices[listName]:
-        # waiting until refactor to cron to log
-        print("Couldn't find the object you're deleting")
         return data
     
     idx = userIndices[listName][objectId]

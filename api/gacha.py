@@ -257,8 +257,6 @@ def addPiece(pieceId):
     return userPiece, foundExisting
     
 def draw():
-    # TODO: give a destiny gem if there's a dupe in the same multi-pull
-
     # handle different types of gachas
     body = flask.request.json
 

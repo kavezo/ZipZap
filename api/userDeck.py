@@ -61,10 +61,12 @@ def save():
                 break
 
     dt.setUserObject('userDeckList', deckType, userDeck)
+    gameUser = dt.setGameUserValue('deckType', deckType)
     
     return flask.jsonify({
         'resultCode': 'success',
-        'userDeckList': [userDeck]
+        'userDeckList': [userDeck],
+        'gameUser': gameUser
     })
     
 
