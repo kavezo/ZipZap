@@ -185,7 +185,6 @@ def myPage(response):
     if homu.beforeToday(lastLoginBonusDate):
         makeLoginBonus(lastLoginBonusDate, response)
         makeCampaignLoginBonus(lastLoginBonusDate, response)
-    print(response)
 
 specialCases = {
     "ArenaFreeRank": arenaFreeRank,

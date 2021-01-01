@@ -6,7 +6,7 @@
         "shortTitle": ".w.",
         "description": "happy new year",
         "archive": true,
-        "startAt": "2020/12/31 00:00:00",
+        "startAt": "2021/01/01 00:00:00",
         "endAt": "2021/01/08 23:59:59",
         "parameterMap": {}
     }
