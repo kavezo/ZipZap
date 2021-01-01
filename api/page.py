@@ -178,12 +178,14 @@ def makeCampaignLoginBonus(lastLoginBonusDate, response):
 
     response['loginBonusCampaignList'] = campaignList
     response['loginBonusCampaign'] = campaign
+    response['campaignList'] = dt.readJson('data/campaignList.json')
 
 def myPage(response):
     lastLoginBonusDate = dt.getGameUserValue('loginBonusGetAt')
     if homu.beforeToday(lastLoginBonusDate):
         makeLoginBonus(lastLoginBonusDate, response)
         makeCampaignLoginBonus(lastLoginBonusDate, response)
+    print(response)
 
 specialCases = {
     "ArenaFreeRank": arenaFreeRank,

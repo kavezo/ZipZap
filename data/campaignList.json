@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1175,
+        "campaignType": "LOGIN_BONUS",
+        "title": "happy new year :v",
+        "shortTitle": ".w.",
+        "description": "happy new year",
+        "archive": true,
+        "startAt": "2020/12/31 00:00:00",
+        "endAt": "2021/01/08 23:59:59",
+        "parameterMap": {}
+    }
+]

@@ -68,7 +68,6 @@ def pruneLabyrinths(userSectionList=[], userQuestBattleList=[]):
         # if these are today's quests and they don't exist yet, make them
         elif len(removeSections) == 0 and len(userSectionList)>0:
             for labType in range(1, 3):
-                print('making section')
                 sectionId = int(f'4000{dayIndex}{labType}')
                 newSection, _ = newtil.createUserSection(sectionId)
                 dt.setUserObject('userSectionList', sectionId, newSection)
@@ -82,7 +81,6 @@ def pruneLabyrinths(userSectionList=[], userQuestBattleList=[]):
                 del userQuestBattleList[i]
 
         elif len(removeBattles) == 0 and len(userQuestBattleList)>0:
-            print('making battle')
             for labType in range(1, 3):
                 for j in range(1, 5): # for each level
                     battleId = int(f'4000{dayIndex}{labType}{j}')
@@ -131,7 +129,6 @@ def resetShop():
     # finds the first limited (and available) item in the mirrors coins shop, then takes its end time
     shopExpiryTime = [shopItem for shopItem in shopList[1]['shopItemList'] 
             if 'endAt' in shopItem and shopItem['endAt'] != "2050/01/01 00:00:00"][0]['endAt']
-    print(lastMonth)
     if datetime.strptime(shopExpiryTime, DATE_FORMAT).month == today.month:
         return
 
