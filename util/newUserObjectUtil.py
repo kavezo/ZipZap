@@ -17,7 +17,7 @@ def createUserLive2d(charaId, live2dId, description):
             "voicePrefixNo": live2dId
         },
         "createdAt": nowstr()
-    }, dt.getUserObject('userLive2dList', str(charaId)+str(live2dId)) is not None
+    }, dt.getUserObject('userLive2dList', int(str(charaId)+str(live2dId))) is not None
 
 def createUserMeguca(charaId, card=None):
     userCardId = str(uuid1())

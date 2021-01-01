@@ -85,6 +85,27 @@ def clearLabyrinths():
                     battle.update(clearedBattle)
                     dt.setUserObject('userQuestBattleList', battleId, battle)
 
+def addDuoLive2d():
+    existingCharas = dt.listUserObjectKeys('userCharaList')
+    duos = [1301, 1118, 3501] # IroYachi, Swimnees, RikaRen
+    duos = [duo for duo in duos if duo in existingCharas]
+
+    newLive2ds = []
+    for duo in duos:
+        name = dt.masterCards[duo]['chara']['name']
+        if '&' in name:
+            names = ['Magical Girl (' + singleName + ')' for singleName in name.split(' & ')]
+        else:
+            names = ['']*2
+
+        for costume in range(1, 3):
+            newLive2d, exists = newtil.createUserLive2d(duo, '0' + str(costume), names[costume-1])
+            if not exists:
+                newLive2ds.append(newLive2d)
+
+    live2dPath = 'data/user/userLive2dList.json'
+    dt.saveJson(live2dPath, dt.readJson(live2dPath) + newLive2ds)
+
 if __name__=='__main__':
     print(
 """
@@ -94,7 +115,8 @@ Which would you like today?
 1) Add MSS for characters you've pulled
 2) Get rid of extra MSS
 3) Clear all labyrinth quests and missions (without getting rewards)
-4) N-nothing, just wanted to...visit...
+4) Add the missing single-character Live2D costumes that duo units were supposed to come with
+5) N-nothing, just wanted to...visit...
 """
     )
     while True:
@@ -110,6 +132,9 @@ Which would you like today?
             clearLabyrinths()
             print('Ahh, forcing your dear coordinator to do the dirty work for you...don\'t you think I deserve more payment?')
         if choice == '4':
+            addDuoLive2d()
+            print('Sure thing!')
+        if choice == '5':
             print()
             print('Ooh, I\'m flattered. I\'ll always be here when you need me for adjustment, \'kay?')
             input('(enter to close)')

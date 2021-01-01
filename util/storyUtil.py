@@ -103,6 +103,7 @@ def startNewSection(newSectionId, response, canStart=True):
     else:
         existingSection = dt.getUserObject('userSectionList', newSectionId)
 
+        # check episode level
         if existingSection['section']['questType'] == 'CHARA':
             userChara = dt.getUserObject('userCharaList', existingSection['section']['charaId'])
             episodeLevel = getEpisodeLevel(userChara)

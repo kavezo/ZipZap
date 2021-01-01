@@ -50,12 +50,6 @@ def drawOnePremium(pity, probs=None):
     if probs is None:
         probs = allRates["normal"]
     if pity == 99:
-        if not beforeToday('2020/12/27 23:59:59'): 
-            if dt.getUserObject('userCharaList', 3501) is None:
-                card = [dt.masterCards[3501]]
-            else:
-                card = [np.random.choice(cardsByRarity[3])]
-            return card, 'p3', 60
         return [np.random.choice(cardsByRarity[3])], 'p3', 0
     else:
         itemType = np.random.choice(['p3', 'p2', 'p1', 'm3', 'm2', 'm1'], p=probs) # indices are one lower than rarity
@@ -207,9 +201,11 @@ def addStory(charaId):
     return list(userSectionDict.values()), list(userQuestBattleDict.values())
 
 def addDuoLive2d(chara):
-    # TODO: not sure if this code is broken or if RikaRen's data is
     charaId = chara['id']
-    name1, name2 = chara['name'].split(' & ')
+    if '&' in chara['name']:
+        name1, name2 = 'Magical Girl (' + chara['name'].split(' & ') + ')'
+    else:
+        name1, name2 = ''
     userLive2d1, _ = newtil.createUserLive2d(charaId, '01', name1)
     userLive2d2, _ = newtil.createUserLive2d(charaId, '02', name2)
     return [userLive2d1, userLive2d2]
@@ -224,7 +220,7 @@ def addMeguca(charaId):
         dt.setUserObject('userCardList', userCard['id'], userCard)
         dt.setUserObject('userCharaList', charaId, userChara)
 
-        live2ds = [userLive2d]
+        live2ds = [userLive2d] + addDuoLive2d(userChara['chara'])
         live2dPath = 'data/user/userLive2dList.json'
         dt.saveJson(live2dPath, dt.readJson(live2dPath) + live2ds)
     else:
