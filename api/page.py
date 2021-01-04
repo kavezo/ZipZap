@@ -132,7 +132,7 @@ def storyCollection(response):
     response['campaignStoryList'] = dt.readJson('data/campaignStoryList.json')
 
 def supportSelect(response):
-    response['npcHelpList'] = [dt.readJson('data/npc.json')]
+    response['npcHelpList'] = dt.readJson('data/npc.json')
 
 def doppelCollection(response):
     response['doppelList'] = dt.masterDoppels

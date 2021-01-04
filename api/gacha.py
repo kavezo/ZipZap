@@ -146,7 +146,9 @@ def spend(itemId, amount, preferredItemId = None, preferredItemAmount = 1):
             if remainder > 0:
                 paidItem['quantity'] -= remainder
 
-            updatedItems += [freeItem, paidItem]
+            updatedItems.append(freeItem)
+            if paidItem is not None:
+                updatedItems.append(paidItem)
 
             setItem('PRESENTED_MONEY', freeItem)
             setItem('MONEY', paidItem)
@@ -203,9 +205,9 @@ def addStory(charaId):
 def addDuoLive2d(chara):
     charaId = chara['id']
     if '&' in chara['name']:
-        name1, name2 = 'Magical Girl (' + chara['name'].split(' & ') + ')'
+        name1, name2 = ['Magical Girl ({0})'.format(name) for name in chara['name'].split(' & ')]
     else:
-        name1, name2 = ''
+        name1, name2 = '', ''
     userLive2d1, _ = newtil.createUserLive2d(charaId, '01', name1)
     userLive2d2, _ = newtil.createUserLive2d(charaId, '02', name2)
     return [userLive2d1, userLive2d2]

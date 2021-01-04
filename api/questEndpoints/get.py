@@ -522,7 +522,11 @@ def get():
     # do the same, but now for the helper
     # TODO: use actual support
     if not isMirrors:
-        helper = dt.readJson('data/npc.json')
+        npcs = dt.readJson('data/npc.json')
+        helper = None
+        for npc in npcs:
+            if npc['npcHelpId'] == battle['npcHelpId']:
+                helper = npc
         helperCard = helper['userCardList'][0]
         helperChara = helper['userCharaList'][0]
         helperPieces = helper['userPieceList']

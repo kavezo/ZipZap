@@ -108,6 +108,9 @@ def start():
         userQuestBattleResult["helpUserCardId"] = body['helperUserCardId']
         userQuestBattleResult["helpUserId"] = body['helperUserId']
         userQuestBattleResult["helpAttributeId"] = body['helpAttributeId']
+    
+    if 'npcHelpId' in body:
+        userQuestBattleResult["npcHelpId"] = body['npcHelpId']
 
     for i in range(4):
         numberedId = 'userCardId'+str(i+1)

@@ -127,8 +127,16 @@ def resetShop():
     # figure out if it needs to be reset (reset date is not this month), then reset it
     # kinda hacky way to get the last time the shop was reset
     # finds the first limited (and available) item in the mirrors coins shop, then takes its end time
-    shopExpiryTime = [shopItem for shopItem in shopList[1]['shopItemList'] 
-            if 'endAt' in shopItem and shopItem['endAt'] != "2050/01/01 00:00:00"][0]['endAt']
+    for shopItem in shopList[1]['shopItemList']:
+        if 'endAt' in shopItem:
+            shopExpiryTime = shopItem['endAt']
+            if shopExpiryTime != "2050/01/01 00:00:00":
+                continue
+            elif datetime.strptime(shopExpiryTime, DATE_FORMAT).month == today.month:
+                return
+            else:
+                break
+            
     if datetime.strptime(shopExpiryTime, DATE_FORMAT).month == today.month:
         return
 
@@ -160,6 +168,9 @@ def resetShop():
             newItem['endAt'] = endOfMonth
 
             newItems.append(newItem)
+
+            # also need to clear out the user's history
+            dt.deleteUserObject('userShopItemList', newItem['id'])
         
         shopList[shopIdx]['shopItemList'] += newItems
     
