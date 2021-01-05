@@ -237,7 +237,7 @@ def addMeguca(charaId):
 
 def addPiece(pieceId):
     foundExisting = False
-    for userPiece in dt.readJson('data/user/userPieceList.json'):
+    for userPiece in dt.readJson('data/user/userPieceCollectionList.json'):
         foundExisting = foundExisting or (userPiece['pieceId'] == pieceId)
     
     userPiece = newtil.createUserMemoria(pieceId)
@@ -247,7 +247,7 @@ def addPiece(pieceId):
             "createdAt": userPiece['createdAt'],
             "maxLbCount": 0,
             "maxLevel": 1,
-            "piece": piece,
+            "piece": userPiece['piece'],
             "pieceId": pieceId,
             "userId": dt.userId
         }

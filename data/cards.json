@@ -62834,9 +62834,9 @@
                 "charaNo": 3501,
                 "cardName": "Rika & Ren"
             },
-            "evolutionCardId1": 10065,
+            "evolutionCardId1": 35015,
             "evolutionCard1": {
-                "cardId": 35014,
+                "cardId": 35015,
                 "rank": "RANK_5",
                 "attributeId": "DARK",
                 "initialType": "MAGIA",

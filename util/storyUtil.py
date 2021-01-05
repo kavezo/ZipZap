@@ -170,7 +170,9 @@ def progressStory(battle):
         clearedSection['cleared'] = True
         clearedSection['clearedAt'] = nowstr()
 
-        response = obtainReward(clearedSection['section']['clearReward'], response)
+        if 'clearReward' in clearedSection['section']:
+            response = obtainReward(clearedSection['section']['clearReward'], response)
+        
         # TODO: make challenge quests work as well
     
         if nextSection[battleId] is not None:

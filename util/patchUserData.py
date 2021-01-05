@@ -100,17 +100,3 @@ def fixQuestAdventures():
 
     with open('data/user/userQuestAdventureList.json', 'w+', encoding='utf-8') as f:
         json.dump(list(adventuresIdx.values()), f, ensure_ascii=False)
-
-def resetShop(dt):
-    # some gross resused code from homuUtil, but tbh they're not that compatible anywayas
-    skipTypes = ['PIECE', 'MAXPIECE', 'FORMATION_SHEET', 'CARD']
-    shopList = dt.readJson('data/shopList.json')
-    DATE_FORMAT = '%Y/%m/%d %H:%M:%S'
-    today = datetime.today
-
-    for shopIdx in range(4): # magia chips, mirrors coins, support pts, daily coins
-        shopItems = shopList[shopIdx]['shopItemList']
-        for item in shopItems:
-            if 'endAt' in item and not item['shopItemType'] in skipTypes:
-                itemEnd = datetime.strptime(item['endAt'], DATE_FORMAT)
-                dt.deleteUserObject('userShopItemList', item['id'])
