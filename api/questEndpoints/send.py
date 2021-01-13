@@ -89,18 +89,24 @@ def giveUserExp(battle):
         dt.setGameUserValue('exp', gameUser['exp'] - gameUser['totalExpForNextLevel'])
         dt.setGameUserValue('level', newLevel)
         dt.setGameUserValue('totalExpForCurrentLevel', gameUser['totalExpForNextLevel'])
-        gameUser = dt.setGameUserValue('totalExpForNextLevel', expForNextLevel[newLevel] if newLevel < len(expForNextLevel) else 30704)
+
+        expAdd = expForNextLevel[newLevel] if newLevel < len(expForNextLevel) else 30704
+        gameUser = dt.setGameUserValue('totalExpForNextLevel', gameUser['totalExpForNextLevel'] + expAdd)
 
         maxAP = dt.getUserObject('userStatusList', 'MAX_ACP')
         currAP = dt.getUserObject('userStatusList', 'ACP')
         maxAP['point'] += 1
         currAP['point'] += maxAP['point']
 
+        currBP = dt.getUserObject('userStatusList', 'BTP')
+        currBP['point'] = 5
+
         newStatus.append(maxAP)
         newStatus.append(currAP)
 
         dt.setUserObject('userStatusList', 'MAX_ACP', maxAP)
         dt.setUserObject('userStatusList', 'ACP', currAP)
+        dt.setUserObject('userStatusList', 'BTP', currBP)
     return gameUser, newStatus
 
 def getEpisodeUpCards(deckType):
