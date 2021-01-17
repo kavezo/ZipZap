@@ -207,7 +207,7 @@ def addDuoLive2d(chara):
     if '&' in chara['name']:
         name1, name2 = ['Magical Girl ({0})'.format(name) for name in chara['name'].split(' & ')]
     else:
-        name1, name2 = '', ''
+        name1, name2 = chara['name'], chara['name']
     userLive2d1, _ = newtil.createUserLive2d(charaId, '01', name1)
     userLive2d2, _ = newtil.createUserLive2d(charaId, '02', name2)
     return [userLive2d1, userLive2d2]

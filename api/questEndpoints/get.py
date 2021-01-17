@@ -557,9 +557,12 @@ def get():
     # TODO: use follower
     userFollowList = []
 
+    # set last used team
+    gameUser = dt.setGameUserValue('deckType', battle['deckType'])
+
     # compile web data
     webData = {
-        "gameUser": dt.readJson('data/user/gameUser.json'),
+        "gameUser": gameUser,
         "userStatusList": [apStatus],
         "userQuestBattleResultList": [battle],
         "resultCode": "success",

@@ -5,13 +5,16 @@ from util import dataUtil as dt
 
 def process():
     # get gems
+    gems = dt.getUserObject('userItemList', 'PRESENTED_MONEY')
+    gems['item']['itemType'] = 'MONEY'
     response = {
         "resultCode": "success",
-        "userItemList": [dt.getUserObject('userItemList', 'PRESENTED_MONEY')]
+        "userItemList": [gems]
     }
 
     money = dt.getUserObject('userItemList', 'MONEY')
     if money is not None:
+        money['item']['itemType'] = 'MONEY'
         response['userItemList'].append(money)
     return flask.jsonify(response)
 

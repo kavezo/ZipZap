@@ -330,13 +330,13 @@ def evolve():
             'current': {
                 'attr': targetUserCard['card']['attributeId'],
                 'cardId': targetUserCard['card']['cardId'],
-                'rarity': targetUserCard['card']['rank'][-1]
+                'rarity': int(targetUserCard['card']['rank'][-1])
             },
             'giftIdList': [targetUserCard['card']['cardCustomize'][giftKey] for giftKey in targetUserCard['card']['cardCustomize'].keys() if giftKey.startswith('giftId')],
             'result': {
                 'attr': newCard['attributeId'],
                 'cardId': newCard['cardId'],
-                'rarity': newCard['rank'][-1]
+                'rarity': int(newCard['rank'][-1])
             }
         },
         "resultCode": "success",
