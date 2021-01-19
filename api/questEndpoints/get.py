@@ -442,7 +442,7 @@ def dedupeDictList(dictlist, idx):
 
 def addUserToBattle(battleData, position, deck):
     currCardIdx = 0
-    for i in range(4):
+    for i in range(5):
         if 'questPositionId'+str(i+1) in deck:
             if deck['questPositionId'+str(i+1)]==position:
                 currCardIdx = i+1
