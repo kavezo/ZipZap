@@ -174,6 +174,7 @@ def progressStory(battle):
             response = obtainReward(clearedSection['section']['clearReward'], response)
         
         # TODO: make challenge quests work as well
+        addChallengeQuests(clearedSectionId, response)
     
         if nextSection[battleId] is not None:
             logger.info('battleId in nextSection')
