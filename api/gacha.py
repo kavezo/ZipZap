@@ -222,7 +222,8 @@ def addMeguca(charaId):
         dt.setUserObject('userCardList', userCard['id'], userCard)
         dt.setUserObject('userCharaList', charaId, userChara)
 
-        live2ds = [userLive2d] + addDuoLive2d(userChara['chara'])
+        if 'doubleUnitFlg' in userChara['chara'] and userChara['chara']['doubleUnitFlg']:
+            live2ds = [userLive2d] + addDuoLive2d(userChara['chara'])
         live2dPath = 'data/user/userLive2dList.json'
         dt.saveJson(live2dPath, dt.readJson(live2dPath) + live2ds)
     else:
