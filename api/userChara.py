@@ -3,6 +3,7 @@ import flask
 import logging
 
 from util import dataUtil as dt
+from util import newUserObjectUtil as newtil
 
 logger = logging.getLogger('app.userChara')
 
@@ -14,27 +15,31 @@ def sale():
     rarity = 0
     responseCharaList = []
     userChara = dt.getUserObject('userCharaList', charaId)
+    chara = userChara['chara']
     userChara['lbItemNum'] -= amount
-    rarity = int(userChara['chara']['defaultCard']['rank'][-1])
+    rarity = int(chara['defaultCard']['rank'][-1])
     responseCharaList.append(userChara)
     if userChara['lbItemNum'] < 0:
         flask.abort(400, description='{"errorTxt": "You don\'t have that many gems to sell >:(","resultCode": "error","title": "Error"}')
         return
     
     dt.setUserObject('userCharaList', charaId, userChara)
-    
-    gemsReceived = [1, 1, 3, 10]
     responseItemList = []
-    userItem = dt.getUserObject('userItemList', 'PRISM')
-    userItem['quantity'] += amount * gemsReceived[rarity-1]
-    responseItemList.append(userItem)
+    
+    if chara['saleItemId'] == 'PRISM':
+        gemsReceived = [1, 1, 3, 10]    
+        userItem = dt.getUserObject('userItemList', 'PRISM')
+        userItem['quantity'] += amount * gemsReceived[rarity-1]
+        responseItemList.append(userItem)
+        
+        dt.setUserObject('userItemList', 'PRISM', userItem)
 
-    dt.setUserObject('userItemList', 'PRISM', userItem)
-
-    if rarity == 4:
+    if 'maxSaleItemId' in chara and chara['maxSaleItemId'] == 'DESTINY_CRYSTAL':
         logger.info('selling for crystal')
         userCrystal = dt.getUserObject('userItemList', 'DESTINY_CRYSTAL')
-        userCrystal['quantity'] += amount
+        if userCrystal is None:  
+            userCrystal = newtil.createUserItem(dt.masterItems['DESTINY_CRYSTAL'])        
+        userCrystal['quantity'] += amount 
         responseItemList.append(userCrystal)
 
         dt.setUserObject('userItemList', 'DESTINY_CRYSTAL', userCrystal)
