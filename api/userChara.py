@@ -3,6 +3,7 @@ import flask
 import logging
 
 from util import dataUtil as dt
+from util import newUserObjectUtil as newtil
 
 logger = logging.getLogger('app.userChara')
 
@@ -34,7 +35,9 @@ def sale():
     if rarity == 4:
         logger.info('selling for crystal')
         userCrystal = dt.getUserObject('userItemList', 'DESTINY_CRYSTAL')
-        userCrystal['quantity'] += amount
+        if userCrystal is None:  
+            userCrystal = newtil.createUserItem(dt.masterItems['DESTINY_CRYSTAL'])        
+        userCrystal['quantity'] += amount 
         responseItemList.append(userCrystal)
 
         dt.setUserObject('userItemList', 'DESTINY_CRYSTAL', userCrystal)
