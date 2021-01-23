@@ -279,7 +279,9 @@ def clearMissions(body, battle):
             userCardIds = [v for k, v in battle.items() if k.startswith('userCardId')]
             charaNos = [dt.getUserObject('userCardList', userCardId)['card']['charaNo'] for userCardId in userCardIds]
             if count in charaNos: clearMission(missionNum, battle, userQuestBattle)
-        if missionCode in ['CLEAR', 'WAVE_1', 'ONLY_MEMBER_COUNT_5']: # automatic mission clear
+        if missionCode.startswith('ONLY_MEMBER_COUNT'):
+            if len(body['playerList']) <= count: clearMission(missionNum, battle, userQuestBattle)
+        if missionCode in ['CLEAR', 'WAVE_1']: # automatic mission clear
             clearMission(missionNum, battle, userQuestBattle)
     
     rewards = {}
