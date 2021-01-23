@@ -157,12 +157,13 @@ def giveMegucaExp(battle):
 
     resultUserCharaList = []
     resultUserSectionList = []
-    eps = battle['questBattle']['baseBondsPt']
+    baseBondsPt = battle['questBattle']['baseBondsPt']
     for cardId, charaNo in charaNos.items():
         userChara = dt.getUserObject('userCharaList', charaNo)
 
         episodeLevelBefore = storyUtil.getEpisodeLevel(userChara)
-
+        eps = baseBondsPt
+        
         if cardId == battle['episodeUserCardId']:
             eps *= 1.5
         if cardId in episodeUpCards:
