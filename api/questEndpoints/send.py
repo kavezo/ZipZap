@@ -86,7 +86,6 @@ def giveUserExp(battle):
     newStatus = []
     if gameUser['exp'] >= gameUser['totalExpForNextLevel']:
         newLevel = gameUser['level'] + 1
-        dt.setGameUserValue('exp', gameUser['exp'] - gameUser['totalExpForNextLevel'])
         dt.setGameUserValue('level', newLevel)
         dt.setGameUserValue('totalExpForCurrentLevel', gameUser['totalExpForNextLevel'])
 
