@@ -89,7 +89,10 @@ def giveUserExp(battle):
         dt.setGameUserValue('level', newLevel)
         dt.setGameUserValue('totalExpForCurrentLevel', gameUser['totalExpForNextLevel'])
 
-        expAdd = expForNextLevel[newLevel] if newLevel < len(expForNextLevel) else 30704
+        expAdd = 0
+        for i in range(0, newLevel + 1):
+            expAdd += expForNextLevel[i] if i < len(expForNextLevel) else 30704        
+        
         gameUser = dt.setGameUserValue('totalExpForNextLevel', gameUser['totalExpForNextLevel'] + expAdd)
 
         maxAP = dt.getUserObject('userStatusList', 'MAX_ACP')
