@@ -179,6 +179,22 @@ def getFinalLevel(targetUserCard, exp):
             break
     return newLevel, extraExp
 
+def levelUp(targetUserCard, rank, exp):
+    newLevel, extraExp = getFinalLevel(targetUserCard, exp)
+    newLevel = min(newLevel, maxLevels[rank])
+
+    if newLevel == maxLevels[rank]:
+        extraExp = 0
+    
+    stats = getStats(targetUserCard['card'], rank, newLevel)    
+    stats['level'] = newLevel
+    stats['experience'] = extraExp
+
+    for key in stats.keys():
+        targetUserCard[key] = stats[key]
+     
+    return targetUserCard
+
 def compose():
     body = flask.request.json
     targetUserCardId = body['userCardId']
@@ -193,21 +209,11 @@ def compose():
 
     # modify meguca's level and stats
     rank = targetUserCard['card']['rank']
-    exp = getComposeExp(targetUserCard['card']['attributeId'], body['useItem']) * success
-    newLevel, extraExp = getFinalLevel(targetUserCard, exp)
-    newLevel = min(newLevel, maxLevels[rank])
-
-    if newLevel == maxLevels[rank]:
-        extraExp = 0
-    
-    stats = getStats(targetUserCard['card'], rank, newLevel)
     origLevel = targetUserCard['level']
-    stats['level'] = newLevel
-    stats['experience'] = extraExp
-
-    for key in stats.keys():
-        targetUserCard[key] = stats[key]
-
+    
+    exp = getComposeExp(targetUserCard['card']['attributeId'], body['useItem']) * success
+    targetUserCard = levelUp(targetUserCard, rank, exp)
+    
     dt.setUserObject('userCardList', targetUserCardId, targetUserCard)
 
     # spend items
@@ -215,7 +221,7 @@ def compose():
         revisedItemList = spend(body['useItem'])
     except ValueError as e:
         flask.abort(400, description='{"errorTxt": "'+repr(e)+'","resultCode": "error","title": "Error"}')
-
+    
     # modify CC
     cc = getCCAmount(rank, origLevel, body['useItem'])
     currCC = dt.getGameUserValue('riche')
