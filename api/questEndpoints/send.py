@@ -140,17 +140,11 @@ def giveMegucaExp(battle):
     for cardId in cardIds:
         currUserCard = dt.getUserObject('userCardList', cardId)
         charaNos[cardId] = currUserCard['card']['charaNo']
-
+        
+        rank = currUserCard['card']['rank']
         exp = battle['questBattle']['cardExp']
-        newLevel, extraExp = userCard.getFinalLevel(currUserCard, exp)
-        maxLevel = userCard.maxLevels[currUserCard['card']['rank']]
-        if newLevel >= maxLevel:
-            currUserCard['level'] = maxLevel
-            currUserCard['experience'] = 0
-        else:
-            currUserCard['level'] = newLevel
-            currUserCard['experience'] = extraExp
-
+        currUserCard = userCard.levelUp(currUserCard, rank, exp)  
+        
         resultUserCardList.append(currUserCard)
         dt.setUserObject('userCardList', cardId, currUserCard)
 
