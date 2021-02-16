@@ -124,29 +124,25 @@ def resetShop():
 
     shopList = dt.readJson('data/shopList.json')
 
-    # figure out if it needs to be reset (reset date is not this month), then reset it
+    # figure out if it needs to be reset (end date is prior to today), then reset it
     # kinda hacky way to get the last time the shop was reset
     # finds the first limited (and available) item in the mirrors coins shop, then takes its end time
-    for shopItem in shopList[1]['shopItemList']:
+    # reverse order because limited items are at the bottom of the shopItempList.
+    for shopItem in reversed(shopList[1]['shopItemList']):
         if 'endAt' in shopItem:
             shopExpiryTime = shopItem['endAt']
             if shopExpiryTime != "2050/01/01 00:00:00":
-                continue
-            elif datetime.strptime(shopExpiryTime, DATE_FORMAT).month == today.month:
-                return
-            else:
                 break
-            
-    if datetime.strptime(shopExpiryTime, DATE_FORMAT).month == today.month:
-        return
-
+    
+    if not beforeToday(shopExpiryTime):
+        return 
+        
     for shopIdx in range(4): # magia chips, mirrors coins, support pts, daily coins
         shopItems = shopList[shopIdx]['shopItemList']
         deleteIdxs = [i for i in range(len(shopItems)) 
             if 'endAt' in shopItems[i] 
-                and (datetime.strptime(shopItems[i]['endAt'], DATE_FORMAT).month == lastMonth
-                    or datetime.strptime(shopItems[i]['endAt'], DATE_FORMAT).year < today.year)
-                and not shopItems[i]['shopItemType'] in skipTypes]
+                and beforeToday(shopItems[i]['endAt'])
+                    and not shopItems[i]['shopItemType'] in skipTypes]
         for i in reversed(deleteIdxs):
             del shopItems[i]
         
