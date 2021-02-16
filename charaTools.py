@@ -105,7 +105,19 @@ def addDuoLive2d():
 
     live2dPath = 'data/user/userLive2dList.json'
     dt.saveJson(live2dPath, dt.readJson(live2dPath) + newLive2ds)
-
+    
+def addMissingLive2d():
+    existingCharas = dt.listUserObjectKeys('userCharaList')
+    newLive2ds = []
+    
+    for charaId in existingCharas:
+        newLive2d, exists = newtil.createUserLive2d(charaId, '00', 'Magical Girl')
+        if not exists:
+                newLive2ds.append(newLive2d)
+                
+    live2dPath = 'data/user/userLive2dList.json'  
+    dt.saveJson(live2dPath, dt.readJson(live2dPath) + newLive2ds)
+    
 if __name__=='__main__':
     print(
 """
@@ -116,7 +128,8 @@ Which would you like today?
 2) Get rid of extra MSS
 3) Clear all labyrinth quests and missions (without getting rewards)
 4) Add the missing single-character Live2D costumes that duo units were supposed to come with
-5) N-nothing, just wanted to...visit...
+5) Add missing Live2D data for megucas you pulled
+6) N-nothing, just wanted to...visit...
 """
     )
     while True:
@@ -135,6 +148,9 @@ Which would you like today?
             addDuoLive2d()
             print('Sure thing!')
         if choice == '5':
+            addMissingLive2d()
+            print('Done.')
+        if choice == '6':
             print()
             print('Ooh, I\'m flattered. I\'ll always be here when you need me for adjustment, \'kay?')
             input('(enter to close)')
