@@ -1,10 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Grab the name of the default interface
-# If your host machine is running Windows, this command will most likely fail
-#$default_network_interface = `ip route | awk '/^default/ {printf "%s", $5; exit 0}'`
-
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -41,11 +37,14 @@ Vagrant.configure("2") do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  #config.vm.network "public_network"
   config.vm.network "public_network", :mac => "AEE94EA873FC"
-
-  #config.vm.network "public_network", bridge: "#$default_network_interface"
-
+  #
+  # To prevent being prompted every time to select which network interface
+  # to use as the bridge interface, comment the above "config.vm.network"
+  # and use this one instead. Replace "eth0" with the name of your bridge
+  # interface.
+  #config.vm.network "public_network", :bridge => "eth0", :mac => "AEE94EA873FC"
+ 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
