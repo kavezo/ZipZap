@@ -195,6 +195,7 @@ def levelUp(targetUserCard, rank, exp):
      
     return targetUserCard
 
+# Leveling up
 def compose():
     body = flask.request.json
     targetUserCardId = body['userCardId']
@@ -239,6 +240,7 @@ def compose():
     }
     return flask.jsonify(response)
 
+# Adding awakening mats
 def customize():
     body = flask.request.json
     targetUserCardId = body['userCardId']
@@ -270,6 +272,7 @@ def customize():
     }
     return flask.jsonify(response)
 
+# Awakening
 def evolve():
     body = flask.request.json
     targetUserCardId = body['userCardId']
@@ -352,6 +355,7 @@ def evolve():
     }
     return flask.jsonify(response)
 
+# Limit breaking
 def limitBreak():
     body = flask.request.json
     targetUserCardId = body['userCardId']
@@ -390,6 +394,7 @@ def limitBreak():
     }
     return flask.jsonify(response)
 
+# Leveling up magia
 def composeMagia():
     body = flask.request.json
     targetUserCardId = body['userCardId']

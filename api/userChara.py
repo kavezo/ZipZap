@@ -7,6 +7,7 @@ from util import newUserObjectUtil as newtil
 
 logger = logging.getLogger('app.userChara')
 
+# Exchanging gems for destiny crystals
 def sale():
     body = flask.request.json
     charaId = body['charaId']
@@ -51,6 +52,7 @@ def sale():
     }
     return flask.jsonify(response)
 
+# Changing card rarities and icons
 def visualize():
     body = flask.request.json
     response = {

@@ -82,6 +82,7 @@ def levelUp(targetUserPiece, memoriaToSpend):
 
     return targetUserPiece, success
 
+# level up and limit break
 def compose():
     body = flask.request.json
     targetUserPieceId = body['baseUserPieceId']
@@ -140,10 +141,10 @@ def compose():
             "memoriaId": targetUserPiece['pieceId'],
             "status": {
                 "current": {
-                    "atk": originalUserPiece['piece']['attack'],
-                    "def": originalUserPiece['piece']['defense'],
+                    "atk": originalUserPiece['attack'],
+                    "def": originalUserPiece['defense'],
                     "gainedExp": originalUserPiece['experience'],
-                    "hp": originalUserPiece['piece']['hp'],
+                    "hp": originalUserPiece['hp'],
                     "lbCount": originalUserPiece['lbCount'],
                     "level": originalUserPiece['level'],
                     "limitExp": dExpdLevel[originalUserPiece['level']-1],
@@ -151,10 +152,10 @@ def compose():
                     "rarity": int(originalUserPiece['piece']['rank'][-1])
                 },
                 "result": {
-                    "atk": targetUserPiece['piece']['attack'],
-                    "def": targetUserPiece['piece']['defense'],
+                    "atk": targetUserPiece['attack'],
+                    "def": targetUserPiece['defense'],
                     "gainedExp": targetUserPiece['experience'],
-                    "hp": targetUserPiece['piece']['hp'],
+                    "hp": targetUserPiece['hp'],
                     "lbCount": targetUserPiece['lbCount'],
                     "level": targetUserPiece['level'],
                     "limitExp": dExpdLevel[targetUserPiece['level']-1],
